@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.165 Pre-Release 4</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.166 Pre-Release 5</title><style>
 :root{color-scheme:dark;font-family:system-ui,'Noto Sans JP',sans-serif;background:#0c1220;color:#edf3ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:auto;padding:24px 14px 60px}h1{margin:4px 0}p,small{color:#adbed5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{background:#172338;border:1px solid #34455f;border-radius:15px;padding:17px;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#d6e2f2}input,select{width:100%;background:#0e1728;border:1px solid #52647e;border-radius:8px;padding:10px;color:white;font:inherit}label.check{flex-direction:row;align-items:center}label.check input{width:auto}.wide{grid-column:1/-1}.result{font-size:clamp(26px,5vw,44px);font-weight:800;color:#91d7ff}.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{padding:6px 8px;background:#293c59;border-radius:7px;font-variant-numeric:tabular-nums}.reliability{background:#2b2635;border:1px solid #c8a5ed;border-radius:10px;padding:14px;margin:12px 0;color:#f0e5ff}.reliability ul{margin:8px 0 0;padding-left:20px}.reliability li{margin:5px 0}.warn{background:#40311f;border-left:3px solid #ffd184;padding:12px;border-radius:6px;color:#ffe2a6}details{margin-top:12px}summary{cursor:pointer}pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c4d4e9}button{background:#80c5ff;color:#061223;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 #battleStatePanel button{min-height:44px;margin:4px 3px 4px 0;padding:8px 12px;cursor:pointer}#battleStatePanel button:focus-visible,#useIronRoller:focus-visible{outline:3px solid #91d7ff;outline-offset:2px}#battleStatus{overflow-wrap:anywhere}#battleHistory{max-height:190px;overflow:auto}#battleObservedDamage{max-width:100%!important}@media(max-width:700px){.wrap{padding:14px 10px 40px}.panel{padding:12px}.fields{grid-template-columns:1fr}#battleStatePanel button{width:100%;margin:4px 0}#battleStatePanel label{width:100%}}
 </style><style>
@@ -41,7 +41,27 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
  .budget{margin:7px 0 0}.utility{padding:9px 12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.damage-track>span{transition:none}}
-</style><style id="pokemon-autocomplete-css">.pokemon-choice{position:relative}.pokemon-suggestions{position:absolute;z-index:100;top:58px;left:0;right:0;max-height:260px;overflow:auto;background:#fff;border:1px solid #d7dce5;border-radius:10px;box-shadow:0 10px 28px #0003}.pokemon-suggestions[hidden]{display:none}.pokemon-suggestion{display:block;width:100%;padding:11px 12px;border:0;border-bottom:1px solid #edf0f5;background:#fff;color:#19243a;text-align:left;font-size:14px;cursor:pointer}.pokemon-suggestion:hover,.pokemon-suggestion:focus{background:#edf4ff}.pokemon-suggestion-empty{padding:12px;color:#687386;font-size:13px}</style></head><body><div role="status" style="margin:12px;padding:12px;border:1px solid #a77;border-radius:8px">v0.162：373件を登録（未内定・未検証候補を含む）。実機一致は未確認です。</div><main class="wrap"><section role="note" aria-label="プレリリースの注意" style="margin:12px;padding:14px;border:1px solid #d19c54;border-radius:10px;background:#302718;color:#ffe4b8"><strong>v0.162 Pre-Release 1 — 限定検証用</strong><p style="margin:7px 0">計算結果はPokémon Champions実機と未照合です。登録373件は候補であり、収録・習得技・ダメージ精度を保証しません。実戦の確定判断には使用しないでください。</p><p style="margin:7px 0">確認できた実測ダメージは、技・能力値・HP・天候・フィールドなどの条件とともに記録してください。個人情報・アカウントIDは記入不要です。</p></section><header><small>CHLOHA TOOLS / CHAMPIONS / PRE-RELEASE 1</small><aside style="border:1px solid #d5b67c;padding:12px;border-radius:10px;margin-bottom:15px;background:#302718"><strong>v0.162 検証中</strong>：登録373件。未内定ポケモンも残す方針です。技習得可否・実機ダメージ一致は未検証です。</aside><h1>Damage Lab</h1><section style="border:1px solid #d19c54;border-radius:12px;padding:12px;margin:16px 0;background:#342817;color:#ffe4b8"><strong>v0.162 開発版・精度未保証</strong><div style="font-size:13px;margin-top:5px">登録373件／技98件。未検証・名簿のみの候補を含みます。技習得可否・特性/道具の全補正・実機ダメージ一致は未検証です。対戦の確定判断に使用しないでください。</div><details style="margin-top:8px"><summary>データ検証状況</summary><div id="auditSummary">登録373件。個別データ照合は未完了。</div><p><a href="https://gamewith.jp/pokemon-champions/546414" target="_blank" rel="noopener noreferrer">Champions収録一覧（GameWith）</a></p></details></section><p>Pokémon Champions向け計算機・検証版（実測一致未保証）</p></header><div class="warn">検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。</div><section class="dbpanel" aria-label="ポケモン選択">
+</style><style id="pokemon-autocomplete-css">
+.pokemon-choice{position:relative;min-width:0}
+.pokemon-choice input[role=combobox]{border:1px solid #cad5e5;background:#fff;min-height:42px;font-size:14px}
+.pokemon-suggestions{position:absolute;z-index:100;top:63px;left:0;right:0;max-height:310px;overflow:auto;background:#fff;border:1px solid #d7dce5;border-radius:10px;box-shadow:0 10px 28px #0003}
+.pokemon-suggestions[hidden]{display:none}
+.pokemon-suggestion{display:flex;align-items:center;gap:8px;width:100%;min-height:48px;padding:6px 9px;border:0;border-bottom:1px solid #edf0f5;background:#fff;color:#19243a;text-align:left;font-size:13px;cursor:pointer}
+.pokemon-suggestion img{width:33px;height:33px;object-fit:contain;flex-shrink:0}
+.pokemon-suggestion small{display:block;font-size:10px;color:#728091}
+.pokemon-suggestion:hover,.pokemon-suggestion:focus-visible,.pokemon-suggestion[aria-selected=true]{background:#edf4ff}
+.pokemon-suggestion-empty{padding:12px;color:#687386;font-size:13px}
+.pokemon-manual-select{margin:3px 0 0;padding:0;border:0}
+.pokemon-manual-select summary{font-size:11px;min-height:29px;color:#506c92}
+.pokemon-manual-select[open] summary{margin-bottom:6px}
+.pokemon-manual-select select{font-size:12px;font-weight:600;min-height:39px;border:1px solid #dce0e6;padding:5px}
+.point-presets{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:3px 0 4px}
+.point-presets strong{font-size:10px;color:#6c7483;margin-right:3px}
+.point-presets button{font-size:10px;min-height:36px;padding:6px 8px;color:#344960;background:#eef3f8}
+.point-presets button:disabled{opacity:.45;cursor:not-allowed}
+.point-presets button.preset-reset{background:#fff;color:#6c7483}
+@media(max-width:700px){.pokemon-suggestions{top:65px}.point-presets{gap:4px}.point-presets button{min-height:38px;padding:7px 7px}}
+</style></head><body><div role="status" style="margin:12px;padding:12px;border:1px solid #a77;border-radius:8px">v0.162：373件を登録（未内定・未検証候補を含む）。実機一致は未確認です。</div><main class="wrap"><section role="note" aria-label="プレリリースの注意" style="margin:12px;padding:14px;border:1px solid #d19c54;border-radius:10px;background:#302718;color:#ffe4b8"><strong>v0.162 Pre-Release 1 — 限定検証用</strong><p style="margin:7px 0">計算結果はPokémon Champions実機と未照合です。登録373件は候補であり、収録・習得技・ダメージ精度を保証しません。実戦の確定判断には使用しないでください。</p><p style="margin:7px 0">確認できた実測ダメージは、技・能力値・HP・天候・フィールドなどの条件とともに記録してください。個人情報・アカウントIDは記入不要です。</p></section><header><small>CHLOHA TOOLS / CHAMPIONS / PRE-RELEASE 1</small><aside style="border:1px solid #d5b67c;padding:12px;border-radius:10px;margin-bottom:15px;background:#302718"><strong>v0.162 検証中</strong>：登録373件。未内定ポケモンも残す方針です。技習得可否・実機ダメージ一致は未検証です。</aside><h1>Damage Lab</h1><section style="border:1px solid #d19c54;border-radius:12px;padding:12px;margin:16px 0;background:#342817;color:#ffe4b8"><strong>v0.162 開発版・精度未保証</strong><div style="font-size:13px;margin-top:5px">登録373件／技98件。未検証・名簿のみの候補を含みます。技習得可否・特性/道具の全補正・実機ダメージ一致は未検証です。対戦の確定判断に使用しないでください。</div><details style="margin-top:8px"><summary>データ検証状況</summary><div id="auditSummary">登録373件。個別データ照合は未完了。</div><p><a href="https://gamewith.jp/pokemon-champions/546414" target="_blank" rel="noopener noreferrer">Champions収録一覧（GameWith）</a></p></details></section><p>Pokémon Champions向け計算機・検証版（実測一致未保証）</p></header><div class="warn">検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。</div><section class="dbpanel" aria-label="ポケモン選択">
 <h2>ポケモン・技選択（v0.162）</h2><p class="dbnote">登録373件の候補を維持。未照合データも含むため、実機一致は保証しません。他の未検証フォルムは引き続き要照合。技候補の習得可否は未検証です。技の習得を保証しません。Lv50・個体値31固定、能力ポイント（各0〜32、合計66以内）から実数値を算出します。</p>
 <div class="dbgrid"><div><h3>⚔ 攻撃側</h3><div class="dbside">
 <label class="dbwide">ポケモン<select id="dbAttPokemon"></select></label><label class="dbwide">技<select id="dbMove"></select></label>
@@ -312,7 +332,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.165 <span>Pre-Release 4</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.166 <span>Pre-Release 5</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
  <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>天候・フィールド・その他補正</summary><div id="attAdvanced" class="advanced-fields"></div></details><p id="attBudget" class="budget"></p></section>
@@ -328,7 +348,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const mount=(id,target)=>{const e=el(id);const label=e.closest('label');el(target).append(label||e);};
  const header=(side)=>{
   const wrap=el(side+'PokemonHeader');
-  wrap.innerHTML=`<div class="portrait"><img id="${side}Portrait" alt="" width="88" height="88"><span id="${side}PortraitFallback" hidden>画像未登録</span></div><div class="pokemon-choice"><label class="search-label">ポケモンを探す<input type="search" id="${side}Search" placeholder="名前を入力して選択" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="${side}Suggestions"></label><div class="pokemon-suggestions" id="${side}Suggestions" role="listbox" hidden></div><div id="${side}SelectMount"></div><div class="type-badges" id="${side}Types"></div></div><div class="base-stats" id="${side}BaseStats"></div>`;
+  wrap.innerHTML=`<div class="portrait"><img id="${side}Portrait" alt="" width="88" height="88"><span id="${side}PortraitFallback" hidden>画像未登録</span></div><div class="pokemon-choice"><label class="search-label">ポケモンを探す<input type="search" id="${side}Search" placeholder="名前を入力して選択" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="${side}Suggestions"></label><div class="pokemon-suggestions" id="${side}Suggestions" role="listbox" hidden></div><details class="pokemon-manual-select"><summary>一覧から選ぶ</summary><div id="${side}SelectMount"></div></details><div class="type-badges" id="${side}Types"></div></div><div class="base-stats" id="${side}BaseStats"></div>`;
   mount(side==='att'?'dbAttPokemon':'dbDefPokemon',side+'SelectMount');
  };
  header('att');header('def');
@@ -416,8 +436,25 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   }catch(e){adapterError=true;showInputError(e);}
   finally{busy=false;refreshUI();}
  }
+ const pointPresets={
+  att:[['H32/A32/S2',{hp:32,attack:32,speed:2}],['H32/C32/S2',{hp:32,specialAttack:32,speed:2}],['A32/S32/H2',{attack:32,speed:32,hp:2}],['C32/S32/H2',{specialAttack:32,speed:32,hp:2}],['全て0',{}]],
+  def:[['H32/B32/D2',{hp:32,defense:32,specialDefense:2}],['H32/D32/B2',{hp:32,specialDefense:32,defense:2}],['H32/S32/B2',{hp:32,speed:32,defense:2}],['B32/D32/H2',{defense:32,specialDefense:32,hp:2}],['全て0',{}]]
+ };
  const rows={att:['attack','specialAttack','defense'],def:['hp','defense','specialDefense']};
  for(const side of ['att','def']){
+  const presets=node('div','point-presets');presets.id=side+'Presets';
+  presets.append(node('strong','','一括配分'));
+  for(const [label,allocation] of pointPresets[side]){
+   const button=node('button',label==='全て0'?'preset-reset':'',label);button.type='button';
+   button.setAttribute('aria-label',(side==='att'?'攻撃側 ':'防御側 ')+label);
+   button.addEventListener('click',()=>{
+    if(!el('dbAuto').checked)return;
+    models[side].points=Object.fromEntries(keys.map(k=>[k,allocation[k]||0]));
+    recalculate();notify((side==='att'?'攻撃側':'防御側')+'の能力ポイントを '+label+' に設定しました。性格補正は維持します。');
+   });
+   presets.append(button);
+  }
+  el(side+'Stats').before(presets);
   const table=el(side+'Stats');table.innerHTML='<div class="stat-head"><span>能力</span><span>ポイント</span><span>性格</span><span>実数値</span></div>';
   for(const k of rows[side]){
    const row=node('div','stat-row');row.id=`${side}-${k}-row`;
@@ -487,7 +524,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     el(`${side}-${k}-actual`).value=v;el(`${side}-${k}-row`).classList.toggle('is-active',activeStat(side)===k||k==='hp');
     el(`${side}-${k}-points`).disabled=!el('dbAuto').checked;el(`${side}-${k}-range`).disabled=!el('dbAuto').checked;el(`${side}-${k}-nature`).disabled=k==='hp'||!el('dbAuto').checked;
    }
-   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);el(side+'Budget').textContent=`能力ポイント ${total} / 66 · Lv.50 / 個体値31`;
+   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);for(const b of el(side+'Presets').querySelectorAll('button'))b.disabled=!el('dbAuto').checked;el(side+'Budget').textContent=`能力ポイント ${total} / 66（残り${66-total}） · Lv.50 / 個体値31`;
    lastActive[side]=activeStat(side);
   }
   const r=window.ChlohaLastCalculation,a=r?.a,lo=r?Math.min(...r.r.rolls):0,hi=r?Math.max(...r.r.rolls):0;
@@ -516,29 +553,67 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const select=el(side==='att'?'dbAttPokemon':'dbDefPokemon');
   const options=[...select.options].map(o=>({value:o.value,label:o.textContent}));
   const input=el(side+'Search'),list=el(side+'Suggestions');
-  const normalize=t=>t.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96));
-  const hide=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');};
+  const englishAliases={garchomp:'garchomp',charizard:'charizard',tyranitar:'tyranitar',dragonite:'dragonite',venusaur:'venusaur',blastoise:'blastoise',meganium:'meganium',feraligatr:'feraligatr',dragapult:'dragapult',hydreigon:'hydreigon',archaludon:'archaludon',pelipper:'pelipper',ceruledge:'ceruledge',sneasler:'sneasler',goodra:'goodra',kommo_o:'kommo-o'};
+  const normalize=t=>t.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
+  let matches=[],active=-1,composing=false;
+  const hide=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');matches=[];active=-1;};
   const choose=o=>{
-   select.replaceChildren(...options.map(x=>{const n=node('option','',x.label);n.value=x.value;return n;}));
-   select.value=o.value;input.value='';hide();select.dispatchEvent(new Event('change',{bubbles:true}));
+   select.value=o.value;
+   if(select.value!==o.value)return;
+   input.value='';hide();input.blur();
+   // Original DB listener reacts to "input"; change alone left calculations stale.
+   select.dispatchEvent(new Event('input',{bubbles:true}));
+   select.dispatchEvent(new Event('change',{bubbles:true}));
+  };
+  const setActive=i=>{
+   active=i;
+   const items=[...list.querySelectorAll('[role=option]')];
+   items.forEach((x,j)=>x.setAttribute('aria-selected',String(j===i)));
+   if(i>=0&&items[i]){input.setAttribute('aria-activedescendant',items[i].id);items[i].scrollIntoView({block:'nearest'});}
+   else input.removeAttribute('aria-activedescendant');
   };
   const update=()=>{
-   const q=normalize(input.value.trim());list.replaceChildren();
+   const q=normalize(input.value.trim());list.replaceChildren();active=-1;matches=[];
    if(!q){hide();return;}
-   const matches=options.filter(o=>normalize(o.label).includes(q)).slice(0,12);
-   for(const o of matches){const item=node('button','',o.label);item.type='button';item.className='pokemon-suggestion';item.setAttribute('role','option');item.addEventListener('click',()=>choose(o));list.append(item);}
-   if(!matches.length){const empty=node('div','pokemon-suggestion-empty','該当するポケモンがありません');list.append(empty);}
+   matches=options.filter(o=>{
+    const p=pokemonById.get(o.value);
+    return [o.label,p?.englishName||'',englishAliases[o.value]||'',o.value].some(t=>normalize(t).includes(q));
+   }).sort((a,b)=>{
+    const score=o=>normalize(o.label).startsWith(q)?0:normalize(englishAliases[o.value]||o.value).startsWith(q)?1:2;
+    return score(a)-score(b);
+   }).slice(0,10);
+   for(let i=0;i<matches.length;i++){
+    const o=matches[i],p=pokemonById.get(o.value),item=node('button','pokemon-suggestion');
+    item.type='button';item.id=side+'Suggestion'+i;item.setAttribute('role','option');
+    item.setAttribute('aria-label',o.label);item.setAttribute('aria-selected','false');
+    const spriteId=window.ChlohaSpriteIds?.[o.value];
+    if(spriteId){
+     const img=node('img');img.alt='';img.loading='lazy';
+     img.src=window.ChlohaLocalSprites?.[o.value]||'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+spriteId+'.png';
+     img.onerror=()=>img.remove();item.append(img);
+    }
+    const copy=node('span');copy.append(node('span','',o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
+    item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
+   }
+   if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
    list.hidden=false;input.setAttribute('aria-expanded','true');
   };
-  input.addEventListener('input',update);
+  input.addEventListener('compositionstart',()=>{composing=true;});
+  input.addEventListener('compositionend',()=>{composing=false;update();});
+  input.addEventListener('input',()=>{if(!composing)update();});
   input.addEventListener('focus',update);
   input.addEventListener('keydown',e=>{
    if(e.key==='Escape'){hide();return;}
-   if(e.key==='Enter'&&!list.hidden){const first=list.querySelector('button');if(first){e.preventDefault();first.click();}}
+   if(composing||e.isComposing)return;
+   if((e.key==='ArrowDown'||e.key==='ArrowUp')&&!list.hidden&&matches.length){
+    e.preventDefault();setActive(e.key==='ArrowDown'?(active+1)%matches.length:(active-1+matches.length)%matches.length);
+   }
+   if(e.key==='Enter'&&!list.hidden&&matches.length){e.preventDefault();choose(matches[active<0?0:active]);}
   });
-  input.addEventListener('blur',()=>{setTimeout(()=>{if(!list.contains(document.activeElement))hide();},150);});
+  input.addEventListener('blur',()=>{setTimeout(()=>{if(document.activeElement!==input&&!list.contains(document.activeElement))hide();},120);});
   input.addEventListener('search',update);
  }
+
  const value=id=>el(id).type==='checkbox'?el(id).checked:el(id).value;
  const put=(id,v,label)=>{if(el(id).type==='checkbox')el(id).checked=v;else{if(el(id).tagName==='SELECT'&&![...el(id).options].some(o=>o.value===String(v))){const o=node('option','',(label||String(v))+'（この側では未対応）');o.value=v;el(id).append(o);}el(id).value=v;}};
  el('swapSides').addEventListener('click',()=>{
@@ -559,7 +634,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  });
  // Existing battle/copy handlers update the result asynchronously or on click.
  for(const id of ['battleCommit','battleUndo','battleReset'])el(id).addEventListener('click',refreshUI);
- window.ChlohaUI=Object.freeze({version:'0.165',refresh:refreshUI,models:()=>structuredClone(models)});
+ window.ChlohaUI=Object.freeze({version:'0.166',refresh:refreshUI,models:()=>structuredClone(models)});
  refreshUI();
 })();
 
