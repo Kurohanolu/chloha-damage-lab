@@ -121,7 +121,7 @@ const path = require('node:path');
    for(const id of ['attAttackMods','attHpMods','attSpeedMods','defHpMods','defSupportMods','defSpeedMods'])
     assert.equal(await page.locator('#'+id).count(),1,id+' detail group exists');
    // v0.169: GameWith move catalog, simple damage, and blocked complex mechanics.
-   assert.equal(await page.locator('#dbMove option').count(),304,'all 304 damaging moves searchable (protect excluded)');
+   assert.equal(await page.locator('#dbMove option').count(),334,'all 334 damaging moves searchable (protect excluded)');
    await moveSearch.fill('フリーズドライ');
    const gated=moveList.getByRole('option',{name:'フリーズドライ',exact:true});
    await gated.waitFor({state:'visible'});
@@ -166,6 +166,22 @@ const path = require('node:path');
    await moveSearch.fill('マッハパンチ');
    await moveList.getByRole('option',{name:'マッハパンチ',exact:true}).click();
    assert.equal(await page.locator('#output').isHidden(),false,'newly supported move recovers calculation');
+   // GameWith 212 physical + 122 special catalog complete, with conditional effects safely gated.
+   await moveSearch.fill('こおりのつぶて');
+   const shard=moveList.getByRole('option',{name:'こおりのつぶて',exact:true});
+   await shard.waitFor({state:'visible'});await shard.click();
+   assert.equal(await page.locator('#power').inputValue(),'40');
+   assert.equal(await page.locator('#output').isHidden(),false);
+   await moveSearch.fill('ベノムショック');
+   const venom=moveList.getByRole('option',{name:'ベノムショック',exact:true});
+   await venom.waitFor({state:'visible'});
+   assert.match(await venom.innerText(),/計算未対応/);
+   await venom.click();
+   assert.equal(await page.locator('#output').isHidden(),true,'conditional poisoned target bonus blocked');
+   await moveSearch.fill('ぼうふう');
+   await moveList.getByRole('option',{name:'ぼうふう',exact:true}).click();
+   assert.equal(await page.locator('#output').isHidden(),false,'basic special attack restored');
+   assert.equal(await page.locator('#power').inputValue(),'110');
    // Fast point allocation uses Champions 0..32 per stat, max 66 total.
    assert.equal(await page.locator('#dbAuto').isChecked(),true,'point auto mode active');
    await page.locator('#attPresets button[aria-label="攻撃側 H32/A32/S2"]').click();
