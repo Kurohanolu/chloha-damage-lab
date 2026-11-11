@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.164 Pre-Release 3</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.165 Pre-Release 4</title><style>
 :root{color-scheme:dark;font-family:system-ui,'Noto Sans JP',sans-serif;background:#0c1220;color:#edf3ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:auto;padding:24px 14px 60px}h1{margin:4px 0}p,small{color:#adbed5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{background:#172338;border:1px solid #34455f;border-radius:15px;padding:17px;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#d6e2f2}input,select{width:100%;background:#0e1728;border:1px solid #52647e;border-radius:8px;padding:10px;color:white;font:inherit}label.check{flex-direction:row;align-items:center}label.check input{width:auto}.wide{grid-column:1/-1}.result{font-size:clamp(26px,5vw,44px);font-weight:800;color:#91d7ff}.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{padding:6px 8px;background:#293c59;border-radius:7px;font-variant-numeric:tabular-nums}.reliability{background:#2b2635;border:1px solid #c8a5ed;border-radius:10px;padding:14px;margin:12px 0;color:#f0e5ff}.reliability ul{margin:8px 0 0;padding-left:20px}.reliability li{margin:5px 0}.warn{background:#40311f;border-left:3px solid #ffd184;padding:12px;border-radius:6px;color:#ffe2a6}details{margin-top:12px}summary{cursor:pointer}pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c4d4e9}button{background:#80c5ff;color:#061223;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 #battleStatePanel button{min-height:44px;margin:4px 3px 4px 0;padding:8px 12px;cursor:pointer}#battleStatePanel button:focus-visible,#useIronRoller:focus-visible{outline:3px solid #91d7ff;outline-offset:2px}#battleStatus{overflow-wrap:anywhere}#battleHistory{max-height:190px;overflow:auto}#battleObservedDamage{max-width:100%!important}@media(max-width:700px){.wrap{padding:14px 10px 40px}.panel{padding:12px}.fields{grid-template-columns:1fr}#battleStatePanel button{width:100%;margin:4px 0}#battleStatePanel label{width:100%}}
 </style><style>
@@ -312,7 +312,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.164 <span>Pre-Release 3</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.165 <span>Pre-Release 4</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
  <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>天候・フィールド・その他補正</summary><div id="attAdvanced" class="advanced-fields"></div></details><p id="attBudget" class="budget"></p></section>
@@ -559,7 +559,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  });
  // Existing battle/copy handlers update the result asynchronously or on click.
  for(const id of ['battleCommit','battleUndo','battleReset'])el(id).addEventListener('click',refreshUI);
- window.ChlohaUI=Object.freeze({version:'0.164',refresh:refreshUI,models:()=>structuredClone(models)});
+ window.ChlohaUI=Object.freeze({version:'0.165',refresh:refreshUI,models:()=>structuredClone(models)});
  refreshUI();
 })();
 
