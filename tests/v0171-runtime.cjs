@@ -111,6 +111,18 @@ const path=require('node:path');
   assert.equal((await snap('Hex normal')).power,65);
   await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
   assert.equal((await snap('Hex boosted')).power,130);
+  // v0.173: every new move must be selectable, have an explicit unchecked default,
+  // double power only when checked, and reset when another move is selected.
+  for(const [moveId,basePower] of [["gw0170c_002",65],["gw0169_p074",60],["gw0169_s048",65],["gw0170b_015",60],["gw0170b_009",50],["gw0170_u054",60],["gw0169_p010",75],["gw0170_u052",75],["gw0169_s067",60]]){
+   await set('dbMove',moveId);
+   assert.equal(await page.locator('#conditionalPowerPanel').evaluate(el=>el.hidden),false,moveId+' toggle enabled');
+   assert.equal(await page.locator('#conditionalPower').isChecked(),false,moveId+' defaults off');
+   assert.equal((await snap(moveId+' baseline')).power,basePower);
+   await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+   assert.equal((await snap(moveId+' doubled')).power,basePower*2);
+   await page.locator('#conditionalPower').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
+   assert.equal((await snap(moveId+' reset')).power,basePower);
+  }
   assert.deepEqual(errors,[],'no page errors');
   console.log('PASS v0.171 runtime move conditions and field toggles');
  }finally{await browser.close();}
