@@ -45,6 +45,18 @@ const path=require('node:path');
   assert.equal(base.stab,1.5);
   assert.equal(base.a.weather,'none');
   assert.equal(base.a.terrain,'none');
+  // v0.167 outcome labels follow live current HP, not stale previous rolls.
+  assert.equal(await page.locator('#koVerdict').innerText(),'確定耐え');
+  async function setCurrentHp(hp){
+   await page.locator('#currentHp').evaluate((el,v)=>{el.value=String(v);el.dispatchEvent(new Event('input',{bubbles:true}));},hp);
+  }
+  await setCurrentHp(100);
+  assert.equal(await page.locator('#koVerdict').innerText(),'確定KO','all damage rolls KO at 100 HP');
+  assert.match(await page.locator('#koVerdictDetail').innerText(),/100\.00%/);
+  await setCurrentHp(120);
+  assert.equal(await page.locator('#koVerdict').innerText(),'乱数KO','some rolls KO at 120 HP');
+  await setCurrentHp(155);
+  assert.equal(await page.locator('#koVerdict').innerText(),'確定耐え','return to full HP');
   console.log('FIELD_CASE_01',JSON.stringify({attacker:'リザードン',move:'かえんほうしゃ',defender:'フシギバナ',points:0,attSpA:base.a.attack,defSpD:base.a.defense,defHp:base.a.hp,min:base.min,max:base.max,rolls:base.rolls}));
   // Changing attack allocation must update both the derived stat and displayed damage.
   await page.locator('#attPresets button[aria-label="攻撃側 H32/C32/S2"]').click();
@@ -70,6 +82,7 @@ const path=require('node:path');
   // Reject allocation exceeding 66 and allow user recovery.
   await page.locator('#att-attack-points').fill('32');
   assert.equal(await page.locator('#output').isHidden(),true,'invalid 98 point allocation stops calculation');
+  assert.equal(await page.locator('#koSummary').isHidden(),true,'hide stale verdict on invalid allocation');
   assert.match(await page.locator('#error').innerText(),/66/);
   await page.locator('#attPresets button[aria-label="攻撃側 全て0"]').click();
   await expectValid('TC06 recover from invalid points');
