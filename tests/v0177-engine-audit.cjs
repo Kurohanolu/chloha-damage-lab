@@ -9,7 +9,7 @@ assert.match(engine,/for\(let r=85;r<=100;r\+\+\)/,'16 random rolls 85-100');
 assert.match(engine,/if\(a\.critical\)\{as=Math\.max\(0,as\);ds=Math\.min\(0,ds\);\}/,'critical stage bypass');
 assert.match(engine,/if\(immune\)\{rolls\.push\(0\);continue;\}/,'immunity zero rolls');
 assert.match(engine,/a\.moveMechanic==='knockOff'&&a\.conditionalPower\?Math\.floor\(a\.power\*1\.5\)/,'Knock Off 1.5x floored');
-assert.match(engine,/a\.moveMechanic==='facade'/,'Facade conditional power');
+assert.match(engine,/\['stompingTantrum','hex','facade','venoshock'/,'Facade in conditional double-power group');
 assert.match(engine,/for\(const first of hitRolls\)for\(const second of hitRolls\)/,'two-hit 256 combinations');
 assert.match(engine,/applyLayer\('postRandom'/,'post-random modifiers');
 assert.match(engine,/applyLayer\('final'/,'final modifiers');
