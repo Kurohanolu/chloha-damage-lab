@@ -33,5 +33,6 @@
  'クリアチャーム':'Clear Amulet','ぼうじんゴーグル':'Safety Goggles'
  }
  };
- window.ChlohaNames=Object.freeze(Object.fromEntries(Object.entries(names).map(([k,v])=>[k,Object.freeze(v)])));
+ const prior=window.ChlohaNames||{};
+ window.ChlohaNames=Object.freeze(Object.fromEntries([...new Set([...Object.keys(prior),...Object.keys(names)])].map(k=>[k,Object.freeze({...prior[k],...names[k]})])));
 })();
