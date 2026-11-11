@@ -422,7 +422,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.176 <span>Pre-Release 15</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version" title="公開UI版。内部計算コアはv0.162を基盤に継続改修中">v0.176 <span>Pre-Release 15</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
  <section class="board-quick" aria-label="盤面の基本設定"><div class="board-quick-heading"><div><strong>盤面の基本設定</strong><small>天候・フィールド・壁はここから変更</small></div><button type="button" id="resetBoard" aria-label="天候・フィールド・壁をなしに戻す">盤面をリセット</button></div><div id="boardControls" class="board-controls"></div><p id="boardSummary" class="board-summary" aria-live="polite"></p></section>
@@ -433,6 +433,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  <details class="utility" id="inputSettings"><summary>入力モード・手動ステータス</summary><div id="modeControls" class="advanced-fields"></div><p>能力ポイント方式：各0〜32、合計66以内。空欄は0。自動反映オフでは実数値・タイプ・威力を編集できます。</p><div id="manualFields" class="advanced-fields"></div><p id="manualNote">選択した技の固有効果は手入力でも維持します。技に合う分類・威力・参照能力を確認してください。</p></details>
  <details class="utility" id="battleDetails"><summary>実測ダメージ・盤面の引き継ぎ</summary><div id="battleMount"></div></details>
  <details class="utility" id="auditDetails"><summary>検証状況・計算モデルの注意</summary><div id="auditMount"></div><p>373件・技335件は候補を含みます。技の習得可否は保証しません。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。</p><p>ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。</p></details>
+ <p class="dbnote" id="versionProvenance">バージョンについて：画面の「v0.176 Pre-Release 15」は公開UI版です。計算コアの「v0.162」は内部APIの基盤識別子であり、現在の公開版や検証完了を示す数字ではありません。v0.177向けの改善は段階的に検証中です。</p>
  <footer class="lab-footer">CHLOHA TOOLS <span>非公式検証ツール · 入力はブラウザ内で処理</span></footer>
  <aside class="mobile-result" aria-label="計算結果の要約"><a href="#resultCard"><span id="miniDamage">—</span><small class="mini-summary"><span id="miniPercent"></span><b id="miniVerdict"></b></small></a><div class="mini-track"><span id="miniGauge"></span></div></aside>`;
 
