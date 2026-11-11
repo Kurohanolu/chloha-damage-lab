@@ -57,9 +57,9 @@ const path = require('node:path');
    // Japanese partial match and English alias, with keyboard navigation.
    const search=page.locator('#attSearch');
    await search.fill('ガブ');
-   assert.equal(await page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス'}).count(),1);
+   assert.equal(await page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス',exact:true}).count(),1);
    await search.fill('garchomp');
-   const englishOption=page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス'});
+   const englishOption=page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス',exact:true});
    assert.equal(await englishOption.count(),1,'English alias');
    assert.equal(await englishOption.locator('img').count(),1,'candidate image');
    await search.press('ArrowDown');
