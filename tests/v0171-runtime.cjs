@@ -1,0 +1,62 @@
+// v0.171 runtime regression: conditional moves and field toggles; not game parity.
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const path=require('node:path');
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage();
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  await page.locator('#attStats .stat-row').first().waitFor();
+  const set=async(id,value)=>page.locator('#'+id).selectOption(value);
+  const snap=async(label)=>{
+   const result=await page.evaluate(()=>{const x=window.ChlohaLastCalculation;return x&&{power:x.a.power,spread:x.a.spread,mechanic:x.a.moveMechanic,rolls:x.r.rolls,terrain:x.a.terrain};});
+   assert.ok(result,label+': result exists');
+   assert.equal(result.rolls.length,16,label+': 16 rolls');
+   assert.ok(result.rolls.every(x=>Number.isInteger(x)&&x>=0),label+': integer rolls');
+   return result;
+  };
+  const higher=(a,b,label)=>assert.ok(Math.max(...a.rolls)>Math.max(...b.rolls),label);
+  await set('dbAttPokemon','garchomp');
+  await set('dbDefPokemon','tyranitar');
+  await set('terrain','none');
+  await set('dbMove','gw0170_u014');
+  await set('defItem','none');
+  const knockBase=await snap('knock no item');
+  await set('defItem','assaultVest');
+  const knockItem=await snap('knock item');
+  higher(knockItem,knockBase,'Knock Off item boost');
+  await set('defItem','none');
+  await set('dbMove','gw0170_u060');
+  const forceBase=await snap('Expanding Force baseline');
+  assert.equal(forceBase.spread,'single');
+  await set('terrain','psychic');
+  const forceTerrain=await snap('Expanding Force terrain');
+  assert.equal(forceTerrain.spread,'spread','Expanding Force doubles spread');
+  assert.equal(forceTerrain.power,120,'Expanding Force effective power');
+  await set('terrain','none');
+  assert.equal((await snap('Expanding Force reset')).spread,'single','Expanding Force reset spread');
+  await set('dbMove','gw0169_s064');
+  await set('terrain','none');
+  const risingBase=await snap('Rising Voltage baseline');
+  await set('terrain','electric');
+  const risingGround=await snap('Rising Voltage grounded target');
+  assert.equal(risingGround.power,140,'Rising Voltage effective power');
+  higher(risingGround,risingBase,'Rising Voltage terrain boost');
+  await set('defGrounding','airborne');
+  assert.equal((await snap('Rising Voltage airborne')).power,70,'Rising Voltage airborne target');
+  await set('defGrounding','auto');
+  await set('dbMove','gw0169_s058');
+  await set('terrain','none');
+  const mistBase=await snap('Misty Explosion baseline');
+  await set('terrain','misty');
+  const mistGround=await snap('Misty Explosion grounded');
+  assert.equal(mistGround.power,150,'Misty Explosion effective power');
+  higher(mistGround,mistBase,'Misty Explosion terrain boost');
+  await set('attGrounding','airborne');
+  assert.equal((await snap('Misty Explosion airborne')).power,100,'Misty Explosion airborne user');
+  assert.deepEqual(errors,[],'no page errors');
+  console.log('PASS v0.171 runtime move conditions and field toggles');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1});
