@@ -21,7 +21,7 @@ const path = require('node:path');
     await toggle.click();
     assert.equal(await table.isHidden(),width<=700);
    }
-   // v0.165: typing a partial species name must offer tappable matches.
+   // v0.166: searchable species picker and one-tap point allocations.
    for(const side of ['att','def']){
     const search=page.locator('#'+side+'Search');
     const suggestions=page.locator('#'+side+'Suggestions');
@@ -49,13 +49,36 @@ const path = require('node:path');
     await search.fill(fragment);
     await search.press('Enter');
     assert.equal(await suggestions.isHidden(),true,'Enter selects first suggestion');
+    await search.fill(fragment);
+    assert.ok(await suggestions.getByRole('option').count()>0);
+    await search.press('ArrowDown');
+    assert.ok(await search.getAttribute('aria-activedescendant'));
+    await search.press('Enter');
+    assert.equal(await suggestions.isHidden(),true,'ArrowDown then Enter selects option');
+   }
+   for(const side of ['att','def']){
+    const preset=page.locator('#'+side+'Presets');
+    const models=()=>page.evaluate(()=>window.ChlohaUI.models());
+    assert.equal(await page.locator('#'+side+'Stats .stat-row').count(),6,'all six stats editable');
+    await preset.locator('[data-preset="physical"]').click();
+    let m=(await models())[side];
+    assert.equal(m.points.attack,32);assert.equal(m.points.speed,32);assert.equal(m.points.hp,2);
+    assert.equal(Object.values(m.points).reduce((x,y)=>x+y,0),66);
+    assert.match(await page.locator('#'+side+'Budget').innerText(),/66\s*\/\s*66/);
+    await preset.locator('[data-preset="specialTank"]').click();
+    m=(await models())[side];
+    assert.equal(m.points.hp,32);assert.equal(m.points.specialDefense,32);assert.equal(m.points.defense,2);
+    await preset.locator('[data-preset="reset"]').click();
+    m=(await models())[side];
+    assert.equal(Object.values(m.points).reduce((x,y)=>x+y,0),0);
+    assert.match(await page.locator('#'+side+'PointSummary').innerText(),/未配分/);
    }
    const result=page.locator('#resultCard');
    assert.equal(await result.count(),1);
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.165')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.166')),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);
