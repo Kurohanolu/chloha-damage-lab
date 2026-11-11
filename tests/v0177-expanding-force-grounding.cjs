@@ -26,7 +26,7 @@ const round=(v,m)=>Math.floor((v*m+2047)/4096);
     ['both_airborne',{attGrounding:'airborne',defGrounding:'airborne'},false],
     ['att_auto_normal',{attGrounding:'auto'},true],
     ['att_auto_flying',{attGrounding:'auto',attTypes:['ひこう']},false],
-    ['att_auto_levitate',{attGrounding:'auto',attAbility:'levitate'},false],
+    ['att_auto_non_flying',{attGrounding:'auto',attTypes:['ノーマル']},true],
     ['att_forced_grounded_flying',{attGrounding:'grounded',attTypes:['ひこう']},true],
     ['att_forced_airborne_normal',{attGrounding:'airborne'},false],
     ['def_auto_flying',{defTypes:['ひこう']},true],
