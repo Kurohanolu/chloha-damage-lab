@@ -83,6 +83,7 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
 .move-option[aria-selected=true],.move-option:focus-visible,.move-option:hover{background:#eaf2ff}
 .move-empty{font-size:12px;color:#788799;padding:12px}
 .move-selected{margin:7px 0 3px;color:#315477;font-size:12px;font-weight:700}
+.move-data-note{font-size:10px;line-height:1.55;color:#73809a;margin:6px 0 0}.move-data-note a{color:#456fa9;text-decoration:underline}
 .move-list-fallback{margin:2px 0 0;padding:0;border:0}
 .move-list-fallback summary{font-size:11px;color:#56718f;min-height:28px;cursor:pointer}
 .move-list-fallback[open] summary{margin-bottom:4px}
@@ -278,12 +279,18 @@ function refreshDefenseAbilities(){
  addSelectOptions('defAbility',[['none','なし／未適用'],...(p?.abilities||[]).map(name=>[defensiveAbilities[name]||'unsupported:'+name,name+(defensiveAbilities[name]?'（対応）':'（未対応）')])]);
  if([...$('defAbility').options].some(o=>o.value===previous))$('defAbility').value=previous;
 }
+function moveCalculationReady(m){
+ const policy=ChlohaMovePolicy[m.id];
+ return m.calculationSupported!==false||Boolean(policy?.mechanic&&policy?.standardDamageSupported&&policy.priority!=='P0');
+}
 function refreshCandidateMoves(){
- const id=$('dbAttPokemon').value, previous=$('dbMove').value;
- const ids=new Set(ChlohaLearnsetsDB.candidateMoves[id]||[]);
- const hasCandidates=ids.size>0;
- const choices=ChlohaMovesDB.moves.filter(m=>(m.power>0||m.id==='electroBall')&&(m.calculationSupported!==false||Boolean(ChlohaMovePolicy[m.id]?.mechanic&&ChlohaMovePolicy[m.id]?.standardDamageSupported)));
- addSelectOptions('dbMove',choices.map(m=>[m.id,`${m.name}（${m.type} / ${m.id==='electroBall'?'可変':m.power}）${ChlohaMovePolicy[m.id]?.priority==='P0'?'［計算不可］':ids.has(m.id)?'［候補・未検証］':'［習得未検証］'}`]));
+ const previous=$('dbMove').value;
+ // Search all GameWith-listed damaging moves; learning lists are neither complete nor verified.
+ const choices=ChlohaMovesDB.moves.filter(m=>m.category==='physical'||m.category==='special');
+ addSelectOptions('dbMove',choices.map(m=>{
+  const status=!moveCalculationReady(m)?'［計算未対応］':m.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'［基本ダメージのみ・実機未照合］':'［計算試算・実機未照合］';
+  return [m.id,`${m.name}（${m.type} / ${m.power||'可変'}）${status}`];
+ }));
  if(choices.some(m=>m.id===previous))$('dbMove').value=previous;
 }
 refreshCandidateMoves();refreshAbilities();refreshDefenseAbilities();
@@ -298,9 +305,10 @@ function applyDb(){
  const auto=$('dbAuto').checked;
  for(const id of autoFields)$(id).disabled=auto;
  const a=pokemonById.get($('dbAttPokemon').value),d=pokemonById.get($('dbDefPokemon').value),m=movesById.get($('dbMove').value);
- if(!a||!d||!m||(m.power<=0&&m.id!=='electroBall'))throw Error('データの選択が不正です');
+ if(!a||!d||!m)throw Error('データの選択が不正です');
  const policy=ChlohaMovePolicy[m.id];
- if(policy?.priority==='P0')throw Error('この技は計算未対応です：'+policy.reason);
+ if(!moveCalculationReady(m))throw Error('「'+m.name+'」は技データ収録済みですが、特殊条件・威力変化などの計算が未対応です。別の技を選択してください。');
+ if(m.power<=0&&m.id!=='electroBall')throw Error('「'+m.name+'」の威力算定は未対応です');
  const mechanic=policy?.mechanic||'none';
  window.ChlohaMoveMechanic=mechanic;
  $('foulPlayInputs').hidden=mechanic!=='foulPlay'||!auto;
@@ -396,7 +404,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  <section id="resultCard" class="result-card"><div class="result-heading"><div><p class="eyebrow">DAMAGE ESTIMATE</p><h2>計算結果</h2></div><div id="resultActions"></div></div><div id="resultMount"></div></section>
  <details class="utility" id="inputSettings"><summary>入力モード・手動ステータス</summary><div id="modeControls" class="advanced-fields"></div><p>能力ポイント方式：各0〜32、合計66以内。空欄は0。自動反映オフでは実数値・タイプ・威力を編集できます。</p><div id="manualFields" class="advanced-fields"></div><p id="manualNote">選択した技の固有効果は手入力でも維持します。技に合う分類・威力・参照能力を確認してください。</p></details>
  <details class="utility" id="battleDetails"><summary>実測ダメージ・盤面の引き継ぎ</summary><div id="battleMount"></div></details>
- <details class="utility" id="auditDetails"><summary>検証状況・計算モデルの注意</summary><div id="auditMount"></div><p>373件・技98件は候補を含みます。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。</p><p>ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。</p></details>
+ <details class="utility" id="auditDetails"><summary>検証状況・計算モデルの注意</summary><div id="auditMount"></div><p>373件・技245件は候補を含みます。技の習得可否は保証しません。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。</p><p>ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。</p></details>
  <footer class="lab-footer">CHLOHA TOOLS <span>非公式検証ツール · 入力はブラウザ内で処理</span></footer>
  <aside class="mobile-result" aria-label="計算結果の要約"><a href="#resultCard"><span id="miniDamage">—</span><small class="mini-summary"><span id="miniPercent"></span><b id="miniVerdict"></b></small></a><div class="mini-track"><span id="miniGauge"></span></div></aside>`;
 
@@ -410,6 +418,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const movePicker=node('div','move-picker');movePicker.id='movePicker';
  movePicker.innerHTML='<label for="moveSearch">技名を検索</label><input type="search" id="moveSearch" placeholder="例：じしん、10まんボルト" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="moveSuggestions"><div id="moveSuggestions" role="listbox" hidden></div><p id="moveSelected" class="move-selected" aria-live="polite"></p><details class="move-list-fallback"><summary>技一覧から選ぶ</summary><div id="moveSelectMount"></div></details>';
  el('attQuick').append(movePicker);mount('dbMove','moveSelectMount');
+ const credits=node('p','move-data-note');
+ credits.innerHTML='技名・威力・タイプの追加参照：<a href="https://gamewith.jp/pokemon-champions/546502" target="_blank" rel="noopener noreferrer">GameWith物理技</a> / <a href="https://gamewith.jp/pokemon-champions/546503" target="_blank" rel="noopener noreferrer">特殊技</a>。習得可否は未検証。計算は対応技のみ。';
+ movePicker.append(credits);
  for(const [ids,target] of [
   [['attAbility','attItem','attackStage'],'attMain'],[['defAbility','defItem','defenseStage'],'defMain'],
   [['weather','terrain','screen','battleFormat'],'boardControls'],
@@ -466,7 +477,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  function syncMovePicker(){
   const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';
-  el('moveSelected').textContent=current?'選択中：'+current.name+'（'+current.type+' / '+(current.id==='electroBall'?'可変':current.power)+'）'+(selected.includes('［候補・未検証］')?'［候補・未検証］':selected.includes('［習得未検証］')?'［習得未検証］':''):'技を選択してください';
+  el('moveSelected').textContent=current?'選択中：'+current.name+'（'+current.type+' / '+(current.power||'可変')+'）'+(selected.match(/［[^］]+］/)?.[0]||''):'技を選択してください';
  }
  function chooseMove(option){
   moveSelect.value=option.value;
@@ -491,7 +502,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query);
   }).sort((a,b)=>{
    const rank=o=>{const m=movesById.get(o.value);
-    return (normalizeMove(m?.name).startsWith(query)?0:2)+(o.textContent.includes('［候補・未検証］')?0:1);
+    return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
    };
    return rank(a)-rank(b);
   }).slice(0,12);
@@ -501,7 +512,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
    item.setAttribute('aria-selected','false');
    item.append(node('span','',m?.name||o.textContent));
-   const status=o.textContent.includes('［候補・未検証］')?'候補・未検証':'習得未検証';
+   const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
    item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
    moveList.append(item);
