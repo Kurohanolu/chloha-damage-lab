@@ -321,7 +321,7 @@ function syncConditionalPower(reset=false){
  const boosted=mechanic==='knockOff'?Math.floor(normal*1.5):normal*2;
  const powerText=normal>0?'威力 '+normal+' → '+(checked?boosted:normal):'威力は計算結果で確認';
  const mode=mechanic==='knockOff'&&!conditionalPowerOverride?'持ち物入力から初期判定（手動変更可）':'条件成立は手動指定';
- $('conditionalPowerState').textContent=enabled?(checked?'条件成立として計算中：'+powerText:'条件不成立として計算中：'+powerText):'通常威力で計算中';
+ $('conditionalPowerState').textContent=enabled?(checked?'条件成立として計算中：'+powerText:'通常威力で計算中（条件不成立）：'+powerText):'通常威力で計算中';
  $('conditionalPowerDetail').textContent=enabled?mode+'。チェックONで威力上昇、OFFで通常威力。実機未照合。':'条件付き威力は未使用';
 }
 const autoFields=['power','attack','defense','hp','attMaxHp','attSpeed','defSpeed','moveType','category','attType1','attType2','defType1','defType2','spread'];
