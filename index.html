@@ -53,6 +53,7 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
 .ko-summary[data-outcome=possible]{border-color:#ecd7a4;background:#fbf7e9}
 .ko-summary[data-outcome=survives],.ko-summary[data-outcome=immune]{border-color:#cddbec;background:#eff4fa}
 .ko-summary strong{font-size:14px;color:#243a5b}
+.mini-summary{display:flex;flex-direction:column;align-items:flex-end;gap:2px}.mini-verdict,#miniVerdict{font-weight:700;color:#244d7c;font-size:11px}
 .ko-summary small{font-size:11px;color:#4a607a}
 @media(max-width:700px){
  .stat-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
@@ -361,7 +362,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  <details class="utility" id="battleDetails"><summary>実測ダメージ・盤面の引き継ぎ</summary><div id="battleMount"></div></details>
  <details class="utility" id="auditDetails"><summary>検証状況・計算モデルの注意</summary><div id="auditMount"></div><p>373件・技98件は候補を含みます。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。</p><p>ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。</p></details>
  <footer class="lab-footer">CHLOHA TOOLS <span>非公式検証ツール · 入力はブラウザ内で処理</span></footer>
- <aside class="mobile-result" aria-label="計算結果の要約"><a href="#resultCard"><span id="miniDamage">—</span><small id="miniPercent"></small></a><div class="mini-track"><span id="miniGauge"></span></div></aside>`;
+ <aside class="mobile-result" aria-label="計算結果の要約"><a href="#resultCard"><span id="miniDamage">—</span><small class="mini-summary"><span id="miniPercent"></span><b id="miniVerdict"></b></small></a><div class="mini-track"><span id="miniGauge"></span></div></aside>`;
 
  const mount=(id,target)=>{const e=el(id);const label=e.closest('label');el(target).append(label||e);};
  const header=(side)=>{
@@ -387,6 +388,10 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const status=el('dbStatus');status.className='adapter-status';el('modeControls').append(status);
  const gauge=node('div','damage-visual');gauge.innerHTML='<div class="gauge-caption"><span>最大HPに対するダメージ</span><span id="gaugeText"></span></div><div class="damage-track" role="img" id="damageGauge"><span id="gaugeMax"></span><span id="gaugeMin"></span></div><div class="gauge-scale"><span>0%</span><span>50%</span><span>100%</span></div>';
  el('percent').after(gauge);
+ const verdict=node('div','ko-summary');verdict.id='koSummary';verdict.hidden=true;
+ verdict.setAttribute('role','status');verdict.setAttribute('aria-live','polite');
+ verdict.innerHTML='<strong id="koVerdict">—</strong><small id="koVerdictDetail"></small>';
+ el('output').prepend(verdict);
  el('rollsLabel').id='rollsLabel';const rollDetails=node('details','roll-details');rollDetails.id='rollDetails';const rs=node('summary');rs.append(el('rollsLabel'));rollDetails.append(rs,el('rolls'));el('ko').after(rollDetails);
 
  // Optional per-side stat folding keeps the Pokémon and move controls visible.
@@ -561,6 +566,23 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    lastActive[side]=activeStat(side);
   }
   const r=window.ChlohaLastCalculation,a=r?.a,lo=r?Math.min(...r.r.rolls):0,hi=r?Math.max(...r.r.rolls):0;
+  // A single glance should answer whether this selected attack can KO.
+  const verdict=el('koSummary'),label=el('koVerdict'),detail=el('koVerdictDetail');
+  if(!r){
+   verdict.hidden=true;el('miniVerdict').textContent='';
+  }else{
+   verdict.hidden=false;
+   const hp=a.currentHp,rolls=r.r.rolls,koChance=r.r.koProbability??rolls.filter(x=>x>=hp).length/rolls.length;
+   const percent=(koChance*100).toFixed(2)+'%';
+   let outcome='survives',title='確定耐え';
+   if(hp===0){outcome='fainted';title='対象はすでにひんし';}
+   else if(hi===0){outcome='immune';title='ダメージなし';}
+   else if(lo>=hp){outcome='guaranteed';title='確定KO';}
+   else if(hi>=hp){outcome='possible';title='乱数KO';}
+   verdict.dataset.outcome=outcome;label.textContent=title;
+   detail.textContent='現在HP '+hp+' / KO率 '+(hp===0?'対象外':percent);
+   el('miniVerdict').textContent=title+(hp===0?'':' · '+percent);
+  }
   el('miniDamage').textContent=r?el('damage').textContent:'入力を確認してください';el('miniPercent').textContent=r?el('percent').textContent:'';
   el('gaugeMin').style.width=r?Math.min(100,lo/a.hp*100)+'%':'0%';el('gaugeMax').style.width=r?Math.min(100,hi/a.hp*100)+'%':'0%';el('miniGauge').style.width=r?Math.min(100,hi/a.hp*100)+'%':'0%';
   el('gaugeText').textContent=r?`${(lo/a.hp*100).toFixed(1)}〜${(hi/a.hp*100).toFixed(1)}%`:'—';el('damageGauge').setAttribute('aria-label',el('gaugeText').textContent);
