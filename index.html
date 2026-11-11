@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.162 — Champions仕様修正版</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.163 Pre-Release 2</title><style>
 :root{color-scheme:dark;font-family:system-ui,'Noto Sans JP',sans-serif;background:#0c1220;color:#edf3ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:auto;padding:24px 14px 60px}h1{margin:4px 0}p,small{color:#adbed5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{background:#172338;border:1px solid #34455f;border-radius:15px;padding:17px;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#d6e2f2}input,select{width:100%;background:#0e1728;border:1px solid #52647e;border-radius:8px;padding:10px;color:white;font:inherit}label.check{flex-direction:row;align-items:center}label.check input{width:auto}.wide{grid-column:1/-1}.result{font-size:clamp(26px,5vw,44px);font-weight:800;color:#91d7ff}.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{padding:6px 8px;background:#293c59;border-radius:7px;font-variant-numeric:tabular-nums}.reliability{background:#2b2635;border:1px solid #c8a5ed;border-radius:10px;padding:14px;margin:12px 0;color:#f0e5ff}.reliability ul{margin:8px 0 0;padding-left:20px}.reliability li{margin:5px 0}.warn{background:#40311f;border-left:3px solid #ffd184;padding:12px;border-radius:6px;color:#ffe2a6}details{margin-top:12px}summary{cursor:pointer}pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c4d4e9}button{background:#80c5ff;color:#061223;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 #battleStatePanel button{min-height:44px;margin:4px 3px 4px 0;padding:8px 12px;cursor:pointer}#battleStatePanel button:focus-visible,#useIronRoller:focus-visible{outline:3px solid #91d7ff;outline-offset:2px}#battleStatus{overflow-wrap:anywhere}#battleHistory{max-height:190px;overflow:auto}#battleObservedDamage{max-width:100%!important}@media(max-width:700px){.wrap{padding:14px 10px 40px}.panel{padding:12px}.fields{grid-template-columns:1fr}#battleStatePanel button{width:100%;margin:4px 0}#battleStatePanel label{width:100%}}
 </style><style>
@@ -7,6 +7,14 @@
 .dbpanel p,.dbpanel label{color:#334a63}.dbpanel .dbstatus{color:#243e5c}
 label.checkline{flex-direction:row;align-items:center;gap:8px}label.checkline input{width:auto}
 input:disabled,select:disabled{opacity:1;color:#b8c8dc}
+</style><style id="ui-v0163-style">
+/* v0.163 presentation only. */
+:root{color-scheme:light;font-family:Inter,'Noto Sans JP',system-ui,sans-serif;background:#f4f5f7;color:#202431;font-synthesis:none}
+body>div[role=status],body>main.wrap{display:none!important}body{margin:0;background:#f4f5f7;color:#202431;font-size:14px;line-height:1.5}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}input,select{background:#fff;color:#202431;border:1px solid #dce0e6;border-radius:9px;min-height:42px;padding:9px 10px;max-width:100%;min-width:0;width:100%}input:disabled,select:disabled{background:#f1f3f5;color:#697180;opacity:1}button{min-height:42px;background:#fff;border:1px solid #dce0e6;color:#303747;border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:650}button:hover{background:#f4f5f8}input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #9baee6;outline-offset:2px}label{color:#50586a;font-size:12px;display:flex;flex-direction:column;gap:5px;min-width:0}p,small{color:#6c7483}p{margin:8px 0}h1,h2,h3{color:#202431}h2{font-size:18px;margin:0}a{color:inherit;text-decoration:none}.lab{width:min(1080px,100%);padding:0 24px 32px;margin:auto}.lab-header{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:76px;border-bottom:1px solid #e0e3e8}.brand{display:flex;gap:10px;align-items:center;letter-spacing:.08em;font-size:12px}.brand b{font-weight:750;margin-left:5px}.brand-symbol{display:grid;place-items:center;color:white;background:#232b3c;border-radius:10px;width:32px;height:32px;font-weight:800;font-size:21px}.version{font-size:12px;font-weight:650}.version span{color:#8a6272;margin-left:6px;font-size:10px;border:1px solid #e3ced6;border-radius:5px;padding:3px 5px}.lab-intro{display:flex;align-items:center;justify-content:space-between;padding:26px 0 22px;gap:14px}.eyebrow{font-size:10px;letter-spacing:.14em;color:#858b99;font-weight:700;margin:0 0 5px}.lab-intro h1{font-size:25px;letter-spacing:.01em;margin:0;font-weight:750}.release-note{font-size:11px;text-align:right;border-left:2px solid #d6a451;padding-left:12px;line-height:1.6}.quick-nav{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;position:sticky;top:0;z-index:5;background:#f4f5f7ed;backdrop-filter:blur(10px);padding:9px 0}.quick-nav a{font-size:12px;padding:9px 14px;border-radius:8px;min-height:40px}.quick-nav a:hover{background:#e7eaf0}.quick-nav button{box-shadow:0 2px 3px #1a203009;font-size:12px;letter-spacing:.02em}.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.fighter{--accent:#c6414b;--tint:#fff3f3;background:#fff;border:1px solid #e0e3e9;border-top:3px solid var(--accent);border-radius:14px;padding:20px;box-shadow:0 3px 9px #1a203003;min-width:0}.defender{--accent:#3574c2;--tint:#eff6ff}.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.card-top h2{font-size:16px;display:flex;align-items:center;gap:7px}.card-top i{width:7px;height:7px;background:var(--accent);border-radius:50%}.card-top>span{font-size:9px;font-weight:650;letter-spacing:.14em;color:var(--accent)}.pokemon-header{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;margin-bottom:18px}.portrait{display:grid;place-items:center;align-self:center;min-height:84px;background:var(--tint);border-radius:50%;overflow:hidden}.portrait img{object-fit:contain;image-rendering:auto;width:88px;height:88px}.portrait span{font-size:10px;color:#778090}.pokemon-choice label{font-size:10px}.search-label{margin-bottom:6px}.search-label input{min-height:32px;height:32px;font-size:12px;padding:5px 9px;background:#f8f9fb}.pokemon-choice select{font-size:16px;font-weight:750;border:0;padding:2px 25px 2px 0;min-height:32px}.pokemon-choice label:has(select){font-size:0}.type-badges{display:flex;gap:5px;margin-top:4px}.type-pill{background:#eef0f4;color:#586071;font-size:10px;border-radius:4px;padding:2px 9px}.base-stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid #edf0f4;border-bottom:1px solid #edf0f4;padding:9px 0;gap:4px}.base-stats span{display:grid;text-align:center;gap:2px}.base-stats small{font-size:9px}.base-stats b{font-size:12px;font-variant-numeric:tabular-nums}.quick-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.quick-fields:has(#dbMove){grid-template-columns:1fr}.quick-fields select{font-size:12px}.quick-fields label:has(#attackStage),.quick-fields label:has(#defenseStage){grid-column:1/-1}.stat-table{margin:16px 0}.stat-head,.stat-row{display:grid;grid-template-columns:1fr 65px 66px 69px;gap:8px;align-items:center}.stat-head{font-size:9px;color:#8a91a0;margin-bottom:7px;text-align:center}.stat-head span:first-child{text-align:left}.stat-row{padding:9px 8px;border-radius:9px;margin:5px -8px;background:#fafbfc;border:1px solid transparent}.stat-row.is-active{background:var(--tint);border-color:color-mix(in srgb,var(--accent) 12%,white)}.stat-name{font-size:12px;font-weight:700;color:#535b6b}.stat-name small{display:block;font-size:9px;font-weight:400;white-space:nowrap}.stat-row input[type=number]{padding:7px;text-align:center;font-variant-numeric:tabular-nums}.stat-row select{padding:7px;font-size:11px}.stat-row input[id$=actual]{font-weight:750;color:var(--accent)}.range-label{grid-column:2/-1}.range-label input{appearance:none;height:15px;min-height:15px;border:0;padding:0;background:transparent;accent-color:var(--accent)}input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:3px;background:#dce1e9}input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;background:var(--accent);border:2px solid white;border-radius:50%;margin-top:-5px;box-shadow:0 1px 3px #0002}details{border-top:1px solid #e8ebf0;margin-top:15px;padding-top:12px}summary{font-size:12px;font-weight:650;color:#697180;cursor:pointer;min-height:34px;display:list-item;align-content:center}details[open]>summary{margin-bottom:10px}.advanced-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.advanced-fields label.check,.advanced-fields label.checkline{flex-direction:row;align-items:center;gap:8px}.advanced-fields input[type=checkbox]{width:16px;height:16px;min-height:16px;flex-shrink:0;accent-color:var(--accent,#536682)}.budget{font-size:10px;color:#9197a3;margin:12px 0 0;text-align:right}.unavailable{font-size:11px;line-height:1.6;background:#f5f6f9;padding:10px;border-radius:8px}.ui-notice{font-size:12px;color:#775b28;margin:10px 0;min-height:0}.ui-notice:empty{display:none}.result-card{background:#fff;border:1px solid #dce1e9;border-radius:14px;padding:22px 26px;margin-top:20px}.result-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.result-heading h2{font-size:17px}.result-heading button{font-size:11px}.result-card .result{color:#283b59;font-size:38px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.result-card #percent{font-size:13px;color:#69748a;margin-top:2px}.result-card #hits{font-size:16px;margin:14px 0 2px;color:#3c5b83}.result-card #matchup{font-size:11px;margin:0}.result-card #ko{font-size:12px;color:#617086}.damage-visual{max-width:640px;margin:18px 0}.gauge-caption{display:flex;justify-content:space-between;font-size:10px;color:#7f8797;margin-bottom:8px}.damage-track{height:14px;background:#edf0f5;border-radius:5px;position:relative;overflow:hidden}.damage-track>span{position:absolute;height:100%;left:0;top:0;transition:width .18s ease}.damage-track #gaugeMax{background:#b0c6e4}.damage-track #gaugeMin{background:#4778b6}.gauge-scale{display:flex;justify-content:space-between;font-size:9px;color:#a1a8b3;margin-top:4px}.roll-details{margin-top:10px}.roll-details summary p{display:inline;font-size:11px}.chips span{background:#edf2f9;color:#526680;font-size:11px;padding:4px 7px}.utility{background:#fff;border:1px solid #e0e4eb;border-radius:11px;padding:12px 18px;margin-top:12px}.utility>summary{font-size:12px}.utility p{font-size:12px}.utility pre{color:#526071}.reliability{background:#f6f4fa;border:1px solid #e0d9ed;color:#685d79;font-size:11px;padding:12px}.reliability li{margin:4px 0}.warn{background:#fff4e3;color:#825f25;border-color:#dbad62;font-size:12px}#battleStatePanel{border:0!important;padding:0!important}#battleStatePanel p{font-size:12px}#battleStatePanel button{font-size:12px}#battleStatePanel #battleCommit{background:#344d70;color:white;border:0}#battleStatePanel label{max-width:220px}.adapter-status{grid-column:1/-1;font-size:11px}.lab-footer{font-size:10px;letter-spacing:.07em;display:flex;justify-content:space-between;padding:28px 0;color:#798291}.lab-footer span{letter-spacing:0;font-size:10px}.mobile-result{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}#manualFields:not(.is-manual){opacity:.65}.dbside{color:#50586a}#foulPlayInputs{grid-column:1/-1}.dbside label{color:#50586a}.lab #rolls{max-height:180px;overflow:auto}.lab button{touch-action:manipulation}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.damage-track>span{transition:none}}
+@media(max-width:700px){.lab{padding:0 14px 105px}.lab-header{min-height:64px}.brand{font-size:10px;gap:7px;letter-spacing:.04em}.brand b{margin-left:3px}.brand-symbol{width:28px;height:28px;font-size:18px}.version{font-size:10px}.version span{display:block;font-size:9px;margin:3px 0 0;padding:1px 4px;text-align:center}.lab-intro{padding:20px 0 8px;display:block}.lab-intro h1{font-size:22px}.release-note{font-size:10px;text-align:left;margin-top:12px;padding-left:8px}.release-note br{display:none}.quick-nav{gap:2px;justify-content:space-between;padding:10px 0;margin-bottom:8px}.quick-nav a{font-size:11px;padding:10px 9px}.quick-nav button{font-size:11px;padding:7px 11px}.match-grid{grid-template-columns:1fr;gap:16px}.fighter{padding:17px}.card-top{margin-bottom:13px}.pokemon-header{grid-template-columns:76px minmax(0,1fr);gap:10px;margin-bottom:12px}.portrait{min-height:76px}.portrait img{width:80px;height:80px}.stat-row{grid-template-columns:minmax(45px,1fr) 64px 62px 68px;gap:7px}.stat-head{grid-template-columns:minmax(45px,1fr) 64px 62px 68px;gap:7px}.result-card{padding:18px}.result-card .result{font-size:32px}.advanced-fields{gap:10px}.advanced-fields select{font-size:12px}.mobile-result{position:fixed;display:block;z-index:10;left:0;bottom:0;width:100%;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:#fffffff5;border-top:1px solid #dfe4ec;backdrop-filter:blur(14px);box-shadow:0 -5px 20px #2738520a}.mobile-result a{display:flex;justify-content:space-between;align-items:center;gap:8px}.mobile-result #miniDamage{font-weight:800;font-size:16px;color:#2d466b;white-space:nowrap}.mobile-result small{font-size:10px;text-align:right}.mini-track{height:4px;background:#edf0f5;border-radius:5px;margin-top:7px;overflow:hidden}.mini-track span{height:100%;display:block;background:#6590c7}.lab-footer{display:block}.lab-footer span{display:block;margin-top:6px}}
+@media(max-width:360px){.lab{padding-left:10px;padding-right:10px}.fighter{padding:13px}.stat-row,.stat-head{grid-template-columns:minmax(40px,1fr) 55px 57px 61px;gap:5px}.mobile-result #miniDamage{font-size:14px}}
+
 </style></head><body><div role="status" style="margin:12px;padding:12px;border:1px solid #a77;border-radius:8px">v0.162：373件を登録（未内定・未検証候補を含む）。実機一致は未確認です。</div><main class="wrap"><section role="note" aria-label="プレリリースの注意" style="margin:12px;padding:14px;border:1px solid #d19c54;border-radius:10px;background:#302718;color:#ffe4b8"><strong>v0.162 Pre-Release 1 — 限定検証用</strong><p style="margin:7px 0">計算結果はPokémon Champions実機と未照合です。登録373件は候補であり、収録・習得技・ダメージ精度を保証しません。実戦の確定判断には使用しないでください。</p><p style="margin:7px 0">確認できた実測ダメージは、技・能力値・HP・天候・フィールドなどの条件とともに記録してください。個人情報・アカウントIDは記入不要です。</p></section><header><small>CHLOHA TOOLS / CHAMPIONS / PRE-RELEASE 1</small><aside style="border:1px solid #d5b67c;padding:12px;border-radius:10px;margin-bottom:15px;background:#302718"><strong>v0.162 検証中</strong>：登録373件。未内定ポケモンも残す方針です。技習得可否・実機ダメージ一致は未検証です。</aside><h1>Damage Lab</h1><section style="border:1px solid #d19c54;border-radius:12px;padding:12px;margin:16px 0;background:#342817;color:#ffe4b8"><strong>v0.162 開発版・精度未保証</strong><div style="font-size:13px;margin-top:5px">登録373件／技98件。未検証・名簿のみの候補を含みます。技習得可否・特性/道具の全補正・実機ダメージ一致は未検証です。対戦の確定判断に使用しないでください。</div><details style="margin-top:8px"><summary>データ検証状況</summary><div id="auditSummary">登録373件。個別データ照合は未完了。</div><p><a href="https://gamewith.jp/pokemon-champions/546414" target="_blank" rel="noopener noreferrer">Champions収録一覧（GameWith）</a></p></details></section><p>Pokémon Champions向け計算機・検証版（実測一致未保証）</p></header><div class="warn">検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。</div><section class="dbpanel" aria-label="ポケモン選択">
 <h2>ポケモン・技選択（v0.162）</h2><p class="dbnote">登録373件の候補を維持。未照合データも含むため、実機一致は保証しません。他の未検証フォルムは引き続き要照合。技候補の習得可否は未検証です。技の習得を保証しません。Lv50・個体値31固定、能力ポイント（各0〜32、合計66以内）から実数値を算出します。</p>
 <div class="dbgrid"><div><h3>⚔ 攻撃側</h3><div class="dbside">
@@ -270,4 +278,233 @@ window.ChlohaSelfTest=()=>{
  const failed=cases.filter(([name,got,want])=>got!==want).map(([name,got,want])=>`${name}: ${got} != ${want}`);
  return {passed:cases.length-failed.length,total:cases.length,failed,cases};
 };
+</script><script id="ui-v0163-script">
+window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur":3,"charizard":6,"mega_charizard_x":10034,"mega_charizard_y":10035,"hydreigon":635,"goodra":706,"hisuian_goodra":10242,"kommo_o":784,"dragapult":887,"archaludon":1018,"mega_venusaur":10033,"blastoise":9,"mega_blastoise":10036,"meganium":154,"mega_meganium":10282,"typhlosion":157,"hisuian_typhlosion":10233,"feraligatr":160,"mega_feraligatr":10283,"mega_salamence":10089,"mega_golisopod":10316,"mega_baxcalibur":10325,"gw091_01":10038,"gw091_02":94,"gw091_03":10281,"gw091_04":10076,"gw091_05":376,"gw091_06":373,"gw091_07":10305,"gw091_08":26,"gw091_09":10280,"gw091_10":121,"gw091_11":637,"gw091_14":748,"gw091_15":812,"gw091_16":815,"gw091_17":908,"gw091_18":923,"gw091_19":212,"gw091_20":197,"gw091_21":10104,"gw091_22":658,"gw092_01":389,"gw092_02":392,"gw092_03":395,"gw092_04":497,"gw092_05":500,"gw092_06":10286,"gw092_07":503,"gw092_08":10236,"gw092_09":652,"gw092_10":655,"gw092_11":724,"gw092_12":10244,"gw092_13":727,"gw092_14":730,"gw092_15":911,"gw092_16":914,"gw092_17":10058,"gw092_19":547,"gw092_20":260,"gw092_21":10064,"gw092_22":282,"gw092_23":10051,"gw092_24":324,"gw092_25":350,"gw092_26":398,"gw092_27":10308,"gw092_28":700,"gw092_29":10294,"gw092_30":10046,"candidate093_01":25,"candidate093_02":10100,"candidate093_03":36,"candidate093_04":38,"candidate093_05":59,"candidate093_06":10230,"candidate093_07":130,"candidate093_08":10041,"candidate093_09":131,"candidate093_10":143,"candidate093_11":80,"candidate093_12":10071,"candidate093_13":181,"candidate093_14":10045,"candidate093_15":214,"candidate093_16":10047,"candidate093_17":242,"candidate093_18":227,"candidate093_19":184,"candidate093_20":286,"candidate093_21":303,"candidate093_22":10052,"candidate093_23":306,"candidate093_24":10053,"candidate093_25":308,"candidate093_26":10054,"candidate093_27":334,"candidate093_28":10067,"candidate093_29":460,"candidate093_30":10060,"candidate093_36":479,"candidate093_37":468,"candidate093_38":530,"candidate093_39":598,"candidate093_40":609,"pelipper":279,"ceruledge":937,"sneasler":903,"bastiodon":411,"v097_001":10287,"v097_002":10290,"v097_003":10295,"v097_004":10320,"v098_133":40,"v098_134":53,"v098_135":317,"v098_136":673,"mega_clefable_v0101":10278,"roster_v0103_01":10108,"roster_v0103_02":83,"roster_v0103_03":122,"roster_v0103_04":768,"roster_v0103_05":818,"roster_v0103_06":828,"roster_v0103_09":853,"roster_v0103_10":863,"roster_v0103_11":865,"roster_v0103_12":871,"roster_v0103_13":930,"roster_v0103_14":943,"roster_v0103_15":998,"roster_v0104_001":10090,"roster_v0104_002":10073,"roster_v0104_003":10304,"roster_v0104_004":10037,"roster_v0104_005":10279,"roster_v0104_006":10039,"roster_v0104_007":10040,"roster_v0104_008":10042,"roster_v0104_009":10284,"roster_v0104_010":10048,"roster_v0104_011":10049,"roster_v0104_012":10065,"roster_v0104_013":10050,"roster_v0104_014":10055,"roster_v0104_015":10292,"roster_v0104_016":10293,"roster_v0104_017":10296,"roster_v0104_018":10088,"roster_v0104_019":10066,"roster_v0104_020":10070,"roster_v0104_021":10087,"roster_v0104_022":10056,"roster_v0104_023":10306,"roster_v0104_024":10074,"roster_v0104_025":10068,"roster_v0104_026":10285,"roster_v0104_027":10069,"roster_v0104_028":10288,"roster_v0104_029":10289,"roster_v0104_030":10291,"roster_v0104_031":10313,"roster_v0104_034":10297,"roster_v0104_035":10298,"roster_v0104_036":10299,"roster_v0104_037":10300,"roster_v0104_038":10315,"roster_v0104_039":10302,"roster_v0104_040":10303,"roster_v0104_041":10321,"roster_v0104_042":15,"roster_v0104_043":18,"roster_v0104_044":65,"roster_v0104_045":71,"roster_v0104_046":115,"roster_v0104_047":127,"roster_v0104_048":142,"roster_v0104_049":229,"roster_v0104_050":254,"roster_v0105_001":310,"roster_v0105_002":257,"roster_v0105_003":428,"roster_v0105_004":302,"roster_v0105_005":319,"roster_v0105_006":323,"roster_v0105_007":354,"roster_v0105_008":358,"roster_v0105_009":362,"roster_v0105_010":475,"roster_v0105_011":478,"roster_v0105_012":531,"roster_v0105_013":545,"roster_v0105_014":560,"roster_v0105_015":623,"roster_v0105_018":687,"roster_v0105_019":689,"roster_v0105_020":691,"roster_v0105_021":701,"roster_v0105_022":740,"roster_v0105_023":780,"roster_v0105_024":870,"roster_v0105_025":970,"roster_v0105_026":604,"roster_v0105_028":952,"roster_v0105_030":359,"roster_v0105_031":448,"roster_v0105_032":461,"roster_v0105_033":823,"roster_v0105_034":1000,"roster_v0105_035":983,"roster_v0105_036":450,"roster_v0105_040":861,"roster_v0105_041":437,"roster_v0105_042":713,"roster_v0105_043":10243,"roster_v0105_044":695,"roster_v0105_045":423,"roster_v0105_046":591,"roster_v0105_047":959,"roster_v0105_049":979,"roster_v0105_050":1004,"roster_v0106_001":45,"roster_v0106_002":211,"roster_v0106_003":518,"roster_v0106_004":904,"roster_v0106_005":972,"roster_v0106_009":132,"roster_v0106_010":134,"roster_v0106_011":135,"roster_v0106_012":136,"roster_v0106_013":196,"roster_v0106_014":470,"roster_v0106_015":471,"roster_v0106_016":133,"roster_v0106_017":405,"roster_v0106_018":409,"roster_v0106_019":693,"roster_v0106_020":697,"roster_v0106_021":699,"roster_v0106_022":1019,"roster_v0106_023":707,"roster_v0106_024":466,"roster_v0106_025":467,"roster_v0106_028":199,"roster_v0106_031":10115,"roster_v0106_032":10113,"roster_v0106_035":864,"roster_v0106_036":630,"roster_v0106_037":628,"roster_v0106_038":10240,"roster_v0106_039":676,"roster_v0106_040":666,"roster_v0106_041":10239,"roster_v0106_042":571,"roster_v0106_043":407,"roster_v0106_044":703,"roster_v0106_045":685,"roster_v0106_046":683,"roster_v0106_047":763,"roster_v0106_048":765,"roster_v0106_049":766,"roster_v0106_050":750,"roster_v0107_001":584,"roster_v0107_002":858,"roster_v0107_003":939,"roster_v0107_004":24,"roster_v0107_005":28,"roster_v0107_006":10102,"roster_v0107_007":31,"roster_v0107_008":34,"roster_v0107_009":55,"roster_v0107_010":57,"roster_v0107_011":73,"roster_v0107_012":76,"roster_v0107_013":10111,"roster_v0107_014":78,"roster_v0107_016":91,"roster_v0107_017":101,"roster_v0107_018":10232,"roster_v0107_019":103,"roster_v0107_020":10114,"roster_v0107_021":106,"roster_v0107_022":107,"roster_v0107_023":237,"roster_v0107_024":49,"roster_v0107_025":128,"roster_v0107_026":113,"roster_v0107_027":465,"roster_v0107_028":230,"roster_v0107_029":232,"roster_v0107_030":195,"roster_v0107_031":203,"roster_v0107_032":981,"roster_v0107_034":340,"roster_v0107_035":369,"roster_v0107_036":454,"roster_v0107_037":472,"roster_v0107_038":473,"roster_v0107_039":477,"roster_v0107_040":569,"roster_v0107_041":553,"roster_v0107_042":563,"roster_v0107_045":612,"roster_v0107_046":621,"mega-absol":10057,"mega-lucario":10059,"steelix":208,"mega-steelix":10072,"gw_screen_006":464,"gw_screen_026":505,"gw_screen_027":510,"gw_screen_028":512,"gw_screen_029":514,"gw_screen_030":516,"gw_screen_036":534,"gw_screen_046":579,"gw_screen_052":866,"gw_screen_053":867,"gw_screen_054":869,"gw_screen_062":899,"gw_screen_063":900,"gw_screen_078":934,"gw_screen_079":936,"gw_screen_085":956,"gw_screen_089":968,"gw_screen_099":1013};window.ChlohaLocalSprites={"garchomp":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAMFBMVEUAAAAQEBApKVJBQYtaEABaYqxqOVpze4N7e829OUG9c3vFlBDFzdXmSjH/1Rj///9+tnY+AAAAAXRSTlMAQObYZgAABGtJREFUWMPtl71r5EYUwLWjhC3SSDGXKpfIMwzXGBzPZCAQOKcwARcurMmrzh9NuCKVOQLXBLYIB+7jFFvkH3ATSHBlCMRhUzmYfLgwYcurDgS243MjUN6b0fq8u/pYt8nNgmBX76f3rfc2CF6f//UJ9R2Bj3ZnJQ5/4IkDnn0wk/xbWXZgETGwm84EPMwOAMByjpdkFl+3shdARwGY9TZprQKxlTkVAFxDGxDufs3lowxujolaAPTTQAYGrNZLMXBoAZhGWflTapfeizUPYt2mIRAcUvZI6/jFnNYREm0A01okKOsOCsetQRVKJx0dxxcIzJKEgAmUizuOuBVTUlhHcLq+8/ixfpW10GCEG8uk++v+939AGdNQu5Q0Ar0v9v8ZlgCXPoeNHn25//K3s2/UPMmj9e0WvdzPh3vfYiUxXoa4OWTdTz8fnu31NedCzwQEayi/2gdYH4lz3pyNN1ZWVvv9PxX3SVe8PYEo3z8Fq5xNKmAPdtqB7zCwsB4TIXhx3Uzozwg4pfiTVQqK4rpRHhDoD0kFkAqJQLHT1KmwudrfGzoVi6hCptvNwDMY/tVfGzoVxVysIOUn9TZ1dxjA0B9UcRKfKxB6oQG4lrBZAqjiePFcpuj3cT5l09MnHsjlSMEKhXbDAXrheBLoFVeU0afdYrA5XHNAf2XtFDaOAOUhnQS6RQG7SPQe5LB5tueAM/3hClY2Anhd2JlUcDwgoneBLu/F9z2gE+wfSx2RskmL8iNqLr6YA/weBZ0RwAio6KBukSdC4ZMWBwCf4A/3SyCQGNRK4CgQvht9+66NAFYD5Il7+5jRLUs2UWkHnFU29RG9Jx0RvQIsAUE1sEMA3rEeYPbvw8Mh+kv2yerXBvMe+BdwaLMMZ5dRqgFw8uuu/gLzMQEWQCQ0aCpfZAxugPMQHiKQ/bht0jYgwud3i3tAGrKD7Uvg7cA51h8YlH8ut3NDxpt6YJ1yeC/HYOH4Bbl9aUjUA1MjwoyAAUUXsucgN5YNxcddwrQGYDk4YAtA2uXLG8DUAW4gWPpiJSznZBNDIIRKICp9t5YWAQR+MRgnAgyo6UXgFkDrAEinKcWmoL5IqoFyRBlChB9vuAolYRsgQTvXCcAFAVvVTmfCeMA9N3UXV14gFGD7pjUA09Rh8dulHg+kKdrFK9Yfagbs1HmscdJjlSSzUpViwCrWLQ8wPwKZ25qUtCa1XAihVVRlE/0o9JJbVPyAM6l2gBvbdYDbkzp+gip6OE4tsVQBvOmAsNQelzMXIaVKtVMVHrmNRnhzPaFoTnO/cU0dGfm9rLQ3nvNjHatI2kqg4zXwkXpcteIYfUgwgjZq2vxu38SdIxkFpPKQxbdvCpeYsHZPZmLCQe5NrNvEGVbDeAixxNz3+Ur5r66ohsbMBWjY2rtFb2Avx/wLG4EgLvJePmZR92oDTup36t7x0/znaHzW9AZFPdCJOvHkuOxdFG1b+xhwhJ87AUkvevcuwJPg/aRztz+NdxR/ff4r51+UwwMFoEzlqwAAAABJRU5ErkJggg==","tyranitar":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAKlBMVEUAAAAASosQEBAge71KWjlKnOZzc3NznGKUKQCszZzFxcXVUgDe5s3////uM8O7AAAAAXRSTlMAQObYZgAAA6dJREFUWMPtl79rHEcUx4dlUX+4crd5vmgzilVIS3plPWYZcCqxvQmpAmqWhce2rlIPQ4ZPqyJNyF/gv0BwlTAyCPK/pJg7OUKnu73anup+vM++ed+Z950dY76Nr3a4iwPjqQ6LvwkHZSlXVKacn6V8dxOM84SZ4RfvbmiXqnMTlGGVHCHqMHNC/vVqtYqWbm4F7Wp101qIcyV6vcIB4JxzbpakbgJgAmYU/o72PgMAMqPmePx5OiC+5MuYZsSbIrlWugzMW4gTuf3jgwcgzpKpNT98/JAzpHkymR8/eg6Rqfj7U372zHhTuAk9QCZjLDodIpMpVCfArWWa0adLBUbxAKozZOomSCIWSDpHJgsMIhYmnSXTEhBZzpapEEh5PwVj5myO9aIphNLtN5syy5NaIUq332xKn+VpRfCx3m82HksCkusiBK32eGxJALW5HwDZ47GlJ5DGDHgg7PFYP2FJb84eAOqdZZdMWPRNYzdAGnaW7YgBxqZ5uQEm6l0JEjGQxsvmHKCDyO4K8FjS275pLBAnPLhql4n5ZNGf++bsJRB18iSWbgcQBxj7xeLFOUA9TkyE4fkZMQ6kse8v85zqUafpeWsqJnS0pLd9f5l1Cksdeb7s363TC4tm4BxIQz3q8+736/U/UuDHvu8vm6ax0OmwVH0WOL27NUXw46Lvm2axCBDqYahH/5w/XUllisq2Py0Wi0VzhiUMMhRyHU/ebwVyw1v/fd83TfOSYGvVwRR3J7e7uk541TdNcwaEWlUrc1zc7T6zQrMGUBWtjDHHe4AXTd4aJNFO9poAfLdYLAAISWWfCxTWE9b9gEd03OPG/hHgkrbdsHtCdoRXuadjhFGWe4AwQsgJooVWZPd7kKW2mxOxhSj7ACFsgOShdaobncqLrVbvkY17Z1NWHSR73LZMZbRpyGeojpkbXavuwhi/dZeXoFpPkHQDtCI6xXZJrIwpnxizRXVQVVUdITqHtrUqRBeWzj1NU9aqWmfC4sGptqoKEMQ+7e8y1g8pbATo8tcpf35SR8HwkGKIAMOGB7ftFLYqOkj9BdB6DejW+DImlboqJBcBSYd1SSpb4o8867UVqXXIC5eBcdsWObqysNkMhUjNWmUR2XqgXsn1cafDQ1sWtaq2ImKMKbYBcv/bv9f/7+Ji6bTd/Lml9wo5va4eG3r35cFb/aB49OPRpz9vu1/ez79tXV2f3svJ3XxAqtP7Sv465EZ3dLsx3dlJvl2zv+bxH3YYQRdTAnqZAAAAAElFTkSuQmCC"};
+// v0.163 presentation adapter. The v0.162 engine and databases above are unchanged.
+(() => {
+ 'use strict';
+ const el=id=>document.getElementById(id);
+ const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
+ const app=node('main','lab');app.id='app';document.body.append(app);
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.163 <span>Pre-Release 2</span></span></header>
+ <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
+ <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
+ <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>天候・フィールド・その他補正</summary><div id="attAdvanced" class="advanced-fields"></div></details><p id="attBudget" class="budget"></p></section>
+ <section id="defenderCard" class="fighter defender"><div class="card-top"><h2><i></i>防御側</h2><span>DEFENDER</span></div><div class="pokemon-header" id="defPokemonHeader"></div><div id="defStats" class="stat-table"></div><div id="defMain" class="quick-fields"></div><details id="defDetails"><summary>壁・HP・その他補正</summary><div id="defAdvanced" class="advanced-fields"></div><p class="unavailable">定数ダメージ（ステルスロック・天候・毒など）の自動計算は未対応です。現在HPへ手動で反映してください。</p></details><p id="defBudget" class="budget"></p></section></div>
+ <p id="uiNotice" class="ui-notice" role="status" aria-live="polite"></p>
+ <section id="resultCard" class="result-card"><div class="result-heading"><div><p class="eyebrow">DAMAGE ESTIMATE</p><h2>計算結果</h2></div><div id="resultActions"></div></div><div id="resultMount"></div></section>
+ <details class="utility" id="inputSettings"><summary>入力モード・手動ステータス</summary><div id="modeControls" class="advanced-fields"></div><p>能力ポイント方式：各0〜32、合計66以内。空欄は0。自動反映オフでは実数値・タイプ・威力を編集できます。</p><div id="manualFields" class="advanced-fields"></div><p id="manualNote">選択した技の固有効果は手入力でも維持します。技に合う分類・威力・参照能力を確認してください。</p></details>
+ <details class="utility" id="battleDetails"><summary>実測ダメージ・盤面の引き継ぎ</summary><div id="battleMount"></div></details>
+ <details class="utility" id="auditDetails"><summary>検証状況・計算モデルの注意</summary><div id="auditMount"></div><p>373件・技98件は候補を含みます。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。</p><p>ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。</p></details>
+ <footer class="lab-footer">CHLOHA TOOLS <span>非公式検証ツール · 入力はブラウザ内で処理</span></footer>
+ <aside class="mobile-result" aria-label="計算結果の要約"><a href="#resultCard"><span id="miniDamage">—</span><small id="miniPercent"></small></a><div class="mini-track"><span id="miniGauge"></span></div></aside>`;
+
+ const mount=(id,target)=>{const e=el(id);const label=e.closest('label');el(target).append(label||e);};
+ const header=(side)=>{
+  const wrap=el(side+'PokemonHeader');
+  wrap.innerHTML=`<div class="portrait"><img id="${side}Portrait" alt="" width="88" height="88"><span id="${side}PortraitFallback" hidden>画像未登録</span></div><div class="pokemon-choice"><label class="search-label">ポケモンを探す<input type="search" id="${side}Search" placeholder="名前で検索" autocomplete="off"></label><div id="${side}SelectMount"></div><div class="type-badges" id="${side}Types"></div></div><div class="base-stats" id="${side}BaseStats"></div>`;
+  mount(side==='att'?'dbAttPokemon':'dbDefPokemon',side+'SelectMount');
+ };
+ header('att');header('def');
+ mount('dbMove','attQuick');
+ for(const [ids,target] of [
+  [['attAbility','attItem','attackStage'],'attMain'],[['defAbility','defItem','defenseStage'],'defMain'],
+  [['weather','terrain','attGrounding','customMultiplier','burn','critical','helpingHand','stabMode','attMaxHp','attCurrentHp','attSpeed','attSpeedStage','attParalyzed','attTailwind','dbAttHpEv','dbAttSpeedEv','dbAttSpeedNature'],'attAdvanced'],
+  [['screen','defGrounding','currentHp','defSpeed','defSpeedStage','defParalyzed','defTailwind','battleFormat','spread','friendGuardCount','dbDefSpeedEv','dbDefSpeedNature'],'defAdvanced'],
+  [['dbAuto'],'modeControls'],[['level','power','attack','defense','hp','moveType','category','attType1','attType2','defType1','defType2'],'manualFields']])for(const id of ids)mount(id,target);
+ // Keep the old active-stat inputs as the stable bridge used by the v0.162 adapter.
+ const bridge=node('div');bridge.id='legacyBridge';bridge.hidden=true;app.append(bridge);
+ for(const id of ['dbAttEv','dbAttNature','dbDefEv','dbDefNature','dbDefHpEv'])bridge.append(el(id).closest('label'));
+ el('defAdvanced').append(el('foulPlayInputs'));
+ el('resultMount').append(el('error'),el('output'));el('resultActions').append(el('copy'),el('useIronRoller'));
+ el('battleMount').append(el('battleStatePanel'));
+ el('auditMount').append(document.querySelector('.reliability'));
+ const trace=el('trace').closest('details');el('auditMount').append(trace);
+ const status=el('dbStatus');status.className='adapter-status';el('modeControls').append(status);
+ const gauge=node('div','damage-visual');gauge.innerHTML='<div class="gauge-caption"><span>最大HPに対するダメージ</span><span id="gaugeText"></span></div><div class="damage-track" role="img" id="damageGauge"><span id="gaugeMax"></span><span id="gaugeMin"></span></div><div class="gauge-scale"><span>0%</span><span>50%</span><span>100%</span></div>';
+ el('percent').after(gauge);
+ el('rollsLabel').id='rollsLabel';const rollDetails=node('details','roll-details');rollDetails.id='rollDetails';const rs=node('summary');rs.append(el('rollsLabel'));rollDetails.append(rs,el('rolls'));el('ko').after(rollDetails);
+
+ const keys=['hp','attack','defense','specialAttack','specialDefense','speed'];
+ const short={hp:'HP',attack:'攻撃',defense:'防御',specialAttack:'特攻',specialDefense:'特防',speed:'素早さ'};
+ const makeModel=()=>({points:Object.fromEntries(keys.map(k=>[k,0])),nature:Object.fromEntries(keys.map(k=>[k,'neutral'])),rank:Object.fromEntries(keys.map(k=>[k,0])),manual:{}});
+ let models={att:makeModel(),def:makeModel()};models.att.nature.attack='plus';models.att.nature.specialAttack='plus';
+ let busy=false,lastActive={att:'attack',def:'defense'},adapterError=false;
+ const species=side=>pokemonById.get(el(side==='att'?'dbAttPokemon':'dbDefPokemon').value);
+ const activeStat=side=>{
+  const mechanic=window.ChlohaMoveMechanic,physical=el('category').value==='physical';
+  return side==='att'?(mechanic==='bodyPress'?'defense':mechanic==='foulPlay'?'foulPlay':physical?'attack':'specialAttack'):(mechanic==='psyshock'||physical?'defense':'specialDefense');
+ };
+ function notify(message){el('uiNotice').textContent=message;}
+ function syncBridge(){
+  for(const side of ['att','def']){
+   const m=models[side],k=activeStat(side),prefix=side==='att'?'dbAtt':'dbDef';
+   if(k!=='foulPlay'){el(prefix+'Ev').value=m.points[k];el(prefix+'Nature').value=m.nature[k];el(side==='att'?'attackStage':'defenseStage').value=m.rank[k];}
+   el(side==='att'?'dbAttHpEv':'dbDefHpEv').value=m.points.hp;
+   el(prefix+'SpeedEv').value=m.points.speed;el(prefix+'SpeedNature').value=m.nature.speed;
+  }
+ }
+ function importBridge(id){
+  for(const side of ['att','def']){
+   const prefix=side==='att'?'dbAtt':'dbDef',m=models[side],k=activeStat(side);
+   const field=k==='foulPlay'?null:k;
+   if(id===prefix+'Ev'&&field)m.points[field]=Number(el(id).value||0);
+   if(id===prefix+'Nature'&&field)m.nature[field]=el(id).value;
+   if(id===(side==='att'?'dbAttHpEv':'dbDefHpEv'))m.points.hp=Number(el(id).value||0);
+   if(id===prefix+'SpeedEv')m.points.speed=Number(el(id).value||0);
+   if(id===prefix+'SpeedNature')m.nature.speed=el(id).value;
+   if(id===(side==='att'?'attackStage':'defenseStage')&&field)m.rank[field]=Number(el(id).value);
+  }
+ }
+ function validateModels(){
+  if(!el('dbAuto').checked)return;
+  for(const side of ['att','def']){
+   const m=models[side];
+   if(Object.values(m.points).some(v=>!Number.isInteger(v)||v<0||v>32))throw Error('能力ポイントは0〜32の整数で入力してください');
+   // Foul Play's independent target Attack input replaces the model Attack allocation.
+   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);
+   if(total>66)throw Error((side==='att'?'攻撃側':'防御側')+'の能力ポイント合計は66以内');
+  }
+ }
+ function recalculate(){
+  if(busy)return;busy=true;
+  try{
+   validateModels();syncBridge();applyDb();dbInputError=null;adapterError=false;render();
+  }catch(e){adapterError=true;showInputError(e);}
+  finally{busy=false;refreshUI();}
+ }
+ const rows={att:['attack','specialAttack','defense'],def:['hp','defense','specialDefense']};
+ for(const side of ['att','def']){
+  const table=el(side+'Stats');table.innerHTML='<div class="stat-head"><span>能力</span><span>ポイント</span><span>性格</span><span>実数値</span></div>';
+  for(const k of rows[side]){
+   const row=node('div','stat-row');row.id=`${side}-${k}-row`;
+   row.innerHTML=`<div class="stat-name">${short[k]}<small id="${side}-${k}-base"></small></div><label class="points-label"><span class="sr-only">${side==='att'?'攻撃側':'防御側'} ${short[k]}能力ポイント</span><input id="${side}-${k}-points" type="number" min="0" max="32" step="1" value="0"></label><label><span class="sr-only">${short[k]}の性格補正</span><select id="${side}-${k}-nature" ${k==='hp'?'disabled':''}><option value="plus">＋</option><option value="neutral">なし</option><option value="minus">－</option></select></label><label><span class="sr-only">${short[k]}実数値</span><input id="${side}-${k}-actual" type="number" min="1" max="9999" step="1"></label><label class="range-label"><span class="sr-only">${short[k]}能力ポイントのスライダー</span><input id="${side}-${k}-range" type="range" min="0" max="32" step="1" value="0"></label>`;
+   table.append(row);
+   for(const kind of ['points','range','nature','actual'])el(`${side}-${k}-${kind}`).addEventListener('input',()=>{
+    const input=el(`${side}-${k}-${kind}`),m=models[side];
+    if(kind==='nature')m.nature[k]=input.value;
+    else if(kind==='actual'){
+     const val=Number(input.value);
+     if(!el('dbAuto').checked){m.manual[k]=val;const target=k==='hp'?'hp':side==='att'?'attack':'defense';if(k==='hp'||activeStat(side)===k)el(target).value=input.value;render();refreshUI();return;}
+     const point=Array.from({length:33},(_,i)=>i).find(i=>calcStat(species(side),k,i,m.nature[k])===val);
+     if(point===undefined){notify('この実数値は現在の性格・ポイント0〜32では設定できません。「入力モード」で自動反映をオフにすると手入力できます。');return;}
+     m.points[k]=point;
+    }else m.points[k]=Number(input.value||0);
+    notify('');recalculate();
+   });
+   el(`${side}-${k}-actual`).addEventListener('blur',()=>refreshUI());
+  }
+ }
+ function statValue(side,k){
+  if(!el('dbAuto').checked){
+   if(side==='def'&&k==='hp')return Number(el('hp').value);
+   if(activeStat(side)===k)return Number(el(side==='att'?'attack':'defense').value);
+   if(models[side].manual[k]!==undefined)return models[side].manual[k];
+  }
+  const point=models[side].points[k];
+  if(!Number.isInteger(point)||point<0||point>32)return '';
+  return calcStat(species(side),k,point,models[side].nature[k]);
+ }
+ function reconcileResultState(){
+  // Reconcile UI messages only after validating the complete allocation and the
+  // current result signature. Never clear an error just because one field changed.
+  try{validateModels();}catch(e){adapterError=true;showInputError(e);}
+  const result=window.ChlohaLastCalculation;
+  const valid=!!result&&el('error').hidden&&!el('output').hidden&&result.signature===JSON.stringify(read());
+  if(valid){
+   el('error').textContent='';el('error').hidden=true;
+   if(el('dbStatus').textContent.startsWith('入力エラー:'))el('dbStatus').textContent='入力を確認しました。計算結果を更新しました。';
+   adapterError=false;dbInputError=null;
+  }else{
+   window.ChlohaLastCalculation=null;el('output').hidden=true;
+   if(!el('error').hidden)el('dbStatus').textContent='入力エラー: '+el('error').textContent;
+   el('damage').textContent='—';
+   for(const id of ['percent','hits','ko','matchup','trace'])el(id).textContent='';
+   el('rolls').replaceChildren();
+  }
+  el('copy').disabled=!valid;el('battleCommit').disabled=!valid;
+ }
+ function refreshUI(){
+  reconcileResultState();
+  for(const side of ['att','def']){
+   const p=species(side),m=models[side];
+   el(side+'Types').replaceChildren(...p.types.map(t=>node('span','type-pill',t)));
+   el(side+'BaseStats').replaceChildren(...keys.map(k=>{const s=node('span');s.append(node('small','',short[k]),node('b','',String(p.baseStats[k])));return s;}));
+   const img=el(side+'Portrait'),fallback=el(side+'PortraitFallback'),key=window.ChlohaSpriteIds?.[p.id];
+   if(img.dataset.pokemon!==p.id){
+    img.dataset.pokemon=p.id;img.hidden=!key;fallback.hidden=!!key;img.alt=p.name+'の画像';
+    img.onerror=()=>{img.hidden=true;fallback.hidden=false;};
+    if(key)img.src=window.ChlohaLocalSprites?.[p.id]||`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${key}.png`;
+    else img.removeAttribute('src');
+   }
+   for(const k of rows[side]){
+    el(`${side}-${k}-row`).hidden=side==='att'&&k==='defense'&&activeStat(side)!=='defense';
+    const v=statValue(side,k);el(`${side}-${k}-base`).textContent='種族値 '+p.baseStats[k];
+    el(`${side}-${k}-points`).value=Number.isFinite(m.points[k])?m.points[k]:'';el(`${side}-${k}-range`).value=m.points[k];el(`${side}-${k}-nature`).value=m.nature[k];
+    el(`${side}-${k}-actual`).value=v;el(`${side}-${k}-row`).classList.toggle('is-active',activeStat(side)===k||k==='hp');
+    el(`${side}-${k}-points`).disabled=!el('dbAuto').checked;el(`${side}-${k}-range`).disabled=!el('dbAuto').checked;el(`${side}-${k}-nature`).disabled=k==='hp'||!el('dbAuto').checked;
+   }
+   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);el(side+'Budget').textContent=`能力ポイント ${total} / 66 · Lv.50 / 個体値31`;
+   lastActive[side]=activeStat(side);
+  }
+  const r=window.ChlohaLastCalculation,a=r?.a,lo=r?Math.min(...r.r.rolls):0,hi=r?Math.max(...r.r.rolls):0;
+  el('miniDamage').textContent=r?el('damage').textContent:'入力を確認してください';el('miniPercent').textContent=r?el('percent').textContent:'';
+  el('gaugeMin').style.width=r?Math.min(100,lo/a.hp*100)+'%':'0%';el('gaugeMax').style.width=r?Math.min(100,hi/a.hp*100)+'%':'0%';el('miniGauge').style.width=r?Math.min(100,hi/a.hp*100)+'%':'0%';
+  el('gaugeText').textContent=r?`${(lo/a.hp*100).toFixed(1)}〜${(hi/a.hp*100).toFixed(1)}%`:'—';el('damageGauge').setAttribute('aria-label',el('gaugeText').textContent);
+  el('manualFields').classList.toggle('is-manual',!el('dbAuto').checked);
+ }
+ // Browser-level event adapter; original listeners remain intact and run first.
+ document.addEventListener('input',e=>{
+  const id=e.target.id;if(!id||busy||id.endsWith('Search')||id==='battleObservedDamage'||e.target.closest('.stat-table'))return;
+  importBridge(id);
+  if(dbInputs.has(id)||id==='category'||id==='attackStage'||id==='defenseStage'){
+   if(!el('dbAuto').checked){
+    if(id==='category')for(const side of ['att','def']){
+     const key=activeStat(side),target=side==='att'?'attack':'defense';
+     if(lastActive[side]!=='foulPlay')models[side].manual[lastActive[side]]=Number(el(target).value);
+     if(models[side].manual[key]!==undefined)el(target).value=models[side].manual[key];
+    }
+    render();refreshUI();return;
+   }
+   recalculate();
+  }else{if(adapterError){try{validateModels();}catch(err){showInputError(err);}}refreshUI();}
+ });
+ for(const side of ['att','def']){
+  const select=el(side==='att'?'dbAttPokemon':'dbDefPokemon');
+  const options=[...select.options].map(o=>({value:o.value,label:o.textContent}));
+  el(side+'Search').addEventListener('input',()=>{
+   const normalize=s=>s.normalize('NFKC').replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96));
+   const q=normalize(el(side+'Search').value.trim()),current=select.value;
+   const found=options.filter(o=>normalize(o.label).includes(q));
+   // Keep the selected entry without changing the actual selection while searching.
+   select.replaceChildren(...options.filter(o=>o.value===current||found.some(f=>f.value===o.value)).map(o=>{const n=node('option','',o.label);n.value=o.value;return n;}));select.value=current;
+   notify(q?`${side==='att'?'攻撃側':'防御側'}：${found.length}件の候補。選択欄から変更してください。`:'');
+  });
+  // Preserve all options before swaps and programmatic selection.
+  el(side+'Search').addEventListener('search',()=>{if(!el(side+'Search').value)el(side+'Search').dispatchEvent(new Event('input',{bubbles:true}));});
+ }
+ const value=id=>el(id).type==='checkbox'?el(id).checked:el(id).value;
+ const put=(id,v,label)=>{if(el(id).type==='checkbox')el(id).checked=v;else{if(el(id).tagName==='SELECT'&&![...el(id).options].some(o=>o.value===String(v))){const o=node('option','',(label||String(v))+'（この側では未対応）');o.value=v;el(id).append(o);}el(id).value=v;}};
+ el('swapSides').addEventListener('click',()=>{
+  const pairs=[['dbAttPokemon','dbDefPokemon'],['attItem','defItem'],['attAbility','defAbility'],['attType1','defType1'],['attType2','defType2'],['attMaxHp','hp'],['attCurrentHp','currentHp'],['attSpeed','defSpeed'],['attSpeedStage','defSpeedStage'],['attParalyzed','defParalyzed'],['attTailwind','defTailwind'],['attGrounding','defGrounding']];
+  const saved=pairs.map(([a,b])=>[a,b,value(a),value(b),el(a).selectedOptions?.[0]?.textContent,el(b).selectedOptions?.[0]?.textContent]),manual=!el('dbAuto').checked,attValue=value('attack'),defValue=value('defense');
+  // Clear search filters so both incoming species remain selectable.
+  for(const side of ['att','def']){el(side+'Search').value='';el(side+'Search').dispatchEvent(new Event('input',{bubbles:true}));}
+  [models.att,models.def]=[models.def,models.att];
+  for(const [a,b,av,bv]of saved)if(!['attAbility','attItem'].includes(a)){put(a,bv);put(b,av);}
+  refreshAbilities();refreshDefenseAbilities();
+  for(const [a,b,av,bv,al,bl]of saved)if(['attAbility','attItem'].includes(a)){put(a,bv,bl);put(b,av,al);}
+  if(manual){put('attack',defValue);put('defense',attValue);}
+  window.ChlohaCurrentAttMaxHp=Number(el('attMaxHp').value);
+  // The move, common weather/terrain, and side-specific screens/support stay in place.
+  ChlohaBattleHistory.length=0;refreshBattleHistory();setBattleStatus('攻守を入れ替えたため履歴を消去しました。');
+  notify('攻守を入れ替えました。技・天候・フィールド・壁は維持します。移動先で未対応の特性・持ち物は計算を停止します。');
+  recalculate();
+ });
+ // Existing battle/copy handlers update the result asynchronously or on click.
+ for(const id of ['battleCommit','battleUndo','battleReset'])el(id).addEventListener('click',refreshUI);
+ window.ChlohaUI=Object.freeze({version:'0.163',refresh:refreshUI,models:()=>structuredClone(models)});
+ refreshUI();
+})();
+
 </script></body></html>
