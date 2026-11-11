@@ -20,6 +20,7 @@ jobs:
       - run: node tests/v0177-ci-inventory.cjs
       - run: node tests/v0177-move-policy-consistency.cjs
       - run: node tests/v0177-conditional-power-clarity.cjs
+      - run: node tests/v0177-version-provenance.cjs
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
