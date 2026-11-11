@@ -155,7 +155,7 @@ const path = require('node:path');
    await knockOff.waitFor({state:'visible'});
    assert.match(await knockOff.innerText(),/基本計算のみ/);
    await knockOff.click();
-   assert.equal(await page.locator('#output').isHidden(),false,'Knock Off conditional calculation available');
+   assert.equal(await page.locator('#output').isHidden(),false,'Knock Off conditional calculation available; error='+await page.locator('#error').innerText());
    await moveSearch.fill('ワイドフォース');
    const expandingForce=moveList.getByRole('option',{name:'ワイドフォース',exact:true});
    await expandingForce.waitFor({state:'visible'});
