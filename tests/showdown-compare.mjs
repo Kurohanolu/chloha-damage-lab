@@ -9,7 +9,11 @@ const fixtures=[
  {name:'neutral special Psychic',att:'Mew',def:'Mew',move:'Psychic',type:'エスパー',category:'special',power:90},
  {name:'rain boosted Surf',att:'Mew',def:'Mew',move:'Surf',type:'みず',category:'special',power:90,weather:'Rain'},
  {name:'rain weakened Flamethrower',att:'Mew',def:'Mew',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'Rain'},
- {name:'Reflect physical Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,reflect:true}
+ {name:'Reflect physical Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,reflect:true},
+ {name:'Friend Guard Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,friendGuard:true},
+ {name:'Friend Guard rain Surf',att:'Mew',def:'Mew',move:'Surf',type:'みず',category:'special',power:90,weather:'Rain',friendGuard:true},
+ {name:'Psychic Terrain Expanding Force singles',att:'Mew',def:'Mew',move:'Expanding Force',type:'エスパー',category:'special',power:80,terrain:'Psychic',mechanic:'expandingForce'},
+ {name:'Psychic Terrain Expanding Force doubles',att:'Mew',def:'Mew',move:'Expanding Force',type:'エスパー',category:'special',power:80,terrain:'Psychic',mechanic:'expandingForce',doubles:true}
 ];
 const typeMap={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
 const report=[];
@@ -23,7 +27,7 @@ try{
   const gen=9;
   const attacker=new Pokemon(gen,f.att,{level:50,nature:'Hardy',ability:'Synchronize'});
   const defender=new Pokemon(gen,f.def,{level:50,nature:'Hardy',ability:'Synchronize'});
-  const field=new Field({weather:f.weather,defenderSide:{isReflect:!!f.reflect}});
+  const field=new Field({gameType:f.doubles?'Doubles':'Singles',weather:f.weather,terrain:f.terrain,defenderSide:{isReflect:!!f.reflect,isFriendGuard:!!f.friendGuard}});
   const showdown=calculate(gen,attacker,defender,new Move(gen,f.move),field);
   const reference=Array.isArray(showdown.damage)?showdown.damage.flat():[showdown.damage];
   const a=attacker.stats[f.category==='physical'?'atk':'spa'];
@@ -36,10 +40,10 @@ try{
    attItem:'none',attAbility:'none',defItem:'none',defAbility:'none',
    attCurrentHp:attacker.stats.hp,attMaxHp:attacker.stats.hp,moveId:'',
    customMultiplier:1,attGrounding:'auto',defGrounding:'auto',
-   terrain:'none',weather:f.weather==='Rain'?'rain':'none',
-   spread:'single',battleFormat:'singles',screen:f.reflect?'reflect':'none',
-   helpingHand:false,friendGuardCount:0,burn:false,critical:false,stabMode:'auto',
-   moveMechanic:'none',conditionalPower:false,bodyPressDefenseStage:0,foulPlayTargetStage:0,
+   terrain:f.terrain==='Psychic'?'psychic':'none',weather:f.weather==='Rain'?'rain':'none',
+   spread:f.doubles?'spread':'single',battleFormat:f.doubles?'doubles':'singles',screen:f.reflect?'reflect':'none',
+   helpingHand:false,friendGuardCount:f.friendGuard?1:0,burn:false,critical:false,stabMode:'auto',
+   moveMechanic:f.mechanic||'none',conditionalPower:false,bodyPressDefenseStage:0,foulPlayTargetStage:0,
    attSpeed:attacker.stats.spe,defSpeed:defender.stats.spe,
    attSpeedStage:0,defSpeedStage:0,attParalyzed:false,defParalyzed:false,attTailwind:false,defTailwind:false
   };
