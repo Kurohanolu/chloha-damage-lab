@@ -121,7 +121,7 @@ const path = require('node:path');
    for(const id of ['attAttackMods','attHpMods','attSpeedMods','defHpMods','defSupportMods','defSpeedMods'])
     assert.equal(await page.locator('#'+id).count(),1,id+' detail group exists');
    // v0.169: GameWith move catalog, simple damage, and blocked complex mechanics.
-   assert.equal(await page.locator('#dbMove option').count(),244,'all attacking moves searchable (protect excluded)');
+   assert.equal(await page.locator('#dbMove option').count(),303,'all attacking moves searchable (protect excluded)');
    await moveSearch.fill('フリーズドライ');
    const gated=moveList.getByRole('option',{name:'フリーズドライ',exact:true});
    await gated.waitFor({state:'visible'});
@@ -141,6 +141,27 @@ const path = require('node:path');
    assert.match(await page.locator('#moveSelected').innerText(),/パワージェム/);
    assert.equal(await page.locator('#moveType').inputValue(),'いわ');
    assert.equal(await page.locator('#power').inputValue(),'80');
+   // v0.170: newly added GameWith batch 02 moves must search and respect gating.
+   await moveSearch.fill('ドレインパンチ');
+   const newlySupported=moveList.getByRole('option',{name:'ドレインパンチ',exact:true});
+   await newlySupported.waitFor({state:'visible'});
+   assert.match(await newlySupported.innerText(),/基本計算のみ/);
+   await newlySupported.click();
+   assert.equal(await page.locator('#error').isHidden(),true,'new supported move calculates');
+   assert.equal(await page.locator('#power').inputValue(),'75','new move power');
+   assert.equal(await page.locator('#moveType').inputValue(),'かくとう','new move type');
+   assert.equal(await page.locator('#category').inputValue(),'physical','new move category');
+   await moveSearch.fill('はたきおとす');
+   const newlyGated=moveList.getByRole('option',{name:'はたきおとす',exact:true});
+   await newlyGated.waitFor({state:'visible'});
+   assert.match(await newlyGated.innerText(),/計算未対応/,'item conditional move must be gated');
+   await newlyGated.click();
+   assert.equal(await page.locator('#output').isHidden(),true,'no incorrect result for unsupported move');
+   assert.match(await page.locator('#error').innerText(),/未対応/);
+   await moveSearch.fill('れいとうパンチ');
+   await moveList.getByRole('option',{name:'れいとうパンチ',exact:true}).click();
+   assert.equal(await page.locator('#error').isHidden(),true,'return to normal damage after gated move');
+   assert.equal(await page.locator('#power').inputValue(),'75');
    // Fast point allocation uses Champions 0..32 per stat, max 66 total.
    assert.equal(await page.locator('#dbAuto').isChecked(),true,'point auto mode active');
    await page.locator('#attPresets button[aria-label="攻撃側 H32/A32/S2"]').click();
@@ -167,7 +188,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.169')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.170')),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);
