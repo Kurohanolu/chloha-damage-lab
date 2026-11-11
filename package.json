@@ -1,1 +1,1 @@
-{"name":"chloha-damage-lab-verification","private":true,"version":"0.179.0","type":"module","scripts":{"test:showdown":"node tests/showdown-compare.mjs"},"devDependencies":{"@playwright/test":"^1.56.0","@smogon/calc":"^0.10.0"}}
+{"name":"chloha-damage-lab-verification","private":true,"version":"0.179.0","type":"module","scripts":{"test:showdown":"node tests/showdown-compare.mjs"},"devDependencies":{"@playwright/test":"1.58.2","@smogon/calc":"^0.10.0"}}
