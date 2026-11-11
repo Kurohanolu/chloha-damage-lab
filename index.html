@@ -19,13 +19,13 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
 /* v0.164: mobile density and optional stat panels; calculation engine untouched. */
 .stat-toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:9px 0 3px}
 .stat-toolbar strong{font-size:12px;color:#525e70}
-.stat-toggle{min-height:34px;padding:5px 10px;font-size:11px;background:#f3f6fa;border-color:#d9e0e9}
+.stat-toggle{min-height:40px;padding:7px 10px;font-size:11px;background:#f3f6fa;border-color:#d9e0e9}
 .stat-toggle[aria-expanded="false"]{background:#e9f0f9}
 .stat-table[hidden]{display:none!important}
 @media(max-width:700px){
  .lab{padding:0 10px 85px}.lab-header{min-height:54px}.lab-intro{padding:12px 0 9px}.lab-intro h1{font-size:19px}
  .release-note{font-size:9px;max-width:140px}.quick-nav{gap:3px;margin-bottom:8px;padding:5px 0}
- .quick-nav a{padding:7px 6px;font-size:10px;min-height:34px}.quick-nav button{padding:6px 8px;min-height:36px;font-size:11px}
+ .quick-nav a{padding:9px 6px;font-size:10px;min-height:40px}.quick-nav button{padding:8px 8px;min-height:40px;font-size:11px}
  .match-grid{gap:10px}.fighter{padding:11px;border-radius:11px}.card-top{margin-bottom:9px}
  .pokemon-header{grid-template-columns:64px minmax(0,1fr);gap:7px;margin-bottom:9px}
  .portrait{min-height:64px}.portrait img{width:64px;height:64px}
@@ -357,13 +357,15 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const toolbar=node('div','stat-toolbar');
   const heading=node('strong','',side==='att'?'攻撃側の能力値':'防御側の能力値');
   const toggle=node('button','stat-toggle','能力値を折りたたむ');
-  toggle.type='button';toggle.setAttribute('aria-controls',side+'Stats');toggle.setAttribute('aria-expanded','true');
-  toggle.addEventListener('click',()=>{
-   const expanded=toggle.getAttribute('aria-expanded')!=='true';
+  toggle.type='button';toggle.setAttribute('aria-controls',side+'Stats');
+  const setExpanded=expanded=>{
    toggle.setAttribute('aria-expanded',String(expanded));
    table.hidden=!expanded;
    toggle.textContent=expanded?'能力値を折りたたむ':'能力値を表示';
-  });
+  };
+  // Keep full controls on desktop; prioritize short cards on mobile.
+  setExpanded(!window.matchMedia('(max-width:700px)').matches);
+  toggle.addEventListener('click',()=>setExpanded(toggle.getAttribute('aria-expanded')!=='true'));
   toolbar.append(heading,toggle);table.before(toolbar);
  }
  const keys=['hp','attack','defense','specialAttack','specialDefense','speed'];
