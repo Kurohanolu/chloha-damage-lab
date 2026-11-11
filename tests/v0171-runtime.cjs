@@ -90,6 +90,27 @@ const path=require('node:path');
   assert.equal((await snap('manual custom base power')).power,135,'manual mode custom base power is respected');
   await page.locator('#dbAuto').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
   assert.equal((await snap('auto mode restored')).power,120,'auto mode restores catalog power');
+  // v0.172 conditional power toggle: manually override the default and reset on move changes.
+  await set('dbMove','gw0170_u014');
+  await set('defItem','none');
+  assert.equal((await snap('Knock Off default off')).power,65);
+  await set('defItem','assaultVest');
+  assert.equal((await snap('Knock Off auto item on')).power,97);
+  await set('defItem','none');
+  assert.equal((await snap('Knock Off auto item off')).power,65);
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Knock Off manually on')).power,97);
+  await set('defItem','assaultVest');
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Knock Off manually off')).power,65);
+  await set('dbMove','gw0170b_008');
+  assert.equal((await snap('Stomping Tantrum normal')).power,75);
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Stomping Tantrum boosted')).power,150);
+  await set('dbMove','gw0169_s028');
+  assert.equal((await snap('Hex normal')).power,65);
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Hex boosted')).power,130);
   assert.deepEqual(errors,[],'no page errors');
   console.log('PASS v0.171 runtime move conditions and field toggles');
  }finally{await browser.close();}
