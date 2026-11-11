@@ -781,7 +781,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const select=el(side==='att'?'dbAttPokemon':'dbDefPokemon');
   const options=[...select.options].map(o=>({value:o.value,label:o.textContent}));
   const input=el(side+'Search'),list=el(side+'Suggestions');
-  const englishAliases={garchomp:'garchomp',charizard:'charizard',tyranitar:'tyranitar',dragonite:'dragonite',venusaur:'venusaur',blastoise:'blastoise',meganium:'meganium',feraligatr:'feraligatr',dragapult:'dragapult',hydreigon:'hydreigon',archaludon:'archaludon',pelipper:'pelipper',ceruledge:'ceruledge',sneasler:'sneasler',goodra:'goodra',kommo_o:'kommo-o'};
+  const englishAliases=window.ChlohaNames?.pokemon||{};
   const normalize=t=>t.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
   let matches=[],active=-1,composing=false;
   const hide=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');matches=[];active=-1;};
@@ -820,7 +820,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
      img.src=window.ChlohaLocalSprites?.[o.value]||'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+spriteId+'.png';
      img.onerror=()=>img.remove();item.append(img);
     }
-    const copy=node('span');copy.append(node('span','',o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
+    const copy=node('span');copy.append(node('span','',window.ChlohaLocale?.get()==='en'&&englishAliases[o.value]?englishAliases[o.value]+' / '+o.label:o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
    if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
@@ -866,4 +866,4 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  refreshUI();
 })();
 
-</script><script src="./names-v0179.js"></script><script defer src="./i18n.js"></script><script defer src="./names-ui-v0179.js"></script></body></html>
+</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script defer src="./i18n.js"></script><script defer src="./names-ui-v0179.js"></script></body></html>
