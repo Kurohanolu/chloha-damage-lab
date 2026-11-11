@@ -1,0 +1,26 @@
+name: v0.164 UI smoke
+on:
+  pull_request:
+    paths:
+      - index.html
+      - tests/**
+      - .github/workflows/ui-smoke.yml
+  workflow_dispatch:
+jobs:
+  ui-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.58.2
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/ui-smoke.cjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-smoke-screenshots
+          path: smoke-*.png
+          if-no-files-found: ignore
