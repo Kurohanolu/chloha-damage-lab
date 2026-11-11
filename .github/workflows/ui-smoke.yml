@@ -15,8 +15,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save playwright@1.58.2
-      - run: npx playwright install --with-deps chromium
+      - run: npm install --no-save playwright@1.58.2 @smogon/calc
+      # GitHub-hosted Ubuntu already provides browser system libraries; avoid apt network/DNS failures.
+      - run: npx playwright install chromium
+      - run: node tests/v0178-hiragana-suggestions.cjs
+      - run: node tests/v0178-showdown-cross-compare.cjs
       - run: node tests/v0177-ci-inventory.cjs
       - run: node tests/v0177-move-policy-consistency.cjs
       - run: node tests/v0177-conditional-power-clarity.cjs
@@ -41,5 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ui-smoke-screenshots
-          path: smoke-*.png
+          path: |
+            smoke-*.png
+            cross-calculator-report.json
           if-no-files-found: ignore
