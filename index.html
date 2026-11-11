@@ -172,9 +172,12 @@ registerModifier('postRandom','type',20,()=>true,(c,v)=>floor(v*c.a.defTypes.red
 
 // Explicit late modifiers: no blanket multiplication. The exact game rounding is
 // still subject to independent test vectors; trace exposes each step.
-registerModifier('final','friendGuard',5,c=>c.a.friendGuardCount>0,(c,v)=>{for(let i=0;i<c.a.friendGuardCount;i++)v=pokeRound(v,3072);return v;});
+// The screen and Friend Guard reductions share the final-damage modifier chain.
+// Combine fixed-point modifiers before applying once to avoid intermediate rounding.
+const hasActiveScreen=a=>!a.critical&&((a.screen==='reflect'&&a.category==='physical')||(a.screen==='lightScreen'&&a.category==='special'));
+registerModifier('final','friendGuard',5,c=>c.a.friendGuardCount>0&&!hasActiveScreen(c.a),(c,v)=>{for(let i=0;i<c.a.friendGuardCount;i++)v=pokeRound(v,3072);return v;});
 registerModifier('final','burn',10,c=>c.a.burn&&c.a.category==='physical'&&c.a.attAbility!=='guts'&&c.a.moveMechanic!=='facade',(_,v)=>pokeRound(v,2048));
-registerModifier('final','screen',20,c=>!c.a.critical&&((c.a.screen==='reflect'&&c.a.category==='physical')||(c.a.screen==='lightScreen'&&c.a.category==='special')),(c,v)=>pokeRound(v,c.a.battleFormat==='singles'?2048:2732));
+registerModifier('final','screen',20,c=>hasActiveScreen(c.a),(c,v)=>{let modifier=c.a.battleFormat==='singles'?2048:2732;for(let i=0;i<c.a.friendGuardCount;i++)modifier=pokeRound(modifier,3072);return pokeRound(v,modifier);});
 
 registerModifier('final','multiscale',40,c=>c.a.defAbility==='multiscale'&&c.a.currentHp===c.a.hp,(_,v)=>pokeRound(v,2048));
 registerModifier('final','tintedLens',42,c=>c.a.attAbility==='tintedLens'&&c.a.defTypes.reduce((m,t)=>m*(EFFECT[c.a.moveType]?.[t]??1),1)>0&&c.a.defTypes.reduce((m,t)=>m*(EFFECT[c.a.moveType]?.[t]??1),1)<1,(_,v)=>pokeRound(v,8192));
