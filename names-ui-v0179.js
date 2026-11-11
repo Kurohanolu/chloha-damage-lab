@@ -20,7 +20,7 @@ function render(){
   for(const option of select.options){
    if(!original.has(option))original.set(option,option.textContent);
    const ja=original.get(option),translated=english(option,select);
-   const label=en&&translated?translated+' / '+ja:ja;
+   const label=en&&translated?translated:ja;
    if(option.textContent!==label)option.textContent=label;
   }
  }
