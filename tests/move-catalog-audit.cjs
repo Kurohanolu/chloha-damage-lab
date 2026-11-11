@@ -6,6 +6,7 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const match=html.match(/const ChlohaMovesDB = (\{[^\n]+\});/);
 assert.ok(match,'embedded moves DB present');
 const db=JSON.parse(match[1]),moves=db.moves;
+assert.equal(db.status,'v0170_gamewith_physical_expansion_and_safe_unsupported_labels','catalog version/status');
 assert.equal(moves.length,304,'expected GameWith batch 02 catalog size');
 const byId=new Set(),byName=new Set();
 for(const m of moves){
