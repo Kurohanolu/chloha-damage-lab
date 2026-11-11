@@ -25,6 +25,11 @@ const path=require('node:path');
   assert.equal(await page.locator('#rollsLabel').textContent(),'16 damage rolls','damage roll heading translated');
   assert.equal(await page.locator('#reliabilityTitle').textContent(),'Verification status','verification heading translated');
   assert.equal(await page.locator('label:has(#battleFormat)').first().textContent().then(x=>x.includes('Battle format')),true,'battle format label translated');
+
+  const abilityOptions=await page.locator('#attAbility option').allTextContents();
+  assert(abilityOptions.every(label=>!label.includes(' / ')),'ability options must not show bilingual slash labels');
+  const pokemonOption=await page.locator('#dbAttPokemon option[value="charizard"]').textContent();
+  assert.equal(pokemonOption,'Charizard','English Pokémon options must not append Japanese');
   await page.locator('#attSearch').fill('Charizard');
   await page.locator('#attSuggestions [role=option]').first().waitFor();
   await page.locator('#attSuggestions [role=option]').first().click();
