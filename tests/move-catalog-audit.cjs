@@ -6,7 +6,7 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const match=html.match(/const ChlohaMovesDB = (\{[^\n]+\});/);
 assert.ok(match,'embedded moves DB present');
 const db=JSON.parse(match[1]),moves=db.moves;
-assert.equal(moves.length,245,'expected GameWith batch 01 size');
+assert.equal(moves.length,305,'expected v0.169 batch + v0.170 physical expansion');
 const byId=new Set(),byName=new Set();
 for(const m of moves){
  assert.ok(m.id&&m.name,'name/id required');
@@ -29,10 +29,36 @@ for(const m of added){
  assert.ok(m.unverifiedFields.includes('game_damage_parity'),'damage explicitly unverified: '+m.name);
  if(m.power===0)assert.equal(m.calculationSupported,false,'zero power cannot default to calculation');
 }
+const expanded=moves.filter(m=>m.id.startsWith('gw0170_'));
+assert.equal(expanded.length,60,'v0.170 new GameWith moves');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,39,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,21,'new gated conditional attacks');
+for(const m of expanded){
+ assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
+ assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
+ assert.ok(m.verifiedFields.includes('target'),'target metadata: '+m.name);
+ assert.ok(m.unverifiedFields.includes('game_damage_parity'),'game parity unverified: '+m.name);
+ if(m.power===0)assert.equal(m.calculationSupported,false,'variable damage unavailable: '+m.name);
+}
+for(const [name,type,power,supported] of [
+ ['ドレインパンチ','かくとう',75,true],
+ ['はたきおとす','あく',65,false],
+ ['ネズミざん','ノーマル',20,false],
+ ['ふんどのこぶし','ゴースト',50,false],
+ ['ワイドフォース','エスパー',80,false],
+ ['マッハパンチ','かくとう',40,true],
+ ['むねんのつるぎ','ほのお',90,true]
+]){
+ const m=moves.find(m=>m.name===name);
+ assert.ok(m,'new move exists: '+name);
+ assert.equal(m.type,type,name+' type');
+ assert.equal(m.power,power,name+' power');
+ assert.equal(m.calculationSupported,supported,name+' safety gate');
+}
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
 assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupported,false,'multihit gated');
 assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,false,'variable type gated');
 assert.equal(moves.find(m=>m.name==='りゅうのはどう').power,85);
 assert.ok(html.includes('この技')||html.includes('計算未対応'));
-console.log('PASS GameWith catalog',moves.length,'moves,',added.length,'new; new basic',added.filter(m=>m.calculationSupported).length,'new gated',added.filter(m=>!m.calculationSupported).length);
+console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length,'new vs initial 98; v0.170 supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
