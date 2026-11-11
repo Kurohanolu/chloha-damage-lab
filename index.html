@@ -401,7 +401,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.170 <span>Pre-Release 9</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.174 <span>Pre-Release 13</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
  <section class="board-quick" aria-label="盤面の基本設定"><div class="board-quick-heading"><div><strong>盤面の基本設定</strong><small>天候・フィールド・壁はここから変更</small></div><button type="button" id="resetBoard" aria-label="天候・フィールド・壁をなしに戻す">盤面をリセット</button></div><div id="boardControls" class="board-controls"></div><p id="boardSummary" class="board-summary" aria-live="polite"></p></section>
