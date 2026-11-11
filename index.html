@@ -610,7 +610,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    }
    if(e.key==='Enter'&&!list.hidden&&matches.length){e.preventDefault();choose(matches[active<0?0:active]);}
   });
-  input.addEventListener('blur',()=>{setTimeout(()=>{if(!list.contains(document.activeElement))hide();},120);});
+  input.addEventListener('blur',()=>{setTimeout(()=>{if(document.activeElement!==input&&!list.contains(document.activeElement))hide();},120);});
   input.addEventListener('search',update);
  }
 
