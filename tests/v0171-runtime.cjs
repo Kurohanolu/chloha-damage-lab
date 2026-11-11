@@ -27,6 +27,8 @@ const path=require('node:path');
   await set('defItem','assaultVest');
   const knockItem=await snap('knock item');
   higher(knockItem,knockBase,'Knock Off item boost');
+  assert.equal(knockBase.power,65,'Knock Off no item power');
+  assert.equal(knockItem.power,97,'Knock Off item power');
   await set('defItem','none');
   await set('dbMove','gw0170_u060');
   const forceBase=await snap('Expanding Force baseline');
