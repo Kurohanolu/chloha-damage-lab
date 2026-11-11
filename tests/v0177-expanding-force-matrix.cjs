@@ -14,6 +14,14 @@ const round=(v,m)=>Math.floor((v*m+2047)/4096);
    if(!Array.from(el.options).some(o=>o.value===v))throw Error('missing option '+id+':'+v);
    el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));
   },value);
+  // Select a known non-immune target; the default defender can be Dark-type.
+  const choose=async(side,name,id)=>{
+   await page.locator('#'+side+'Search').fill(name);
+   await page.locator('#'+side+'Suggestions').getByRole('option',{name,exact:true}).click();
+   assert.equal(await page.locator('#db'+(side==='att'?'Att':'Def')+'Pokemon').inputValue(),id);
+  };
+  await choose('att','リザードン','charizard');
+  await choose('def','フシギバナ','venusaur');
   await set('dbMove','gw0170_u060');
   const cases=[
    ['doubles_no_field','doubles','none','grounded',80,'single'],
@@ -43,7 +51,7 @@ const round=(v,m)=>Math.floor((v*m+2047)/4096);
    // this matrix therefore asserts full rolls only without terrain.
    if(terrain==='none'){
     const stab=a.attTypes.includes(a.moveType)?6144:4096;
-    const effectiveness=a.defTypes.reduce((m,t)=>m*(a.moveType==='エスパー'&&t==='かくとう'?2:1),1);
+    const effectiveness=a.defTypes.reduce((m,t)=>m*(a.moveType==='エスパー'&&t==='どく'?2:a.moveType==='エスパー'&&t==='くさ'?0.5:1),1);
     const expected=Array.from({length:16},(_,i)=>Math.max(1,Math.floor(round(Math.floor(base*(85+i)/100),stab)*effectiveness)));
     assert.deepEqual(state.rolls,expected,name+' all 16 damage rolls');
    }
