@@ -10,8 +10,8 @@ const path=require('node:path');
   await page.waitForFunction(()=>document.querySelector('#dbMove')?.options.length>0);
   const result=await page.evaluate(()=>{
    const choices=[...document.querySelector('#dbMove').options];
-   const source=window.ChlohaMovesDB?.moves||[];
-   const policy=window.ChlohaMovePolicy||{};
+   const source=ChlohaMovesDB.moves;
+   const policy=ChlohaMovePolicy;
    const byId=new Map(source.map(m=>[m.id,m]));
    return {total:choices.length,entries:choices.map(o=>{
     const m=byId.get(o.value),p=policy[o.value];
