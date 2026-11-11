@@ -3,6 +3,25 @@
 'use strict';
 const dictionary={
 '対戦の一手を、確かめる。':'Validate every move.',
+"HP・味方支援・素早さ":"HP, ally support and Speed",
+"HP・耐久調整":"HP and bulk adjustments",
+"防御側の補正・味方支援":"Defensive modifiers and ally support",
+"定数ダメージ（ステルスロック・天候・毒など）の自動計算は未対応です。現在HPへ手動で反映してください。":"Residual damage (Stealth Rock, weather, poison, etc.) is not calculated automatically. Adjust current HP manually.",
+"入力モード・手動ステータス":"Input mode and manual stats",
+"実測ダメージ・盤面の引き継ぎ":"Observed damage and battle-state carryover",
+"検証状況・計算モデルの注意":"Verification status and calculation model notes",
+"一覧から選ぶ":"Choose from list",
+"技一覧から選ぶ":"Choose from move list",
+"HP・攻撃補正・素早さ":"HP, attack modifiers and Speed",
+"技名・威力・タイプの追加参照：":"Additional move name, power and type reference:",
+"能力ポイント方式：各0〜32、合計66以内。空欄は0。自動反映オフでは実数値・タイプ・威力を編集できます。":"Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.",
+"選択した技の固有効果は手入力でも維持します。技に合う分類・威力・参照能力を確認してください。":"Move-specific effects remain active in manual mode. Check category, power and relevant stat.",
+"373件・技335件は候補を含みます。技の習得可否は保証しません。未対応の特性は計算を停止します。複雑な相互作用・テラスタル・実機の丸め順序は未検証です。":"The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.",
+"ポケモン画像：PokeAPI / Pokémon sprites。画像を取得できない場合も計算できます。":"Pokémon images: PokeAPI / Pokémon sprites. Calculations still work if images are unavailable.",
+"防御側の詳細設定 ":"Defender advanced settings ",
+"攻撃側の詳細設定 ":"Attacker advanced settings ",
+"防御側の詳細設定":"Defender advanced settings",
+"攻撃側の詳細設定":"Attacker advanced settings",
 
 // v0.179: main calculator labels, controls and result sections.
 'ポケモンを検索':'Search Pokémon','技を検索':'Search moves',
