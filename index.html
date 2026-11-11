@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.163 Pre-Release 2</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.164 Pre-Release 3</title><style>
 :root{color-scheme:dark;font-family:system-ui,'Noto Sans JP',sans-serif;background:#0c1220;color:#edf3ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:auto;padding:24px 14px 60px}h1{margin:4px 0}p,small{color:#adbed5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{background:#172338;border:1px solid #34455f;border-radius:15px;padding:17px;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#d6e2f2}input,select{width:100%;background:#0e1728;border:1px solid #52647e;border-radius:8px;padding:10px;color:white;font:inherit}label.check{flex-direction:row;align-items:center}label.check input{width:auto}.wide{grid-column:1/-1}.result{font-size:clamp(26px,5vw,44px);font-weight:800;color:#91d7ff}.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{padding:6px 8px;background:#293c59;border-radius:7px;font-variant-numeric:tabular-nums}.reliability{background:#2b2635;border:1px solid #c8a5ed;border-radius:10px;padding:14px;margin:12px 0;color:#f0e5ff}.reliability ul{margin:8px 0 0;padding-left:20px}.reliability li{margin:5px 0}.warn{background:#40311f;border-left:3px solid #ffd184;padding:12px;border-radius:6px;color:#ffe2a6}details{margin-top:12px}summary{cursor:pointer}pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c4d4e9}button{background:#80c5ff;color:#061223;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 #battleStatePanel button{min-height:44px;margin:4px 3px 4px 0;padding:8px 12px;cursor:pointer}#battleStatePanel button:focus-visible,#useIronRoller:focus-visible{outline:3px solid #91d7ff;outline-offset:2px}#battleStatus{overflow-wrap:anywhere}#battleHistory{max-height:190px;overflow:auto}#battleObservedDamage{max-width:100%!important}@media(max-width:700px){.wrap{padding:14px 10px 40px}.panel{padding:12px}.fields{grid-template-columns:1fr}#battleStatePanel button{width:100%;margin:4px 0}#battleStatePanel label{width:100%}}
 </style><style>
@@ -15,6 +15,32 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
 @media(max-width:700px){.lab{padding:0 14px 105px}.lab-header{min-height:64px}.brand{font-size:10px;gap:7px;letter-spacing:.04em}.brand b{margin-left:3px}.brand-symbol{width:28px;height:28px;font-size:18px}.version{font-size:10px}.version span{display:block;font-size:9px;margin:3px 0 0;padding:1px 4px;text-align:center}.lab-intro{padding:20px 0 8px;display:block}.lab-intro h1{font-size:22px}.release-note{font-size:10px;text-align:left;margin-top:12px;padding-left:8px}.release-note br{display:none}.quick-nav{gap:2px;justify-content:space-between;padding:10px 0;margin-bottom:8px}.quick-nav a{font-size:11px;padding:10px 9px}.quick-nav button{font-size:11px;padding:7px 11px}.match-grid{grid-template-columns:1fr;gap:16px}.fighter{padding:17px}.card-top{margin-bottom:13px}.pokemon-header{grid-template-columns:76px minmax(0,1fr);gap:10px;margin-bottom:12px}.portrait{min-height:76px}.portrait img{width:80px;height:80px}.stat-row{grid-template-columns:minmax(45px,1fr) 64px 62px 68px;gap:7px}.stat-head{grid-template-columns:minmax(45px,1fr) 64px 62px 68px;gap:7px}.result-card{padding:18px}.result-card .result{font-size:32px}.advanced-fields{gap:10px}.advanced-fields select{font-size:12px}.mobile-result{position:fixed;display:block;z-index:10;left:0;bottom:0;width:100%;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:#fffffff5;border-top:1px solid #dfe4ec;backdrop-filter:blur(14px);box-shadow:0 -5px 20px #2738520a}.mobile-result a{display:flex;justify-content:space-between;align-items:center;gap:8px}.mobile-result #miniDamage{font-weight:800;font-size:16px;color:#2d466b;white-space:nowrap}.mobile-result small{font-size:10px;text-align:right}.mini-track{height:4px;background:#edf0f5;border-radius:5px;margin-top:7px;overflow:hidden}.mini-track span{height:100%;display:block;background:#6590c7}.lab-footer{display:block}.lab-footer span{display:block;margin-top:6px}}
 @media(max-width:360px){.lab{padding-left:10px;padding-right:10px}.fighter{padding:13px}.stat-row,.stat-head{grid-template-columns:minmax(40px,1fr) 55px 57px 61px;gap:5px}.mobile-result #miniDamage{font-size:14px}}
 
+</style><style id="ui-v0164-style">
+/* v0.164: mobile density and optional stat panels; calculation engine untouched. */
+.stat-toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:9px 0 3px}
+.stat-toolbar strong{font-size:12px;color:#525e70}
+.stat-toggle{min-height:40px;padding:7px 10px;font-size:11px;background:#f3f6fa;border-color:#d9e0e9}
+.stat-toggle[aria-expanded="false"]{background:#e9f0f9}
+.stat-table[hidden]{display:none!important}
+@media(max-width:700px){
+ .lab{padding:0 10px 85px}.lab-header{min-height:54px}.lab-intro{padding:12px 0 9px}.lab-intro h1{font-size:19px}
+ .release-note{font-size:9px;max-width:140px}.quick-nav{gap:3px;margin-bottom:8px;padding:5px 0}
+ .quick-nav a{padding:9px 6px;font-size:10px;min-height:40px}.quick-nav button{padding:8px 8px;min-height:40px;font-size:11px}
+ .match-grid{gap:10px}.fighter{padding:11px;border-radius:11px}.card-top{margin-bottom:9px}
+ .pokemon-header{grid-template-columns:64px minmax(0,1fr);gap:7px;margin-bottom:9px}
+ .portrait{min-height:64px}.portrait img{width:64px;height:64px}
+ .base-stats{padding:5px 0;gap:2px}.base-stats b{font-size:11px}.base-stats small{font-size:8px}
+ .quick-fields{gap:7px;margin:8px 0}.stat-table{margin:7px 0}
+ .stat-row{padding:5px 4px;margin:3px -3px;gap:4px;grid-template-columns:minmax(0,1fr) 51px 55px 61px}
+ .stat-head{gap:4px;grid-template-columns:minmax(0,1fr) 51px 55px 61px}
+ .stat-name{font-size:11px}.stat-name small{font-size:8px}
+ .stat-row input[type=number]{padding:5px 2px;min-height:34px;font-size:12px}
+ .stat-row select{padding:5px 1px;min-height:34px;font-size:10px}
+ .stat-row .range-label{margin:0}.stat-row .range-label input{min-height:15px}
+ .result-card{padding:14px;margin-top:10px}.result-card .result{font-size:32px}
+ .budget{margin:7px 0 0}.utility{padding:9px 12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.damage-track>span{transition:none}}
 </style></head><body><div role="status" style="margin:12px;padding:12px;border:1px solid #a77;border-radius:8px">v0.162：373件を登録（未内定・未検証候補を含む）。実機一致は未確認です。</div><main class="wrap"><section role="note" aria-label="プレリリースの注意" style="margin:12px;padding:14px;border:1px solid #d19c54;border-radius:10px;background:#302718;color:#ffe4b8"><strong>v0.162 Pre-Release 1 — 限定検証用</strong><p style="margin:7px 0">計算結果はPokémon Champions実機と未照合です。登録373件は候補であり、収録・習得技・ダメージ精度を保証しません。実戦の確定判断には使用しないでください。</p><p style="margin:7px 0">確認できた実測ダメージは、技・能力値・HP・天候・フィールドなどの条件とともに記録してください。個人情報・アカウントIDは記入不要です。</p></section><header><small>CHLOHA TOOLS / CHAMPIONS / PRE-RELEASE 1</small><aside style="border:1px solid #d5b67c;padding:12px;border-radius:10px;margin-bottom:15px;background:#302718"><strong>v0.162 検証中</strong>：登録373件。未内定ポケモンも残す方針です。技習得可否・実機ダメージ一致は未検証です。</aside><h1>Damage Lab</h1><section style="border:1px solid #d19c54;border-radius:12px;padding:12px;margin:16px 0;background:#342817;color:#ffe4b8"><strong>v0.162 開発版・精度未保証</strong><div style="font-size:13px;margin-top:5px">登録373件／技98件。未検証・名簿のみの候補を含みます。技習得可否・特性/道具の全補正・実機ダメージ一致は未検証です。対戦の確定判断に使用しないでください。</div><details style="margin-top:8px"><summary>データ検証状況</summary><div id="auditSummary">登録373件。個別データ照合は未完了。</div><p><a href="https://gamewith.jp/pokemon-champions/546414" target="_blank" rel="noopener noreferrer">Champions収録一覧（GameWith）</a></p></details></section><p>Pokémon Champions向け計算機・検証版（実測一致未保証）</p></header><div class="warn">検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。</div><section class="dbpanel" aria-label="ポケモン選択">
 <h2>ポケモン・技選択（v0.162）</h2><p class="dbnote">登録373件の候補を維持。未照合データも含むため、実機一致は保証しません。他の未検証フォルムは引き続き要照合。技候補の習得可否は未検証です。技の習得を保証しません。Lv50・個体値31固定、能力ポイント（各0〜32、合計66以内）から実数値を算出します。</p>
 <div class="dbgrid"><div><h3>⚔ 攻撃側</h3><div class="dbside">
@@ -286,7 +312,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.163 <span>Pre-Release 2</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.164 <span>Pre-Release 3</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
  <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>天候・フィールド・その他補正</summary><div id="attAdvanced" class="advanced-fields"></div></details><p id="attBudget" class="budget"></p></section>
@@ -325,6 +351,23 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  el('percent').after(gauge);
  el('rollsLabel').id='rollsLabel';const rollDetails=node('details','roll-details');rollDetails.id='rollDetails';const rs=node('summary');rs.append(el('rollsLabel'));rollDetails.append(rs,el('rolls'));el('ko').after(rollDetails);
 
+ // Optional per-side stat folding keeps the Pokémon and move controls visible.
+ for(const side of ['att','def']){
+  const table=el(side+'Stats');
+  const toolbar=node('div','stat-toolbar');
+  const heading=node('strong','',side==='att'?'攻撃側の能力値':'防御側の能力値');
+  const toggle=node('button','stat-toggle','能力値を折りたたむ');
+  toggle.type='button';toggle.setAttribute('aria-controls',side+'Stats');
+  const setExpanded=expanded=>{
+   toggle.setAttribute('aria-expanded',String(expanded));
+   table.hidden=!expanded;
+   toggle.textContent=expanded?'能力値を折りたたむ':'能力値を表示';
+  };
+  // Keep full controls on desktop; prioritize short cards on mobile.
+  setExpanded(!window.matchMedia('(max-width:700px)').matches);
+  toggle.addEventListener('click',()=>setExpanded(toggle.getAttribute('aria-expanded')!=='true'));
+  toolbar.append(heading,toggle);table.before(toolbar);
+ }
  const keys=['hp','attack','defense','specialAttack','specialDefense','speed'];
  const short={hp:'HP',attack:'攻撃',defense:'防御',specialAttack:'特攻',specialDefense:'特防',speed:'素早さ'};
  const makeModel=()=>({points:Object.fromEntries(keys.map(k=>[k,0])),nature:Object.fromEntries(keys.map(k=>[k,'neutral'])),rank:Object.fromEntries(keys.map(k=>[k,0])),manual:{}});
@@ -503,7 +546,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  });
  // Existing battle/copy handlers update the result asynchronously or on click.
  for(const id of ['battleCommit','battleUndo','battleReset'])el(id).addEventListener('click',refreshUI);
- window.ChlohaUI=Object.freeze({version:'0.163',refresh:refreshUI,models:()=>structuredClone(models)});
+ window.ChlohaUI=Object.freeze({version:'0.164',refresh:refreshUI,models:()=>structuredClone(models)});
  refreshUI();
 })();
 
