@@ -436,8 +436,25 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   }catch(e){adapterError=true;showInputError(e);}
   finally{busy=false;refreshUI();}
  }
+ const pointPresets={
+  att:[['H32/A32/S2',{hp:32,attack:32,speed:2}],['H32/C32/S2',{hp:32,specialAttack:32,speed:2}],['A32/S32/H2',{attack:32,speed:32,hp:2}],['C32/S32/H2',{specialAttack:32,speed:32,hp:2}],['全て0',{}]],
+  def:[['H32/B32/D2',{hp:32,defense:32,specialDefense:2}],['H32/D32/B2',{hp:32,specialDefense:32,defense:2}],['H32/S32/B2',{hp:32,speed:32,defense:2}],['B32/D32/H2',{defense:32,specialDefense:32,hp:2}],['全て0',{}]]
+ };
  const rows={att:['attack','specialAttack','defense'],def:['hp','defense','specialDefense']};
  for(const side of ['att','def']){
+  const presets=node('div','point-presets');presets.id=side+'Presets';
+  presets.append(node('strong','','一括配分'));
+  for(const [label,allocation] of pointPresets[side]){
+   const button=node('button',label==='全て0'?'preset-reset':'',label);button.type='button';
+   button.setAttribute('aria-label',(side==='att'?'攻撃側 ':'防御側 ')+label);
+   button.addEventListener('click',()=>{
+    if(!el('dbAuto').checked)return;
+    models[side].points=Object.fromEntries(keys.map(k=>[k,allocation[k]||0]));
+    recalculate();notify((side==='att'?'攻撃側':'防御側')+'の能力ポイントを '+label+' に設定しました。性格補正は維持します。');
+   });
+   presets.append(button);
+  }
+  el(side+'Stats').before(presets);
   const table=el(side+'Stats');table.innerHTML='<div class="stat-head"><span>能力</span><span>ポイント</span><span>性格</span><span>実数値</span></div>';
   for(const k of rows[side]){
    const row=node('div','stat-row');row.id=`${side}-${k}-row`;
@@ -507,7 +524,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     el(`${side}-${k}-actual`).value=v;el(`${side}-${k}-row`).classList.toggle('is-active',activeStat(side)===k||k==='hp');
     el(`${side}-${k}-points`).disabled=!el('dbAuto').checked;el(`${side}-${k}-range`).disabled=!el('dbAuto').checked;el(`${side}-${k}-nature`).disabled=k==='hp'||!el('dbAuto').checked;
    }
-   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);el(side+'Budget').textContent=`能力ポイント ${total} / 66 · Lv.50 / 個体値31`;
+   const total=Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&activeStat('att')==='foulPlay'?Number(el('dbFoulAttackEv').value||0)-m.points.attack:0);for(const b of el(side+'Presets').querySelectorAll('button'))b.disabled=!el('dbAuto').checked;el(side+'Budget').textContent=`能力ポイント ${total} / 66（残り${66-total}） · Lv.50 / 個体値31`;
    lastActive[side]=activeStat(side);
   }
   const r=window.ChlohaLastCalculation,a=r?.a,lo=r?Math.min(...r.r.rolls):0,hi=r?Math.max(...r.r.rolls):0;
