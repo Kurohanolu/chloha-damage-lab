@@ -37,7 +37,7 @@ for(const terrain of ['none','psychic']){
  for(const format of ['singles','doubles']){
   for(const crit of [false,true]){
    for(const lifeOrb of [false,true]){
-    for(const helpingHand of [false,true]){
+    for(const helpingHand of (format==='singles'?[false]:[false,true])){
      cases.push({...seedCases[3],id:'expanding-'+terrain+'-'+format+'-crit'+Number(crit)+'-orb'+Number(lifeOrb)+'-help'+Number(helpingHand),
       terrain,battleFormat:format,spread:terrain==='psychic'&&format==='doubles'?'spread':'single',
       critical:crit,attItem:lifeOrb?'lifeOrb':'none',helpingHand});
