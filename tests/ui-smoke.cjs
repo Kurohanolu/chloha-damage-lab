@@ -21,6 +21,35 @@ const path = require('node:path');
     await toggle.click();
     assert.equal(await table.isHidden(),width<=700);
    }
+   // v0.165: typing a partial species name must offer tappable matches.
+   for(const side of ['att','def']){
+    const search=page.locator('#'+side+'Search');
+    const suggestions=page.locator('#'+side+'Suggestions');
+    const species=page.locator('#'+(side==='att'?'dbAttPokemon':'dbDefPokemon'));
+    const candidate=await species.locator('option').evaluateAll(opts=>{
+     const all=opts.map(o=>({value:o.value,label:o.textContent.trim()})).filter(o=>o.label.length>=3);
+     const preferred=all.find(o=>o.label.includes('リザードン'))||all.find(o=>o.label.includes('ガブリアス'));
+     return preferred||all[0];
+    });
+    assert.ok(candidate,side+' has species options');
+    const fragment=candidate.label.slice(0,2);
+    await search.fill(fragment);
+    assert.equal(await search.getAttribute('aria-expanded'),'true');
+    assert.equal(await suggestions.isVisible(),true);
+    const match=suggestions.getByRole('option',{name:candidate.label,exact:true}).first();
+    assert.equal(await match.count(),1,'matching suggestion for '+candidate.label);
+    await match.click();
+    assert.equal(await species.inputValue(),candidate.value,'species changed by tap');
+    assert.equal(await suggestions.isHidden(),true);
+    assert.equal(await search.inputValue(),'');
+    await search.fill('zzzx-no-pokemon');
+    assert.equal(await suggestions.getByText('該当するポケモンがありません').count(),1);
+    await search.press('Escape');
+    assert.equal(await suggestions.isHidden(),true);
+    await search.fill(fragment);
+    await search.press('Enter');
+    assert.equal(await suggestions.isHidden(),true,'Enter selects first suggestion');
+   }
    const result=page.locator('#resultCard');
    assert.equal(await result.count(),1);
    assert.equal(await page.locator('#swapSides').count(),1);
