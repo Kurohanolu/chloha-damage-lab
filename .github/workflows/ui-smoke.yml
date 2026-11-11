@@ -19,6 +19,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0177-engine-audit.cjs
+      - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/ui-smoke.cjs
       - run: node tests/conditional-power-ui.cjs
       - if: always()
