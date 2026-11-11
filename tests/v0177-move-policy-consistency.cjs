@@ -7,7 +7,7 @@ const path=require('node:path');
  try{
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
-  await page.locator('#dbMove option').first().waitFor();
+  await page.waitForFunction(()=>document.querySelector('#dbMove')?.options.length>0);
   const result=await page.evaluate(()=>{
    const choices=[...document.querySelector('#dbMove').options];
    const source=window.ChlohaMovesDB?.moves||[];
