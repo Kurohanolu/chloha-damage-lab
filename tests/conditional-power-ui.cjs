@@ -13,7 +13,7 @@ const path = require('node:path');
    assert.equal(await panel.count(),1,'single conditional panel');
    assert.equal(await checkbox.count(),1,'single conditional checkbox');
    assert.equal(await panel.evaluate(el=>el.closest('.move-picker')!==null),true,'panel belongs directly to move picker');
-   assert.equal(await panel.evaluate(el=>el.previousElementSibling?.id==='moveSelectMount'),true,'panel follows move select');
+   assert.equal(await panel.evaluate(el=>el.previousElementSibling?.classList.contains('move-list-fallback')===true),true,'panel follows move select');
    assert.equal(await panel.isHidden(),true,'ordinary move hides conditional control');
    await search.fill('ベノムショック');
    await list.getByRole('option',{name:'ベノムショック',exact:true}).click();
