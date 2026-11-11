@@ -69,6 +69,19 @@ const path=require('node:path');
   higher(mistGround,mistBase,'Misty Explosion terrain boost');
   await set('attGrounding','airborne');
   assert.equal((await snap('Misty Explosion airborne')).power,100,'Misty Explosion airborne user');
+  // Manual mode: custom values remain editable while move mechanics remain active.
+  await set('attGrounding','auto');
+  await set('terrain','psychic');
+  await set('dbMove','gw0170_u060');
+  await page.locator('#dbAuto').uncheck();
+  const manual=await snap('Expanding Force manual mode');
+  assert.equal(manual.mechanic,'expandingForce','manual mode preserves move mechanic');
+  assert.equal(manual.power,120,'manual mode preserves terrain conditional power');
+  assert.equal(await page.locator('#power').isEnabled(),true,'manual base power editable');
+  await page.locator('#power').fill('90');
+  assert.equal((await snap('manual custom base power')).power,135,'manual mode custom base power is respected');
+  await page.locator('#dbAuto').check();
+  assert.equal((await snap('auto mode restored')).power,120,'auto mode restores catalog power');
   assert.deepEqual(errors,[],'no page errors');
   console.log('PASS v0.171 runtime move conditions and field toggles');
  }finally{await browser.close();}
