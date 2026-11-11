@@ -21,7 +21,7 @@ const path=require('node:path');
   assert.equal(await page.locator('#attDetails .setting-group').first().locator('h3').textContent(),'Attack and damage modifiers','attacker modifiers translated');
   assert.equal(await page.locator('#defDetails .setting-group').nth(1).locator('h3').textContent(),'Defensive modifiers and ally support','defender support translated');
   assert.match(await page.locator('#inputSettings > summary').innerText(),/Input mode and manual stats/,'manual settings translated');
-  assert.match(await page.locator('#defDetails .unavailable').innerText(),/Residual damage/,'residual warning translated');
+  assert.match(await page.locator('#defDetails .unavailable').textContent(),/Residual damage/,'residual warning translated');
   assert.equal(await page.locator('#rollsLabel').textContent(),'16 damage rolls','damage roll heading translated');
   assert.equal(await page.locator('#reliabilityTitle').textContent(),'Verification status','verification heading translated');
   assert.equal(await page.locator('label:has(#battleFormat)').first().textContent().then(x=>x.includes('Battle format')),true,'battle format label translated');
