@@ -14,7 +14,7 @@ for(const m of moves){
  assert.ok(!byName.has(m.name),'duplicate name: '+m.name);byName.add(m.name);
  assert.ok(['physical','special','status'].includes(m.category),'category '+m.name);
  assert.ok(Number.isInteger(m.power)&&m.power>=0&&m.power<=250,'valid power '+m.name);
- assert.ok(['single','spread'].includes(m.target),'valid target '+m.name);
+ assert.ok(['single','spread','all'].includes(m.target),'valid target '+m.name);
 }
 const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
