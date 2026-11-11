@@ -123,6 +123,20 @@ const path=require('node:path');
    await page.locator('#conditionalPower').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
    assert.equal((await snap(moveId+' reset')).power,basePower);
   }
+  // v0.174 Facade: manual condition doubles power and ignores burn final penalty.
+  await set('dbMove','gw0169_p021');
+  assert.equal((await snap('Facade default')).power,70);
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Facade status condition')).power,140);
+  await page.locator('#burn').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  const facadeBurn=await snap('Facade burned');
+  assert.equal(facadeBurn.power,140);
+  assert.ok(facadeBurn.rolls.every(x=>Number.isInteger(x)));
+  await page.locator('#burn').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  const facadeNoBurn=await snap('Facade not burned');
+  assert.deepEqual(facadeBurn.rolls,facadeNoBurn.rolls,'Facade ignores physical burn penalty');
+  await page.locator('#conditionalPower').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal((await snap('Facade manual disabled')).power,70);
   assert.deepEqual(errors,[],'no page errors');
   console.log('PASS v0.171 runtime move conditions and field toggles');
  }finally{await browser.close();}
