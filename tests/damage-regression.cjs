@@ -32,6 +32,7 @@ const path=require('node:path');
   // First field comparison: Charizard Flamethrower into Venusaur, 0 points, neutral nature.
   await choose('att','リザードン','リザードン','charizard');
   await choose('def','フシギバナ','フシギバナ','venusaur');
+  await page.locator('.move-list-fallback summary').click();
   await page.locator('#dbMove').selectOption('flamethrower');
   await page.locator('#att-specialAttack-nature').selectOption('neutral');
   await page.locator('#def-specialDefense-nature').selectOption('neutral');
