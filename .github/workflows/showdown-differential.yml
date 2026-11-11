@@ -1,0 +1,21 @@
+name: Showdown differential audit
+on:
+  pull_request:
+  push:
+    branches: [main, feature/v0179-ja-en-foundation]
+  workflow_dispatch:
+jobs:
+  showdown-differential:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install comparison dependencies
+        run: |
+          npm install --no-save --no-package-lock @smogon/calc playwright
+          npx playwright install --with-deps chromium
+      - name: Compare sixteen rolls with Showdown
+        run: node tests/showdown-differential.mjs
