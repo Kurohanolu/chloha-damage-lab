@@ -51,7 +51,7 @@ const round=(v,m)=>Math.floor((v*m+2047)/4096);
    // this matrix therefore asserts full rolls only without terrain.
    if(terrain==='none'){
     const stab=a.attTypes.includes(a.moveType)?6144:4096;
-    const effectiveness=a.defTypes.reduce((m,t)=>m*(a.moveType==='エスパー'&&t==='どく'?2:a.moveType==='エスパー'&&t==='くさ'?0.5:1),1);
+    const effectiveness=a.defTypes.reduce((m,t)=>m*(a.moveType==='エスパー'&&t==='どく'?2:1),1);
     const expected=Array.from({length:16},(_,i)=>Math.max(1,Math.floor(round(Math.floor(base*(85+i)/100),stab)*effectiveness)));
     assert.deepEqual(state.rolls,expected,name+' all 16 damage rolls');
    }
