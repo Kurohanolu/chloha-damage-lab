@@ -9,7 +9,9 @@ const suites=[
  'v0177-modifier-vectors','v0177-conditional-power-vectors',
  'v0177-expanding-force-matrix','v0177-expanding-force-grounding',
  'v0177-expanding-force-stacked','ui-smoke','conditional-power-ui',
- 'damage-regression','v0171-moves','v0171-runtime'
+ 'damage-regression','v0171-moves','v0171-runtime',
+ 'v0177-move-policy-consistency','v0177-conditional-power-clarity',
+ 'v0177-version-provenance'
 ];
 assert.match(workflow,/pull_request:/,'PR gate required');
 for(const suite of suites){
