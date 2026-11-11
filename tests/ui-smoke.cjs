@@ -60,6 +60,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス',exact:true}).count(),1);
    await search.fill('garchomp');
    const englishOption=page.locator('#attSuggestions').getByRole('option',{name:'ガブリアス',exact:true});
+   console.log('DEBUG_EN',await page.locator('#attSuggestions').innerText(),await search.inputValue(),await page.locator('#attSuggestions').getAttribute('hidden'));
    assert.equal(await englishOption.count(),1,'English alias');
    assert.equal(await englishOption.locator('img').count(),1,'candidate image');
    await search.press('ArrowDown');
