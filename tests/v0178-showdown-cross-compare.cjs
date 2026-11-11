@@ -28,7 +28,8 @@ for(const weather of ['none','sun','rain']){
   for(const lifeOrb of [false,true]){
    for(const helpingHand of [false,true]){
     cases.push({...seedCases[0],id:'flame-'+weather+'-crit'+Number(crit)+'-orb'+Number(lifeOrb)+'-help'+Number(helpingHand),
-     weather,critical:crit,attItem:lifeOrb?'lifeOrb':'none',helpingHand});
+     weather,critical:crit,attItem:lifeOrb?'lifeOrb':'none',helpingHand,
+     battleFormat:helpingHand?'doubles':'singles'});
    }
   }
  }
