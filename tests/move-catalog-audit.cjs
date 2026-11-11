@@ -6,7 +6,7 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const match=html.match(/const ChlohaMovesDB = (\{[^\n]+\});/);
 assert.ok(match,'embedded moves DB present');
 const db=JSON.parse(match[1]),moves=db.moves;
-assert.equal(moves.length,305,'expected v0.169 batch + v0.170 physical expansion');
+assert.equal(moves.length,335,'GameWith 212 physical + 122 special + 1 Protect');
 const byId=new Set(),byName=new Set();
 for(const m of moves){
  assert.ok(m.id&&m.name,'name/id required');
@@ -31,6 +31,20 @@ for(const m of added){
 }
 const expanded=moves.filter(m=>m.id.startsWith('gw0170_'));
 assert.equal(expanded.length,60,'v0.170 new GameWith moves');
+assert.equal(moves.filter(m=>m.category==='physical').length,212,'GameWith physical catalog total');
+assert.equal(moves.filter(m=>m.category==='special').length,122,'GameWith special catalog total');
+assert.equal(moves.filter(m=>m.category==='status').length,1,'existing Protect');
+const extraPhysical=moves.filter(m=>m.id.startsWith('gw0170b_'));
+const extraSpecial=moves.filter(m=>m.id.startsWith('gw0170c_'));
+assert.equal(extraPhysical.length,26,'early physical omissions filled');
+assert.equal(extraSpecial.length,4,'special omissions filled');
+for(const m of [...extraPhysical,...extraSpecial]){
+ assert.ok(m.source.startsWith('https://gamewith.jp/pokemon-champions/54650'),'GameWith source');
+ assert.ok(m.unverifiedFields.includes('game_damage_parity'));
+}
+assert.equal(moves.find(m=>m.name==='ベノムショック').calculationSupported,false,'conditional poisoned-target power blocked');
+assert.equal(moves.find(m=>m.name==='どろかけ').power,20);
+
 assert.equal(expanded.filter(m=>m.calculationSupported).length,39,'new simple attacks');
 assert.equal(expanded.filter(m=>!m.calculationSupported).length,21,'new gated conditional attacks');
 for(const m of expanded){
@@ -61,4 +75,4 @@ assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupporte
 assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,false,'variable type gated');
 assert.equal(moves.find(m=>m.name==='りゅうのはどう').power,85);
 assert.ok(html.includes('この技')||html.includes('計算未対応'));
-console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length,'new vs initial 98; v0.170 supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
+console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length+extraPhysical.length+extraSpecial.length,'new vs initial 98; v0.170 first-batch supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
