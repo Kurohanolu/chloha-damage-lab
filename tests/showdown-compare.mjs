@@ -10,8 +10,8 @@ const fixtures=[
  {name:'rain boosted Surf',att:'Mew',def:'Mew',move:'Surf',type:'みず',category:'special',power:90,weather:'Rain'},
  {name:'rain weakened Flamethrower',att:'Mew',def:'Mew',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'Rain'},
  {name:'Reflect physical Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,reflect:true},
- {name:'Friend Guard Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,friendGuard:true},
- {name:'Friend Guard rain Surf',att:'Mew',def:'Mew',move:'Surf',type:'みず',category:'special',power:90,weather:'Rain',friendGuard:true},
+ {name:'Friend Guard Earthquake',att:'Mew',def:'Mew',move:'Earthquake',type:'じめん',category:'physical',power:100,friendGuard:true,doubles:true},
+ {name:'Friend Guard rain Surf',att:'Mew',def:'Mew',move:'Surf',type:'みず',category:'special',power:90,weather:'Rain',friendGuard:true,doubles:true},
  {name:'Psychic Terrain Expanding Force singles',att:'Mew',def:'Mew',move:'Expanding Force',type:'エスパー',category:'special',power:80,terrain:'Psychic',mechanic:'expandingForce'},
  {name:'Psychic Terrain Expanding Force doubles',att:'Mew',def:'Mew',move:'Expanding Force',type:'エスパー',category:'special',power:80,terrain:'Psychic',mechanic:'expandingForce',doubles:true}
 ];
@@ -41,7 +41,7 @@ try{
    attCurrentHp:attacker.stats.hp,attMaxHp:attacker.stats.hp,moveId:'',
    customMultiplier:1,attGrounding:'auto',defGrounding:'auto',
    terrain:f.terrain==='Psychic'?'psychic':'none',weather:f.weather==='Rain'?'rain':'none',
-   spread:f.doubles?'spread':'single',battleFormat:f.doubles?'doubles':'singles',screen:f.reflect?'reflect':'none',
+   spread:f.doubles&&f.mechanic==='expandingForce'?'spread':'single',battleFormat:f.doubles?'doubles':'singles',screen:f.reflect?'reflect':'none',
    helpingHand:false,friendGuardCount:f.friendGuard?1:0,burn:false,critical:false,stabMode:'auto',
    moveMechanic:f.mechanic||'none',conditionalPower:false,bodyPressDefenseStage:0,foulPlayTargetStage:0,
    attSpeed:attacker.stats.spe,defSpeed:defender.stats.spe,
