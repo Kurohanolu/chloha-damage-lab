@@ -21,6 +21,22 @@ const path = require('node:path');
     await toggle.click();
     assert.equal(await table.isHidden(),width<=700);
    }
+   // v0.167: all 6 Champions stats must be visible and editable for both sides.
+   const statKeys=['hp','attack','defense','specialAttack','specialDefense','speed'];
+   for(const side of ['att','def']){
+    const table=page.locator('#'+side+'Stats');
+    const overview=page.locator('#'+side+'StatOverview');
+    assert.equal(await table.locator('.stat-row').count(),6,'six '+side+' stat rows');
+    assert.equal(await overview.locator('button').count(),6,'six compact stat previews');
+    for(const key of statKeys){
+     assert.equal(await page.locator('#'+side+'-'+key+'-points').count(),1,side+' '+key+' edit input');
+     assert.equal(await page.locator('#'+side+'-'+key+'-row').getAttribute('hidden'),null,'no hidden stat row');
+    }
+    await page.locator('#'+side+'Previewspeed').click();
+    assert.equal(await table.isVisible(),true,'compact stat click must expand details');
+    assert.equal(await page.locator('#'+side+'-speed-points').evaluate(el=>document.activeElement===el),true,'preview must focus matching stat');
+    if(width<=700)await page.locator('#'+side+'StatsToggle').click();
+   }
    // v0.165: typing a partial species name must offer tappable matches.
    for(const side of ['att','def']){
     const search=page.locator('#'+side+'Search');
@@ -82,6 +98,14 @@ const path = require('node:path');
    assert.equal(defPoints.hp,32);assert.equal(defPoints.defense,32);assert.equal(defPoints.specialDefense,2);
    assert.equal(Object.values(defPoints).reduce((a,b)=>a+b,0),66);
    assert.match(await page.locator('#attBudget').innerText(),/残り0/);
+   assert.match(await page.locator('#attPreviewhp').innerText(),/32/);
+   assert.match(await page.locator('#attPreviewspeed').innerText(),/2/);
+   assert.match(await page.locator('#defPreviewspecialDefense').innerText(),/2/);
+   assert.equal(await page.locator('#koSummary').isHidden(),false,'visible KO summary for valid result');
+   assert.match(await page.locator('#koVerdict').innerText(),/KO|耐え|ダメージ|ひんし/);
+   assert.ok((await page.locator('#koVerdictDetail').innerText()).includes('KO率'));
+   if(width<=700)assert.ok((await page.locator('#miniVerdict').innerText()).length>0,'mobile KO verdict');
+
    await page.locator('#attPresets button[aria-label="攻撃側 全て0"]').click();
    assert.equal(Object.values(await page.evaluate(()=>window.ChlohaUI.models().att.points)).reduce((a,b)=>a+b,0),0);
    const result=page.locator('#resultCard');
@@ -89,7 +113,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.166')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.167')),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);
