@@ -344,7 +344,7 @@ document.querySelectorAll('input,select').forEach(el=>{
   try{
    if(el.id==='dbAttPokemon'){refreshCandidateMoves();refreshAbilities();}
    if(el.id==='dbDefPokemon')refreshDefenseAbilities();
-   if(dbInputs.has(el.id)||(autoFields.includes(el.id)&&$('dbAuto').checked)){
+   if(dbInputs.has(el.id)||(autoFields.includes(el.id)&&$('dbAuto').checked)||($('dbAuto').checked&&['terrain','attGrounding','attAbility','battleFormat'].includes(el.id))){
     // When returning from manual mode, preserve the manually entered HP percentage.
     if(el.id==='dbAuto'&&$('dbAuto').checked)window.ChlohaCurrentAttMaxHp=Number($('attMaxHp').value);
     applyDb();dbInputError=null;
