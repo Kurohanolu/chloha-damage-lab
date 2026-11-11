@@ -120,6 +120,27 @@ const path = require('node:path');
    assert.equal(await page.locator('#battleFormat').count(),1,'format unchanged by reset');
    for(const id of ['attAttackMods','attHpMods','attSpeedMods','defHpMods','defSupportMods','defSpeedMods'])
     assert.equal(await page.locator('#'+id).count(),1,id+' detail group exists');
+   // v0.169: GameWith move catalog, simple damage, and blocked complex mechanics.
+   assert.equal(await page.locator('#dbMove option').count(),244,'all attacking moves searchable (protect excluded)');
+   await moveSearch.fill('フリーズドライ');
+   const gated=moveList.getByRole('option',{name:'フリーズドライ',exact:true});
+   await gated.waitFor({state:'visible'});
+   assert.match(await gated.innerText(),/計算未対応/);
+   await gated.click();
+   assert.match(await page.locator('#moveSelected').innerText(),/計算未対応/);
+   assert.equal(await page.locator('#output').isHidden(),true,'special type matchup must not use generic damage');
+   assert.match(await page.locator('#error').innerText(),/未対応/);
+   await moveSearch.fill('パワージェム');
+   const simple=moveList.getByRole('option',{name:'パワージェム',exact:true});
+   await simple.waitFor({state:'visible'});
+   assert.match(await simple.innerText(),/基本計算のみ/);
+   await simple.click();
+   assert.equal(await page.locator('#error').isHidden(),true,'supported move must restore calculation');
+   assert.equal(await page.locator('#output').isHidden(),false,'output restored');
+   assert.equal(await page.locator('#dbMove').inputValue().then(x=>x.startsWith('gw0169_')),true);
+   assert.match(await page.locator('#moveSelected').innerText(),/パワージェム/);
+   assert.equal(await page.locator('#moveType').inputValue(),'いわ');
+   assert.equal(await page.locator('#power').inputValue(),'80');
    // Fast point allocation uses Champions 0..32 per stat, max 66 total.
    assert.equal(await page.locator('#dbAuto').isChecked(),true,'point auto mode active');
    await page.locator('#attPresets button[aria-label="攻撃側 H32/A32/S2"]').click();
