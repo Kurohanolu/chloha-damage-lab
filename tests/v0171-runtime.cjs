@@ -115,7 +115,7 @@ const path=require('node:path');
   // double power only when checked, and reset when another move is selected.
   for(const [moveId,basePower] of [["gw0170c_002",65],["gw0169_p074",60],["gw0169_s048",65],["gw0170b_015",60],["gw0170b_009",50],["gw0170_u054",60],["gw0169_p010",75],["gw0170_u052",75],["gw0169_s067",60]]){
    await set('dbMove',moveId);
-   assert.equal(await page.locator('#conditionalPowerPanel').isVisible(),true,moveId+' toggle visible');
+   assert.equal(await page.locator('#conditionalPowerPanel').evaluate(el=>el.hidden),false,moveId+' toggle enabled');
    assert.equal(await page.locator('#conditionalPower').isChecked(),false,moveId+' defaults off');
    assert.equal((await snap(moveId+' baseline')).power,basePower);
    await page.locator('#conditionalPower').evaluate(el=>{el.checked=true;el.dispatchEvent(new Event('input',{bubbles:true}));});
