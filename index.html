@@ -455,6 +455,81 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   toggle.addEventListener('click',()=>setExpanded(toggle.getAttribute('aria-expanded')!=='true'));
   toolbar.append(heading,toggle);table.before(toolbar);
  }
+ // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
+ const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
+ const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
+  .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
+ let moveHits=[],moveActive=-1,moveComposing=false;
+ function hideMoveSuggestions(){
+  moveList.hidden=true;moveInput.setAttribute('aria-expanded','false');
+  moveInput.removeAttribute('aria-activedescendant');moveHits=[];moveActive=-1;
+ }
+ function syncMovePicker(){
+  const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';
+  el('moveSelected').textContent=current?'選択中：'+current.name+'（'+current.type+' / '+(current.id==='electroBall'?'可変':current.power)+'）'+(selected.includes('［候補・未検証］')?'［候補・未検証］':selected.includes('［習得未検証］')?'［習得未検証］':''):'技を選択してください';
+ }
+ function chooseMove(option){
+  moveSelect.value=option.value;
+  if(moveSelect.value!==option.value)return;
+  moveInput.value='';hideMoveSuggestions();moveInput.blur();
+  moveSelect.dispatchEvent(new Event('input',{bubbles:true}));
+  moveSelect.dispatchEvent(new Event('change',{bubbles:true}));
+  syncMovePicker();
+ }
+ function setMoveActive(i){
+  moveActive=i;
+  const items=[...moveList.querySelectorAll('[role=option]')];
+  items.forEach((item,index)=>item.setAttribute('aria-selected',String(index===i)));
+  if(items[i]){moveInput.setAttribute('aria-activedescendant',items[i].id);items[i].scrollIntoView({block:'nearest'});}
+  else moveInput.removeAttribute('aria-activedescendant');
+ }
+ function renderMoveSuggestions(){
+  const query=normalizeMove(moveInput.value.trim());moveList.replaceChildren();moveActive=-1;moveHits=[];
+  if(!query){hideMoveSuggestions();return;}
+  moveHits=[...moveSelect.options].filter(o=>{
+   const m=movesById.get(o.value);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query);
+  }).sort((a,b)=>{
+   const rank=o=>{const m=movesById.get(o.value);
+    return (normalizeMove(m?.name).startsWith(query)?0:2)+(o.textContent.includes('［候補・未検証］')?0:1);
+   };
+   return rank(a)-rank(b);
+  }).slice(0,12);
+  for(let i=0;i<moveHits.length;i++){
+   const o=moveHits[i],m=movesById.get(o.value);
+   const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
+   item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
+   item.setAttribute('aria-selected','false');
+   item.append(node('span','',m?.name||o.textContent));
+   const status=o.textContent.includes('［候補・未検証］')?'候補・未検証':'習得未検証';
+   item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
+   item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
+   moveList.append(item);
+  }
+  if(!moveHits.length)moveList.append(node('div','move-empty','該当する技がありません'));
+  moveList.hidden=false;moveInput.setAttribute('aria-expanded','true');
+ }
+ moveInput.addEventListener('compositionstart',()=>{moveComposing=true;});
+ moveInput.addEventListener('compositionend',()=>{moveComposing=false;renderMoveSuggestions();});
+ moveInput.addEventListener('input',()=>{if(!moveComposing)renderMoveSuggestions();});
+ moveInput.addEventListener('focus',renderMoveSuggestions);
+ moveInput.addEventListener('search',renderMoveSuggestions);
+ moveInput.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){hideMoveSuggestions();return;}
+  if(moveComposing||e.isComposing)return;
+  if((e.key==='ArrowDown'||e.key==='ArrowUp')&&!moveList.hidden&&moveHits.length){
+   e.preventDefault();setMoveActive(e.key==='ArrowDown'?(moveActive+1)%moveHits.length:(moveActive-1+moveHits.length)%moveHits.length);
+  }
+  if(e.key==='Enter'&&!moveList.hidden&&moveHits.length){e.preventDefault();chooseMove(moveHits[moveActive<0?0:moveActive]);}
+ });
+ moveInput.addEventListener('blur',()=>{setTimeout(()=>{if(document.activeElement!==moveInput&&!moveList.contains(document.activeElement))hideMoveSuggestions();},120);});
+ el('resetBoard').addEventListener('click',()=>{
+  for(const id of ['weather','terrain','screen']){
+   const field=el(id);if(field.value==='none')continue;
+   field.value='none';field.dispatchEvent(new Event('input',{bubbles:true}));
+  }
+  notify('天候・フィールド・壁を「なし」に戻しました。対戦形式・その他の設定は維持します。');
+ });
  const keys=['hp','attack','defense','specialAttack','specialDefense','speed'];
  const short={hp:'HP',attack:'攻撃',defense:'防御',specialAttack:'特攻',specialDefense:'特防',speed:'素早さ'};
  const makeModel=()=>({points:Object.fromEntries(keys.map(k=>[k,0])),nature:Object.fromEntries(keys.map(k=>[k,'neutral'])),rank:Object.fromEntries(keys.map(k=>[k,0])),manual:{}});
@@ -586,6 +661,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  function refreshUI(){
   reconcileResultState();
+  syncMovePicker();
+  const getLabel=id=>el(id).selectedOptions?.[0]?.textContent?.trim()||'なし';
+  el('boardSummary').textContent='現在の盤面：天候 '+getLabel('weather')+' ／ フィールド '+getLabel('terrain')+' ／ 壁 '+getLabel('screen');
   for(const side of ['att','def']){
    const p=species(side),m=models[side];
    el(side+'Types').replaceChildren(...p.types.map(t=>node('span','type-pill',t)));
