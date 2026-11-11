@@ -137,6 +137,14 @@ const path=require('node:path');
   assert.deepEqual(facadeBurn.rolls,facadeNoBurn.rolls,'Facade ignores physical burn penalty');
   await page.locator('#conditionalPower').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
   assert.equal((await snap('Facade manual disabled')).power,70);
+  // v0.175: conditional power controls live immediately under the move picker.
+  assert.equal(await page.locator('#conditionalPowerPanel').evaluate(el=>el.parentElement.id),'movePicker','toggle is inside move picker');
+  assert.equal(await page.locator('#conditionalPowerPanel').evaluate(el=>el.hidden),false,'Facade toggle visible when selected');
+  assert.equal(await page.locator('#movePicker #conditionalPower').count(),1,'exactly one conditional checkbox near move search');
+  await set('dbMove','gw0170_u014');
+  assert.equal(await page.locator('#movePicker #conditionalPowerPanel').evaluate(el=>el.hidden),false,'Knock Off condition remains by move');
+  await set('dbMove','gw0170_u060');
+  assert.equal(await page.locator('#movePicker #conditionalPowerPanel').evaluate(el=>el.hidden),true,'unrelated move hides checkbox');
   assert.deepEqual(errors,[],'no page errors');
   console.log('PASS v0.171 runtime move conditions and field toggles');
  }finally{await browser.close();}
