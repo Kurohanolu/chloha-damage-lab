@@ -279,9 +279,14 @@ function refreshDefenseAbilities(){
  addSelectOptions('defAbility',[['none','なし／未適用'],...(p?.abilities||[]).map(name=>[defensiveAbilities[name]||'unsupported:'+name,name+(defensiveAbilities[name]?'（対応）':'（未対応）')])]);
  if([...$('defAbility').options].some(o=>o.value===previous))$('defAbility').value=previous;
 }
+// Single readiness gate used by the move selector, search, and calculation.
+// Explicit policy blocks take precedence over the catalog's generic damage flag.
 function moveCalculationReady(m){
+ if(!m||!['physical','special'].includes(m.category))return false;
  const policy=ChlohaMovePolicy[m.id];
- return m.calculationSupported!==false||Boolean(policy?.mechanic&&policy?.standardDamageSupported&&policy.priority!=='P0');
+ if(policy?.priority==='P0'||policy?.standardDamageSupported===false)return false;
+ if(policy?.mechanic&&policy.standardDamageSupported===true)return true;
+ return m.calculationSupported===true;
 }
 function refreshCandidateMoves(){
  const previous=$('dbMove').value;
