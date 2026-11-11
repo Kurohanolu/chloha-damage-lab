@@ -499,6 +499,16 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
  const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
+ // Verified bilingual aliases; these affect search only, never the battle identifiers.
+ const moveEnglishAliases=Object.freeze({
+ 'ワイドフォース':'Expanding Force','じしん':'Earthquake','からげんき':'Facade',
+ '10まんボルト':'Thunderbolt','まもる':'Protect','ねっぷう':'Heat Wave',
+ 'ハイドロポンプ':'Hydro Pump','れいとうビーム':'Ice Beam',
+ 'シャドーボール':'Shadow Ball','サイコキネシス':'Psychic',
+ 'インファイト':'Close Combat','ムーンフォース':'Moonblast',
+ 'かえんほうしゃ':'Flamethrower','だいちのちから':'Earth Power',
+ 'ボルトチェンジ':'Volt Switch','とんぼがえり':'U-turn'
+ });
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
  let moveHits=[],moveActive=-1,moveComposing=false;
@@ -530,7 +540,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   if(!query){hideMoveSuggestions();return;}
   moveHits=[...moveSelect.options].filter(o=>{
    const m=movesById.get(o.value);
-   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query);
   }).sort((a,b)=>{
    const rank=o=>{const m=movesById.get(o.value);
     return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
@@ -542,7 +552,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
    item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
    item.setAttribute('aria-selected','false');
-   item.append(node('span','',m?.name||o.textContent));
+   item.append(node('span','',window.ChlohaLocale?.get()==='en'&&moveEnglishAliases[m?.name]?moveEnglishAliases[m.name]+' / '+m.name:(m?.name||o.textContent)));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
    item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
