@@ -9,7 +9,7 @@ const path=require('node:path');
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   await page.locator('#attStats .stat-row').first().waitFor();
-  const set=async(id,value)=>page.locator('#'+id).selectOption(value);
+  const set=async(id,value)=>page.locator('#'+id).evaluate((el,v)=>{if(!Array.from(el.options).some(o=>o.value===v))throw Error('Missing option '+v+' for '+el.id);el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},value);
   const snap=async(label)=>{
    const result=await page.evaluate(()=>{const x=window.ChlohaLastCalculation;return x&&{power:x.r.effectivePower,spread:x.a.spread,mechanic:x.a.moveMechanic,rolls:x.r.rolls,terrain:x.a.terrain};});
    assert.ok(result,label+': result exists');
