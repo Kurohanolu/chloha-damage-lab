@@ -9,7 +9,7 @@ const path = require('node:path');
    const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto('file://'+path.resolve(__dirname,'../index.html'),{waitUntil:'load'});
-   await page.locator('#attStats .stat-row').first().waitFor({timeout:15000});
+   await page.locator('#attStats .stat-row').first().waitFor({state:'attached',timeout:15000});
    for(const side of ['att','def']){
     const toggle=page.locator('.stat-toggle[aria-controls="'+side+'Stats"]');
     const table=page.locator('#'+side+'Stats');
