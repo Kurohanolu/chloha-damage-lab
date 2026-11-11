@@ -22,6 +22,32 @@ const dictionary={
 '計算機の操作':'Calculator navigation','攻撃側と防御側を入れ替える':'Swap attacker and defender',
 '天候・フィールド・壁をなしに戻す':'Clear weather, terrain and screens'
 };
+// Curated bilingual battle names. Display text only: select values and battle IDs stay unchanged.
+const battleNames=Object.freeze({
+ 'リザードン':'Charizard','マフォクシー':'Delphox','ガブリアス':'Garchomp',
+ 'カイリュー':'Dragonite','バンギラス':'Tyranitar','フシギバナ':'Venusaur',
+ 'カメックス':'Blastoise','ドラパルト':'Dragapult','サザンドラ':'Hydreigon',
+ 'ペリッパー':'Pelipper','ブリジュラス':'Archaludon','イッカネズミ':'Maushold',
+ 'フレンドガード':'Friend Guard','ふゆう':'Levitate','いかく':'Intimidate',
+ 'てきおうりょく':'Adaptability','マルチスケイル':'Multiscale',
+ 'こだわりメガネ':'Choice Specs','こだわりハチマキ':'Choice Band',
+ 'いのちのたま':'Life Orb','きあいのタスキ':'Focus Sash',
+ 'たべのこし':'Leftovers','オボンのみ':'Sitrus Berry',
+ 'ワイドフォース':'Expanding Force','じしん':'Earthquake',
+ 'からげんき':'Facade','10まんボルト':'Thunderbolt',
+ 'ねっぷう':'Heat Wave','まもる':'Protect'
+});
+const reverseBattleNames=Object.fromEntries(Object.entries(battleNames).map(([ja,en])=>[en,ja]));
+function translateBattleOptions(){
+ for(const select of document.querySelectorAll('select')){
+  if(select.id==='chloha-locale')continue;
+  for(const option of select.options){
+   const text=option.textContent, base=reverseBattleNames[text]||text;
+   const next=locale==='en'?(battleNames[base]||base):base;
+   if(text!==next)option.textContent=next;
+  }
+ }
+}
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
@@ -55,6 +81,7 @@ function setLocale(next){
  document.documentElement.lang=locale;
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
+ translateBattleOptions();
  const select=document.getElementById('chloha-locale');
  if(select)select.value=locale;
 }
