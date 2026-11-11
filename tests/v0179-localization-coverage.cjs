@@ -10,7 +10,7 @@ function embedded(name){
 const pokemon=embedded('ChlohaPokemonDB').pokemon;
 const moves=embedded('ChlohaMovesDB').moves;
 const context={window:{}};vm.createContext(context);
-for(const file of ['names-v0179.js','names-ja-en.js','names-catalog-v0179.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),context,{filename:file});
+for(const file of ['names-v0179.js','names-ja-en.js','names-catalog-v0179.js','names-forms-v0179.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),context,{filename:file});
 const names=context.window.ChlohaNames;
 const abilities=[...new Set(pokemon.flatMap(p=>p.abilities||[]))].sort();
 const inventories=[
@@ -26,4 +26,4 @@ for(const {kind,entries,map,key} of inventories){
 }
 fs.mkdirSync(path.join(__dirname,'../reports'),{recursive:true});
 fs.writeFileSync(path.join(__dirname,'../reports/v0179-localization-coverage.json'),JSON.stringify(report,null,2)+'\n');
-if(process.argv.includes('--strict')&&Object.values(report.categories).some(c=>c.missing.length))process.exitCode=1;
+if(Object.values(report.categories).some(c=>c.missing.length))process.exitCode=1;
