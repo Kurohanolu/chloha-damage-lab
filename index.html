@@ -805,9 +805,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    if(!q){hide();return;}
    matches=options.filter(o=>{
     const p=pokemonById.get(o.value);
-    return [o.label,p?.englishName||'',englishAliases[o.value]||'',o.value].some(t=>normalize(t).includes(q));
+    return [o.label,p?.englishName||'',englishAliases[o.value]||'',window.ChlohaNames?.pokemon?.[o.value]||'',o.value].some(t=>normalize(t).includes(q));
    }).sort((a,b)=>{
-    const score=o=>normalize(o.label).startsWith(q)?0:normalize(englishAliases[o.value]||o.value).startsWith(q)?1:2;
+    const score=o=>normalize(o.label).startsWith(q)?0:normalize(window.ChlohaNames?.pokemon?.[o.value]||englishAliases[o.value]||o.value).startsWith(q)?1:2;
     return score(a)-score(b);
    }).slice(0,10);
    for(let i=0;i<matches.length;i++){
@@ -866,4 +866,4 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  refreshUI();
 })();
 
-</script><script defer src="./i18n.js"></script></body></html>
+</script><script src="./names-v0179.js"></script><script defer src="./i18n.js"></script></body></html>
