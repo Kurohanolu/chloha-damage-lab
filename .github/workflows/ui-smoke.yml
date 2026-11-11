@@ -20,6 +20,8 @@ jobs:
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/ui-smoke.cjs
       - run: node tests/damage-regression.cjs
+      - run: node tests/v0171-moves.cjs
+      - run: node tests/v0171-runtime.cjs
       - if: always()
         uses: actions/upload-artifact@v4
         with:
