@@ -48,6 +48,35 @@ function translateBattleOptions(){
   }
  }
 }
+// Curated localized names. Values are presentation-only; option.value remains unchanged.
+const entityNames=Object.freeze({
+ 'リザードン':'Charizard','マフォクシー':'Delphox','イッカネズミ':'Maushold',
+ 'ピカチュウ':'Pikachu','カイリュー':'Dragonite','ガブリアス':'Garchomp',
+ 'サーナイト':'Gardevoir','ゲンガー':'Gengar','ミュウツー':'Mewtwo',
+ 'フシギバナ':'Venusaur','カメックス':'Blastoise','ルカリオ':'Lucario',
+ 'メタグロス':'Metagross','ギャラドス':'Gyarados','バンギラス':'Tyranitar',
+ 'フレンドガード':'Friend Guard','ふゆう':'Levitate','いかく':'Intimidate',
+ 'もうか':'Blaze','げきりゅう':'Torrent','しんりょく':'Overgrow',
+ 'きあいのタスキ':'Focus Sash','いのちのたま':'Life Orb',
+ 'こだわりメガネ':'Choice Specs','こだわりハチマキ':'Choice Band',
+ 'こだわりスカーフ':'Choice Scarf','たべのこし':'Leftovers',
+ 'オボンのみ':'Sitrus Berry','とつげきチョッキ':'Assault Vest',
+ 'ワイドフォース':'Expanding Force','じしん':'Earthquake',
+ 'からげんき':'Facade','10まんボルト':'Thunderbolt',
+ 'ねっぷう':'Heat Wave','まもる':'Protect'
+});
+const optionOriginal=new WeakMap();
+function translateOptions(){
+ for(const select of document.querySelectorAll('#app select')){
+  if(select.id==='chloha-locale')continue;
+  for(const option of select.options){
+   if(!optionOriginal.has(option))optionOriginal.set(option,option.textContent);
+   const base=optionOriginal.get(option);
+   const next=locale==='en'?(entityNames[base]||base):base;
+   if(option.textContent!==next)option.textContent=next;
+  }
+ }
+}
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
@@ -81,6 +110,7 @@ function setLocale(next){
  document.documentElement.lang=locale;
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
+ translateOptions();
  translateBattleOptions();
  const select=document.getElementById('chloha-locale');
  if(select)select.value=locale;
@@ -111,6 +141,7 @@ function initialize(){
   const observer=new MutationObserver(records=>{
    for(const record of records)for(const added of record.addedNodes){
     if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
+   translateOptions();
    }
   });
   observer.observe(app,{childList:true,subtree:true});
