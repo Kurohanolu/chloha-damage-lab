@@ -11,7 +11,7 @@ const path=require('node:path');
   await page.locator('#attStats .stat-row').first().waitFor();
   const set=async(id,value)=>page.locator('#'+id).selectOption(value);
   const snap=async(label)=>{
-   const result=await page.evaluate(()=>{const x=window.ChlohaLastCalculation;return x&&{power:x.a.power,spread:x.a.spread,mechanic:x.a.moveMechanic,rolls:x.r.rolls,terrain:x.a.terrain};});
+   const result=await page.evaluate(()=>{const x=window.ChlohaLastCalculation;return x&&{power:x.r.effectivePower,spread:x.a.spread,mechanic:x.a.moveMechanic,rolls:x.r.rolls,terrain:x.a.terrain};});
    assert.ok(result,label+': result exists');
    assert.equal(result.rolls.length,16,label+': 16 rolls');
    assert.ok(result.rolls.every(x=>Number.isInteger(x)&&x>=0),label+': integer rolls');
