@@ -12,7 +12,7 @@ const round=(v,m)=>Math.floor((v*m+2047)/4096);
   await page.locator('#attStats .stat-row').first().waitFor();
   const set=async(id,value)=>page.locator('#'+id).evaluate((el,v)=>{
    if(!Array.from(el.options).some(o=>o.value===v))throw Error('missing option '+id+':'+v);
-   el.value=v;el.dispatchEvent(new Event('change',{bubbles:true}));
+   el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));
   },value);
   await set('dbMove','gw0170_u060');
   const cases=[
