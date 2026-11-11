@@ -41,7 +41,7 @@ try{
    attCurrentHp:attacker.stats.hp,attMaxHp:attacker.stats.hp,moveId:'',
    customMultiplier:1,attGrounding:'auto',defGrounding:'auto',
    terrain:f.terrain==='Psychic'?'psychic':'none',weather:f.weather==='Rain'?'rain':'none',
-   spread:f.doubles&&f.mechanic==='expandingForce'?'spread':'single',battleFormat:f.doubles?'doubles':'singles',screen:f.reflect?'reflect':'none',
+   spread:f.doubles&&['Earthquake','Surf','Expanding Force'].includes(f.move)?'spread':'single',battleFormat:f.doubles?'doubles':'singles',screen:f.reflect?'reflect':'none',
    helpingHand:false,friendGuardCount:f.friendGuard?1:0,burn:false,critical:false,stabMode:'auto',
    moveMechanic:f.mechanic||'none',conditionalPower:false,bodyPressDefenseStage:0,foulPlayTargetStage:0,
    attSpeed:attacker.stats.spe,defSpeed:defender.stats.spe,
