@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.167 Pre-Release 6</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chloha Damage Lab v0.168 Pre-Release 7</title><style>
 :root{color-scheme:dark;font-family:system-ui,'Noto Sans JP',sans-serif;background:#0c1220;color:#edf3ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:auto;padding:24px 14px 60px}h1{margin:4px 0}p,small{color:#adbed5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{background:#172338;border:1px solid #34455f;border-radius:15px;padding:17px;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#d6e2f2}input,select{width:100%;background:#0e1728;border:1px solid #52647e;border-radius:8px;padding:10px;color:white;font:inherit}label.check{flex-direction:row;align-items:center}label.check input{width:auto}.wide{grid-column:1/-1}.result{font-size:clamp(26px,5vw,44px);font-weight:800;color:#91d7ff}.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{padding:6px 8px;background:#293c59;border-radius:7px;font-variant-numeric:tabular-nums}.reliability{background:#2b2635;border:1px solid #c8a5ed;border-radius:10px;padding:14px;margin:12px 0;color:#f0e5ff}.reliability ul{margin:8px 0 0;padding-left:20px}.reliability li{margin:5px 0}.warn{background:#40311f;border-left:3px solid #ffd184;padding:12px;border-radius:6px;color:#ffe2a6}details{margin-top:12px}summary{cursor:pointer}pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c4d4e9}button{background:#80c5ff;color:#061223;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 #battleStatePanel button{min-height:44px;margin:4px 3px 4px 0;padding:8px 12px;cursor:pointer}#battleStatePanel button:focus-visible,#useIronRoller:focus-visible{outline:3px solid #91d7ff;outline-offset:2px}#battleStatus{overflow-wrap:anywhere}#battleHistory{max-height:190px;overflow:auto}#battleObservedDamage{max-width:100%!important}@media(max-width:700px){.wrap{padding:14px 10px 40px}.panel{padding:12px}.fields{grid-template-columns:1fr}#battleStatePanel button{width:100%;margin:4px 0}#battleStatePanel label{width:100%}}
 </style><style>
@@ -59,6 +59,41 @@ body>div[role=status],body>main.wrap{display:none!important}body{margin:0;backgr
  .stat-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
  .stat-overview .stat-preview{min-height:38px;font-size:12px}
  .ko-summary{gap:5px;flex-direction:column;align-items:flex-start}
+}
+</style><style id="ui-v0168-style">
+.board-quick{margin:8px 0 14px;padding:12px 14px;background:#fff;border:1px solid #dce4ef;border-radius:12px;color:#243a55}
+.board-quick-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.board-quick-heading strong{display:block;font-size:14px}.board-quick-heading small{display:block;font-size:11px;color:#6c7a8a}
+.board-quick-heading button{background:#eaf0f9;color:#365476;min-height:38px;padding:7px 12px;font-size:11px}
+.board-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.board-controls label{min-width:0;font-size:11px}.board-controls select{font-size:12px;min-width:0}
+.board-summary{font-size:11px;color:#526b89;margin:9px 0 0}
+.setting-groups{display:grid;gap:11px;padding-top:10px}
+.setting-group{padding:10px;border:1px solid #e0e7ef;border-radius:10px;background:#f8fafc}
+.setting-group h3{font-size:12px;margin:0 0 8px;color:#334b66}
+.setting-group .advanced-fields{margin:0}
+.detail-hint{display:inline-block;font-size:10px;color:#67809a;margin-left:5px;font-weight:400}
+.move-picker{position:relative;min-width:0;grid-column:1/-1}
+.move-picker>label{display:block;font-size:12px;margin-bottom:5px;color:#344c69}
+.move-picker>input{width:100%;min-height:42px;padding:9px 10px;border:1px solid #c3d0e1;border-radius:8px;background:#fff;color:#1c304a;font-size:14px}
+#moveSuggestions{position:absolute;z-index:110;left:0;right:0;top:65px;max-height:296px;overflow:auto;overscroll-behavior:contain;background:#fff;border:1px solid #d5dee9;border-radius:9px;box-shadow:0 12px 30px #253b5625}
+#moveSuggestions[hidden]{display:none}
+.move-option{width:100%;min-height:47px;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;background:#fff;color:#223a57;border:0;border-bottom:1px solid #edf0f5;padding:8px 10px;font-size:13px}
+.move-option .move-meta{flex-shrink:0;font-size:10px;color:#5e7693}
+.move-option[aria-selected=true],.move-option:focus-visible,.move-option:hover{background:#eaf2ff}
+.move-empty{font-size:12px;color:#788799;padding:12px}
+.move-selected{margin:7px 0 3px;color:#315477;font-size:12px;font-weight:700}
+.move-list-fallback{margin:2px 0 0;padding:0;border:0}
+.move-list-fallback summary{font-size:11px;color:#56718f;min-height:28px;cursor:pointer}
+.move-list-fallback[open] summary{margin-bottom:4px}
+.move-list-fallback select{width:100%;font-size:12px;min-height:40px}
+@media(max-width:700px){
+ .board-quick{margin:7px 0 11px;padding:10px}
+ .board-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .board-quick-heading button{padding:7px 9px;min-height:38px}
+ .detail-hint{display:block;margin:3px 0 0}
+ .setting-group{padding:8px}
+ #moveSuggestions{max-height:270px}
 }
 </style><style id="pokemon-autocomplete-css">
 .pokemon-choice{position:relative;min-width:0}
@@ -351,11 +386,12 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const el=id=>document.getElementById(id);
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
  const app=node('main','lab');app.id='app';document.body.append(app);
- app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.167 <span>Pre-Release 6</span></span></header>
+ app.innerHTML=`<header class="lab-header"><a class="brand" href="#app"><span class="brand-symbol">C</span><span>CHLOHA <b>DAMAGE LAB</b></span></a><span class="version">v0.168 <span>Pre-Release 7</span></span></header>
  <div class="lab-intro"><div><p class="eyebrow">POKÉMON CHAMPIONS</p><h1>対戦の一手を、確かめる。</h1></div><p class="release-note">実機未照合の検証版です。<br>計算結果・収録・習得技は未保証。</p></div>
  <nav class="quick-nav" aria-label="計算機の操作"><a href="#attackerCard">攻撃側</a><button id="swapSides" type="button" aria-label="攻撃側と防御側を入れ替える">⇄ 攻守を入れ替え</button><a href="#defenderCard">防御側</a><a href="#resultCard">結果 ↓</a></nav>
- <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>天候・フィールド・その他補正</summary><div id="attAdvanced" class="advanced-fields"></div></details><p id="attBudget" class="budget"></p></section>
- <section id="defenderCard" class="fighter defender"><div class="card-top"><h2><i></i>防御側</h2><span>DEFENDER</span></div><div class="pokemon-header" id="defPokemonHeader"></div><div id="defStats" class="stat-table"></div><div id="defMain" class="quick-fields"></div><details id="defDetails"><summary>壁・HP・その他補正</summary><div id="defAdvanced" class="advanced-fields"></div><p class="unavailable">定数ダメージ（ステルスロック・天候・毒など）の自動計算は未対応です。現在HPへ手動で反映してください。</p></details><p id="defBudget" class="budget"></p></section></div>
+ <section class="board-quick" aria-label="盤面の基本設定"><div class="board-quick-heading"><div><strong>盤面の基本設定</strong><small>天候・フィールド・壁はここから変更</small></div><button type="button" id="resetBoard" aria-label="天候・フィールド・壁をなしに戻す">盤面をリセット</button></div><div id="boardControls" class="board-controls"></div><p id="boardSummary" class="board-summary" aria-live="polite"></p></section>
+ <div class="match-grid"><section id="attackerCard" class="fighter attacker"><div class="card-top"><h2><i></i>攻撃側</h2><span>ATTACKER</span></div><div class="pokemon-header" id="attPokemonHeader"></div><div id="attQuick" class="quick-fields"></div><div id="attStats" class="stat-table"></div><div id="attMain" class="quick-fields"></div><details id="attDetails"><summary>攻撃側の詳細設定 <span class="detail-hint">HP・攻撃補正・素早さ</span></summary><div class="setting-groups"><section class="setting-group"><h3>攻撃・ダメージ補正</h3><div id="attAttackMods" class="advanced-fields"></div></section><section class="setting-group"><h3>攻撃側のHP</h3><div id="attHpMods" class="advanced-fields"></div></section><section class="setting-group"><h3>素早さ・行動状態</h3><div id="attSpeedMods" class="advanced-fields"></div></section></div></details><p id="attBudget" class="budget"></p></section>
+ <section id="defenderCard" class="fighter defender"><div class="card-top"><h2><i></i>防御側</h2><span>DEFENDER</span></div><div class="pokemon-header" id="defPokemonHeader"></div><div id="defStats" class="stat-table"></div><div id="defMain" class="quick-fields"></div><details id="defDetails"><summary>防御側の詳細設定 <span class="detail-hint">HP・味方支援・素早さ</span></summary><div class="setting-groups"><section class="setting-group"><h3>HP・耐久調整</h3><div id="defHpMods" class="advanced-fields"></div></section><section class="setting-group"><h3>防御側の補正・味方支援</h3><div id="defSupportMods" class="advanced-fields"></div></section><section class="setting-group"><h3>素早さ・行動状態</h3><div id="defSpeedMods" class="advanced-fields"></div></section></div><p class="unavailable">定数ダメージ（ステルスロック・天候・毒など）の自動計算は未対応です。現在HPへ手動で反映してください。</p></details><p id="defBudget" class="budget"></p></section></div>
  <p id="uiNotice" class="ui-notice" role="status" aria-live="polite"></p>
  <section id="resultCard" class="result-card"><div class="result-heading"><div><p class="eyebrow">DAMAGE ESTIMATE</p><h2>計算結果</h2></div><div id="resultActions"></div></div><div id="resultMount"></div></section>
  <details class="utility" id="inputSettings"><summary>入力モード・手動ステータス</summary><div id="modeControls" class="advanced-fields"></div><p>能力ポイント方式：各0〜32、合計66以内。空欄は0。自動反映オフでは実数値・タイプ・威力を編集できます。</p><div id="manualFields" class="advanced-fields"></div><p id="manualNote">選択した技の固有効果は手入力でも維持します。技に合う分類・威力・参照能力を確認してください。</p></details>
@@ -371,16 +407,23 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   mount(side==='att'?'dbAttPokemon':'dbDefPokemon',side+'SelectMount');
  };
  header('att');header('def');
- mount('dbMove','attQuick');
+ const movePicker=node('div','move-picker');movePicker.id='movePicker';
+ movePicker.innerHTML='<label for="moveSearch">技名を検索</label><input type="search" id="moveSearch" placeholder="例：じしん、10まんボルト" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="moveSuggestions"><div id="moveSuggestions" role="listbox" hidden></div><p id="moveSelected" class="move-selected" aria-live="polite"></p><details class="move-list-fallback"><summary>技一覧から選ぶ</summary><div id="moveSelectMount"></div></details>';
+ el('attQuick').append(movePicker);mount('dbMove','moveSelectMount');
  for(const [ids,target] of [
   [['attAbility','attItem','attackStage'],'attMain'],[['defAbility','defItem','defenseStage'],'defMain'],
-  [['weather','terrain','attGrounding','customMultiplier','burn','critical','helpingHand','stabMode','attMaxHp','attCurrentHp','attSpeed','attSpeedStage','attParalyzed','attTailwind','dbAttHpEv','dbAttSpeedEv','dbAttSpeedNature'],'attAdvanced'],
-  [['screen','defGrounding','currentHp','defSpeed','defSpeedStage','defParalyzed','defTailwind','battleFormat','spread','friendGuardCount','dbDefSpeedEv','dbDefSpeedNature'],'defAdvanced'],
+  [['weather','terrain','screen','battleFormat'],'boardControls'],
+  [['customMultiplier','burn','critical','helpingHand','stabMode'],'attAttackMods'],
+  [['attMaxHp','attCurrentHp','dbAttHpEv'],'attHpMods'],
+  [['attGrounding','attSpeed','attSpeedStage','attParalyzed','attTailwind','dbAttSpeedEv','dbAttSpeedNature'],'attSpeedMods'],
+  [['currentHp'],'defHpMods'],
+  [['defGrounding','spread','friendGuardCount'],'defSupportMods'],
+  [['defSpeed','defSpeedStage','defParalyzed','defTailwind','dbDefSpeedEv','dbDefSpeedNature'],'defSpeedMods'],
   [['dbAuto'],'modeControls'],[['level','power','attack','defense','hp','moveType','category','attType1','attType2','defType1','defType2'],'manualFields']])for(const id of ids)mount(id,target);
  // Keep the old active-stat inputs as the stable bridge used by the v0.162 adapter.
  const bridge=node('div');bridge.id='legacyBridge';bridge.hidden=true;app.append(bridge);
  for(const id of ['dbAttEv','dbAttNature','dbDefEv','dbDefNature','dbDefHpEv'])bridge.append(el(id).closest('label'));
- el('defAdvanced').append(el('foulPlayInputs'));
+ el('defSupportMods').append(el('foulPlayInputs'));
  el('resultMount').append(el('error'),el('output'));el('resultActions').append(el('copy'),el('useIronRoller'));
  el('battleMount').append(el('battleStatePanel'));
  el('auditMount').append(document.querySelector('.reliability'));
@@ -412,6 +455,81 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   toggle.addEventListener('click',()=>setExpanded(toggle.getAttribute('aria-expanded')!=='true'));
   toolbar.append(heading,toggle);table.before(toolbar);
  }
+ // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
+ const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
+ const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
+  .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
+ let moveHits=[],moveActive=-1,moveComposing=false;
+ function hideMoveSuggestions(){
+  moveList.hidden=true;moveInput.setAttribute('aria-expanded','false');
+  moveInput.removeAttribute('aria-activedescendant');moveHits=[];moveActive=-1;
+ }
+ function syncMovePicker(){
+  const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';
+  el('moveSelected').textContent=current?'選択中：'+current.name+'（'+current.type+' / '+(current.id==='electroBall'?'可変':current.power)+'）'+(selected.includes('［候補・未検証］')?'［候補・未検証］':selected.includes('［習得未検証］')?'［習得未検証］':''):'技を選択してください';
+ }
+ function chooseMove(option){
+  moveSelect.value=option.value;
+  if(moveSelect.value!==option.value)return;
+  moveInput.value='';hideMoveSuggestions();moveInput.blur();
+  moveSelect.dispatchEvent(new Event('input',{bubbles:true}));
+  moveSelect.dispatchEvent(new Event('change',{bubbles:true}));
+  syncMovePicker();
+ }
+ function setMoveActive(i){
+  moveActive=i;
+  const items=[...moveList.querySelectorAll('[role=option]')];
+  items.forEach((item,index)=>item.setAttribute('aria-selected',String(index===i)));
+  if(items[i]){moveInput.setAttribute('aria-activedescendant',items[i].id);items[i].scrollIntoView({block:'nearest'});}
+  else moveInput.removeAttribute('aria-activedescendant');
+ }
+ function renderMoveSuggestions(){
+  const query=normalizeMove(moveInput.value.trim());moveList.replaceChildren();moveActive=-1;moveHits=[];
+  if(!query){hideMoveSuggestions();return;}
+  moveHits=[...moveSelect.options].filter(o=>{
+   const m=movesById.get(o.value);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query);
+  }).sort((a,b)=>{
+   const rank=o=>{const m=movesById.get(o.value);
+    return (normalizeMove(m?.name).startsWith(query)?0:2)+(o.textContent.includes('［候補・未検証］')?0:1);
+   };
+   return rank(a)-rank(b);
+  }).slice(0,12);
+  for(let i=0;i<moveHits.length;i++){
+   const o=moveHits[i],m=movesById.get(o.value);
+   const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
+   item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
+   item.setAttribute('aria-selected','false');
+   item.append(node('span','',m?.name||o.textContent));
+   const status=o.textContent.includes('［候補・未検証］')?'候補・未検証':'習得未検証';
+   item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
+   item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
+   moveList.append(item);
+  }
+  if(!moveHits.length)moveList.append(node('div','move-empty','該当する技がありません'));
+  moveList.hidden=false;moveInput.setAttribute('aria-expanded','true');
+ }
+ moveInput.addEventListener('compositionstart',()=>{moveComposing=true;});
+ moveInput.addEventListener('compositionend',()=>{moveComposing=false;renderMoveSuggestions();});
+ moveInput.addEventListener('input',()=>{if(!moveComposing)renderMoveSuggestions();});
+ moveInput.addEventListener('focus',renderMoveSuggestions);
+ moveInput.addEventListener('search',renderMoveSuggestions);
+ moveInput.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){hideMoveSuggestions();return;}
+  if(moveComposing||e.isComposing)return;
+  if((e.key==='ArrowDown'||e.key==='ArrowUp')&&!moveList.hidden&&moveHits.length){
+   e.preventDefault();setMoveActive(e.key==='ArrowDown'?(moveActive+1)%moveHits.length:(moveActive-1+moveHits.length)%moveHits.length);
+  }
+  if(e.key==='Enter'&&!moveList.hidden&&moveHits.length){e.preventDefault();chooseMove(moveHits[moveActive<0?0:moveActive]);}
+ });
+ moveInput.addEventListener('blur',()=>{setTimeout(()=>{if(document.activeElement!==moveInput&&!moveList.contains(document.activeElement))hideMoveSuggestions();},120);});
+ el('resetBoard').addEventListener('click',()=>{
+  for(const id of ['weather','terrain','screen']){
+   const field=el(id);if(field.value==='none')continue;
+   field.value='none';field.dispatchEvent(new Event('input',{bubbles:true}));
+  }
+  notify('天候・フィールド・壁を「なし」に戻しました。対戦形式・その他の設定は維持します。');
+ });
  const keys=['hp','attack','defense','specialAttack','specialDefense','speed'];
  const short={hp:'HP',attack:'攻撃',defense:'防御',specialAttack:'特攻',specialDefense:'特防',speed:'素早さ'};
  const makeModel=()=>({points:Object.fromEntries(keys.map(k=>[k,0])),nature:Object.fromEntries(keys.map(k=>[k,'neutral'])),rank:Object.fromEntries(keys.map(k=>[k,0])),manual:{}});
@@ -543,6 +661,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  function refreshUI(){
   reconcileResultState();
+  syncMovePicker();
+  const getLabel=id=>el(id).selectedOptions?.[0]?.textContent?.trim()||'なし';
+  el('boardSummary').textContent='現在の盤面：天候 '+getLabel('weather')+' ／ フィールド '+getLabel('terrain')+' ／ 壁 '+getLabel('screen');
   for(const side of ['att','def']){
    const p=species(side),m=models[side];
    el(side+'Types').replaceChildren(...p.types.map(t=>node('span','type-pill',t)));
@@ -689,7 +810,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  });
  // Existing battle/copy handlers update the result asynchronously or on click.
  for(const id of ['battleCommit','battleUndo','battleReset'])el(id).addEventListener('click',refreshUI);
- window.ChlohaUI=Object.freeze({version:'0.167',refresh:refreshUI,models:()=>structuredClone(models)});
+ window.ChlohaUI=Object.freeze({version:'0.168',refresh:refreshUI,models:()=>structuredClone(models)});
  refreshUI();
 })();
 

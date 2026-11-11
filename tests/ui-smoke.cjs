@@ -87,6 +87,39 @@ const path = require('node:path');
    // The fallback species select remains available for manual selection.
    assert.equal(await page.locator('.pokemon-manual-select').count(),2);
 
+   // v0.168: move search is a combobox with partial Japanese and English-ID matching.
+   const moveSearch=page.locator('#moveSearch'),moveList=page.locator('#moveSuggestions'),moveSelect=page.locator('#dbMove');
+   await moveSearch.fill('じしん');
+   await moveList.getByRole('option',{name:'じしん',exact:true}).waitFor({state:'visible'});
+   await moveList.getByRole('option',{name:'じしん',exact:true}).click();
+   assert.equal(await moveSelect.inputValue(),'earthquake','Japanese move search selects earthquake');
+   assert.equal(await moveSearch.inputValue(),'');
+   assert.equal(await moveList.isHidden(),true);
+   await moveSearch.fill('thunderbolt');
+   await moveList.getByRole('option',{name:'10まんボルト',exact:true}).waitFor({state:'visible'});
+   await moveSearch.press('ArrowDown');
+   assert.ok(await moveSearch.getAttribute('aria-activedescendant'),'keyboard move option');
+   await moveSearch.press('Enter');
+   assert.equal(await moveSelect.inputValue(),'thunderbolt','English move ID search');
+   assert.match(await page.locator('#moveSelected').innerText(),/10まんボルト/);
+   await moveSearch.fill('zzzx-no-move');
+   assert.equal(await moveList.getByText('該当する技がありません').count(),1);
+   await moveSearch.press('Escape');
+   assert.equal(await moveList.isHidden(),true);
+   assert.equal(await page.locator('#moveSelectMount select').count(),1,'native move dropdown retained');
+   // Shared board controls stay accessible without opening advanced settings.
+   for(const id of ['weather','terrain','screen','battleFormat']){
+    assert.equal(await page.locator('#boardControls #'+id).count(),1,id+' on quick board');
+   }
+   await page.locator('#weather').selectOption('rain');
+   await page.locator('#terrain').selectOption('electric');
+   await page.locator('#screen').selectOption('lightScreen');
+   assert.match(await page.locator('#boardSummary').innerText(),/雨/);
+   await page.locator('#resetBoard').click();
+   for(const id of ['weather','terrain','screen'])assert.equal(await page.locator('#'+id).inputValue(),'none',id+' reset');
+   assert.equal(await page.locator('#battleFormat').count(),1,'format unchanged by reset');
+   for(const id of ['attAttackMods','attHpMods','attSpeedMods','defHpMods','defSupportMods','defSpeedMods'])
+    assert.equal(await page.locator('#'+id).count(),1,id+' detail group exists');
    // Fast point allocation uses Champions 0..32 per stat, max 66 total.
    assert.equal(await page.locator('#dbAuto').isChecked(),true,'point auto mode active');
    await page.locator('#attPresets button[aria-label="攻撃側 H32/A32/S2"]').click();
@@ -113,7 +146,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.167')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.168')),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);
