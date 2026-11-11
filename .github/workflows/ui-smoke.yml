@@ -17,6 +17,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-save playwright@1.58.2
       - run: npx playwright install --with-deps chromium
+      - run: node tests/move-catalog-audit.cjs
       - run: node tests/ui-smoke.cjs
       - run: node tests/damage-regression.cjs
       - if: always()
