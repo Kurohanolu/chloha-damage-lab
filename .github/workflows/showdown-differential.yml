@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   showdown-differential:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
           node-version: '22'
       - name: Install comparison dependencies
         run: |
-          npm install --no-save --no-package-lock @smogon/calc playwright
-          npx playwright install --with-deps chromium
+          npm install --no-save --no-package-lock @smogon/calc playwright@1.58.2
+          npx playwright install chromium
       - name: Compare sixteen rolls with Showdown
         run: node tests/showdown-differential.mjs
