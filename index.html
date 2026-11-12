@@ -231,6 +231,16 @@ function assessReliability(a,selection={}){
 }
 window.ChlohaAssessReliability=assessReliability;
 function render(){const oldNotice=$('ironRollerFieldNotice');if(oldNotice)oldNotice.remove();try{const a=read();if(a.moveMechanic==='expandingForce'){a.spread=a.battleFormat==='doubles'&&a.terrain==='psychic'&&isGrounded(a,'att')?'spread':'single';$('spread').value=a.spread;}let r=DamageEngine.calculate(a);const multiName=window.ChlohaMultiHitMove||null;
+const specialName=window.ChlohaSpecialMultiHitMove||null;
+if(specialName){
+ if(a.defAbility==='multiscale')throw Error('特殊連続技とマルチスケイルのヒット別処理は未対応です');
+ if(a.attAbility==='skillLink'||a.attItem==='loadedDice')throw Error('特殊連続技のスキルリンク・いかさまダイスの命中処理は検証中です');
+ const engine=window.ChlohaMultiHit,spec=engine.specialMoveSpec(specialName);
+ const hitRolls=spec.powers.map(power=>DamageEngine.calculate({...a,power}).rolls);
+ const dist=engine.specialMoveDistribution(specialName,i=>hitRolls[i],{accuracies:Array(spec.hits).fill(spec.accuracy)});
+ const koProbability=a.currentHp===0?null:engine.koProbability(dist,a.currentHp);
+ r={...r,rolls:[...dist.keys()],hitRolls,multiHitDistribution:dist,koProbability};
+}
 if(multiName){
  if(a.defAbility==='multiscale')throw Error('連続技とマルチスケイルのヒット別処理は未対応です');
  const engine=window.ChlohaMultiHit,dist=engine.totalDistribution(multiName,()=>r.rolls,{skillLink:a.attAbility==='skillLink',loadedDice:a.attItem==='loadedDice'});
@@ -296,6 +306,7 @@ function moveCalculationReady(m){
  const policy=ChlohaMovePolicy[m.id];
  if(policy?.priority==='P0')return false;
  if(window.ChlohaMultiHit?.hitDistribution(m.name))return true;
+ if(window.ChlohaMultiHit?.specialMoveSpec(m.name))return true;
  if(policy?.standardDamageSupported===false)return false;
  if(policy?.mechanic&&policy.standardDamageSupported===true)return true;
  if(['けたぐり','くさむすび','ヘビーボンバー','ヒートスタンプ'].includes(m.name))return typeof window.ChlohaWeightPower?.weightDependentPower==='function';
@@ -353,6 +364,7 @@ function applyDb(){
  const mechanic=policy?.mechanic||'none';
  window.ChlohaMoveMechanic=mechanic;
  window.ChlohaMultiHitMove=window.ChlohaMultiHit?.hitDistribution(m.name)?m.name:null;
+ window.ChlohaSpecialMultiHitMove=window.ChlohaMultiHit?.specialMoveSpec(m.name)?m.name:null;
  syncConditionalPower();
  $('foulPlayInputs').hidden=mechanic!=='foulPlay'||!auto;
  if(!auto){$('dbStatus').textContent='手入力モード：実数値・タイプ・威力を編集できます。選択技の固有効果は維持します。';return;}
