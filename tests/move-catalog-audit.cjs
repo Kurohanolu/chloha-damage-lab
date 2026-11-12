@@ -45,7 +45,7 @@ for(const m of [...extraPhysical,...extraSpecial]){
 assert.equal(moves.find(m=>m.name==='ベノムショック').calculationSupported,false,'conditional poisoned-target power blocked');
 assert.equal(moves.find(m=>m.name==='どろかけ').power,20);
 assert.equal(moves.find(m=>m.name==='サイコカッター').calculationSupported,true,'Psycho Cut must calculate normally');
-for(const name of ['DDラリアット','Gのちから','サイコファング','3ぼんのや','あなをほる','かわらわり','きりさく','クラブハンマー','クロスチョップ','クロスポイズン','ドラゴンダイブ','いびき','うずしお','ねらいうち','はなびらのまい','せいなるつるぎ','とびはねる']){
+for(const name of ['DDラリアット','Gのちから','サイコファング','3ぼんのや','あなをほる','かわらわり','きりさく','クラブハンマー','クロスチョップ','クロスポイズン','ドラゴンダイブ','いびき','うずしお','ねらいうち','はなびらのまい','とびはねる']){
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' baseline damage supported');
 }
 for(const name of ['ばくおんぱ','ふんえん','じならし','うたかたのアリア','パラボラチャージ']){
@@ -77,6 +77,7 @@ for(const [name,type,power,supported] of [
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
+assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,false,'defense stage bypass must not silently use normal damage');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
 assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupported,false,'multihit gated');
 assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,false,'variable type gated');
