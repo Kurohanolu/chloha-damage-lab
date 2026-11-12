@@ -188,6 +188,7 @@ const attributeLabels={
 };
 const originalAttributes=new WeakMap();
 function translateAccessibilityLabel(base){
+ base=translateRuntime(base);
  const overview=base.match(/^(Attacker|Defender)の6(?:能力値|stat points)$/);
  if(overview)return overview[1]+' six stats';
  const edit=base.match(/^(Attacker|Defender) (.+?) (\d+)ポイント。編集する$/);
