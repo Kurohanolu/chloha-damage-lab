@@ -131,6 +131,29 @@ const path=require('node:path');
   assert.ok(!trio.pulseSpecial.trace.some(x=>x.includes('stat/orichalcumPulse')),'Orichalcum Pulse excludes special attack');
   assert.ok(trio.hadron.rolls[0]>trio.hadronNoTerrain.rolls[0],'Hadron Engine boosts special attack in Electric Terrain');
   assert.ok(!trio.hadronPhysical.trace.some(x=>x.includes('stat/hadronEngine')),'Hadron Engine excludes physical attack');
+  const aura=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'フェアリー',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['みず'],
+    weather:'none',terrain:'none',battleFormat:'singles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x});
+   return {neutral:calc({}),fairy:calc({attAbility:'fairyAura'}),
+    fairyDef:calc({defAbility:'fairyAura'}),dark:calc({attAbility:'darkAura',moveType:'あく'}),
+    wrong:calc({attAbility:'darkAura'}),darkNeutral:calc({moveType:'あく'}),
+    broken:calc({attAbility:'fairyAura',defAbility:'auraBreak'})};
+  });
+  assert.ok(aura.fairy.trace.some(x=>x.includes('power/aura: 80 → 106')),'Fairy Aura applies 1.33x power');
+  assert.deepEqual(aura.fairy.rolls,aura.fairyDef.rolls,'defender Fairy Aura also affects attacker');
+  assert.ok(aura.fairy.rolls[0]>aura.neutral.rolls[0],'Fairy Aura increases Fairy damage');
+  assert.ok(aura.dark.rolls[0]>aura.darkNeutral.rolls[0],'Dark Aura increases Dark damage');
+  assert.deepEqual(aura.wrong.rolls,aura.neutral.rolls,'Dark Aura ignores Fairy attacks');
+  assert.ok(aura.broken.trace.some(x=>x.includes('power/aura: 80 → 60')),'Aura Break replaces 1.33x with 0.75x');
+  assert.ok(aura.broken.rolls[0]<aura.neutral.rolls[0],'Aura Break reduces damage');
+  console.log('PASS v0.182 Fairy Aura, Dark Aura and Aura Break numeric checks');
   console.log('PASS v0.182 three offensive abilities threshold/weather/terrain checks');
   console.log('PASS v0.182 Water Bubble offensive and burn numeric checks');
   console.log('PASS v0.182 Flare Boost burn and category numeric checks');
