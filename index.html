@@ -405,7 +405,7 @@ flingPowerPanel.append(flingPowerSelect);
 flingPowerPanel.hidden=true;
 document.body.append(flingPowerPanel);
 const dragonDartsPanel=document.createElement('label');dragonDartsPanel.id='dragonDartsPanel';dragonDartsPanel.textContent='ドラゴンアロー：選択した相手への命中回数（ダブルでは相手2体の状況から選択） ';
-const dragonDartsHits=document.createElement('select');dragonDartsHits.id='dragonDartsHits';for(const [value,label] of [['2','2 hits on selected target'],['1','1 hit on selected target']]){const option=document.createElement('option');option.value=value;option.textContent=label;dragonDartsHits.append(option);}dragonDartsPanel.append(dragonDartsHits);dragonDartsPanel.hidden=true;document.body.append(dragonDartsPanel);
+const dragonDartsHits=document.createElement('select');dragonDartsHits.id='dragonDartsHits';for(const [value,label] of [['2','選択した相手に2回命中'],['1','選択した相手に1回命中']]){const option=document.createElement('option');option.value=value;option.textContent=label;dragonDartsHits.append(option);}dragonDartsPanel.append(dragonDartsHits);dragonDartsPanel.hidden=true;document.body.append(dragonDartsPanel);
 const beatUpPanel=document.createElement('label');beatUpPanel.id='beatUpPanel';beatUpPanel.textContent='ふくろだたき：参加ポケモンの攻撃種族値（カンマ区切り・ひんし／状態異常は除外） ';
 const beatUpStats=document.createElement('input');beatUpStats.id='beatUpStats';beatUpStats.type='text';beatUpStats.value='100';beatUpStats.placeholder='100,120,80';beatUpPanel.append(beatUpStats);beatUpPanel.hidden=true;document.body.append(beatUpPanel);
 const autoFields=['power','attack','defense','hp','attMaxHp','attSpeed','defSpeed','moveType','category','attType1','attType2','defType1','defType2','spread'];
