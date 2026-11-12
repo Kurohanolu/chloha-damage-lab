@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,103);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,44);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,104);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,43);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -124,6 +124,9 @@ assert.equal(moves.find(m=>m.name==='メテオビーム').calculationSupported,t
 assert.equal(policies['v095_71'].mechanic,'chargeSpABoost','Meteor Beam auto SpA boost');
 assert.equal(policies['gw0169_s009'].mechanic,'chargeSpABoost','Electro Shot shares SpA boost');
 assert.equal(moves.find(m=>m.name==='エレクトロビーム').calculationSupported,true,'Electro Shot enabled');
+assert.equal(moves.find(m=>m.name==='シェルアームズ').calculationSupported,true,'Shell Side Arm enabled');
+assert.equal(policies['gw0169_s020'].mechanic,'shellSideArm','Shell Side Arm adaptive category');
+assert.ok(html.includes("physicalChosen=mean(physical.rolls)>mean(special.rolls)"),'Shell Side Arm damage comparison');
 assert.ok(html.includes("if(a.moveMechanic==='chargeSpABoost')as=Math.min(6,as+1)"),'pre-hit stage applied');
 assert.ok(!missingRuntimeMechanic.some(m=>m.name==='メテオビーム'),'Meteor Beam is no longer an unsupported flagged move');
 console.log('Coverage audit: catalog='+damaging.length+', P0 excluded='+excluded.length+', candidates='+candidates.length+', legacy flags overridden='+legacyFlagMismatch.length+', policy without runtime mechanic='+missingRuntimeMechanic.map(m=>m.name).join('/'));
