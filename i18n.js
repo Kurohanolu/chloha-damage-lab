@@ -238,7 +238,7 @@ function translateOptions(){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
    const ability=base.match(/^(.+?)（(一部技のみ対応|対応|効果未対応|未対応)）$/);
-   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
+   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','すいほう':'Water Bubble','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
    const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
    const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
    const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
