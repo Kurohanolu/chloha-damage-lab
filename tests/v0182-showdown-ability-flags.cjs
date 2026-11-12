@@ -40,4 +40,14 @@ for(const [name,ids] of [['Sharpness',slicing],['Mega Launcher',pulse]]){
 }
 assert.equal(slicing.size,Object.keys(expectedSlicing).length,'slicing coverage changed: review Showdown tags');
 assert.equal(pulse.size,Object.keys(expectedPulse).length,'pulse coverage changed: review Showdown tags');
+const showdown=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/showdown-ability-flags-v0182.json'),'utf8'));
+const categoryMap={Physical:'physical',Special:'special',Status:'status'};
+for(const [id,record] of Object.entries(showdown.moves)){
+ const move=catalog.get(id);
+ assert.ok(move,'missing mapped Showdown move '+id);
+ assert.equal(move.power,record.basePower,'base power mismatch: '+move.name);
+ assert.equal(move.category,categoryMap[record.category],'category mismatch: '+move.name);
+ assert.equal(slicing.has(id),record.flags.includes('slicing'),'slicing flag mismatch: '+move.name);
+ assert.equal(pulse.has(id),record.flags.includes('pulse'),'pulse flag mismatch: '+move.name);
+}
 console.log('PASS Showdown flag audit: slicing',slicing.size,'pulse',pulse.size);
