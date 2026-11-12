@@ -21,6 +21,10 @@ const dictionary={
 "登録373件。個別データ照合は未完了。":"373 entries registered. Individual data verification is incomplete.",
 "Champions収録一覧（GameWith）":"Champions roster (GameWith)",
 "収録データは継続照合中です。":"Roster data verification is ongoing.",
+"特殊連続技の命中率は各回90%を基準に計算しています。命中・回避ランクや命中率補正アイテム・特性は未対応です。":"Each hit of this special multi-hit move uses 90% base accuracy. Accuracy/evasion stages and modifiers from items or abilities are unsupported.",
+"ふくろだたきは入力された参加ポケモンの攻撃種族値で各ヒットを算出。参加可否は手動指定で、ヒット別急所・耐久特性・追加効果は未検証です。":"Beat Up calculates each hit from the entered participants' base Attack stats. Eligibility is manual; per-hit critical hits, defensive abilities and secondary effects are unverified.",
+"実測ダメージを確認し「技の使用を確定」を押してください。フィールド解除は確定時に反映されます。":"Check the observed damage and select Confirm move use. Terrain removal is applied on confirmation.",
+"攻守を入れ替えたため履歴を消去しました。":"Battle history cleared because attacker and defender were swapped.",
 "習得可否は未検証。計算は対応技のみ。":"Learnsets are unverified. Only supported moves can be calculated.",
 "Pokémon Champions向け計算機・検証版（実測一致未保証）":"Pokémon Champions damage calculator — experimental build (hardware accuracy unverified)",
 "検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。":"Experimental engine. Champions stat-point allocation is supported, but damage accuracy has not been fully verified on hardware. Some abilities, moves and items remain unsupported. Do not rely on this tool for definitive competitive decisions.",
@@ -284,6 +288,8 @@ function translateBattleMoveLabel(value){
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
 function translateRuntime(base){
+ const darts=base.match(/^ドラゴンアローは選択した相手への(\d+)回分のダメージを表示します。相手2体のまもる・無効・対象判定は手動指定です。$/);
+ if(darts)return 'Dragon Darts shows '+darts[1]+' hit(s) on the selected target. Protect, immunities and targeting across both opponents must be set manually.';
  if(base.startsWith('現在の盤面：天候 ')){
   const options={'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow','エレキフィールド':'Electric Terrain','グラスフィールド':'Grassy Terrain','ミストフィールド':'Misty Terrain','サイコフィールド':'Psychic Terrain','リフレクター':'Reflect','ひかりのかべ':'Light Screen'};
   return base.replace(/^現在の盤面：天候\s+(.+?)\s*／\s*フィールド\s+(.+?)\s*／\s*壁\s+(.+)$/,(_,w,t,sc)=>'Current battlefield: Weather '+(options[w]||w)+' / Terrain '+(options[t]||t)+' / Screen '+(options[sc]||sc));
