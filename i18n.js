@@ -230,7 +230,9 @@ function translateAccessibilityLabel(base){
 function translateOptions(){
  const root=document.getElementById('app');
  if(!root)return;
- for(const select of root.querySelectorAll('select')){
+ // Legacy move-form selectors live outside #app; include them in native option localization.
+ const selects=[...root.querySelectorAll('select'),...['ragingBullForm','auraWheelForm'].map(id=>document.getElementById(id)).filter(Boolean)];
+ for(const select of selects){
   if(select.id==='chloha-locale')continue;
   for(const option of select.options){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
