@@ -147,6 +147,22 @@ const path=require('node:path');
   require('node:fs').writeFileSync('english-untranslated-audit.json',JSON.stringify({total:residualJapanese.length,unique:[...new Set(residualJapanese.map(x=>x.text))].length,items:residualJapanese},null,2));
   console.log('ENGLISH_VISIBLE_JAPANESE_AUDIT '+JSON.stringify(residualJapanese));
   assert.deepEqual(residualJapanese,[],'English mode must not contain visible Japanese UI text');
+  // Final release gate: verify real trace and version disclaimer round-trip.
+  const traceEn=await page.locator('#trace').textContent();
+  const provenanceEn=await page.locator('#versionProvenance').textContent();
+  assert.match(traceEn,/Attack stat: \\d+[\\s\\S]*Defense stat: \\d+[\\s\\S]*Before random factor: \\d+/,'real trace labels are English');
+  assert.match(traceEn,/Final damage \\(roll 100\\): \\d+/,'final trace roll is English');
+  assert.match(provenanceEn,/About versions:.*public UI version.*internal API foundation/,'version provenance is translated');
+  assert.match(provenanceEn,/Pokémon Champions hardware/,'hardware verification caveat preserved');
+  await page.locator('#chloha-locale').selectOption('ja');
+  const traceJa=await page.locator('#trace').textContent();
+  const provenanceJa=await page.locator('#versionProvenance').textContent();
+  assert.match(traceJa,/攻撃実数値: \\d+[\\s\\S]*防御実数値: \\d+[\\s\\S]*乱数前: \\d+/,'real trace returns to Japanese');
+  assert.match(traceJa,/最終ダメージ（乱数100）: \\d+/,'final trace roll returns to Japanese');
+  assert.match(provenanceJa,/バージョンについて：画面の/,'version provenance returns to Japanese');
+  await page.locator('#chloha-locale').selectOption('en');
+  assert.equal(await page.locator('#trace').textContent(),traceEn,'trace English round-trip is lossless');
+  assert.equal(await page.locator('#versionProvenance').textContent(),provenanceEn,'version English round-trip is lossless');
   // Preserve an English-mode visual artifact for pre-release UI inspection.
   await page.screenshot({path:'smoke-v0179-english.png',fullPage:true});
   await page.locator('#chloha-locale').selectOption('ja');
