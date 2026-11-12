@@ -93,4 +93,14 @@ for(const name of ['Population Bomb','Triple Axel']){
 }
 assert.throws(()=>specialMoveDistribution('Triple Axel',()=>same,{accuracies:[1,NaN,1]}),/accuracies/);
 assert.throws(()=>specialMoveDistribution('Population Bomb',()=>same,{accuracies:Array(10).fill(-.1)}),/accuracies/);
+// Showdown special item rules: one accuracy check with Skill Link or Loaded Dice.
+const skillBomb=require('../multi-hit.js').specialItemDistribution('Population Bomb',()=>Array(16).fill(10),{accuracy:.9,skillLink:true});
+assert.ok(Math.abs(skillBomb.get(0)-.1)<1e-12);
+assert.ok(Math.abs(skillBomb.get(100)-.9)<1e-12);
+const diceBomb=require('../multi-hit.js').specialItemDistribution('Population Bomb',()=>Array(16).fill(10),{accuracy:1,loadedDice:true});
+for(let hits=4;hits<=10;hits++)assert.ok(Math.abs(diceBomb.get(hits*10)-1/7)<1e-12,'Loaded Dice 4-10 hit probability');
+assert.ok(Math.abs([...diceBomb.values()].reduce((a,b)=>a+b,0)-1)<1e-12);
+const diceAxel=require('../multi-hit.js').specialItemDistribution('Triple Axel',i=>Array(16).fill((i+1)*10),{accuracy:.9,loadedDice:true});
+assert.ok(Math.abs(diceAxel.get(60)-.9)<1e-12);
+assert.ok(Math.abs(diceAxel.get(0)-.1)<1e-12);
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
