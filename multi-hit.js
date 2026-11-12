@@ -78,6 +78,23 @@ const ChlohaMultiHit = (() => {
   if(!Array.isArray(accuracies)||accuracies.length!==count)throw Error('Expected '+count+' per-hit accuracy values');
   return sequentialDistribution(rollsForHit,accuracies);
  }
+ // Showdown battle-actions.ts: Loaded Dice Population Bomb chooses 4-10 hits
+ // uniformly, with one accuracy check; Skill Link removes multiaccuracy.
+ function specialItemDistribution(name,rollsForHit,{accuracy=0.9,skillLink=false,loadedDice=false}={}){
+  const spec=specialMoveSpec(name);
+  if(!spec)throw Error('Unsupported special multi-hit move: '+name);
+  if(!Number.isFinite(accuracy)||accuracy<0||accuracy>1)throw Error('Invalid accuracy');
+  if(typeof rollsForHit!=='function')throw Error('rollsForHit must be a function');
+  if(!skillLink&&!loadedDice)return specialMoveDistribution(name,rollsForHit,{accuracies:Array(spec.hits).fill(accuracy)});
+  const counts=loadedDice&&!skillLink&&spec.hits===10?[4,5,6,7,8,9,10]:[spec.hits];
+  const distribution=new Map([[0,1-accuracy]]);
+  for(const count of counts){
+   const perHit=Array.from({length:count},(_,i)=>rollsForHit(i,count));
+   for(const [damage,p] of convolve(perHit,count))
+    distribution.set(damage,(distribution.get(damage)||0)+accuracy*p/counts.length);
+  }
+  return new Map([...distribution].sort((a,b)=>a[0]-b[0]));
+ }
  function koProbability(distribution,currentHp){
   if(!(distribution instanceof Map)||distribution.size===0)throw Error('Expected nonempty damage distribution');
   if(!Number.isSafeInteger(currentHp)||currentHp<1)throw Error('Target HP must be a positive integer');
@@ -90,7 +107,7 @@ const ChlohaMultiHit = (() => {
   if(Math.abs(total-1)>1e-9)throw Error('Damage distribution probabilities must sum to one');
   return Math.max(0,Math.min(1,ko));
  }
- return {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveSpec,specialMoveDistribution,koProbability};
+ return {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveSpec,specialMoveDistribution,specialItemDistribution,koProbability};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaMultiHit;
 if(typeof globalThis!=='undefined')globalThis.ChlohaMultiHit=ChlohaMultiHit;
