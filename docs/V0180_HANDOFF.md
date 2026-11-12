@@ -36,6 +36,9 @@
 - Added regression assertions in `tests/v0179-localization.cjs` for English selected-move summary.
 - Latest code commit at this handoff update: `aa2ad26013e0b7cd0dbdf415fee31c4fd14a12bf` (CI result must be checked; previous verified passing commit remains `f294d1f`).
 
+- CI on handoff commit `2fc0bf635dca4e81d780421a3173e7cf5165f81d`: UI regression, Showdown differential tests, Showdown differential audit all SUCCESS.
+- Fixed English stat-point counter spacing (`remaining 66` rather than `remaining66`), with regression assertion. Latest code commit `d257836c1887b9c7f7b525f218b3ad6a283490fc`; CI pending at time of documentation update.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
