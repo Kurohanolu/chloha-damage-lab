@@ -124,7 +124,7 @@ function translateRuntime(base){
  if(base==='無効')return 'Immune';
  if(base==='確定1発')return 'Guaranteed OHKO';
  if(base==='ひんし（HP 0）')return 'Fainted (0 HP)';
- if(/^\\d+〜\\d+発（目安・回復等なし）$/.test(base))return base.replace('発（目安・回復等なし）',' hits (estimate; no recovery)').replace('〜','–');
+ if(/^\d+〜\d+発（目安・回復等なし）$/.test(base))return base.replace('発（目安・回復等なし）',' hits (estimate; no recovery)').replace('〜','–');
  if(base==='2発合計の256通りのダメージ（重複を含む）')return '256 two-hit damage combinations (including duplicates)';
  if(base==='技を選択してください')return 'Select a move';
  if(base.startsWith('選択中：'))return 'Selected: '+base.slice(4).replace('可変','Variable');
