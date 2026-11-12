@@ -2,6 +2,9 @@
 (()=>{
 'use strict';
 const dictionary={
+"急所（詳細設定）":"Critical hit (advanced)",
+"通常ダメージ":"Normal damage",
+"急所ダメージ ×1.5":"Critical hit damage ×1.5",
 // Full-screen static Japanese copy audited against pre-script HTML.
 "v0.162：373件を登録（未内定・未検証候補を含む）。実機一致は未確認です。":"v0.162: 373 entries registered (including unconfirmed and unverified candidates). Hardware accuracy is unverified.",
 "v0.162 Pre-Release 1 — 限定検証用":"v0.162 Pre-Release 1 — Limited testing",
