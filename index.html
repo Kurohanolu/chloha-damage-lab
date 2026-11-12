@@ -600,6 +600,15 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   toggle.addEventListener('click',()=>setExpanded(toggle.getAttribute('aria-expanded')!=='true'));
   toolbar.append(heading,toggle);table.before(toolbar);
  }
+ // Type badges are dynamic and must change immediately with the language.
+ const pokemonTypeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
+ function syncPokemonTypeBadges(){
+  const en=window.ChlohaLocale?.get()==='en';
+  for(const badge of document.querySelectorAll('#attTypes .type-pill,#defTypes .type-pill')){
+   badge.textContent=en?(pokemonTypeEnglish[badge.dataset.jaType]||badge.dataset.jaType):badge.dataset.jaType;
+  }
+ }
+ document.addEventListener('chloha:localechange',syncPokemonTypeBadges);
  // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
  const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
  // Verified bilingual aliases; these affect search only, never the battle identifiers.
@@ -835,7 +844,13 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   el('boardSummary').textContent='現在の盤面：天候 '+getLabel('weather')+' ／ フィールド '+getLabel('terrain')+' ／ 壁 '+getLabel('screen');
   for(const side of ['att','def']){
    const p=species(side),m=models[side];
-   el(side+'Types').replaceChildren(...p.types.map(t=>node('span','type-pill',t)));
+   el(side+'Types').replaceChildren(...p.types.map(t=>{
+    const badge=node('span','type-pill',t);
+    badge.dataset.jaType=t;
+    badge.setAttribute('data-no-translate','');
+    return badge;
+   }));
+   syncPokemonTypeBadges();
    el(side+'BaseStats').replaceChildren(...keys.map(k=>{const s=node('span');s.append(node('small','',short[k]),node('b','',String(p.baseStats[k])));return s;}));
    const img=el(side+'Portrait'),fallback=el(side+'PortraitFallback'),key=window.ChlohaSpriteIds?.[p.id];
    if(img.dataset.pokemon!==p.id){
