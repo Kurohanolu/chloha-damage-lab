@@ -35,6 +35,23 @@ assert.equal(sheerForce.applies({a:{attAbility:'sheerForce',moveId:'flamethrower
 assert.equal(sheerForce.applies({a:{attAbility:'sheerForce',moveId:'earthquake'}}),false);
 assert.equal(sheerForce.applies({a:{attAbility:'none',moveId:'flamethrower'}}),false);
 assert.equal(sheerForce.run({},90),117);
+for(const [ability,move,expected] of [
+ ['megaLauncher','darkPulse',true],['megaLauncher','auraSphere',true],['megaLauncher','earthquake',false],
+ ['sharpness','airSlash',true],['sharpness','gw0170_s055',true],['sharpness','earthquake',false]
+]){
+ const id=ability==='megaLauncher'?'megaLauncher':'sharpness';
+ const line=html.split('\n').find(x=>x.startsWith("registerModifier('power','"+id+"',"));
+ assert.ok(line,id+' modifier registered');
+ let modifier;
+ vm.runInNewContext(
+ "const MEGA_LAUNCHER_MOVES=new Set(['darkPulse','auraSphere','gw0169_s059','gw0169_s065']);\n"+
+ "const SHARPNESS_MOVES=new Set(['airSlash','gw0170b_019','gw0170_s055','gw0169_p044','gw0170b_013','v096_086','v096_076']);\n"+line,
+ {registerModifier:(layer,name,priority,applies,run)=>{modifier={layer,name,applies,run};},
+  pokeRound:(v,mod)=>Math.floor((v*mod+2047)/4096)});
+ assert.equal(modifier.applies({a:{attAbility:ability,moveId:move}}),expected,ability+'/'+move);
+ assert.equal(modifier.run({},80),120,id+' boost 1.5x');
+}
+
 
 
 console.log('PASS version provenance: public UI and engine API identifiers distinguished');
