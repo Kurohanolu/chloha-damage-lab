@@ -187,6 +187,14 @@ const attributeLabels={
  '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt'
 };
 const originalAttributes=new WeakMap();
+function translateAccessibilityLabel(base){
+ const overview=base.match(/^(Attacker|Defender)の6(?:能力値|stat points)$/);
+ if(overview)return overview[1]+' six stats';
+ const edit=base.match(/^(Attacker|Defender) (.+?) (\\d+)ポイント。編集する$/);
+ if(edit)return edit[1]+' '+edit[2]+' '+edit[3]+' points. Edit';
+ if(base==='計算結果の要約')return 'Damage calculation summary';
+ return attributeLabels[base]||dictionary[base]||translateRuntime(base);
+}
 
 function translateOptions(){
  const root=document.getElementById('app');
@@ -346,10 +354,10 @@ function translate(root){
    let originals=originalAttributes.get(element);
    if(!originals){originals={};originalAttributes.set(element,originals);}
    const previous=originals[attr];
-   const previousEnglish=previous===undefined?null:(attributeLabels[previous]||dictionary[previous]||translateRuntime(previous));
+   const previousEnglish=previous===undefined?null:(translateAccessibilityLabel(previous));
    if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=reverse[value]||value;
    const base=originals[attr];
-   const next=locale==='en'?(attributeLabels[base]||dictionary[base]||translateRuntime(base)):base;
+   const next=locale==='en'?(translateAccessibilityLabel(base)):base;
    if(next!==value)element.setAttribute(attr,next);
   }
  }
