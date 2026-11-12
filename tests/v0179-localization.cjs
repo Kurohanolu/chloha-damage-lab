@@ -36,6 +36,13 @@ const path=require('node:path');
   assert.equal(await page.locator('#dbAttPokemon').inputValue(),'charizard');
   await page.reload();
   assert.equal(await page.locator('html').getAttribute('lang'),'en','language persisted');
+  // Dynamic status must translate on repeated language switches.
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.match(await page.locator('#reliabilityTitle').textContent(),/^検証状況/,'verification status returns to Japanese');
+  assert.equal(await page.locator('#dbAttPokemon option[value="charizard"]').textContent(),'リザードン','Pokémon option returns to Japanese');
+  await page.locator('#chloha-locale').selectOption('en');
+  assert.match(await page.locator('#reliabilityTitle').textContent(),/^Verification status/,'verification status returns to English');
+  assert.equal(await page.locator('#dbAttPokemon option[value="charizard"]').textContent(),'Charizard','Pokémon option returns to English');
   await page.locator('#chloha-locale').selectOption('ja');
   assert.equal(await page.locator('html').getAttribute('lang'),'ja');
   const after=await page.evaluate(()=>window.ChlohaDamageEngine.calculate({level:50,power:90,attack:120,defense:120,hp:160,currentHp:160,attackStage:0,defenseStage:0,moveType:'エスパー',category:'special',attTypes:['エスパー'],defTypes:['エスパー'],attItem:'none',attAbility:'none',defItem:'none',defAbility:'none',attCurrentHp:160,attMaxHp:160,moveId:'',customMultiplier:1,attGrounding:'auto',defGrounding:'auto',terrain:'none',weather:'none',spread:'single',battleFormat:'singles',screen:'none',helpingHand:false,friendGuardCount:0,burn:false,critical:false,stabMode:'auto',moveMechanic:'none',conditionalPower:false,bodyPressDefenseStage:0,foulPlayTargetStage:0,attSpeed:100,defSpeed:100,attSpeedStage:0,defSpeedStage:0,attParalyzed:false,defParalyzed:false,attTailwind:false,defTailwind:false}).rolls);
