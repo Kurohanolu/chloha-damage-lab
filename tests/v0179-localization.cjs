@@ -157,6 +157,14 @@ const path=require('node:path');
   require('node:fs').writeFileSync('english-untranslated-audit.json',JSON.stringify({total:residualJapanese.length,unique:[...new Set(residualJapanese.map(x=>x.text))].length,items:residualJapanese},null,2));
   console.log('ENGLISH_VISIBLE_JAPANESE_AUDIT '+JSON.stringify(residualJapanese));
   assert.deepEqual(residualJapanese,[],'English mode must not contain visible Japanese UI text');
+  // All native dropdowns are visible on Android even when their options are
+  // hidden by the desktop browser; audit option text separately.
+  const nativeOptionLeaks=await page.evaluate(()=>[...document.querySelectorAll('#app select:not(#chloha-locale)')].flatMap(select=>[...select.options].filter(option=>/[ぁ-んァ-ヶ一-龯]/.test(option.textContent)).map(option=>({select:select.id,text:option.textContent.slice(0,120)}))));
+  console.log('ENGLISH_NATIVE_OPTION_AUDIT '+JSON.stringify(nativeOptionLeaks));
+  assert.deepEqual(nativeOptionLeaks,[],'English mode native dropdowns must not contain Japanese options');
+  const attributeLeaks=await page.evaluate(()=>[...document.querySelectorAll('#app [title],#app [aria-label],#app [placeholder]')].flatMap(el=>['title','aria-label','placeholder'].filter(attr=>el.hasAttribute(attr)&&/[ぁ-んァ-ヶ一-龯]/.test(el.getAttribute(attr))).map(attr=>({id:el.id||null,attr,text:el.getAttribute(attr).slice(0,120)}))));
+  console.log('ENGLISH_ATTRIBUTE_AUDIT '+JSON.stringify(attributeLeaks));
+  assert.deepEqual(attributeLeaks,[],'English mode accessibility labels and placeholders must not contain Japanese');
   // Final release gate: verify real trace and version disclaimer round-trip.
   const traceEn=await page.locator('#trace').textContent();
   const provenanceEn=await page.locator('#versionProvenance').textContent();
