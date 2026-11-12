@@ -1,5 +1,16 @@
 name: UI & damage regression
 on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - i18n.js
+      - weight-power.js
+      - variable-power.js
+      - multi-hit.js
+      - tests/**
+      - data/**
+      - .github/workflows/ui-smoke.yml
   pull_request:
     paths:
       - index.html
