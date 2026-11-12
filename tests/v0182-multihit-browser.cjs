@@ -88,7 +88,7 @@ const {chromium}=require('playwright');
       document.querySelector('#dbMove').value=move.value;
       document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
       const last=window.ChlohaLastCalculation,dist=last?.r?.multiHitDistribution;
-      output.push({name,selected:window.ChlohaSpecialMultiHitMove,hidden:document.querySelector('#output').hidden,error:document.querySelector('#error').textContent,mass:dist?[...dist.values()].reduce((a,b)=>a+b,0):null,hitPowers:last?.r?.hitRolls?.length,zero:dist?.has(0),ko:document.querySelector('#ko').textContent});
+      output.push({name,selected:window.ChlohaSpecialMultiHitMove,hidden:document.querySelector('#output').hidden,error:document.querySelector('#error').textContent,mass:dist?[...dist.values()].reduce((a,b)=>a+b,0):null,hitPowers:last?.r?.hitRolls?.length,zero:dist?.has(0),ko:document.querySelector('#ko').textContent,hits:document.querySelector('#hits').textContent,warning:document.querySelector('#reliabilityDetails').textContent});
     }
     return output;
   });
