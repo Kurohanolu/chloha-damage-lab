@@ -43,12 +43,15 @@ const path=require('node:path');
     ['fairyAura','フェアリーオーラ（一部技のみ対応）'],
     ['darkAura','ダークオーラ（一部技のみ対応）'],
     ['auraBreak','オーラブレイク（一部技のみ対応）'],
+    ['steelSpirit','はがねのせいしん（一部技のみ対応）'],
+    ['plus','プラス（一部技のみ対応）'],
+    ['minus','マイナス（一部技のみ対応）'],
     ['unknown','未知の特性（効果未対応）']
    ]){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option);}
    document.getElementById('app').append(select);
   });
   const read=()=>page.locator('#ability-translation-fixture option').allTextContents();
-  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','ねつぼうそう（対応）','すいほう（一部技のみ対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','はがねつかい（対応）','いわはこび（対応）','すなのちから（対応）','パンクロック（一部技のみ対応）','フェアリースキン（対応）','スカイスキン（対応）','フリーズスキン（対応）','エレキスキン（対応）','ドラゴンスキン（対応）','ノーマルスキン（対応）','しんりょく（対応）','もうか（対応）','げきりゅう（対応）','むしのしらせ（対応）','よわき（対応）','ひひいろのこどう（一部技のみ対応）','ハドロンエンジン（一部技のみ対応）','フェアリーオーラ（一部技のみ対応）','ダークオーラ（一部技のみ対応）','オーラブレイク（一部技のみ対応）','未知の特性（効果未対応）'];
+  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','ねつぼうそう（対応）','すいほう（一部技のみ対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','はがねつかい（対応）','いわはこび（対応）','すなのちから（対応）','パンクロック（一部技のみ対応）','フェアリースキン（対応）','スカイスキン（対応）','フリーズスキン（対応）','エレキスキン（対応）','ドラゴンスキン（対応）','ノーマルスキン（対応）','しんりょく（対応）','もうか（対応）','げきりゅう（対応）','むしのしらせ（対応）','よわき（対応）','ひひいろのこどう（一部技のみ対応）','ハドロンエンジン（一部技のみ対応）','フェアリーオーラ（一部技のみ対応）','ダークオーラ（一部技のみ対応）','オーラブレイク（一部技のみ対応）','はがねのせいしん（一部技のみ対応）','プラス（一部技のみ対応）','マイナス（一部技のみ対応）','未知の特性（効果未対応）'];
   assert.deepEqual(await read(),ja);
   await page.locator('#chloha-locale').selectOption('en');
   const en=await read();
@@ -85,7 +88,10 @@ const path=require('node:path');
   assert.match(en[27],/Fairy Aura \(partially supported\)$/);
   assert.match(en[28],/Dark Aura \(partially supported\)$/);
   assert.match(en[29],/Aura Break \(partially supported\)$/);
-  assert.match(en[30],/\(unsupported\)$/);
+  assert.match(en[30],/Steely Spirit \(partially supported\)$/);
+  assert.match(en[31],/Plus \(partially supported\)$/);
+  assert.match(en[32],/Minus \(partially supported\)$/);
+  assert.match(en[33],/\(unsupported\)$/);
   await page.locator('#chloha-locale').selectOption('ja');
   assert.deepEqual(await read(),ja);
   console.log('PASS ability support status labels JA EN JA');
