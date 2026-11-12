@@ -42,6 +42,9 @@
 - Added explicit translations for held-item modifier labels, battle format, grounding, spread-target settings, and ally count in `i18n.js` (code commit `d0b9e343`). Added regression assertions (code commit `80112782767295919e7b1b7359a1ca819f50a65d`). Verify CI before declaring success.
 - Previous CI for `521bdc4` showed Showdown tests/audit PASS, UI regression still running at initial check; recheck final result.
 
+- Source-data audit: all 335/335 move names, all 373/373 Pokémon entries, and all abilities referenced by those Pokémon have entries in the combined English name dictionaries; zero missing in these checked sets. This does not prove every rendered UI label is English.
+- Fixed composite `#dbMove` selector options (move/type/power/status) and added a full 300+ options Japanese-leakage regression test. Code commit `46bfed38d97d6f55c24a01ca9cab366242d04e37`; CI not yet verified.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
