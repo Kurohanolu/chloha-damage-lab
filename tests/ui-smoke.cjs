@@ -208,7 +208,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.177')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.178')),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);

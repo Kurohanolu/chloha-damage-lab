@@ -172,9 +172,12 @@ registerModifier('postRandom','type',20,()=>true,(c,v)=>floor(v*c.a.defTypes.red
 
 // Explicit late modifiers: no blanket multiplication. The exact game rounding is
 // still subject to independent test vectors; trace exposes each step.
-registerModifier('final','friendGuard',5,c=>c.a.friendGuardCount>0,(c,v)=>{for(let i=0;i<c.a.friendGuardCount;i++)v=pokeRound(v,3072);return v;});
+// The screen and Friend Guard reductions share the final-damage modifier chain.
+// Combine fixed-point modifiers before applying once to avoid intermediate rounding.
+const hasActiveScreen=a=>!a.critical&&((a.screen==='reflect'&&a.category==='physical')||(a.screen==='lightScreen'&&a.category==='special'));
+registerModifier('final','friendGuard',5,c=>c.a.friendGuardCount>0&&!hasActiveScreen(c.a),(c,v)=>{for(let i=0;i<c.a.friendGuardCount;i++)v=pokeRound(v,3072);return v;});
 registerModifier('final','burn',10,c=>c.a.burn&&c.a.category==='physical'&&c.a.attAbility!=='guts'&&c.a.moveMechanic!=='facade',(_,v)=>pokeRound(v,2048));
-registerModifier('final','screen',20,c=>!c.a.critical&&((c.a.screen==='reflect'&&c.a.category==='physical')||(c.a.screen==='lightScreen'&&c.a.category==='special')),(c,v)=>pokeRound(v,c.a.battleFormat==='singles'?2048:2732));
+registerModifier('final','screen',20,c=>hasActiveScreen(c.a),(c,v)=>{let modifier=c.a.battleFormat==='singles'?2048:2732;for(let i=0;i<c.a.friendGuardCount;i++)modifier=pokeRound(modifier,3072);return pokeRound(v,modifier);});
 
 registerModifier('final','multiscale',40,c=>c.a.defAbility==='multiscale'&&c.a.currentHp===c.a.hp,(_,v)=>pokeRound(v,2048));
 registerModifier('final','tintedLens',42,c=>c.a.attAbility==='tintedLens'&&c.a.defTypes.reduce((m,t)=>m*(EFFECT[c.a.moveType]?.[t]??1),1)>0&&c.a.defTypes.reduce((m,t)=>m*(EFFECT[c.a.moveType]?.[t]??1),1)<1,(_,v)=>pokeRound(v,8192));
@@ -499,6 +502,16 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
  const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
+ // Verified bilingual aliases; these affect search only, never the battle identifiers.
+ const moveEnglishAliases=Object.freeze({
+ 'ワイドフォース':'Expanding Force','じしん':'Earthquake','からげんき':'Facade',
+ '10まんボルト':'Thunderbolt','まもる':'Protect','ねっぷう':'Heat Wave',
+ 'ハイドロポンプ':'Hydro Pump','れいとうビーム':'Ice Beam',
+ 'シャドーボール':'Shadow Ball','サイコキネシス':'Psychic',
+ 'インファイト':'Close Combat','ムーンフォース':'Moonblast',
+ 'かえんほうしゃ':'Flamethrower','だいちのちから':'Earth Power',
+ 'ボルトチェンジ':'Volt Switch','とんぼがえり':'U-turn'
+ });
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
  let moveHits=[],moveActive=-1,moveComposing=false;
@@ -530,7 +543,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   if(!query){hideMoveSuggestions();return;}
   moveHits=[...moveSelect.options].filter(o=>{
    const m=movesById.get(o.value);
-   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query);
   }).sort((a,b)=>{
    const rank=o=>{const m=movesById.get(o.value);
     return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
@@ -542,7 +555,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
    item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
    item.setAttribute('aria-selected','false');
-   item.append(node('span','',m?.name||o.textContent));
+   item.append(node('span','',window.ChlohaLocale?.get()==='en'&&moveEnglishAliases[m?.name]?moveEnglishAliases[m.name]+' / '+m.name:(m?.name||o.textContent)));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
    item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
@@ -771,7 +784,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const select=el(side==='att'?'dbAttPokemon':'dbDefPokemon');
   const options=[...select.options].map(o=>({value:o.value,label:o.textContent}));
   const input=el(side+'Search'),list=el(side+'Suggestions');
-  const englishAliases={garchomp:'garchomp',charizard:'charizard',tyranitar:'tyranitar',dragonite:'dragonite',venusaur:'venusaur',blastoise:'blastoise',meganium:'meganium',feraligatr:'feraligatr',dragapult:'dragapult',hydreigon:'hydreigon',archaludon:'archaludon',pelipper:'pelipper',ceruledge:'ceruledge',sneasler:'sneasler',goodra:'goodra',kommo_o:'kommo-o'};
+  const englishAliases=window.ChlohaNames?.pokemon||{};
   const normalize=t=>t.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
   let matches=[],active=-1,composing=false;
   const hide=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');matches=[];active=-1;};
@@ -795,9 +808,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    if(!q){hide();return;}
    matches=options.filter(o=>{
     const p=pokemonById.get(o.value);
-    return [o.label,p?.englishName||'',englishAliases[o.value]||'',o.value].some(t=>normalize(t).includes(q));
+    return [o.label,p?.englishName||'',englishAliases[o.value]||'',window.ChlohaNames?.pokemon?.[o.value]||'',o.value].some(t=>normalize(t).includes(q));
    }).sort((a,b)=>{
-    const score=o=>normalize(o.label).startsWith(q)?0:normalize(englishAliases[o.value]||o.value).startsWith(q)?1:2;
+    const score=o=>normalize(o.label).startsWith(q)?0:normalize(window.ChlohaNames?.pokemon?.[o.value]||englishAliases[o.value]||o.value).startsWith(q)?1:2;
     return score(a)-score(b);
    }).slice(0,10);
    for(let i=0;i<matches.length;i++){
@@ -810,7 +823,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
      img.src=window.ChlohaLocalSprites?.[o.value]||'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+spriteId+'.png';
      img.onerror=()=>img.remove();item.append(img);
     }
-    const copy=node('span');copy.append(node('span','',o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
+    const copy=node('span');copy.append(node('span','',window.ChlohaLocale?.get()==='en'&&englishAliases[o.value]?englishAliases[o.value]+' / '+o.label:o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
    if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
@@ -856,4 +869,4 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  refreshUI();
 })();
 
-</script></body></html>
+</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script src="./names-catalog-v0179.js"></script><script src="./names-forms-v0179.js"></script><script defer src="./i18n.js"></script><script defer src="./names-ui-v0179.js"></script></body></html>
