@@ -294,8 +294,9 @@ function refreshDefenseAbilities(){
 function moveCalculationReady(m){
  if(!m||!['physical','special'].includes(m.category))return false;
  const policy=ChlohaMovePolicy[m.id];
+ if(policy?.priority==='P0')return false;
  if(window.ChlohaMultiHit?.hitDistribution(m.name))return true;
- if(policy?.priority==='P0'||policy?.standardDamageSupported===false)return false;
+ if(policy?.standardDamageSupported===false)return false;
  if(policy?.mechanic&&policy.standardDamageSupported===true)return true;
  if(['けたぐり','くさむすび','ヘビーボンバー','ヒートスタンプ'].includes(m.name))return typeof window.ChlohaWeightPower?.weightDependentPower==='function';
  return m.calculationSupported===true;
