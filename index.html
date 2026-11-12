@@ -649,7 +649,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   if(!query){hideMoveSuggestions();return;}
   moveHits=[...moveSelect.options].filter(o=>{
    const m=movesById.get(o.value);
-   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query)||normalizeMove(window.ChlohaNames?.moves?.[m?.name]).includes(query);
   }).sort((a,b)=>{
    const rank=o=>{const m=movesById.get(o.value);
     return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
