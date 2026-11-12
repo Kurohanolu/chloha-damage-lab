@@ -48,7 +48,14 @@ try {
    ['Attacker Unaware ignores defender -2',same(rolls({attAbility:'unaware',defenseStage:-2}),rolls({defenseStage:0}))],
    ['Clear Body does not erase pre-existing defense stages',same(rolls({defAbility:'clearBody',defenseStage:-1}),rolls({defenseStage:-1}))],
    ['Friend Guard reduces incoming damage',rolls({friendGuardCount:1}).every((n,i)=>n<rolls({})[i])],
-   ['Friend Guard and Reflect stack',rolls({friendGuardCount:1,screen:'reflect'}).every((n,i)=>n<=rolls({screen:'reflect'})[i])]
+   ['Friend Guard and Reflect stack',rolls({friendGuardCount:1,screen:'reflect'}).every((n,i)=>n<=rolls({screen:'reflect'})[i])],
+   ['Wonder Guard blocks neutral',rolls({defAbility:'wonderGuard'}).every(n=>n===0)],
+   ['Wonder Guard allows super effective',same(rolls({defAbility:'wonderGuard',moveType:'かくとう',defTypes:['ノーマル']}),rolls({moveType:'かくとう',defTypes:['ノーマル']}))],
+   ['Wonder Guard blocks resisted',rolls({defAbility:'wonderGuard',moveType:'ほのお',defTypes:['みず']}).every(n=>n===0)],
+   ['Wonder Guard allows dual-type net super effective',same(rolls({defAbility:'wonderGuard',moveType:'ほのお',defTypes:['くさ','はがね']}),rolls({moveType:'ほのお',defTypes:['くさ','はがね']}))],
+   ['Dry Skin absorbs Water',rolls({defAbility:'drySkin',moveType:'みず'}).every(n=>n===0)],
+   ['Dry Skin boosts Fire damage',rolls({defAbility:'drySkin',moveType:'ほのお'}).every((n,i)=>n>rolls({moveType:'ほのお'})[i])],
+   ['Dry Skin neutral damage unchanged',same(rolls({defAbility:'drySkin'}),rolls({}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
