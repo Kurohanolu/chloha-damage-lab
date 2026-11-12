@@ -55,6 +55,8 @@
 
 - CI at `79086c3`: Showdown 2 PASS, UI FAIL; native options [] but 14 accessibility labels persisted. Root cause: digit matching regex in `translateAccessibilityLabel` was mistakenly escaped as `/\\\\d+/` rather than `/\\d+/`; corrected at `56e2176fe2b64a94da2a95bad7683b8a5cdfe57a`. Test now awaits asynchronous attribute translations before checking at `0a53fdaa288bbe8cb5bacfa75244c86a3693edd8`. CI pending. Investigate remaining overview labels if failure persists.
 
+- CI at `92b9c6e`: Showdown 2 PASS, UI FAIL with same 14 accessibility labels; native options `[]`. Root cause: cached original Japanese aria-label is partially translated by `translateRuntime` to `Attackerの6stat points` or `Attacker HP 0ポイント。編集する` before special-case patterns are evaluated; special-case regex never saw mixed intermediate. Fix `3d9faad2e388075ab9063a5cf34a304ea5e34c07` normalizes through `translateRuntime(base)` first, then matches and completes English translation. Recheck CI.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
