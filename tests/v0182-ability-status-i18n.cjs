@@ -21,6 +21,8 @@ const path=require('node:path');
     ['transistor','トランジスタ（対応）'],
     ['dragonsMaw','りゅうのあぎと（対応）'],
     ['analytic','アナライズ（一部技のみ対応）'],
+    ['steelworker','はがねつかい（対応）'],
+    ['rockyPayload','いわはこび（対応）'],
     ['unknown','未知の特性（効果未対応）']
    ]){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option);}
    document.getElementById('app').append(select);
@@ -40,7 +42,9 @@ const path=require('node:path');
   assert.match(en[7],/Transistor \(supported\)$/);
   assert.match(en[8],/Dragon's Maw \(supported\)$/);
   assert.match(en[9],/Analytic \(partially supported\)$/);
-  assert.match(en[10],/\(unsupported\)$/);
+  assert.match(en[10],/Steelworker \(supported\)$/);
+  assert.match(en[11],/Rocky Payload \(supported\)$/);
+  assert.match(en[12],/\(unsupported\)$/);
   await page.locator('#chloha-locale').selectOption('ja');
   assert.deepEqual(await read(),ja);
   console.log('PASS ability support status labels JA EN JA');
