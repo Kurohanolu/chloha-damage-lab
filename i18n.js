@@ -369,6 +369,19 @@ function recoverJapanese(value){
  for(const [en,ja] of reverseUiEntries)result=result.split(en).join(ja);
  return result;
 }
+// v0.183: stable locale registry. Untranslated locales are not exposed as
+// complete until the corresponding catalog and UI audit passes.
+const ChlohaLocaleRegistry=Object.freeze({
+ ja:Object.freeze({name:'日本語',nativeName:'日本語',ready:true}),
+ en:Object.freeze({name:'English',nativeName:'English',ready:true}),
+ fr:Object.freeze({name:'French',nativeName:'Français',ready:false}),
+ de:Object.freeze({name:'German',nativeName:'Deutsch',ready:false}),
+ es:Object.freeze({name:'Spanish',nativeName:'Español',ready:false}),
+ it:Object.freeze({name:'Italian',nativeName:'Italiano',ready:false}),
+ ko:Object.freeze({name:'Korean',nativeName:'한국어',ready:false}),
+ 'zh-Hans':Object.freeze({name:'Simplified Chinese',nativeName:'简体中文',ready:false}),
+ 'zh-Hant':Object.freeze({name:'Traditional Chinese',nativeName:'繁體中文',ready:false})
+});
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
 const original=new WeakMap();
@@ -459,7 +472,7 @@ function initialize(){
   app.addEventListener('pointerdown',event=>{if(event.target.closest('select'))translateOptions();},true);
   app.addEventListener('focusin',event=>{if(event.target.closest('select'))translateOptions();},true);
  }
- window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
+ window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale,registry:ChlohaLocaleRegistry,supported:()=>Object.keys(ChlohaLocaleRegistry),ready:()=>Object.keys(ChlohaLocaleRegistry).filter(id=>ChlohaLocaleRegistry[id].ready)});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});
 else initialize();
