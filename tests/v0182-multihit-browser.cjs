@@ -151,6 +151,26 @@ const {chromium}=require('playwright');
     assert.equal(result.hidden,false,JSON.stringify(result));
     assert.ok(Math.abs(result.mass-1)<1e-9,JSON.stringify(result));
   }
+  // Multiscale changes after the first successful hit. Until per-hit HP
+  // transitions are modeled, the UI must fail closed rather than report a
+  // misleading damage range or KO probability.
+  const multiscaleGuard=await page.evaluate(()=>{
+    const move=[...document.querySelector('#dbMove').options].find(o=>o.textContent.includes('ネズミざん'));
+    document.querySelector('#dbMove').value=move.value;
+    document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
+    const ability=document.querySelector('#defAbility');
+    const old=ability.value;
+    if(![...ability.options].some(o=>o.value==='multiscale'))ability.add(new Option('マルチスケイル（監査）','multiscale'));
+    ability.value='multiscale';
+    ability.dispatchEvent(new Event('input',{bubbles:true}));
+    const result={hidden:document.querySelector('#output').hidden,error:document.querySelector('#error').textContent,last:window.ChlohaLastCalculation};
+    ability.value=old;
+    ability.dispatchEvent(new Event('input',{bubbles:true}));
+    return result;
+  });
+  assert.equal(multiscaleGuard.hidden,true,'Multiscale special-hit calculations must not display unverified results');
+  assert.match(multiscaleGuard.error,/マルチスケイルのヒット別処理は未対応/);
+  assert.equal(multiscaleGuard.last,null,'invalid special-hit result must not remain cached');
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and special multi-hit UI');
  }finally{await browser.close();}
