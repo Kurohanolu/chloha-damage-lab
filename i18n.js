@@ -2,6 +2,8 @@
 (()=>{
 'use strict';
 const dictionary={
+ '該当する技がありません':'No matching moves',
+ '該当するポケモンがありません':'No matching Pokémon',
 "アシストパワー／つけあがる：攻撃側能力ランク":"Stored Power / Power Trip: attacker stat stages",
 "急所（詳細設定）":"Critical hit (advanced)",
 "通常ダメージ":"Normal damage",
