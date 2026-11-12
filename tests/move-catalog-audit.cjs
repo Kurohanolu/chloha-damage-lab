@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,99);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,48);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,101);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,46);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -81,6 +81,9 @@ const mechanicWhitelist=html.match(/if\(!\[([^\]]+)\]\.includes\(a\.moveMechanic
 assert.ok(mechanicWhitelist,'mechanic whitelist exists');
 const acceptedMechanics=new Set([...mechanicWhitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
 for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics'])assert.ok(acceptedMechanics.has(mechanic),'validator accepts '+mechanic);
+for(const name of ['ウェザーボール','だいちのはどう'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' dynamic type and power supported');
+assert.ok(html.includes("a.moveMechanic==='weatherBall'"),'Weather Ball dynamic weather typing');
+assert.ok(html.includes("a.moveMechanic==='terrainPulse'"),'Terrain Pulse dynamic terrain typing');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry supported');
 assert.ok(html.includes("a.moveMechanic==='freezeDry'&&t==='みず'?2"),'Freeze-Dry Water matchup override');
 assert.equal(moves.find(m=>m.name==='つけあがる').calculationSupported,true,'Power Trip positive boost scaling supported');
@@ -93,7 +96,7 @@ assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupporte
 assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,true,'Sacred Sword defense-stage bypass enabled');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
 assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupported,false,'multihit gated');
-assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,false,'variable type gated');
+assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,true,'variable type supported');
 assert.equal(moves.find(m=>m.name==='りゅうのはどう').power,85);
 assert.ok(html.includes('この技')||html.includes('計算未対応'));
 console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length+extraPhysical.length+extraSpecial.length,'new vs initial 98; v0.170 first-batch supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
