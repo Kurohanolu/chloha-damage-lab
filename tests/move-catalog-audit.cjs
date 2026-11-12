@@ -77,7 +77,7 @@ for(const [name,type,power,supported] of [
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
-assert.ok(/'activationAssumed'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
+assert.ok(/'activationAssumed'\s*,\s*'freezeDry'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry supported');
 assert.ok(html.includes("a.moveMechanic==='freezeDry'&&t==='みず'?2"),'Freeze-Dry Water matchup override');
 assert.equal(moves.find(m=>m.name==='つけあがる').calculationSupported,true,'Power Trip positive boost scaling supported');
