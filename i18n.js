@@ -196,7 +196,7 @@ const uiTerms={
  '非公式検証ツール':'Unofficial experimental tool','入力はブラウザ内で処理':'Inputs are processed locally in your browser',
  'Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です':'Damage values and rounding order have not been verified against Pokémon Champions hardware'
 };
-const uiTermPattern=new RegExp(Object.keys(uiTerms).sort((a,b)=>b.length-a.length).map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\const uiTermPattern=new RegExp(Object.keys(uiTerms).sort((a,b)=>b.length-a.length).map(x=>x.replace(/[.*+?^${}()|[\\]\\]/g,'\\// Runtime output is not always an exact dictionary key.')).join('|'),'g');')).join('|'),'g');
+const uiTermPattern=new RegExp(Object.keys(uiTerms).sort((a,b)=>b.length-a.length).join('|'),'g');
 function translateMixedText(value){
  return value.replace(uiTermPattern,match=>uiTerms[match]||match);
 }
