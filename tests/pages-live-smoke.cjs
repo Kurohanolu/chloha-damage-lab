@@ -1,10 +1,15 @@
 /* Browser smoke test against the actual GitHub Pages URL, not a local file. */
 const {chromium}=require('playwright');
 const fs=require('node:fs');
+const {execFileSync}=require('node:child_process');
 const crypto=require('node:crypto');
 const assert=require('node:assert/strict');
 const url=process.env.PAGES_URL||'https://kurohanolu.github.io/chloha-damage-lab/';
-const source=fs.readFileSync('index.html','utf8');
+// On PRs, compare the existing public site to the base of the PR merge commit.
+// After merge, compare the live site to the newly published main checkout.
+const source=process.env.PAGES_BASELINE_REF
+ ? execFileSync('git',['show',process.env.PAGES_BASELINE_REF+':index.html'],{encoding:'utf8'})
+ : fs.readFileSync('index.html','utf8');
 const expected=(source.match(/<title>([^<]+)<\/title>/)||[])[1];
 const expectedHash=crypto.createHash('sha256').update(source).digest('hex');
 if(!expected)throw Error('Cannot determine expected title from checked-out index.html');
