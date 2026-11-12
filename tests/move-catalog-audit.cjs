@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,93);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,54);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,95);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,52);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -52,8 +52,8 @@ for(const name of ['ばくおんぱ','ふんえん','じならし','うたかた
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
 }
 
-assert.equal(expanded.filter(m=>m.calculationSupported).length,39,'new simple attacks');
-assert.equal(expanded.filter(m=>!m.calculationSupported).length,21,'new gated conditional attacks');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,40,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,20,'new gated conditional attacks');
 for(const m of expanded){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
@@ -65,7 +65,7 @@ for(const [name,type,power,supported] of [
  ['ドレインパンチ','かくとう',75,true],
  ['はたきおとす','あく',65,false],
  ['ネズミざん','ノーマル',20,false],
- ['ふんどのこぶし','ゴースト',50,false],
+ ['ふんどのこぶし','ゴースト',50,true],
  ['ワイドフォース','エスパー',80,false],
  ['マッハパンチ','かくとう',40,true],
  ['むねんのつるぎ','ほのお',90,true]
