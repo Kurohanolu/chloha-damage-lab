@@ -66,8 +66,8 @@ const {chromium}=require('playwright');
   });
   assert.deepEqual(special.population,[[100,1]],'browser special engine supports ten sequential hits');
   assert.deepEqual(special.triple,[[10,.5],[60,.5]],'browser special engine stops after missed second hit');
-  assert.equal(special.populationUnsupported,true,'Population Bomb must remain disabled in move selector');
-  assert.equal(special.tripleUnsupported,true,'Triple Axel must remain disabled in move selector');
+  assert.equal(special.populationUnsupported,true,'Population Bomb is not a standard fixed-hit move');
+  assert.equal(special.tripleUnsupported,true,'Triple Axel is not a standard fixed-hit move');
   const catalogGuards=await page.evaluate(()=>{
     const options=[...document.querySelector('#dbMove').options];
     return ['ネズミざん','トリプルアクセル'].map(name=>{
@@ -76,9 +76,31 @@ const {chromium}=require('playwright');
     });
   });
   for(const guard of catalogGuards){
-    if(guard.found)assert.equal(guard.unsupported,true,guard.name+' must be explicitly marked unsupported until UI calculation is ready');
+    if(guard.found)assert.equal(guard.unsupported,false,guard.name+' must be selectable with special-hit UI calculation');
+  }
+  const specialUI=await page.evaluate(()=>{
+    const output=[];
+    for(const name of ['ネズミざん','トリプルアクセル']){
+      const move=[...document.querySelector('#dbMove').options].find(x=>x.textContent.includes(name));
+      if(!move)throw Error('Missing special move '+name);
+      document.querySelector('#attItem').value='none';
+      document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
+      document.querySelector('#dbMove').value=move.value;
+      document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
+      const last=window.ChlohaLastCalculation,dist=last?.r?.multiHitDistribution;
+      output.push({name,selected:window.ChlohaSpecialMultiHitMove,hidden:document.querySelector('#output').hidden,error:document.querySelector('#error').textContent,mass:dist?[...dist.values()].reduce((a,b)=>a+b,0):null,hitPowers:last?.r?.hitRolls?.length,zero:dist?.has(0),ko:document.querySelector('#ko').textContent});
+    }
+    return output;
+  });
+  for(const item of specialUI){
+    assert.equal(item.selected,item.name,JSON.stringify(item));
+    assert.equal(item.hidden,false,JSON.stringify(item));
+    assert.ok(Math.abs(item.mass-1)<1e-9,JSON.stringify(item));
+    assert.equal(item.hitPowers,item.name==='ネズミざん'?10:3,JSON.stringify(item));
+    assert.equal(item.zero,true,'a first-hit miss must yield zero damage');
+    assert.match(item.ko,/連続技合計KO率/,JSON.stringify(item));
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS v0.182 browser engine, normal damage regression and unsupported UI guard');
+  console.log('PASS v0.182 browser engine, normal damage regression and special multi-hit UI');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
