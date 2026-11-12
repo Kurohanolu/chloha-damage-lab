@@ -6,7 +6,7 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const whitelist=html.match(/\[([^\]]+)\]\.includes\(a\.attAbility\)/);
 assert.ok(whitelist,'attacker ability validation whitelist');
 const allowed=new Set([...whitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
-for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','guts','adaptability','tintedLens','levitate'])
+for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','guts','adaptability','tintedLens','levitate'])
  assert.ok(allowed.has(id),'Attacker ability must pass validation: '+id);
 for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock'])
  assert.match(html,new RegExp("registerModifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
@@ -29,7 +29,7 @@ assert.match(html,/registerModifier\('power','sandForce',1,c=>c\.a\.attAbility==
 assert.match(html,/PUNK_ROCK_SOUND_MOVES=new Set/);
 assert.match(html,/registerModifier\('power','punkRock'/);
 assert.doesNotMatch(html.match(/const PUNK_ROCK_SOUND_MOVES=new Set\([^;]+;/)[0],/'earthquake'/);
-assert.match(html,/SKIN_ABILITY_TYPES=Object.freeze\(\{pixilate:'フェアリー',aerilate:'ひこう',refrigerate:'こおり',galvanize:'でんき'\}\)/);
+assert.match(html,/SKIN_ABILITY_TYPES=Object.freeze\(\{pixilate:'フェアリー',aerilate:'ひこう',refrigerate:'こおり',galvanize:'でんき',dragonize:'ドラゴン'\}\)/);
 assert.match(html,/registerModifier\('power','skinAbility',0,c=>c\.a\.skinBoost===true/);
 assert.match(html,/a\.moveType==='ノーマル'&&Object\.hasOwn\(SKIN_ABILITY_TYPES,a\.attAbility\)/);
 console.log('PASS attacker ability validation and modifier registration');
