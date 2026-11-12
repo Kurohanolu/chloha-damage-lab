@@ -414,6 +414,22 @@ function setLocale(next){
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
  translateOptions();
+ // Dragon Darts controls are appended directly to body, outside #app.
+ // Keep their native Android select labels synchronized with the active locale.
+ const darts=document.getElementById('dragonDartsHits');
+ if(darts){
+  for(const option of darts.options){
+   const ja=option.value==='2'?'選択した相手に2回命中':'選択した相手に1回命中';
+   const en=option.value==='2'?'2 hits on selected target':'1 hit on selected target';
+   const label=locale==='en'?en:ja;
+   option.textContent=label;
+   option.label=label;
+  }
+ }
+ const dartsPanel=document.getElementById('dragonDartsPanel');
+ if(dartsPanel?.firstChild?.nodeType===3){
+  dartsPanel.firstChild.nodeValue=locale==='en'?'Dragon Darts: hits on selected target (choose based on both opposing Pokémon in doubles) ':'ドラゴンアロー：選択した相手への命中回数（ダブルでは相手2体の状況から選択） ';
+ }
 
  const select=document.getElementById('chloha-locale');
  if(select)select.value=locale;
