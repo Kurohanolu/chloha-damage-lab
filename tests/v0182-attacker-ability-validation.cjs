@@ -10,4 +10,6 @@ for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sh
  assert.ok(allowed.has(id),'Attacker ability must pass validation: '+id);
 for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw'])
  assert.match(html,new RegExp("registerModifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
+assert.match(html,/registerModifier\('final','analytic',41,/,'Analytic final-damage modifier must exist');
+assert.match(html,/アナライズ：発動条件を満たした前提/,'Analytic assumed-active warning must exist');
 console.log('PASS attacker ability validation and modifier registration');
