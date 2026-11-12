@@ -7,6 +7,9 @@ const ChlohaMultiHit = (() => {
  const variableMoves=new Set(['タネマシンガン','つららばり','ロックブラスト','みだれづき','スイープビンタ','ミサイルばり','みだれひっかき','れんぞくパンチ','Bullet Seed','Icicle Spear','Rock Blast','Fury Attack','Double Slap','Pin Missile','Fury Swipes','Comet Punch']);
  const fixedTwoMoves=new Set(['ダブルウイング','ダブルアタック','ダブルチョップ','にどげり','ホネブーメラン','Dual Wingbeat','Double Hit','Dual Chop','Double Kick','Bonemerang']);
  variableMoves.add('スケイルショット');variableMoves.add('Scale Shot');
+ // Showdown multi-hit moves in the Champions catalog.
+ for(const name of ['ボーンラッシュ','Bone Rush','みずしゅりけん','Water Shuriken'])variableMoves.add(name);
+ for(const name of ['ツインビーム','Twin Beam'])fixedTwoMoves.add(name);
  function hitDistribution(name,{skillLink=false,loadedDice=false}={}){
   if(fixedTwoMoves.has(name))return FIXED_TWO;
   if(variableMoves.has(name))return skillLink?Object.freeze({5:1}):loadedDice?LOADED_DICE_HITS:STANDARD_HITS;
