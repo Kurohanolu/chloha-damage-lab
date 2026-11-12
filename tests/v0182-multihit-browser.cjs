@@ -42,6 +42,8 @@ const {chromium}=require('playwright');
   assert.equal(ui.hidden,false,'damage panel must display: '+JSON.stringify(ui));
   assert.match(ui.ko,/連続技合計KO率/);
   assert.ok(Math.abs(ui.probability-1)<1e-9);
+  assert.match(ui.range,/ダメージ/,'multi-hit total damage range should render');
+  assert.ok(ui.ko.includes('%'),'KO probability must be shown as a percentage');
   assert.ok(Math.abs(ui.diceMass-1)<1e-9,JSON.stringify(ui));
   assert.ok(ui.diceHitMin>0);
   assert.deepEqual(errors,[]);
