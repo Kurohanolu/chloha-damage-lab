@@ -68,6 +68,16 @@ const {chromium}=require('playwright');
   assert.deepEqual(special.triple,[[10,.5],[60,.5]],'browser special engine stops after missed second hit');
   assert.equal(special.populationUnsupported,true,'Population Bomb must remain disabled in move selector');
   assert.equal(special.tripleUnsupported,true,'Triple Axel must remain disabled in move selector');
+  const catalogGuards=await page.evaluate(()=>{
+    const options=[...document.querySelector('#dbMove').options];
+    return ['ネズミざん','トリプルアクセル'].map(name=>{
+      const option=options.find(o=>o.textContent.includes(name));
+      return {name,found:!!option,unsupported:option?option.textContent.includes('計算未対応'):null};
+    });
+  });
+  for(const guard of catalogGuards){
+    if(guard.found)assert.equal(guard.unsupported,true,guard.name+' must be explicitly marked unsupported until UI calculation is ready');
+  }
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and unsupported UI guard');
  }finally{await browser.close();}
