@@ -54,7 +54,7 @@ const dictionary={
 'ポケモン・技選択（v0.162）':'Pokémon and move selection (v0.162)',
 'ポケモン選択':'Pokémon selection',
 '計算モデルの注意':'Calculation model notes','計算トレースを表示':'Show calculation trace',
-'検証状況':'Verification status','16通りのダメージ':'16 damage rolls',
+'検証状況：未実機検証':'Verification status: Not hardware-verified','検証状況':'Verification status','16通りのダメージ':'16 damage rolls',
 '技の使用を確定':'Confirm move use','1手戻す':'Undo one turn',
 '履歴を消去':'Clear history','実際のダメージ':'Observed damage',
 '盤面引き継ぎ（手動確定）':'Carry over battle state (manual confirmation)',
@@ -127,7 +127,10 @@ function translate(root){
   if(!parent||parent.closest('script,style,textarea,option,[data-no-translate],#battleHistory'))continue;
   const value=node.nodeValue,trim=value.trim();
   if(!trim)continue;
-  if(!original.has(node))original.set(node,reverse[trim]||trim);
+  const cached=original.get(node);
+  const cachedRendered=cached===undefined?null:(locale==='en'?(dictionary[cached]||cached):cached);
+  // Calculator updates existing text nodes in place; detect new source content.
+  if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,reverse[trim]||trim);
   const base=original.get(node);
   const next=locale==='en'?(dictionary[base]||base):base;
   if(trim!==next)node.nodeValue=value.replace(trim,next);
@@ -176,12 +179,19 @@ function initialize(){
  const app=document.getElementById('app');
  if(app){
   const observer=new MutationObserver(records=>{
-   for(const record of records)for(const added of record.addedNodes){
-    if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
+   for(const record of records){
+    if(record.type==='characterData'){
+     const parent=record.target.parentElement;
+     if(parent&&!parent.closest('script,style,textarea,option,[data-no-translate],#battleHistory'))translate(parent);
+    }
+    for(const added of record.addedNodes){
+     if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
+     else if(added.nodeType===3&&added.parentElement)translate(added.parentElement);
+    }
    }
    translateOptions();
   });
-  observer.observe(app,{childList:true,subtree:true});
+  observer.observe(app,{childList:true,characterData:true,subtree:true});
  }
  window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
 }
