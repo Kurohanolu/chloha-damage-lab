@@ -128,7 +128,7 @@ const path=require('node:path');
   assert.match(fullAudit[0],/Weather Sun.*Terrain None.*Screen None/);
   assert.match(fullAudit[1],/Attack stat: 180\\nDefense stat: 120\\nBefore random factor: 90/);
   assert.match(fullAudit[2],/Selected move “Expanding Force”: learnset/);
-  assert.equal(await page.locator('#chloha-locale-control').innerText().then(x=>x.startsWith('Language ')),true);
+  assert.equal(await page.locator('#chloha-locale').getAttribute('aria-label'),'Language','English language selector accessible label');
   await page.locator('#chloha-locale').selectOption('ja');
   assert.match(await page.locator('#v0179-full-audit p').first().textContent(),/現在の盤面/);
   await page.locator('#chloha-locale').selectOption('en');
