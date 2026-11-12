@@ -119,7 +119,7 @@ function translateOptions(){
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
  if(base.startsWith('検証状況：'))return 'Verification status: '+(dictionary[base.slice(5)]||({'未実機検証':'Not hardware-verified','検証済み':'Verified','要注意':'Caution'}[base.slice(5)]||base.slice(5)));
- if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice(7);
+ if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice('入力エラー: '.length).replace(/現在HP/g,'Current HP').replace(/最大HP/g,'Max HP').replace(/技威力/g,'Move power').replace(/威力/g,'Power').replace(/入力してください/g,'is required').replace(/範囲外/g,'out of range');
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
  if(base==='無効')return 'Immune';
  if(base==='確定1発')return 'Guaranteed OHKO';
@@ -144,7 +144,7 @@ function translate(root){
   const value=node.nodeValue,trim=value.trim();
   if(!trim)continue;
   const cached=original.get(node);
-  const cachedRendered=cached===undefined?null:(locale==='en'?translateRuntime(cached):cached);
+  const cachedRendered=cached===undefined?null:translateRuntime(cached);
   // Calculator updates existing text nodes in place; detect new source content.
   if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,reverse[trim]||trim);
   const base=original.get(node);
