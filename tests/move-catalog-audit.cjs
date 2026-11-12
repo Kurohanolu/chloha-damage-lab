@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,102);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,45);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,103);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,44);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
