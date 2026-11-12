@@ -6,7 +6,8 @@ const html = fs.readFileSync(require('node:path').join(__dirname, '../index.html
 const match = html.match(/const ChlohaPokemonDB = (\{.*?\});\s*const ChlohaMovesDB/s);
 assert.ok(match, 'Embedded Pokémon roster not found');
 const roster = JSON.parse(match[1]).pokemon;
-const weights = require('../pokemon-weights-v0181.js');
+const weightNamespace=require('../pokemon-weights-v0181.js');
+const weights=weightNamespace.default||globalThis.ChlohaPokemonWeights||weightNamespace;
 const known = roster.filter(p => Number.isFinite(weights[p.id]) && weights[p.id] > 0);
 const missing = roster.filter(p => !Number.isFinite(weights[p.id]) || weights[p.id] <= 0);
 assert.equal(Object.keys(weights).length, known.length, 'Unknown or duplicate weight IDs');
