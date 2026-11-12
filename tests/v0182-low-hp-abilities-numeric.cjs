@@ -277,6 +277,28 @@ const path=require('node:path');
   assert.deepEqual(bypass.infiltratorReflect,bypass.unscreened,'Infiltrator ignores Reflect');
   assert.ok(bypass.light[15]<bypass.special[15],'Light Screen reduces special damage');
   assert.deepEqual(bypass.infiltratorLight,bypass.special,'Infiltrator ignores Light Screen');
+  const triggered=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ノーマル',moveId:'testMove',moveMechanic:'none',
+    category:'physical',attTypes:['ノーマル'],defTypes:['ノーマル'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
+   return {normal:calc({}),thermal:calc({attAbility:'thermalExchange',thermalExchangeActivated:true}),
+    thermalOff:calc({attAbility:'thermalExchange',thermalExchangeActivated:false}),
+    anger:calc({attAbility:'angerPoint',angerPointActivated:true}),
+    angerOff:calc({attAbility:'angerPoint',angerPointActivated:false}),
+    rattled:calc({attAbility:'rattled',rattledActivated:true})};
+  });
+  assert.ok(triggered.thermal[0]>triggered.normal[0],'Thermal Exchange boosts physical damage');
+  assert.deepEqual(triggered.thermalOff,triggered.normal,'Thermal Exchange inactive without trigger');
+  assert.ok(triggered.anger[0]>triggered.thermal[0],'Anger Point reaches +6 Attack');
+  assert.deepEqual(triggered.angerOff,triggered.normal,'Anger Point inactive without trigger');
+  assert.deepEqual(triggered.rattled,triggered.normal,'Rattled does not directly boost damage');
+  console.log('PASS v0.182 Thermal Exchange, Anger Point and Rattled checks');
   console.log('PASS v0.182 Infiltrator and Scrappy immunity/screen numeric checks');
   console.log('PASS v0.182 Fire Mane, Toxic Boost and Flash Fire numeric checks');
   console.log('PASS v0.182 Supreme Overlord, Battery and Power Spot numeric checks');
