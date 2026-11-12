@@ -94,7 +94,13 @@ const dictionary={
 '選択したデータから実数値・タイプ・技を自動反映':'Auto-fill stats, types and moves from selected data',
 '公開UI版。内部計算コアはv0.162を基盤に継続改修中':'Public UI release; calculation core based on v0.162',
 '計算機の操作':'Calculator navigation','攻撃側と防御側を入れ替える':'Swap attacker and defender',
-'天候・フィールド・壁をなしに戻す':'Clear weather, terrain and screens'
+'天候・フィールド・壁をなしに戻す':'Clear weather, terrain and screens',
+'コピーしました':'Copied to clipboard','コピー失敗':'Copy failed',
+'手入力モード：実数値・タイプ・威力を編集できます。選択技の固有効果は維持します。':'Manual mode: edit stats, types and power. Selected move effects remain active.',
+'入力を確認しました。計算結果を更新しました。':'Inputs validated. Damage results updated.',
+'能力':'Stat','ポイント':'Points','性格':'Nature','実数値':'Actual stat',
+'攻撃実数値':'Attack stat','防御実数値':'Defense stat','乱数前':'Before random factor',
+'現在の盤面':'Current battlefield','種族値':'Base stats'
 };
 // One source of truth for battle display names. The battle IDs are never changed.
 const optionOriginal=new WeakMap();
@@ -121,6 +127,13 @@ function translateRuntime(base){
  if(base.startsWith('検証状況：'))return 'Verification status: '+(dictionary[base.slice(5)]||({'未実機検証':'Not hardware-verified','検証済み':'Verified','要注意':'Caution'}[base.slice(5)]||base.slice(5)));
  if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice('入力エラー: '.length).replace(/現在HP/g,'Current HP').replace(/最大HP/g,'Max HP').replace(/技威力/g,'Move power').replace(/威力/g,'Power').replace(/入力してください/g,'is required').replace(/範囲外/g,'out of range');
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
+ if(/^\\d+〜\\d+ ダメージ$/.test(base))return base.replace(' ダメージ',' damage').replace('〜','–');
+ if(base.startsWith('最大HPの '))return base.replace('最大HPの ','Of max HP: ').replace('〜','–');
+ if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ');
+ if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace('残り','remaining').replace('個体値','IV');
+ if(base.startsWith('攻撃実数値: '))return base.replace('攻撃実数値: ','Attack stat: ');
+ if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
+ if(base.startsWith('乱数前: '))return base.replace('乱数前: ','Before random factor: ');
  if(base==='無効')return 'Immune';
  if(base==='確定1発')return 'Guaranteed OHKO';
  if(base==='ひんし（HP 0）')return 'Fainted (0 HP)';
