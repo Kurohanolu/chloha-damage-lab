@@ -78,7 +78,13 @@ try {
    ['Intimidate does not alter special damage',same(rolls({defAbility:'intimidate',category:'special'}),rolls({category:'special'}))],
    ['Intimidate does not lower Body Press',same(rolls({defAbility:'intimidate',moveMechanic:'bodyPress'}),rolls({moveMechanic:'bodyPress'}))],
    ['Intimidate does not lower Foul Play',same(rolls({defAbility:'intimidate',moveMechanic:'foulPlay'}),rolls({moveMechanic:'foulPlay'}))],
-   ['Critical hit ignores Intimidate negative stage',same(rolls({defAbility:'intimidate',critical:true}),rolls({critical:true}))]
+   ['Critical hit ignores Intimidate negative stage',same(rolls({defAbility:'intimidate',critical:true}),rolls({critical:true}))],
+   ['Purifying Salt halves Ghost damage',rolls({defAbility:'purifyingSalt',moveType:'ゴースト'}).every((v,i)=>v<rolls({moveType:'ゴースト'})[i])],
+   ['Purifying Salt leaves non-Ghost damage unchanged',same(rolls({defAbility:'purifyingSalt',moveType:'ほのお'}),rolls({moveType:'ほのお'}))],
+   ['Shell Armor prevents critical damage',same(rolls({defAbility:'shellArmor',critical:true}),rolls({critical:false}))],
+   ['Battle Armor prevents critical damage',same(rolls({defAbility:'battleArmor',critical:true}),rolls({critical:false}))],
+   ['Shell Armor critical prevention preserves stage drops',same(rolls({defAbility:'shellArmor',critical:true,attackStage:-2}),rolls({critical:false,attackStage:-2}))],
+   ['Battle Armor critical prevention preserves screen reduction',same(rolls({defAbility:'battleArmor',critical:true,screen:'reflect'}),rolls({critical:false,screen:'reflect'}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
