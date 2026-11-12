@@ -103,6 +103,13 @@ const dictionary={
 '現在の盤面':'Current battlefield','種族値':'Base stats',
 '確定KO':'Guaranteed KO','乱数KO':'Possible KO','対象外':'N/A',
 '入力を確認してください':'Check your inputs',
+'有効なダメージ計算結果がありません。':'No valid damage calculation is available.',
+'盤面が変更されています。再計算してから確定してください。':'The battle state has changed. Recalculate before confirming.',
+'相手は既にひんし状態です。技の使用を確定できません。':'The target has already fainted. Cannot confirm move use.',
+'実際のダメージは0〜9999の整数で入力してください。':'Enter observed damage as an integer from 0 to 9999.',
+'HPまたはフィールドが手動変更されています。取り消し前に確定直後の状態へ戻すか、履歴を消去してください。':'HP or terrain was changed manually. Restore the state after confirmation or clear history before undoing.',
+'直前の1手を取り消しました。':'Undid the previous turn.',
+'履歴を消去しました。現在のHP・フィールドは維持しています。':'History cleared. Current HP and terrain were preserved.',
 '対象は既にひんし（KO率の算出対象外）':'Target has already fainted (KO probability not applicable)'
 };
 // One source of truth for battle display names. The battle IDs are never changed.
@@ -127,12 +134,14 @@ function translateOptions(){
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
+ if(/^\\d+手目：/.test(base))return base.replace(/^(\\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/ \/ (\\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
  if(base.startsWith('検証状況：'))return 'Verification status: '+(dictionary[base.slice(5)]||({'未実機検証':'Not hardware-verified','検証済み':'Verified','要注意':'Caution'}[base.slice(5)]||base.slice(5)));
  if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice('入力エラー: '.length).replace(/現在HP/g,'Current HP').replace(/最大HP/g,'Max HP').replace(/技威力/g,'Move power').replace(/威力/g,'Power').replace(/入力してください/g,'is required').replace(/範囲外/g,'out of range');
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
  if(/^\\d+〜\\d+ ダメージ$/.test(base))return base.replace(' ダメージ',' damage').replace('〜','–');
  if(base.startsWith('最大HPの '))return base.replace('最大HPの ','Of max HP: ').replace('〜','–');
  if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ').replace(' ／ フィールド ',' / Terrain ').replace(' ／ 壁 ',' / Screen ');
+ if(base.includes('を確定。相手HP '))return base.replace('を確定。相手HP ',' confirmed. Target HP ').replace('、フィールド：',', Terrain: ').replace('。予測と不一致です。条件・実測値を記録して照合してください。','. Prediction mismatch. Record and verify conditions and observed damage.');
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
@@ -159,7 +168,7 @@ function translate(root){
  let node;
  while((node=walker.nextNode())){
   const parent=node.parentElement;
-  if(!parent||parent.closest('script,style,textarea,option,[data-no-translate],#battleHistory'))continue;
+  if(!parent||parent.closest('script,style,textarea,option,[data-no-translate]'))continue;
   const value=node.nodeValue,trim=value.trim();
   if(!trim)continue;
   const cached=original.get(node);
