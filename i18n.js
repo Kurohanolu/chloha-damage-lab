@@ -26,6 +26,7 @@ const dictionary={
 "天候とフィールドは両側の共通条件です。接地条件を確認してください。フィールドの威力補正とミストのドラゴン半減に対応。先制技の無効化・状態異常防止・回復・技ごとの特殊変化（だいちのはどう等）は未対応です。":"Weather and terrain are shared by both sides. Verify grounding. Terrain power modifiers and Misty Terrain's Dragon damage reduction are supported. Priority immunity, status prevention, recovery and certain move-specific terrain effects (e.g. Terrain Pulse) are unsupported.",
 "追加倍率は最終ダメージに適用します。既存の道具・特性・天候補正と重複しないよう入力してください。":"Additional multiplier applies to final damage. Avoid duplicating existing item, ability or weather modifiers.",
 "参照能力ランク（ボディプレスは自分の防御、イカサマは相手の攻撃）":"Referenced stat stage (own Defense for Body Press; target Attack for Foul Play)",
+"いかさまダイス（連続技4〜5回）":"Loaded Dice (4–5 hits)",
 "いのちのたま（ダメージ×1.3）":"Life Orb (damage ×1.3)",
 "こだわりハチマキ（物理攻撃×1.5）":"Choice Band (physical Attack ×1.5)",
 "こだわりメガネ（特殊攻撃×1.5）":"Choice Specs (special Attack ×1.5)",

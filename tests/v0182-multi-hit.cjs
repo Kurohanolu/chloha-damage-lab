@@ -1,0 +1,106 @@
+'use strict';
+const assert=require('node:assert/strict');
+const api=require('../multi-hit.js');
+const {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveSpec,specialMoveDistribution,specialItemDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
+assert.deepEqual(hitDistribution('タネマシンガン'),{2:.35,3:.35,4:.15,5:.15});
+assert.deepEqual(hitDistribution('Bullet Seed',{loadedDice:true}),{4:.5,5:.5});
+assert.deepEqual(hitDistribution('Icicle Spear',{skillLink:true,loadedDice:true}),{5:1});
+assert.deepEqual(hitDistribution('ダブルウイング'),{2:1});
+assert.equal(hitDistribution('ネズミざん'),null,'accuracy and early-stop not modeled yet');
+assert.equal(hitDistribution('トリプルアクセル'),null,'per-hit increasing power and accuracy not modeled yet');
+assert.equal(hitDistribution('じしん'),null);
+const same=Array(16).fill(10);
+assert.deepEqual([...convolve([same,same],2)],[[20,1]]);
+const mixed=Array.from({length:16},(_,i)=>i);
+const distribution=convolve([mixed,mixed],2);
+assert.equal(distribution.get(0),1/256);
+assert.equal(distribution.get(30),1/256);
+assert.equal(distribution.get(15),16/256);
+assert.ok(Math.abs([...distribution.values()].reduce((a,b)=>a+b,0)-1)<1e-12);
+const variable=totalDistribution('タネマシンガン',()=>same);
+assert.deepEqual([...variable.keys()],[20,30,40,50]);
+for(const [damage,p] of [[20,.35],[30,.35],[40,.15],[50,.15]])assert.ok(Math.abs(variable.get(damage)-p)<1e-12);
+const dice=totalDistribution('タネマシンガン',()=>same,{loadedDice:true});
+assert.deepEqual([...dice.keys()],[40,50]);
+assert.throws(()=>convolve([[1,2],same],2),/16/);
+assert.equal(koProbability(variable,20),1);
+assert.ok(Math.abs(koProbability(variable,21)-.65)<1e-12);
+assert.ok(Math.abs(koProbability(variable,40)-.30)<1e-12);
+assert.equal(koProbability(variable,51),0);
+assert.equal(koProbability(dice,40),1);
+assert.equal(koProbability(dice,50),.5);
+assert.throws(()=>koProbability(new Map([[10,.5]]),10),/sum to one/);
+assert.throws(()=>koProbability(variable,0),/positive integer/);
+const sequential=sequentialDistribution(i=>Array(16).fill((i+1)*10),[.5,.5,.5]);
+for(const [damage,p] of [[0,.5],[10,.25],[30,.125],[60,.125]])assert.ok(Math.abs(sequential.get(damage)-p)<1e-12);
+assert.ok(Math.abs([...sequential.values()].reduce((a,b)=>a+b,0)-1)<1e-12);
+assert.deepEqual([...sequentialDistribution(i=>Array(16).fill(5),[1,1])],[[10,1]]);
+assert.deepEqual([...sequentialDistribution(i=>Array(16).fill(5),[0,1])],[[0,1]]);
+assert.throws(()=>sequentialDistribution(()=>same,[1.1]),/accuracies/);
+assert.throws(()=>sequentialDistribution(()=>same,[]),/accuracies/);
+assert.throws(()=>sequentialDistribution(()=>[1,2],[1]),/16/);
+const population=specialMoveDistribution('ネズミざん',()=>Array(16).fill(10),{accuracies:Array(10).fill(1)});
+assert.deepEqual([...population],[[100,1]],'ten hits must accumulate all damage');
+const populationMiss=specialMoveDistribution('Population Bomb',()=>Array(16).fill(10),{accuracies:[0,...Array(9).fill(1)]});
+assert.deepEqual([...populationMiss],[[0,1]],'first miss stops Population Bomb');
+const triple=specialMoveDistribution('トリプルアクセル',i=>Array(16).fill(10*(i+1)),{accuracies:[1,1,1]});
+assert.deepEqual([...triple],[[60,1]],'Triple Axel must allow increasing per-hit damage');
+const tripleMiss=specialMoveDistribution('Triple Axel',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
+assert.deepEqual([...tripleMiss],[[10,.5],[60,.5]],'second-hit miss stops third hit');
+assert.throws(()=>specialMoveDistribution('ネズミざん',()=>same),/10 per-hit/);
+assert.throws(()=>specialMoveDistribution('トリプルアクセル',()=>same,{accuracies:[1,1]}),/3 per-hit/);
+assert.throws(()=>specialMoveDistribution('じしん',()=>same,{accuracies:[1]}),/Unsupported special/);
+let evaluatedHits=0;
+const firstMiss=sequentialDistribution(()=>{evaluatedHits++;return same;},[0,1,1]);
+assert.deepEqual([...firstMiss],[[0,1]],'first-hit miss produces zero damage');
+assert.equal(evaluatedHits,1,'later hits must not be evaluated after guaranteed miss');
+// Verify a miss on any hit stops the sequence and preserves total probability.
+for(let missIndex=0;missIndex<3;missIndex++){
+ const accuracies=[1,1,1];accuracies[missIndex]=0;
+ const observed=sequentialDistribution(i=>Array(16).fill((i+1)*7),accuracies);
+ const expected=Array.from({length:missIndex},(_,i)=>(i+1)*7).reduce((a,b)=>a+b,0);
+ assert.deepEqual([...observed],[[expected,1]],'guaranteed miss at hit '+(missIndex+1));
+}
+const partial=sequentialDistribution(i=>Array(16).fill((i+1)*7),[.9,.8,.7]);
+const expectedPartial=new Map([[0,.1],[7,.9*.2],[21,.9*.8*.3],[42,.9*.8*.7]]);
+for(const [damage,probability] of expectedPartial)assert.ok(Math.abs(partial.get(damage)-probability)<1e-12,'sequential accuracy at '+damage);
+assert.ok(Math.abs([...partial.values()].reduce((a,b)=>a+b,0)-1)<1e-12,'sequential probabilities normalize');
+// KO odds for accuracy-based attacks must include misses (zero damage).
+const accurateTen=specialMoveDistribution('Population Bomb',()=>Array(16).fill(10),{accuracies:[.5,...Array(9).fill(1)]});
+assert.ok(Math.abs(koProbability(accurateTen,100)-.5)<1e-12,'miss chance must reduce ten-hit KO odds');
+assert.ok(Math.abs(koProbability(accurateTen,1)-.5)<1e-12,'first-hit miss cannot KO');
+assert.equal(koProbability(accurateTen,101),0,'above maximum cannot KO');
+const accurateTriple=specialMoveDistribution('Triple Axel',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
+assert.ok(Math.abs(koProbability(accurateTriple,11)-.5)<1e-12,'second hit miss must reduce Triple Axel KO odds');
+assert.equal(koProbability(accurateTriple,10),1,'first hit guarantees lower threshold');
+assert.deepEqual(specialMoveSpec('Triple Axel').powers,[20,40,60],'Showdown Triple Axel power progression');
+assert.equal(specialMoveSpec('Triple Axel').accuracy,.9);
+assert.equal(specialMoveSpec('Population Bomb').hits,10);
+assert.deepEqual(specialMoveSpec('Population Bomb').powers,Array(10).fill(20));
+assert.equal(specialMoveSpec('じしん'),null);
+// Boundary and conservation audit for special multi-hit distributions.
+for(const name of ['Population Bomb','Triple Axel']){
+ const spec=specialMoveSpec(name);
+ for(const accuracy of [0,.01,.5,.9,1]){
+  const distribution=specialMoveDistribution(name,i=>Array.from({length:16},(_,j)=>i*10+j),{accuracies:Array(spec.hits).fill(accuracy)});
+  const mass=[...distribution.values()].reduce((sum,p)=>sum+p,0);
+  assert.ok(Math.abs(mass-1)<1e-9,name+' mass at accuracy '+accuracy);
+  assert.ok([...distribution.keys()].every(d=>Number.isSafeInteger(d)&&d>=0),name+' damage bounds');
+  assert.ok([...distribution.values()].every(p=>p>=0&&p<=1+1e-9),name+' nonnegative probabilities');
+  if(accuracy===0)assert.deepEqual([...distribution],[[0,1]],name+' always misses');
+  if(accuracy===1)assert.equal(distribution.has(0),false,name+' cannot miss at 100% accuracy with positive rolls');
+ }
+}
+assert.throws(()=>specialMoveDistribution('Triple Axel',()=>same,{accuracies:[1,NaN,1]}),/accuracies/);
+assert.throws(()=>specialMoveDistribution('Population Bomb',()=>same,{accuracies:Array(10).fill(-.1)}),/accuracies/);
+// Showdown special item rules: one accuracy check with Skill Link or Loaded Dice.
+const skillBomb=specialItemDistribution('Population Bomb',()=>Array(16).fill(10),{accuracy:.9,skillLink:true});
+assert.ok(Math.abs(skillBomb.get(0)-.1)<1e-12);
+assert.ok(Math.abs(skillBomb.get(100)-.9)<1e-12);
+const diceBomb=specialItemDistribution('Population Bomb',()=>Array(16).fill(10),{accuracy:1,loadedDice:true});
+for(let hits=4;hits<=10;hits++)assert.ok(Math.abs(diceBomb.get(hits*10)-1/7)<1e-12,'Loaded Dice 4-10 hit probability');
+assert.ok(Math.abs([...diceBomb.values()].reduce((a,b)=>a+b,0)-1)<1e-12);
+const diceAxel=specialItemDistribution('Triple Axel',i=>Array(16).fill((i+1)*10),{accuracy:.9,loadedDice:true});
+assert.ok(Math.abs(diceAxel.get(60)-.9)<1e-12);
+assert.ok(Math.abs(diceAxel.get(0)-.1)<1e-12);
+console.log('v0.182 multi-hit independent-roll distributions: PASS');
