@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - index.html
+      - i18n.js
       - tests/**
       - .github/workflows/ui-smoke.yml
   workflow_dispatch:
