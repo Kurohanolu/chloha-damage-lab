@@ -241,7 +241,6 @@ registerModifier('power','overgrow',1,c=>c.a.attAbility==='overgrow'&&c.a.moveTy
 registerModifier('power','blaze',1,c=>c.a.attAbility==='blaze'&&c.a.moveType==='ほのお'&&(c.a.forceLowHpAbility===true||c.a.attCurrentHp*3<=c.a.attMaxHp),(_,v)=>pokeRound(v,6144));
 registerModifier('power','torrent',1,c=>c.a.attAbility==='torrent'&&c.a.moveType==='みず'&&(c.a.forceLowHpAbility===true||c.a.attCurrentHp*3<=c.a.attMaxHp),(_,v)=>pokeRound(v,6144));
 registerModifier('power','swarm',1,c=>c.a.attAbility==='swarm'&&c.a.moveType==='むし'&&(c.a.forceLowHpAbility===true||c.a.attCurrentHp*3<=c.a.attMaxHp),(_,v)=>pokeRound(v,6144));
-registerModifier('power','supremeOverlord',1,c=>c.a.attAbility==='supremeOverlord'&&(c.a.supremeOverlordFainted||0)>0,(c,v)=>pokeRound(v,4096+410*Math.min(5,c.a.supremeOverlordFainted)));
 registerModifier('power','steelSpirit',1,c=>c.a.attAbility==='steelSpirit'&&c.a.moveType==='はがね',(_,v)=>pokeRound(v,6144));
 registerModifier('power','steelworker',1,c=>c.a.attAbility==='steelworker'&&c.a.moveType==='はがね',(_,v)=>pokeRound(v,6144));
 registerModifier('power','punkRock',1,c=>c.a.attAbility==='punkRock'&&PUNK_ROCK_SOUND_MOVES.has(c.a.moveId),(_,v)=>pokeRound(v,5325));
@@ -279,6 +278,7 @@ registerModifier('final','burn',10,c=>c.a.burn&&c.a.category==='physical'&&!['gu
 registerModifier('final','screen',20,c=>hasActiveScreen(c.a),(c,v)=>{let modifier=c.a.battleFormat==='singles'?2048:2732;for(let i=0;i<c.a.friendGuardCount;i++)modifier=pokeRound(modifier,3072);return pokeRound(v,modifier);});
 
 registerModifier('final','multiscale',40,c=>c.a.defAbility==='multiscale'&&c.a.currentHp===c.a.hp,(_,v)=>pokeRound(v,2048));
+registerModifier('final','supremeOverlord',37,c=>c.a.attAbility==='supremeOverlord'&&(c.a.supremeOverlordFainted||0)>0,(c,v)=>pokeRound(v,4096+Math.round(409.6*Math.min(5,c.a.supremeOverlordFainted))));
 registerModifier('final','battery',38,c=>c.a.allyBattery===true&&c.a.category==='special',(_,v)=>pokeRound(v,5325));
 registerModifier('final','powerSpot',38,c=>c.a.allyPowerSpot===true,(_,v)=>pokeRound(v,5325));
 registerModifier('final','neuroforce',39,c=>c.a.attAbility==='neuroforce'&&c.a.defTypes.reduce((m,t)=>m*moveTypeEffect(c.a,t),1)>1,(_,v)=>pokeRound(v,5120));
