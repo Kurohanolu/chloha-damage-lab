@@ -58,6 +58,15 @@ const ChlohaMultiHit = (() => {
   for(const [damage,probability] of active)finished.set(damage,(finished.get(damage)||0)+probability);
   return new Map([...finished].sort((a,b)=>a[0]-b[0]));
  }
+ // Special multi-hit moves require per-hit accuracy and damage supplied by the caller.
+ // Do not expose these moves through hitDistribution until the UI supplies correct rolls.
+ function specialMoveDistribution(name,rollsForHit,{accuracies}={}){
+  const counts={'ネズミざん':10,'Population Bomb':10,'トリプルアクセル':3,'Triple Axel':3};
+  const count=counts[name];
+  if(!count)throw Error('Unsupported special multi-hit move: '+name);
+  if(!Array.isArray(accuracies)||accuracies.length!==count)throw Error('Expected '+count+' per-hit accuracy values');
+  return sequentialDistribution(rollsForHit,accuracies);
+ }
  function koProbability(distribution,currentHp){
   if(!(distribution instanceof Map)||distribution.size===0)throw Error('Expected nonempty damage distribution');
   if(!Number.isSafeInteger(currentHp)||currentHp<1)throw Error('Target HP must be a positive integer');
@@ -70,7 +79,7 @@ const ChlohaMultiHit = (() => {
   if(Math.abs(total-1)>1e-9)throw Error('Damage distribution probabilities must sum to one');
   return Math.max(0,Math.min(1,ko));
  }
- return {hitDistribution,convolve,totalDistribution,sequentialDistribution,koProbability};
+ return {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveDistribution,koProbability};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaMultiHit;
 if(typeof globalThis!=='undefined')globalThis.ChlohaMultiHit=ChlohaMultiHit;
