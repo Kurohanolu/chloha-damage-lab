@@ -3,7 +3,9 @@
 // Never derive a Mega weight from its base species.
 const assert=require('node:assert/strict');
 const weights=require('../pokemon-weights-v0181.js');
-const {weightDependentPower:power}=require('../weight-power.js');
+const weightModule=require('../weight-power.js');
+const power=weightModule.weightDependentPower||globalThis.ChlohaWeightPower?.weightDependentPower;
+assert.equal(typeof power,'function','weight-power.js must expose weightDependentPower');
 const cases=[
  ['charizard','mega_charizard_x',90.5,110.5],
  ['charizard','mega_charizard_y',90.5,100.5],
