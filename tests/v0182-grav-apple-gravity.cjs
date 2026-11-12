@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
+const policy=JSON.parse(html.match(/const ChlohaMovePolicy = (\{[^\n]+\});/)[1]);
+const moves=JSON.parse(html.match(/const ChlohaMovesDB = (\{[^\n]+\});/)[1]).moves;
+const grav=moves.find(m=>m.id==='gravApple');
+assert.equal(grav.power,90,'Champions Grav Apple base power');
+assert.equal(policy.gravApple.mechanic,'gravApple');
+assert.equal(policy.gravApple.standardDamageSupported,true);
+assert.match(html,/gravApple:'じゅうりょく状態/,'manual checkbox label');
+assert.match(html,/a\.moveMechanic==='gravApple'&&a\.conditionalPower\?Math\.floor\(a\.power\*1\.5\)/,'engine multiplier');
+assert.match(html,/\['knockOff','gravApple'\]\.includes\(mechanic\)\?Math\.floor\(normal\*1\.5\)/,'UI multiplier');
+assert.equal(Math.floor(grav.power*1.5),135,'Gravity boosted power');
+assert.match(html,/id="conditionalPower" type="checkbox"/,'reuse existing checkbox');
+console.log('PASS Gravity checkbox: Grav Apple 90 -> 135, manual OFF by default');
