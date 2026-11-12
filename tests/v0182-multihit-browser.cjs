@@ -46,6 +46,18 @@ const {chromium}=require('playwright');
   assert.ok(ui.ko.includes('%'),'KO probability must be shown as a percentage');
   assert.ok(Math.abs(ui.diceMass-1)<1e-9,JSON.stringify(ui));
   assert.ok(ui.diceHitMin>0);
+  const boundaries=await page.evaluate(()=>{
+    const engine=window.ChlohaMultiHit;
+    const distribution=window.ChlohaLastCalculation.r.multiHitDistribution;
+    const min=Math.min(...distribution.keys()),max=Math.max(...distribution.keys());
+    const fixed=engine.totalDistribution('ダブルウイング',()=>Array(16).fill(10));
+    const unknown=engine.hitDistribution('ネズミざん');
+    return {min,max,atMin:engine.koProbability(distribution,min),aboveMax:engine.koProbability(distribution,max+1),fixed:[...fixed],unknown};
+  });
+  assert.equal(boundaries.atMin,1,'minimum total damage always KOs at matching HP');
+  assert.equal(boundaries.aboveMax,0,'KO probability above maximum damage must be zero');
+  assert.deepEqual(boundaries.fixed,[[20,1]],'fixed two-hit moves sum exactly two hits');
+  assert.equal(boundaries.unknown,null,'Population Bomb must remain unsupported');
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and unsupported UI guard');
  }finally{await browser.close();}
