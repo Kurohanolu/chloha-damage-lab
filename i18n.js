@@ -274,6 +274,13 @@ function translateMixedText(value){
   .replace(uiTermPattern,match=>uiTerms[match]||match);
 }
 // Runtime output is not always an exact dictionary key.
+function translateBattleMoveLabel(value){
+ const match=value.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
+ if(!match)return entityNames[value]||dictionary[value]||value;
+ const types={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
+ const statuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
+ return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
+}
 function translateRuntime(base){
  if(base.startsWith('現在の盤面：天候 ')){
   const options={'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow','エレキフィールド':'Electric Terrain','グラスフィールド':'Grassy Terrain','ミストフィールド':'Misty Terrain','サイコフィールド':'Psychic Terrain','リフレクター':'Reflect','ひかりのかべ':'Light Screen'};
@@ -294,7 +301,7 @@ function translateRuntime(base){
  if(attributeLabels[base])return attributeLabels[base];
  if(dictionary[base])return dictionary[base];
  if(uiTerms[base])return uiTerms[base];
- if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+(entityNames[move.trim()]||move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
+ if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+translateBattleMoveLabel(move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
  if(base.startsWith('ミストバースト: '))return base.replace('ミストバースト: ','Misty Explosion: ').replace('ミストフィールド＋使用者接地（威力1.5倍）','Misty Terrain + grounded user (1.5× power)').replace('通常威力','normal power').replace('。使用後の自身のひんしは自動反映しません','; self-KO after use is not applied automatically');
  if(base.startsWith('ライジングボルト: '))return base.replace('ライジングボルト: ','Rising Voltage: ').replace('エレキフィールド＋対象接地（威力2倍）','Electric Terrain + grounded target (2× power)').replace('通常威力','normal power');
  if(base.startsWith('ワイドフォース: '))return base.replace('ワイドフォース: ','Expanding Force: ').replace('接地＋サイコフィールド（威力1.5倍・範囲化）','grounded + Psychic Terrain (1.5× power, spread)').replace('通常威力・単体対象','normal power, single target');
@@ -334,7 +341,7 @@ function translateRuntime(base){
  if(/^\d+〜\d+ ダメージ$/.test(base))return base.replace(' ダメージ',' damage').replace('〜','–');
  if(base.startsWith('最大HPの '))return base.replace('最大HPの ','Of max HP: ').replace('〜','–');
  if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ').replace(' ／ フィールド ',' / Terrain ').replace(' ／ 壁 ',' / Screen ').replace(/(Weather |Terrain |Screen )(晴れ|雨|砂嵐|あられ|雪|なし|エレキフィールド|グラスフィールド|ミストフィールド|サイコフィールド|リフレクター|ひかりのかべ)/g,(_,label,value)=>label+({晴れ:'Sun',雨:'Rain',砂嵐:'Sandstorm',あられ:'Hail',雪:'Snow',なし:'None',エレキフィールド:'Electric Terrain',グラスフィールド:'Grassy Terrain',ミストフィールド:'Misty Terrain',サイコフィールド:'Psychic Terrain',リフレクター:'Reflect',ひかりのかべ:'Light Screen'}[value]||value));
- if(base.includes('を確定。相手HP '))return base.replace('を確定。相手HP ',' confirmed. Target HP ').replace('、フィールド：',', Terrain: ').replace('。予測と不一致です。条件・実測値を記録して照合してください。','. Prediction mismatch. Record and verify conditions and observed damage.');
+ if(base.includes('を確定。相手HP ')){const split=base.indexOf('を確定。相手HP ');return translateBattleMoveLabel(base.slice(0,split))+base.slice(split).replace('を確定。相手HP ',' confirmed. Target HP ').replace(/、フィールド：([^。]+)/,(_,terrain)=>', Terrain: '+(selectLabels[terrain]||entityNames[terrain]||terrain)).replace('。予測と不一致です。条件・実測値を記録して照合してください。','. Prediction mismatch. Record and verify conditions and observed damage.');}
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
