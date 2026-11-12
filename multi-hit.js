@@ -59,6 +59,16 @@ const ChlohaMultiHit = (() => {
   for(const [damage,probability] of active)finished.set(damage,(finished.get(damage)||0)+probability);
   return new Map([...finished].sort((a,b)=>a[0]-b[0]));
  }
+ // Gen9 Showdown data/moves.ts reference: Population Bomb has 10 attempts at
+ // 90% accuracy; Triple Axel has 3 attempts at 90% and 20/40/60 power.
+ // Actual hit probabilities may change with abilities, items and field effects.
+ const SPECIAL_MOVE_SPECS=Object.freeze({
+  'ネズミざん':Object.freeze({hits:10,accuracy:0.9,powers:Object.freeze(Array(10).fill(20))}),
+  'Population Bomb':Object.freeze({hits:10,accuracy:0.9,powers:Object.freeze(Array(10).fill(20))}),
+  'トリプルアクセル':Object.freeze({hits:3,accuracy:0.9,powers:Object.freeze([20,40,60])}),
+  'Triple Axel':Object.freeze({hits:3,accuracy:0.9,powers:Object.freeze([20,40,60])})
+ });
+ function specialMoveSpec(name){return SPECIAL_MOVE_SPECS[name]||null;}
  // Special multi-hit moves require per-hit accuracy and damage supplied by the caller.
  // Do not expose these moves through hitDistribution until the UI supplies correct rolls.
  function specialMoveDistribution(name,rollsForHit,{accuracies}={}){
@@ -80,7 +90,7 @@ const ChlohaMultiHit = (() => {
   if(Math.abs(total-1)>1e-9)throw Error('Damage distribution probabilities must sum to one');
   return Math.max(0,Math.min(1,ko));
  }
- return {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveDistribution,koProbability};
+ return {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveSpec,specialMoveDistribution,koProbability};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaMultiHit;
 if(typeof globalThis!=='undefined')globalThis.ChlohaMultiHit=ChlohaMultiHit;
