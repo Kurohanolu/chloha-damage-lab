@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,105);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,42);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,106);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,41);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -126,6 +126,10 @@ assert.equal(policies['gw0169_s009'].mechanic,'chargeSpABoost','Electro Shot sha
 assert.equal(moves.find(m=>m.name==='エレクトロビーム').calculationSupported,true,'Electro Shot enabled');
 assert.equal(moves.find(m=>m.name==='シェルアームズ').calculationSupported,true,'Shell Side Arm enabled');
 assert.equal(moves.find(m=>m.name==='みらいよち').calculationSupported,true,'Future Sight delayed hit estimate enabled');
+assert.equal(moves.find(m=>m.name==='なげつける').calculationSupported,true,'Fling manual power enabled');
+assert.equal(policies['gw0169_p076'].mechanic,'flingManual','Fling manual mechanic');
+assert.ok(html.includes("flingPowerChoices=[10,30,40,50,60,70,80,90,100,130]"),'Fling power choices');
+assert.ok(html.includes("mechanic==='flingManual'?Number($('flingPower').value)"),'Fling power used for damage');
 assert.equal(policies['gw0169_s060'].mechanic,'activationAssumed','Future Sight uses activation-assumed normal damage');
 assert.ok(!html.includes("a.moveMechanic==='futureSight'"),'Future Sight has no custom damage branch');
 assert.equal(policies['gw0169_s020'].mechanic,'shellSideArm','Shell Side Arm adaptive category');
