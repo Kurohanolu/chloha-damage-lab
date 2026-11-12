@@ -198,7 +198,16 @@ const uiTerms={
 };
 const uiTermPattern=new RegExp(Object.keys(uiTerms).sort((a,b)=>b.length-a.length).join('|'),'g');
 function translateMixedText(value){
- return value.replace(uiTermPattern,match=>uiTerms[match]||match);
+ // Translate complete stat-control phrases before individual terms to avoid
+ // hybrids such as "Attackのnature modifier" or "HPstat pointsのslider".
+ const statNames={'HP':'HP','攻撃':'Attack','防御':'Defense','特攻':'Sp. Atk','特防':'Sp. Def','素早さ':'Speed'};
+ const stat='(?:HP|攻撃|防御|特攻|特防|素早さ)';
+ const nature=new RegExp('('+stat+')の性格補正','g');
+ const slider=new RegExp('('+stat+')能力ポイントのスライダー','g');
+ return value
+  .replace(nature,(_,name)=>statNames[name]+' nature modifier')
+  .replace(slider,(_,name)=>statNames[name]+' stat points slider')
+  .replace(uiTermPattern,match=>uiTerms[match]||match);
 }
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
