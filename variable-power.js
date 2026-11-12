@@ -27,7 +27,11 @@ const ChlohaVariablePower = (() => {
       if (!Number.isInteger(fainted) || fainted < 0 || fainted > 5) throw new RangeError('Fainted allies must be 0–5');
       return 50 + 50 * fainted;
     }
-    return Object.freeze({gyroBall, storedPower, reversal, lastRespects});
+    function rageFist(hitsTaken) {
+      if (!Number.isSafeInteger(hitsTaken) || hitsTaken < 0) throw new RangeError('Hits taken must be a nonnegative integer');
+      return Math.min(350, 50 + 50 * hitsTaken);
+    }
+    return Object.freeze({gyroBall, storedPower, reversal, lastRespects, rageFist});
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = ChlohaVariablePower;
 if (typeof globalThis !== 'undefined') globalThis.ChlohaVariablePower = ChlohaVariablePower;
