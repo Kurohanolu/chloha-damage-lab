@@ -156,8 +156,6 @@ registerModifier('stat','flareBoost',13,c=>c.side==='attack'&&c.a.attAbility==='
 registerModifier('stat','hustle',13,c=>c.side==='attack'&&c.a.attAbility==='hustle'&&c.a.category==='physical'&&!['bodyPress','foulPlay'].includes(c.a.moveMechanic),(_,v)=>pokeRound(v,6144));
 registerModifier('stat','hugePower',12,c=>c.side==='attack'&&c.a.attAbility==='hugePower'&&c.a.category==='physical'&&!['bodyPress','foulPlay'].includes(c.a.moveMechanic),(_,v)=>floor(v*2));
 registerModifier('stat','furCoat',10,c=>c.side==='defense'&&c.a.defAbility==='furCoat'&&c.a.category==='physical',(_,v)=>floor(v*2));
-registerModifier('stat','heatproof',11,c=>c.side==='attack'&&c.a.defAbility==='heatproof'&&c.a.moveType==='ほのお',(_,v)=>pokeRound(v,2048));
-registerModifier('stat','waterBubbleDefense',11,c=>c.side==='attack'&&c.a.defAbility==='waterBubble'&&c.a.moveType==='ほのお',(_,v)=>pokeRound(v,2048));
 registerModifier('stat','thickFat',11,c=>c.side==='attack'&&c.a.defAbility==='thickFat'&&['ほのお','こおり'].includes(c.a.moveType),(_,v)=>pokeRound(v,2048));
 registerModifier('stat','guts',14,c=>c.side==='attack'&&c.a.attAbility==='guts'&&c.a.burn&&c.a.category==='physical'&&c.a.moveMechanic!=='bodyPress',(_,v)=>pokeRound(v,6144));
 registerModifier('stat','choiceBand',15,c=>c.side==='attack'&&c.a.category==='physical'&&c.a.attItem==='choiceBand'&&!['bodyPress','foulPlay'].includes(c.a.moveMechanic),(_,v)=>pokeRound(v,6144));
@@ -299,6 +297,8 @@ registerModifier('final','burn',10,c=>c.a.burn&&c.a.category==='physical'&&!['gu
 registerModifier('final','screen',20,c=>hasActiveScreen(c.a),(c,v)=>{let modifier=c.a.battleFormat==='singles'?2048:2732;for(let i=0;i<c.a.friendGuardCount;i++)modifier=pokeRound(modifier,3072);return pokeRound(v,modifier);});
 
 registerModifier('final','iceScales',40,c=>c.a.defAbility==='iceScales'&&c.a.category==='special',(_,v)=>pokeRound(v,2048));
+registerModifier('final','heatproof',40,c=>c.a.defAbility==='heatproof'&&c.a.moveType==='ほのお',(_,v)=>pokeRound(v,2048));
+registerModifier('final','waterBubbleDefense',40,c=>c.a.defAbility==='waterBubble'&&c.a.moveType==='ほのお',(_,v)=>pokeRound(v,2048));
 registerModifier('final','shadowShield',40,c=>c.a.defAbility==='shadowShield'&&c.a.currentHp===c.a.hp,(_,v)=>pokeRound(v,2048));
 registerModifier('final','multiscale',40,c=>c.a.defAbility==='multiscale'&&c.a.currentHp===c.a.hp,(_,v)=>pokeRound(v,2048));
 registerModifier('final','supremeOverlord',37,c=>c.a.attAbility==='supremeOverlord'&&(c.a.supremeOverlordFainted||0)>0,(c,v)=>pokeRound(v,4096+Math.round(409.6*Math.min(5,c.a.supremeOverlordFainted))));
