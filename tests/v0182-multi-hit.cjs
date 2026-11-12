@@ -6,7 +6,8 @@ assert.deepEqual(hitDistribution('タネマシンガン'),{2:.35,3:.35,4:.15,5:.
 assert.deepEqual(hitDistribution('Bullet Seed',{loadedDice:true}),{4:.5,5:.5});
 assert.deepEqual(hitDistribution('Icicle Spear',{skillLink:true,loadedDice:true}),{5:1});
 assert.deepEqual(hitDistribution('ダブルウイング'),{2:1});
-assert.deepEqual(hitDistribution('ネズミざん'),{10:1});
+assert.equal(hitDistribution('ネズミざん'),null,'accuracy and early-stop not modeled yet');
+assert.equal(hitDistribution('トリプルアクセル'),null,'per-hit increasing power and accuracy not modeled yet');
 assert.equal(hitDistribution('じしん'),null);
 const same=Array(16).fill(10);
 assert.deepEqual([...convolve([same,same],2)],[[20,1]]);
