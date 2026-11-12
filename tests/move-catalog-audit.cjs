@@ -77,7 +77,7 @@ for(const [name,type,power,supported] of [
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
-assert.ok(html.includes("'activationAssumed','acrobatics'"),'activation-assumed mechanic accepted by validator');
+assert.ok(/'activationAssumed'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
 assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,true,'Hard Press target HP power supported');
 assert.ok(html.includes("a.moveMechanic==='hardPress'?Math.max(1,Math.floor(100*a.currentHp/a.hp))"),'Hard Press uses target remaining HP');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
