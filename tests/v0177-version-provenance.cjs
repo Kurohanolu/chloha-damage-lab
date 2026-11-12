@@ -3,6 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 assert.match(html,/<title>Chloha Damage Lab v0\.182 Pre-Release 23<\/title>/);
+assert.match(html, /class="version"[^>]*>v0\.182 <span>Pre-Release 23<\/span>/, 'visible release badge must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);
 assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
 assert.match(html,/version:'0\.162'/);
