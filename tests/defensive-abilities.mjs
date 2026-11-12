@@ -66,7 +66,13 @@ try {
    ['Earth Eater blocks Ground',rolls({defAbility:'earthEater',moveType:'じめん'}).every(n=>n===0)],
    ['Well-Baked Body blocks Fire',rolls({defAbility:'wellBakedBody',moveType:'ほのお'}).every(n=>n===0)],
    ['Sap Sipper leaves Fire unchanged',same(rolls({defAbility:'sapSipper',moveType:'ほのお'}),rolls({moveType:'ほのお'}))],
-   ['Motor Drive leaves Water unchanged',same(rolls({defAbility:'motorDrive',moveType:'みず'}),rolls({moveType:'みず'}))]
+   ['Motor Drive leaves Water unchanged',same(rolls({defAbility:'motorDrive',moveType:'みず'}),rolls({moveType:'みず'}))],
+   ['Grass Pelt boosts defense on Grassy Terrain',rolls({defAbility:'grassPelt',terrain:'grassy'}).every((v,i)=>v<rolls({terrain:'grassy'})[i])],
+   ['Grass Pelt inactive without terrain',same(rolls({defAbility:'grassPelt'}),rolls({}))],
+   ['Marvel Scale boosts defense with burn',rolls({defAbility:'marvelScale',defStatus:'burn'}).every((v,i)=>v<rolls({})[i])],
+   ['Marvel Scale boosts defense with paralysis',rolls({defAbility:'marvelScale',defStatus:'paralysis'}).every((v,i)=>v<rolls({})[i])],
+   ['Marvel Scale inactive without status',same(rolls({defAbility:'marvelScale',defStatus:'none'}),rolls({}))],
+   ['Marvel Scale inactive without specified status',same(rolls({defAbility:'marvelScale'}),rolls({}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
