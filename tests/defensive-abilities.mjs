@@ -1,6 +1,8 @@
 import {chromium} from '@playwright/test';
 import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const browser=await chromium.launch({headless:true});
 try {
@@ -87,6 +89,30 @@ try {
    ['Battle Armor critical prevention preserves screen reduction',same(rolls({defAbility:'battleArmor',critical:true,screen:'reflect'}),rolls({critical:false,screen:'reflect'}))]
   ];
  });
+ // Guard every supported defensive ability against missing English labels and stale JA/EN/JA options.
+ const html=readFileSync(resolve(root,'index.html'),'utf8');
+ const catalogSource=html.match(/const defensiveAbilities=(\{[^;]+\});/);
+ assert.ok(catalogSource,'defensive ability catalog missing');
+ const entries=[...catalogSource[1].matchAll(/'([^']+)':'([^']+)'/g)].map(([,ja,id])=>({ja,id}));
+ assert.ok(entries.length>=40,'defensive ability catalog unexpectedly small');
+ await page.evaluate(entries=>{
+  const select=document.createElement('select');select.id='defAbilityTranslationAudit';
+  for(const {ja,id} of entries){const option=document.createElement('option');option.value=id;option.textContent=ja+'（対応）';select.append(option);}
+  document.getElementById('app').append(select);
+ },entries);
+ const labels=()=>page.locator('#defAbilityTranslationAudit option').allTextContents();
+ const jaLabels=entries.map(({ja})=>ja+'（対応）');
+ assert.deepEqual(await labels(),jaLabels,'Japanese defensive ability labels');
+ await page.locator('#chloha-locale').selectOption('en');
+ const englishLabels=await labels();
+ const expected=await page.evaluate(entries=>entries.map(({ja})=>window.ChlohaNames?.abilities?.[ja]||null),entries);
+ for(let i=0;i<entries.length;i++){
+  assert.ok(expected[i] && !/[ぁ-んァ-ヶ一-龯]/.test(expected[i]),'Missing English translation: '+entries[i].ja);
+  assert.equal(englishLabels[i],expected[i]+' (supported)','Incorrect English defensive ability label: '+entries[i].ja);
+ }
+ await page.locator('#chloha-locale').selectOption('ja');
+ assert.deepEqual(await labels(),jaLabels,'Japanese defensive ability labels after locale roundtrip');
+ console.log('PASS defensive ability translation coverage and JA/EN/JA roundtrip ('+entries.length+' abilities)');
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
  if(results.some(([,ok])=>!ok))process.exitCode=1;
 }finally{await browser.close();}
