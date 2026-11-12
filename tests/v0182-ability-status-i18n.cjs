@@ -29,12 +29,13 @@ const path=require('node:path');
     ['aerilate','スカイスキン（対応）'],
     ['refrigerate','フリーズスキン（対応）'],
     ['galvanize','エレキスキン（対応）'],
+    ['dragonize','ドラゴンスキン（対応）'],
     ['unknown','未知の特性（効果未対応）']
    ]){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option);}
    document.getElementById('app').append(select);
   });
   const read=()=>page.locator('#ability-translation-fixture option').allTextContents();
-  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','はがねつかい（対応）','いわはこび（対応）','すなのちから（対応）','パンクロック（一部技のみ対応）','フェアリースキン（対応）','スカイスキン（対応）','フリーズスキン（対応）','エレキスキン（対応）','未知の特性（効果未対応）'];
+  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','はがねつかい（対応）','いわはこび（対応）','すなのちから（対応）','パンクロック（一部技のみ対応）','フェアリースキン（対応）','スカイスキン（対応）','フリーズスキン（対応）','エレキスキン（対応）','ドラゴンスキン（対応）','未知の特性（効果未対応）'];
   assert.deepEqual(await read(),ja);
   await page.locator('#chloha-locale').selectOption('en');
   const en=await read();
@@ -56,7 +57,8 @@ const path=require('node:path');
   assert.match(en[15],/Aerilate \(supported\)$/);
   assert.match(en[16],/Refrigerate \(supported\)$/);
   assert.match(en[17],/Galvanize \(supported\)$/);
-  assert.match(en[18],/\(unsupported\)$/);
+  assert.match(en[18],/Dragonize \(supported\)$/);
+  assert.match(en[19],/\(unsupported\)$/);
   await page.locator('#chloha-locale').selectOption('ja');
   assert.deepEqual(await read(),ja);
   console.log('PASS ability support status labels JA EN JA');
