@@ -178,6 +178,31 @@ const path=require('node:path');
   assert.deepEqual(trio3.plus.rolls,trio3.minus.rolls,'Plus and Minus have equal modifiers');
   assert.deepEqual(trio3.plusSolo.rolls,trio3.normal.rolls,'Plus requires partner');
   assert.ok(!trio3.plusPhysical.trace.some(x=>x.includes('stat/plusMinus')),'Plus excludes physical attacks');
+  const trio4=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ほのお',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['くさ'],
+    weather:'none',terrain:'none',battleFormat:'singles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x});
+   return {crit:calc({critical:true}),sniper:calc({critical:true,attAbility:'sniper'}),
+    sniperNoCrit:calc({attAbility:'sniper'}),normal:calc({}),
+    neuro:calc({attAbility:'neuroforce'}),
+    neuroNeutral:calc({attAbility:'neuroforce',moveType:'ノーマル',defTypes:['みず']}),
+    neutral:calc({moveType:'ノーマル',defTypes:['みず']}),
+    stakeout:calc({attAbility:'stakeout',targetSwitchedIn:true}),
+    stakeoutOff:calc({attAbility:'stakeout'})};
+  });
+  assert.ok(trio4.sniper.rolls[0]>trio4.crit.rolls[0],'Sniper boosts critical damage');
+  assert.deepEqual(trio4.sniperNoCrit.rolls,trio4.normal.rolls,'Sniper requires critical hit');
+  assert.ok(trio4.neuro.rolls[0]>trio4.normal.rolls[0],'Neuroforce boosts super effective damage');
+  assert.deepEqual(trio4.neuroNeutral.rolls,trio4.neutral.rolls,'Neuroforce ignores neutral effectiveness');
+  assert.ok(trio4.stakeout.rolls[0]>trio4.normal.rolls[0],'Stakeout boosts switched-in target');
+  assert.deepEqual(trio4.stakeoutOff.rolls,trio4.normal.rolls,'Stakeout requires switch-in flag');
+  console.log('PASS v0.182 Sniper, Neuroforce and Stakeout numeric checks');
   console.log('PASS v0.182 Steely Spirit, Plus and Minus numeric checks');
   console.log('PASS v0.182 Fairy Aura, Dark Aura and Aura Break numeric checks');
   console.log('PASS v0.182 three offensive abilities threshold/weather/terrain checks');
