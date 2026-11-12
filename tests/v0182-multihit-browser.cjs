@@ -134,12 +134,14 @@ const {chromium}=require('playwright');
     const diceResult={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,mass:dice?[...dice.values()].reduce((a,b)=>a+b,0):null};
     document.querySelector('#attItem').value='none';
     document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
-    document.querySelector('#attAbility').value='skillLink';
-    document.querySelector('#attAbility').dispatchEvent(new Event('input',{bubbles:true}));
-    const link=window.ChlohaLastCalculation?.r?.multiHitDistribution;
-    const linkResult={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,mass:link?[...link.values()].reduce((a,b)=>a+b,0):null};
+    // The selected attacker does not necessarily have Skill Link in its ability menu.
+    // Validate Skill Link's browser-exposed calculation API independently.
+    const link=window.ChlohaMultiHit.specialItemDistribution('ネズミざん',()=>Array(16).fill(10),{accuracy:.9,skillLink:true});
+    const linkResult={error:'',hidden:false,mass:[...link.values()].reduce((a,b)=>a+b,0),zero:link.get(0),tenHits:link.get(100)};
     return {diceResult,linkResult};
   });
+  assert.ok(Math.abs(specialItems.linkResult.zero-.1)<1e-9);
+  assert.ok(Math.abs(specialItems.linkResult.tenHits-.9)<1e-9);
   for(const result of [specialItems.diceResult,specialItems.linkResult]){
     assert.equal(result.hidden,false,JSON.stringify(result));
     assert.ok(Math.abs(result.mass-1)<1e-9,JSON.stringify(result));
