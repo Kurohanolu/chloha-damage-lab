@@ -164,6 +164,10 @@ const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
 const selectLabels={
+ 'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow',
+ 'エレキフィールド':'Electric Terrain','グラスフィールド':'Grassy Terrain','ミストフィールド':'Misty Terrain','サイコフィールド':'Psychic Terrain',
+ 'リフレクター':'Reflect','ひかりのかべ':'Light Screen','ダブル':'Doubles','シングル（検証用）':'Singles (testing only)',
+ 'とつげきチョッキ（特防×1.5）':'Assault Vest (Sp. Def ×1.5)',
  'なし／未適用':'None',
  'すなおこし（未対応）':'Sand Stream (unsupported)',
  'きんちょうかん（未対応）':'Unnerve (unsupported)',
@@ -184,6 +188,7 @@ const selectLabels={
 };
 const attributeLabels={
  '名前を入力して選択':'Type a name to select',
+ '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt',
  '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt'
 };
 const originalAttributes=new WeakMap();
@@ -221,6 +226,8 @@ function translateOptions(){
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)))):base;
    if(option.textContent!==next)option.textContent=next;
+   // Android's native select sheet may read option.label instead of textContent.
+   if(option.label!==next)option.label=next;
   }
  }
 }
@@ -231,7 +238,7 @@ const uiTerms={
  'ポケモンを探す':'Search Pokémon','技名を検索':'Search moves',
  'ドラゴン':'Dragon','じめん':'Ground','いわ':'Rock','あく':'Dark',
  '攻撃側の能力値':'Attacker stats','防御側の能力値':'Defender stats',
- '能力値を折りたたむ':'Collapse stats','一括配分':'Quick allocation','全て0':'Reset all to 0',
+ '能力値を表示':'Show stats','能力値を折りたたむ':'Collapse stats','一括配分':'Quick allocation','全て0':'Reset all to 0',
  '攻撃':'Attack','防御':'Defense','特攻':'Sp. Atk','特防':'Sp. Def','素早さ':'Speed',
  '能力ポイント':'stat points','性格補正':'nature modifier','実数値':'actual stat',
  'スライダー':'slider','攻撃側':'Attacker','防御側':'Defender',
@@ -270,6 +277,7 @@ function translateRuntime(base){
    (regression?.[1]||'the public release')+' and '+(cases?.[1]||'54')+
    ' Showdown comparison cases have passed. Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.';
  }
+ if(attributeLabels[base])return attributeLabels[base];
  if(dictionary[base])return dictionary[base];
  if(uiTerms[base])return uiTerms[base];
  if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+(entityNames[move.trim()]||move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
@@ -316,7 +324,7 @@ function translateRuntime(base){
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
- if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace(/残り\s*(\d+)/g,'remaining $1').replace('残り','remaining ').replace('個体値','IV');
+ if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace(/残り\s*(\d+)/g,'remaining $1').replace('残り','remaining ').replace(/remaining\s*(\d+)/g,'remaining $1').replace('個体値','IV');
  if(base.startsWith('攻撃実数値: '))return base.replace(/攻撃実数値:/g,'Attack stat:').replace(/防御実数値:/g,'Defense stat:').replace(/乱数前:/g,'Before random factor:');
  if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
  if(base.startsWith('乱数前: '))return base.replace('乱数前: ','Before random factor: ');
@@ -416,6 +424,9 @@ function initialize(){
    translateOptions();
   });
   observer.observe(app,{childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','placeholder'],subtree:true});
+  // Refresh immediately before Android/Brave opens the native select sheet.
+  app.addEventListener('pointerdown',event=>{if(event.target.closest('select'))translateOptions();},true);
+  app.addEventListener('focusin',event=>{if(event.target.closest('select'))translateOptions();},true);
  }
  window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
 }
