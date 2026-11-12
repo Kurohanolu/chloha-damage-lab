@@ -124,6 +124,26 @@ const {chromium}=require('playwright');
     assert.ok(Math.abs(item.firstMissProbability-.1)<1e-9,JSON.stringify(item));
     assert.equal(item.noErrors,true,JSON.stringify(item));
   }
+  const specialItems=await page.evaluate(()=>{
+    const option=[...document.querySelector('#dbMove').options].find(x=>x.textContent.includes('ネズミざん'));
+    document.querySelector('#dbMove').value=option.value;
+    document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
+    document.querySelector('#attItem').value='loadedDice';
+    document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
+    const dice=window.ChlohaLastCalculation?.r?.multiHitDistribution;
+    const diceResult={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,mass:dice?[...dice.values()].reduce((a,b)=>a+b,0):null};
+    document.querySelector('#attItem').value='none';
+    document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
+    document.querySelector('#attAbility').value='skillLink';
+    document.querySelector('#attAbility').dispatchEvent(new Event('input',{bubbles:true}));
+    const link=window.ChlohaLastCalculation?.r?.multiHitDistribution;
+    const linkResult={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,mass:link?[...link.values()].reduce((a,b)=>a+b,0):null};
+    return {diceResult,linkResult};
+  });
+  for(const result of [specialItems.diceResult,specialItems.linkResult]){
+    assert.equal(result.hidden,false,JSON.stringify(result));
+    assert.ok(Math.abs(result.mass-1)<1e-9,JSON.stringify(result));
+  }
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and special multi-hit UI');
  }finally{await browser.close();}
