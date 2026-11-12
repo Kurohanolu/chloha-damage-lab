@@ -392,7 +392,7 @@ for(const power of flingPowerChoices){const option=document.createElement('optio
 flingPowerSelect.value='30';
 flingPowerPanel.append(flingPowerSelect);
 flingPowerPanel.hidden=true;
-$('dbMove').insertAdjacentElement('afterend',flingPowerPanel);
+$('moveSelectMount').insertAdjacentElement('afterend',flingPowerPanel);
 const autoFields=['power','attack','defense','hp','attMaxHp','attSpeed','defSpeed','moveType','category','attType1','attType2','defType1','defType2','spread'];
 function applyDb(){
  const auto=$('dbAuto').checked;
