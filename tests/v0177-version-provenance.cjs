@@ -2,13 +2,17 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
-assert.match(html,/<title>Chloha Damage Lab v0\.182 Pre-Release 23<\/title>/);
-assert.match(html, /class="version"[^>]*>v0\.182 <span>Pre-Release 23<\/span>/, 'visible release badge must match title');
+const titleMatch=html.match(/<title>Chloha Damage Lab (v0\\.\\d+) (Pre-Release \\d+)<\\/title>/);
+assert.ok(titleMatch,'public title must contain version and pre-release');
+const [,publicVersion,preRelease]=titleMatch;
+assert.equal(publicVersion,'v0.182','release series must stay v0.182');
+assert.ok(html.includes('class="version">'+publicVersion+' <span>'+preRelease+'</span>'),'visible release badge must match title');
+assert.ok(html.includes('Pages publish: '+publicVersion+' '+preRelease),'publish marker must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);
 assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
 assert.match(html,/version:'0\.162'/);
 
-// Pre-Release 23: Technician is selectable and modifies per-hit effective move power.
+// Regression coverage: Technician is selectable and modifies per-hit effective move power.
 assert.match(html, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
 const technicianLine=html.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
 assert.ok(technicianLine,'Technician power-layer registration exists');
