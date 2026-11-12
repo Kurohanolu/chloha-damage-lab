@@ -416,6 +416,14 @@ function setLocale(next){
  translateOptions();
  // Dragon Darts controls are appended directly to body, outside #app.
  // Keep their native Android select labels synchronized with the active locale.
+ const panelLabels={
+  flingPowerPanel:['なげつけるの威力（持ち物に応じて手動指定） ','Fling power (select manually based on held item) '],
+  beatUpPanel:['ふくろだたき：参加ポケモンの攻撃種族値（カンマ区切り・ひんし／状態異常は除外） ','Beat Up: participating Pokémon base Attack stats (comma-separated; exclude fainted or statused Pokémon) ']
+ };
+ for(const [id,labels] of Object.entries(panelLabels)){
+  const panel=document.getElementById(id);
+  if(panel?.firstChild?.nodeType===3)panel.firstChild.nodeValue=labels[locale==='en'?1:0];
+ }
  const darts=document.getElementById('dragonDartsHits');
  if(darts){
   for(const option of darts.options){
