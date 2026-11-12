@@ -1,7 +1,7 @@
 {
   "source": "smogon/pokemon-showdown/data/moves.ts",
   "sourceCommit": "a9bb56dce2c45a34b44afdf2378aa0d0c35b540d",
-  "note": "All 335 catalog moves mapped by Japanese->English names, Showdown IDs and two aliases; default Showdown power may differ from Champions",
+  "note": "All 335 catalog moves mapped by Japanese->English names, Showdown IDs and two aliases; default Showdown power may differ from Champions; contact flags imported from the same pinned Showdown commit",
   "championsPowerOverrides": {
     "gw0169_p031": {
       "power": 80,
@@ -149,13 +149,17 @@
       "showdownId": "dragonclaw",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "outrage": {
       "showdownId": "outrage",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "rockSlide": {
       "showdownId": "rockslide",
@@ -167,7 +171,9 @@
       "showdownId": "crunch",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "flamethrower": {
       "showdownId": "flamethrower",
@@ -235,7 +241,9 @@
       "showdownId": "highhorsepower",
       "basePower": 95,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "heatWave": {
       "showdownId": "heatwave",
@@ -297,7 +305,9 @@
       "showdownId": "darkestlariat",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gravApple": {
       "showdownId": "gravapple",
@@ -315,7 +325,9 @@
       "showdownId": "closecombat",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "shadowBall": {
       "showdownId": "shadowball",
@@ -339,25 +351,33 @@
       "showdownId": "waterfall",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "flareBlitz": {
       "showdownId": "flareblitz",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "woodHammer": {
       "showdownId": "woodhammer",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "ironHead": {
       "showdownId": "ironhead",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "energyBall": {
       "showdownId": "energyball",
@@ -375,13 +395,17 @@
       "showdownId": "bravebird",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "suckerPunch": {
       "showdownId": "suckerpunch",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "earthPower": {
       "showdownId": "earthpower",
@@ -399,7 +423,9 @@
       "showdownId": "playrough",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "surf": {
       "showdownId": "surf",
@@ -425,7 +451,9 @@
       "showdownId": "bodypress",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "electroBall": {
       "showdownId": "electroball",
@@ -485,27 +513,34 @@
       "showdownId": "liquidation",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "poisonJab": {
       "showdownId": "poisonjab",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "xScissor": {
       "showdownId": "xscissor",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "wildCharge": {
       "showdownId": "wildcharge",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v095_61": {
       "showdownId": "acidspray",
@@ -585,19 +620,25 @@
       "showdownId": "irontail",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_074": {
       "showdownId": "steelroller",
       "basePower": 130,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_075": {
       "showdownId": "icespinner",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_076": {
       "showdownId": "aquacutter",
@@ -611,19 +652,25 @@
       "showdownId": "aquajet",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_078": {
       "showdownId": "aquatail",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_079": {
       "showdownId": "accelerock",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_080": {
       "showdownId": "acrobatics",
@@ -635,69 +682,90 @@
       "showdownId": "hammerarm",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_082": {
       "showdownId": "foulplay",
       "basePower": 95,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_083": {
       "showdownId": "shadowsneak",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_084": {
       "showdownId": "leechlife",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_085": {
       "showdownId": "psychicfangs",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_086": {
       "showdownId": "razorshell",
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "v096_087": {
       "showdownId": "zenheadbutt",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_088": {
       "showdownId": "shadowclaw",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_089": {
       "showdownId": "extremespeed",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_090": {
       "showdownId": "doubleedge",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_091": {
       "showdownId": "smartstrike",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_092": {
       "showdownId": "seedbomb",
@@ -709,7 +777,9 @@
       "showdownId": "dualwingbeat",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_094": {
       "showdownId": "flowertrick",
@@ -721,25 +791,33 @@
       "showdownId": "fakeout",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_096": {
       "showdownId": "bulletpunch",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_097": {
       "showdownId": "powerwhip",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "v096_098": {
       "showdownId": "breakingswipe",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p001": {
       "showdownId": "triplearrows",
@@ -751,25 +829,33 @@
       "showdownId": "icehammer",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p003": {
       "showdownId": "aquastep",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p004": {
       "showdownId": "dig",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p005": {
       "showdownId": "thrash",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p006": {
       "showdownId": "superfang",
@@ -781,7 +867,9 @@
       "showdownId": "wavecrash",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p008": {
       "showdownId": "smackdown",
@@ -793,13 +881,17 @@
       "showdownId": "hornleech",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p010": {
       "showdownId": "lashout",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p011": {
       "showdownId": "lastrespects",
@@ -829,7 +921,9 @@
       "showdownId": "axekick",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p016": {
       "showdownId": "spiritshackle",
@@ -841,19 +935,25 @@
       "showdownId": "bite",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p018": {
       "showdownId": "thunderfang",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p019": {
       "showdownId": "thunderpunch",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p020": {
       "showdownId": "endeavor",
@@ -865,20 +965,25 @@
       "showdownId": "facade",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p022": {
       "showdownId": "brickbreak",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p023": {
       "showdownId": "stoneaxe",
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p024": {
@@ -897,13 +1002,17 @@
       "showdownId": "focuspunch",
       "basePower": 150,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p027": {
       "showdownId": "gigaimpact",
       "basePower": 150,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p028": {
       "showdownId": "reversal",
@@ -915,33 +1024,42 @@
       "showdownId": "glaiverush",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p030": {
       "showdownId": "mortalspin",
       "basePower": 30,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p031": {
       "showdownId": "slash",
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p032": {
       "showdownId": "flipturn",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p033": {
       "showdownId": "trailblaze",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p034": {
       "showdownId": "beakblast",
@@ -953,32 +1071,41 @@
       "showdownId": "jawlock",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p036": {
       "showdownId": "grassyglide",
       "basePower": 55,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p037": {
       "showdownId": "crabhammer",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p038": {
       "showdownId": "crosschop",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p039": {
       "showdownId": "crosspoison",
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p040": {
@@ -997,13 +1124,17 @@
       "showdownId": "meteormash",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p043": {
       "showdownId": "phantomforce",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p044": {
       "showdownId": "psychocut",
@@ -1017,7 +1148,9 @@
       "showdownId": "supercellslam",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p046": {
       "showdownId": "selfdestruct",
@@ -1029,7 +1162,9 @@
       "showdownId": "bind",
       "basePower": 15,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p048": {
       "showdownId": "gyroball",
@@ -1041,7 +1176,9 @@
       "showdownId": "shadowpunch",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p050": {
       "showdownId": "fissure",
@@ -1053,7 +1190,9 @@
       "showdownId": "tailslap",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p052": {
       "showdownId": "scaleshot",
@@ -1065,14 +1204,17 @@
       "showdownId": "fly",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p054": {
       "showdownId": "solarblade",
       "basePower": 125,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p055": {
@@ -1085,7 +1227,9 @@
       "showdownId": "dive",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p057": {
       "showdownId": "ragingfury",
@@ -1109,14 +1253,17 @@
       "showdownId": "doublehit",
       "basePower": 35,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p061": {
       "showdownId": "aerialace",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p062": {
@@ -1135,7 +1282,9 @@
       "showdownId": "firstimpression",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p065": {
       "showdownId": "gigatonhammer",
@@ -1147,49 +1296,65 @@
       "showdownId": "lastresort",
       "basePower": 140,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p067": {
       "showdownId": "fellstinger",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p068": {
       "showdownId": "lunge",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p069": {
       "showdownId": "pounce",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p070": {
       "showdownId": "quickattack",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p071": {
       "showdownId": "doubleshock",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p072": {
       "showdownId": "uturn",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p073": {
       "showdownId": "poisonfang",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p074": {
       "showdownId": "barbbarrage",
@@ -1202,7 +1367,8 @@
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0169_p076": {
@@ -1221,13 +1387,17 @@
       "showdownId": "dragonrush",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_p079": {
       "showdownId": "dragontail",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_s001": {
       "showdownId": "storedpower",
@@ -1433,7 +1603,9 @@
       "showdownId": "drainingkiss",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_s036": {
       "showdownId": "scald",
@@ -1475,7 +1647,9 @@
       "showdownId": "petaldance",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_s043": {
       "showdownId": "lightofruin",
@@ -1553,7 +1727,9 @@
       "showdownId": "infestation",
       "basePower": 20,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0169_s056": {
       "showdownId": "syrupbomb",
@@ -1653,87 +1829,114 @@
       "showdownId": "drillpeck",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s003": {
       "showdownId": "drillrun",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s004": {
       "showdownId": "drainpunch",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s005": {
       "showdownId": "thief",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s006": {
       "showdownId": "flamecharge",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s007": {
       "showdownId": "bodyslam",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u008": {
       "showdownId": "populationbomb",
       "basePower": 20,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170_s009": {
       "showdownId": "skittersmack",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s010": {
       "showdownId": "superpower",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s011": {
       "showdownId": "steelwing",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s012": {
       "showdownId": "dynamicpunch",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u013": {
       "showdownId": "guillotine",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u014": {
       "showdownId": "knockoff",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s015": {
       "showdownId": "pound",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s016": {
       "showdownId": "petalblizzard",
@@ -1745,13 +1948,17 @@
       "showdownId": "upperhand",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s018": {
       "showdownId": "psyshieldbash",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u019": {
       "showdownId": "hardpress",
@@ -1764,7 +1971,8 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170_s021": {
@@ -1777,7 +1985,9 @@
       "showdownId": "zingzap",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u023": {
       "showdownId": "heatcrash",
@@ -1789,7 +1999,9 @@
       "showdownId": "direclaw",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s025": {
       "showdownId": "feint",
@@ -1807,25 +2019,33 @@
       "showdownId": "headlongrush",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u028": {
       "showdownId": "flyingpress",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s029": {
       "showdownId": "crushclaw",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s030": {
       "showdownId": "blazekick",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u031": {
       "showdownId": "ragefist",
@@ -1837,7 +2057,9 @@
       "showdownId": "brutalswing",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u033": {
       "showdownId": "heavyslam",
@@ -1855,31 +2077,41 @@
       "showdownId": "covet",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s036": {
       "showdownId": "nuzzle",
       "basePower": 20,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s037": {
       "showdownId": "firefang",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s038": {
       "showdownId": "firepunch",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s039": {
       "showdownId": "firelash",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u040": {
       "showdownId": "poltergeist",
@@ -1891,7 +2123,9 @@
       "showdownId": "volttackle",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u042": {
       "showdownId": "bonerush",
@@ -1903,13 +2137,17 @@
       "showdownId": "wrap",
       "basePower": 15,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s044": {
       "showdownId": "machpunch",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u045": {
       "showdownId": "pinmissile",
@@ -1921,27 +2159,34 @@
       "showdownId": "bugbite",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s047": {
       "showdownId": "bitterblade",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170_s048": {
       "showdownId": "megakick",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s049": {
       "showdownId": "megahorn",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u050": {
       "showdownId": "metalburst",
@@ -1953,7 +2198,9 @@
       "showdownId": "headsmash",
       "basePower": 150,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u052": {
       "showdownId": "temperflare",
@@ -1965,7 +2212,9 @@
       "showdownId": "stormthrow",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u054": {
       "showdownId": "avalanche",
@@ -1978,20 +2227,25 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170_u056": {
       "showdownId": "ragingbull",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_s057": {
       "showdownId": "icepunch",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u058": {
       "showdownId": "rockblast",
@@ -2003,7 +2257,9 @@
       "showdownId": "lowsweep",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170_u060": {
       "showdownId": "expandingforce",
@@ -2015,13 +2271,17 @@
       "showdownId": "rapidspin",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_002": {
       "showdownId": "icefang",
       "basePower": 65,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_003": {
       "showdownId": "iceshard",
@@ -2033,7 +2293,9 @@
       "showdownId": "jetpunch",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_005": {
       "showdownId": "saltcure",
@@ -2045,7 +2307,9 @@
       "showdownId": "throatchop",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_007": {
       "showdownId": "flail",
@@ -2088,14 +2352,17 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170b_014": {
       "showdownId": "spiritbreak",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_015": {
       "showdownId": "assurance",
@@ -2107,13 +2374,17 @@
       "showdownId": "seismictoss",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_017": {
       "showdownId": "pluck",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_018": {
       "showdownId": "powertrip",
@@ -2126,38 +2397,49 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing"
+        "slicing",
+        "contact"
       ]
     },
     "gw0170b_020": {
       "showdownId": "horndrill",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_021": {
       "showdownId": "bounce",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_022": {
       "showdownId": "highjumpkick",
       "basePower": 130,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_023": {
       "showdownId": "circlethrow",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_024": {
       "showdownId": "snaptrap",
       "basePower": 35,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170b_025": {
       "showdownId": "tripleaxel",
@@ -2169,7 +2451,9 @@
       "showdownId": "tropkick",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact"
+      ]
     },
     "gw0170c_001": {
       "showdownId": "mudslap",
