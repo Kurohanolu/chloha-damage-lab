@@ -52,8 +52,8 @@ for(const name of ['ばくおんぱ','ふんえん','じならし','うたかた
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
 }
 
-assert.equal(expanded.filter(m=>m.calculationSupported).length,44,'new simple attacks');
-assert.equal(expanded.filter(m=>!m.calculationSupported).length,16,'new gated conditional attacks');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,45,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,15,'new gated conditional attacks');
 for(const m of expanded){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
