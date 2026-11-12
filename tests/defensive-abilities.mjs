@@ -95,6 +95,22 @@ try {
    ['Battle Armor critical prevention preserves screen reduction',same(rolls({defAbility:'battleArmor',critical:true,screen:'reflect'}),rolls({critical:false,screen:'reflect'}))]
   ];
  });
+ // Audit all 18 defensive resist berries and bilingual select rendering.
+ const berryNames={chilanBerry:'Chilan Berry',occaBerry:'Occa Berry',passhoBerry:'Passho Berry',wacanBerry:'Wacan Berry',rindoBerry:'Rindo Berry',yacheBerry:'Yache Berry',chopleBerry:'Chople Berry',kebiaBerry:'Kebia Berry',shucaBerry:'Shuca Berry',cobaBerry:'Coba Berry',payapaBerry:'Payapa Berry',tangaBerry:'Tanga Berry',chartiBerry:'Charti Berry',kasibBerry:'Kasib Berry',habanBerry:'Haban Berry',colburBerry:'Colbur Berry',babiriBerry:'Babiri Berry',roseliBerry:'Roseli Berry'};
+ const berryOptions=page.locator('#defItem option');
+ const originalBerries=await page.evaluate(()=>[...document.querySelectorAll('#defItem option')].filter(o=>o.value.endsWith('Berry')).map(o=>({id:o.value,label:o.textContent})));
+ assert.equal(originalBerries.length,18,'Expected all 18 resist berries in defender item select');
+ assert.deepEqual(originalBerries.map(o=>o.id).sort(),Object.keys(berryNames).sort(),'Defender berry option IDs');
+ await page.locator('#chloha-locale').selectOption('en');
+ for(const [id,name] of Object.entries(berryNames)){
+  const label=await page.locator('#defItem option[value="'+id+'"]').textContent();
+  assert.ok(label.startsWith(name+' ('),'Missing translated berry: '+id+' / '+label);
+  assert.ok(label.includes('damage ×0.5'),'Missing English berry effect: '+id);
+ }
+ await page.locator('#chloha-locale').selectOption('ja');
+ const restoredBerries=await page.evaluate(()=>[...document.querySelectorAll('#defItem option')].filter(o=>o.value.endsWith('Berry')).map(o=>({id:o.value,label:o.textContent})));
+ assert.deepEqual(restoredBerries,originalBerries,'Resist berry JA/EN/JA roundtrip');
+ console.log('PASS all 18 resist berry item labels and JA/EN/JA roundtrip');
  // Guard every supported defensive ability against missing English labels and stale JA/EN/JA options.
  const html=readFileSync(resolve(root,'index.html'),'utf8');
  const catalogSource=html.match(/const defensiveAbilities=(\{[^;]+\});/);
