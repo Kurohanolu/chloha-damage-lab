@@ -338,6 +338,18 @@ function translateRuntime(base){
  return translateMixedText(base);
 }
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
+const reverseUiTerms=Object.fromEntries(Object.entries(uiTerms).map(([ja,en])=>[en,ja]));
+const reverseUiPattern=new RegExp(Object.keys(reverseUiTerms).sort((a,b)=>b.length-a.length).map(v=>v.replace(/[.*+?^${}()|[\]\\]/g,'\\const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));')).join('|'),'g');
+function recoverJapanese(value){
+ if(reverse[value])return reverse[value];
+ if(value.startsWith('Selected: ')){
+  const selected=value.slice('Selected: ').replace(/\bVariable\b/g,'可変');
+  return '選択中：'+selected.replace(/\b(?:Earthquake|Garchomp|Tyranitar)\b/g,name=>reverseNames[name]||reverse[name]||name);
+ }
+ if(/^\d+[–-]\d+ damage$/.test(value))return value.replace(' damage',' ダメージ').replace('–','〜');
+ if(/^Guaranteed survival\s*[·・]/.test(value))return value.replace('Guaranteed survival','確定耐え');
+ return value.replace(reverseUiPattern,match=>reverseUiTerms[match]||match);
+}
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
 const original=new WeakMap();
@@ -353,7 +365,7 @@ function translate(root){
   const cached=original.get(node);
   const cachedRendered=cached===undefined?null:translateRuntime(cached);
   // Calculator updates existing text nodes in place; detect new source content.
-  if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,reverse[trim]||trim);
+  if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,recoverJapanese(trim));
   const base=original.get(node);
   const next=locale==='en'?translateRuntime(base):base;
   if(trim!==next)node.nodeValue=value.replace(trim,next);
@@ -366,7 +378,7 @@ function translate(root){
    if(!originals){originals={};originalAttributes.set(element,originals);}
    const previous=originals[attr];
    const previousEnglish=previous===undefined?null:(translateAccessibilityLabel(previous));
-   if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=reverse[value]||value;
+   if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
    const base=originals[attr];
    const next=locale==='en'?(translateAccessibilityLabel(base)):base;
    if(next!==value)element.setAttribute(attr,next);
