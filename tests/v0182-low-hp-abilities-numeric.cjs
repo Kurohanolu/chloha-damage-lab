@@ -153,6 +153,32 @@ const path=require('node:path');
   assert.deepEqual(aura.wrong.rolls,aura.neutral.rolls,'Dark Aura ignores Fairy attacks');
   assert.ok(aura.broken.trace.some(x=>x.includes('power/aura: 80 → 60')),'Aura Break replaces 1.33x with 0.75x');
   assert.ok(aura.broken.rolls[0]<aura.neutral.rolls[0],'Aura Break reduces damage');
+  const trio3=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'はがね',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['みず'],
+    weather:'none',terrain:'none',battleFormat:'singles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x});
+   return {normal:calc({}),steel:calc({attAbility:'steelSpirit'}),
+    steelOther:calc({attAbility:'steelSpirit',moveType:'くさ'}),
+    otherNormal:calc({moveType:'くさ'}),
+    plus:calc({attAbility:'plus',partnerOppositePlusMinus:true}),
+    minus:calc({attAbility:'minus',partnerOppositePlusMinus:true}),
+    plusSolo:calc({attAbility:'plus'}),
+    plusPhysical:calc({attAbility:'plus',partnerOppositePlusMinus:true,category:'physical'})};
+  });
+  assert.ok(trio3.steel.trace.some(x=>x.includes('power/steelSpirit: 80 → 120')),'Steely Spirit boosts Steel power');
+  assert.ok(trio3.steel.rolls[0]>trio3.normal.rolls[0],'Steely Spirit increases Steel damage');
+  assert.deepEqual(trio3.steelOther.rolls,trio3.otherNormal.rolls,'Steely Spirit ignores non-Steel');
+  assert.ok(trio3.plus.rolls[0]>trio3.normal.rolls[0],'Plus boosts special attack with Minus ally');
+  assert.deepEqual(trio3.plus.rolls,trio3.minus.rolls,'Plus and Minus have equal modifiers');
+  assert.deepEqual(trio3.plusSolo.rolls,trio3.normal.rolls,'Plus requires partner');
+  assert.ok(!trio3.plusPhysical.trace.some(x=>x.includes('stat/plusMinus')),'Plus excludes physical attacks');
+  console.log('PASS v0.182 Steely Spirit, Plus and Minus numeric checks');
   console.log('PASS v0.182 Fairy Aura, Dark Aura and Aura Break numeric checks');
   console.log('PASS v0.182 three offensive abilities threshold/weather/terrain checks');
   console.log('PASS v0.182 Water Bubble offensive and burn numeric checks');
