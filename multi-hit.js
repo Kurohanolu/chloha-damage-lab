@@ -37,6 +37,27 @@ const ChlohaMultiHit = (() => {
   }
   return new Map([...totals].sort((a,b)=>a[0]-b[0]));
  }
+ // Sequential attacks stop on the first miss. Per-hit damage rolls may differ.
+ // This models hit accuracy and damage only; move-specific effects are separate.
+ function sequentialDistribution(rollsForHit,accuracies){
+  if(typeof rollsForHit!=='function')throw Error('rollsForHit must be a function');
+  if(!Array.isArray(accuracies)||accuracies.length<1||accuracies.length>10||
+     accuracies.some(p=>!Number.isFinite(p)||p<0||p>1))throw Error('Expected 1-10 hit accuracies between zero and one');
+  let active=new Map([[0,1]]);
+  const finished=new Map();
+  for(let i=0;i<accuracies.length;i++){
+   const rolls=rollsForHit(i,accuracies.length);
+   validateRolls(rolls);
+   const p=accuracies[i],next=new Map();
+   for(const [damage,probability] of active){
+    if(p<1)finished.set(damage,(finished.get(damage)||0)+probability*(1-p));
+    if(p>0)for(const roll of rolls)next.set(damage+roll,(next.get(damage+roll)||0)+probability*p/16);
+   }
+   active=next;
+  }
+  for(const [damage,probability] of active)finished.set(damage,(finished.get(damage)||0)+probability);
+  return new Map([...finished].sort((a,b)=>a[0]-b[0]));
+ }
  function koProbability(distribution,currentHp){
   if(!(distribution instanceof Map)||distribution.size===0)throw Error('Expected nonempty damage distribution');
   if(!Number.isSafeInteger(currentHp)||currentHp<1)throw Error('Target HP must be a positive integer');
@@ -49,7 +70,7 @@ const ChlohaMultiHit = (() => {
   if(Math.abs(total-1)>1e-9)throw Error('Damage distribution probabilities must sum to one');
   return Math.max(0,Math.min(1,ko));
  }
- return {hitDistribution,convolve,totalDistribution,koProbability};
+ return {hitDistribution,convolve,totalDistribution,sequentialDistribution,koProbability};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaMultiHit;
 if(typeof globalThis!=='undefined')globalThis.ChlohaMultiHit=ChlohaMultiHit;
