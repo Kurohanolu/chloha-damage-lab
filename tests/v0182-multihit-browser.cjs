@@ -9,7 +9,7 @@ const {chromium}=require('playwright');
   const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
-  await page.locator('#dbMove').waitFor();
+  await page.locator('#attStats .stat-row').first().waitFor();
   const result=await page.evaluate(()=>{
    const engine=window.ChlohaMultiHit;
    if(!engine)throw Error('ChlohaMultiHit missing from browser');
