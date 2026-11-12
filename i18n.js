@@ -211,6 +211,17 @@ function translateMixedText(value){
 }
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
+ if(base.startsWith('バージョンについて：画面の「')){
+  const release=base.match(/画面の「([^」]+)」/);
+  const core=base.match(/計算コアの「([^」]+)」/);
+  const regression=base.match(/(v[\d.]+)の自動回帰監査/);
+  const cases=base.match(/Showdown比較(\d+)ケース/);
+  return 'About versions: The on-screen “'+(release?.[1]||'current release')+
+   '” is the public UI version. The calculation core “'+(core?.[1]||'internal core')+
+   '” identifies the internal API foundation; it does not indicate the current public version or that verification is complete. Automated regression checks for '+
+   (regression?.[1]||'the public release')+' and '+(cases?.[1]||'54')+
+   ' Showdown comparison cases have passed. Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.';
+ }
  if(dictionary[base])return dictionary[base];
  if(uiTerms[base])return uiTerms[base];
  if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+(entityNames[move.trim()]||move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
