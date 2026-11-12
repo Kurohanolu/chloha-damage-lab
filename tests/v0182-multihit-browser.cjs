@@ -99,9 +99,12 @@ const {chromium}=require('playwright');
     assert.equal(item.hitPowers,item.name==='ネズミざん'?10:3,JSON.stringify(item));
     assert.equal(item.zero,true,'a first-hit miss must yield zero damage');
     assert.match(item.ko,/連続技合計KO率/,JSON.stringify(item));
-    assert.match(item.hits,/KO率を参照/,JSON.stringify(item));
-    assert.match(item.warning,/命中率補正アイテム/,JSON.stringify(item));
+
   }
+  // Check the actual rendered DOM after selecting the special move, independently
+  // of the per-move serialized result objects.
+  assert.match(await page.locator('#hits').textContent(),/KO率を参照/);
+  assert.match(await page.locator('#reliabilityDetails').textContent(),/命中率補正アイテム/);
   const powerAudit=await page.evaluate(()=>{
     const result=[];
     for(const name of ['ネズミざん','トリプルアクセル']){
