@@ -8,13 +8,13 @@ const path=require('node:path');
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   await page.locator('#chloha-locale').waitFor();
   for(const [locale,invalid,reset] of [
-   ['en','No valid damage calculation is available.','History cleared. Current HP and terrain were preserved.'],
-   ['ja','有効なダメージ計算結果がありません。','履歴を消去しました。現在のHP・フィールドは維持しています。'],
-   ['en','No valid damage calculation is available.','History cleared. Current HP and terrain were preserved.']
+   ['en','Enter observed damage as an integer from 0 to 9999.','History cleared. Current HP and terrain were preserved.'],
+   ['ja','実際のダメージは0〜9999の整数で入力してください。','履歴を消去しました。現在のHP・フィールドは維持しています。'],
+   ['en','Enter observed damage as an integer from 0 to 9999.','History cleared. Current HP and terrain were preserved.']
   ]){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.locator('#battleCommit').evaluate(el=>el.click());
-   assert.equal((await page.locator('#battleStatus').textContent()).trim(),invalid,'invalid calculation '+locale);
+   assert.equal((await page.locator('#battleStatus').textContent()).trim(),invalid,'invalid observed damage '+locale);
    await page.locator('#battleReset').evaluate(el=>el.click());
    assert.equal((await page.locator('#battleStatus').textContent()).trim(),reset,'history reset '+locale);
   }
