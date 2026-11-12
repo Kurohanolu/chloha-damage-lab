@@ -130,6 +130,7 @@ const dictionary={
 '攻撃側おいかぜ（素早さ2倍）':'Attacker Tailwind (Speed ×2)',
 '防御側おいかぜ（素早さ2倍）':'Defender Tailwind (Speed ×2)',
 'てだすけ（味方の支援）':'Helping Hand (ally support)',
+'相手がこのターン交代で出てきた（はりこみ）':'Target switched in this turn (Stakeout)',
 '味方に反対の特性（プラス／マイナス）がいる':'Ally has opposite ability (Plus / Minus)',
 '味方のフレンドガード（ダブル最大1匹）':'Ally Friend Guard (max 1 in doubles)',
 'シングル（検証用）':'Singles (experimental)',
@@ -239,7 +240,7 @@ function translateOptions(){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
    const ability=base.match(/^(.+?)（(一部技のみ対応|対応|効果未対応|未対応)）$/);
-   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','すいほう':'Water Bubble','よわき':'Defeatist','ひひいろのこどう':'Orichalcum Pulse','ハドロンエンジン':'Hadron Engine','フェアリーオーラ':'Fairy Aura','ダークオーラ':'Dark Aura','オーラブレイク':'Aura Break','はがねのせいしん':'Steely Spirit','プラス':'Plus','マイナス':'Minus','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
+   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','すいほう':'Water Bubble','よわき':'Defeatist','ひひいろのこどう':'Orichalcum Pulse','ハドロンエンジン':'Hadron Engine','フェアリーオーラ':'Fairy Aura','ダークオーラ':'Dark Aura','オーラブレイク':'Aura Break','はがねのせいしん':'Steely Spirit','プラス':'Plus','マイナス':'Minus','スナイパー':'Sniper','ブレインフォース':'Neuroforce','はりこみ':'Stakeout','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
    const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
    const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
    const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
