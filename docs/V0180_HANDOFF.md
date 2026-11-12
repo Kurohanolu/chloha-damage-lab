@@ -39,6 +39,9 @@
 - CI on handoff commit `2fc0bf635dca4e81d780421a3173e7cf5165f81d`: UI regression, Showdown differential tests, Showdown differential audit all SUCCESS.
 - Fixed English stat-point counter spacing (`remaining 66` rather than `remaining66`), with regression assertion. Latest code commit `d257836c1887b9c7f7b525f218b3ad6a283490fc`; CI pending at time of documentation update.
 
+- Added explicit translations for held-item modifier labels, battle format, grounding, spread-target settings, and ally count in `i18n.js` (code commit `d0b9e343`). Added regression assertions (code commit `80112782767295919e7b1b7359a1ca819f50a65d`). Verify CI before declaring success.
+- Previous CI for `521bdc4` showed Showdown tests/audit PASS, UI regression still running at initial check; recheck final result.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
