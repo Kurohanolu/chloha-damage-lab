@@ -100,7 +100,10 @@ const dictionary={
 '入力を確認しました。計算結果を更新しました。':'Inputs validated. Damage results updated.',
 '能力':'Stat','ポイント':'Points','性格':'Nature','実数値':'Actual stat',
 '攻撃実数値':'Attack stat','防御実数値':'Defense stat','乱数前':'Before random factor',
-'現在の盤面':'Current battlefield','種族値':'Base stats'
+'現在の盤面':'Current battlefield','種族値':'Base stats',
+'確定KO':'Guaranteed KO','乱数KO':'Possible KO','対象外':'N/A',
+'入力を確認してください':'Check your inputs',
+'対象は既にひんし（KO率の算出対象外）':'Target has already fainted (KO probability not applicable)'
 };
 // One source of truth for battle display names. The battle IDs are never changed.
 const optionOriginal=new WeakMap();
@@ -129,7 +132,10 @@ function translateRuntime(base){
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
  if(/^\\d+〜\\d+ ダメージ$/.test(base))return base.replace(' ダメージ',' damage').replace('〜','–');
  if(base.startsWith('最大HPの '))return base.replace('最大HPの ','Of max HP: ').replace('〜','–');
- if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ');
+ if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ').replace(' ／ フィールド ',' / Terrain ').replace(' ／ 壁 ',' / Screen ');
+ if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
+ if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
+ if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
  if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace('残り','remaining').replace('個体値','IV');
  if(base.startsWith('攻撃実数値: '))return base.replace('攻撃実数値: ','Attack stat: ');
  if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
