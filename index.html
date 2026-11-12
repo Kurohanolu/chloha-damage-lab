@@ -159,7 +159,7 @@ function isGrounded(a,side){
  return !a[side+'Types'].includes('ひこう')&&a[side+'Ability']!=='levitate';
 }
 // Standard terrain power effects; exact Champions rounding remains unverified.
-registerModifier('power','technician',5,c=>c.a.attAbility==='technician'&&c.a.power>0&&c.a.power<=60&&c.a.moveMechanic!=='electroBall'&&c.a.moveMechanic!=='hpScaledPower',(_,v)=>pokeRound(v,6144));
+registerModifier('power','technician',5,c=>c.a.attAbility==='technician'&&c.a.power>0,(c,v)=>v<=60?pokeRound(v,6144):v);
 registerModifier('power','terrainBoost',10,c=>isGrounded(c.a,'att')&&({electric:'でんき',grassy:'くさ',psychic:'エスパー'})[c.a.terrain]===c.a.moveType,(_,v)=>pokeRound(v,5325));
 registerModifier('power','mistyDragon',20,c=>c.a.terrain==='misty'&&c.a.moveType==='ドラゴン'&&isGrounded(c.a,'def'),(_,v)=>pokeRound(v,2048));
 registerModifier('power','grassyEarthquake',21,c=>c.a.terrain==='grassy'&&c.a.moveId==='earthquake'&&isGrounded(c.a,'def'),(_,v)=>pokeRound(v,2048));
