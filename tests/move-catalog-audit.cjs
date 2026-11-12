@@ -52,14 +52,14 @@ for(const name of ['ばくおんぱ','ふんえん','じならし','うたかた
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
 }
 
-assert.equal(expanded.filter(m=>m.calculationSupported).length,42,'new simple attacks');
-assert.equal(expanded.filter(m=>!m.calculationSupported).length,18,'new gated conditional attacks');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,43,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,17,'new gated conditional attacks');
 for(const m of expanded){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
  assert.ok(m.verifiedFields.includes('target'),'target metadata: '+m.name);
  assert.ok(m.unverifiedFields.includes('game_damage_parity'),'game parity unverified: '+m.name);
- if(m.power===0)assert.equal(m.calculationSupported,false,'variable damage unavailable: '+m.name);
+ if(m.power===0&&m.name!=='ハードプレス')assert.equal(m.calculationSupported,false,'variable damage unavailable: '+m.name);
 }
 for(const [name,type,power,supported] of [
  ['ドレインパンチ','かくとう',75,true],
@@ -78,6 +78,8 @@ for(const [name,type,power,supported] of [
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
 assert.ok(html.includes("'activationAssumed','acrobatics'"),'activation-assumed mechanic accepted by validator');
+assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,true,'Hard Press target HP power supported');
+assert.ok(html.includes("a.moveMechanic==='hardPress'?Math.max(1,Math.floor(100*a.currentHp/a.hp))"),'Hard Press uses target remaining HP');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
 assert.ok(html.includes("a.moveMechanic==='sacredSword')ds=Math.min(0,ds)"),'Sacred Sword must ignore positive defense stages');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
