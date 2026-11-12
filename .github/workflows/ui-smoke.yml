@@ -62,6 +62,7 @@ jobs:
       - run: node tests/v0182-battle-status-i18n.cjs
       - run: node tests/v0182-battle-confirm-locale.cjs
       - run: node tests/v0182-source-labels-i18n.cjs
+      - run: node tests/v0182-conditional-warnings-i18n.cjs
       - run: node tests/v0178-showdown-cross-compare.cjs
       - run: node tests/v0177-ci-inventory.cjs
       - run: node tests/v0177-move-policy-consistency.cjs
