@@ -67,6 +67,15 @@ const path=require('node:path');
   assert.equal(await page.locator('#runtime-i18n-regression').textContent(),'入力エラー: 現在HP 範囲外');
   await page.locator('#chloha-locale').selectOption('en');
   assert.equal(await page.locator('#runtime-i18n-regression').textContent(),'Input error: Current HP out of range');
+  await page.evaluate(()=>document.querySelector('#runtime-i18n-regression').textContent='現在HP 160 / KO率 50%');
+  await page.waitForFunction(()=>document.querySelector('#runtime-i18n-regression')?.textContent.includes('Current HP'));
+  assert.equal(await page.locator('#runtime-i18n-regression').textContent(),'Current HP 160 / KO chance 50%');
+  await page.evaluate(()=>document.querySelector('#runtime-i18n-regression').textContent='現在の盤面：天候 晴れ ／ フィールド なし ／ 壁 なし');
+  await page.waitForFunction(()=>document.querySelector('#runtime-i18n-regression')?.textContent.includes('Current battlefield'));
+  assert.match(await page.locator('#runtime-i18n-regression').textContent(),/Current battlefield: Weather .* \/ Terrain .* \/ Screen /);
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.equal(await page.locator('#runtime-i18n-regression').textContent(),'現在の盤面：天候 晴れ ／ フィールド なし ／ 壁 なし');
+  await page.locator('#chloha-locale').selectOption('en');
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS v0.179 language toggle, persistence, English species search, catalog, damage invariant');
  }finally{await browser.close();}
