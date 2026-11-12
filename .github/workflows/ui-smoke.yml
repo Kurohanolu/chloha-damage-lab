@@ -49,4 +49,5 @@ jobs:
           path: |
             smoke-*.png
             cross-calculator-report.json
+            english-untranslated-audit.json
           if-no-files-found: ignore
