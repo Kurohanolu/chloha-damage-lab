@@ -22,6 +22,7 @@ jobs:
       - run: npx playwright install chromium
       - run: node tests/v0182-multi-hit.cjs
       - run: node tests/v0182-showdown-multihit.cjs
+      - run: node tests/v0182-multihit-browser.cjs
       - run: node tests/v0181-weight-power.cjs
       - run: node tests/v0181-weight-data-audit.cjs
       - run: node tests/v0181-mega-weight-integrity.cjs
