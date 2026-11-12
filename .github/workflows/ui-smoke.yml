@@ -23,6 +23,7 @@ jobs:
       - run: node tests/v0181-weight-power.cjs
       - run: node tests/v0181-weight-data-audit.cjs
       - run: node tests/v0181-mega-weight-integrity.cjs
+      - run: node tests/v0181-ui-integration.cjs
       - run: node tests/v0181-sprite-coverage.cjs
       - run: node tests/v0178-hiragana-suggestions.cjs
       - run: node tests/v0178-showdown-cross-compare.cjs
