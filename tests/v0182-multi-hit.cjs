@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict');
 const api=require('../multi-hit.js');
-const {hitDistribution,convolve,totalDistribution,sequentialDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
+const {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
 assert.deepEqual(hitDistribution('タネマシンガン'),{2:.35,3:.35,4:.15,5:.15});
 assert.deepEqual(hitDistribution('Bullet Seed',{loadedDice:true}),{4:.5,5:.5});
 assert.deepEqual(hitDistribution('Icicle Spear',{skillLink:true,loadedDice:true}),{5:1});
@@ -39,4 +39,15 @@ assert.deepEqual([...sequentialDistribution(i=>Array(16).fill(5),[0,1])],[[0,1]]
 assert.throws(()=>sequentialDistribution(()=>same,[1.1]),/accuracies/);
 assert.throws(()=>sequentialDistribution(()=>same,[]),/accuracies/);
 assert.throws(()=>sequentialDistribution(()=>[1,2],[1]),/16/);
+const population=specialMoveDistribution('ネズミざん',()=>Array(16).fill(10),{accuracies:Array(10).fill(1)});
+assert.deepEqual([...population],[[100,1]],'ten hits must accumulate all damage');
+const populationMiss=specialMoveDistribution('Population Bomb',()=>Array(16).fill(10),{accuracies:[0,...Array(9).fill(1)]});
+assert.deepEqual([...populationMiss],[[0,1]],'first miss stops Population Bomb');
+const triple=specialMoveDistribution('トリプルアクセル',i=>Array(16).fill(10*(i+1)),{accuracies:[1,1,1]});
+assert.deepEqual([...triple],[[60,1]],'Triple Axel must allow increasing per-hit damage');
+const tripleMiss=specialMoveDistribution('Triple Axel',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
+assert.deepEqual([...tripleMiss],[[10,.5],[60,.5]],'second-hit miss stops third hit');
+assert.throws(()=>specialMoveDistribution('ネズミざん',()=>same),/10 per-hit/);
+assert.throws(()=>specialMoveDistribution('トリプルアクセル',()=>same,{accuracies:[1,1]}),/3 per-hit/);
+assert.throws(()=>specialMoveDistribution('じしん',()=>same,{accuracies:[1]}),/Unsupported special/);
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
