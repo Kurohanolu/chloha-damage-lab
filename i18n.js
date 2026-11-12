@@ -222,6 +222,12 @@ function translateRuntime(base){
  if(base.startsWith('HP依存威力: '))return base.replace('HP依存威力: ','HP-scaled power: ');
  if(base.startsWith('2発合計の最小〜最大: '))return base.replace('2発合計の最小〜最大: ','Two-hit total min–max: ').replace('〜','–');
  if(base.startsWith('2発合計KO率（256組）: '))return base.replace('2発合計KO率（256組）: ','Two-hit KO chance (256 combinations): ').replace('対象がひんし','target already fainted');
+ // A trace is a multiline text node. Translate each line, not only the first.
+ if(base.includes('\n')&&base.includes('最終ダメージ（乱数100')){
+  return base.split('\n').map(line=>line.startsWith('最終ダメージ（乱数100')
+   ?line.replace('最終ダメージ（乱数100','Final damage (roll 100').replace('・2発合計','; two-hit total')
+   :translateMixedText(line)).join('\n');
+ }
  if(base.startsWith('最終ダメージ（乱数100'))return base.replace('最終ダメージ（乱数100','Final damage (roll 100').replace('・2発合計','; two-hit total');
  if(base==='確定急所: 急所補正を強制適用')return 'Guaranteed critical: critical modifier forced';
  if(base==='ダブルウイング: 各ヒットを威力40で独立計算（各16乱数、計256組）')return 'Dual Wingbeat: each hit calculated independently at power 40 (16 rolls each; 256 combinations)';
