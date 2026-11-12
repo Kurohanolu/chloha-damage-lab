@@ -78,4 +78,19 @@ assert.equal(specialMoveSpec('Triple Axel').accuracy,.9);
 assert.equal(specialMoveSpec('Population Bomb').hits,10);
 assert.deepEqual(specialMoveSpec('Population Bomb').powers,Array(10).fill(20));
 assert.equal(specialMoveSpec('じしん'),null);
+// Boundary and conservation audit for special multi-hit distributions.
+for(const name of ['Population Bomb','Triple Axel']){
+ const spec=specialMoveSpec(name);
+ for(const accuracy of [0,.01,.5,.9,1]){
+  const distribution=specialMoveDistribution(name,i=>Array.from({length:16},(_,j)=>i*10+j),{accuracies:Array(spec.hits).fill(accuracy)});
+  const mass=[...distribution.values()].reduce((sum,p)=>sum+p,0);
+  assert.ok(Math.abs(mass-1)<1e-9,name+' mass at accuracy '+accuracy);
+  assert.ok([...distribution.keys()].every(d=>Number.isSafeInteger(d)&&d>=0),name+' damage bounds');
+  assert.ok([...distribution.values()].every(p=>p>=0&&p<=1+1e-9),name+' nonnegative probabilities');
+  if(accuracy===0)assert.deepEqual([...distribution],[[0,1]],name+' always misses');
+  if(accuracy===1)assert.equal(distribution.has(0),false,name+' cannot miss at 100% accuracy with positive rolls');
+ }
+}
+assert.throws(()=>specialMoveDistribution('Triple Axel',()=>same,{accuracies:[1,NaN,1]}),/accuracies/);
+assert.throws(()=>specialMoveDistribution('Population Bomb',()=>same,{accuracies:Array(10).fill(-.1)}),/accuracies/);
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
