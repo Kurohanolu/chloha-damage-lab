@@ -298,6 +298,7 @@ function translateBattleMoveLabel(value){
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
 function translateRuntime(base){
+ if(base==='アナライズ：発動条件を満たした前提でダメージを1.3倍にしています。行動順や交代の自動判定は行いません。')return 'Analytic: Damage is multiplied by 1.3 assuming the ability activates. Turn order and switching are not checked automatically.';
  const darts=base.match(/^ドラゴンアローは選択した相手への(\d+)回分のダメージを表示します。相手2体のまもる・無効・対象判定は手動指定です。$/);
  if(darts)return 'Dragon Darts shows '+darts[1]+' hit(s) on the selected target. Protect, immunities and targeting across both opponents must be set manually.';
  if(base.startsWith('現在の盤面：天候 ')){
