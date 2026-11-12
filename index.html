@@ -656,7 +656,6 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  for(const id of ['dbAttEv','dbAttNature','dbDefEv','dbDefNature','dbDefHpEv'])bridge.append(el(id).closest('label'));
  el('defSupportMods').append(el('foulPlayInputs'));
  el('resultMount').append(el('error'),el('output'));// Keep the existing critical control in the visible result header; its original event listener recalculates instantly.
- el('criticalToggle').setAttribute('aria-label','急所ダメージを切り替える');
  el('resultActions').append(el('criticalToggle'),el('copy'),el('useIronRoller'));
  el('battleMount').append(el('battleStatePanel'));
  el('auditMount').append(document.querySelector('.reliability'));
