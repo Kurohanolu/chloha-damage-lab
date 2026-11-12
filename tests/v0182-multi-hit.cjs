@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict');
 const api=require('../multi-hit.js');
-const {hitDistribution,convolve,totalDistribution}=api.default||globalThis.ChlohaMultiHit||api;
+const {hitDistribution,convolve,totalDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
 assert.deepEqual(hitDistribution('タネマシンガン'),{2:.35,3:.35,4:.15,5:.15});
 assert.deepEqual(hitDistribution('Bullet Seed',{loadedDice:true}),{4:.5,5:.5});
 assert.deepEqual(hitDistribution('Icicle Spear',{skillLink:true,loadedDice:true}),{5:1});
@@ -23,4 +23,12 @@ for(const [damage,p] of [[20,.35],[30,.35],[40,.15],[50,.15]])assert.ok(Math.abs
 const dice=totalDistribution('タネマシンガン',()=>same,{loadedDice:true});
 assert.deepEqual([...dice.keys()],[40,50]);
 assert.throws(()=>convolve([[1,2],same],2),/16/);
+assert.equal(koProbability(variable,20),1);
+assert.equal(koProbability(variable,21),.65);
+assert.equal(koProbability(variable,40),.30);
+assert.equal(koProbability(variable,51),0);
+assert.equal(koProbability(dice,40),1);
+assert.equal(koProbability(dice,50),.5);
+assert.throws(()=>koProbability(new Map([[10,.5]]),10),/sum to one/);
+assert.throws(()=>koProbability(variable,0),/positive integer/);
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
