@@ -42,11 +42,15 @@ assert.equal(slicing.size,Object.keys(expectedSlicing).length,'slicing coverage 
 assert.equal(pulse.size,Object.keys(expectedPulse).length,'pulse coverage changed: review Showdown tags');
 const showdown=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/showdown-ability-flags-v0182.json'),'utf8'));
 const categoryMap={Physical:'physical',Special:'special',Status:'status'};
+assert.equal(Object.keys(showdown.moves).length,77,'Showdown coverage snapshot count');
 for(const [id,record] of Object.entries(showdown.moves)){
  const move=catalog.get(id);
  assert.ok(move,'missing mapped Showdown move '+id);
- // Champions ruleset can differ from Showdown's default data; Slash is 80 in the supplied Champions UI.
- if(id==='gw0169_p031')assert.equal(move.power,80,'Champions Slash power');
+ // Never overwrite Champions values with default Showdown values without verification.
+ const override=showdown.championsPowerOverrides?.[id];
+ const unresolved=showdown.unverifiedPowerDifferences?.[id];
+ if(override)assert.equal(move.power,override.power,'verified Champions power: '+move.name);
+ else if(unresolved)assert.equal(move.power,unresolved.championsCatalogPower,'unverified catalog value changed: '+move.name);
  else assert.equal(move.power,record.basePower,'base power mismatch: '+move.name);
  assert.equal(move.category,categoryMap[record.category],'category mismatch: '+move.name);
  assert.equal(slicing.has(id),record.flags.includes('slicing'),'slicing flag mismatch: '+move.name);
