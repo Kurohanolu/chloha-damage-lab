@@ -129,6 +129,23 @@ const path=require('node:path');
   assert.match(fullAudit[1],/Attack stat: 180\\nDefense stat: 120\\nBefore random factor: 90/);
   assert.match(fullAudit[2],/Selected move “Expanding Force”: learnset/);
   assert.equal(await page.locator('#chloha-locale').getAttribute('aria-label'),'Language','English language selector accessible label');
+  // Audit visible text nodes after runtime translations settle. Exclude option menus,
+  // which contain alternative locale names, and non-rendered script/style content.
+  const residualJapanese=await page.evaluate(()=>{
+   const root=document.querySelector('#app')||document.body;
+   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+   const matches=[];let node;
+   while((node=walker.nextNode())){
+    const parent=node.parentElement;
+    if(!parent||parent.closest('script,style,option,template,[hidden],[aria-hidden="true"]'))continue;
+    if(!parent.getClientRects().length)continue;
+    const value=node.nodeValue.trim();
+    if(/[ぁ-んァ-ヶ一-龯]/.test(value))matches.push({text:value.slice(0,160),element:parent.tagName,id:parent.id||null});
+   }
+   return matches;
+  });
+  console.log('ENGLISH_VISIBLE_JAPANESE_AUDIT '+JSON.stringify(residualJapanese));
+  assert.deepEqual(residualJapanese,[],'English mode must not contain visible Japanese UI text');
   // Preserve an English-mode visual artifact for pre-release UI inspection.
   await page.screenshot({path:'smoke-v0179-english.png',fullPage:true});
   await page.locator('#chloha-locale').selectOption('ja');
