@@ -11,6 +11,7 @@ on:
       - tests/**
       - data/**
       - .github/workflows/ui-smoke.yml
+      - .github/workflows/publish-ci-status.yml
   pull_request:
     paths:
       - index.html
