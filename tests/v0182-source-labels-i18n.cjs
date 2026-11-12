@@ -14,7 +14,8 @@ const path=require('node:path');
    await page.locator('#chloha-locale').selectOption(locale);
    const credits=await page.locator('.move-data-note').first().textContent();
    assert.equal(credits.trim(),note,'move note '+locale);
-   assert((await page.locator('#auditSummary').locator('..').textContent()).includes(roster),'roster verification '+locale);
+   const rosterText=await page.locator('#auditSummary').locator('..').textContent();
+   assert(rosterText.includes(roster),'roster verification '+locale+': '+rosterText);
    assert.doesNotMatch(credits,/GameWith|ゲームウィズ|gamewith\.jp/,'no source branding in move picker');
   }
   console.log('PASS neutral source labels JA EN JA');
