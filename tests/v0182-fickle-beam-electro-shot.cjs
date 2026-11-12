@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const html=fs.readFileSync(require('node:path').resolve(__dirname,'../index.html'),'utf8');
+const policy=JSON.parse(html.match(/const ChlohaMovePolicy = (\{[^\n]+\});/)[1]);
+const moves=JSON.parse(html.match(/const ChlohaMovesDB = (\{[^\n]+\});/)[1]).moves;
+const fickle=moves.find(m=>m.name==='きまぐレーザー');
+const electro=moves.find(m=>m.name==='エレクトロビーム');
+assert.equal(fickle.power,80);assert.equal(policy[fickle.id].mechanic,'fickleBeam');
+assert.equal(policy[fickle.id].standardDamageSupported,true);
+assert.match(html,/fickleBeam:'きまぐレーザー：威力2倍が発動した'/);
+assert.match(html,/['"]?fickleBeam['"]?\]\.includes\(a\.moveMechanic\)/);
+assert.equal(fickle.power*2,160);
+assert.equal(electro.power,130);assert.equal(policy[electro.id].mechanic,'activationAssumed');
+assert.equal(policy[electro.id].standardDamageSupported,true);
+console.log('PASS Fickle Beam 80/160 checkbox and Electro Shot 130 successful-use policy');
