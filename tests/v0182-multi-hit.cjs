@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict');
 const api=require('../multi-hit.js');
-const {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
+const {hitDistribution,convolve,totalDistribution,sequentialDistribution,specialMoveSpec,specialMoveDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
 assert.deepEqual(hitDistribution('タネマシンガン'),{2:.35,3:.35,4:.15,5:.15});
 assert.deepEqual(hitDistribution('Bullet Seed',{loadedDice:true}),{4:.5,5:.5});
 assert.deepEqual(hitDistribution('Icicle Spear',{skillLink:true,loadedDice:true}),{5:1});
@@ -73,4 +73,9 @@ assert.equal(koProbability(accurateTen,101),0,'above maximum cannot KO');
 const accurateTriple=specialMoveDistribution('Triple Axel',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
 assert.ok(Math.abs(koProbability(accurateTriple,11)-.5)<1e-12,'second hit miss must reduce Triple Axel KO odds');
 assert.equal(koProbability(accurateTriple,10),1,'first hit guarantees lower threshold');
+assert.deepEqual(specialMoveSpec('Triple Axel').powers,[20,40,60],'Showdown Triple Axel power progression');
+assert.equal(specialMoveSpec('Triple Axel').accuracy,.9);
+assert.equal(specialMoveSpec('Population Bomb').hits,10);
+assert.deepEqual(specialMoveSpec('Population Bomb').powers,Array(10).fill(20));
+assert.equal(specialMoveSpec('じしん'),null);
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
