@@ -41,7 +41,14 @@ try {
    ['Bulletproof does not block Hyper Voice',same(rolls({defAbility:'bulletproof',moveId:'hyperVoice',category:'special'}),rolls({moveId:'hyperVoice',category:'special'}))],
    ['Soundproof blocks Hyper Voice',rolls({defAbility:'soundproof',moveId:'hyperVoice',category:'special'}).every(n=>n===0)],
    ['Soundproof does not block Aura Sphere',same(rolls({defAbility:'soundproof',moveId:'auraSphere',category:'special'}),rolls({moveId:'auraSphere',category:'special'}))],
-   ['Overcoat does not reduce direct attack damage',same(rolls({defAbility:'overcoat',moveId:'earthquake'}),rolls({moveId:'earthquake'}))]
+   ['Overcoat does not reduce direct attack damage',same(rolls({defAbility:'overcoat',moveId:'earthquake'}),rolls({moveId:'earthquake'}))],
+   ['Defender Unaware ignores attacker +2',same(rolls({defAbility:'unaware',attackStage:2}),rolls({attackStage:0}))],
+   ['Defender Unaware ignores attacker -2',same(rolls({defAbility:'unaware',attackStage:-2}),rolls({attackStage:0}))],
+   ['Attacker Unaware ignores defender +2',same(rolls({attAbility:'unaware',defenseStage:2}),rolls({defenseStage:0}))],
+   ['Attacker Unaware ignores defender -2',same(rolls({attAbility:'unaware',defenseStage:-2}),rolls({defenseStage:0}))],
+   ['Clear Body does not erase pre-existing defense stages',same(rolls({defAbility:'clearBody',defenseStage:-1}),rolls({defenseStage:-1}))],
+   ['Friend Guard reduces incoming damage',rolls({friendGuardCount:1}).every((n,i)=>n<rolls({})[i])],
+   ['Friend Guard and Reflect stack',rolls({friendGuardCount:1,screen:'reflect'}).every((n,i)=>n<=rolls({screen:'reflect'})[i])]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
