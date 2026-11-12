@@ -8,7 +8,7 @@ const {chromium}=require('playwright');
   const page=await browser.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
-  await page.locator('#dbMove').waitFor();
+  await page.locator('#dbMove').waitFor({state:'attached'});
   const outcome=await page.evaluate(()=>{
    const move=[...document.querySelector('#dbMove').options].find(o=>o.textContent.includes('ふくろだたき'));
    if(!move)throw Error('Beat Up missing');
