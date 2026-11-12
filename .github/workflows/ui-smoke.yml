@@ -67,6 +67,7 @@ jobs:
       - run: node tests/v0182-form-options-i18n.cjs
       - run: node tests/v0182-ability-status-i18n.cjs
       - run: node tests/v0182-skin-numeric.cjs
+      - run: node tests/v0182-low-hp-abilities-numeric.cjs
       - run: node tests/v0178-showdown-cross-compare.cjs
       - run: node tests/v0177-ci-inventory.cjs
       - run: node tests/v0177-move-policy-consistency.cjs
