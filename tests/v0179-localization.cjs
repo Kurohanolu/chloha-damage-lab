@@ -144,6 +144,7 @@ const path=require('node:path');
    }
    return matches;
   });
+  require('node:fs').writeFileSync('english-untranslated-audit.json',JSON.stringify({total:residualJapanese.length,unique:[...new Set(residualJapanese.map(x=>x.text))].length,items:residualJapanese},null,2));
   console.log('ENGLISH_VISIBLE_JAPANESE_AUDIT '+JSON.stringify(residualJapanese));
   assert.deepEqual(residualJapanese,[],'English mode must not contain visible Japanese UI text');
   // Preserve an English-mode visual artifact for pre-release UI inspection.
