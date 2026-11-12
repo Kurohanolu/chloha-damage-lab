@@ -16,6 +16,10 @@ const {chromium}=require('playwright');
    });
    assert.deepEqual(result.map(x=>x.text),expected,locale+' text');
    assert.deepEqual(result.map(x=>x.label),expected,locale+' Android native labels');
+   for(const id of ['dragonDartsPanel','flingPowerPanel','beatUpPanel']){
+    const label=await page.locator('#'+id).evaluate(el=>el.firstChild?.nodeValue||'');
+    assert.ok(locale==='ja'?/[ぁ-んァ-ン一-龯]/.test(label):!/[ぁ-んァ-ン一-龯]/.test(label),id+' panel language '+locale+': '+label);
+   }
   };
   await check('ja',['選択した相手に2回命中','選択した相手に1回命中']);
   await check('en',['2 hits on selected target','1 hit on selected target']);
