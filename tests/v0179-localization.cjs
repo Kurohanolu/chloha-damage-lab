@@ -90,6 +90,29 @@ const path=require('node:path');
   assert.equal(await page.locator('#battleStatus').textContent(),'履歴を消去しました。現在のHP・フィールドは維持しています。');
   await page.locator('#chloha-locale').selectOption('en');
   assert.match(await page.locator('#battleHistory li').textContent(),/^Turn 1:/);
+  // Audit real warning/trace text nodes, not just catalog completeness.
+  await page.evaluate(()=>{
+   const root=document.createElement('section');root.id='english-runtime-audit';
+   for(const value of [
+    '選択したポケモンは将来実装用の暫定登録です。種族値・特性などの確認が必要です。',
+    'ダブルウイング：各ヒットの16乱数を独立とした256通りでKO率を算出。命中・2発目の特性変化などは未対応です。',
+    'エレキボール: 素早さ 120 / 80 → 威力 80',
+    'ワイドフォース: 接地＋サイコフィールド（威力1.5倍・範囲化）',
+    '2発合計KO率（256組）: 75.00%'
+   ]){const p=document.createElement('p');p.textContent=value;root.append(p);}
+   document.querySelector('#app').append(root);
+  });
+  await page.waitForFunction(()=>[...document.querySelectorAll('#english-runtime-audit p')].every(p=>!/[ぁ-んァ-ヶ一-龯]/.test(p.textContent)));
+  const auditEnglish=await page.locator('#english-runtime-audit p').allTextContents();
+  assert.match(auditEnglish[0],/provisional entry/);
+  assert.match(auditEnglish[1],/Dual Wingbeat/);
+  assert.match(auditEnglish[2],/Electro Ball: Speed/);
+  assert.match(auditEnglish[3],/Expanding Force/);
+  assert.match(auditEnglish[4],/Two-hit KO chance/);
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.match(await page.locator('#english-runtime-audit p').first().textContent(),/選択したポケモン/);
+  await page.locator('#chloha-locale').selectOption('en');
+  assert.match(await page.locator('#english-runtime-audit p').first().textContent(),/provisional entry/);
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS v0.179 language toggle, persistence, English species search, catalog, damage invariant');
  }finally{await browser.close();}
