@@ -59,6 +59,8 @@
 
 - CI at `fd47c26`: Showdown 2 PASS, UI FAIL with only 1 remaining English attribute leak: `moveSearch` placeholder `例：Earthquake、10まんボルト`; all 14 stat labels and native options now pass. Root cause was `translateRuntime` partially translating the Japanese placeholder before the exact `attributeLabels` dictionary could match. Fixed by exact-match-first handling in `translateAccessibilityLabel` and mixed-string fallback, commit `f973e12a0140650dc2a6170a23002c46d933bb9b`. Recheck CI; do not merge until all green.
 
+- CI at `51ee58b340336d3105cfdf1a7982adfcc35a83dd`: ALL 3 PASS (`UI & damage regression` run 43148484264, `Showdown differential tests` run 43148484310, `Showdown differential audit` run 43148484195). Native option and accessibility attribute audits now pass; no remaining leaks detected by existing automated coverage. Do not equate automated coverage with complete Android visual verification; next step is mobile/desktop interaction audit and language roundtrip before merging.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
