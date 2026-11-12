@@ -7,7 +7,16 @@ const path=require('node:path');
  try{
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
-  await page.waitForFunction(()=>Array.from(document.querySelector('#attAbility').options).some(o=>o.value==='overgrow'));
+  // Ability choices are species-dependent. Isolate the visibility control by
+  // supplying its supported values instead of waiting for a specific species.
+  await page.evaluate(()=>{
+   const select=document.getElementById('attAbility');
+   for(const ability of ['overgrow','blaze','torrent','swarm']){
+    if(!Array.from(select.options).some(option=>option.value===ability)){
+     select.add(new Option(ability,ability));
+    }
+   }
+  });
   const ui=await page.evaluate(()=>{
    const select=document.getElementById('attAbility');
    const label=document.getElementById('lowHpAbilityForceLabel');
