@@ -58,6 +58,16 @@ const {chromium}=require('playwright');
   assert.equal(boundaries.aboveMax,0,'KO probability above maximum damage must be zero');
   assert.deepEqual(boundaries.fixed,[[20,1]],'fixed two-hit moves sum exactly two hits');
   assert.equal(boundaries.unknown,null,'Population Bomb must remain unsupported');
+  const special=await page.evaluate(()=>{
+    const api=window.ChlohaMultiHit;
+    const population=api.specialMoveDistribution('ネズミざん',()=>Array(16).fill(10),{accuracies:Array(10).fill(1)});
+    const triple=api.specialMoveDistribution('トリプルアクセル',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
+    return {population:[...population],triple:[...triple],populationUnsupported:api.hitDistribution('ネズミざん')===null,tripleUnsupported:api.hitDistribution('トリプルアクセル')===null};
+  });
+  assert.deepEqual(special.population,[[100,1]],'browser special engine supports ten sequential hits');
+  assert.deepEqual(special.triple,[[10,.5],[60,.5]],'browser special engine stops after missed second hit');
+  assert.equal(special.populationUnsupported,true,'Population Bomb must remain disabled in move selector');
+  assert.equal(special.tripleUnsupported,true,'Triple Axel must remain disabled in move selector');
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and unsupported UI guard');
  }finally{await browser.close();}
