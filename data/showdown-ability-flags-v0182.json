@@ -6,6 +6,10 @@
     "gw0169_p031": {
       "power": 80,
       "evidence": "User-provided Champions Showdown UI screenshot, 2026-11-12"
+    },
+    "gravApple": {
+      "power": 90,
+      "evidence": "User-provided Champions Showdown move listing screenshot, 2026-11-12; Grav Apple power 90, accuracy 100%, PP 12; Gravity boosts power by 1.5x"
     }
   },
   "unverifiedPowerDifferences": {
@@ -15,7 +19,8 @@
       "showdownDefaultPower": 80,
       "championsCatalogCategory": "physical",
       "showdownDefaultCategory": "Physical",
-      "status": "needs Champions ruleset verification"
+      "status": "verified by Champions Showdown screenshot",
+      "evidence": "User-provided Champions Showdown move listing screenshot, 2026-11-12; Grav Apple power 90, accuracy 100%, PP 12; Gravity boosts power by 1.5x"
     },
     "gw0169_p016": {
       "name": "かげぬい",
