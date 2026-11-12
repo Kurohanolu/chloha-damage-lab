@@ -321,6 +321,30 @@ const path=require('node:path');
   assert.deepEqual(weatherAbilities.sandStream,weatherAbilities.sand,'Sand Stream sets sand weather');
   assert.deepEqual(weatherAbilities.snowWarning,weatherAbilities.snow,'Snow Warning sets snow');
   assert.deepEqual(weatherAbilities.override,weatherAbilities.sun,'Explicit weather overrides inferred ability weather');
+  const terrainAbilities=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'でんき',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['ノーマル'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    attGrounding:'grounded',defGrounding:'grounded',
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
+   return {electric:calc({terrain:'electric'}),electricSurge:calc({attAbility:'electricSurge'}),
+    grassy:calc({terrain:'grassy',moveType:'くさ'}),grassySurge:calc({attAbility:'grassySurge',moveType:'くさ'}),
+    misty:calc({terrain:'misty',moveType:'ドラゴン'}),mistySurge:calc({attAbility:'mistySurge',moveType:'ドラゴン'}),
+    psychic:calc({terrain:'psychic',moveType:'エスパー'}),psychicSurge:calc({attAbility:'psychicSurge',moveType:'エスパー'}),
+    manual:calc({attAbility:'electricSurge',terrain:'grassy',moveType:'くさ'}),
+    explicitGrassy:calc({terrain:'grassy',moveType:'くさ'})};
+  });
+  assert.deepEqual(terrainAbilities.electricSurge,terrainAbilities.electric,'Electric Surge sets terrain');
+  assert.deepEqual(terrainAbilities.grassySurge,terrainAbilities.grassy,'Grassy Surge sets terrain');
+  assert.deepEqual(terrainAbilities.mistySurge,terrainAbilities.misty,'Misty Surge sets terrain');
+  assert.deepEqual(terrainAbilities.psychicSurge,terrainAbilities.psychic,'Psychic Surge sets terrain');
+  assert.deepEqual(terrainAbilities.manual,terrainAbilities.explicitGrassy,'Manual terrain takes precedence');
+  console.log('PASS v0.182 four Surge abilities and manual terrain precedence');
   console.log('PASS v0.182 weather-setting abilities and manual weather precedence');
   console.log('PASS v0.182 Thermal Exchange, Anger Point and Rattled checks');
   console.log('PASS v0.182 Infiltrator and Scrappy immunity/screen numeric checks');
