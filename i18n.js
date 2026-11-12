@@ -169,6 +169,8 @@ const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
 const selectLabels={
+ '選択した相手に2回命中':'2 hits on selected target',
+ '選択した相手に1回命中':'1 hit on selected target',
  'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow',
  'エレキフィールド':'Electric Terrain','グラスフィールド':'Grassy Terrain','ミストフィールド':'Misty Terrain','サイコフィールド':'Psychic Terrain',
  'リフレクター':'Reflect','ひかりのかべ':'Light Screen','ダブル':'Doubles','シングル（検証用）':'Singles (testing only)',
