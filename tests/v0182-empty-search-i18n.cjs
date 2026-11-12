@@ -14,10 +14,10 @@ const path=require('node:path');
   ]){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.locator('#moveSearch').fill('zzzxxyy-not-a-move');
-   await page.locator('#attSearch').fill('zzzxxyy-not-a-pokemon');
    await page.locator('#moveSuggestions .move-empty').waitFor();
-   await page.locator('#attSuggestions .pokemon-suggestion-empty').waitFor();
    assert.equal(await page.locator('#moveSuggestions .move-empty').innerText(),moveEmpty,'move empty '+locale);
+   await page.locator('#attSearch').fill('zzzxxyy-not-a-pokemon');
+   await page.locator('#attSuggestions .pokemon-suggestion-empty').waitFor();
    assert.equal(await page.locator('#attSuggestions .pokemon-suggestion-empty').innerText(),pokemonEmpty,'Pokemon empty '+locale);
   }
   console.log('PASS dynamic empty-result translations EN JA EN');
