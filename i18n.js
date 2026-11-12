@@ -432,9 +432,9 @@ function setLocale(next){
  document.documentElement.lang=locale;
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
- // The verification banner lives in the header, outside #app.
- const header=document.querySelector('.lab-header');
- if(header)translate(header);
+ // Legacy verification notes live in the original document outside the v0.182 app.
+ const legacyAudit=document.getElementById('auditSummary')?.closest('details');
+ if(legacyAudit)translate(legacyAudit);
  translateOptions();
  // Dragon Darts controls are appended directly to body, outside #app.
  // Keep their native Android select labels synchronized with the active locale.
