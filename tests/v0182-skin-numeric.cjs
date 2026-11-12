@@ -35,7 +35,7 @@ const path=require('node:path');
   });
   const {normal,skins,normalize,noSkin,weatherBall,normalBaseline,normalBoost}=result;
   for(const {ability,type,output} of skins){
-   assert.equal(output.effectiveness,type==='フェアリー'?2:type==='ドラゴン'?1:1,'type effectiveness '+ability);
+   assert.equal(output.effectiveness,({'フェアリー':2,'ひこう':1,'こおり':2,'でんき':0.5,'ドラゴン':2})[type],'type effectiveness '+ability);
    assert.equal(output.effectivePower,80,'original power remains 80 '+ability);
    assert.ok(output.trace.some(t=>t.includes('power/skinAbility: 80 → 96')),'1.2x base power '+ability);
    assert.ok(output.rolls.every(Number.isInteger),'integer damage rolls '+ability);
