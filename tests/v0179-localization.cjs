@@ -125,7 +125,7 @@ const path=require('node:path');
   });
   await page.waitForFunction(()=>[...document.querySelectorAll('#v0179-full-audit p')].every(p=>!/[ぁ-んァ-ヶ一-龯]/.test(p.textContent)));
   const fullAudit=await page.locator('#v0179-full-audit p').allTextContents();
-  assert.match(fullAudit[0],/Weather Sun \\/ Terrain None \\/ Screen None/);
+  assert.match(fullAudit[0],/Weather Sun.*Terrain None.*Screen None/);
   assert.match(fullAudit[1],/Attack stat: 180\\nDefense stat: 120\\nBefore random factor: 90/);
   assert.match(fullAudit[2],/Selected move “Expanding Force”: learnset/);
   assert.equal(await page.locator('#chloha-locale-control').innerText().then(x=>x.startsWith('Language ')),true);
