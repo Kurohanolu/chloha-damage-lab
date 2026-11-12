@@ -23,6 +23,18 @@ const dictionary={
 "防御側の詳細設定":"Defender advanced settings",
 "攻撃側の詳細設定":"Attacker advanced settings",
 
+"選択したポケモンは将来実装用の暫定登録です。種族値・特性などの確認が必要です。":"The selected Pokémon is a provisional entry. Its base stats and abilities require verification.",
+"手入力モード：選択した技の固有効果は維持します。値・タイプ・分類・威力は自動更新されません。ボディプレス・イカサマ等では参照能力の実数値を入力してください。":"Manual mode: move-specific effects remain active, but stats, types, category and power are not updated automatically. Enter the relevant stat for Body Press, Foul Play and similar moves.",
+"フィールド：接地と威力補正に対応。先制技無効・回復・状態異常・一部技固有変化は未対応です。実機の丸め順序は未照合です。":"Terrain: grounding and power modifiers are supported. Priority immunity, recovery, status and certain move effects are not supported. Hardware rounding remains unverified.",
+"アイアンローラー：フィールド存在時のみ計算します。実測ダメージを入力して「技の使用を確定」を押すとフィールドが解除されます。":"Steel Roller: calculation requires active terrain. Enter observed damage and confirm the move to remove terrain.",
+"ダブルウイング：各ヒットの16乱数を独立とした256通りでKO率を算出。命中・2発目の特性変化などは未対応です。":"Dual Wingbeat: KO chance uses 256 independent two-hit roll combinations. Accuracy and ability changes before the second hit are unsupported.",
+"エレキボールは素早さ比により威力40/60/80/120/150に変化します。まひ・おいかぜ・能力ランク以外の素早さ補正（特性・持ち物・場の効果）は未対応です。":"Electro Ball power changes with Speed ratio (40/60/80/120/150). Speed modifiers other than paralysis, Tailwind and stages are unsupported.",
+"確定急所技：急所補正を自動適用します。急所無効特性との相互作用は未対応です。":"Guaranteed-critical moves: critical modifiers apply automatically. Interactions with critical-hit immunity abilities are unsupported.",
+"アクロバット：持ち物が「なし／未適用」の場合のみ威力2倍。持ち物を消費した状況は未検証です。":"Acrobatics: power doubles only when held item is None / Not applied. Consumed-item scenarios remain unverified.",
+"特性「なし／未適用」は特性効果が存在しないことを保証しません。":"Ability set to None / Not applied does not guarantee that no ability effect exists.",
+"タイプ一致補正が手動で無効になっています。":"Same-type attack bonus (STAB) is manually disabled.",
+"急所の細かな例外・特性との相互作用は実機未照合です。":"Critical-hit exceptions and ability interactions are not hardware-verified.",
+"壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。":"Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
 // v0.179: main calculator labels, controls and result sections.
 'ポケモンを検索':'Search Pokémon','技を検索':'Search moves',
 '検索':'Search','コピー':'Copy','計算':'Calculate','計算する':'Calculate',
@@ -135,6 +147,11 @@ function translateOptions(){
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
  if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
+ if(base.startsWith('追加倍率×'))return base.replace('追加倍率×','Additional multiplier ×').replace('を最終ダメージに適用しています。既存補正との二重適用に注意してください。',' is applied to final damage. Avoid double-counting existing modifiers.');
+ if(base.startsWith('選択技「'))return base.replace('選択技「','Selected move “').replace('」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
+ if(base.startsWith('HP依存威力技：'))return base.replace('HP依存威力技：','HP-dependent move: ').replace('。攻撃側現在HPを変更すると威力が再計算されます。','. Power is recalculated when attacker current HP changes.');
+ if(base.startsWith('特殊能力値参照技：'))return base.replace('特殊能力値参照技：','Alternative-stat move: ').replace('。攻撃ランク欄は参照能力のランクとして扱います。','. The Attack stage field represents the relevant stat stage.');
+ if(base.startsWith('技監査 '))return base.replace('技監査 ','Move audit ').replace('（自動計算を停止）',' (automatic calculation disabled)');
  if(base.startsWith('検証状況：'))return 'Verification status: '+(dictionary[base.slice(5)]||({'未実機検証':'Not hardware-verified','検証済み':'Verified','要注意':'Caution'}[base.slice(5)]||base.slice(5)));
  if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice('入力エラー: '.length).replace(/現在HP/g,'Current HP').replace(/最大HP/g,'Max HP').replace(/技威力/g,'Move power').replace(/威力/g,'Power').replace(/入力してください/g,'is required').replace(/範囲外/g,'out of range');
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
