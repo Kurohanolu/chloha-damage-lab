@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
-const titleMatch=html.match(/<title>Chloha Damage Lab (v0\\.\\d+) (Pre-Release \\d+)<\\/title>/);
+const titleMatch=html.match(/<title>Chloha Damage Lab (v0\.\d+) (Pre-Release \d+)<\/title>/);
 assert.ok(titleMatch,'public title must contain version and pre-release');
 const [,publicVersion,preRelease]=titleMatch;
 assert.equal(publicVersion,'v0.182','release series must stay v0.182');
