@@ -62,6 +62,28 @@ const path=require('node:path');
    assert.deepEqual(forced.rolls,active.rolls,ability+' forced rolls equal natural activation');
    assert.ok(active.rolls[0]>inactive.rolls[0],ability+' increases actual damage');
   }
+  const flare=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ゴースト',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ゴースト'],defTypes:['ノーマル'],
+    weather:'none',terrain:'none',battleFormat:'singles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   // Normal typing is immune to Ghost; use a neutral defender for numeric comparison.
+   base.defTypes=['みず'];
+   const calc=extra=>window.ChlohaDamageEngine.calculate({...base,...extra});
+   return {normal:calc({}),burned:calc({attAbility:'flareBoost',burn:true}),
+    unburned:calc({attAbility:'flareBoost'}),
+    physical:calc({attAbility:'flareBoost',burn:true,category:'physical'}),
+    solar:calc({attAbility:'solarPower',weather:'sun'})};
+  });
+  assert.deepEqual(flare.unburned.rolls,flare.normal.rolls,'Flare Boost requires burn');
+  assert.deepEqual(flare.burned.rolls,flare.solar.rolls,'Flare Boost special stat matches Solar Power 1.5x');
+  assert.ok(flare.burned.rolls[0]>flare.normal.rolls[0],'Flare Boost increases special damage');
+  assert.ok(!flare.physical.trace.some(x=>x.includes('stat/flareBoost')),'Flare Boost does not modify physical attack');
+  console.log('PASS v0.182 Flare Boost burn and category numeric checks');
   console.log('PASS v0.182 four low HP ability numeric thresholds');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
