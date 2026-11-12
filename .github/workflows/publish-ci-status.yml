@@ -3,6 +3,9 @@ on:
   workflow_run:
     workflows:
       - "UI & damage regression"
+      - "UI and damage regression"
+      - "UI damage regression"
+      - "UI regression"
       - "Showdown differential audit"
     types: [completed]
 permissions:
