@@ -202,6 +202,27 @@ const path=require('node:path');
   assert.deepEqual(trio4.neuroNeutral.rolls,trio4.neutral.rolls,'Neuroforce ignores neutral effectiveness');
   assert.ok(trio4.stakeout.rolls[0]>trio4.normal.rolls[0],'Stakeout boosts switched-in target');
   assert.deepEqual(trio4.stakeoutOff.rolls,trio4.normal.rolls,'Stakeout requires switch-in flag');
+  const trio5=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ノーマル',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['みず'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x});
+   return {normal:calc({}),overlord:calc({attAbility:'supremeOverlord',supremeOverlordFainted:5}),
+    overlordZero:calc({attAbility:'supremeOverlord',supremeOverlordFainted:0}),
+    battery:calc({allyBattery:true}),batteryPhysical:calc({allyBattery:true,category:'physical'}),
+    physical:calc({category:'physical'}),spot:calc({allyPowerSpot:true})};
+  });
+  assert.ok(trio5.overlord.rolls[0]>trio5.normal.rolls[0],'Supreme Overlord boosts damage with fainted allies');
+  assert.deepEqual(trio5.overlordZero.rolls,trio5.normal.rolls,'Supreme Overlord zero allies is neutral');
+  assert.ok(trio5.battery.rolls[0]>trio5.normal.rolls[0],'Battery boosts special damage');
+  assert.deepEqual(trio5.batteryPhysical.rolls,trio5.physical.rolls,'Battery does not boost physical');
+  assert.ok(trio5.spot.rolls[0]>trio5.normal.rolls[0],'Power Spot boosts damage');
+  console.log('PASS v0.182 Supreme Overlord, Battery and Power Spot numeric checks');
   console.log('PASS v0.182 Sniper, Neuroforce and Stakeout numeric checks');
   console.log('PASS v0.182 Steely Spirit, Plus and Minus numeric checks');
   console.log('PASS v0.182 Fairy Aura, Dark Aura and Aura Break numeric checks');
