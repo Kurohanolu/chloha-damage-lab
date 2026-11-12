@@ -57,6 +57,7 @@ jobs:
       - run: node tests/v0182-bilingual-move-search.cjs
       - run: node tests/v0182-move-status-locale-toggle.cjs
       - run: node tests/v0182-type-badge-locale.cjs
+      - run: node tests/v0182-all-select-locale-roundtrip.cjs
       - run: node tests/v0178-showdown-cross-compare.cjs
       - run: node tests/v0177-ci-inventory.cjs
       - run: node tests/v0177-move-policy-consistency.cjs
