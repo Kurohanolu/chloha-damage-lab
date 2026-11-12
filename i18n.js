@@ -20,6 +20,7 @@ const dictionary={
 "データ検証状況":"Data verification status",
 "登録373件。個別データ照合は未完了。":"373 entries registered. Individual data verification is incomplete.",
 "Champions収録一覧（GameWith）":"Champions roster (GameWith)",
+"収録データは継続照合中です。":"Roster data verification is ongoing.",
 "Pokémon Champions向け計算機・検証版（実測一致未保証）":"Pokémon Champions damage calculator — experimental build (hardware accuracy unverified)",
 "検証用エンジンです。Championsの能力ポイント方式に対応しましたが、ダメージ計算の実測一致は未確認です。未実装の特性・技・持ち物もあります。競技上の判断には使用しないでください。":"Experimental engine. Champions stat-point allocation is supported, but damage accuracy has not been fully verified on hardware. Some abilities, moves and items remain unsupported. Do not rely on this tool for definitive competitive decisions.",
 "登録373件の候補を維持。未照合データも含むため、実機一致は保証しません。他の未検証フォルムは引き続き要照合。技候補の習得可否は未検証です。技の習得を保証しません。Lv50・個体値31固定、能力ポイント（各0〜32、合計66以内）から実数値を算出します。":"The 373 candidate entries include unverified data; hardware accuracy is not guaranteed. Additional forms require verification. Move learnsets are provisional and not guaranteed. Level 50 and IV 31 are fixed; actual stats are calculated from stat points (0–32 each, up to 66 total).",
