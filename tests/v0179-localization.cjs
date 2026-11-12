@@ -76,6 +76,20 @@ const path=require('node:path');
   await page.locator('#chloha-locale').selectOption('ja');
   assert.equal(await page.locator('#runtime-i18n-regression').textContent(),'現在の盤面：天候 晴れ ／ フィールド なし ／ 壁 なし');
   await page.locator('#chloha-locale').selectOption('en');
+  // Battle history is visible UI and must switch languages without altering the recorded data.
+  await page.evaluate(()=>{
+   const li=document.createElement('li');li.textContent='1手目：ワイドフォース / 90ダメージ / HP 160→70 / フィールド解除 / 予測と不一致・要照合';
+   document.querySelector('#battleHistory').append(li);
+   document.querySelector('#battleStatus').textContent='履歴を消去しました。現在のHP・フィールドは維持しています。';
+  });
+  await page.waitForFunction(()=>document.querySelector('#battleHistory li')?.textContent.startsWith('Turn 1:'));
+  assert.match(await page.locator('#battleHistory li').textContent(),/90 damage.*Terrain removed.*Prediction mismatch/);
+  assert.equal(await page.locator('#battleStatus').textContent(),'History cleared. Current HP and terrain were preserved.');
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.match(await page.locator('#battleHistory li').textContent(),/^1手目：/);
+  assert.equal(await page.locator('#battleStatus').textContent(),'履歴を消去しました。現在のHP・フィールドは維持しています。');
+  await page.locator('#chloha-locale').selectOption('en');
+  assert.match(await page.locator('#battleHistory li').textContent(),/^Turn 1:/);
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS v0.179 language toggle, persistence, English species search, catalog, damage invariant');
  }finally{await browser.close();}
