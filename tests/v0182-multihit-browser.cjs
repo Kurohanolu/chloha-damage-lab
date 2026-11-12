@@ -20,14 +20,14 @@ const {chromium}=require('playwright');
    const link=engine.totalDistribution('タネマシンガン',()=>samples,{skillLink:true});
    const moves=[...document.querySelector('#dbMove').options];
    const bullet=moves.find(x=>x.textContent.includes('タネマシンガン'));
-   return {baselineRolls:baseline.rolls.length,distribution:[...distribution],dice:[...dice],link:[...link],bulletExists:!!bullet,bulletMarkedUnsupported:bullet?.textContent.includes('計算未対応')};
+   return {baselineRolls:baseline.rolls.length,distribution:[...distribution],dice:[...dice],link:[...link],bulletExists:!!bullet,bulletMarkedUnsupported:bullet?.textContent.includes('計算未対応'),bulletText:bullet?.textContent,hitRule:engine.hitDistribution('タネマシンガン')};
   });
   assert.equal(result.baselineRolls,16,'ordinary move damage remains 16 rolls');
   assert.deepEqual(result.distribution.map(x=>x[0]),[24,36,48,60]);
   assert.deepEqual(result.dice.map(x=>x[0]),[48,60]);
   assert.deepEqual(result.link.map(x=>x[0]),[60]);
   assert.equal(result.bulletExists,true);
-  assert.equal(result.bulletMarkedUnsupported,false,'multi-hit move should be selectable');
+  assert.equal(result.bulletMarkedUnsupported,false,'multi-hit move should be selectable: '+JSON.stringify(result));
   const ui=await page.evaluate(()=>{
     const move=[...document.querySelector('#dbMove').options].find(x=>x.textContent.includes('タネマシンガン'));
     document.querySelector('#dbMove').value=move.value;
