@@ -55,7 +55,18 @@ try {
    ['Wonder Guard allows dual-type net super effective',same(rolls({defAbility:'wonderGuard',moveType:'ほのお',defTypes:['くさ','はがね']}),rolls({moveType:'ほのお',defTypes:['くさ','はがね']}))],
    ['Dry Skin absorbs Water',rolls({defAbility:'drySkin',moveType:'みず'}).every(n=>n===0)],
    ['Dry Skin boosts Fire damage',rolls({defAbility:'drySkin',moveType:'ほのお'}).every((n,i)=>n>rolls({moveType:'ほのお'})[i])],
-   ['Dry Skin neutral damage unchanged',same(rolls({defAbility:'drySkin'}),rolls({}))]
+   ['Dry Skin neutral damage unchanged',same(rolls({defAbility:'drySkin'}),rolls({}))],
+   ['Levitate blocks Ground',rolls({defAbility:'levitate',moveType:'じめん'}).every(n=>n===0)],
+   ['Water Absorb blocks Water',rolls({defAbility:'waterAbsorb',moveType:'みず'}).every(n=>n===0)],
+   ['Volt Absorb blocks Electric',rolls({defAbility:'voltAbsorb',moveType:'でんき'}).every(n=>n===0)],
+   ['Sap Sipper blocks Grass',rolls({defAbility:'sapSipper',moveType:'くさ'}).every(n=>n===0)],
+   ['Lightning Rod blocks Electric',rolls({defAbility:'lightningRod',moveType:'でんき'}).every(n=>n===0)],
+   ['Motor Drive blocks Electric',rolls({defAbility:'motorDrive',moveType:'でんき'}).every(n=>n===0)],
+   ['Storm Drain blocks Water',rolls({defAbility:'stormDrain',moveType:'みず'}).every(n=>n===0)],
+   ['Earth Eater blocks Ground',rolls({defAbility:'earthEater',moveType:'じめん'}).every(n=>n===0)],
+   ['Well-Baked Body blocks Fire',rolls({defAbility:'wellBakedBody',moveType:'ほのお'}).every(n=>n===0)],
+   ['Sap Sipper leaves Fire unchanged',same(rolls({defAbility:'sapSipper',moveType:'ほのお'}),rolls({moveType:'ほのお'}))],
+   ['Motor Drive leaves Water unchanged',same(rolls({defAbility:'motorDrive',moveType:'みず'}),rolls({moveType:'みず'}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
