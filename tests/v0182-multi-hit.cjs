@@ -54,4 +54,15 @@ let evaluatedHits=0;
 const firstMiss=sequentialDistribution(()=>{evaluatedHits++;return same;},[0,1,1]);
 assert.deepEqual([...firstMiss],[[0,1]],'first-hit miss produces zero damage');
 assert.equal(evaluatedHits,1,'later hits must not be evaluated after guaranteed miss');
+// Verify a miss on any hit stops the sequence and preserves total probability.
+for(let missIndex=0;missIndex<3;missIndex++){
+ const accuracies=[1,1,1];accuracies[missIndex]=0;
+ const observed=sequentialDistribution(i=>Array(16).fill((i+1)*7),accuracies);
+ const expected=Array.from({length:missIndex},(_,i)=>(i+1)*7).reduce((a,b)=>a+b,0);
+ assert.deepEqual([...observed],[[expected,1]],'guaranteed miss at hit '+(missIndex+1));
+}
+const partial=sequentialDistribution(i=>Array(16).fill((i+1)*7),[.9,.8,.7]);
+const expectedPartial=new Map([[0,.1],[7,.9*.2],[21,.9*.8*.3],[42,.9*.8*.7]]);
+for(const [damage,probability] of expectedPartial)assert.ok(Math.abs(partial.get(damage)-probability)<1e-12,'sequential accuracy at '+damage);
+assert.ok(Math.abs([...partial.values()].reduce((a,b)=>a+b,0)-1)<1e-12,'sequential probabilities normalize');
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
