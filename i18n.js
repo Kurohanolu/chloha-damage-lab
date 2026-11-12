@@ -147,6 +147,18 @@ function translateOptions(){
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
  if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
+ if(base.startsWith('ミストバースト: '))return base.replace('ミストバースト: ','Misty Explosion: ').replace('ミストフィールド＋使用者接地（威力1.5倍）','Misty Terrain + grounded user (1.5× power)').replace('通常威力','normal power').replace('。使用後の自身のひんしは自動反映しません','; self-KO after use is not applied automatically');
+ if(base.startsWith('ライジングボルト: '))return base.replace('ライジングボルト: ','Rising Voltage: ').replace('エレキフィールド＋対象接地（威力2倍）','Electric Terrain + grounded target (2× power)').replace('通常威力','normal power');
+ if(base.startsWith('ワイドフォース: '))return base.replace('ワイドフォース: ','Expanding Force: ').replace('接地＋サイコフィールド（威力1.5倍・範囲化）','grounded + Psychic Terrain (1.5× power, spread)').replace('通常威力・単体対象','normal power, single target');
+ if(base.startsWith('エレキボール: 素早さ '))return base.replace('エレキボール: 素早さ ','Electro Ball: Speed ').replace(' → 威力 ',' → power ');
+ if(base.startsWith('アクロバット: 持ち物 '))return base.replace('アクロバット: 持ち物 ','Acrobatics: held item ').replace('なし（威力2倍）','none (2× power)').replace('あり（通常威力）','held (normal power)');
+ if(base.startsWith('HP依存威力: '))return base.replace('HP依存威力: ','HP-scaled power: ');
+ if(base.startsWith('2発合計の最小〜最大: '))return base.replace('2発合計の最小〜最大: ','Two-hit total min–max: ').replace('〜','–');
+ if(base.startsWith('2発合計KO率（256組）: '))return base.replace('2発合計KO率（256組）: ','Two-hit KO chance (256 combinations): ').replace('対象がひんし','target already fainted');
+ if(base.startsWith('最終ダメージ（乱数100'))return base.replace('最終ダメージ（乱数100','Final damage (roll 100').replace('・2発合計','; two-hit total');
+ if(base==='確定急所: 急所補正を強制適用')return 'Guaranteed critical: critical modifier forced';
+ if(base==='ダブルウイング: 各ヒットを威力40で独立計算（各16乱数、計256組）')return 'Dual Wingbeat: each hit calculated independently at power 40 (16 rolls each; 256 combinations)';
+ if(base==='無効判定: タイプまたは特性によってダメージ0')return 'Immunity: type or ability reduces damage to zero';
  if(base.startsWith('追加倍率×'))return base.replace('追加倍率×','Additional multiplier ×').replace('を最終ダメージに適用しています。既存補正との二重適用に注意してください。',' is applied to final damage. Avoid double-counting existing modifiers.');
  if(base.startsWith('選択技「'))return base.replace('選択技「','Selected move “').replace('」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
  if(base.startsWith('HP依存威力技：'))return base.replace('HP依存威力技：','HP-dependent move: ').replace('。攻撃側現在HPを変更すると威力が再計算されます。','. Power is recalculated when attacker current HP changes.');
