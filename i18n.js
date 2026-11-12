@@ -224,11 +224,14 @@ function translateRuntime(base){
  if(base.startsWith('2発合計KO率（256組）: '))return base.replace('2発合計KO率（256組）: ','Two-hit KO chance (256 combinations): ').replace('対象がひんし','target already fainted');
  // A trace is a multiline text node. Translate each line, not only the first.
  if(base.includes('\n')&&base.includes('最終ダメージ（乱数100')){
+  const traceLabels={'攻撃実数値:':'Attack stat:','防御実数値:':'Defense stat:','乱数前:':'Before random factor:'};
   return base.split('\n').map(line=>{
+   for(const [ja,en] of Object.entries(traceLabels)){
+    if(line.startsWith(ja))return en+line.slice(ja.length);
+   }
    if(line.startsWith('最終ダメージ（乱数100')){
     return line.replace('最終ダメージ（乱数100）','Final damage (roll 100)').replace('・2発合計','; two-hit total');
    }
-   // Earlier trace lines have already been translated by the runtime rules.
    return line;
   }).join('\n');
  }
