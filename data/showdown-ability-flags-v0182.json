@@ -1,0 +1,182 @@
+{
+  "source": "smogon/pokemon-showdown/data/moves.ts",
+  "note": "Showdown source snapshot for mapped Damage Lab moves; regenerate when upstream changes",
+  "moves": {
+    "airSlash": {
+      "showdownId": "airslash",
+      "basePower": 75,
+      "category": "Special",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170b_019": {
+      "showdownId": "nightslash",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_s055": {
+      "showdownId": "leafblade",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p044": {
+      "showdownId": "psychocut",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170b_013": {
+      "showdownId": "sacredsword",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "v096_086": {
+      "showdownId": "razorshell",
+      "basePower": 75,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "v096_076": {
+      "showdownId": "aquacutter",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p061": {
+      "showdownId": "aerialace",
+      "basePower": 60,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "v095_63": {
+      "showdownId": "aircutter",
+      "basePower": 60,
+      "category": "Special",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "xScissor": {
+      "showdownId": "xscissor",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p039": {
+      "showdownId": "crosspoison",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p031": {
+      "showdownId": "slash",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p054": {
+      "showdownId": "solarblade",
+      "basePower": 125,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0169_p075": {
+      "showdownId": "kowtowcleave",
+      "basePower": 85,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_s020": {
+      "showdownId": "ceaselessedge",
+      "basePower": 65,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_u008": {
+      "showdownId": "populationbomb",
+      "basePower": 20,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_s047": {
+      "showdownId": "bitterblade",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "darkPulse": {
+      "showdownId": "darkpulse",
+      "basePower": 80,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    },
+    "auraSphere": {
+      "showdownId": "aurasphere",
+      "basePower": 80,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    },
+    "gw0169_s059": {
+      "showdownId": "waterpulse",
+      "basePower": 60,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    },
+    "gw0169_s065": {
+      "showdownId": "dragonpulse",
+      "basePower": 85,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    },
+    "gw0169_s027": {
+      "showdownId": "terrainpulse",
+      "basePower": 50,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    }
+  }
+}
