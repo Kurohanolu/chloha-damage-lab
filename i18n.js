@@ -194,7 +194,7 @@ function translateRuntime(base){
  if(base==='ダブルウイング: 各ヒットを威力40で独立計算（各16乱数、計256組）')return 'Dual Wingbeat: each hit calculated independently at power 40 (16 rolls each; 256 combinations)';
  if(base==='無効判定: タイプまたは特性によってダメージ0')return 'Immunity: type or ability reduces damage to zero';
  if(base.startsWith('追加倍率×'))return base.replace('追加倍率×','Additional multiplier ×').replace('を最終ダメージに適用しています。既存補正との二重適用に注意してください。',' is applied to final damage. Avoid double-counting existing modifiers.');
- if(base.startsWith('選択技「'))return base.replace(/選択技「([^」]+)」/,(_,name)=>'Selected move “'+(entityNames[name]||name)+'”').replace('」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
+ if(base.startsWith('選択技「'))return base.replace(/選択技「([^」]+)」/,(_,name)=>'Selected move “'+(entityNames[name]||name)+'”').replace('の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
  if(base.startsWith('HP依存威力技：'))return base.replace('HP依存威力技：','HP-dependent move: ').replace('。攻撃側現在HPを変更すると威力が再計算されます。','. Power is recalculated when attacker current HP changes.');
  if(base.startsWith('特殊能力値参照技：'))return base.replace('特殊能力値参照技：','Alternative-stat move: ').replace('。攻撃ランク欄は参照能力のランクとして扱います。','. The Attack stage field represents the relevant stat stage.');
  if(base.startsWith('技監査 '))return base.replace('技監査 ','Move audit ').replace('（自動計算を停止）',' (automatic calculation disabled)');
