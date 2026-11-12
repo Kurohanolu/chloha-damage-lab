@@ -28,7 +28,7 @@ const path=require('node:path');
    document.getElementById('app').append(select);
   });
   const read=()=>page.locator('#ability-translation-fixture option').allTextContents();
-  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','未知の特性（効果未対応）'];
+  const ja=['ちからずく（一部技のみ対応）','テクニシャン（対応）','ヨガパワー（対応）','はりきり（一部技のみ対応）','サンパワー（対応）','てつのこぶし（一部技のみ対応）','がんじょうあご（一部技のみ対応）','トランジスタ（対応）','りゅうのあぎと（対応）','アナライズ（一部技のみ対応）','はがねつかい（対応）','いわはこび（対応）','未知の特性（効果未対応）'];
   assert.deepEqual(await read(),ja);
   await page.locator('#chloha-locale').selectOption('en');
   const en=await read();
