@@ -7,7 +7,7 @@ const path=require('node:path');
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   await page.locator('#chloha-locale').waitFor();
-  await page.locator('#dbAttPokemon').selectOption('dragapult');
+  await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
   for(const [locale,expected] of [['ja',['ドラゴン','ゴースト']],['en',['Dragon','Ghost']],['ja',['ドラゴン','ゴースト']]]){
    await page.locator('#chloha-locale').selectOption(locale);
    const actual=await page.locator('#attTypes .type-pill').allTextContents();
