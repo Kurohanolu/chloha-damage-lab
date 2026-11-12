@@ -826,14 +826,18 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    for(let i=0;i<matches.length;i++){
     const o=matches[i],p=pokemonById.get(o.value),item=node('button','pokemon-suggestion');
     item.type='button';item.id=side+'Suggestion'+i;item.setAttribute('role','option');
-    item.setAttribute('aria-label',o.label);item.setAttribute('aria-selected','false');
+    const english=window.ChlohaLocale?.get()==='en';
+    const englishName=window.ChlohaNames?.pokemon?.[o.value]||p?.englishName||englishAliases[o.value]||o.label;
+    const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
+    item.setAttribute('aria-label',english?englishName:o.label);item.setAttribute('aria-selected','false');
     const spriteId=window.ChlohaSpriteIds?.[o.value];
     if(spriteId){
      const img=node('img');img.alt='';img.loading='lazy';
      img.src=window.ChlohaLocalSprites?.[o.value]||'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+spriteId+'.png';
      img.onerror=()=>img.remove();item.append(img);
     }
-    const copy=node('span');copy.append(node('span','',window.ChlohaLocale?.get()==='en'&&englishAliases[o.value]?englishAliases[o.value]+' / '+o.label:o.label),node('small','',p?.types?.join(' / ')||''));item.append(copy);
+    const typeText=(p?.types||[]).map(type=>english?(typeEnglish[type]||type):type).join(' / ');
+    const copy=node('span');copy.append(node('span','',english?englishName:o.label),node('small','',typeText));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
    if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
