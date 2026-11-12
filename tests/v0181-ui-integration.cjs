@@ -2,7 +2,8 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
-const weights=require('../pokemon-weights-v0181.js');
+const weightNamespace=require('../pokemon-weights-v0181.js');
+const weights=weightNamespace.default||globalThis.ChlohaPokemonWeights||weightNamespace;
 const weightModule=require('../weight-power.js');
 const power=weightModule.weightDependentPower||globalThis.ChlohaWeightPower?.weightDependentPower;
 assert.equal(typeof power,'function','weight-power.js must expose weightDependentPower');
