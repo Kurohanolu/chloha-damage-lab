@@ -33,7 +33,7 @@ const {chromium}=require('playwright');
     document.querySelector('#dbMove').value=move.value;
     document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
     const last=window.ChlohaLastCalculation;
-    const initial={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,range:document.querySelector('#damage').textContent,ko:document.querySelector('#ko').textContent,probability:last?.r?.multiHitDistribution?[...last.r.multiHitDistribution.values()].reduce((a,b)=>a+b,0):null};
+    const initial={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,range:document.querySelector('#damage').textContent,ko:document.querySelector('#ko').textContent,hits:document.querySelector('#hits').textContent,warning:document.querySelector('#reliabilityDetails').textContent,probability:last?.r?.multiHitDistribution?[...last.r.multiHitDistribution.values()].reduce((a,b)=>a+b,0):null};
     document.querySelector('#attItem').value='loadedDice';
     document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
     const dice=window.ChlohaLastCalculation?.r?.multiHitDistribution;
@@ -99,6 +99,8 @@ const {chromium}=require('playwright');
     assert.equal(item.hitPowers,item.name==='ネズミざん'?10:3,JSON.stringify(item));
     assert.equal(item.zero,true,'a first-hit miss must yield zero damage');
     assert.match(item.ko,/連続技合計KO率/,JSON.stringify(item));
+    assert.match(item.hits,/KO率を参照/,JSON.stringify(item));
+    assert.match(item.warning,/命中率補正アイテム/,JSON.stringify(item));
   }
   const powerAudit=await page.evaluate(()=>{
     const result=[];
