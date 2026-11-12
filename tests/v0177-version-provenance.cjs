@@ -23,5 +23,18 @@ assert.equal(technician.applies({a:{attAbility:'none',power:25}}),false);
 assert.equal(technician.run({a:{attAbility:'technician',power:25}},25),37);
 assert.equal(technician.run({a:{attAbility:'technician',power:60}},60),90);
 assert.equal(technician.run({a:{attAbility:'technician',power:65}},65),65);
+assert.match(html, /'ちからずく':'sheerForce'/);
+const sheerForceLine=html.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
+assert.ok(sheerForceLine,'Sheer Force power modifier exists');
+let sheerForce;
+vm.runInNewContext("const SHEER_FORCE_VERIFIED_MOVES=new Set(['flamethrower','fireBlast','iceBeam','thunderbolt','sludgeBomb']);\n"+sheerForceLine,{
+ registerModifier:(layer,id,priority,applies,run)=>{sheerForce={layer,id,priority,applies,run};},
+ pokeRound:(v,mod)=>Math.floor((v*mod+2047)/4096)
+});
+assert.equal(sheerForce.applies({a:{attAbility:'sheerForce',moveId:'flamethrower'}}),true);
+assert.equal(sheerForce.applies({a:{attAbility:'sheerForce',moveId:'earthquake'}}),false);
+assert.equal(sheerForce.applies({a:{attAbility:'none',moveId:'flamethrower'}}),false);
+assert.equal(sheerForce.run({},90),117);
+
 
 console.log('PASS version provenance: public UI and engine API identifiers distinguished');
