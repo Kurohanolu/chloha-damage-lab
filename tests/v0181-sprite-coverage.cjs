@@ -10,3 +10,7 @@ const missing=pokemon.filter(p=>!sprites[p.id]).map(p=>({id:p.id,name:p.name}));
 const report={total:pokemon.length,mapped:pokemon.length-missing.length,missing:missing.length,missingPokemon:missing};
 console.log(JSON.stringify(report,null,2));
 if(process.env.SPRITE_AUDIT_REPORT)fs.writeFileSync(process.env.SPRITE_AUDIT_REPORT,JSON.stringify(report,null,2)+'\n');
+
+assert.equal(missing.length,0,'All roster forms must have mapped sprite IDs');
+assert.equal(new Set(pokemon.map(p=>p.id)).size,pokemon.length,'Roster IDs must be unique');
+console.log('v0.181 sprite ID coverage: PASS');
