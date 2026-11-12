@@ -20,7 +20,7 @@ const expectedSlicing={
  'gw0169_p039':'クロスポイズン','gw0169_p031':'きりさく',
  'gw0169_p054':'ソーラーブレード','gw0169_p075':'ドゲザン',
  'gw0170_s020':'ひけん・ちえなみ','gw0170_u008':'ネズミざん',
- 'gw0170_s047':'むねんのつるぎ','gw0169_p023':'がんせきアックス'
+ 'gw0170_s047':'むねんのつるぎ','gw0169_p023':'がんせきアックス','v096_088':'シャドークロー','dragonClaw':'ドラゴンクロー'
 };
 const expectedPulse={
  'darkPulse':'あくのはどう','auraSphere':'はどうだん',
@@ -53,7 +53,8 @@ for(const [id,record] of Object.entries(showdown.moves)){
  else if(unresolved)assert.equal(move.power,unresolved.championsCatalogPower,'unverified catalog value changed: '+move.name);
  else assert.equal(move.power,record.basePower,'base power mismatch: '+move.name);
  assert.equal(move.category,categoryMap[record.category],'category mismatch: '+move.name);
- assert.equal(slicing.has(id),record.flags.includes('slicing'),'slicing flag mismatch: '+move.name);
+ const championsSlicing=showdown.championsSlicingOverrides?.[id]?.slicing;
+ assert.equal(slicing.has(id),championsSlicing===true||record.flags.includes('slicing'),'slicing flag mismatch: '+move.name);
  assert.equal(pulse.has(id),record.flags.includes('pulse'),'pulse flag mismatch: '+move.name);
 }
 console.log('PASS Showdown flag audit: slicing',slicing.size,'pulse',pulse.size);
