@@ -29,7 +29,14 @@ try {
    ['Shadow Shield damaged HP unchanged',same(rolls({defAbility:'shadowShield',currentHp:199}),rolls({currentHp:199}))],
    ['Punk Rock halves registered sound move',rolls({defAbility:'punkRock',moveId:'hyperVoice',category:'special'}).every((n,i)=>n<rolls({moveId:'hyperVoice',category:'special'})[i])],
    ['Punk Rock ignores non-sound moves',same(rolls({defAbility:'punkRock',moveId:'tackle'}),rolls({moveId:'tackle'}))],
-   ['Punk Rock halves registered sound move even physical category',rolls({defAbility:'punkRock',moveId:'bugBuzz'}).every((n,i)=>n<rolls({moveId:'bugBuzz'})[i])]
+   ['Punk Rock halves registered sound move even physical category',rolls({defAbility:'punkRock',moveId:'bugBuzz'}).every((n,i)=>n<rolls({moveId:'bugBuzz'})[i])],
+   ['Fluffy halves contact moves',rolls({defAbility:'fluffy',moveId:'closeCombat'}).every((n,i)=>n<rolls({moveId:'closeCombat'})[i])],
+   ['Fluffy does not reduce non-contact moves',same(rolls({defAbility:'fluffy',moveId:'earthquake'}),rolls({moveId:'earthquake'}))],
+   ['Fluffy doubles Fire damage',rolls({defAbility:'fluffy',moveId:'flamethrower',moveType:'ほのお',category:'special'}).every((n,i)=>n>rolls({moveId:'flamethrower',moveType:'ほのお',category:'special'})[i])],
+   ['Fluffy contact Fire effects cancel',same(rolls({defAbility:'fluffy',moveId:'flareBlitz',moveType:'ほのお'}),rolls({moveId:'flareBlitz',moveType:'ほのお'}))],
+   ['Aura Guard halves contact moves',rolls({defAbility:'auraGuard',moveId:'closeCombat'}).every((n,i)=>n<rolls({moveId:'closeCombat'})[i])],
+   ['Aura Guard does not reduce non-contact moves',same(rolls({defAbility:'auraGuard',moveId:'earthquake'}),rolls({moveId:'earthquake'}))],
+   ['Aura Guard does not double Fire damage',same(rolls({defAbility:'auraGuard',moveId:'flamethrower',moveType:'ほのお',category:'special'}),rolls({moveId:'flamethrower',moveType:'ほのお',category:'special'}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
