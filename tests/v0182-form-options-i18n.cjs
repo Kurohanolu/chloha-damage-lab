@@ -17,8 +17,13 @@ const path=require('node:path');
   assert.deepEqual(en[0].slice(1).map(x=>x[1]),['Combat Breed (Fighting)','Blaze Breed (Fire)','Aqua Breed (Water)']);
   assert.deepEqual(en[1].slice(1).map(x=>x[1]),['Full Belly Mode (Electric)','Hangry Mode (Dark)']);
   // A real selection must survive language switches, not just option definitions.
-  await page.locator('#ragingBullForm').selectOption({index:2});
-  await page.locator('#auraWheelForm').selectOption({index:1});
+  // Both panels are hidden until their respective move is selected. Set the
+  // native select values directly to verify locale persistence without
+  // Playwright's visibility requirement.
+  await page.evaluate(()=>{
+   document.getElementById('ragingBullForm').selectedIndex=2;
+   document.getElementById('auraWheelForm').selectedIndex=1;
+  });
   const selected=()=>page.evaluate(ids=>ids.map(id=>document.getElementById(id).value),ids);
   const before=await selected();
   await page.locator('#chloha-locale').selectOption('ja');
