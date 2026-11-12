@@ -52,8 +52,8 @@ for(const name of ['ばくおんぱ','ふんえん','じならし','うたかた
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
 }
 
-assert.equal(expanded.filter(m=>m.calculationSupported).length,40,'new simple attacks');
-assert.equal(expanded.filter(m=>!m.calculationSupported).length,20,'new gated conditional attacks');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,41,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,19,'new gated conditional attacks');
 for(const m of expanded){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
@@ -76,8 +76,10 @@ for(const [name,type,power,supported] of [
  assert.equal(m.power,power,name+' power');
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
+assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
+assert.ok(html.includes("a.moveMechanic==='sacredSword')ds=Math.min(0,ds)"),'Sacred Sword must ignore positive defense stages');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
-assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,false,'defense stage bypass must not silently use normal damage');
+assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,true,'Sacred Sword defense-stage bypass enabled');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
 assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupported,false,'multihit gated');
 assert.equal(moves.find(m=>m.name==='ウェザーボール').calculationSupported,false,'variable type gated');
