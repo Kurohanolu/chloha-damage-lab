@@ -446,6 +446,7 @@ function setLocale(next){
  const localeLabel=document.getElementById('chloha-locale-control');
  if(localeLabel?.firstChild?.nodeType===3)localeLabel.firstChild.nodeValue=locale==='en'?'Language ':'Language / 言語 ';
  if(select)select.setAttribute('aria-label',locale==='en'?'Language':'Language / 言語');
+ document.dispatchEvent(new CustomEvent('chloha:localechange',{detail:{locale}}));
 }
 function initialize(){
  const header=document.querySelector('.lab-header');
