@@ -65,4 +65,12 @@ const partial=sequentialDistribution(i=>Array(16).fill((i+1)*7),[.9,.8,.7]);
 const expectedPartial=new Map([[0,.1],[7,.9*.2],[21,.9*.8*.3],[42,.9*.8*.7]]);
 for(const [damage,probability] of expectedPartial)assert.ok(Math.abs(partial.get(damage)-probability)<1e-12,'sequential accuracy at '+damage);
 assert.ok(Math.abs([...partial.values()].reduce((a,b)=>a+b,0)-1)<1e-12,'sequential probabilities normalize');
+// KO odds for accuracy-based attacks must include misses (zero damage).
+const accurateTen=specialMoveDistribution('Population Bomb',()=>Array(16).fill(10),{accuracies:[.5,...Array(9).fill(1)]});
+assert.ok(Math.abs(koProbability(accurateTen,100)-.5)<1e-12,'miss chance must reduce ten-hit KO odds');
+assert.ok(Math.abs(koProbability(accurateTen,1)-.5)<1e-12,'first-hit miss cannot KO');
+assert.equal(koProbability(accurateTen,101),0,'above maximum cannot KO');
+const accurateTriple=specialMoveDistribution('Triple Axel',i=>Array(16).fill(10*(i+1)),{accuracies:[1,.5,1]});
+assert.ok(Math.abs(koProbability(accurateTriple,11)-.5)<1e-12,'second hit miss must reduce Triple Axel KO odds');
+assert.equal(koProbability(accurateTriple,10),1,'first hit guarantees lower threshold');
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
