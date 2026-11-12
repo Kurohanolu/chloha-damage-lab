@@ -7,6 +7,8 @@ const path=require('node:path');
  try{
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  const ui=await page.evaluate(()=>{const select=document.getElementById('attAbility');select.value='overgrow';select.dispatchEvent(new Event('change',{bubbles:true}));const shown=!document.getElementById('lowHpAbilityForceLabel').hidden;document.getElementById('forceLowHpAbility').checked=true;select.value='none';select.dispatchEvent(new Event('change',{bubbles:true}));return {shown,hidden:document.getElementById('lowHpAbilityForceLabel').hidden,reset:!document.getElementById('forceLowHpAbility').checked};});
+  assert.deepEqual(ui,{shown:true,hidden:true,reset:true},'force checkbox visibility and reset');
   const results=await page.evaluate(()=>{
    const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
     attMaxHp:201,attCurrentHp:67,attackStage:0,defenseStage:0,
