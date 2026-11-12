@@ -167,7 +167,7 @@ const path=require('node:path');
   assert.equal(await page.locator('#attSearch').getAttribute('placeholder'),'Type a name to select');
   assert.equal(await page.locator('#moveSearch').getAttribute('placeholder'),'e.g. Earthquake, Thunderbolt');
   assert.equal(await page.locator('#battleFormat option:checked').textContent(),'Doubles');
-  assert.equal(await page.locator('#defAbility option').first().textContent(),'None / Not applicable');
+  assert.equal(await page.locator('#defAbility option').first().textContent(),'None');
   await page.locator('#moveSearch').fill('Flame');
   await page.locator('#moveSuggestions [role=option]').first().waitFor();
   const moveSuggestions=await page.locator('#moveSuggestions [role=option]').allTextContents();
