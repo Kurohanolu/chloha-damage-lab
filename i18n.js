@@ -224,9 +224,13 @@ function translateRuntime(base){
  if(base.startsWith('2発合計KO率（256組）: '))return base.replace('2発合計KO率（256組）: ','Two-hit KO chance (256 combinations): ').replace('対象がひんし','target already fainted');
  // A trace is a multiline text node. Translate each line, not only the first.
  if(base.includes('\n')&&base.includes('最終ダメージ（乱数100')){
-  return base.split('\n').map(line=>line.startsWith('最終ダメージ（乱数100')
-   ?line.replace('最終ダメージ（乱数100','Final damage (roll 100').replace('・2発合計','; two-hit total')
-   :translateMixedText(line)).join('\n');
+  return base.split('\n').map(line=>{
+   if(line.startsWith('最終ダメージ（乱数100')){
+    return line.replace('最終ダメージ（乱数100）','Final damage (roll 100)').replace('・2発合計','; two-hit total');
+   }
+   // Earlier trace lines have already been translated by the runtime rules.
+   return line;
+  }).join('\n');
  }
  if(base.startsWith('最終ダメージ（乱数100'))return base.replace('最終ダメージ（乱数100','Final damage (roll 100').replace('・2発合計','; two-hit total');
  if(base==='確定急所: 急所補正を強制適用')return 'Guaranteed critical: critical modifier forced';
