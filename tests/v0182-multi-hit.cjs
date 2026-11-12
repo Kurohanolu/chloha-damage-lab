@@ -24,8 +24,8 @@ const dice=totalDistribution('タネマシンガン',()=>same,{loadedDice:true})
 assert.deepEqual([...dice.keys()],[40,50]);
 assert.throws(()=>convolve([[1,2],same],2),/16/);
 assert.equal(koProbability(variable,20),1);
-assert.equal(koProbability(variable,21),.65);
-assert.equal(koProbability(variable,40),.30);
+assert.ok(Math.abs(koProbability(variable,21)-.65)<1e-12);
+assert.ok(Math.abs(koProbability(variable,40)-.30)<1e-12);
 assert.equal(koProbability(variable,51),0);
 assert.equal(koProbability(dice,40),1);
 assert.equal(koProbability(dice,50),.5);
