@@ -26,3 +26,12 @@ for(const [moveName,japanese] of [['Icicle Spear','つららばり'],['Rock Blas
  assert.ok(Math.abs([...totals.values()].reduce((a,b)=>a+b,0)-1)<1e-10,moveName+' probability mass');
  console.log('PASS Showdown reference',moveName,'single hit',Math.min(...single),Math.max(...single),'five hits',Math.min(...totals.keys()),Math.max(...totals.keys()));
 }
+
+// Dragon Darts: two strikes against the same selected defender (single-target scenario).
+assert.deepEqual(hitDistribution('ドラゴンアロー'),{2:1});
+const dartsRolls=Array.from({length:16},(_,i)=>30+i);
+const dartsTotals=totalDistribution('ドラゴンアロー',()=>dartsRolls);
+assert.equal(Math.min(...dartsTotals.keys()),60);
+assert.equal(Math.max(...dartsTotals.keys()),90);
+assert.ok(Math.abs([...dartsTotals.values()].reduce((a,b)=>a+b,0)-1)<1e-10);
+console.log('PASS Dragon Darts two-hit selected-target distribution');
