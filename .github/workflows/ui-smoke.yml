@@ -43,6 +43,7 @@ jobs:
       - run: node tests/v0177-expanding-force-matrix.cjs
       - run: node tests/v0177-expanding-force-grounding.cjs
       - run: node tests/v0177-expanding-force-stacked.cjs
+      - run: node tests/v0183-locale-registry.cjs
       - run: node tests/v0179-localization-coverage.cjs
       - run: node tests/v0179-localization.cjs
       - run: node tests/ui-smoke.cjs
