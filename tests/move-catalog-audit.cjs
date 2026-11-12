@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,93);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,54);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,98);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,49);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -52,8 +52,8 @@ for(const name of ['ばくおんぱ','ふんえん','じならし','うたかた
  assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
 }
 
-assert.equal(expanded.filter(m=>m.calculationSupported).length,41,'new simple attacks');
-assert.equal(expanded.filter(m=>!m.calculationSupported).length,19,'new gated conditional attacks');
+assert.equal(expanded.filter(m=>m.calculationSupported).length,42,'new simple attacks');
+assert.equal(expanded.filter(m=>!m.calculationSupported).length,18,'new gated conditional attacks');
 for(const m of expanded){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith citation: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed','source metadata: '+m.name);
@@ -76,6 +76,8 @@ for(const [name,type,power,supported] of [
  assert.equal(m.power,power,name+' power');
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
+for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
+assert.ok(html.includes("'activationAssumed','acrobatics'"),'activation-assumed mechanic accepted by validator');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
 assert.ok(html.includes("a.moveMechanic==='sacredSword')ds=Math.min(0,ds)"),'Sacred Sword must ignore positive defense stages');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
