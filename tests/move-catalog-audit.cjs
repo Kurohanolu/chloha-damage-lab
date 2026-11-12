@@ -78,6 +78,8 @@ for(const [name,type,power,supported] of [
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
 assert.ok(/'activationAssumed'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
+assert.equal(moves.find(m=>m.name==='つけあがる').calculationSupported,true,'Power Trip positive boost scaling supported');
+assert.ok(html.includes('"gw0170b_018":{"priority":"P1","standardDamageSupported":true,"mechanic":"storedPower"'),'Power Trip uses Stored Power mechanic');
 assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,true,'Hard Press target HP power supported');
 assert.ok(html.includes("a.moveMechanic==='hardPress'?Math.max(1,Math.floor(100*a.currentHp/a.hp))"),'Hard Press uses target remaining HP');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
