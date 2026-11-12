@@ -1,7 +1,63 @@
 {
   "source": "smogon/pokemon-showdown/data/moves.ts",
-  "note": "Showdown source snapshot for mapped Damage Lab moves; regenerate when upstream changes",
+  "sourceCommit": "a9bb56dce2c45a34b44afdf2378aa0d0c35b540d",
+  "note": "77 mapped moves; Showdown default stats are not automatically Champions authoritative",
+  "championsPowerOverrides": {
+    "gw0169_p031": {
+      "power": 80,
+      "evidence": "User-provided Champions Showdown UI screenshot, 2026-11-12"
+    }
+  },
+  "unverifiedPowerDifferences": {
+    "gravApple": {
+      "championsCatalogPower": 90,
+      "showdownDefaultPower": 80,
+      "status": "needs Champions ruleset verification"
+    }
+  },
   "moves": {
+    "earthquake": {
+      "showdownId": "earthquake",
+      "basePower": 100,
+      "category": "Physical",
+      "flags": []
+    },
+    "dragonClaw": {
+      "showdownId": "dragonclaw",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "outrage": {
+      "showdownId": "outrage",
+      "basePower": 120,
+      "category": "Physical",
+      "flags": []
+    },
+    "rockSlide": {
+      "showdownId": "rockslide",
+      "basePower": 75,
+      "category": "Physical",
+      "flags": []
+    },
+    "crunch": {
+      "showdownId": "crunch",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "flamethrower": {
+      "showdownId": "flamethrower",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "fireBlast": {
+      "showdownId": "fireblast",
+      "basePower": 110,
+      "category": "Special",
+      "flags": []
+    },
     "airSlash": {
       "showdownId": "airslash",
       "basePower": 75,
@@ -10,33 +66,329 @@
         "slicing"
       ]
     },
-    "gw0170b_019": {
-      "showdownId": "nightslash",
+    "solarBeam": {
+      "showdownId": "solarbeam",
+      "basePower": 120,
+      "category": "Special",
+      "flags": []
+    },
+    "sludgeBomb": {
+      "showdownId": "sludgebomb",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "leafStorm": {
+      "showdownId": "leafstorm",
+      "basePower": 130,
+      "category": "Special",
+      "flags": []
+    },
+    "hydroPump": {
+      "showdownId": "hydropump",
+      "basePower": 110,
+      "category": "Special",
+      "flags": []
+    },
+    "iceBeam": {
+      "showdownId": "icebeam",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "thunderbolt": {
+      "showdownId": "thunderbolt",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "protect": {
+      "showdownId": "protect",
+      "basePower": 0,
+      "category": "Status",
+      "flags": []
+    },
+    "highHorsepower": {
+      "showdownId": "highhorsepower",
+      "basePower": 95,
+      "category": "Physical",
+      "flags": []
+    },
+    "heatWave": {
+      "showdownId": "heatwave",
+      "basePower": 95,
+      "category": "Special",
+      "flags": []
+    },
+    "icyWind": {
+      "showdownId": "icywind",
+      "basePower": 55,
+      "category": "Special",
+      "flags": []
+    },
+    "makeItRain": {
+      "showdownId": "makeitrain",
+      "basePower": 120,
+      "category": "Special",
+      "flags": []
+    },
+    "darkPulse": {
+      "showdownId": "darkpulse",
+      "basePower": 80,
+      "category": "Special",
+      "flags": [
+        "pulse"
+      ]
+    },
+    "psychic": {
+      "showdownId": "psychic",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "psyshock": {
+      "showdownId": "psyshock",
+      "basePower": 80,
+      "category": "Special",
+      "flags": []
+    },
+    "clearSmog": {
+      "showdownId": "clearsmog",
+      "basePower": 50,
+      "category": "Special",
+      "flags": []
+    },
+    "frostBreath": {
+      "showdownId": "frostbreath",
+      "basePower": 60,
+      "category": "Special",
+      "flags": []
+    },
+    "ancientPower": {
+      "showdownId": "ancientpower",
+      "basePower": 60,
+      "category": "Special",
+      "flags": []
+    },
+    "gravApple": {
+      "showdownId": "gravapple",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "hyperVoice": {
+      "showdownId": "hypervoice",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "closeCombat": {
+      "showdownId": "closecombat",
+      "basePower": 120,
+      "category": "Physical",
+      "flags": []
+    },
+    "shadowBall": {
+      "showdownId": "shadowball",
+      "basePower": 80,
+      "category": "Special",
+      "flags": []
+    },
+    "moonblast": {
+      "showdownId": "moonblast",
+      "basePower": 95,
+      "category": "Special",
+      "flags": []
+    },
+    "dazzlingGleam": {
+      "showdownId": "dazzlinggleam",
+      "basePower": 80,
+      "category": "Special",
+      "flags": []
+    },
+    "waterfall": {
+      "showdownId": "waterfall",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "flareBlitz": {
+      "showdownId": "flareblitz",
+      "basePower": 120,
+      "category": "Physical",
+      "flags": []
+    },
+    "woodHammer": {
+      "showdownId": "woodhammer",
+      "basePower": 120,
+      "category": "Physical",
+      "flags": []
+    },
+    "ironHead": {
+      "showdownId": "ironhead",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "energyBall": {
+      "showdownId": "energyball",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "dracoMeteor": {
+      "showdownId": "dracometeor",
+      "basePower": 130,
+      "category": "Special",
+      "flags": []
+    },
+    "braveBird": {
+      "showdownId": "bravebird",
+      "basePower": 120,
+      "category": "Physical",
+      "flags": []
+    },
+    "suckerPunch": {
+      "showdownId": "suckerpunch",
       "basePower": 70,
       "category": "Physical",
+      "flags": []
+    },
+    "earthPower": {
+      "showdownId": "earthpower",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "flashCannon": {
+      "showdownId": "flashcannon",
+      "basePower": 80,
+      "category": "Special",
+      "flags": []
+    },
+    "playRough": {
+      "showdownId": "playrough",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": []
+    },
+    "surf": {
+      "showdownId": "surf",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "sludgeWave": {
+      "showdownId": "sludgewave",
+      "basePower": 95,
+      "category": "Special",
+      "flags": []
+    },
+    "auraSphere": {
+      "showdownId": "aurasphere",
+      "basePower": 80,
+      "category": "Special",
       "flags": [
-        "slicing"
+        "pulse"
       ]
     },
-    "gw0170_s055": {
-      "showdownId": "leafblade",
+    "bodyPress": {
+      "showdownId": "bodypress",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "electroBall": {
+      "showdownId": "electroball",
+      "basePower": 0,
+      "category": "Special",
+      "flags": []
+    },
+    "eruption": {
+      "showdownId": "eruption",
+      "basePower": 150,
+      "category": "Special",
+      "flags": []
+    },
+    "waterSpout": {
+      "showdownId": "waterspout",
+      "basePower": 150,
+      "category": "Special",
+      "flags": []
+    },
+    "thunder": {
+      "showdownId": "thunder",
+      "basePower": 110,
+      "category": "Special",
+      "flags": []
+    },
+    "blizzard": {
+      "showdownId": "blizzard",
+      "basePower": 110,
+      "category": "Special",
+      "flags": []
+    },
+    "discharge": {
+      "showdownId": "discharge",
+      "basePower": 80,
+      "category": "Special",
+      "flags": []
+    },
+    "muddyWater": {
+      "showdownId": "muddywater",
       "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "bugBuzz": {
+      "showdownId": "bugbuzz",
+      "basePower": 90,
+      "category": "Special",
+      "flags": []
+    },
+    "stoneEdge": {
+      "showdownId": "stoneedge",
+      "basePower": 100,
+      "category": "Physical",
+      "flags": []
+    },
+    "liquidation": {
+      "showdownId": "liquidation",
+      "basePower": 85,
+      "category": "Physical",
+      "flags": []
+    },
+    "poisonJab": {
+      "showdownId": "poisonjab",
+      "basePower": 80,
+      "category": "Physical",
+      "flags": []
+    },
+    "xScissor": {
+      "showdownId": "xscissor",
+      "basePower": 80,
       "category": "Physical",
       "flags": [
         "slicing"
       ]
     },
-    "gw0169_p044": {
-      "showdownId": "psychocut",
+    "wildCharge": {
+      "showdownId": "wildcharge",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": []
+    },
+    "v095_63": {
+      "showdownId": "aircutter",
+      "basePower": 60,
+      "category": "Special",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "v096_076": {
+      "showdownId": "aquacutter",
       "basePower": 70,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "gw0170b_013": {
-      "showdownId": "sacredsword",
-      "basePower": 90,
       "category": "Physical",
       "flags": [
         "slicing"
@@ -50,33 +402,9 @@
         "slicing"
       ]
     },
-    "v096_076": {
-      "showdownId": "aquacutter",
+    "gw0169_p031": {
+      "showdownId": "slash",
       "basePower": 70,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "gw0169_p061": {
-      "showdownId": "aerialace",
-      "basePower": 60,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "v095_63": {
-      "showdownId": "aircutter",
-      "basePower": 60,
-      "category": "Special",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "xScissor": {
-      "showdownId": "xscissor",
-      "basePower": 80,
       "category": "Physical",
       "flags": [
         "slicing"
@@ -90,8 +418,8 @@
         "slicing"
       ]
     },
-    "gw0169_p031": {
-      "showdownId": "slash",
+    "gw0169_p044": {
+      "showdownId": "psychocut",
       "basePower": 70,
       "category": "Physical",
       "flags": [
@@ -106,6 +434,14 @@
         "slicing"
       ]
     },
+    "gw0169_p061": {
+      "showdownId": "aerialace",
+      "basePower": 60,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
     "gw0169_p075": {
       "showdownId": "kowtowcleave",
       "basePower": 85,
@@ -114,41 +450,9 @@
         "slicing"
       ]
     },
-    "gw0170_s020": {
-      "showdownId": "ceaselessedge",
-      "basePower": 65,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "gw0170_u008": {
-      "showdownId": "populationbomb",
-      "basePower": 20,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "gw0170_s047": {
-      "showdownId": "bitterblade",
-      "basePower": 90,
-      "category": "Physical",
-      "flags": [
-        "slicing"
-      ]
-    },
-    "darkPulse": {
-      "showdownId": "darkpulse",
-      "basePower": 80,
-      "category": "Special",
-      "flags": [
-        "pulse"
-      ]
-    },
-    "auraSphere": {
-      "showdownId": "aurasphere",
-      "basePower": 80,
+    "gw0169_s027": {
+      "showdownId": "terrainpulse",
+      "basePower": 50,
       "category": "Special",
       "flags": [
         "pulse"
@@ -170,12 +474,52 @@
         "pulse"
       ]
     },
-    "gw0169_s027": {
-      "showdownId": "terrainpulse",
-      "basePower": 50,
-      "category": "Special",
+    "gw0170_u008": {
+      "showdownId": "populationbomb",
+      "basePower": 20,
+      "category": "Physical",
       "flags": [
-        "pulse"
+        "slicing"
+      ]
+    },
+    "gw0170_s020": {
+      "showdownId": "ceaselessedge",
+      "basePower": 65,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_s047": {
+      "showdownId": "bitterblade",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170_s055": {
+      "showdownId": "leafblade",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170b_013": {
+      "showdownId": "sacredsword",
+      "basePower": 90,
+      "category": "Physical",
+      "flags": [
+        "slicing"
+      ]
+    },
+    "gw0170b_019": {
+      "showdownId": "nightslash",
+      "basePower": 70,
+      "category": "Physical",
+      "flags": [
+        "slicing"
       ]
     }
   }
