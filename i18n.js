@@ -238,7 +238,7 @@ function translateOptions(){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
    const ability=base.match(/^(.+?)（(一部技のみ対応|対応|効果未対応|未対応)）$/);
-   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force'};
+   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock'};
    const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
    const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
    const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
@@ -299,6 +299,7 @@ function translateBattleMoveLabel(value){
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
 function translateRuntime(base){
+ if(base==='パンクロック：音技の威力1.3倍に対応しています。音技の被ダメージ半減は防御側特性として未対応です。')return 'Punk Rock: Boosts sound-based move power by 1.3x. Halving incoming sound damage is not yet supported as a defending ability.';
  if(base==='かたいツメ：登録済み335技の接触判定をShowdownデータで照合し、接触技に威力1.3倍を適用します。')return 'Tough Claws: Applies a 1.3x power boost to contact moves, based on Showdown contact flags checked across all 335 catalog moves.';
  if(base==='すてみ：反動ダメージを受ける確認済みの攻撃技のみ威力1.2倍です。反動以外のHP消費技は対象外です。')return 'Reckless: Boosts verified recoil moves by 1.2x. Moves that consume HP without recoil are excluded.';
  if(base==='アナライズ：発動条件を満たした前提でダメージを1.3倍にしています。行動順や交代の自動判定は行いません。')return 'Analytic: Damage is multiplied by 1.3 assuming the ability activates. Turn order and switching are not checked automatically.';
