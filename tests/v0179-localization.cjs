@@ -23,7 +23,7 @@ const path=require('node:path');
   assert.match(await page.locator('#inputSettings > summary').innerText(),/Input mode and manual stats/,'manual settings translated');
   assert.match(await page.locator('#defDetails .unavailable').textContent(),/Residual damage/,'residual warning translated');
   assert.equal(await page.locator('#rollsLabel').textContent(),'16 damage rolls','damage roll heading translated');
-  assert.equal(await page.locator('#reliabilityTitle').textContent(),'Verification status','verification heading translated');
+  assert.match(await page.locator('#reliabilityTitle').textContent(),/^Verification status(?:\: Not hardware-verified)?$/,'verification heading translated, including live status');
   assert.equal(await page.locator('label:has(#battleFormat)').first().textContent().then(x=>x.includes('Battle format')),true,'battle format label translated');
 
   const abilityOptions=await page.locator('#attAbility option').allTextContents();
