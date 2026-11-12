@@ -26,7 +26,10 @@ try {
    ['Prism Armor reduces super effective',rolls({defAbility:'prismArmor',moveType:'かくとう',defTypes:['ノーマル']}).every((n,i)=>n<=rolls({moveType:'かくとう',defTypes:['ノーマル']})[i])],
    ['Prism Armor neutral unchanged',same(rolls({defAbility:'prismArmor'}),rolls({}))],
    ['Shadow Shield full HP reduces damage',rolls({defAbility:'shadowShield'}).every((n,i)=>n<=rolls({})[i])],
-   ['Shadow Shield damaged HP unchanged',same(rolls({defAbility:'shadowShield',currentHp:199}),rolls({currentHp:199}))]
+   ['Shadow Shield damaged HP unchanged',same(rolls({defAbility:'shadowShield',currentHp:199}),rolls({currentHp:199}))],
+   ['Punk Rock halves registered sound move',rolls({defAbility:'punkRock',moveId:'hyperVoice',category:'special'}).every((n,i)=>n<rolls({moveId:'hyperVoice',category:'special'})[i])],
+   ['Punk Rock ignores non-sound moves',same(rolls({defAbility:'punkRock',moveId:'tackle'}),rolls({moveId:'tackle'}))],
+   ['Punk Rock halves registered sound move even physical category',rolls({defAbility:'punkRock',moveId:'bugBuzz'}).every((n,i)=>n<rolls({moveId:'bugBuzz'})[i])]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
