@@ -100,6 +100,30 @@ const {chromium}=require('playwright');
     assert.equal(item.zero,true,'a first-hit miss must yield zero damage');
     assert.match(item.ko,/連続技合計KO率/,JSON.stringify(item));
   }
+  const powerAudit=await page.evaluate(()=>{
+    const result=[];
+    for(const name of ['ネズミざん','トリプルアクセル']){
+      const option=[...document.querySelector('#dbMove').options].find(x=>x.textContent.includes(name));
+      document.querySelector('#dbMove').value=option.value;
+      document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
+      const last=window.ChlohaLastCalculation,spec=window.ChlohaMultiHit.specialMoveSpec(name);
+      const expected=spec.powers.map(power=>window.ChlohaDamageEngine.calculate({...last.a,power}).rolls);
+      const actual=last.r.hitRolls;
+      const actualDist=last.r.multiHitDistribution;
+      const expectedDist=window.ChlohaMultiHit.specialMoveDistribution(name,i=>expected[i],{accuracies:Array(spec.hits).fill(spec.accuracy)});
+      result.push({name,powers:spec.powers,perHitCorrect:JSON.stringify(actual)===JSON.stringify(expected),
+       distributionCorrect:JSON.stringify([...actualDist])===JSON.stringify([...expectedDist]),
+       firstMissProbability:actualDist.get(0)||0,
+       noErrors:!document.querySelector('#error').textContent});
+    }
+    return result;
+  });
+  for(const item of powerAudit){
+    assert.equal(item.perHitCorrect,true,JSON.stringify(item));
+    assert.equal(item.distributionCorrect,true,JSON.stringify(item));
+    assert.ok(Math.abs(item.firstMissProbability-.1)<1e-9,JSON.stringify(item));
+    assert.equal(item.noErrors,true,JSON.stringify(item));
+  }
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and special multi-hit UI');
  }finally{await browser.close();}
