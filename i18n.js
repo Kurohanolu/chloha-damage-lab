@@ -190,7 +190,7 @@ const originalAttributes=new WeakMap();
 function translateAccessibilityLabel(base){
  const overview=base.match(/^(Attacker|Defender)の6(?:能力値|stat points)$/);
  if(overview)return overview[1]+' six stats';
- const edit=base.match(/^(Attacker|Defender) (.+?) (\\d+)ポイント。編集する$/);
+ const edit=base.match(/^(Attacker|Defender) (.+?) (\d+)ポイント。編集する$/);
  if(edit)return edit[1]+' '+edit[2]+' '+edit[3]+' points. Edit';
  if(base==='計算結果の要約')return 'Damage calculation summary';
  return attributeLabels[base]||dictionary[base]||translateRuntime(base);
