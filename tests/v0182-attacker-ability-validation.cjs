@@ -6,9 +6,9 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const whitelist=html.match(/\[([^\]]+)\]\.includes\(a\.attAbility\)/);
 assert.ok(whitelist,'attacker ability validation whitelist');
 const allowed=new Set([...whitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
-for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','guts','adaptability','tintedLens','levitate'])
+for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','guts','adaptability','tintedLens','levitate'])
  assert.ok(allowed.has(id),'Attacker ability must pass validation: '+id);
-for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce'])
+for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock'])
  assert.match(html,new RegExp("registerModifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
 assert.match(html,/registerModifier\('final','analytic',41,/,'Analytic final-damage modifier must exist');
 assert.match(html,/アナライズ：発動条件を満たした前提/,'Analytic assumed-active warning must exist');
@@ -26,4 +26,7 @@ assert.equal(expected.length,149,'Showdown contact move count');
 assert.deepEqual([...actual].sort(),expected.sort(),'Tough Claws set must match pinned Showdown contact flags');
 assert.match(html,/toughClaws:\{ja:'かたいツメ',en:'Tough Claws',coverage:'supported'\}/);
 assert.match(html,/registerModifier\('power','sandForce',1,c=>c\.a\.attAbility==='sandForce'&&c\.a\.weather==='sand'&&\['いわ','じめん','はがね'\]\.includes\(c\.a\.moveType\)/);
+assert.match(html,/PUNK_ROCK_SOUND_MOVES=new Set/);
+assert.match(html,/registerModifier\('power','punkRock'/);
+assert.doesNotMatch(html.match(/const PUNK_ROCK_SOUND_MOVES=new Set\([^;]+;/)[0],/'earthquake'/);
 console.log('PASS attacker ability validation and modifier registration');
