@@ -1,0 +1,19 @@
+name: Periodic Beat Up regression
+on:
+  schedule:
+    - cron: '17 3 * * 0'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  beat-up:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.58.2 @smogon/calc
+      - run: npx playwright install chromium
+      - run: node tests/v0182-beat-up-browser.cjs
