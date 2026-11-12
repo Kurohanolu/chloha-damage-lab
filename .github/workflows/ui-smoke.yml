@@ -20,6 +20,7 @@ jobs:
       - run: npm install --no-save playwright@1.58.2 @smogon/calc
       # GitHub-hosted Ubuntu already provides browser system libraries; avoid apt network/DNS failures.
       - run: npx playwright install chromium
+      - run: node tests/v0182-multi-hit.cjs
       - run: node tests/v0181-weight-power.cjs
       - run: node tests/v0181-weight-data-audit.cjs
       - run: node tests/v0181-mega-weight-integrity.cjs
