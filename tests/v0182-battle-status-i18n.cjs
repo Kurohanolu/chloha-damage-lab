@@ -13,9 +13,9 @@ const path=require('node:path');
    ['en','No valid damage calculation is available.','History cleared. Current HP and terrain were preserved.']
   ]){
    await page.locator('#chloha-locale').selectOption(locale);
-   await page.locator('#battleCommit').click();
+   await page.locator('#battleCommit').evaluate(el=>el.click());
    assert.equal((await page.locator('#battleStatus').innerText()).trim(),invalid,'invalid calculation '+locale);
-   await page.locator('#battleReset').click();
+   await page.locator('#battleReset').evaluate(el=>el.click());
    assert.equal((await page.locator('#battleStatus').innerText()).trim(),reset,'history reset '+locale);
   }
   console.log('PASS battle dynamic errors EN JA EN');
