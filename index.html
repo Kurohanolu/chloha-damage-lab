@@ -629,6 +629,10 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const statusEnglish={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
   el('moveSelected').textContent=current?(english?'Selected: ':'選択中：')+moveName+(english?' (':'（')+typeName+' / '+(current.power||(english?'Variable':'可変'))+(english?')':'）')+(english?(statusEnglish[status]||status):status):(english?'Select a move':'技を選択してください');
  }
+ // This status is composed bilingually by syncMovePicker; generic DOM translation
+ // must not translate its already-localized English text a second time.
+ el('moveSelected').setAttribute('data-no-translate','');
+ document.addEventListener('chloha:localechange',syncMovePicker);
  function chooseMove(option){
   moveSelect.value=option.value;
   if(moveSelect.value!==option.value)return;
