@@ -285,7 +285,7 @@ function translateRuntime(base){
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
- if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace('残り','remaining').replace('個体値','IV');
+ if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace(/残り\s*(\d+)/g,'remaining $1').replace('残り','remaining ').replace('個体値','IV');
  if(base.startsWith('攻撃実数値: '))return base.replace(/攻撃実数値:/g,'Attack stat:').replace(/防御実数値:/g,'Defense stat:').replace(/乱数前:/g,'Before random factor:');
  if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
  if(base.startsWith('乱数前: '))return base.replace('乱数前: ','Before random factor: ');
