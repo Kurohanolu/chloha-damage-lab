@@ -36,7 +36,12 @@ try {
    ['Fluffy contact Fire multipliers approximately cancel (rounding allowed)',rolls({defAbility:'fluffy',moveId:'flareBlitz',moveType:'ほのお'}).every((n,i)=>Math.abs(n-rolls({moveId:'flareBlitz',moveType:'ほのお'})[i])<=2)],
    ['Aura Guard halves contact moves',rolls({defAbility:'auraGuard',moveId:'closeCombat'}).every((n,i)=>n<rolls({moveId:'closeCombat'})[i])],
    ['Aura Guard does not reduce non-contact moves',same(rolls({defAbility:'auraGuard',moveId:'earthquake'}),rolls({moveId:'earthquake'}))],
-   ['Aura Guard does not double Fire damage',same(rolls({defAbility:'auraGuard',moveId:'flamethrower',moveType:'ほのお',category:'special'}),rolls({moveId:'flamethrower',moveType:'ほのお',category:'special'}))]
+   ['Aura Guard does not double Fire damage',same(rolls({defAbility:'auraGuard',moveId:'flamethrower',moveType:'ほのお',category:'special'}),rolls({moveId:'flamethrower',moveType:'ほのお',category:'special'}))],
+   ['Bulletproof blocks Aura Sphere',rolls({defAbility:'bulletproof',moveId:'auraSphere',category:'special'}).every(n=>n===0)],
+   ['Bulletproof does not block Hyper Voice',same(rolls({defAbility:'bulletproof',moveId:'hyperVoice',category:'special'}),rolls({moveId:'hyperVoice',category:'special'}))],
+   ['Soundproof blocks Hyper Voice',rolls({defAbility:'soundproof',moveId:'hyperVoice',category:'special'}).every(n=>n===0)],
+   ['Soundproof does not block Aura Sphere',same(rolls({defAbility:'soundproof',moveId:'auraSphere',category:'special'}),rolls({moveId:'auraSphere',category:'special'}))],
+   ['Overcoat does not reduce direct attack damage',same(rolls({defAbility:'overcoat',moveId:'earthquake'}),rolls({moveId:'earthquake'}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
