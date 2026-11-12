@@ -5,7 +5,7 @@ const ChlohaMultiHit = (() => {
  const LOADED_DICE_HITS = Object.freeze({4:0.5,5:0.5});
  const FIXED_TWO = Object.freeze({2:1});
  const variableMoves=new Set(['タネマシンガン','つららばり','ロックブラスト','みだれづき','スイープビンタ','ミサイルばり','みだれひっかき','れんぞくパンチ','Bullet Seed','Icicle Spear','Rock Blast','Fury Attack','Double Slap','Pin Missile','Fury Swipes','Comet Punch']);
- const fixedTwoMoves=new Set(['ダブルウイング','ダブルアタック','ダブルチョップ','にどげり','ホネブーメラン','Dual Wingbeat','Double Hit','Dual Chop','Double Kick','Bonemerang']);
+ const fixedTwoMoves=new Set(['ドラゴンアロー','Dragon Darts','ダブルウイング','ダブルアタック','ダブルチョップ','にどげり','ホネブーメラン','Dual Wingbeat','Double Hit','Dual Chop','Double Kick','Bonemerang']);
  variableMoves.add('スケイルショット');variableMoves.add('Scale Shot');
  // Showdown multi-hit moves in the Champions catalog.
  for(const name of ['ボーンラッシュ','Bone Rush','みずしゅりけん','Water Shuriken'])variableMoves.add(name);
