@@ -146,7 +146,7 @@ function translateOptions(){
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
- if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
+ if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+(entityNames[move.trim()]||move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
  if(base.startsWith('ミストバースト: '))return base.replace('ミストバースト: ','Misty Explosion: ').replace('ミストフィールド＋使用者接地（威力1.5倍）','Misty Terrain + grounded user (1.5× power)').replace('通常威力','normal power').replace('。使用後の自身のひんしは自動反映しません','; self-KO after use is not applied automatically');
  if(base.startsWith('ライジングボルト: '))return base.replace('ライジングボルト: ','Rising Voltage: ').replace('エレキフィールド＋対象接地（威力2倍）','Electric Terrain + grounded target (2× power)').replace('通常威力','normal power');
  if(base.startsWith('ワイドフォース: '))return base.replace('ワイドフォース: ','Expanding Force: ').replace('接地＋サイコフィールド（威力1.5倍・範囲化）','grounded + Psychic Terrain (1.5× power, spread)').replace('通常威力・単体対象','normal power, single target');
@@ -255,7 +255,7 @@ function initialize(){
    for(const record of records){
     if(record.type==='characterData'){
      const parent=record.target.parentElement;
-     if(parent&&!parent.closest('script,style,textarea,option,[data-no-translate],#battleHistory'))translate(parent);
+     if(parent&&!parent.closest('script,style,textarea,option,[data-no-translate]'))translate(parent);
     }
     for(const added of record.addedNodes){
      if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
