@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,73);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,74);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,77);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,70);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -45,6 +45,9 @@ for(const m of [...extraPhysical,...extraSpecial]){
 assert.equal(moves.find(m=>m.name==='ベノムショック').calculationSupported,false,'conditional poisoned-target power blocked');
 assert.equal(moves.find(m=>m.name==='どろかけ').power,20);
 assert.equal(moves.find(m=>m.name==='サイコカッター').calculationSupported,true,'Psycho Cut must calculate normally');
+for(const name of ['ばくおんぱ','ふんえん','じならし','うたかたのアリア','パラボラチャージ']){
+ assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' standard damage supported');
+}
 
 assert.equal(expanded.filter(m=>m.calculationSupported).length,39,'new simple attacks');
 assert.equal(expanded.filter(m=>!m.calculationSupported).length,21,'new gated conditional attacks');
