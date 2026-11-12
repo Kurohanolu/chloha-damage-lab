@@ -15,7 +15,7 @@ const path=require('node:path');
    const byId=new Map(source.map(m=>[m.id,m]));
    return {total:choices.length,entries:choices.map(o=>{
     const m=byId.get(o.value),p=policy[o.value];
-    const ready=Boolean(m&&['physical','special'].includes(m.category)&&p?.priority!=='P0'&&p?.standardDamageSupported!==false&&((p?.mechanic&&p?.standardDamageSupported===true)||m.calculationSupported===true));
+    const ready=moveCalculationReady(m);
     return {name:o.textContent,ready};
    })};
   });
