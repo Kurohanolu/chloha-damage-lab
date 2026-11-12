@@ -111,7 +111,7 @@ assert.ok(html.includes('この技')||html.includes('計算未対応'));
 
 // Runtime readiness audit: catalog flags alone do not determine UI calculability.
 // The 321-move coverage denominator excludes fixed-damage / OHKO / counter moves.
-const policyMatch=html.match(/const ChlohaMovePolicy = (\\{[^\\n]+\\});/);
+const policyMatch=html.match(/const ChlohaMovePolicy = (\{[^\n]+\});/);
 assert.ok(policyMatch,'embedded move policy present');
 const policies=JSON.parse(policyMatch[1]);
 const damaging=moves.filter(m=>m.category==='physical'||m.category==='special');
@@ -120,6 +120,8 @@ const candidates=damaging.filter(m=>policies[m.id]?.priority!=='P0');
 const legacyFlagMismatch=candidates.filter(m=>m.calculationSupported===false&&policies[m.id]?.mechanic&&policies[m.id]?.standardDamageSupported===true);
 assert.ok(legacyFlagMismatch.length>0,'legacy catalog flags are not runtime readiness');
 const missingRuntimeMechanic=candidates.filter(m=>policies[m.id]?.standardDamageSupported===true&&!policies[m.id]?.mechanic&&m.calculationSupported!==true);
-assert.ok(missingRuntimeMechanic.some(m=>m.name==='メテオビーム'),'Meteor Beam requires an explicit runtime mechanic before claiming support');
+assert.equal(moves.find(m=>m.name==='メテオビーム').calculationSupported,true,'Meteor Beam hit-turn damage is supported');
+assert.equal(policies['v095_71'].reasonCode,'charge_hit_turn','Meteor Beam must document manual SpA stage');
+assert.ok(!missingRuntimeMechanic.some(m=>m.name==='メテオビーム'),'Meteor Beam is no longer an unsupported flagged move');
 console.log('Coverage audit: catalog='+damaging.length+', P0 excluded='+excluded.length+', candidates='+candidates.length+', legacy flags overridden='+legacyFlagMismatch.length+', policy without runtime mechanic='+missingRuntimeMechanic.map(m=>m.name).join('/'));
 console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length+extraPhysical.length+extraSpecial.length,'new vs initial 98; v0.170 first-batch supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
