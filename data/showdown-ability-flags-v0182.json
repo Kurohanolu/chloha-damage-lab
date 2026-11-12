@@ -47,7 +47,8 @@
       "showdownDefaultPower": 90,
       "championsCatalogCategory": "physical",
       "showdownDefaultCategory": "Physical",
-      "status": "needs Champions ruleset verification"
+      "status": "verified by official Champions balance image",
+      "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
     },
     "gw0169_s033": {
       "name": "ナイトバースト",
@@ -87,7 +88,8 @@
       "showdownDefaultPower": 70,
       "championsCatalogCategory": "physical",
       "showdownDefaultCategory": "Physical",
-      "status": "needs Champions ruleset verification"
+      "status": "verified by official Champions balance image",
+      "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
     },
     "gw0170_s021": {
       "name": "ひょうざんおろし",
@@ -127,7 +129,8 @@
       "showdownDefaultPower": 70,
       "championsCatalogCategory": "physical",
       "showdownDefaultCategory": "Physical",
-      "status": "needs Champions ruleset verification"
+      "status": "verified by official Champions balance image",
+      "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
     }
   },
   "moves": {
@@ -2186,6 +2189,18 @@
       "basePower": 35,
       "category": "Special",
       "flags": []
+    }
+  },
+  "championsSlicingOverrides": {
+    "dragonClaw": {
+      "name": "ドラゴンクロー",
+      "slicing": true,
+      "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
+    },
+    "v096_088": {
+      "name": "シャドークロー",
+      "slicing": true,
+      "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
     }
   }
 }
