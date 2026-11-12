@@ -46,6 +46,7 @@ const ChlohaMultiHit = (() => {
   let active=new Map([[0,1]]);
   const finished=new Map();
   for(let i=0;i<accuracies.length;i++){
+   if(active.size===0)break; // A miss already terminated every possible attack sequence.
    const rolls=rollsForHit(i,accuracies.length);
    validateRolls(rolls);
    const p=accuracies[i],next=new Map();
