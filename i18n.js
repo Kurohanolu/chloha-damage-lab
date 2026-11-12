@@ -163,6 +163,19 @@ const optionOriginal=new WeakMap();
 const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
+const selectLabels={
+ 'なし／未適用':'None / Not applicable',
+ 'すなおこし（未対応）':'Sand Stream (unsupported)',
+ 'きんちょうかん（未対応）':'Unnerve (unsupported)',
+ 'ダブル':'Doubles','シングル':'Singles',
+ '補正＋（1.1倍）':'Positive (1.1×)','補正なし（1.0倍）':'Neutral (1.0×)','補正－（0.9倍）':'Negative (0.9×)'
+};
+const attributeLabels={
+ '名前を入力して選択':'Type a name to select',
+ '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt'
+};
+const originalAttributes=new WeakMap();
+
 function translateOptions(){
  const root=document.getElementById('app');
  if(!root)return;
@@ -171,7 +184,7 @@ function translateOptions(){
   for(const option of select.options){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
-   const next=locale==='en'?(entityNames[base]||base):base;
+   const next=locale==='en'?(selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)):base;
    if(option.textContent!==next)option.textContent=next;
   }
  }
@@ -306,8 +319,13 @@ function translate(root){
   for(const attr of ['title','aria-label','placeholder']){
    if(!element.hasAttribute(attr))continue;
    const value=element.getAttribute(attr);
-   const base=reverse[value]||value;
-   const next=locale==='en'?(dictionary[base]||base):base;
+   let originals=originalAttributes.get(element);
+   if(!originals){originals={};originalAttributes.set(element,originals);}
+   const previous=originals[attr];
+   const previousEnglish=previous===undefined?null:(attributeLabels[previous]||dictionary[previous]||translateRuntime(previous));
+   if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=reverse[value]||value;
+   const base=originals[attr];
+   const next=locale==='en'?(attributeLabels[base]||dictionary[base]||translateRuntime(base)):base;
    if(next!==value)element.setAttribute(attr,next);
   }
  }
