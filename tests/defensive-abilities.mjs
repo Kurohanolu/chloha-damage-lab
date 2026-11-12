@@ -72,7 +72,13 @@ try {
    ['Marvel Scale boosts defense with burn',rolls({defAbility:'marvelScale',defStatus:'burn'}).every((v,i)=>v<rolls({})[i])],
    ['Marvel Scale boosts defense with paralysis',rolls({defAbility:'marvelScale',defStatus:'paralysis'}).every((v,i)=>v<rolls({})[i])],
    ['Marvel Scale inactive without status',same(rolls({defAbility:'marvelScale',defStatus:'none'}),rolls({}))],
-   ['Marvel Scale inactive without specified status',same(rolls({defAbility:'marvelScale'}),rolls({}))]
+   ['Marvel Scale inactive without specified status',same(rolls({defAbility:'marvelScale'}),rolls({}))],
+   ['Intimidate lowers physical attack one stage',same(rolls({defAbility:'intimidate'}),rolls({attackStage:-1}))],
+   ['Intimidate stacks with existing attack stage',same(rolls({defAbility:'intimidate',attackStage:2}),rolls({attackStage:1}))],
+   ['Intimidate does not alter special damage',same(rolls({defAbility:'intimidate',category:'special'}),rolls({category:'special'}))],
+   ['Intimidate does not lower Body Press',same(rolls({defAbility:'intimidate',moveMechanic:'bodyPress'}),rolls({moveMechanic:'bodyPress'}))],
+   ['Intimidate does not lower Foul Play',same(rolls({defAbility:'intimidate',moveMechanic:'foulPlay'}),rolls({moveMechanic:'foulPlay'}))],
+   ['Critical hit ignores Intimidate negative stage',same(rolls({defAbility:'intimidate',critical:true}),rolls({critical:true}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
