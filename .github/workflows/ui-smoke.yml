@@ -22,6 +22,7 @@ jobs:
       - run: npx playwright install chromium
       - run: node tests/v0181-weight-power.cjs
       - run: node tests/v0181-weight-data-audit.cjs
+      - run: node tests/v0181-sprite-coverage.cjs
       - run: node tests/v0178-hiragana-suggestions.cjs
       - run: node tests/v0178-showdown-cross-compare.cjs
       - run: node tests/v0177-ci-inventory.cjs
