@@ -246,6 +246,38 @@ const path=require('node:path');
   assert.deepEqual(trio6.toxicOff,trio6.physical,'Toxic Boost inactive without poison');
   assert.ok(trio6.flash[0]>trio6.base[0],'Activated Flash Fire boosts Fire');
   assert.deepEqual(trio6.flashOff,trio6.base,'Flash Fire inactive without activation');
+  const bypass=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ノーマル',moveId:'testMove',moveMechanic:'none',
+    category:'physical',attTypes:['ノーマル'],defTypes:['ゴースト'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
+   return {immune:calc({}),scrappy:calc({attAbility:'scrappy'}),
+    scrappyFight:calc({attAbility:'scrappy',moveType:'かくとう'}),
+    immuneFight:calc({moveType:'かくとう'}),
+    scrappyPsychic:calc({attAbility:'scrappy',moveType:'エスパー'}),
+    psychic:calc({moveType:'エスパー'}),
+    unscreened:calc({defTypes:['ノーマル']}),
+    reflect:calc({defTypes:['ノーマル'],screen:'reflect'}),
+    infiltratorReflect:calc({defTypes:['ノーマル'],screen:'reflect',attAbility:'infiltrator'}),
+    light:calc({defTypes:['ノーマル'],screen:'lightScreen',category:'special'}),
+    infiltratorLight:calc({defTypes:['ノーマル'],screen:'lightScreen',category:'special',attAbility:'infiltrator'}),
+    special:calc({defTypes:['ノーマル'],category:'special'})};
+  });
+  assert.equal(bypass.immune[15],0,'Normal move remains immune against Ghost');
+  assert.equal(bypass.immuneFight[15],0,'Fighting move remains immune against Ghost');
+  assert.ok(bypass.scrappy[0]>0,'Scrappy Normal hits Ghost');
+  assert.ok(bypass.scrappyFight[0]>0,'Scrappy Fighting hits Ghost');
+  assert.deepEqual(bypass.scrappyPsychic,bypass.psychic,'Scrappy does not change Psychic matchup');
+  assert.ok(bypass.reflect[15]<bypass.unscreened[15],'Reflect reduces physical damage');
+  assert.deepEqual(bypass.infiltratorReflect,bypass.unscreened,'Infiltrator ignores Reflect');
+  assert.ok(bypass.light[15]<bypass.special[15],'Light Screen reduces special damage');
+  assert.deepEqual(bypass.infiltratorLight,bypass.special,'Infiltrator ignores Light Screen');
+  console.log('PASS v0.182 Infiltrator and Scrappy immunity/screen numeric checks');
   console.log('PASS v0.182 Fire Mane, Toxic Boost and Flash Fire numeric checks');
   console.log('PASS v0.182 Supreme Overlord, Battery and Power Spot numeric checks');
   console.log('PASS v0.182 Sniper, Neuroforce and Stakeout numeric checks');
