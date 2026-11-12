@@ -14,9 +14,9 @@ const path=require('node:path');
   ]){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.locator('#battleCommit').evaluate(el=>el.click());
-   assert.equal((await page.locator('#battleStatus').innerText()).trim(),invalid,'invalid calculation '+locale);
+   assert.equal((await page.locator('#battleStatus').textContent()).trim(),invalid,'invalid calculation '+locale);
    await page.locator('#battleReset').evaluate(el=>el.click());
-   assert.equal((await page.locator('#battleStatus').innerText()).trim(),reset,'history reset '+locale);
+   assert.equal((await page.locator('#battleStatus').textContent()).trim(),reset,'history reset '+locale);
   }
   console.log('PASS battle dynamic errors EN JA EN');
  }finally{await browser.close();}
