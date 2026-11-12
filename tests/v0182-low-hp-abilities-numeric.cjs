@@ -104,6 +104,34 @@ const path=require('node:path');
   assert.deepEqual(bubble.other.rolls,bubble.otherNormal.rolls,'Water Bubble does not boost other types');
   assert.deepEqual(bubble.burned.rolls,bubble.water.rolls,'Water Bubble ignores physical burn penalty');
   assert.ok(bubble.burnedNormal.rolls[0]<bubble.normal.rolls[0],'ordinary burn penalty still applies');
+  const trio=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ノーマル',moveId:'testMove',moveMechanic:'none',
+    category:'physical',attTypes:['ノーマル'],defTypes:['みず'],
+    weather:'none',terrain:'none',battleFormat:'singles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x});
+   return {normal:calc({}),defeat:calc({attAbility:'defeatist',attCurrentHp:100}),
+    healthy:calc({attAbility:'defeatist',attCurrentHp:101}),
+    defeatSpecial:calc({attAbility:'defeatist',attCurrentHp:100,category:'special'}),
+    pulse:calc({attAbility:'orichalcumPulse',weather:'sun'}),
+    pulseNoSun:calc({attAbility:'orichalcumPulse'}),
+    pulseSpecial:calc({attAbility:'orichalcumPulse',weather:'sun',category:'special'}),
+    hadron:calc({attAbility:'hadronEngine',terrain:'electric',category:'special'}),
+    hadronNoTerrain:calc({attAbility:'hadronEngine',category:'special'}),
+    hadronPhysical:calc({attAbility:'hadronEngine',terrain:'electric'})};
+  });
+  assert.ok(trio.defeat.rolls[0]<trio.normal.rolls[0],'Defeatist halves physical attack at 50% HP');
+  assert.deepEqual(trio.healthy.rolls,trio.normal.rolls,'Defeatist inactive above 50% HP');
+  assert.ok(trio.defeatSpecial.trace.some(x=>x.includes('stat/defeatist')),'Defeatist affects special attack');
+  assert.ok(trio.pulse.rolls[0]>trio.pulseNoSun.rolls[0],'Orichalcum Pulse boosts physical attack in sun');
+  assert.ok(!trio.pulseSpecial.trace.some(x=>x.includes('stat/orichalcumPulse')),'Orichalcum Pulse excludes special attack');
+  assert.ok(trio.hadron.rolls[0]>trio.hadronNoTerrain.rolls[0],'Hadron Engine boosts special attack in Electric Terrain');
+  assert.ok(!trio.hadronPhysical.trace.some(x=>x.includes('stat/hadronEngine')),'Hadron Engine excludes physical attack');
+  console.log('PASS v0.182 three offensive abilities threshold/weather/terrain checks');
   console.log('PASS v0.182 Water Bubble offensive and burn numeric checks');
   console.log('PASS v0.182 Flare Boost burn and category numeric checks');
   console.log('PASS v0.182 four low HP ability numeric thresholds');
