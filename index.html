@@ -169,7 +169,7 @@ const MEGA_LAUNCHER_MOVES=new Set(['darkPulse','auraSphere','gw0169_s059','gw016
 const SHARPNESS_MOVES=new Set(['airSlash','gw0170b_019','gw0170_s055','gw0169_p044','gw0170b_013','v096_086','v096_076','gw0169_p061','v095_63','xScissor','gw0169_p039','gw0169_p031','gw0169_p054','gw0169_p075','gw0170_s020','gw0170_u008','gw0170_s047','gw0169_p023','v096_088','dragonClaw']);
 const IRON_FIST_MOVES=new Set(['v096_096','gw0169_p019','gw0169_p026','gw0169_p042','gw0169_p049','gw0170_s004','gw0170_s012','gw0170_u031','gw0170_s038','gw0170_s044','gw0170_s057','gw0170b_004']);
 const STRONG_JAW_MOVES=new Set(['crunch','v096_085','gw0169_p017','gw0169_p018','gw0169_p073','gw0170_s037','gw0170b_002']);
-const TOUGH_CLAWS_CONTACT_MOVES=new Set(['dragonClaw','crunch','closeCombat','flareBlitz','ironHead','playRough','bodyPress','v096_077','v096_082','v096_088','v096_089','v096_095','gw0169_p061','gw0169_p072']);
+const TOUGH_CLAWS_CONTACT_MOVES=new Set(["dragonClaw","outrage","crunch","highHorsepower","ddLariat","closeCombat","waterfall","flareBlitz","woodHammer","ironHead","braveBird","suckerPunch","playRough","bodyPress","liquidation","poisonJab","xScissor","wildCharge","v096_073","v096_074","v096_075","v096_077","v096_078","v096_079","v096_081","v096_082","v096_083","v096_084","v096_085","v096_086","v096_087","v096_088","v096_089","v096_090","v096_091","v096_093","v096_095","v096_096","v096_097","v096_098","gw0169_p002","gw0169_p003","gw0169_p004","gw0169_p005","gw0169_p007","gw0169_p009","gw0169_p010","gw0169_p015","gw0169_p017","gw0169_p018","gw0169_p019","gw0169_p021","gw0169_p022","gw0169_p023","gw0169_p026","gw0169_p027","gw0169_p029","gw0169_p030","gw0169_p031","gw0169_p032","gw0169_p033","gw0169_p035","gw0169_p036","gw0169_p037","gw0169_p038","gw0169_p039","gw0169_p042","gw0169_p043","gw0169_p045","gw0169_p047","gw0169_p049","gw0169_p051","gw0169_p053","gw0169_p054","gw0169_p056","gw0169_p060","gw0169_p061","gw0169_p064","gw0169_p066","gw0169_p067","gw0169_p068","gw0169_p069","gw0169_p070","gw0169_p071","gw0169_p072","gw0169_p073","gw0169_p075","gw0169_p078","gw0169_p079","gw0169_s035","gw0169_s042","gw0169_s055","gw0170_s002","gw0170_s003","gw0170_s004","gw0170_s005","gw0170_s006","gw0170_s007","gw0170_u008","gw0170_s009","gw0170_s010","gw0170_s011","gw0170_s012","gw0170_u013","gw0170_u014","gw0170_s015","gw0170_u017","gw0170_s018","gw0170_s020","gw0170_s022","gw0170_s024","gw0170_s027","gw0170_u028","gw0170_s029","gw0170_s030","gw0170_s032","gw0170_s035","gw0170_s036","gw0170_s037","gw0170_s038","gw0170_s039","gw0170_s041","gw0170_s043","gw0170_s044","gw0170_s046","gw0170_s047","gw0170_s048","gw0170_s049","gw0170_s051","gw0170_u053","gw0170_s055","gw0170_u056","gw0170_s057","gw0170_s059","gw0170b_001","gw0170b_002","gw0170b_004","gw0170b_006","gw0170b_013","gw0170b_014","gw0170b_016","gw0170b_017","gw0170b_019","gw0170b_020","gw0170b_021","gw0170b_022","gw0170b_023","gw0170b_024","gw0170b_026"]);
 const RECKLESS_MOVES=new Set(['flareBlitz','woodHammer','braveBird','wildCharge','v096_090','gw0169_p007','gw0170_s041','gw0170_s051']);
 const ABILITY_CATALOG=Object.freeze({
  skillLink:{ja:'スキルリンク',en:'Skill Link',coverage:'supported'},
@@ -187,7 +187,7 @@ const ABILITY_CATALOG=Object.freeze({
  dragonsMaw:{ja:'りゅうのあぎと',en:"Dragon's Maw",coverage:'supported'},
  analytic:{ja:'アナライズ',en:'Analytic',coverage:'partial'},
  reckless:{ja:'すてみ',en:'Reckless',coverage:'partial'},
- toughClaws:{ja:'かたいツメ',en:'Tough Claws',coverage:'partial'},
+ toughClaws:{ja:'かたいツメ',en:'Tough Claws',coverage:'supported'},
  guts:{ja:'こんじょう',en:'Guts',coverage:'supported'},
  adaptability:{ja:'てきおうりょく',en:'Adaptability',coverage:'supported'},
  tintedLens:{ja:'いろめがね',en:'Tinted Lens',coverage:'supported'},
@@ -267,7 +267,7 @@ function assessReliability(a,selection={}){
  if(selection.provisional)warnings.push('選択したポケモンは将来実装用の暫定登録です。種族値・特性などの確認が必要です。');
  if(selection.manual)warnings.push('手入力モード：選択した技の固有効果は維持します。値・タイプ・分類・威力は自動更新されません。ボディプレス・イカサマ等では参照能力の実数値を入力してください。');
  
- if(a.attAbility==='toughClaws')warnings.push('かたいツメ：接触が確認できた登録技のみ威力1.3倍です。未登録の接触技は補正されません。');
+ if(a.attAbility==='toughClaws')warnings.push('かたいツメ：登録済み335技の接触判定をShowdownデータで照合し、接触技に威力1.3倍を適用します。');
  if(a.attAbility==='reckless')warnings.push('すてみ：反動ダメージを受ける確認済みの攻撃技のみ威力1.2倍です。反動以外のHP消費技は対象外です。');
  if(a.attAbility==='analytic')warnings.push('アナライズ：発動条件を満たした前提でダメージを1.3倍にしています。行動順や交代の自動判定は行いません。');
  if(a.customMultiplier!==1)warnings.push('追加倍率×'+a.customMultiplier+'を最終ダメージに適用しています。既存補正との二重適用に注意してください。');
