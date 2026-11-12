@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,101);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,46);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,102);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,45);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -84,6 +84,9 @@ for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics']
 for(const name of ['ウェザーボール','だいちのはどう'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' dynamic type and power supported');
 assert.ok(html.includes("a.moveMechanic==='weatherBall'"),'Weather Ball dynamic weather typing');
 assert.ok(html.includes("a.moveMechanic==='terrainPulse'"),'Terrain Pulse dynamic terrain typing');
+assert.equal(moves.find(m=>m.name==='オーラぐるま').calculationSupported,true,'Aura Wheel form-dependent typing supported');
+assert.ok(html.includes("a.auraWheelForm==='hangry'?'あく':'でんき'"),'Aura Wheel form type switching');
+assert.ok(html.includes('id="auraWheelForm"'),'Aura Wheel form UI');
 assert.equal(moves.find(m=>m.name==='フライングプレス').calculationSupported,true,'Flying Press dual effectiveness supported');
 assert.ok(html.includes("(EFFECT['かくとう']?.[t]??1)*(EFFECT['ひこう']?.[t]??1)"),'Flying Press multiplies fighting and flying type effectiveness');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry supported');
