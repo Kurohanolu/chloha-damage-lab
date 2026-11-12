@@ -49,6 +49,8 @@
 
 - Full native-dropdown audit failed at `dd92312`: Showdown tests/audit passed; UI regression failed because many Pokémon options and type options remained Japanese. Fix `dbf7c96ee91d0e318252897d9c1be6cbdf60978f` maps Pokémon dropdown options via stable Pokémon ID and translates all 18 type labels; recheck CI, inspect remaining leaks and attribute audit. Do not declare localization complete.
 
+- CI at `ebace17`: Showdown 2 PASS, UI FAIL. Native dropdown audit now returned `[]`, confirming previous Pokémon/type fixes. Accessibility attribute audit found 15 Japanese labels (att/def stat overview, 12 stat edit buttons, damage summary). Fix committed as `e9d01150a02dd7056dc74228aa12a893727489ee` in `i18n.js`, awaiting CI verification.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
