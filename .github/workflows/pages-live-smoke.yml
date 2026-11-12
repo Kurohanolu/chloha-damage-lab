@@ -1,5 +1,9 @@
 name: GitHub Pages live smoke
 on:
+  pull_request:
+    paths:
+      - tests/pages-live-smoke.cjs
+      - .github/workflows/pages-live-smoke.yml
   push:
     branches: [main]
     paths:
@@ -17,12 +21,16 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm install --no-save playwright@1.58.2
       - run: npx playwright install chromium
       - run: node tests/pages-live-smoke.cjs
+        env:
+          PAGES_BASELINE_REF: ${{ github.event_name == 'pull_request' && 'HEAD^1' || '' }}
       - if: always()
         uses: actions/upload-artifact@v4
         with:
