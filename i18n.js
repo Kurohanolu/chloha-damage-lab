@@ -339,7 +339,7 @@ function translateRuntime(base){
 }
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
 const reverseUiTerms=Object.fromEntries(Object.entries(uiTerms).map(([ja,en])=>[en,ja]));
-const reverseUiPattern=new RegExp(Object.keys(reverseUiTerms).sort((a,b)=>b.length-a.length).map(v=>v.replace(/[.*+?^${}()|[\]\\]/g,'\\const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));')).join('|'),'g');
+const reverseUiEntries=Object.entries(reverseUiTerms).sort((a,b)=>b[0].length-a[0].length);
 function recoverJapanese(value){
  if(reverse[value])return reverse[value];
  if(value.startsWith('Selected: ')){
@@ -348,7 +348,9 @@ function recoverJapanese(value){
  }
  if(/^\d+[–-]\d+ damage$/.test(value))return value.replace(' damage',' ダメージ').replace('–','〜');
  if(/^Guaranteed survival\s*[·・]/.test(value))return value.replace('Guaranteed survival','確定耐え');
- return value.replace(reverseUiPattern,match=>reverseUiTerms[match]||match);
+ let result=value;
+ for(const [en,ja] of reverseUiEntries)result=result.split(en).join(ja);
+ return result;
 }
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
