@@ -404,6 +404,7 @@ function initialize(){
      const parent=record.target.parentElement;
      if(parent&&!parent.closest('script,style,textarea,option,[data-no-translate]'))translate(parent);
     }
+    if(record.type==='attributes'&&record.target.nodeType===1)translate(record.target);
     for(const added of record.addedNodes){
      if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
      else if(added.nodeType===3&&added.parentElement)translate(added.parentElement);
@@ -411,7 +412,7 @@ function initialize(){
    }
    translateOptions();
   });
-  observer.observe(app,{childList:true,characterData:true,subtree:true});
+  observer.observe(app,{childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','placeholder'],subtree:true});
  }
  window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
 }
