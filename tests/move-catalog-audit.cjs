@@ -126,8 +126,8 @@ assert.equal(policies['gw0169_s009'].mechanic,'chargeSpABoost','Electro Shot sha
 assert.equal(moves.find(m=>m.name==='エレクトロビーム').calculationSupported,true,'Electro Shot enabled');
 assert.equal(moves.find(m=>m.name==='シェルアームズ').calculationSupported,true,'Shell Side Arm enabled');
 assert.equal(moves.find(m=>m.name==='みらいよち').calculationSupported,true,'Future Sight delayed hit estimate enabled');
-assert.equal(policies['gw0169_s060'].mechanic,'futureSight','Future Sight policy');
-assert.ok(html.includes("if(a.moveMechanic==='futureSight')ctx.trace.push"),'Future Sight delayed-hit trace');
+assert.equal(policies['gw0169_s060'].mechanic,'activationAssumed','Future Sight uses activation-assumed normal damage');
+assert.ok(!html.includes("a.moveMechanic==='futureSight'"),'Future Sight has no custom damage branch');
 assert.equal(policies['gw0169_s020'].mechanic,'shellSideArm','Shell Side Arm adaptive category');
 assert.ok(html.includes("physicalChosen=mean(physical.rolls)>mean(special.rolls)"),'Shell Side Arm damage comparison');
 assert.ok(html.includes("if(a.moveMechanic==='chargeSpABoost')as=Math.min(6,as+1)"),'pre-hit stage applied');
