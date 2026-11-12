@@ -1,12 +1,5 @@
-/* Damage Lab v0.181 — weight-dependent base power (pure calculation).
- * Weight values are kilograms; callers must supply battle-effective weights.
- * Integration and Champions-specific weight modifiers require separate validation.
- */
-(function (root, factory) {
-  const api = factory();
-  if (typeof module === 'object' && module.exports) module.exports = api;
-  if (root) root.ChlohaWeightPower = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+/* v0.181 weight-dependent move power. Explicit CommonJS + browser exports. */
+const ChlohaWeightPower = (() => {
   'use strict';
   const DEFENDER_WEIGHT_MOVES = new Set(['けたぐり', 'くさむすび', 'Low Kick', 'Grass Knot']);
   const WEIGHT_RATIO_MOVES = new Set(['ヘビーボンバー', 'ヒートスタンプ', 'Heavy Slam', 'Heat Crash']);
@@ -33,4 +26,6 @@
     return 40;
   }
   return { weightDependentPower, validWeight };
-});
+})();
+if (typeof module !== 'undefined' && module.exports) module.exports = ChlohaWeightPower;
+if (typeof globalThis !== 'undefined') globalThis.ChlohaWeightPower = ChlohaWeightPower;
