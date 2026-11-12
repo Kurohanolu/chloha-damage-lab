@@ -20,7 +20,7 @@ const expectedSlicing={
  'gw0169_p039':'クロスポイズン','gw0169_p031':'きりさく',
  'gw0169_p054':'ソーラーブレード','gw0169_p075':'ドゲザン',
  'gw0170_s020':'ひけん・ちえなみ','gw0170_u008':'ネズミざん',
- 'gw0170_s047':'むねんのつるぎ'
+ 'gw0170_s047':'むねんのつるぎ','gw0169_p023':'がんせきアックス'
 };
 const expectedPulse={
  'darkPulse':'あくのはどう','auraSphere':'はどうだん',
@@ -42,7 +42,7 @@ assert.equal(slicing.size,Object.keys(expectedSlicing).length,'slicing coverage 
 assert.equal(pulse.size,Object.keys(expectedPulse).length,'pulse coverage changed: review Showdown tags');
 const showdown=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/showdown-ability-flags-v0182.json'),'utf8'));
 const categoryMap={Physical:'physical',Special:'special',Status:'status'};
-assert.equal(Object.keys(showdown.moves).length,77,'Showdown coverage snapshot count');
+assert.equal(Object.keys(showdown.moves).length,335,'Showdown coverage snapshot count');
 for(const [id,record] of Object.entries(showdown.moves)){
  const move=catalog.get(id);
  assert.ok(move,'missing mapped Showdown move '+id);
