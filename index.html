@@ -655,7 +655,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
    };
    return rank(a)-rank(b);
-  }).slice(0,12);
+  }); // Show every matching move; the suggestion panel is already scrollable.
   for(let i=0;i<moveHits.length;i++){
    const o=moveHits[i],m=movesById.get(o.value);
    const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
