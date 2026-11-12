@@ -27,7 +27,23 @@ const {chromium}=require('playwright');
   assert.deepEqual(result.dice.map(x=>x[0]),[48,60]);
   assert.deepEqual(result.link.map(x=>x[0]),[60]);
   assert.equal(result.bulletExists,true);
-  assert.equal(result.bulletMarkedUnsupported,true,'do not claim UI support before calculation hookup');
+  assert.equal(result.bulletMarkedUnsupported,false,'multi-hit move should be selectable');
+  const ui=await page.evaluate(()=>{
+    const move=[...document.querySelector('#dbMove').options].find(x=>x.textContent.includes('タネマシンガン'));
+    document.querySelector('#dbMove').value=move.value;
+    document.querySelector('#dbMove').dispatchEvent(new Event('input',{bubbles:true}));
+    const last=window.ChlohaLastCalculation;
+    const initial={error:document.querySelector('#error').textContent,hidden:document.querySelector('#output').hidden,range:document.querySelector('#damage').textContent,ko:document.querySelector('#ko').textContent,probability:last?.r?.multiHitDistribution?[...last.r.multiHitDistribution.values()].reduce((a,b)=>a+b,0):null};
+    document.querySelector('#attItem').value='loadedDice';
+    document.querySelector('#attItem').dispatchEvent(new Event('input',{bubbles:true}));
+    const dice=window.ChlohaLastCalculation?.r?.multiHitDistribution;
+    return {...initial,diceHitMin:Math.min(...dice.keys()),diceMass:[...dice.values()].reduce((a,b)=>a+b,0)};
+  });
+  assert.equal(ui.hidden,false,'damage panel must display');
+  assert.match(ui.ko,/連続技合計KO率/);
+  assert.ok(Math.abs(ui.probability-1)<1e-9);
+  assert.ok(Math.abs(ui.diceMass-1)<1e-9);
+  assert.ok(ui.diceHitMin>0);
   assert.deepEqual(errors,[]);
   console.log('PASS v0.182 browser engine, normal damage regression and unsupported UI guard');
  }finally{await browser.close();}
