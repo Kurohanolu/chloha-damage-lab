@@ -310,7 +310,7 @@ const path=require('node:path');
    const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
    return {normal:calc({}),rain:calc({weather:'rain'}),drizzle:calc({attAbility:'drizzle'}),
     drought:calc({attAbility:'drought'}),sun:calc({weather:'sun'}),
-    sand:calc({weather:'sand',moveType:'いわ',attAbility:'sandForce'}),
+    sand:calc({weather:'sand',moveType:'いわ'}),
     sandStream:calc({attAbility:'sandStream',moveType:'いわ'}),
     snow:calc({weather:'snow',category:'physical',defTypes:['こおり']}),
     snowWarning:calc({attAbility:'snowWarning',category:'physical',defTypes:['こおり']}),
@@ -318,7 +318,7 @@ const path=require('node:path');
   });
   assert.deepEqual(weatherAbilities.drizzle,weatherAbilities.rain,'Drizzle sets rain');
   assert.deepEqual(weatherAbilities.drought,weatherAbilities.sun,'Drought sets sun');
-  assert.deepEqual(weatherAbilities.sandStream,weatherAbilities.normal.map((_,i)=>weatherAbilities.sandStream[i]),'Sand Stream calculates');
+  assert.deepEqual(weatherAbilities.sandStream,weatherAbilities.sand,'Sand Stream sets sand weather');
   assert.deepEqual(weatherAbilities.snowWarning,weatherAbilities.snow,'Snow Warning sets snow');
   assert.deepEqual(weatherAbilities.override,weatherAbilities.sun,'Explicit weather overrides inferred ability weather');
   console.log('PASS v0.182 weather-setting abilities and manual weather precedence');
