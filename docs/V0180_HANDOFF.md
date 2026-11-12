@@ -45,6 +45,8 @@
 - Source-data audit: all 335/335 move names, all 373/373 Pokémon entries, and all abilities referenced by those Pokémon have entries in the combined English name dictionaries; zero missing in these checked sets. This does not prove every rendered UI label is English.
 - Fixed composite `#dbMove` selector options (move/type/power/status) and added a full 300+ options Japanese-leakage regression test. Code commit `46bfed38d97d6f55c24a01ca9cab366242d04e37`; CI not yet verified.
 
+- New English leakage audit in `tests/v0179-localization.cjs` checks ALL native select option labels and all title/aria-label/placeholder attributes, beyond existing visible text checks. Commit `afbe31251e3f413e03d5cbd9394d3ff30ddaea4b`; UI CI queued at initial check. If failing, inspect logs for `ENGLISH_NATIVE_OPTION_AUDIT` or `ENGLISH_ATTRIBUTE_AUDIT`, fix source labels, and rerun.
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
