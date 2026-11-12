@@ -2,7 +2,8 @@
 // v0.181 Mega weight integrity checks: each Mega must have its own reviewed value.
 // Never derive a Mega weight from its base species.
 const assert=require('node:assert/strict');
-const weights=require('../pokemon-weights-v0181.js');
+const weightNamespace=require('../pokemon-weights-v0181.js');
+const weights=weightNamespace.default||globalThis.ChlohaPokemonWeights||weightNamespace;
 const weightModule=require('../weight-power.js');
 const power=weightModule.weightDependentPower||globalThis.ChlohaWeightPower?.weightDependentPower;
 assert.equal(typeof power,'function','weight-power.js must expose weightDependentPower');
