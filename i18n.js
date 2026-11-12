@@ -299,7 +299,7 @@ function translateBattleMoveLabel(value){
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
 function translateRuntime(base){
- if(base==='かたいツメ：接触が確認できた登録技のみ威力1.3倍です。未登録の接触技は補正されません。')return 'Tough Claws: Boosts verified contact moves by 1.3x. Unlisted contact moves do not receive the boost.';
+ if(base==='かたいツメ：登録済み335技の接触判定をShowdownデータで照合し、接触技に威力1.3倍を適用します。')return 'Tough Claws: Applies a 1.3x power boost to contact moves, based on Showdown contact flags checked across all 335 catalog moves.';
  if(base==='すてみ：反動ダメージを受ける確認済みの攻撃技のみ威力1.2倍です。反動以外のHP消費技は対象外です。')return 'Reckless: Boosts verified recoil moves by 1.2x. Moves that consume HP without recoil are excluded.';
  if(base==='アナライズ：発動条件を満たした前提でダメージを1.3倍にしています。行動順や交代の自動判定は行いません。')return 'Analytic: Damage is multiplied by 1.3 assuming the ability activates. Turn order and switching are not checked automatically.';
  const darts=base.match(/^ドラゴンアローは選択した相手への(\d+)回分のダメージを表示します。相手2体のまもる・無効・対象判定は手動指定です。$/);
