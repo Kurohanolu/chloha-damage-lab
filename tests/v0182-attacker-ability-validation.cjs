@@ -6,9 +6,9 @@ const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const whitelist=html.match(/\[([^\]]+)\]\.includes\(a\.attAbility\)/);
 assert.ok(whitelist,'attacker ability validation whitelist');
 const allowed=new Set([...whitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
-for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','normalize','guts','adaptability','tintedLens','levitate'])
+for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','normalize','overgrow','blaze','torrent','swarm','guts','adaptability','tintedLens','levitate'])
  assert.ok(allowed.has(id),'Attacker ability must pass validation: '+id);
-for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock'])
+for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','overgrow','blaze','torrent','swarm'])
  assert.match(html,new RegExp("registerModifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
 assert.match(html,/registerModifier\('final','analytic',41,/,'Analytic final-damage modifier must exist');
 assert.match(html,/アナライズ：発動条件を満たした前提/,'Analytic assumed-active warning must exist');
@@ -35,4 +35,6 @@ assert.match(html,/a\.moveType==='ノーマル'&&Object\.hasOwn\(SKIN_ABILITY_TY
 assert.match(html,/SKIN_TYPE_EXCLUDED_MOVES=new Set/);
 assert.match(html,/a\.attAbility==='normalize'/);
 assert.match(html,/\['weatherBall','terrainPulse'\]\.includes\(a\.moveMechanic\)/);
+for(const id of ['overgrow','blaze','torrent','swarm'])assert.match(html,new RegExp("registerModifier\\('power','"+id+"',1,c=>c\\.a\\.attAbility==='"+id+"'"));
+assert.match(html,/c\.a\.attCurrentHp\*3<=c\.a\.attMaxHp/);
 console.log('PASS attacker ability validation and modifier registration');
