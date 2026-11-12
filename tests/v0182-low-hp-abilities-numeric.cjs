@@ -222,6 +222,31 @@ const path=require('node:path');
   assert.ok(trio5.battery.rolls[0]>trio5.normal.rolls[0],'Battery boosts special damage');
   assert.deepEqual(trio5.batteryPhysical.rolls,trio5.physical.rolls,'Battery does not boost physical');
   assert.ok(trio5.spot.rolls[0]>trio5.normal.rolls[0],'Power Spot boosts damage');
+  const trio6=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'ほのお',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['ノーマル'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
+   return {base:calc({}),mane:calc({attAbility:'fireMane'}),
+    maneWater:calc({attAbility:'fireMane',moveType:'みず'}),water:calc({moveType:'みず'}),
+    toxic:calc({attAbility:'toxicBoost',poisoned:true,category:'physical'}),
+    physical:calc({category:'physical'}),
+    toxicOff:calc({attAbility:'toxicBoost',poisoned:false,category:'physical'}),
+    flash:calc({attAbility:'flashFire',flashFireActivated:true}),
+    flashOff:calc({attAbility:'flashFire',flashFireActivated:false})};
+  });
+  assert.ok(trio6.mane[0]>trio6.base[0],'Fire Mane boosts Fire attacks');
+  assert.deepEqual(trio6.maneWater,trio6.water,'Fire Mane does not boost Water');
+  assert.ok(trio6.toxic[0]>trio6.physical[0],'Toxic Boost boosts poisoned physical attacks');
+  assert.deepEqual(trio6.toxicOff,trio6.physical,'Toxic Boost inactive without poison');
+  assert.ok(trio6.flash[0]>trio6.base[0],'Activated Flash Fire boosts Fire');
+  assert.deepEqual(trio6.flashOff,trio6.base,'Flash Fire inactive without activation');
+  console.log('PASS v0.182 Fire Mane, Toxic Boost and Flash Fire numeric checks');
   console.log('PASS v0.182 Supreme Overlord, Battery and Power Spot numeric checks');
   console.log('PASS v0.182 Sniper, Neuroforce and Stakeout numeric checks');
   console.log('PASS v0.182 Steely Spirit, Plus and Minus numeric checks');
