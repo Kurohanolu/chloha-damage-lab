@@ -4,17 +4,11 @@ const ChlohaMultiHit = (() => {
  const STANDARD_HITS = Object.freeze({2:0.35,3:0.35,4:0.15,5:0.15});
  const LOADED_DICE_HITS = Object.freeze({4:0.5,5:0.5});
  const FIXED_TWO = Object.freeze({2:1});
- const FIXED_THREE = Object.freeze({3:1});
- const FIXED_TEN = Object.freeze({10:1});
  const variableMoves=new Set(['タネマシンガン','つららばり','ロックブラスト','みだれづき','スイープビンタ','ミサイルばり','みだれひっかき','れんぞくパンチ','Bullet Seed','Icicle Spear','Rock Blast','Fury Attack','Double Slap','Pin Missile','Fury Swipes','Comet Punch']);
  const fixedTwoMoves=new Set(['ダブルウイング','ダブルアタック','ダブルチョップ','にどげり','ホネブーメラン','Dual Wingbeat','Double Hit','Dual Chop','Double Kick','Bonemerang']);
- const fixedThreeMoves=new Set(['トリプルアクセル','Triple Axel']);
- const tenMoves=new Set(['ネズミざん','Population Bomb']);
  variableMoves.add('スケイルショット');variableMoves.add('Scale Shot');
  function hitDistribution(name,{skillLink=false,loadedDice=false}={}){
-  if(tenMoves.has(name))return FIXED_TEN; // Maximum only; accuracy/early stop modeled separately.
   if(fixedTwoMoves.has(name))return FIXED_TWO;
-  if(fixedThreeMoves.has(name))return FIXED_THREE; // Maximum only; later hits have accuracy checks.
   if(variableMoves.has(name))return skillLink?Object.freeze({5:1}):loadedDice?LOADED_DICE_HITS:STANDARD_HITS;
   return null;
  }
