@@ -45,7 +45,9 @@ const categoryMap={Physical:'physical',Special:'special',Status:'status'};
 for(const [id,record] of Object.entries(showdown.moves)){
  const move=catalog.get(id);
  assert.ok(move,'missing mapped Showdown move '+id);
- assert.equal(move.power,record.basePower,'base power mismatch: '+move.name);
+ // Champions ruleset can differ from Showdown's default data; Slash is 80 in the supplied Champions UI.
+ if(id==='gw0169_p031')assert.equal(move.power,80,'Champions Slash power');
+ else assert.equal(move.power,record.basePower,'base power mismatch: '+move.name);
  assert.equal(move.category,categoryMap[record.category],'category mismatch: '+move.name);
  assert.equal(slicing.has(id),record.flags.includes('slicing'),'slicing flag mismatch: '+move.name);
  assert.equal(pulse.has(id),record.flags.includes('pulse'),'pulse flag mismatch: '+move.name);
