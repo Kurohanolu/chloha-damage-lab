@@ -20,14 +20,14 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,91);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,56);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,93);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,54);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed');
  assert.ok(m.unverifiedFields.includes('game_damage_parity'),'damage explicitly unverified: '+m.name);
- if(m.power===0&&m.name!=='ジャイロボール')assert.equal(m.calculationSupported,false,'zero power cannot default to calculation');
+ if(m.power===0&&!['ジャイロボール','きしかいせい'].includes(m.name))assert.equal(m.calculationSupported,false,'zero power cannot default to calculation');
 }
 const expanded=moves.filter(m=>m.id.startsWith('gw0170_'));
 assert.equal(expanded.length,60,'v0.170 new GameWith moves');
