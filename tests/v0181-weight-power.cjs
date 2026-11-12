@@ -1,6 +1,8 @@
 'use strict';
 const assert = require('node:assert/strict');
-const { weightDependentPower: power } = require('../weight-power.js');
+const weightModule=require('../weight-power.js');
+const power=weightModule.weightDependentPower||globalThis.ChlohaWeightPower?.weightDependentPower;
+assert.equal(typeof power,'function','weight-power.js must expose weightDependentPower');
 for (const name of ['けたぐり','くさむすび','Low Kick','Grass Knot']) {
   for (const [kg, expected] of [[9.9,20],[10,40],[24.9,40],[25,60],[49.9,60],[50,80],[99.9,80],[100,100],[199.9,100],[200,120]]) {
     assert.equal(power(name, null, kg), expected, name + ' defender ' + kg);
