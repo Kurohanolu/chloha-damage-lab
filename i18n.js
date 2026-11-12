@@ -180,6 +180,11 @@ const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
 const selectLabels={
+ 'コンバット種（かくとう）':'Combat Breed (Fighting)',
+ 'ブレイズ種（ほのお）':'Blaze Breed (Fire)',
+ 'ウォーター種（みず）':'Aqua Breed (Water)',
+ 'まんぷくもよう（でんき）':'Full Belly Mode (Electric)',
+ 'はらぺこもよう（あく）':'Hangry Mode (Dark)',
  '選択した相手に2回命中':'2 hits on selected target',
  '選択した相手に1回命中':'1 hit on selected target',
  'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow',
