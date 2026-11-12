@@ -91,6 +91,8 @@ const dictionary={
 '最大HP':'Max HP','現在HP':'Current HP','HP':'HP','威力':'Power',
 '物理':'Physical','特殊':'Special','単体':'Single target','ダブル':'Doubles',
 'シングル':'Singles','範囲技':'Spread move','急所':'Critical hit','やけど':'Burn',
+'どく／もうどく（どくぼうそう）':'Poisoned / badly poisoned (Toxic Boost)',
+'もらいび発動済み（ほのお技を受けた）':'Flash Fire activated (hit by a Fire move)',
 'タイプ1':'Type 1','タイプ2':'Type 2','技タイプ':'Move type','技分類':'Move category',
 '攻撃側特性':'Attacker ability','防御側特性':'Defender ability',
 '防御側・場':'Defender / Field','共通の対戦条件':'Shared battle conditions',
@@ -243,7 +245,7 @@ function translateOptions(){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
    const ability=base.match(/^(.+?)（(一部技のみ対応|対応|効果未対応|未対応)）$/);
-   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','すいほう':'Water Bubble','よわき':'Defeatist','ひひいろのこどう':'Orichalcum Pulse','ハドロンエンジン':'Hadron Engine','フェアリーオーラ':'Fairy Aura','ダークオーラ':'Dark Aura','オーラブレイク':'Aura Break','はがねのせいしん':'Steely Spirit','プラス':'Plus','マイナス':'Minus','スナイパー':'Sniper','ブレインフォース':'Neuroforce','はりこみ':'Stakeout','そうだいしょう':'Supreme Overlord','バッテリー':'Battery','パワースポット':'Power Spot','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
+   const abilityEnglish={'トランジスタ':'Transistor','りゅうのあぎと':"Dragon's Maw",'アナライズ':'Analytic','すてみ':'Reckless','ねつぼうそう':'Flare Boost','どくぼうそう':'Toxic Boost','ほのおのたてがみ':'Fire Mane','もらいび':'Flash Fire','すいほう':'Water Bubble','よわき':'Defeatist','ひひいろのこどう':'Orichalcum Pulse','ハドロンエンジン':'Hadron Engine','フェアリーオーラ':'Fairy Aura','ダークオーラ':'Dark Aura','オーラブレイク':'Aura Break','はがねのせいしん':'Steely Spirit','プラス':'Plus','マイナス':'Minus','スナイパー':'Sniper','ブレインフォース':'Neuroforce','はりこみ':'Stakeout','そうだいしょう':'Supreme Overlord','バッテリー':'Battery','パワースポット':'Power Spot','かたいツメ':'Tough Claws','はがねつかい':'Steelworker','いわはこび':'Rocky Payload','すなのちから':'Sand Force','パンクロック':'Punk Rock','フェアリースキン':'Pixilate','スカイスキン':'Aerilate','フリーズスキン':'Refrigerate','エレキスキン':'Galvanize','ドラゴンスキン':'Dragonize','ノーマルスキン':'Normalize','しんりょく':'Overgrow','もうか':'Blaze','げきりゅう':'Torrent','むしのしらせ':'Swarm'};
    const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
    const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
    const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
