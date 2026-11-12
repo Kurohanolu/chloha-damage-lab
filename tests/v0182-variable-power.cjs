@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const {gyroBall,storedPower} = require('../variable-power.js');
+assert.equal(gyroBall(100,100),26);
+assert.equal(gyroBall(200,50),7);
+assert.equal(gyroBall(50,400),150);
+assert.equal(gyroBall(300,1),1);
+assert.throws(()=>gyroBall(0,100),RangeError);
+assert.equal(storedPower({}),20);
+assert.equal(storedPower({spa:2,spe:1}),80);
+assert.equal(storedPower({atk:-2,def:3}),80);
+assert.equal(storedPower({accuracy:1,evasion:2}),80);
+assert.equal(storedPower({atk:6,def:6,spa:6,spd:6,spe:6,accuracy:6,evasion:6}),860);
+assert.throws(()=>storedPower({spa:7}),RangeError);
+console.log('v0.182 variable power unit tests PASS');
