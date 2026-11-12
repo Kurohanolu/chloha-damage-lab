@@ -164,7 +164,7 @@ const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
 const selectLabels={
- 'なし／未適用':'None / Not applicable',
+ 'なし／未適用':'None',
  'すなおこし（未対応）':'Sand Stream (unsupported)',
  'きんちょうかん（未対応）':'Unnerve (unsupported)',
  'ダブル':'Doubles','シングル':'Singles',
@@ -184,7 +184,11 @@ function translateOptions(){
   for(const option of select.options){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
-   const next=locale==='en'?(selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)):base;
+   const ability=base.match(/^(.+?)（(対応|効果未対応|未対応)）$/);
+   const next=locale==='en'?(ability
+    ? (entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
+      (ability[2]==='対応'?' (supported)':' (unsupported)')
+    : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base))):base;
    if(option.textContent!==next)option.textContent=next;
   }
  }
