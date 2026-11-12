@@ -6,7 +6,7 @@ const titleMatch=html.match(/<title>Chloha Damage Lab (v0\.\d+) (Pre-Release \d+
 assert.ok(titleMatch,'public title must contain version and pre-release');
 const [,publicVersion,preRelease]=titleMatch;
 assert.equal(publicVersion,'v0.182','release series must stay v0.182');
-assert.ok(html.includes('class="version">'+publicVersion+' <span>'+preRelease+'</span>'),'visible release badge must match title');
+assert.match(html,new RegExp('class="version"[^>]*>'+publicVersion.replaceAll('.','\\.')+' <span>'+preRelease+'</span>'),'visible release badge must match title');
 assert.ok(html.includes('Pages publish: '+publicVersion+' '+preRelease),'publish marker must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);
 assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
