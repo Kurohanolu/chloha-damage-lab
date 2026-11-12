@@ -234,10 +234,10 @@ function render(){const oldNotice=$('ironRollerFieldNotice');if(oldNotice)oldNot
 const specialName=window.ChlohaSpecialMultiHitMove||null;
 if(specialName){
  if(a.defAbility==='multiscale')throw Error('特殊連続技とマルチスケイルのヒット別処理は未対応です');
- if(a.attAbility==='skillLink'||a.attItem==='loadedDice')throw Error('特殊連続技のスキルリンク・いかさまダイスの命中処理は検証中です');
+
  const engine=window.ChlohaMultiHit,spec=engine.specialMoveSpec(specialName);
  const hitRolls=spec.powers.map(power=>DamageEngine.calculate({...a,power}).rolls);
- const dist=engine.specialMoveDistribution(specialName,i=>hitRolls[i],{accuracies:Array(spec.hits).fill(spec.accuracy)});
+ const dist=engine.specialItemDistribution(specialName,i=>hitRolls[i],{accuracy:spec.accuracy,skillLink:a.attAbility==='skillLink',loadedDice:a.attItem==='loadedDice'});
  const koProbability=a.currentHp===0?null:engine.koProbability(dist,a.currentHp);
  r={...r,rolls:[...dist.keys()],hitRolls,multiHitDistribution:dist,koProbability};
 }
