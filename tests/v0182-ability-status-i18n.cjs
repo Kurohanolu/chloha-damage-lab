@@ -50,7 +50,7 @@ const path=require('node:path');
   assert.match(en[2],/Pure Power \(supported\)$/);
   assert.match(en[3],/Hustle \(partially supported\)$/);
   assert.match(en[4],/Solar Power \(supported\)$/);
-  assert.match(en[5],/Flare Boost \\(supported\\)$/);
+  assert.match(en[5],/Flare Boost \(supported\)$/);
   en.splice(5,1);
   assert.match(en[5],/Iron Fist \(partially supported\)$/);
   assert.match(en[6],/Strong Jaw \(partially supported\)$/);
