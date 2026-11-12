@@ -177,9 +177,33 @@ function translateOptions(){
  }
 }
 
+// English-only fallback for short UI labels and mixed dynamic status lines.
+// Exact dictionary and named entities still take precedence.
+const uiTerms={
+ 'ポケモンを探す':'Search Pokémon','技名を検索':'Search moves',
+ 'ドラゴン':'Dragon','じめん':'Ground','いわ':'Rock','あく':'Dark',
+ '攻撃側の能力値':'Attacker stats','防御側の能力値':'Defender stats',
+ '能力値を折りたたむ':'Collapse stats','一括配分':'Quick allocation','全て0':'Reset all to 0',
+ '攻撃':'Attack','防御':'Defense','特攻':'Sp. Atk','特防':'Sp. Def','素早さ':'Speed',
+ '能力ポイント':'stat points','性格補正':'nature modifier','実数値':'actual stat',
+ 'スライダー':'slider','攻撃側':'Attacker','防御側':'Defender',
+ '確定耐え':'Guaranteed survival','最大HPに対するダメージ':'Damage relative to max HP',
+ 'じしん':'Earthquake','ガブリアス':'Garchomp','バンギラス':'Tyranitar',
+ '計算試算・実機未照合':'Estimated; not hardware-verified',
+ 'GameWith物理技':'GameWith physical moves','特殊技':'Special moves',
+ '習得可否は未検証':'Learnsets are unverified','計算は対応技のみ':'Only supported moves can be calculated',
+ '最終ダメージ':'Final damage','乱数':'roll',
+ '非公式検証ツール':'Unofficial experimental tool','入力はブラウザ内で処理':'Inputs are processed locally in your browser',
+ 'Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です':'Damage values and rounding order have not been verified against Pokémon Champions hardware'
+};
+const uiTermPattern=new RegExp(Object.keys(uiTerms).sort((a,b)=>b.length-a.length).map(x=>x.replace(/[.*+?^${}()|[\\]\\]/g,'\\// Runtime output is not always an exact dictionary key.')).join('|'),'g');
+function translateMixedText(value){
+ return value.replace(uiTermPattern,match=>uiTerms[match]||match);
+}
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
  if(dictionary[base])return dictionary[base];
+ if(uiTerms[base])return uiTerms[base];
  if(/^\d+手目：/.test(base))return base.replace(/^(\d+)手目：/,(_,n)=>'Turn '+n+': ').replace(/^(Turn \d+: )([^/]+)( \/ )/,(_,prefix,move,sep)=>prefix+(entityNames[move.trim()]||move.trim())+sep).replace(/ \/ (\d+)ダメージ/,(_,n)=>' / '+n+' damage').replace(' / フィールド解除',' / Terrain removed').replace(' / 予測と不一致・要照合',' / Prediction mismatch; verify');
  if(base.startsWith('ミストバースト: '))return base.replace('ミストバースト: ','Misty Explosion: ').replace('ミストフィールド＋使用者接地（威力1.5倍）','Misty Terrain + grounded user (1.5× power)').replace('通常威力','normal power').replace('。使用後の自身のひんしは自動反映しません','; self-KO after use is not applied automatically');
  if(base.startsWith('ライジングボルト: '))return base.replace('ライジングボルト: ','Rising Voltage: ').replace('エレキフィールド＋対象接地（威力2倍）','Electric Terrain + grounded target (2× power)').replace('通常威力','normal power');
@@ -219,7 +243,7 @@ function translateRuntime(base){
  if(base==='2発合計の256通りのダメージ（重複を含む）')return '256 two-hit damage combinations (including duplicates)';
  if(base==='技を選択してください')return 'Select a move';
  if(base.startsWith('選択中：'))return 'Selected: '+base.slice(4).replace('可変','Variable');
- return base;
+ return translateMixedText(base);
 }
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
 const key='chloha.damageLab.locale';
