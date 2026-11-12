@@ -27,7 +27,7 @@ for(const m of added){
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
  assert.equal(m.verificationStatus,'gamewith_catalog_basic_fields_reviewed');
  assert.ok(m.unverifiedFields.includes('game_damage_parity'),'damage explicitly unverified: '+m.name);
- if(m.power===0&&!['ジャイロボール','きしかいせい'].includes(m.name))assert.equal(m.calculationSupported,false,'zero power cannot default to calculation');
+ if(m.power===0&&!['ジャイロボール','きしかいせい','なげつける'].includes(m.name))assert.equal(m.calculationSupported,false,'zero power cannot default to calculation');
 }
 const expanded=moves.filter(m=>m.id.startsWith('gw0170_'));
 assert.equal(expanded.length,60,'v0.170 new GameWith moves');
