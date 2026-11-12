@@ -20,8 +20,8 @@ const added=moves.filter(m=>m.id.startsWith('gw0169_'));
 assert.equal(added.length,147);
 assert.equal(added.filter(m=>m.category==='physical').length,79);
 assert.equal(added.filter(m=>m.category==='special').length,68);
-assert.equal(added.filter(m=>m.calculationSupported===true).length,98);
-assert.equal(added.filter(m=>m.calculationSupported===false).length,49);
+assert.equal(added.filter(m=>m.calculationSupported===true).length,99);
+assert.equal(added.filter(m=>m.calculationSupported===false).length,48);
 for(const m of added){
  assert.ok(['https://gamewith.jp/pokemon-champions/546502','https://gamewith.jp/pokemon-champions/546503'].includes(m.source),'GameWith source: '+m.name);
  assert.equal(m.source.endsWith('546502')?'physical':'special',m.category,'source/category: '+m.name);
@@ -78,6 +78,8 @@ for(const [name,type,power,supported] of [
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
 assert.ok(/'activationAssumed'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
+assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry supported');
+assert.ok(html.includes("a.moveMechanic==='freezeDry'&&t==='みず'?2"),'Freeze-Dry Water matchup override');
 assert.equal(moves.find(m=>m.name==='つけあがる').calculationSupported,true,'Power Trip positive boost scaling supported');
 assert.ok(html.includes('"gw0170b_018":{"priority":"P1","standardDamageSupported":true,"mechanic":"storedPower"'),'Power Trip uses Stored Power mechanic');
 assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,true,'Hard Press target HP power supported');
