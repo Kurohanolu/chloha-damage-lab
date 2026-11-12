@@ -5,6 +5,7 @@ on:
     paths:
       - index.html
       - i18n.js
+      - 'names-*.js'
       - weight-power.js
       - variable-power.js
       - multi-hit.js
@@ -16,6 +17,7 @@ on:
     paths:
       - index.html
       - i18n.js
+      - 'names-*.js'
       - weight-power.js
       - variable-power.js
       - tests/**
