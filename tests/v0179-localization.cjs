@@ -15,6 +15,7 @@ const path=require('node:path');
   await page.locator('#chloha-locale').selectOption('en');
   assert.equal(await page.locator('html').getAttribute('lang'),'en');
   assert.equal(await page.evaluate(()=>window.ChlohaLocale.get()),'en');
+  assert.match(await page.locator('#attBudget').textContent(),/remaining 66/,'stat-point counter retains space before remaining count');
   assert.equal(await page.locator('#copy').textContent(),'Copy','copy control translated');
   assert.match(await page.locator('#attDetails > summary').innerText(),/Attacker advanced settings/,'attacker advanced summary translated');
   assert.match(await page.locator('#defDetails > summary').innerText(),/Defender advanced settings/,'defender advanced summary translated');
