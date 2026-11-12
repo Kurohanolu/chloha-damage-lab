@@ -266,6 +266,11 @@ function translateMixedText(value){
 }
 // Runtime output is not always an exact dictionary key.
 function translateRuntime(base){
+ if(base.startsWith('現在の盤面：天候 ')){
+  const options={'なし':'None','晴れ':'Sun','雨':'Rain','砂嵐':'Sandstorm','雪':'Snow','エレキフィールド':'Electric Terrain','グラスフィールド':'Grassy Terrain','ミストフィールド':'Misty Terrain','サイコフィールド':'Psychic Terrain','リフレクター':'Reflect','ひかりのかべ':'Light Screen'};
+  return base.replace(/^現在の盤面：天候\s+(.+?)\s*／\s*フィールド\s+(.+?)\s*／\s*壁\s+(.+)$/,(_,w,t,sc)=>'Current battlefield: Weather '+(options[w]||w)+' / Terrain '+(options[t]||t)+' / Screen '+(options[sc]||sc));
+ }
+ if(base.startsWith('最大HPに対する割合：'))return base.replace('最大HPに対する割合：','Of max HP: ');
  if(base.startsWith('バージョンについて：画面の「')){
   const release=base.match(/画面の「([^」]+)」/);
   const core=base.match(/計算コアの「([^」]+)」/);
@@ -341,6 +346,17 @@ const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]))
 const reverseUiTerms=Object.fromEntries(Object.entries(uiTerms).map(([ja,en])=>[en,ja]));
 const reverseUiEntries=Object.entries(reverseUiTerms).sort((a,b)=>b[0].length-a[0].length);
 function recoverJapanese(value){
+ // Dynamic calculator summaries can be rebuilt from English native-select
+ // labels after a locale change. Normalize the entire summary, not just
+ // dictionary fragments, before caching it as Japanese source text.
+ const board=value.match(/^現在の盤面：天候\s+(.+?)\s*[／/]\s*フィールド\s+(.+?)\s*[／/]\s*壁\s+(.+)$/);
+ if(board){
+  const japaneseChoice=label=>reverseUiTerms[label]||Object.fromEntries(Object.entries(selectLabels).map(([ja,en])=>[en,ja]))[label]||label;
+  return '現在の盤面：天候 '+japaneseChoice(board[1])+' ／ フィールド '+japaneseChoice(board[2])+' ／ 壁 '+japaneseChoice(board[3]);
+ }
+ if(value==='ATTACKER')return '攻撃側';
+ if(value==='DEFENDER')return '防御側';
+ if(/^Of max HP:\s*/.test(value))return value.replace(/^Of max HP:\s*/,'最大HPに対する割合：');
  if(reverse[value])return reverse[value];
  if(value.startsWith('Selected: ')){
   const selected=value.slice('Selected: ').replace(/\bVariable\b/g,'可変');
