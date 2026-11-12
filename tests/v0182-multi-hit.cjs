@@ -50,4 +50,8 @@ assert.deepEqual([...tripleMiss],[[10,.5],[60,.5]],'second-hit miss stops third 
 assert.throws(()=>specialMoveDistribution('ネズミざん',()=>same),/10 per-hit/);
 assert.throws(()=>specialMoveDistribution('トリプルアクセル',()=>same,{accuracies:[1,1]}),/3 per-hit/);
 assert.throws(()=>specialMoveDistribution('じしん',()=>same,{accuracies:[1]}),/Unsupported special/);
+let evaluatedHits=0;
+const firstMiss=sequentialDistribution(()=>{evaluatedHits++;return same;},[0,1,1]);
+assert.deepEqual([...firstMiss],[[0,1]],'first-hit miss produces zero damage');
+assert.equal(evaluatedHits,1,'later hits must not be evaluated after guaranteed miss');
 console.log('v0.182 multi-hit independent-roll distributions: PASS');
