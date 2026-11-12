@@ -156,7 +156,7 @@ registerModifier('stat','flareBoost',13,c=>c.side==='attack'&&c.a.attAbility==='
 registerModifier('stat','hustle',13,c=>c.side==='attack'&&c.a.attAbility==='hustle'&&c.a.category==='physical'&&!['bodyPress','foulPlay'].includes(c.a.moveMechanic),(_,v)=>pokeRound(v,6144));
 registerModifier('stat','hugePower',12,c=>c.side==='attack'&&c.a.attAbility==='hugePower'&&c.a.category==='physical'&&!['bodyPress','foulPlay'].includes(c.a.moveMechanic),(_,v)=>floor(v*2));
 registerModifier('stat','grassPelt',10,c=>c.side==='defense'&&c.a.defAbility==='grassPelt'&&c.a.terrain==='grassy',(_,v)=>pokeRound(v,6144));
-registerModifier('stat','marvelScale',10,c=>c.side==='defense'&&c.a.defAbility==='marvelScale'&&c.a.defStatus!=='none',(_,v)=>pokeRound(v,6144));
+registerModifier('stat','marvelScale',10,c=>c.side==='defense'&&c.a.defAbility==='marvelScale'&&['burn','poison','paralysis','sleep','freeze'].includes(c.a.defStatus),(_,v)=>pokeRound(v,6144));
 registerModifier('stat','furCoat',10,c=>c.side==='defense'&&c.a.defAbility==='furCoat'&&c.a.category==='physical',(_,v)=>floor(v*2));
 registerModifier('stat','thickFat',11,c=>c.side==='attack'&&c.a.defAbility==='thickFat'&&['ほのお','こおり'].includes(c.a.moveType),(_,v)=>pokeRound(v,2048));
 registerModifier('stat','guts',14,c=>c.side==='attack'&&c.a.attAbility==='guts'&&c.a.burn&&c.a.category==='physical'&&c.a.moveMechanic!=='bodyPress',(_,v)=>pokeRound(v,6144));
