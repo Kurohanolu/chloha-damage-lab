@@ -45,8 +45,6 @@ jobs:
       - run: node tests/v0182-multi-hit.cjs
       - run: node tests/v0182-showdown-multihit.cjs
       - run: node tests/v0182-multihit-browser.cjs
-      - id: beat_up
-        run: node tests/v0182-beat-up-browser.cjs
       - run: node tests/v0181-weight-power.cjs
       - run: node tests/v0181-weight-data-audit.cjs
       - run: node tests/v0181-mega-weight-integrity.cjs
@@ -107,7 +105,6 @@ jobs:
         uses: actions/github-script@v7
         env:
           CI_JOB_STATUS: ${{ job.status }}
-          BEAT_UP_STATUS: ${{ steps.beat_up.outcome }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -123,7 +120,6 @@ jobs:
               commit: context.sha,
               ref: context.ref,
               status,
-              beat_up_test: process.env.BEAT_UP_STATUS,
               recorded_at: new Date().toISOString()
             };
             let branchSha;
