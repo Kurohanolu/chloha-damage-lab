@@ -2,6 +2,7 @@
 (()=>{
 'use strict';
 const dictionary={
+"アシストパワー／つけあがる：攻撃側能力ランク":"Stored Power / Power Trip: attacker stat stages",
 "急所（詳細設定）":"Critical hit (advanced)",
 "通常ダメージ":"Normal damage",
 "急所ダメージ ×1.5":"Critical hit damage ×1.5",
