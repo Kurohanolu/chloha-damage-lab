@@ -168,6 +168,18 @@ const selectLabels={
  'すなおこし（未対応）':'Sand Stream (unsupported)',
  'きんちょうかん（未対応）':'Unnerve (unsupported)',
  'ダブル':'Doubles','シングル':'Singles',
+ 'シングル（検証用）':'Singles (testing only)',
+ '通常タイプから自動':'Automatic from types',
+ 'タイプ・特性から自動':'Automatic from type and ability',
+ '接地':'Grounded','非接地':'Airborne',
+ '単体':'Single target','範囲技（複数対象）':'Spread move (multiple targets)',
+ '1匹':'1 ally',
+ 'いのちのたま（ダメージ×1.3）':'Life Orb (damage ×1.3)',
+ 'こだわりハチマキ（物理攻撃×1.5）':'Choice Band (Attack ×1.5)',
+ 'こだわりメガネ（特殊攻撃×1.5）':'Choice Specs (Sp. Atk ×1.5)',
+ 'たつじんのおび（効果抜群時×1.2）':'Expert Belt (super-effective ×1.2)',
+ 'とつげきチョッキ（特防×1.5）':'Assault Vest (Sp. Def ×1.5)',
+
  '補正＋（1.1倍）':'Positive (1.1×)','補正なし（1.0倍）':'Neutral (1.0×)','補正－（0.9倍）':'Negative (0.9×)'
 };
 const attributeLabels={
