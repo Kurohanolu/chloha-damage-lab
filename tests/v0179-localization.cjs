@@ -163,6 +163,21 @@ const path=require('node:path');
   await page.locator('#chloha-locale').selectOption('en');
   assert.equal(await page.locator('#trace').textContent(),traceEn,'trace English round-trip is lossless');
   assert.equal(await page.locator('#versionProvenance').textContent(),provenanceEn,'version English round-trip is lossless');
+  // Android feedback: native menus, search placeholders and move suggestions.
+  assert.equal(await page.locator('#attSearch').getAttribute('placeholder'),'Type a name to select');
+  assert.equal(await page.locator('#moveSearch').getAttribute('placeholder'),'e.g. Earthquake, Thunderbolt');
+  assert.equal(await page.locator('#battleFormat option:checked').textContent(),'Doubles');
+  assert.equal(await page.locator('#defAbility option').first().textContent(),'None / Not applicable');
+  await page.locator('#moveSearch').fill('Flame');
+  await page.locator('#moveSuggestions [role=option]').first().waitFor();
+  const moveSuggestions=await page.locator('#moveSuggestions [role=option]').allTextContents();
+  assert(moveSuggestions.some(x=>x.includes('Flamethrower')),'English move search works');
+  assert(moveSuggestions.every(x=>!/[ぁ-んァ-ヶ一-龯]/.test(x)),'move suggestion labels and metadata have no Japanese');
+  await page.locator('#moveSearch').fill('');
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.equal(await page.locator('#attSearch').getAttribute('placeholder'),'名前を入力して選択');
+  assert.equal(await page.locator('#moveSearch').getAttribute('placeholder'),'例：じしん、10まんボルト');
+  await page.locator('#chloha-locale').selectOption('en');
   // Preserve an English-mode visual artifact for pre-release UI inspection.
   await page.screenshot({path:'smoke-v0179-english.png',fullPage:true});
   await page.locator('#chloha-locale').selectOption('ja');
