@@ -13,4 +13,5 @@ assert.equal(Object.keys(weights).length, known.length, 'Unknown or duplicate we
 const targetMoves = ['けたぐり','くさむすび','ヘビーボンバー','ヒートスタンプ'];
 for (const name of targetMoves) assert.ok(html.includes('"name":"'+name+'"'), 'Missing move: '+name);
 console.log(JSON.stringify({version:'v0.181',roster:roster.length,weightKnown:known.length,weightMissing:missing.length,weightCoveragePercent: +(100*known.length/roster.length).toFixed(1),targetMoves},null,2));
-if (missing.length) console.log('Weight data incomplete: integration must not mark target moves supported yet.');
+assert.equal(missing.length, 0, 'All 373 roster forms must have verified weight mappings');
+console.log('v0.181 complete roster weight coverage: PASS');
