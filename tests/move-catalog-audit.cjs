@@ -121,7 +121,10 @@ const legacyFlagMismatch=candidates.filter(m=>m.calculationSupported===false&&po
 assert.ok(legacyFlagMismatch.length>0,'legacy catalog flags are not runtime readiness');
 const missingRuntimeMechanic=candidates.filter(m=>policies[m.id]?.standardDamageSupported===true&&!policies[m.id]?.mechanic&&m.calculationSupported!==true);
 assert.equal(moves.find(m=>m.name==='メテオビーム').calculationSupported,true,'Meteor Beam hit-turn damage is supported');
-assert.equal(policies['v095_71'].reasonCode,'charge_hit_turn','Meteor Beam must document manual SpA stage');
+assert.equal(policies['v095_71'].mechanic,'chargeSpABoost','Meteor Beam auto SpA boost');
+assert.equal(policies['gw0169_s009'].mechanic,'chargeSpABoost','Electro Shot shares SpA boost');
+assert.equal(moves.find(m=>m.name==='エレクトロビーム').calculationSupported,true,'Electro Shot enabled');
+assert.ok(html.includes("if(a.moveMechanic==='chargeSpABoost')as=Math.min(6,as+1)"),'pre-hit stage applied');
 assert.ok(!missingRuntimeMechanic.some(m=>m.name==='メテオビーム'),'Meteor Beam is no longer an unsupported flagged move');
 console.log('Coverage audit: catalog='+damaging.length+', P0 excluded='+excluded.length+', candidates='+candidates.length+', legacy flags overridden='+legacyFlagMismatch.length+', policy without runtime mechanic='+missingRuntimeMechanic.map(m=>m.name).join('/'));
 console.log('PASS GameWith catalog',moves.length,'moves,',added.length+expanded.length+extraPhysical.length+extraSpecial.length,'new vs initial 98; v0.170 first-batch supported',expanded.filter(m=>m.calculationSupported).length,'gated',expanded.filter(m=>!m.calculationSupported).length);
