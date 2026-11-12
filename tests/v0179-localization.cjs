@@ -27,6 +27,12 @@ const path=require('node:path');
   assert.match(await page.locator('#reliabilityTitle').textContent(),/^Verification status(?:\: Not hardware-verified)?$/,'verification heading translated, including live status');
   assert.equal(await page.locator('label:has(#battleFormat)').first().textContent().then(x=>x.includes('Battle format')),true,'battle format label translated');
 
+  assert.equal(await page.locator('#attItem option[value="lifeOrb"]').textContent(),'Life Orb (damage ×1.3)');
+  assert.equal(await page.locator('#attItem option[value="choiceBand"]').textContent(),'Choice Band (Attack ×1.5)');
+  assert.equal(await page.locator('#defItem option[value="assaultVest"]').textContent(),'Assault Vest (Sp. Def ×1.5)');
+  assert.equal(await page.locator('#battleFormat option[value="singles"]').textContent(),'Singles (testing only)');
+  assert.equal(await page.locator('#spread option[value="spread"]').textContent(),'Spread move (multiple targets)');
+  assert.equal(await page.locator('#attGrounding option[value="auto"]').textContent(),'Automatic from type and ability');
   const abilityOptions=await page.locator('#attAbility option').allTextContents();
   assert(abilityOptions.every(label=>!label.includes(' / ')),'ability options must not show bilingual slash labels');
   const pokemonOption=await page.locator('#dbAttPokemon option[value="charizard"]').textContent();
