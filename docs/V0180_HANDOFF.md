@@ -31,6 +31,11 @@
 - `tests/v0179-localization.cjs`: Android-derived tests for select options, placeholders, move suggestion labels and roundtrip.
 - The branch has three successful CI workflows at commit `f294d1f`.
 
+## Progress after initial handoff (2026-11-12)
+- Fixed selected move summary in `index.html`: locale-aware move name, type, power and status instead of mixed-language text.
+- Added regression assertions in `tests/v0179-localization.cjs` for English selected-move summary.
+- Latest code commit at this handoff update: `aa2ad26013e0b7cd0dbdf415fee31c4fd14a12bf` (CI result must be checked; previous verified passing commit remains `f294d1f`).
+
 ## Remaining work — important
 1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
 2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
