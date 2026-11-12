@@ -194,7 +194,7 @@ function translateRuntime(base){
  if(base==='ダブルウイング: 各ヒットを威力40で独立計算（各16乱数、計256組）')return 'Dual Wingbeat: each hit calculated independently at power 40 (16 rolls each; 256 combinations)';
  if(base==='無効判定: タイプまたは特性によってダメージ0')return 'Immunity: type or ability reduces damage to zero';
  if(base.startsWith('追加倍率×'))return base.replace('追加倍率×','Additional multiplier ×').replace('を最終ダメージに適用しています。既存補正との二重適用に注意してください。',' is applied to final damage. Avoid double-counting existing modifiers.');
- if(base.startsWith('選択技「'))return base.replace('選択技「','Selected move “').replace('」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
+ if(base.startsWith('選択技「'))return base.replace(/選択技「([^」]+)」/,(_,name)=>'Selected move “'+(entityNames[name]||name)+'”').replace('」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。','”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.');
  if(base.startsWith('HP依存威力技：'))return base.replace('HP依存威力技：','HP-dependent move: ').replace('。攻撃側現在HPを変更すると威力が再計算されます。','. Power is recalculated when attacker current HP changes.');
  if(base.startsWith('特殊能力値参照技：'))return base.replace('特殊能力値参照技：','Alternative-stat move: ').replace('。攻撃ランク欄は参照能力のランクとして扱います。','. The Attack stage field represents the relevant stat stage.');
  if(base.startsWith('技監査 '))return base.replace('技監査 ','Move audit ').replace('（自動計算を停止）',' (automatic calculation disabled)');
@@ -203,13 +203,13 @@ function translateRuntime(base){
  if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
  if(/^\d+〜\d+ ダメージ$/.test(base))return base.replace(' ダメージ',' damage').replace('〜','–');
  if(base.startsWith('最大HPの '))return base.replace('最大HPの ','Of max HP: ').replace('〜','–');
- if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ').replace(' ／ フィールド ',' / Terrain ').replace(' ／ 壁 ',' / Screen ');
+ if(base.startsWith('現在の盤面：天候 '))return base.replace('現在の盤面：天候 ','Current battlefield: Weather ').replace(' ／ フィールド ',' / Terrain ').replace(' ／ 壁 ',' / Screen ').replace(/(Weather |Terrain |Screen )(晴れ|雨|砂嵐|あられ|雪|なし|エレキフィールド|グラスフィールド|ミストフィールド|サイコフィールド|リフレクター|ひかりのかべ)/g,(_,label,value)=>label+({晴れ:'Sun',雨:'Rain',砂嵐:'Sandstorm',あられ:'Hail',雪:'Snow',なし:'None',エレキフィールド:'Electric Terrain',グラスフィールド:'Grassy Terrain',ミストフィールド:'Misty Terrain',サイコフィールド:'Psychic Terrain',リフレクター:'Reflect',ひかりのかべ:'Light Screen'}[value]||value));
  if(base.includes('を確定。相手HP '))return base.replace('を確定。相手HP ',' confirmed. Target HP ').replace('、フィールド：',', Terrain: ').replace('。予測と不一致です。条件・実測値を記録して照合してください。','. Prediction mismatch. Record and verify conditions and observed damage.');
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
  if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace('残り','remaining').replace('個体値','IV');
- if(base.startsWith('攻撃実数値: '))return base.replace('攻撃実数値: ','Attack stat: ');
+ if(base.startsWith('攻撃実数値: '))return base.replace(/攻撃実数値:/g,'Attack stat:').replace(/防御実数値:/g,'Defense stat:').replace(/乱数前:/g,'Before random factor:');
  if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
  if(base.startsWith('乱数前: '))return base.replace('乱数前: ','Before random factor: ');
  if(base==='無効')return 'Immune';
@@ -261,6 +261,9 @@ function setLocale(next){
 
  const select=document.getElementById('chloha-locale');
  if(select)select.value=locale;
+ const localeLabel=document.getElementById('chloha-locale-control');
+ if(localeLabel?.firstChild?.nodeType===3)localeLabel.firstChild.nodeValue=locale==='en'?'Language ':'Language / 言語 ';
+ if(select)select.setAttribute('aria-label',locale==='en'?'Language':'Language / 言語');
 }
 function initialize(){
  const header=document.querySelector('.lab-header');
