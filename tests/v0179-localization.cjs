@@ -113,6 +113,25 @@ const path=require('node:path');
   assert.match(await page.locator('#english-runtime-audit p').first().textContent(),/選択したポケモン/);
   await page.locator('#chloha-locale').selectOption('en');
   assert.match(await page.locator('#english-runtime-audit p').first().textContent(),/provisional entry/);
+  // Full English-mode audit: live battle context, multi-line trace and move warning.
+  await page.evaluate(()=>{
+   const root=document.createElement('section');root.id='v0179-full-audit';
+   for(const value of [
+    '現在の盤面：天候 晴れ ／ フィールド なし ／ 壁 なし',
+    '攻撃実数値: 180\\n防御実数値: 120\\n乱数前: 90',
+    '選択技「ワイドフォース」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。'
+   ]){const p=document.createElement('p');p.textContent=value;root.append(p);}
+   document.querySelector('#app').append(root);
+  });
+  await page.waitForFunction(()=>[...document.querySelectorAll('#v0179-full-audit p')].every(p=>!/[ぁ-んァ-ヶ一-龯]/.test(p.textContent)));
+  const fullAudit=await page.locator('#v0179-full-audit p').allTextContents();
+  assert.match(fullAudit[0],/Weather Sun \\/ Terrain None \\/ Screen None/);
+  assert.match(fullAudit[1],/Attack stat: 180\\nDefense stat: 120\\nBefore random factor: 90/);
+  assert.match(fullAudit[2],/Selected move “Expanding Force”: learnset/);
+  assert.equal(await page.locator('#chloha-locale-control').innerText().then(x=>x.startsWith('Language ')),true);
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.match(await page.locator('#v0179-full-audit p').first().textContent(),/現在の盤面/);
+  await page.locator('#chloha-locale').selectOption('en');
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS v0.179 language toggle, persistence, English species search, catalog, damage invariant');
  }finally{await browser.close();}
