@@ -77,7 +77,10 @@ for(const [name,type,power,supported] of [
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
-assert.ok(/'activationAssumed'\s*,\s*'freezeDry'\s*,\s*'hardPress'\s*,\s*'acrobatics'/.test(html),'activation-assumed mechanic accepted by validator');
+const mechanicWhitelist=html.match(/if\(!\[([^\]]+)\]\.includes\(a\.moveMechanic\|\|'none'\)\)/);
+assert.ok(mechanicWhitelist,'mechanic whitelist exists');
+const acceptedMechanics=new Set([...mechanicWhitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
+for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics'])assert.ok(acceptedMechanics.has(mechanic),'validator accepts '+mechanic);
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry supported');
 assert.ok(html.includes("a.moveMechanic==='freezeDry'&&t==='みず'?2"),'Freeze-Dry Water matchup override');
 assert.equal(moves.find(m=>m.name==='つけあがる').calculationSupported,true,'Power Trip positive boost scaling supported');
@@ -86,7 +89,7 @@ assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,t
 assert.ok(html.includes("a.moveMechanic==='hardPress'?Math.max(1,Math.floor(100*a.currentHp/a.hp))"),'Hard Press uses target remaining HP');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
 assert.ok(html.includes("a.moveMechanic==='sacredSword')ds=Math.min(0,ds)"),'Sacred Sword must ignore positive defense stages');
-assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,false,'type special case gated');
+assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry type override enabled');
 assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,true,'Sacred Sword defense-stage bypass enabled');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
 assert.equal(moves.find(m=>m.name==='ドラゴンアロー').calculationSupported,false,'multihit gated');
