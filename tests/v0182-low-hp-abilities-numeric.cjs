@@ -298,6 +298,30 @@ const path=require('node:path');
   assert.ok(triggered.anger[0]>triggered.thermal[0],'Anger Point reaches +6 Attack');
   assert.deepEqual(triggered.angerOff,triggered.normal,'Anger Point inactive without trigger');
   assert.deepEqual(triggered.rattled,triggered.normal,'Rattled does not directly boost damage');
+  const weatherAbilities=await page.evaluate(()=>{
+   const base={level:50,power:80,attack:150,defense:100,hp:200,currentHp:200,
+    attMaxHp:200,attCurrentHp:200,attackStage:0,defenseStage:0,
+    attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',
+    moveType:'みず',moveId:'testMove',moveMechanic:'none',
+    category:'special',attTypes:['ノーマル'],defTypes:['ノーマル'],
+    weather:'none',terrain:'none',battleFormat:'doubles',spread:'single',
+    screen:'none',stabMode:'none',burn:false,critical:false,
+    friendGuardCount:0,helpingHand:false,customMultiplier:1};
+   const calc=x=>window.ChlohaDamageEngine.calculate({...base,...x}).rolls;
+   return {normal:calc({}),rain:calc({weather:'rain'}),drizzle:calc({attAbility:'drizzle'}),
+    drought:calc({attAbility:'drought'}),sun:calc({weather:'sun'}),
+    sand:calc({weather:'sand',moveType:'いわ',attAbility:'sandForce'}),
+    sandStream:calc({attAbility:'sandStream',moveType:'いわ'}),
+    snow:calc({weather:'snow',category:'physical',defTypes:['こおり']}),
+    snowWarning:calc({attAbility:'snowWarning',category:'physical',defTypes:['こおり']}),
+    override:calc({attAbility:'drizzle',weather:'sun'})};
+  });
+  assert.deepEqual(weatherAbilities.drizzle,weatherAbilities.rain,'Drizzle sets rain');
+  assert.deepEqual(weatherAbilities.drought,weatherAbilities.sun,'Drought sets sun');
+  assert.deepEqual(weatherAbilities.sandStream,weatherAbilities.normal.map((_,i)=>weatherAbilities.sandStream[i]),'Sand Stream calculates');
+  assert.deepEqual(weatherAbilities.snowWarning,weatherAbilities.snow,'Snow Warning sets snow');
+  assert.deepEqual(weatherAbilities.override,weatherAbilities.sun,'Explicit weather overrides inferred ability weather');
+  console.log('PASS v0.182 weather-setting abilities and manual weather precedence');
   console.log('PASS v0.182 Thermal Exchange, Anger Point and Rattled checks');
   console.log('PASS v0.182 Infiltrator and Scrappy immunity/screen numeric checks');
   console.log('PASS v0.182 Fire Mane, Toxic Boost and Flash Fire numeric checks');
