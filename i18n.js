@@ -114,6 +114,22 @@ function translateOptions(){
   }
  }
 }
+
+// Runtime output is not always an exact dictionary key.
+function translateRuntime(base){
+ if(dictionary[base])return dictionary[base];
+ if(base.startsWith('検証状況：'))return 'Verification status: '+(dictionary[base.slice(5)]||({'未実機検証':'Not hardware-verified','検証済み':'Verified','要注意':'Caution'}[base.slice(5)]||base.slice(5)));
+ if(base.startsWith('入力エラー: '))return 'Input error: '+base.slice(7);
+ if(base.startsWith('タイプ相性 ×'))return base.replace('タイプ相性 ×','Type effectiveness ×');
+ if(base==='無効')return 'Immune';
+ if(base==='確定1発')return 'Guaranteed OHKO';
+ if(base==='ひんし（HP 0）')return 'Fainted (0 HP)';
+ if(/^\\d+〜\\d+発（目安・回復等なし）$/.test(base))return base.replace('発（目安・回復等なし）',' hits (estimate; no recovery)').replace('〜','–');
+ if(base==='2発合計の256通りのダメージ（重複を含む）')return '256 two-hit damage combinations (including duplicates)';
+ if(base==='技を選択してください')return 'Select a move';
+ if(base.startsWith('選択中：'))return 'Selected: '+base.slice(4).replace('可変','Variable');
+ return base;
+}
 const reverse=Object.fromEntries(Object.entries(dictionary).map(([a,b])=>[b,a]));
 const key='chloha.damageLab.locale';
 let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
@@ -128,11 +144,11 @@ function translate(root){
   const value=node.nodeValue,trim=value.trim();
   if(!trim)continue;
   const cached=original.get(node);
-  const cachedRendered=cached===undefined?null:(locale==='en'?(dictionary[cached]||cached):cached);
+  const cachedRendered=cached===undefined?null:(locale==='en'?translateRuntime(cached):cached);
   // Calculator updates existing text nodes in place; detect new source content.
   if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,reverse[trim]||trim);
   const base=original.get(node);
-  const next=locale==='en'?(dictionary[base]||base):base;
+  const next=locale==='en'?translateRuntime(base):base;
   if(trim!==next)node.nodeValue=value.replace(trim,next);
  }
  for(const element of [root,...root.querySelectorAll('[title],[aria-label],[placeholder]')]){
