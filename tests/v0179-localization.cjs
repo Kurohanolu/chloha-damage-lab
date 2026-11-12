@@ -15,6 +15,7 @@ const path=require('node:path');
   await page.locator('#chloha-locale').selectOption('en');
   assert.equal(await page.locator('html').getAttribute('lang'),'en');
   assert.equal(await page.evaluate(()=>window.ChlohaLocale.get()),'en');
+  assert.match(await page.locator('#attBudget').textContent(),/remaining 66/,'stat-point counter retains space before remaining count');
   assert.equal(await page.locator('#copy').textContent(),'Copy','copy control translated');
   assert.match(await page.locator('#attDetails > summary').innerText(),/Attacker advanced settings/,'attacker advanced summary translated');
   assert.match(await page.locator('#defDetails > summary').innerText(),/Defender advanced settings/,'defender advanced summary translated');
@@ -26,6 +27,15 @@ const path=require('node:path');
   assert.match(await page.locator('#reliabilityTitle').textContent(),/^Verification status(?:\: Not hardware-verified)?$/,'verification heading translated, including live status');
   assert.equal(await page.locator('label:has(#battleFormat)').first().textContent().then(x=>x.includes('Battle format')),true,'battle format label translated');
 
+  assert.equal(await page.locator('#attItem option[value="lifeOrb"]').textContent(),'Life Orb (damage ×1.3)');
+  assert.equal(await page.locator('#attItem option[value="choiceBand"]').textContent(),'Choice Band (Attack ×1.5)');
+  assert.equal(await page.locator('#defItem option[value="assaultVest"]').textContent(),'Assault Vest (Sp. Def ×1.5)');
+  assert.equal(await page.locator('#battleFormat option[value="singles"]').textContent(),'Singles (testing only)');
+  assert.equal(await page.locator('#spread option[value="spread"]').textContent(),'Spread move (multiple targets)');
+  assert.equal(await page.locator('#attGrounding option[value="auto"]').textContent(),'Automatic from type and ability');
+  const moveOptions=await page.locator('#dbMove option').allTextContents();
+  assert(moveOptions.length>=300,'all catalog moves are present in selector');
+  assert(moveOptions.every(label=>!/[ぁ-んァ-ヶ一-龯]/.test(label)),'all move selector option labels are English');
   const abilityOptions=await page.locator('#attAbility option').allTextContents();
   assert(abilityOptions.every(label=>!label.includes(' / ')),'ability options must not show bilingual slash labels');
   const pokemonOption=await page.locator('#dbAttPokemon option[value="charizard"]').textContent();
@@ -147,6 +157,15 @@ const path=require('node:path');
   require('node:fs').writeFileSync('english-untranslated-audit.json',JSON.stringify({total:residualJapanese.length,unique:[...new Set(residualJapanese.map(x=>x.text))].length,items:residualJapanese},null,2));
   console.log('ENGLISH_VISIBLE_JAPANESE_AUDIT '+JSON.stringify(residualJapanese));
   assert.deepEqual(residualJapanese,[],'English mode must not contain visible Japanese UI text');
+  // All native dropdowns are visible on Android even when their options are
+  // hidden by the desktop browser; audit option text separately.
+  const nativeOptionLeaks=await page.evaluate(()=>[...document.querySelectorAll('#app select:not(#chloha-locale)')].flatMap(select=>[...select.options].filter(option=>/[ぁ-んァ-ヶ一-龯]/.test(option.textContent)).map(option=>({select:select.id,text:option.textContent.slice(0,120)}))));
+  console.log('ENGLISH_NATIVE_OPTION_AUDIT '+JSON.stringify(nativeOptionLeaks));
+  assert.deepEqual(nativeOptionLeaks,[],'English mode native dropdowns must not contain Japanese options');
+  await page.waitForFunction(()=>[...document.querySelectorAll('#app [aria-label],#app [title],#app [placeholder]')].every(el=>['aria-label','title','placeholder'].every(attr=>!el.hasAttribute(attr)||!/[ぁ-んァ-ヶ一-龯]/.test(el.getAttribute(attr)))),{timeout:5000}).catch(()=>{});
+  const attributeLeaks=await page.evaluate(()=>[...document.querySelectorAll('#app [title],#app [aria-label],#app [placeholder]')].flatMap(el=>['title','aria-label','placeholder'].filter(attr=>el.hasAttribute(attr)&&/[ぁ-んァ-ヶ一-龯]/.test(el.getAttribute(attr))).map(attr=>({id:el.id||null,attr,text:el.getAttribute(attr).slice(0,120)}))));
+  console.log('ENGLISH_ATTRIBUTE_AUDIT '+JSON.stringify(attributeLeaks));
+  assert.deepEqual(attributeLeaks,[],'English mode accessibility labels and placeholders must not contain Japanese');
   // Final release gate: verify real trace and version disclaimer round-trip.
   const traceEn=await page.locator('#trace').textContent();
   const provenanceEn=await page.locator('#versionProvenance').textContent();
@@ -163,6 +182,24 @@ const path=require('node:path');
   await page.locator('#chloha-locale').selectOption('en');
   assert.equal(await page.locator('#trace').textContent(),traceEn,'trace English round-trip is lossless');
   assert.equal(await page.locator('#versionProvenance').textContent(),provenanceEn,'version English round-trip is lossless');
+  // Android feedback: native menus, search placeholders and move suggestions.
+  assert.equal(await page.locator('#attSearch').getAttribute('placeholder'),'Type a name to select');
+  assert.equal(await page.locator('#moveSearch').getAttribute('placeholder'),'e.g. Earthquake, Thunderbolt');
+  assert.equal(await page.locator('#battleFormat option:checked').textContent(),'Doubles');
+  assert.equal(await page.locator('#defAbility option').first().textContent(),'None');
+  await page.locator('#moveSearch').fill('Flame');
+  await page.locator('#moveSuggestions [role=option]').first().waitFor();
+  const moveSuggestions=await page.locator('#moveSuggestions [role=option]').allTextContents();
+  assert(moveSuggestions.some(x=>x.includes('Flamethrower')),'English move search works');
+  assert(moveSuggestions.every(x=>!/[ぁ-んァ-ヶ一-龯]/.test(x)),'move suggestion labels and metadata have no Japanese');
+  await page.locator('#moveSuggestions [role=option]').first().click();
+  assert.match(await page.locator('#moveSelected').textContent(),/^Selected: /,'selected move summary uses English');
+  assert(!/[ぁ-んァ-ヶ一-龯]/.test(await page.locator('#moveSelected').textContent()),'selected move summary has no Japanese');
+  await page.locator('#moveSearch').fill('');
+  await page.locator('#chloha-locale').selectOption('ja');
+  assert.equal(await page.locator('#attSearch').getAttribute('placeholder'),'名前を入力して選択');
+  assert.equal(await page.locator('#moveSearch').getAttribute('placeholder'),'例：じしん、10まんボルト');
+  await page.locator('#chloha-locale').selectOption('en');
   // Preserve an English-mode visual artifact for pre-release UI inspection.
   await page.screenshot({path:'smoke-v0179-english.png',fullPage:true});
   await page.locator('#chloha-locale').selectOption('ja');

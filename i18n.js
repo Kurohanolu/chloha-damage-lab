@@ -163,6 +163,42 @@ const optionOriginal=new WeakMap();
 const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
+const selectLabels={
+ 'なし／未適用':'None',
+ 'すなおこし（未対応）':'Sand Stream (unsupported)',
+ 'きんちょうかん（未対応）':'Unnerve (unsupported)',
+ 'ダブル':'Doubles','シングル':'Singles',
+ 'シングル（検証用）':'Singles (testing only)',
+ '通常タイプから自動':'Automatic from types',
+ 'タイプ・特性から自動':'Automatic from type and ability',
+ '接地':'Grounded','非接地':'Airborne',
+ '単体':'Single target','範囲技（複数対象）':'Spread move (multiple targets)',
+ '1匹':'1 ally',
+ 'いのちのたま（ダメージ×1.3）':'Life Orb (damage ×1.3)',
+ 'こだわりハチマキ（物理攻撃×1.5）':'Choice Band (Attack ×1.5)',
+ 'こだわりメガネ（特殊攻撃×1.5）':'Choice Specs (Sp. Atk ×1.5)',
+ 'たつじんのおび（効果抜群時×1.2）':'Expert Belt (super-effective ×1.2)',
+ 'とつげきチョッキ（特防×1.5）':'Assault Vest (Sp. Def ×1.5)',
+
+ '補正＋（1.1倍）':'Positive (1.1×)','補正なし（1.0倍）':'Neutral (1.0×)','補正－（0.9倍）':'Negative (0.9×)'
+};
+const attributeLabels={
+ '名前を入力して選択':'Type a name to select',
+ '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt'
+};
+const originalAttributes=new WeakMap();
+function translateAccessibilityLabel(base){
+ if(Object.prototype.hasOwnProperty.call(attributeLabels,base))return attributeLabels[base];
+ base=translateRuntime(base);
+ if(base==='例：Earthquake、10まんボルト')return 'e.g. Earthquake, Thunderbolt';
+ const overview=base.match(/^(Attacker|Defender)の6(?:能力値|stat points)$/);
+ if(overview)return overview[1]+' six stats';
+ const edit=base.match(/^(Attacker|Defender) (.+?) (\d+)ポイント。編集する$/);
+ if(edit)return edit[1]+' '+edit[2]+' '+edit[3]+' points. Edit';
+ if(base==='計算結果の要約')return 'Damage calculation summary';
+ return attributeLabels[base]||dictionary[base]||translateRuntime(base);
+}
+
 function translateOptions(){
  const root=document.getElementById('app');
  if(!root)return;
@@ -171,7 +207,19 @@ function translateOptions(){
   for(const option of select.options){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
-   const next=locale==='en'?(entityNames[base]||base):base;
+   const ability=base.match(/^(.+?)（(対応|効果未対応|未対応)）$/);
+   const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
+   const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
+   const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
+   const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
+   const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
+   const typeEnglish=typeNames[base];
+   const next=locale==='en'?(pokemonEnglish||typeEnglish||(ability
+    ? (entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
+      (ability[2]==='対応'?' (supported)':' (unsupported)')
+    : move
+     ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
+     : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)))):base;
    if(option.textContent!==next)option.textContent=next;
   }
  }
@@ -268,7 +316,7 @@ function translateRuntime(base){
  if(base.startsWith('種族値 '))return base.replace('種族値 ','Base stat ');
  if(base.startsWith('現在HP '))return base.replace('現在HP ','Current HP ').replace('KO率 ','KO chance ').replace('対象外','N/A');
  if(base.startsWith('現在HPに対する1発KO率: '))return base.replace('現在HPに対する1発KO率: ','OHKO chance against current HP: ');
- if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace('残り','remaining').replace('個体値','IV');
+ if(base.startsWith('能力ポイント '))return base.replace('能力ポイント ','Stat points ').replace(/残り\s*(\d+)/g,'remaining $1').replace('残り','remaining ').replace('個体値','IV');
  if(base.startsWith('攻撃実数値: '))return base.replace(/攻撃実数値:/g,'Attack stat:').replace(/防御実数値:/g,'Defense stat:').replace(/乱数前:/g,'Before random factor:');
  if(base.startsWith('防御実数値: '))return base.replace('防御実数値: ','Defense stat: ');
  if(base.startsWith('乱数前: '))return base.replace('乱数前: ','Before random factor: ');
@@ -306,8 +354,13 @@ function translate(root){
   for(const attr of ['title','aria-label','placeholder']){
    if(!element.hasAttribute(attr))continue;
    const value=element.getAttribute(attr);
-   const base=reverse[value]||value;
-   const next=locale==='en'?(dictionary[base]||base):base;
+   let originals=originalAttributes.get(element);
+   if(!originals){originals={};originalAttributes.set(element,originals);}
+   const previous=originals[attr];
+   const previousEnglish=previous===undefined?null:(translateAccessibilityLabel(previous));
+   if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=reverse[value]||value;
+   const base=originals[attr];
+   const next=locale==='en'?(translateAccessibilityLabel(base)):base;
    if(next!==value)element.setAttribute(attr,next);
   }
  }
@@ -354,6 +407,7 @@ function initialize(){
      const parent=record.target.parentElement;
      if(parent&&!parent.closest('script,style,textarea,option,[data-no-translate]'))translate(parent);
     }
+    if(record.type==='attributes'&&record.target.nodeType===1)translate(record.target);
     for(const added of record.addedNodes){
      if(added.nodeType===1&&added.id!=='chloha-locale-control')translate(added);
      else if(added.nodeType===3&&added.parentElement)translate(added.parentElement);
@@ -361,7 +415,7 @@ function initialize(){
    }
    translateOptions();
   });
-  observer.observe(app,{childList:true,characterData:true,subtree:true});
+  observer.observe(app,{childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','placeholder'],subtree:true});
  }
  window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
 }

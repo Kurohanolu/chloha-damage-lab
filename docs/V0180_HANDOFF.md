@@ -1,0 +1,73 @@
+# Damage Lab v0.180 — Development Handoff (2026-11-12)
+
+## Source of truth
+- Repository: https://github.com/Kurohanolu/chloha-damage-lab
+- Public GitHub Pages: https://kurohanolu.github.io/chloha-damage-lab/
+- Main/public version: v0.179 Pre-Release 18. Do NOT publish or merge incomplete v0.180.
+- Development branch: `fix/v0179-mobile-english-ui`
+- Draft PR: https://github.com/Kurohanolu/chloha-damage-lab/pull/40
+- Last verified passing code commit BEFORE this documentation: `f294d1f0d165cc86357ac4331d1061ccb8d85973`.
+- Verified CI for that commit: UI & damage regression #188 SUCCESS (run 43144267484); Showdown differential tests #81 SUCCESS (43144267936); Showdown differential audit #125 SUCCESS (43144267503).
+- CI success means existing checks pass, NOT that full English coverage or real Android UI acceptance is complete.
+
+## Version plan (agreed with owner)
+- v0.180 Pre-Release 19: complete English localization and bilingual switching, including mobile UI. Do not raise the public version before completion.
+- v0.181 Pre-Release 20: weight-based moves.
+- v0.182 Pre-Release 21: multi-hit moves.
+- Do not divert into v0.181/v0.182 while v0.180 localization is incomplete.
+
+## Actual Android findings motivating PR #40
+- Pokémon search placeholder `名前を入力して選択` remained Japanese.
+- Move search placeholder `例：じしん、10まんボルト` remained Japanese.
+- Search results mixed languages (`Rockなだれ`, `Flamethrower / かえんほうしゃ`, Japanese move names, Japanese type/status).
+- Ability options, items, weather, terrain, battle format showed Japanese.
+- Defender stat-toggle button showed `能力値を表示`.
+- `Stat points 0 / 66 (remaining66)` spacing problem.
+- Screenshots came from real Android English-mode display. Do not claim fixed on-device until rechecked.
+
+## PR #40 edits to date
+- `i18n.js`: translated select options using entity/dictionary/runtime rules, reversible placeholder/attribute localization, English ability status suffixes.
+- `index.html`: dynamic move suggestions now use English name when known, English statuses, and explicit translation of all 18 types.
+- `tests/v0179-localization.cjs`: Android-derived tests for select options, placeholders, move suggestion labels and roundtrip.
+- The branch has three successful CI workflows at commit `f294d1f`.
+
+## Progress after initial handoff (2026-11-12)
+- Fixed selected move summary in `index.html`: locale-aware move name, type, power and status instead of mixed-language text.
+- Added regression assertions in `tests/v0179-localization.cjs` for English selected-move summary.
+- Latest code commit at this handoff update: `aa2ad26013e0b7cd0dbdf415fee31c4fd14a12bf` (CI result must be checked; previous verified passing commit remains `f294d1f`).
+
+- CI on handoff commit `2fc0bf635dca4e81d780421a3173e7cf5165f81d`: UI regression, Showdown differential tests, Showdown differential audit all SUCCESS.
+- Fixed English stat-point counter spacing (`remaining 66` rather than `remaining66`), with regression assertion. Latest code commit `d257836c1887b9c7f7b525f218b3ad6a283490fc`; CI pending at time of documentation update.
+
+- Added explicit translations for held-item modifier labels, battle format, grounding, spread-target settings, and ally count in `i18n.js` (code commit `d0b9e343`). Added regression assertions (code commit `80112782767295919e7b1b7359a1ca819f50a65d`). Verify CI before declaring success.
+- Previous CI for `521bdc4` showed Showdown tests/audit PASS, UI regression still running at initial check; recheck final result.
+
+- Source-data audit: all 335/335 move names, all 373/373 Pokémon entries, and all abilities referenced by those Pokémon have entries in the combined English name dictionaries; zero missing in these checked sets. This does not prove every rendered UI label is English.
+- Fixed composite `#dbMove` selector options (move/type/power/status) and added a full 300+ options Japanese-leakage regression test. Code commit `46bfed38d97d6f55c24a01ca9cab366242d04e37`; CI not yet verified.
+
+- New English leakage audit in `tests/v0179-localization.cjs` checks ALL native select option labels and all title/aria-label/placeholder attributes, beyond existing visible text checks. Commit `afbe31251e3f413e03d5cbd9394d3ff30ddaea4b`; UI CI queued at initial check. If failing, inspect logs for `ENGLISH_NATIVE_OPTION_AUDIT` or `ENGLISH_ATTRIBUTE_AUDIT`, fix source labels, and rerun.
+
+- Full native-dropdown audit failed at `dd92312`: Showdown tests/audit passed; UI regression failed because many Pokémon options and type options remained Japanese. Fix `dbf7c96ee91d0e318252897d9c1be6cbdf60978f` maps Pokémon dropdown options via stable Pokémon ID and translates all 18 type labels; recheck CI, inspect remaining leaks and attribute audit. Do not declare localization complete.
+
+- CI at `ebace17`: Showdown 2 PASS, UI FAIL. Native dropdown audit now returned `[]`, confirming previous Pokémon/type fixes. Accessibility attribute audit found 15 Japanese labels (att/def stat overview, 12 stat edit buttons, damage summary). Fix committed as `e9d01150a02dd7056dc74228aa12a893727489ee` in `i18n.js`, awaiting CI verification.
+
+- CI at `89e056b`: Showdown 2 PASS; UI FAIL. Native option audit `[]`; remaining 14 dynamic stat overview/edit `aria-label` labels were rewritten by calculator after initial translation. Damage summary label is fixed. Added MutationObserver attribute monitoring for `aria-label`, `title`, `placeholder` at `70917a9aa0ef1fc1ae39ecc41679b60c9c5e158d`. Recheck CI for potential attribute mutation loops and remaining leaks.
+
+- CI at `79086c3`: Showdown 2 PASS, UI FAIL; native options [] but 14 accessibility labels persisted. Root cause: digit matching regex in `translateAccessibilityLabel` was mistakenly escaped as `/\\\\d+/` rather than `/\\d+/`; corrected at `56e2176fe2b64a94da2a95bad7683b8a5cdfe57a`. Test now awaits asynchronous attribute translations before checking at `0a53fdaa288bbe8cb5bacfa75244c86a3693edd8`. CI pending. Investigate remaining overview labels if failure persists.
+
+- CI at `92b9c6e`: Showdown 2 PASS, UI FAIL with same 14 accessibility labels; native options `[]`. Root cause: cached original Japanese aria-label is partially translated by `translateRuntime` to `Attackerの6stat points` or `Attacker HP 0ポイント。編集する` before special-case patterns are evaluated; special-case regex never saw mixed intermediate. Fix `3d9faad2e388075ab9063a5cf34a304ea5e34c07` normalizes through `translateRuntime(base)` first, then matches and completes English translation. Recheck CI.
+
+- CI at `fd47c26`: Showdown 2 PASS, UI FAIL with only 1 remaining English attribute leak: `moveSearch` placeholder `例：Earthquake、10まんボルト`; all 14 stat labels and native options now pass. Root cause was `translateRuntime` partially translating the Japanese placeholder before the exact `attributeLabels` dictionary could match. Fixed by exact-match-first handling in `translateAccessibilityLabel` and mixed-string fallback, commit `f973e12a0140650dc2a6170a23002c46d933bb9b`. Recheck CI; do not merge until all green.
+
+- CI at `51ee58b340336d3105cfdf1a7982adfcc35a83dd`: ALL 3 PASS (`UI & damage regression` run 43148484264, `Showdown differential tests` run 43148484310, `Showdown differential audit` run 43148484195). Native option and accessibility attribute audits now pass; no remaining leaks detected by existing automated coverage. Do not equate automated coverage with complete Android visual verification; next step is mobile/desktop interaction audit and language roundtrip before merging.
+
+## Remaining work — important
+1. Audit every visible English-mode string on mobile and desktop: options, dynamic search suggestions, selected move summary, abilities, items, terrain/weather, advanced settings, stat toggles, result status, alerts, ARIA labels, and placeholders.
+2. Audit completeness of `window.ChlohaNames` across `names-v0179.js`, `names-ja-en.js`, `names-catalog-v0179.js`, `names-forms-v0179.js`; ensure actual available Pokémon/moves/abilities/items are mapped. Prevent substring replacements from producing mixed Japanese-English words.
+3. Ensure both Japanese→English and English→Japanese switching restores correct original strings, and language choice survives reload.
+4. Add regression tests for any uncovered Android issues; do not rely on one passing smoke test as proof of full localization.
+5. Confirm all required CI checks pass at final commit. Ask for Android screenshot verification when a candidate is ready.
+6. Only after all acceptance criteria pass, finalize v0.180 version, PR, merge, deploy and verify GitHub Pages; then advance roadmap.
+
+## How to resume in a new chat
+Tell assistant: "Continue Chloha Damage Lab v0.180 English localization using docs/V0180_HANDOFF.md on branch fix/v0179-mobile-english-ui, PR #40. Check latest GitHub commits and CI before editing. Do not merge or deploy until English UI is complete and Android verified."

@@ -521,7 +521,13 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  function syncMovePicker(){
   const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';
-  el('moveSelected').textContent=current?'選択中：'+current.name+'（'+current.type+' / '+(current.power||'可変')+'）'+(selected.match(/［[^］]+］/)?.[0]||''):'技を選択してください';
+  const english=window.ChlohaLocale?.get()==='en';
+  const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
+  const moveName=english?(moveEnglishAliases[current?.name]||window.ChlohaNames?.moves?.[current?.name]||current?.name):current?.name;
+  const typeName=english?(typeEnglish[current?.type]||current?.type):current?.type;
+  const status=selected.match(/［[^］]+］/)?.[0]||'';
+  const statusEnglish={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
+  el('moveSelected').textContent=current?(english?'Selected: ':'選択中：')+moveName+(english?' (':'（')+typeName+' / '+(current.power||(english?'Variable':'可変'))+(english?')':'）')+(english?(statusEnglish[status]||status):status):(english?'Select a move':'技を選択してください');
  }
  function chooseMove(option){
   moveSelect.value=option.value;
@@ -555,9 +561,13 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    const item=node('button','move-option');item.type='button';item.id='moveOption'+i;
    item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
    item.setAttribute('aria-selected','false');
-   item.append(node('span','',window.ChlohaLocale?.get()==='en'&&moveEnglishAliases[m?.name]?moveEnglishAliases[m.name]+' / '+m.name:(m?.name||o.textContent)));
+   const english=window.ChlohaLocale?.get()==='en';
+   const moveName=english?(moveEnglishAliases[m?.name]||window.ChlohaNames?.moves?.[m?.name]||m?.name||o.textContent):(m?.name||o.textContent);
+   item.append(node('span','',moveName));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
-   item.append(node('span','move-meta',(m?.type||'')+' / '+(m?.id==='electroBall'?'可変':m?.power||'?')+'　'+status));
+   const typeName=english?({'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'}[m?.type]||m?.type||''):(m?.type||'');
+   const statusName=english?({'計算未対応':'Unsupported','基本計算のみ':'Basic damage only','計算試算':'Estimated'}[status]):status;
+   item.append(node('span','move-meta',typeName+' / '+(m?.id==='electroBall'?(english?'Variable':'可変'):m?.power||'?')+'　'+statusName));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
    moveList.append(item);
   }
