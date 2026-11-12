@@ -37,7 +37,19 @@ const ChlohaMultiHit = (() => {
   }
   return new Map([...totals].sort((a,b)=>a[0]-b[0]));
  }
- return {hitDistribution,convolve,totalDistribution};
+ function koProbability(distribution,currentHp){
+  if(!(distribution instanceof Map)||distribution.size===0)throw Error('Expected nonempty damage distribution');
+  if(!Number.isSafeInteger(currentHp)||currentHp<1)throw Error('Target HP must be a positive integer');
+  let total=0,ko=0;
+  for(const [damage,probability] of distribution){
+   if(!Number.isSafeInteger(damage)||damage<0||!Number.isFinite(probability)||probability<0)throw Error('Invalid damage distribution');
+   total+=probability;
+   if(damage>=currentHp)ko+=probability;
+  }
+  if(Math.abs(total-1)>1e-9)throw Error('Damage distribution probabilities must sum to one');
+  return Math.max(0,Math.min(1,ko));
+ }
+ return {hitDistribution,convolve,totalDistribution,koProbability};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaMultiHit;
 if(typeof globalThis!=='undefined')globalThis.ChlohaMultiHit=ChlohaMultiHit;
