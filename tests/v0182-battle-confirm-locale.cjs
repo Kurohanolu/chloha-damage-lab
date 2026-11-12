@@ -7,7 +7,7 @@ const path=require('node:path');
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   await page.locator('#chloha-locale').selectOption('ja');
-  await page.locator('#battleObservedDamage').fill('0');
+  await page.locator('#battleObservedDamage').evaluate(el=>{el.value='0';el.dispatchEvent(new Event('input',{bubbles:true}));});
   await page.locator('#battleCommit').evaluate(el=>el.click());
   assert.equal(await page.locator('#battleHistory li').count(),1,'one turn is committed');
   const jaHistory=(await page.locator('#battleHistory').textContent()).trim();
