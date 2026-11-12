@@ -160,6 +160,10 @@ const path=require('node:path');
   // All native dropdowns are visible on Android even when their options are
   // hidden by the desktop browser; audit option text separately.
   const nativeOptionLeaks=await page.evaluate(()=>[...document.querySelectorAll('#app select:not(#chloha-locale)')].flatMap(select=>[...select.options].filter(option=>/[ぁ-んァ-ヶ一-龯]/.test(option.textContent)).map(option=>({select:select.id,text:option.textContent.slice(0,120)}))));
+  const androidSelectAudit=await page.evaluate(()=>['weather','terrain','screen','battleFormat'].map(id=>{const el=document.getElementById(id);return {id,options:el?[...el.options].map(o=>({text:o.textContent,label:o.label})):[]};}));
+  console.log('ANDROID_NATIVE_SELECT_AUDIT '+JSON.stringify(androidSelectAudit));
+  for(const entry of androidSelectAudit){assert.ok(entry.options.length,'Missing '+entry.id);assert.ok(entry.options.every(o=>!/[ぁ-んァ-ヶ一-龯]/.test(o.text+' '+o.label)),'Android select labels must be English: '+entry.id);}
+  assert.equal(await page.evaluate(()=>window.ChlohaLocale.get()),'en');
   console.log('ENGLISH_NATIVE_OPTION_AUDIT '+JSON.stringify(nativeOptionLeaks));
   assert.deepEqual(nativeOptionLeaks,[],'English mode native dropdowns must not contain Japanese options');
   await page.waitForFunction(()=>[...document.querySelectorAll('#app [aria-label],#app [title],#app [placeholder]')].every(el=>['aria-label','title','placeholder'].every(attr=>!el.hasAttribute(attr)||!/[ぁ-んァ-ヶ一-龯]/.test(el.getAttribute(attr)))),{timeout:5000}).catch(()=>{});
