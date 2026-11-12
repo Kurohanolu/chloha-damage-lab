@@ -200,12 +200,15 @@ function translateOptions(){
    const move=base.match(/^(.+?)（([^（）]+) \/ ([^（）]+)）(［[^］]+］)$/);
    const moveStatuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
    const typeNames={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
-   const next=locale==='en'?(ability
+   const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
+   const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
+   const typeEnglish=typeNames[base];
+   const next=locale==='en'?(pokemonEnglish||typeEnglish||(ability
     ? (entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
       (ability[2]==='対応'?' (supported)':' (unsupported)')
     : move
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
-     : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base))):base;
+     : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)))):base;
    if(option.textContent!==next)option.textContent=next;
   }
  }
