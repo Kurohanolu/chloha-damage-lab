@@ -18,7 +18,15 @@ try {
    ['Ice Scales physical unchanged',same(rolls({defAbility:'iceScales'}),rolls({}))],
    ['Ice Scales special reduces damage',rolls({defAbility:'iceScales',category:'special'}).every((n,i)=>n<=rolls({category:'special'})[i])],
    ['Multiscale full HP reduces damage',rolls({defAbility:'multiscale'}).every((n,i)=>n<=rolls({})[i])],
-   ['Multiscale damaged HP unchanged',same(rolls({defAbility:'multiscale',currentHp:199}),rolls({currentHp:199}))]
+   ['Multiscale damaged HP unchanged',same(rolls({defAbility:'multiscale',currentHp:199}),rolls({currentHp:199}))],
+   ['Heatproof halves Fire damage',rolls({defAbility:'heatproof',moveType:'ほのお'}).every((n,i)=>n<=rolls({moveType:'ほのお'})[i])],
+   ['Heatproof non-Fire unchanged',same(rolls({defAbility:'heatproof'}),rolls({}))],
+   ['Water Bubble halves Fire damage',rolls({defAbility:'waterBubble',moveType:'ほのお'}).every((n,i)=>n<=rolls({moveType:'ほのお'})[i])],
+   ['Water Bubble non-Fire unchanged',same(rolls({defAbility:'waterBubble'}),rolls({}))],
+   ['Prism Armor reduces super effective',rolls({defAbility:'prismArmor',moveType:'かくとう',defTypes:['ノーマル']}).every((n,i)=>n<=rolls({moveType:'かくとう',defTypes:['ノーマル']})[i])],
+   ['Prism Armor neutral unchanged',same(rolls({defAbility:'prismArmor'}),rolls({}))],
+   ['Shadow Shield full HP reduces damage',rolls({defAbility:'shadowShield'}).every((n,i)=>n<=rolls({})[i])],
+   ['Shadow Shield damaged HP unchanged',same(rolls({defAbility:'shadowShield',currentHp:199}),rolls({currentHp:199}))]
   ];
  });
  for(const [name,ok] of results)console.log((ok?'PASS':'FAIL')+' '+name);
