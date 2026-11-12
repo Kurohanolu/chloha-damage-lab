@@ -7,6 +7,7 @@ const path=require('node:path');
  try{
   const page=await browser.newPage();
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  await page.waitForFunction(()=>Array.from(document.querySelector('#attAbility').options).some(o=>o.value==='overgrow'));
   const ui=await page.evaluate(()=>{const select=document.getElementById('attAbility');select.value='overgrow';select.dispatchEvent(new Event('change',{bubbles:true}));const shown=!document.getElementById('lowHpAbilityForceLabel').hidden;document.getElementById('forceLowHpAbility').checked=true;select.value='none';select.dispatchEvent(new Event('change',{bubbles:true}));return {shown,hidden:document.getElementById('lowHpAbilityForceLabel').hidden,reset:!document.getElementById('forceLowHpAbility').checked};});
   assert.deepEqual(ui,{shown:true,hidden:true,reset:true},'force checkbox visibility and reset');
   const results=await page.evaluate(()=>{
