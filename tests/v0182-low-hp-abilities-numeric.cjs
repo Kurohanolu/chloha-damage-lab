@@ -22,13 +22,16 @@ const path=require('node:path');
     return {ability,
      active:run({attAbility:ability,moveType:type}),
      inactive:run({attAbility:ability,moveType:type,attCurrentHp:68}),
-     wrongType:run({attAbility:ability,moveType:'ノーマル'})};
+     wrongType:run({attAbility:ability,moveType:'ノーマル'}),
+     forced:run({attAbility:ability,moveType:type,attCurrentHp:201,forceLowHpAbility:true})};
    });
   });
-  for(const {ability,active,inactive,wrongType} of results){
+  for(const {ability,active,inactive,wrongType,forced} of results){
    assert.ok(active.trace.some(x=>x.includes('power/'+ability+': 80 → 120')),ability+' boosts at exactly 1/3 HP');
    assert.ok(!inactive.trace.some(x=>x.includes('power/'+ability)),ability+' inactive above threshold');
    assert.ok(!wrongType.trace.some(x=>x.includes('power/'+ability)),ability+' ignores other types');
+   assert.ok(forced.trace.some(x=>x.includes('power/'+ability+': 80 → 120')),ability+' checkbox overrides HP');
+   assert.deepEqual(forced.rolls,active.rolls,ability+' forced rolls equal natural activation');
    assert.ok(active.rolls[0]>inactive.rolls[0],ability+' increases actual damage');
   }
   console.log('PASS v0.182 four low HP ability numeric thresholds');
