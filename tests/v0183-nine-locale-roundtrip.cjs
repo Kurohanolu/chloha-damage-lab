@@ -103,6 +103,28 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    }
   }
   console.log('PASS all 17 Plate item options x seven locales (119 Android labels)');
+  // All 18 resistance Berries exist in the damage engine, but the current
+  // defender UI exposes an auto-matching Berry option, not 18 individual options.
+  // Audit the underlying dictionary separately so future selectors stay safe.
+  const berryJapanese=['ホズのみ','オッカのみ','イトケのみ','ソクノのみ',
+   'リンドのみ','ヤチェのみ','ヨプのみ','ビアーのみ','シュカのみ',
+   'バコウのみ','ウタンのみ','タンガのみ','ヨロギのみ','カシブのみ',
+   'ハバンのみ','ナモのみ','リリバのみ','ロゼルのみ'];
+  const berryAudit=await page.evaluate((names)=>{
+   const dict=window.ChlohaPokeAPILocalizedNames?.items||{};
+   return names.map(name=>({name,locales:dict[name]||null}));
+  },berryJapanese);
+  for(const item of berryAudit){
+   assert.ok(item.locales,'Resistance Berry missing from localization dictionary: '+item.name);
+   for(const locale of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
+    const label=item.locales[locale];
+    assert.ok(label&&label.trim(),'Missing resistance Berry name: '+locale+' '+item.name);
+    assert.ok(!/[ぁ-んァ-ヶ]/.test(label),
+     'Japanese kana in resistance Berry name: '+locale+' '+item.name);
+   }
+  }
+  console.log('PASS 18 resistance Berry dictionary names x seven locales (126 entries)');
+
 
 
 
