@@ -1,6 +1,6 @@
 {
-  "description": "Asian three-locale Pokémon name regression samples. These are NOT yet independently verified against official regional pages; do not label them official-verified.",
-  "verificationStatus": "pending-official-source-review",
+  "description": "Asian Pokémon-name regression with per-name official provenance. A missing officialSource means unverified; regression match alone is not official validation.",
+  "verificationStatus": "partial-official-source-review",
   "species": [
     {
       "nationalDex": 6,
@@ -9,6 +9,11 @@
         "ko": "리자몽",
         "zh-Hans": "喷火龙",
         "zh-Hant": "噴火龍"
+      },
+      "officialSources": {
+        "ko": "https://www.pokemonkorea.co.kr/pokedex",
+        "zh-Hans": "https://dex.pokemon.cn/play/pokedex",
+        "zh-Hant": "https://tw.portal-pokemon.com/pokedex/0006/"
       }
     },
     {
@@ -18,6 +23,10 @@
         "ko": "피카츄",
         "zh-Hans": "皮卡丘",
         "zh-Hant": "皮卡丘"
+      },
+      "officialSources": {
+        "ko": "https://pokemonkorea.co.kr/pokemon_tcg_pocket_pby/docs/Localized_pack_probability_AN011_0010_00_000.html",
+        "zh-Hant": "https://tw.portal-pokemon.com/pokedex/0025/"
       }
     }
   ]
