@@ -587,6 +587,17 @@ function localizedLiveSummary(base,target){
  return null;
 }
 const localizedTypeNames={"ノーマル":{"en":"Normal","fr":"Normal","de":"Normal","es":"Normal","it":"Normale","ko":"노말","zh-Hans":"一般","zh-Hant":"一般"},"ほのお":{"en":"Fire","fr":"Feu","de":"Feuer","es":"Fuego","it":"Fuoco","ko":"불꽃","zh-Hans":"火","zh-Hant":"火"},"みず":{"en":"Water","fr":"Eau","de":"Wasser","es":"Agua","it":"Acqua","ko":"물","zh-Hans":"水","zh-Hant":"水"},"でんき":{"en":"Electric","fr":"Électrik","de":"Elektro","es":"Eléctrico","it":"Elettro","ko":"전기","zh-Hans":"电","zh-Hant":"電"},"くさ":{"en":"Grass","fr":"Plante","de":"Pflanze","es":"Planta","it":"Erba","ko":"풀","zh-Hans":"草","zh-Hant":"草"},"こおり":{"en":"Ice","fr":"Glace","de":"Eis","es":"Hielo","it":"Ghiaccio","ko":"얼음","zh-Hans":"冰","zh-Hant":"冰"},"かくとう":{"en":"Fighting","fr":"Combat","de":"Kampf","es":"Lucha","it":"Lotta","ko":"격투","zh-Hans":"格斗","zh-Hant":"格鬥"},"どく":{"en":"Poison","fr":"Poison","de":"Gift","es":"Veneno","it":"Veleno","ko":"독","zh-Hans":"毒","zh-Hant":"毒"},"じめん":{"en":"Ground","fr":"Sol","de":"Boden","es":"Tierra","it":"Terra","ko":"땅","zh-Hans":"地面","zh-Hant":"地面"},"ひこう":{"en":"Flying","fr":"Vol","de":"Flug","es":"Volador","it":"Volante","ko":"비행","zh-Hans":"飞行","zh-Hant":"飛行"},"エスパー":{"en":"Psychic","fr":"Psy","de":"Psycho","es":"Psíquico","it":"Psico","ko":"에스퍼","zh-Hans":"超能力","zh-Hant":"超能力"},"むし":{"en":"Bug","fr":"Insecte","de":"Käfer","es":"Bicho","it":"Coleottero","ko":"벌레","zh-Hans":"虫","zh-Hant":"蟲"},"いわ":{"en":"Rock","fr":"Roche","de":"Gestein","es":"Roca","it":"Roccia","ko":"바위","zh-Hans":"岩石","zh-Hant":"岩石"},"ゴースト":{"en":"Ghost","fr":"Spectre","de":"Geist","es":"Fantasma","it":"Spettro","ko":"고스트","zh-Hans":"幽灵","zh-Hant":"幽靈"},"ドラゴン":{"en":"Dragon","fr":"Dragon","de":"Drache","es":"Dragón","it":"Drago","ko":"드래곤","zh-Hans":"龙","zh-Hant":"龍"},"あく":{"en":"Dark","fr":"Ténèbres","de":"Unlicht","es":"Siniestro","it":"Buio","ko":"악","zh-Hans":"恶","zh-Hant":"惡"},"はがね":{"en":"Steel","fr":"Acier","de":"Stahl","es":"Acero","it":"Acciaio","ko":"강철","zh-Hans":"钢","zh-Hant":"鋼"},"フェアリー":{"en":"Fairy","fr":"Fée","de":"Fee","es":"Hada","it":"Folletto","ko":"페어리","zh-Hans":"妖精","zh-Hant":"妖精"}};
+// Pokémon records can contain either Japanese or English type identifiers.
+// Normalize both before resolving the active locale, including search results.
+const englishTypeToJapanese=Object.fromEntries(
+ Object.entries(localizedTypeNames).map(([ja,names])=>[names.en.toLowerCase(),ja])
+);
+function localizedPokemonType(value,target){
+ const raw=String(value||'').trim();
+ const ja=localizedTypeNames[raw]?raw:englishTypeToJapanese[raw.toLowerCase()];
+ if(!ja)return raw;
+ return target==='ja'?ja:(localizedTypeNames[ja][target]||localizedTypeNames[ja].en);
+}
 const localizedItemOptionPhrases={
  'Life Orb (damage ×1.3)':{fr:'Orbe Vie (dégâts ×1,3)',de:'Leben-Orb (Schaden ×1,3)',es:'Vidasfera (daño ×1,3)',it:'Assorbisfera (danni ×1,3)',ko:'생명의구슬 (데미지 ×1.3)','zh-Hans':'生命宝珠（伤害×1.3）','zh-Hant':'生命寶珠（傷害×1.3）'},
  'Assault Vest (Sp. Def ×1.5)':{fr:'Veste de Combat (Déf. Spé. ×1,5)',de:'Offensivweste (Spezial-Verteidigung ×1,5)',es:'Chaleco Asalto (Def. Esp. ×1,5)',it:'Corpetto assalto (Dif. Sp. ×1,5)',ko:'돌격조끼 (특수방어 ×1.5)','zh-Hans':'突击背心（特防×1.5）','zh-Hant':'突擊背心（特防×1.5）'},
@@ -762,7 +773,7 @@ function initialize(){
   app.addEventListener('pointerdown',event=>{if(event.target.closest('select'))translateOptions();},true);
   app.addEventListener('focusin',event=>{if(event.target.closest('select'))translateOptions();},true);
  }
- window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale,typeName:name=>locale==='ja'?name:(localizedTypeNames[name]?.[locale]||name),text:localizedUi});
+ window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale,typeName:name=>localizedPokemonType(name,locale),text:localizedUi});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});
 else initialize();
