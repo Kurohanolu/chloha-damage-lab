@@ -29,7 +29,7 @@ const path=require('node:path');
   const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
   if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
   const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
-  if(moves.length>1){exercised.dbMove=moves[1];await page.locator('#dbMove').selectOption(moves[1]);}
+  if(moves.length>1){exercised.dbMove=moves[1];await page.locator('#dbMove').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('change',{bubbles:true}));},moves[1]);}
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
   for(let i=0;i<steps.length;i++){
