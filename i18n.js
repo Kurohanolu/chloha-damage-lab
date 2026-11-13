@@ -924,6 +924,24 @@ function localizedDynamicControl(base,target){
   const prefix=role?roles[role][idx]+' ':'';
   return prefix+stat+' '+kinds[kind][idx];
  }
+ // Normalize composite labels generated from adjacent stat widgets. The original
+ // DOM often has no whitespace between the stat name and its suffix.
+ const normalized=String(english).replace(/(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)(?=(?:actual stat|stat points))/g,'$1 ');
+ const extra=normalized.match(/^(Attacker|Defender)?\\s*(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)\\s*(nature modifier|actual stat|stat points|stat points slider|stat|stage|points)$/);
+ if(extra&&idx>=0){
+  const role=extra[1],stat=statNames[extra[2]][idx],kind=extra[3];
+  const roles={Attacker:['Attaquant','Angreifer','Atacante','Attaccante','공격 측','攻击方','攻擊方'],Defender:['Défenseur','Verteidiger','Defensor','Difensore','방어 측','防御方','防禦方']};
+  const labels={
+   'nature modifier':['modificateur de nature','Wesen-Korrektur','modificador de naturaleza','modificatore natura','성격 보정','性格修正','性格修正'],
+   'actual stat':['valeur réelle','tatsächlicher Wert','valor real','valore effettivo','실제 능력치','实际能力值','實際能力值'],
+   'stat points':['points de statistique','Statuspunkte','puntos de estadística','punti statistica','능력 포인트','能力点','能力點'],
+   'stat points slider':['curseur des points','Punkte-Regler','control de puntos','cursore punti','능력 포인트 슬라이더','能力点滑块','能力點滑桿'],
+   stat:['statistique','Statuswert','estadística','statistica','능력치','能力值','能力值'],
+   stage:['niveau','Stufe','nivel','livello','랭크','等级','等級'],
+   points:['points','Punkte','puntos','punti','포인트','点数','點數']
+  };
+  return (role?roles[role][idx]+' ':'')+stat+' '+labels[kind][idx];
+ }
  const maxHp=String(english).match(/^Of max HP:\s*(.+)$/);
  if(maxHp){
   const label={fr:'Des PV max. :',de:'Von max. KP:',es:'De los PS máximos:',it:'Dei PS massimi:',ko:'최대 HP 대비:','zh-Hans':'占最大HP：','zh-Hant':'佔最大HP：'}[target];
@@ -972,6 +990,25 @@ function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
+ const reviewed={
+ 'Referenced stat stage (own Defense for Body Press; target Attack for Foul Play)':['Niveau de la statistique utilisée (Défense du lanceur pour Big Splash ; Attaque de la cible pour Tricherie)','Stufe des verwendeten Werts (eigene Verteidigung für Body Press; gegnerischer Angriff für Schmarotzer)','Nivel de la estadística usada (Defensa propia para Plancha Corporal; Ataque del objetivo para Juego Sucio)','Livello della statistica usata (Difesa propria per Schiacciacorpo; Attacco del bersaglio per Ripicca)','참조 능력 랭크 (바디프레스는 자신의 방어, 속임수는 대상의 공격)','引用能力等级（扑击使用自身防御；欺诈使用目标攻击）','引用能力等級（撲擊使用自身防禦；欺詐使用目標攻擊）'],
+ 'Residual damage (Stealth Rock, weather, poison, etc.) is not calculated automatically. Adjust current HP manually.':['Les dégâts résiduels (Piège de Roc, météo, poison, etc.) ne sont pas calculés automatiquement. Ajustez les PV actuels manuellement.','Restschaden (Tarnsteine, Wetter, Gift usw.) wird nicht automatisch berechnet. Aktuelle KP manuell anpassen.','El daño residual (Trampa Rocas, clima, veneno, etc.) no se calcula automáticamente. Ajusta los PS actuales manualmente.','I danni residui (Levitoroccia, meteo, veleno, ecc.) non sono calcolati automaticamente. Regola manualmente i PS attuali.','스텔스록, 날씨, 독 등의 지속 피해는 자동 계산되지 않습니다. 현재 HP를 직접 조정하세요.','隐形岩、天气、中毒等持续伤害不会自动计算。请手动调整当前HP。','隱形岩、天氣、中毒等持續傷害不會自動計算。請手動調整目前HP。'],
+ '16 damage rolls':['16 jets de dégâts','16 Schadenswerte','16 tiradas de daño','16 valori di danno','16가지 데미지 난수','16种伤害随机值','16種傷害隨機值'],
+ 'Damage values and rounding order have not been verified against Pokémon Champions hardware。':['Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.','Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.','Los daños y el orden de redondeo no se han verificado en Pokémon Champions.','I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.','데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.','伤害数值和取整顺序尚未通过Pokémon Champions实机验证。','傷害數值與取整順序尚未透過Pokémon Champions實機驗證。'],
+ 'Ability set to None / Not applied does not guarantee that no ability effect exists.':['Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.','Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.','Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.','Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.','특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.','特性设为无／不适用，不代表一定不存在特性效果。','特性設為無／不適用，不代表一定不存在特性效果。'],
+ 'Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.':['Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.','Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.','Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.','I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.','벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.','墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。','牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。'],
+ 'Pokémon images: PokeAPI / Pokémon sprites. Calculations still work if images are unavailable.':['Images Pokémon : PokeAPI / sprites Pokémon. Les calculs fonctionnent même sans images.','Pokémon-Bilder: PokeAPI / Pokémon-Sprites. Berechnungen funktionieren auch ohne Bilder.','Imágenes Pokémon: PokeAPI / sprites Pokémon. Los cálculos funcionan aunque no haya imágenes.','Immagini Pokémon: PokeAPI / sprite Pokémon. I calcoli funzionano anche senza immagini.','포켓몬 이미지: PokeAPI / 포켓몬 스프라이트. 이미지가 없어도 계산할 수 있습니다.','宝可梦图片：PokeAPI／宝可梦图像。即使图片无法显示，也能正常计算。','寶可夢圖片：PokeAPI／寶可夢圖像。即使圖片無法顯示，也能正常計算。'],
+ 'Unofficial experimental tool · Inputs are processed locally in your browser':['Outil expérimental non officiel · Les données sont traitées localement dans votre navigateur','Inoffizielles experimentelles Tool · Eingaben werden lokal im Browser verarbeitet','Herramienta experimental no oficial · Los datos se procesan localmente en tu navegador','Strumento sperimentale non ufficiale · I dati vengono elaborati localmente nel browser','비공식 실험 도구 · 입력값은 브라우저 내에서 처리됩니다','非官方实验工具 · 输入数据仅在浏览器本地处理','非官方實驗工具 · 輸入資料僅在瀏覽器本機處理'],
+ 'Defender paralyzed (Speed halved)':['Défenseur paralysé (Vitesse divisée par 2)','Verteidiger paralysiert (Initiative halbiert)','Defensor paralizado (Velocidad a la mitad)','Difensore paralizzato (Velocità dimezzata)','방어 측 마비 (스피드 절반)','防御方麻痹（速度减半）','防禦方麻痺（速度減半）'],
+ 'Attacker paralyzed (Speed halved)':['Attaquant paralysé (Vitesse divisée par 2)','Angreifer paralysiert (Initiative halbiert)','Atacante paralizado (Velocidad a la mitad)','Attaccante paralizzato (Velocità dimezzata)','공격 측 마비 (스피드 절반)','攻击方麻痹（速度减半）','攻擊方麻痺（速度減半）'],
+ 'Defender Tailwind (Speed ×2)':['Vent arrière du défenseur (Vitesse ×2)','Rückenwind des Verteidigers (Initiative ×2)','Viento Afín del defensor (Velocidad ×2)','Ventoincoda del difensore (Velocità ×2)','방어 측 순풍 (스피드 ×2)','防御方顺风（速度×2）','防禦方順風（速度×2）'],
+ 'Attacker Tailwind (Speed ×2)':['Vent arrière de l’attaquant (Vitesse ×2)','Rückenwind des Angreifers (Initiative ×2)','Viento Afín del atacante (Velocidad ×2)','Ventoincoda dell’attaccante (Velocità ×2)','공격 측 순풍 (스피드 ×2)','攻击方顺风（速度×2）','攻擊方順風（速度×2）']
+ };
+ const reviewedEntry=reviewed[translateRuntime(base)]||reviewed[base];
+ if(reviewedEntry){
+  const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(locale);
+  if(index>=0)return reviewedEntry[index];
+ }
  const dynamic=localizedDynamicControl(base,locale)||localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=expandedSettingsTranslations[base]?.[locale]||expandedSettingsTranslations[translateRuntime(base)]?.[locale]||expandedLongTextTranslations[base]?.[locale]||expandedLongTextTranslations[translateRuntime(base)]?.[locale]||expandedPanelTranslations[base]?.[locale]||expandedPanelTranslations[translateRuntime(base)]?.[locale]||localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
