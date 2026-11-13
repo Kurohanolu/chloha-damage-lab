@@ -24,12 +24,30 @@ const path=require('node:path');
   for(const [id,value] of Object.entries(exercised)){
    await page.locator('#'+id).selectOption(value);
   }
+  // Use two real database Pokémon, not an empty/default calculator state.
+  // Pick stable grounded targets from the actual Pokémon database.
+  const pokemonIds=await page.locator('#dbAttPokemon option').evaluateAll(nodes=>nodes.map(n=>n.value));
+  const defenderIds=await page.locator('#dbDefPokemon option').evaluateAll(nodes=>nodes.map(n=>n.value));
+  const attacker=pokemonIds.find(id=>/^(pikachu|ピカチュウ)$/i.test(id));
+  const defender=defenderIds.find(id=>/^(snorlax|カビゴン)$/i.test(id));
+  assert.ok(attacker&&defender,'Pikachu and Snorlax must exist in Pokémon database');
+  for(const [id,value] of [['dbAttPokemon',attacker],['dbDefPokemon',defender]]){
+   exercised[id]=value;
+   await page.locator('#'+id).selectOption(value);
+  }
   const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'&&!v.startsWith('unsupported:')));
   if(abilities.length){exercised.attAbility=abilities[0];await page.locator('#attAbility').selectOption(abilities[0]);}
   const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
   if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
   const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
   if(moves.includes('earthquake')){exercised.dbMove='earthquake';await page.locator('#dbMove').evaluate(el=>{el.value='earthquake';el.dispatchEvent(new Event('change',{bubbles:true}));});}
+  // Prevent a false green: numerical invariance of an empty result is not a
+  // valid calculation test. Require a populated nonzero damage range first.
+  await page.waitForTimeout(250);
+  const initialDamage=await page.locator('#damage').textContent();
+  const initialNumbers=(initialDamage||'').match(/\\d+/g)||[];
+  assert.ok(initialNumbers.length>=2&&Number(initialNumbers[1])>0,
+   'real Pokémon damage calculation must produce a nonzero range before locale rotations: '+initialDamage);
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
   // Rotate the starting locale through all nine languages. Every rotation
