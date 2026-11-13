@@ -10,6 +10,15 @@ const canonicalTypes=JSON.parse(typeMatch[1]);
 const referenceTypes=require('./v0183-type-reference.json').types;
 const europeanOfficial=require('./v0183-european-official-types.json').types;
 const officialZhHans=require('./v0183-zh-hans-official-types.json');
+const officialKoZhHant=require('./v0183-ko-zh-hant-official-types.json');
+assert.deepEqual(Object.keys(canonicalTypes),officialKoZhHant.canonicalJapanese,
+ 'Official Korean/Traditional Chinese reference type order differs from canonical Japanese types');
+for(const locale of ['ko','zh-Hant']){
+ assert.deepEqual(Object.values(canonicalTypes).map(names=>names[locale]),
+  officialKoZhHant.types[locale],
+  'Official 18-type spelling mismatch for '+locale);
+}
+
 assert.deepEqual(Object.values(canonicalTypes).map(x=>x['zh-Hans']),officialZhHans.types,
  'Simplified Chinese type labels differ from official mainland Pokémon Pokédex');
 
