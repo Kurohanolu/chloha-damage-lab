@@ -256,10 +256,13 @@ function translateOptions(){
    const berryJapanese=berryType&&base.match(/^(.+?)（[^（）]+技半減）$/);
    const berryEnglish=berryJapanese&&((window.ChlohaNames?.items?.[berryJapanese[1]])||entityNames[berryJapanese[1]]);
    const autoBerryEnglish=select.id==='defItem'&&option.value==='autoResistBerry'?'Resist Berry (auto-matches move type)':null;
+   const plateJapanese=select.id==='attItem'&&base.match(/^(.+プレート)（([^（）]+)技×1\\.2）$/);
+   const plateEnglish=plateJapanese&&((window.ChlohaNames?.items?.[plateJapanese[1]])||entityNames[plateJapanese[1]]);
+   const plateLabel=plateEnglish?plateEnglish+' ('+(typeNames[plateJapanese[2]]||plateJapanese[2])+' moves ×1.2)':null;
    const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
    const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
    const typeEnglish=typeNames[base];
-   const next=locale==='en'?(autoBerryEnglish||(berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
+   const next=locale==='en'?(plateLabel||autoBerryEnglish||(berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
     ? (abilityEnglish[ability[1]]||entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
       (ability[2]==='対応'?' (supported)':ability[2]==='一部技のみ対応'?' (partially supported)':' (unsupported)')
     : move
