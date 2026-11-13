@@ -947,7 +947,20 @@ function localizedDynamicControl(base,target){
   const label={fr:'Des PV max. :',de:'Von max. KP:',es:'De los PS máximos:',it:'Dei PS massimi:',ko:'최대 HP 대비:','zh-Hans':'占最大HP：','zh-Hant':'佔最大HP：'}[target];
   return label+' '+maxHp[1];
  }
- const effectiveness=String(english).match(/^Type effectiveness\s*(×[\d.]+)\s*\/\s*STAB\s*(×[\\d.]+)$/);
+ const estimatedHits=String(english).match(/^([0-9]+)[–-]([0-9]+) hits \(estimate; no recovery\)$/);
+ if(estimatedHits){
+  const labels={
+   fr:n=>n+' coups (estimation ; sans récupération)',
+   de:n=>n+' Treffer (Schätzung; ohne Heilung)',
+   es:n=>n+' golpes (estimación; sin recuperación)',
+   it:n=>n+' colpi (stima; senza recupero)',
+   ko:n=>n+'타 (예상; 회복 없음)',
+   'zh-Hans':n=>n+'次命中（估算；不考虑回复）',
+   'zh-Hant':n=>n+'次命中（估算；不考慮回復）'
+  };
+  return (labels[target]||labels.fr)(estimatedHits[1]+'–'+estimatedHits[2]);
+ }
+ const effectiveness=String(english).match(/^Type effectiveness\s*(×[\d.]+)\s*\/\s*STAB\s*(×[0-9.]+)$/);
  if(effectiveness){
   const label={fr:'Efficacité du type',de:'Typenwirksamkeit',es:'Eficacia de tipo',it:'Efficacia del tipo',ko:'타입 상성','zh-Hans':'属性克制','zh-Hant':'屬性克制'}[target];
   return label+' '+effectiveness[1]+' / STAB '+effectiveness[2];
