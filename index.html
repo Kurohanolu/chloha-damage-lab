@@ -603,7 +603,16 @@ function applyDb(){
  assign('power',mechanic==='spitUp'?spitUpCount*100:mechanic==='flingManual'?Number($('flingPower').value):weightMove?weightPower:Math.max(1,m.power));assign('category',m.category);assign('moveType',m.type);assign('attack',atk);assign('defense',def);assign('hp',hp);
  assign('currentHp',oldHp>0?Math.max(0,Math.min(hp,Math.round(hp*oldCurrent/oldHp))):hp);
  assign('attType1',a.types[0]);assign('attType2',a.types[1]||'なし');assign('defType1',d.types[0]);assign('defType2',d.types[1]||'なし');assign('spread',mechanic==='expandingForce'&&$('terrain').value==='psychic'&&$('attGrounding').value!=='airborne'&&($('attGrounding').value==='grounded'||!a.types.includes('ひこう')&&$('attAbility').value!=='levitate')&&$('battleFormat').value==='doubles'?'spread':m.target==='spread'?'spread':'single');
- $('dbStatus').textContent=`${a.name} ${m.name}（${atk}） → ${d.name}（${def} / HP ${hp}）`+(weightMove?` / 体重 ${attKg}kg → ${defKg}kg / 威力 ${weightPower}`:'');
+ const statusLocale=window.ChlohaLocale?.get?.()||'ja';
+ const statusName=(category,key)=>{
+  if(statusLocale==='ja')return key;
+  const record=window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key];
+  return record?.[statusLocale]||key;
+ };
+ const statusAttacker=statusName('pokemon',a.name);
+ const statusDefender=statusName('pokemon',d.name);
+ const statusMove=statusName('moves',m.name);
+ $('dbStatus').textContent=`${statusAttacker} ${statusMove}（${atk}） → ${statusDefender}（${def} / HP ${hp}）`+(weightMove?` / 体重 ${attKg}kg → ${defKg}kg / 威力 ${weightPower}`:'');
 }
 let dbInputError=null;
 function showInputError(e){
