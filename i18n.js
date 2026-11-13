@@ -226,7 +226,15 @@ function localizedProvisionalForm(id,ja,locale){
   'シールド':{en:'Shield',fr:'Bouclier',de:'Schild',es:'Escudo',it:'Scudo',ko:'실드','zh-Hans':'盾牌','zh-Hant':'盾牌'},
   'ブレード':{en:'Blade',fr:'Lame',de:'Klinge',es:'Filo',it:'Lama',ko:'블레이드','zh-Hans':'刀剑','zh-Hant':'刀劍'}
  };
- const desc=formLabels[suffix]?.[locale]||formLabels[suffix]?.en;
+ const additionalFormLabels={
+ 'ハイ':{en:'Amped',fr:'Aiguë',de:'Hoch',es:'Aguda',it:'Forma acuta',ko:'하이','zh-Hans':'高调','zh-Hant':'高調'},
+ 'ロー':{en:'Low Key',fr:'Grave',de:'Tief',es:'Grave',it:'Forma grave',ko:'로우','zh-Hans':'低调','zh-Hant':'低調'},
+ 'グリーン':{en:'Green',fr:'Vert',de:'Grün',es:'Verde',it:'Verde',ko:'그린','zh-Hans':'绿色','zh-Hant':'綠色'},
+ 'ブルー':{en:'Blue',fr:'Bleu',de:'Blau',es:'Azul',it:'Blu',ko:'블루','zh-Hans':'蓝色','zh-Hant':'藍色'},
+ 'イエロー':{en:'Yellow',fr:'Jaune',de:'Gelb',es:'Amarillo',it:'Giallo',ko:'옐로','zh-Hans':'黄色','zh-Hant':'黃色'},
+ 'ホワイト':{en:'White',fr:'Blanc',de:'Weiß',es:'Blanco',it:'Bianco',ko:'화이트','zh-Hans':'白色','zh-Hant':'白色'}
+ };
+ const desc=((formLabels[suffix]||additionalFormLabels[suffix])||additionalFormLabels[suffix])?.[locale]||formLabels[suffix]?.en;
  return desc?base+' ('+desc+')':null;
 }
 const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
@@ -235,6 +243,15 @@ const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames
 const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
+const nativeOptionTranslations={
+ 'まひ':{en:'Paralysis',fr:'Paralysie',de:'Paralyse',es:'Parálisis',it:'Paralisi',ko:'마비','zh-Hans':'麻痹','zh-Hant':'麻痺'},
+ 'ねむり':{en:'Sleep',fr:'Sommeil',de:'Schlaf',es:'Dormido',it:'Sonno',ko:'잠듦','zh-Hans':'睡眠','zh-Hant':'睡眠'},
+ 'コンバット種（かくとう）':{en:'Combat Breed (Fighting)',fr:'Race Combative (Combat)',de:'Kampf-Form (Kampf)',es:'Raza Combatiente (Lucha)',it:'Razza Combattiva (Lotta)',ko:'컴뱃종 (격투)','zh-Hans':'斗战种（格斗）','zh-Hant':'鬥戰種（格鬥）'},
+ 'ブレイズ種（ほのお）':{en:'Blaze Breed (Fire)',fr:'Race Flamboyante (Feu)',de:'Flammen-Form (Feuer)',es:'Raza Ardiente (Fuego)',it:'Razza Infuocata (Fuoco)',ko:'블레이즈종 (불꽃)','zh-Hans':'火炽种（火）','zh-Hant':'火熾種（火）'},
+ 'ウォーター種（みず）':{en:'Aqua Breed (Water)',fr:'Race Aquatique (Eau)',de:'Wasser-Form (Wasser)',es:'Raza Acuática (Agua)',it:'Razza Acquatica (Acqua)',ko:'워터종 (물)','zh-Hans':'水澜种（水）','zh-Hant':'水瀾種（水）'},
+ 'まんぷくもよう（でんき）':{en:'Full Belly Mode (Electric)',fr:'Mode Rassasié (Électrik)',de:'Pappsatt-Modus (Elektro)',es:'Modo Saciado (Eléctrico)',it:'Motivo Pancia Piena (Elettro)',ko:'배부른 모양 (전기)','zh-Hans':'满腹花纹（电）','zh-Hant':'滿腹花紋（電）'},
+ 'はらぺこもよう（あく）':{en:'Hangry Mode (Dark)',fr:'Mode Affamé (Ténèbres)',de:'Kohldampf-Modus (Unlicht)',es:'Modo Voraz (Siniestro)',it:'Motivo Pancia Vuota (Buio)',ko:'배고픈 모양 (악)','zh-Hans':'空腹花纹（恶）','zh-Hant':'空腹花紋（惡）'}
+};
 const selectLabels={
  'コンバット種（かくとう）':'Combat Breed (Fighting)',
  'ブレイズ種（ほのお）':'Blaze Breed (Fire)',
@@ -358,7 +375,7 @@ function translateOptions(){
    };
    const moveType=localizedTypeNames[move?.[2]]?.[locale]||typeNames[move?.[2]]||move?.[2];
    const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[locale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[locale]||moveStatuses[move[4]]||move[4]);
-   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedPlate||localizedBerry||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
+   const next=locale==='ja'?base:(nativeOptionTranslations[base]?.[locale]||null)|| (locale==='en'?englishOption:(localizedPlate||localizedBerry||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base)));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
