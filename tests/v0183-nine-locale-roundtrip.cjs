@@ -28,9 +28,9 @@ const path=require('node:path');
   // Pick stable grounded targets from the actual Pokémon database.
   const pokemonIds=await page.locator('#dbAttPokemon option').evaluateAll(nodes=>nodes.map(n=>n.value));
   const defenderIds=await page.locator('#dbDefPokemon option').evaluateAll(nodes=>nodes.map(n=>n.value));
-  const attacker=pokemonIds.find(id=>/^(pikachu|ピカチュウ)$/i.test(id));
-  const defender=defenderIds.find(id=>/^(snorlax|カビゴン)$/i.test(id));
-  assert.ok(attacker&&defender,'Pikachu and Snorlax must exist in Pokémon database');
+  const attacker=pokemonIds.find(id=>id==='garchomp');
+  const defender=defenderIds.find(id=>id==='tyranitar');
+  assert.ok(attacker&&defender,'Garchomp and Tyranitar must exist in Pokémon database');
   for(const [id,value] of [['dbAttPokemon',attacker],['dbDefPokemon',defender]]){
    exercised[id]=value;
    await page.locator('#'+id).selectOption(value);
@@ -45,7 +45,7 @@ const path=require('node:path');
   // valid calculation test. Require a populated nonzero damage range first.
   await page.waitForTimeout(250);
   const initialDamage=await page.locator('#damage').textContent();
-  const initialNumbers=(initialDamage||'').match(/\\d+/g)||[];
+  const initialNumbers=(initialDamage||'').match(/\d+/g)||[];
   assert.ok(initialNumbers.length>=2&&Number(initialNumbers[1])>0,
    'real Pokémon damage calculation must produce a nonzero range before locale rotations: '+initialDamage);
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
