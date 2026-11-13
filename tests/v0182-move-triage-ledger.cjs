@@ -24,8 +24,8 @@ const summary={total:ledger.length,catalogSupported:ledger.filter(x=>x.catalogSu
 assert.equal(summary.total,335,'unexpected catalog size');
 assert.equal(summary.catalogSupported,262,'catalog metadata changed; review counts');
 assert.equal(summary.catalogUnsupported,73,'unsupported metadata changed; review counts');
-assert.equal(summary.runtimeConditional,41,'runtime overrides changed; review counts');
-assert.equal(summary.remainingWithoutRuntimeOverride,32,'unhandled inventory changed; review counts');
+assert.equal(summary.runtimeConditional,42,'runtime overrides changed; review counts');
+assert.equal(summary.remainingWithoutRuntimeOverride,31,'unhandled inventory changed; review counts');
 assert.equal(summary.catalogSupported+summary.runtimeConditional+summary.remainingWithoutRuntimeOverride,summary.total);
 const report={version:'v0.182',meaning:'Per-move audit queue. No category here implies hardware-tested parity.',summary,unresolved:ledger.filter(x=>!x.catalogSupported),allMoves:ledger};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
