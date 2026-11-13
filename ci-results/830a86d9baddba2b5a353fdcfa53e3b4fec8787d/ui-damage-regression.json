@@ -1,0 +1,18 @@
+{
+  "head_sha": "830a86d9baddba2b5a353fdcfa53e3b4fec8787d",
+  "workflow": "UI & damage regression",
+  "run_id": 43492628713,
+  "run_number": 989,
+  "conclusion": "success",
+  "status": "completed",
+  "completed_at": "2026-11-13T19:31:45Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628713",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628713/job/132117498481",
+      "failed_steps": []
+    }
+  ]
+}
