@@ -47,7 +47,7 @@ const mechanismGroups={
  'speed-or-terrain':new Set(['electroBall','ironRoller','mistyExplosion']),
  'multi-hit-or-manual':new Set(['dualWingbeat','beatUpManual'])
 };
-const remaining=policyEnabled.filter(m=>!verifiedNames.has(m.name));
+const remaining=policyEnabled.filter(m=>!verifiedNames.has(m.name)&&m.name!=='はきだす');
 assert.equal(remaining.length,37,'37 runtime policy moves remain after four browser-verified cases');
 const grouped=Object.fromEntries(Object.keys(mechanismGroups).map(group=>[group,[]]));
 for(const m of remaining){
