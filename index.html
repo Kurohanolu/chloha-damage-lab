@@ -835,8 +835,12 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  };
  // Species names come from the PokeAPI language tables. Form qualifiers are
  // provisional localized labels, not asserted to be official form spellings.
+ const auditedMoveNames={
+  '10まんばりき':{en:'High Horsepower',fr:'Cavalerie Lourde',de:'Pferdestärke',es:'Fuerza Equina',it:'Forza Equina',ko:'10만마력','zh-Hans':'十万马力','zh-Hant':'十萬馬力'}
+ };
  const localizedName=(category,key,locale)=>{
-  const exact=window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||
+  const audited=category==='moves'?auditedMoveNames[key]?.[locale]:null;
+  const exact=audited||window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||
    window.ChlohaPokeAPILocalizedNames?.[category]?.[key]?.[locale];
   if(exact||category!=='pokemon'||locale==='ja')return exact||null;
   const p=pokemonById.get(key);if(!p)return null;
