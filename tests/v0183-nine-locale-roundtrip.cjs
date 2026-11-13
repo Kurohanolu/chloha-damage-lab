@@ -65,6 +65,27 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
     'Singles experimental option must be localized in Android native selector: '+locale);
   }
   console.log('PASS Singles format native option text/label across all nine locales');
+  const itemLabelChecks={
+   fr:['Dé Pipé (4 à 5 coups)','Plaque Terre (capacités Sol ×1,2)'],
+   de:['Gezinkter Würfel (4–5 Treffer)','Erdtafel (Boden-Attacken ×1,2)'],
+   es:['Dado Trucado (4–5 golpes)','Tabla Terra (movimientos Tierra ×1,2)'],
+   it:['Dado Truccato (4–5 colpi)','Lastrageo (mosse Terra ×1,2)'],
+   ko:['속임수주사위 (4~5회 명중)','대지플레이트 (땅타입 기술 ×1.2)'],
+   'zh-Hans':['机变骰子（命中4～5次）','大地石板（地面属性招式×1.2）'],
+   'zh-Hant':['機變骰子（命中4～5次）','大地石板（地面屬性招式×1.2）']
+  };
+  for(const [locale,expected] of Object.entries(itemLabelChecks)){
+   await page.locator('#chloha-locale').selectOption(locale);
+   for(const [i,value] of ['loadedDice','earthPlate'].entries()){
+    const actual=await page.locator('#attItem option[value="'+value+'"]').evaluate(el=>({
+     text:el.textContent.trim(),label:el.label
+    }));
+    assert.deepEqual(actual,{text:expected[i],label:expected[i]},
+     'Item native selector translation mismatch: '+locale+' '+value);
+   }
+  }
+  console.log('PASS Loaded Dice and Earth Plate native labels in seven non-Japanese/non-English locales');
+
 
   // Independently reviewed official Pokémon names, keyed by National Dex.
   // Only the fixture entries are official-verified; never imply full coverage.
