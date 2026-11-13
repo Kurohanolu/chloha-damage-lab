@@ -244,6 +244,12 @@ const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
 const nativeOptionTranslations={
+ "接地":{"en":"Grounded","fr":"Au sol","de":"Am Boden","es":"En el suelo","it":"A terra","ko":"지면에 있음","zh-Hans":"接地","zh-Hant":"接地"},
+ "非接地":{"en":"Airborne","fr":"En l’air","de":"In der Luft","es":"En el aire","it":"In aria","ko":"공중에 있음","zh-Hans":"未接地","zh-Hant":"未接地"},
+ "単体":{"en":"Single target","fr":"Cible unique","de":"Einzelziel","es":"Objetivo único","it":"Bersaglio singolo","ko":"단일 대상","zh-Hans":"单一目标","zh-Hant":"單一目標"},
+ "範囲技（複数対象）":{"en":"Spread move (multiple targets)","fr":"Capacité de zone (plusieurs cibles)","de":"Flächenattacke (mehrere Ziele)","es":"Movimiento de área (varios objetivos)","it":"Mossa ad area (più bersagli)","ko":"범위 기술 (여러 대상)","zh-Hans":"范围招式（多个目标）","zh-Hant":"範圍招式（多個目標）"},
+ "1匹":{"en":"1 ally","fr":"1 allié","de":"1 Verbündeter","es":"1 aliado","it":"1 alleato","ko":"아군 1마리","zh-Hans":"1名队友","zh-Hant":"1名隊友"},
+
  "選択した相手に2回命中":{"en":"2 hits on selected target","fr":"2 coups sur la cible choisie","de":"2 Treffer auf das gewählte Ziel","es":"2 golpes al objetivo seleccionado","it":"2 colpi sul bersaglio scelto","ko":"선택한 대상에게 2회 명중","zh-Hans":"对选定目标命中2次","zh-Hant":"對選定目標命中2次"},
  "選択した相手に1回命中":{"en":"1 hit on selected target","fr":"1 coup sur la cible choisie","de":"1 Treffer auf das gewählte Ziel","es":"1 golpe al objetivo seleccionado","it":"1 colpo sul bersaglio scelto","ko":"선택한 대상에게 1회 명중","zh-Hans":"对选定目标命中1次","zh-Hant":"對選定目標命中1次"},
  "補正なし（1.0倍）":{"en":"Neutral (1.0×)","fr":"Neutre (×1,0)","de":"Neutral (×1,0)","es":"Neutra (×1,0)","it":"Neutra (×1,0)","ko":"무보정 (1.0배)","zh-Hans":"无修正（1.0倍）","zh-Hant":"無修正（1.0倍）"},
