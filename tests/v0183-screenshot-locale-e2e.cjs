@@ -29,7 +29,8 @@ const path=require('node:path');
   },labels);
   for(const locale of locales.slice(2)){
    for(const [i,label] of labels.entries()){
-    if(!(['Type 1','Type 2'].includes(label)&&['fr','es','it'].includes(locale)))\n     assert.notEqual(expected[locale][i],label,'untranslated '+locale+' '+label);
+    if(!(['Type 1','Type 2'].includes(label)&&['fr','es','it'].includes(locale)))
+     assert.notEqual(expected[locale][i],label,'untranslated '+locale+' '+label);
    }
   }
   for(const sequence of sequences){
