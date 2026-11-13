@@ -537,6 +537,11 @@ function recoverJapanese(value){
  if(value==='ATTACKER')return '攻撃側';
  if(value==='DEFENDER')return '防御側';
  if(/^Of max HP:\s*/.test(value))return value.replace(/^Of max HP:\s*/,'最大HPに対する割合：');
+ // Recover canonical Japanese from dynamic English result labels after rerenders.
+ const hitsEnglish=String(value).match(/^([0-9]+)[–-]([0-9]+) hits \(estimate; no recovery\)$/);
+ if(hitsEnglish)return hitsEnglish[1]+'〜'+hitsEnglish[2]+'発（目安・回復等なし）';
+ const matchupEnglish=String(value).match(/^Type effectiveness\s*(×[0-9.]+)\s*\/\s*STAB\s*(×[0-9.]+)$/);
+ if(matchupEnglish)return 'タイプ相性 '+matchupEnglish[1]+' / STAB '+matchupEnglish[2];
  if(reverse[value])return reverse[value];
  if(value.startsWith('Selected: ')){
   const selected=value.slice('Selected: ').replace(/\bVariable\b/g,'可変');
