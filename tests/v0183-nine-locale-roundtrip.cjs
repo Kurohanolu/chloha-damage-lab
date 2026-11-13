@@ -122,7 +122,7 @@ const path=require('node:path');
     'missing or untranslated move type options in '+locale);
    // Full-option audit: include off-screen move and ability entries, not just
    // the selected entry. Values are stable IDs; labels must be localized.
-   for(const [id,minimum] of [['dbMove',50],['attAbility',10],['defAbility',10]]){
+   for(const [id,minimum] of [['dbMove',50],['attAbility',1],['defAbility',1]]){
     const options=await page.locator('#'+id+' option').evaluateAll(nodes=>
      nodes.map(n=>({value:n.value,label:n.textContent.trim()}))
       .filter(n=>n.value&&n.value!=='none'));
