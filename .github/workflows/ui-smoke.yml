@@ -76,6 +76,7 @@ jobs:
       - run: node tests/v0177-conditional-power-clarity.cjs
       - run: node tests/v0177-version-provenance.cjs
       - run: node tests/move-catalog-audit.cjs
+      - run: node tests/v0182-move-coverage-inventory.cjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
@@ -101,6 +102,7 @@ jobs:
             smoke-*.png
             cross-calculator-report.json
             english-untranslated-audit.json
+            reports/v0182-move-coverage-inventory.json
           if-no-files-found: ignore
       # Publish a machine-readable CI verdict on a dedicated branch for connector-based auditing.
       # Only main pushes publish; pull requests never receive write access through this step.
