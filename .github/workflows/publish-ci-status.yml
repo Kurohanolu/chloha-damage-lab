@@ -52,9 +52,9 @@ jobs:
                   summary.log_note = 'Job logs unavailable in API response';
                   continue;
                 }
-                const lines = logText.split(/\\r?\\n/);
+                const lines = logText.split(/\r?\n/);
                 const hits = [];
-                const pattern = /AssertionError|Error:|failed|FAIL|not ok|expected:|actual:|at .*tests\\//i;
+                const pattern = /AssertionError|Error:|failed|FAIL|not ok|expected:|actual:|at .*tests\//i;
                 for (let i = 0; i < lines.length; i++) {
                   if (pattern.test(lines[i])) hits.push(i);
                 }
@@ -64,7 +64,7 @@ jobs:
                 }
                 for (let i = Math.max(0, lines.length - 35); i < lines.length; i++) selected.add(i);
                 summary.error_excerpt = [...selected].sort((a, b) => a - b)
-                  .map(i => lines[i]).join('\\n').slice(-12000);
+                  .map(i => lines[i]).join('\n').slice(-12000);
                 summary.log_lines = lines.length;
               } catch (error) {
                 summary.log_note = `Job log retrieval failed: ${error.status || error.message}`;
