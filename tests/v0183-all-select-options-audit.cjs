@@ -54,7 +54,23 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
   const counts={};
   for(const x of suspicious)counts[x.reason]=(counts[x.reason]||0)+1;
   console.log('AUDIT total stable option checks='+total+'; findings='+suspicious.length+'; by reason='+JSON.stringify(counts));
-  for(const x of [...confirmedKana,...englishMatches.slice(0,12)])console.log('AUDIT FINDING '+JSON.stringify(x));
+  // English equality is only a review candidate: names such as Pikachu and Raichu
+  // legitimately match English in several official localizations.
+  // Deduplicate mirrored attacker/defender selectors before human review.
+  const reviewGroups={};
+  for(const item of englishMatches){
+   const group=reviewGroups[item.locale]||(reviewGroups[item.locale]={});
+   const kind=item.select==='dbAttPokemon'||item.select==='dbDefPokemon'?'pokemon':item.select;
+   const bucket=group[kind]||(group[kind]=new Map());
+   bucket.set(item.value,item.text);
+  }
+  for(const [locale,groups] of Object.entries(reviewGroups)){
+   for(const [kind,entries] of Object.entries(groups)){
+    console.log('AUDIT REVIEW '+JSON.stringify({locale,kind,unique:entries.size,
+     candidates:[...entries].map(([value,text])=>({value,text}))}));
+   }
+  }
+  for(const x of confirmedKana)console.log('AUDIT FINDING '+JSON.stringify(x));
   assert.deepEqual(errors,[],'browser errors during select audit');
   assert.equal(confirmedKana.length,0,'Japanese kana must not remain in non-Japanese native selectors');
   console.log('PASS full native select option audit across nine languages');
