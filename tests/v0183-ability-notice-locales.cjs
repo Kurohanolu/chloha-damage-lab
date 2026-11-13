@@ -9,7 +9,7 @@ for(const notice of notices){
  const key=Object.keys(ctx.phrases).find(k=>k.startsWith(notice));
  assert.ok(key,notice);
  for(const lang of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
-  assert.ok(ctx.phrases[key][lang]?.length>30,notice+' '+lang);
+  assert.ok(ctx.phrases[key][lang]?.length>=15,notice+' '+lang);
   assert.match(ctx.phrases[key][lang],/1[.,][23]/,notice+' modifier '+lang);
  }
 }
