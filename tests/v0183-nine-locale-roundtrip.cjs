@@ -32,9 +32,15 @@ const path=require('node:path');
   if(moves.includes('earthquake')){exercised.dbMove='earthquake';await page.locator('#dbMove').evaluate(el=>{el.value='earthquake';el.dispatchEvent(new Event('change',{bubbles:true}));});}
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
-  for(let i=0;i<steps.length;i++){
-   const [lang,none,double]=steps[i];
-   const from=i===0?'initial':steps[i-1][0];
+  // Rotate the starting locale through all nine languages. Every rotation
+  // exercises a different predecessor/successor history and returns to start.
+  const languages=steps.slice(0,9);
+  for(let rotation=0;rotation<languages.length;rotation++){
+   const cycle=[...languages.slice(rotation),...languages.slice(0,rotation),languages[rotation]];
+   let baselineNumeric=null;
+   for(let i=0;i<cycle.length;i++){
+   const [lang,none,double]=cycle[i];
+   const from=i===0?'initial':cycle[i-1][0];
    await selector.selectOption(lang);
    await page.waitForTimeout(120);
    const state=await page.evaluate(()=>({
@@ -76,10 +82,10 @@ const path=require('node:path');
     // Compare numeric results only: labels and range separators are localized.
     const numbers=value=>(String(value||'').match(/\d+(?:\.\d+)?/g)||[]).map(Number);
     const numeric={damage:numbers(state.resultDamage),percent:numbers(state.resultPercent)};
-    if(i===0)page._baselineNumeric=numeric;
+    if(i===0)baselineNumeric=numeric;
     else{
-     assert.deepEqual(numeric.damage,page._baselineNumeric.damage,'calculated damage invariant');
-     assert.deepEqual(numeric.percent,page._baselineNumeric.percent,'calculated percentage invariant');
+     assert.deepEqual(numeric.damage,baselineNumeric.damage,'calculated damage invariant');
+     assert.deepEqual(numeric.percent,baselineNumeric.percent,'calculated percentage invariant');
     }
     // Catch untranslated Japanese source leaking into non-Japanese UI, including
     // dynamic KO details and native item/ability selectors.
@@ -101,9 +107,10 @@ const path=require('node:path');
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
    }catch(e){
-    console.error('FAILED transition '+from+' → '+lang+'; snapshot='+JSON.stringify(state));
+    console.error('FAILED rotation '+(rotation+1)+' transition '+from+' → '+lang+'; snapshot='+JSON.stringify(state));
     throw e;
    }
+  }
   }
   // Second pass: unsupported abilities must still have localized labels,
   // even though they are intentionally excluded from damage calculations.
@@ -125,6 +132,6 @@ const path=require('node:path');
    }
   }
   assert.deepEqual(errors,[],'browser errors');
-  console.log('PASS nine-language full-cycle UI roundtrip '+JSON.stringify(snapshots));
+  console.log('PASS nine starting locales x ten transitions (90 checks), plus unsupported ability pass; snapshots='+snapshots.length);
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1});
