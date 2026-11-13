@@ -10,7 +10,8 @@ const {chromium}=require('playwright');
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   await page.locator('.move-list-fallback summary').click();
   await page.locator('#dbMove').selectOption('gw0169_s040');
-  await page.locator('#spitUpPanel').waitFor({state:'visible'});
+  const diag=await page.evaluate(()=>({move:document.querySelector('#dbMove').value,mechanic:window.ChlohaMoveMechanic,hidden:document.querySelector('#spitUpPanel').hidden,outer:document.querySelector('#spitUpPanel').outerHTML.slice(0,250),status:document.querySelector('#dbStatus').textContent,error:document.querySelector('#error').textContent,parents:[...function*(e){while(e){yield [e.tagName,e.id,e.hidden];e=e.parentElement}}(document.querySelector('#spitUpPanel'))].slice(0,6)}));console.log('SPIT_UP_DIAGNOSTIC',JSON.stringify(diag));
+  await page.locator('#spitUpPanel').waitFor({state:'visible',timeout:5000});
   for(const [count,power] of [[1,100],[2,200],[3,300],[1,100]]){
    await page.locator('#spitUpPanel [data-stockpile="'+count+'"]').click();
    const state=await page.evaluate(()=>({power:Number(document.querySelector('#power').value),rolls:window.ChlohaLastCalculation?.r?.rolls,pressed:[...document.querySelectorAll('#spitUpPanel [data-stockpile]')].filter(x=>x.getAttribute('aria-pressed')==='true').map(x=>x.dataset.stockpile),error:document.querySelector('#error').textContent}));
