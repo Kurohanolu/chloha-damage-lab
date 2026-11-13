@@ -90,6 +90,7 @@ jobs:
       - run: node tests/v0182-offense-defense-rounding-oracle.mjs
       - run: node tests/v0182-field-type-rounding-oracle.mjs
       - run: node tests/v0182-dualtype-defensive-ability-oracle.mjs
+      - run: node tests/v0182-moldbreaker-composition.mjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
