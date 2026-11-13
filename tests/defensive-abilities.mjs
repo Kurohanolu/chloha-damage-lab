@@ -24,6 +24,17 @@ try {
    ['Mold Breaker does not bypass Shadow Shield',same(rolls({attAbility:'moldBreaker',defAbility:'shadowShield'}),rolls({defAbility:'shadowShield'}))],
    ['Teravolt does not bypass Prism Armor',same(rolls({attAbility:'teravolt',defAbility:'prismArmor',moveType:'かくとう'}),rolls({defAbility:'prismArmor',moveType:'かくとう'}))],
    ['Mold Breaker preserves natural type immunity',same(rolls({attAbility:'moldBreaker',defAbility:'wonderGuard',moveType:'ノーマル',defTypes:['ゴースト']}),rolls({moveType:'ノーマル',defTypes:['ゴースト']}))],
+   // Audit matrix: bypassable defenses, protected defenses, and stacked modifiers.
+   ...['moldBreaker','teravolt','turboblaze'].flatMap(attAbility=>[
+    [attAbility+' bypasses Ice Scales',same(rolls({attAbility,defAbility:'iceScales',category:'special'}),rolls({category:'special'}))],
+    [attAbility+' bypasses Thick Fat',same(rolls({attAbility,defAbility:'thickFat',moveType:'ほのお'}),rolls({moveType:'ほのお'}))],
+    [attAbility+' bypasses Water Absorb',same(rolls({attAbility,defAbility:'waterAbsorb',moveType:'みず',defTypes:['ほのお']}),rolls({moveType:'みず',defTypes:['ほのお']}))],
+    [attAbility+' bypasses Filter',same(rolls({attAbility,defAbility:'filter',moveType:'かくとう',defTypes:['ノーマル']}),rolls({moveType:'かくとう',defTypes:['ノーマル']}))],
+    [attAbility+' retains Friend Guard',same(rolls({attAbility,friendGuardCount:1}),rolls({friendGuardCount:1}))],
+    [attAbility+' retains Reflect',same(rolls({attAbility,screen:'reflect'}),rolls({screen:'reflect'}))],
+    [attAbility+' retains rain',same(rolls({attAbility,weather:'rain',moveType:'みず'}),rolls({weather:'rain',moveType:'みず'}))],
+    [attAbility+' bypasses Multiscale with Life Orb',same(rolls({attAbility,defAbility:'multiscale',attItem:'lifeOrb'}),rolls({attItem:'lifeOrb'}))]
+   ]),
    ['Fur Coat physical doubles defense',same(rolls({defAbility:'furCoat'}),rolls({defense:200}))],
    ['Fur Coat special unchanged',same(rolls({defAbility:'furCoat',category:'special'}),rolls({category:'special'}))],
    ['Ice Scales physical unchanged',same(rolls({defAbility:'iceScales'}),rolls({}))],
