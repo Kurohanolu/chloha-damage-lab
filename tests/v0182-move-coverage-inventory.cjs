@@ -38,7 +38,27 @@ for(const [name,mechanic] of fourVerified){
  assert.ok(policyEnabled.some(x=>x.id===m.id),'verified move has runtime override: '+name);
  assert.equal(policies[m.id].mechanic,mechanic,'verified mechanic: '+name);
 }
+// Triage the remaining 37 runtime-policy overrides by the mechanism being modeled.
+const verifiedNames=new Set(fourVerified.map(([name])=>name));
+const mechanismGroups={
+ 'activation-assumed':new Set(['activationAssumed']),
+ 'conditional-power':new Set(['lashOut','barbBarrage','fickleBeam','hex','infernalParade','risingVoltage','round','temperFlare','avalanche','stompingTantrum','payback','assurance','venoshock']),
+ 'stat-or-critical':new Set(['psyshock','forcedCritical','bodyPress','foulPlay']),
+ 'speed-or-terrain':new Set(['electroBall','ironRoller','mistyExplosion']),
+ 'multi-hit-or-manual':new Set(['dualWingbeat','beatUpManual'])
+};
+const remaining=policyEnabled.filter(m=>!verifiedNames.has(m.name));
+assert.equal(remaining.length,37,'37 runtime policy moves remain after four browser-verified cases');
+const grouped=Object.fromEntries(Object.keys(mechanismGroups).map(group=>[group,[]]));
+for(const m of remaining){
+ const mechanic=policies[m.id].mechanic;
+ const group=Object.keys(mechanismGroups).find(k=>mechanismGroups[k].has(mechanic));
+ assert.ok(group,'Unclassified runtime mechanic: '+m.name+' / '+mechanic);
+ grouped[group].push({id:m.id,name:m.name,mechanic,power:m.power,review:'UI-to-engine and scenario-specific numerical regression pending'});
+}
+assert.equal(Object.values(grouped).reduce((sum,list)=>sum+list.length,0),37);
 const runtimePolicyAudit={
+ remainingByMechanicGroup:grouped,
  meaning:'catalog flag is conservative; runtime policy enables conditional calculations, not hardware-verified full support',
  count:policyEnabled.length,
  verifiedByFourMoveBrowserRegression:fourVerified.map(([name,mechanic])=>({name,mechanic})),
@@ -61,6 +81,7 @@ assert.equal(report.damagingMoves,334);
 fs.mkdirSync(path.join(__dirname,'../reports'),{recursive:true});
 fs.writeFileSync(path.join(__dirname,'../reports/v0182-move-coverage-inventory.json'),JSON.stringify(report,null,2)+'\n');
 console.log('PASS v0.182 move metadata inventory',JSON.stringify({total:report.total,flaggedSupported:report.flaggedSupported,flaggedUnsupported:report.flaggedUnsupported,breakdown}));
+console.log('REMAINING_37_GROUPS',JSON.stringify(Object.fromEntries(Object.entries(grouped).map(([k,v])=>[k,v.length]))));
 console.log('RUNTIME_POLICY_OVERRIDES',JSON.stringify({count:runtimePolicyAudit.count,fourBrowserVerified:runtimePolicyAudit.verifiedByFourMoveBrowserRegression.length}));
 console.log('CATALOG_ENGINE_MISMATCHES',JSON.stringify(apparentMismatches));
 console.log('TRIAGE',JSON.stringify({familyCounts:triage.familyCounts,manualReview:triage.needsManualReview.length,names:triage.needsManualReview}));
