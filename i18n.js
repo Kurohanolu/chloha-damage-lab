@@ -225,6 +225,7 @@ const attributeLabels={
  '例：じしん、10まんボルト':'e.g. Earthquake, Thunderbolt'
 };
 const originalAttributes=new WeakMap();
+const lastRenderedAttributes=new WeakMap();
 function translateAccessibilityLabel(base){
  if(Object.prototype.hasOwnProperty.call(attributeLabels,base))return attributeLabels[base];
  base=translateRuntime(base);
@@ -579,9 +580,11 @@ function localizedLiveSummary(base,target){
  }
  return null;
 }
+const localizedTypeNames={"ノーマル":{"en":"Normal","fr":"Normal","de":"Normal","es":"Normal","it":"Normale","ko":"노말","zh-Hans":"一般","zh-Hant":"一般"},"ほのお":{"en":"Fire","fr":"Feu","de":"Feuer","es":"Fuego","it":"Fuoco","ko":"불꽃","zh-Hans":"火","zh-Hant":"火"},"みず":{"en":"Water","fr":"Eau","de":"Wasser","es":"Agua","it":"Acqua","ko":"물","zh-Hans":"水","zh-Hant":"水"},"でんき":{"en":"Electric","fr":"Électrik","de":"Elektro","es":"Eléctrico","it":"Elettro","ko":"전기","zh-Hans":"电","zh-Hant":"電"},"くさ":{"en":"Grass","fr":"Plante","de":"Pflanze","es":"Planta","it":"Erba","ko":"풀","zh-Hans":"草","zh-Hant":"草"},"こおり":{"en":"Ice","fr":"Glace","de":"Eis","es":"Hielo","it":"Ghiaccio","ko":"얼음","zh-Hans":"冰","zh-Hant":"冰"},"かくとう":{"en":"Fighting","fr":"Combat","de":"Kampf","es":"Lucha","it":"Lotta","ko":"격투","zh-Hans":"格斗","zh-Hant":"格鬥"},"どく":{"en":"Poison","fr":"Poison","de":"Gift","es":"Veneno","it":"Veleno","ko":"독","zh-Hans":"毒","zh-Hant":"毒"},"じめん":{"en":"Ground","fr":"Sol","de":"Boden","es":"Tierra","it":"Terra","ko":"땅","zh-Hans":"地面","zh-Hant":"地面"},"ひこう":{"en":"Flying","fr":"Vol","de":"Flug","es":"Volador","it":"Volante","ko":"비행","zh-Hans":"飞行","zh-Hant":"飛行"},"エスパー":{"en":"Psychic","fr":"Psy","de":"Psycho","es":"Psíquico","it":"Psico","ko":"에스퍼","zh-Hans":"超能力","zh-Hant":"超能力"},"むし":{"en":"Bug","fr":"Insecte","de":"Käfer","es":"Bicho","it":"Coleottero","ko":"벌레","zh-Hans":"虫","zh-Hant":"蟲"},"いわ":{"en":"Rock","fr":"Roche","de":"Gestein","es":"Roca","it":"Roccia","ko":"바위","zh-Hans":"岩石","zh-Hant":"岩石"},"ゴースト":{"en":"Ghost","fr":"Spectre","de":"Geist","es":"Fantasma","it":"Spettro","ko":"고스트","zh-Hans":"幽灵","zh-Hant":"幽靈"},"ドラゴン":{"en":"Dragon","fr":"Dragon","de":"Drache","es":"Dragón","it":"Drago","ko":"드래곤","zh-Hans":"龙","zh-Hant":"龍"},"あく":{"en":"Dark","fr":"Ténèbres","de":"Unlicht","es":"Siniestro","it":"Buio","ko":"악","zh-Hans":"恶","zh-Hant":"惡"},"はがね":{"en":"Steel","fr":"Acier","de":"Stahl","es":"Acero","it":"Acciaio","ko":"강철","zh-Hans":"钢","zh-Hant":"鋼"},"フェアリー":{"en":"Fairy","fr":"Fée","de":"Fee","es":"Hada","it":"Folletto","ko":"페어리","zh-Hans":"妖精","zh-Hant":"妖精"}};
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
+ if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
  const dynamic=localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
@@ -620,11 +623,14 @@ function translate(root){
    let originals=originalAttributes.get(element);
    if(!originals){originals={};originalAttributes.set(element,originals);}
    const previous=originals[attr];
-   const previousEnglish=previous===undefined?null:localizedUi(translateAccessibilityLabel(previous));
-   if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
+   const rendered=lastRenderedAttributes.get(element)?.[attr];
+   if(previous===undefined||(value!==previous&&value!==rendered))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
    const base=originals[attr];
    const next=locale==='ja'?base:localizedUi(translateAccessibilityLabel(base));
    if(next!==value)element.setAttribute(attr,next);
+   let renderedAttributes=lastRenderedAttributes.get(element);
+   if(!renderedAttributes){renderedAttributes={};lastRenderedAttributes.set(element,renderedAttributes);}
+   renderedAttributes[attr]=next;
   }
  }
 }
