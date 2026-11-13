@@ -1,5 +1,5 @@
 {
-  "description": "Official Pokémon species spellings, keyed by National Pokédex number; source URLs verified individually. Not a claim of complete species coverage.",
+  "description": "Official Pokémon species spellings keyed by National Pokédex number. Only individually verified locales are included; omitted locales are UNVERIFIED, not passing.",
   "species": [
     {
       "nationalDex": 6,
@@ -20,6 +20,20 @@
         "it": {
           "name": "Charizard",
           "sourceUrl": "https://www.pokemon.com/it/pokedex?type=flying"
+        }
+      }
+    },
+    {
+      "nationalDex": 25,
+      "key": "pikachu",
+      "names": {
+        "de": {
+          "name": "Pikachu",
+          "sourceUrl": "https://www.pokemon.com/de/pokedex/pikachu"
+        },
+        "it": {
+          "name": "Pikachu",
+          "sourceUrl": "https://www.pokemon.com/it/pokedex/pikachu"
         }
       }
     }
