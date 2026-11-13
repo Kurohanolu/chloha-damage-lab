@@ -32,6 +32,15 @@ Status: **proposed sequence**, subject to owner approval and CI/manual release g
 - Publish a transparent support/verification matrix. Separate tested Showdown parity from Pokémon Champions hardware validation.
 - Final release requires green CI, owner manual acceptance, rollback plan and documented known limitations.
 
+## Singularity — potential v1.0 branding (not approved)
+
+- **Working name:** Singularity. This is a proposed future public name for Damage Lab, **not a confirmed rename**.
+- **Timing:** consider the name before the v1.0 public release; do not rename v0.183, v0.184, or the repository/site automatically.
+- **Decision gate:** owner approval after checking brand fit, naming conflicts, domain/URL implications, search discoverability, and user migration.
+- **Migration checklist if approved:** visible title, site navigation, metadata, favicons/logos, docs, GitHub README, screenshots, release notes, feedback form, and legacy-name redirects. Preserve existing bookmarks and calculation functionality.
+- **Versioning:** rebranding is independent of engine version; do not claim an engine upgrade solely because of a name change.
+- **Open:** whether the final product name should be just `Singularity` or include a qualifier, and whether the Chloha Labs umbrella remains in the header.
+
 ## Sequencing and precedence
 The old i18n memo assigned v0.184 to translation expansion and v0.185 to browser audit. Translation expansion and initial browser audit have already been implemented within v0.183, although closure is still pending. Therefore this consolidated proposal reserves v0.184 for the engine and v0.185 for post-refactor integration verification. Do not silently treat this roadmap as a released version or an owner-approved milestone.
 
