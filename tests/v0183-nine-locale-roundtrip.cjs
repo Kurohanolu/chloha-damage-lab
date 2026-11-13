@@ -38,6 +38,24 @@ const path=require('node:path');
   assert.equal(formCoverage.count,129,'all 129 missing form records have species bases');
   assert.deepEqual(formCoverage.missing,[],'eight-language species base coverage');
   assert.deepEqual(formCoverage.unexpected,[],'provisional forms must remain explicitly labeled');
+  // Audit the actual localizedName() display resolver for all 373 roster
+  // Pokémon and every non-Japanese locale (not just backing data presence).
+  const rosterDisplayAudit=await page.evaluate(()=>{
+   const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+   const roster=ChlohaPokemonDB.pokemon;
+   const errors=[];
+   for(const p of roster){
+    for(const locale of locales){
+     const value=localizedName('pokemon',p.id,locale);
+     if(!value||/[ぁ-ゟ゠-ヿ]/u.test(value)||value===p.id)
+      errors.push({id:p.id,locale,value});
+    }
+   }
+   return {roster:roster.length,checked:roster.length*locales.length,errors};
+  });
+  assert.equal(rosterDisplayAudit.roster,373,'all roster Pokémon audited');
+  assert.equal(rosterDisplayAudit.checked,2984,'eight-language roster display checks');
+  assert.deepEqual(rosterDisplayAudit.errors,[],'no missing, Japanese, or internal-ID display names');
   const selector=page.locator('#chloha-locale');
   const steps=[
    ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
