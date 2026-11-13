@@ -1028,7 +1028,7 @@ function localizedDynamicControl(base,target){
 // Japanese move labels. Resolve each entity by canonical name data, not a
 // hard-coded Earthquake-only replacement.
 function localizedBattleSummary(base,target){
- const match=String(base).match(/^(.+?)\\s+(.+?)\\s+[（(](\\d+)[）)]\\s*→\\s*(.+?)\\s+[（(](\\d+)\\s*\\/\\s*HP\\s*(\\d+)[）)]$/);
+ const match=String(base).match(/^(.+?)\s+(.+?)\s+[（(](\d+)[）)]\s*→\s*(.+?)\s+[（(](\d+)\s*\/\s*HP\s*(\d+)[）)]$/);
  if(!match)return null;
  const registries=globalThis.ChlohaPokeAPILocalizedNames||{};
  const local=globalThis.ChlohaLocalizedNames||{};
