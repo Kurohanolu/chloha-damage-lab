@@ -125,12 +125,12 @@ try {
  console.log('PASS compact automatic resist berry option and JA/EN/JA roundtrip');
  // Only the matching plate should appear; changing the move must not auto-equip it.
  await page.locator('#dbAuto').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
- await page.locator('#moveType').selectOption('ほのお');
+ await page.locator('#moveType').evaluate(el=>{el.value='ほのお';el.dispatchEvent(new Event('input',{bubbles:true}));});
  const plateOptions=()=>page.locator('#attItem option[value$="Plate"]').evaluateAll(opts=>opts.map(o=>({id:o.value,label:o.textContent})));
  assert.deepEqual((await plateOptions()).map(o=>o.id),['flamePlate'],'Only Fire Plate visible');
  assert.equal(await page.locator('#attItem').inputValue(),'none','Plate not automatically equipped');
- await page.locator('#attItem').selectOption('flamePlate');
- await page.locator('#moveType').selectOption('こおり');
+ await page.locator('#attItem').evaluate(el=>{el.value='flamePlate';el.dispatchEvent(new Event('input',{bubbles:true}));});
+ await page.locator('#moveType').evaluate(el=>{el.value='こおり';el.dispatchEvent(new Event('input',{bubbles:true}));});
  assert.deepEqual((await plateOptions()).map(o=>o.id),['iciclePlate'],'Switch to Ice Plate');
  assert.equal(await page.locator('#attItem').inputValue(),'none','Old plate reset when move type changes');
  await page.locator('#chloha-locale').selectOption('en');
