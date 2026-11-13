@@ -38,6 +38,21 @@ for(const name of weighted){
  assert.ok(Number.isInteger(result)&&result>=20&&result<=120,name+' invalid weight-dependent power');
  rows.push({name,id:m.id,family:'weightDependent',status:'powerHelperAndBrowserRegressionPresent',catalogSupported:false,examplePower:result});
 }
+// Exact weight breakpoints and attacker/defender ratio boundaries.
+for(const name of ['けたぐり','くさむすび']){
+ for(const [kg,expected] of [[9.9,20],[10,40],[24.9,40],[25,60],[49.9,60],[50,80],[99.9,80],[100,100],[199.9,100],[200,120]]){
+  assert.equal(weightPower(name,100,kg),expected,name+' defender '+kg+'kg');
+ }
+}
+for(const name of ['ヒートスタンプ','ヘビーボンバー']){
+ for(const [att,def,expected] of [[199.9,100,40],[200,100,60],[299.9,100,60],[300,100,80],[399.9,100,80],[400,100,100],[499.9,100,100],[500,100,120]]){
+  assert.equal(weightPower(name,att,def),expected,name+' '+att+'/'+def+'kg');
+ }
+}
+for(const name of weighted){
+ assert.equal(weightPower(name,100,0),null,name+' zero defender weight rejected');
+ assert.equal(weightPower(name,100,NaN),null,name+' NaN defender weight rejected');
+}
 assert.equal(rows.length,17);
 const excluded=['まもる','いかりのまえば','カウンター','がむしゃら','じわれ','いのちがけ','ぜったいれいど','ナイトヘッド','ミラーコート','ハサミギロチン','ほうふく','メタルバースト','ちきゅうなげ','つのドリル'];
 for(const name of excluded){
