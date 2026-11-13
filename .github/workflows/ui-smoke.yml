@@ -47,6 +47,7 @@ jobs:
       - run: node tests/v0182-showdown-ability-flags.cjs
       - run: node tests/v0182-attacker-ability-validation.cjs
       - run: node tests/v0182-multi-hit.cjs
+      - run: node tests/v0182-independent-multihit-rolls.cjs
       - run: node tests/v0182-showdown-multihit.cjs
       - run: node tests/v0182-multihit-browser.cjs
       - run: node tests/v0181-weight-power.cjs
