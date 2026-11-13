@@ -1,6 +1,10 @@
 'use strict';
 const assert=require('node:assert/strict');
-const locale=require('../locale-registry.js');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const context={};
+vm.runInNewContext(fs.readFileSync(require.resolve('../locale-registry.js'),'utf8'),context);
+const locale=context.ChlohaLocales;
 assert.deepEqual(locale.entries.map(x=>x.code),['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant']);
 assert.equal(new Set(locale.entries.map(x=>x.code)).size,9);
 assert.deepEqual(locale.chain('ja'),['ja']);
