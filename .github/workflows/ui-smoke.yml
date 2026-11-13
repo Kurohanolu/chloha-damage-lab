@@ -91,6 +91,7 @@ jobs:
       - run: node tests/v0182-field-type-rounding-oracle.mjs
       - run: node tests/v0182-dualtype-defensive-ability-oracle.mjs
       - run: node tests/v0182-moldbreaker-composition.mjs
+      - run: node tests/v0182-comprehensive-audit.cjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
@@ -117,6 +118,7 @@ jobs:
             cross-calculator-report.json
             english-untranslated-audit.json
             reports/v0182-move-coverage-inventory.json
+            reports/v0182-comprehensive-audit.json
           if-no-files-found: ignore
       # Publish a machine-readable CI verdict on a dedicated branch for connector-based auditing.
       # Only main pushes publish; pull requests never receive write access through this step.
