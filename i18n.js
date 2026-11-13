@@ -1042,6 +1042,13 @@ function localizedUi(base){
  'Defender Tailwind (Speed ×2)':['Vent arrière du défenseur (Vitesse ×2)','Rückenwind des Verteidigers (Initiative ×2)','Viento Afín del defensor (Velocidad ×2)','Ventoincoda del difensore (Velocità ×2)','방어 측 순풍 (스피드 ×2)','防御方顺风（速度×2）','防禦方順風（速度×2）'],
  'Attacker Tailwind (Speed ×2)':['Vent arrière de l’attaquant (Vitesse ×2)','Rückenwind des Angreifers (Initiative ×2)','Viento Afín del atacante (Velocidad ×2)','Ventoincoda dell’attaccante (Velocità ×2)','공격 측 순풍 (스피드 ×2)','攻击方顺风（速度×2）','攻擊方順風（速度×2）']
  };
+ const screenshotEnglish=translateRuntime(base);
+ if(locale==='ko'){
+  const warning=screenshotEnglish.match(/^Selected move “(.+?)”\s*[:：]\s*learnset, effects, variable power and accuracy are unverified\. Treat results as provisional until compared against hardware\.$/);
+  if(warning)return '선택한 기술 “'+warning[1]+'”: 습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.';
+  const stats=screenshotEnglish.match(/^(.+?)\s*→\s*(.+?)\s*\((\d+)\s*\/\s*HP\s*(\d+)\)$/);
+  if(stats)return stats[1]+' → '+stats[2]+' (방어 '+stats[3]+' / HP '+stats[4]+')';
+ }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
  if(locale==='ko'&&screenshotText.startsWith('About versions:'))return screenshotText
