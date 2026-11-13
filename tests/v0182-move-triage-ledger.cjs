@@ -27,8 +27,15 @@ assert.equal(summary.catalogUnsupported,73,'unsupported metadata changed; review
 assert.equal(summary.runtimeConditional,42,'runtime overrides changed; review counts');
 assert.equal(summary.remainingWithoutRuntimeOverride,31,'unhandled inventory changed; review counts');
 assert.equal(summary.catalogSupported+summary.runtimeConditional+summary.remainingWithoutRuntimeOverride,summary.total);
-const report={version:'v0.182',meaning:'Per-move audit queue. No category here implies hardware-tested parity.',summary,unresolved:ledger.filter(x=>!x.catalogSupported),allMoves:ledger};
+const withoutOverride=ledger.filter(x=>!x.catalogSupported&&!x.runtimeEnabled);
+const intentionalExclusions=withoutOverride.filter(x=>policy[x.id]?.priority==='P0');
+const actionable=withoutOverride.filter(x=>policy[x.id]?.priority!=='P0');
+assert.equal(intentionalExclusions.length,14,'intentional exclusions changed; review policies');
+assert.equal(actionable.length,17,'actionable move audit queue changed');
+summary.intentionalExclusions=intentionalExclusions.length;
+summary.actionableWithoutRuntimeOverride=actionable.length;
+const report={version:'v0.182',meaning:'Per-move audit queue. No category here implies hardware-tested parity.',summary,intentionalExclusions,actionableWithoutRuntimeOverride:actionable,unresolved:ledger.filter(x=>!x.catalogSupported),allMoves:ledger};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
 fs.writeFileSync(path.join(root,'reports/v0182-move-triage-ledger.json'),JSON.stringify(report,null,2)+'\n');
 console.log('PASS v0.182 per-move triage ledger',JSON.stringify(summary));
-console.log('UNRESOLVED_32',JSON.stringify(report.unresolved.filter(x=>!x.runtimeEnabled).map(x=>x.name)));
+console.log('ACTIONABLE_17',JSON.stringify(actionable.map(x=>x.name)));\nconsole.log('INTENTIONALLY_EXCLUDED_14',JSON.stringify(intentionalExclusions.map(x=>x.name)));
