@@ -142,6 +142,30 @@ const path=require('node:path');
     }
     await search.fill('');
    }
+   // Keep search open across a language transition: its rendered suggestions
+   // must be refreshed without requiring the user to retype their query.
+   if(i===0){
+    const input=page.locator('#attSearch');
+    await input.fill('ガ');
+    assert.ok(await page.locator('#attSuggestions .pokemon-suggestion').count()>0,
+     'live-locale search fixture '+lang);
+    const next=cycle[(i+1)%cycle.length][0];
+    await selector.selectOption(next);
+    const rendered=await page.locator('#attSuggestions .pokemon-suggestion').allTextContents();
+    assert.ok(rendered.length>0,'search suggestions survive locale change '+lang+' → '+next);
+    if(next!=='ja')for(const label of rendered)
+     assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(label),
+      'stale Japanese search suggestion after '+lang+' → '+next+': '+label);
+    await input.fill('');
+    await selector.selectOption(lang);
+    // No matching results must also be localized.
+    await input.fill('zzzz_no_matching_pokemon_987654');
+    const empty=await page.locator('#attSuggestions .pokemon-suggestion-empty').textContent();
+    assert.ok(empty,'empty Pokémon search message '+lang);
+    if(lang!=='ja')assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(empty),
+     'untranslated empty search message '+lang+': '+empty);
+    await input.fill('');
+   }
    snapshots.push({transition:from+' → '+lang,...state});
    try{
     assert.equal(state.lang,lang,'html lang');
