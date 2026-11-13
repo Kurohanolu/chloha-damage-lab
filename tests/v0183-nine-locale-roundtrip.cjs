@@ -29,13 +29,37 @@ const path=require('node:path');
     format:document.querySelector('#battleFormat')?.selectedOptions?.[0]?.textContent?.trim(),
     board:document.querySelector('#boardSummary')?.textContent?.trim(),
     damage:document.querySelector('#miniDamage')?.textContent?.trim(),
-    verdict:document.querySelector('#miniVerdict')?.textContent?.trim()
+    verdict:document.querySelector('#miniVerdict')?.textContent?.trim(),
+    resultDamage:document.querySelector('#damage')?.textContent?.trim(),
+    resultPercent:document.querySelector('#percent')?.textContent?.trim(),
+    koVerdict:document.querySelector('#koVerdict')?.textContent?.trim(),
+    koDetail:document.querySelector('#koVerdictDetail')?.textContent?.trim(),
+    attAbility:document.querySelector('#attAbility')?.selectedOptions?.[0]?.textContent?.trim(),
+    defAbility:document.querySelector('#defAbility')?.selectedOptions?.[0]?.textContent?.trim(),
+    attItem:document.querySelector('#attItem')?.selectedOptions?.[0]?.textContent?.trim(),
+    defItem:document.querySelector('#defItem')?.selectedOptions?.[0]?.textContent?.trim(),
+    move:document.querySelector('#dbMove')?.selectedOptions?.[0]?.textContent?.trim(),
+    hits:document.querySelector('#hits')?.textContent?.trim()
    }));
    snapshots.push({transition:from+' → '+lang,...state});
    try{
     assert.equal(state.lang,lang,'html lang');
     for(const field of ['weather','terrain','screen'])assert.equal(state[field],none,field);
     if(state.format!==undefined)assert.equal(state.format,double,'battle format');
+    // Calculated numeric values must not change when only the UI language changes.
+    if(i===0)page._baselineNumeric={damage:state.resultDamage,percent:state.resultPercent};
+    else{
+     assert.equal(state.resultDamage,page._baselineNumeric.damage,'calculated damage invariant');
+     assert.equal(state.resultPercent,page._baselineNumeric.percent,'calculated percentage invariant');
+    }
+    // Catch untranslated Japanese source leaking into non-Japanese UI, including
+    // dynamic KO details and native item/ability selectors.
+    if(lang!=='ja'){
+     for(const field of ['board','verdict','koVerdict','koDetail','attAbility','defAbility','attItem','defItem']){
+      const value=state[field]||'';
+      assert.ok(!/[ぁ-ゟ゠-ヿ一-龯]/u.test(value),field+' has Japanese characters: '+value);
+     }
+    }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 なし'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
    }catch(e){
