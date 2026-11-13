@@ -24,7 +24,7 @@ try{
     for(const stab of [false,true])
      for(const helpingHand of [false,true])
       for(const defAbility of ['none','multiscale']){
-       const input={...base,...profile,power,attTypes:stab?[profile.moveType]:['ノーマル'],stabMode:stab?'normal':'none',helpingHand,defAbility};
+       const input={...base,...profile,power,attTypes:stab?[profile.moveType]:['ノーマル'],stabMode:stab?'auto':'none',helpingHand,defAbility};
        const r=window.ChlohaDamageEngine.calculate(input);
        out.push({...profile,power,stab,helpingHand,defAbility,base:r.base,rolls:r.rolls});
       }
