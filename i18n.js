@@ -215,6 +215,8 @@ function localizedProvisionalForm(id,ja,locale){
  if(prefix)return (prefix[1][locale]||prefix[1].en)+base;
  const suffix=ja.slice(entry.baseJa.length).replace(/^\(|^（/,'').replace(/\)|）$/,'');
  if(!suffix)return base;
+ // German appliance Rotom forms use the form descriptor before the species name.
+ if(locale==='de'&&entry.baseJa==='ロトム'&&suffix==='フロスト')return 'Frost-Rotom';
  const formLabels={
   'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
   'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'},
