@@ -118,23 +118,29 @@ const path=require('node:path');
    assert.equal(typeOptions.length,18,'expected 18 move types in '+locale);
    assert.equal(new Set(typeOptions.map(n=>n.label)).size,18,
     'duplicate localized move type labels in '+locale);
+   // All eight global locales: verify every type selector against the
+   // central translation catalog, including fallback and secondary slots.
+   // The Korean canonical spellings also have an independent fixed baseline.
+   const typeAudit=await page.evaluate(lang=>{
+    const dictionary=localizedTypeNames;
+    return Object.entries(dictionary).map(([ja,names])=>({ja,label:names[lang]}));
+   },locale);
+   assert.equal(typeAudit.length,18,'type dictionary must contain 18 entries');
+   const expectedLabels=typeAudit.map(x=>x.label).sort();
+   assert.deepEqual(typeOptions.map(n=>n.label).sort(),expectedLabels,
+    'move type dropdown disagrees with '+locale+' type dictionary');
+   for(const id of ['attType1','attType2','defType1','defType2']){
+    const labels=await page.locator('#'+id+' option').evaluateAll(nodes=>
+     nodes.filter(n=>n.value&&n.value!=='none'&&n.value!=='なし')
+      .map(n=>n.textContent.trim()));
+    const actual=[...new Set(labels)].filter(x=>x!=='없음'&&x!=='None'&&x!=='なし');
+    assert.deepEqual(actual.sort(),expectedLabels,
+     locale+' type labels regressed in '+id);
+   }
    if(locale==='ko'){
-    // Exact Korean game terminology: catch regressions that a Japanese-only
-    // leakage check would miss (English fallback, wrong Korean translation).
-    const expectedKoreanTypes=[
-     '노말','불꽃','물','전기','풀','얼음','격투','독','땅',
-     '비행','에스퍼','벌레','바위','고스트','드래곤','악','강철','페어리'
-    ];
-    assert.deepEqual(typeOptions.map(n=>n.label).sort(),
-     expectedKoreanTypes.sort(),'Korean type names differ from the 18 canonical labels');
-    // The move type dropdown is not the only type surface. Check both
-    // attacker and defender's primary/secondary type selectors as well.
-    for(const id of ['attType1','attType2','defType1','defType2']){
-     const labels=await page.locator('#'+id+' option').evaluateAll(nodes=>
-      nodes.filter(n=>n.value&&n.value!=='none').map(n=>n.textContent.trim()));
-     assert.deepEqual([...new Set(labels)].sort(),expectedKoreanTypes,
-      'Korean type labels regressed in '+id);
-    }
+    const korean=['노말','불꽃','물','전기','풀','얼음','격투','독','땅','비행','에스퍼','벌레','바위','고스트','드래곤','악','강철','페어리'];
+    assert.deepEqual(expectedLabels,[...korean].sort(),
+     'Korean canonical 18-type names changed');
    }
    assert.deepEqual(typeOptions.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label)),[],
     'missing or untranslated move type options in '+locale);
