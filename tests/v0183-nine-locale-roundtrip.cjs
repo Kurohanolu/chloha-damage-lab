@@ -97,7 +97,11 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   for(const locale of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
    await page.locator('#chloha-locale').selectOption(locale);
    for(const [id,type] of plateCases){
-    await page.locator('#moveType').selectOption(type);
+    await page.locator('#moveType').evaluate((el,nextType)=>{
+     el.value=nextType;
+     el.dispatchEvent(new Event('input',{bubbles:true}));
+     el.dispatchEvent(new Event('change',{bubbles:true}));
+    },type);
     const item=await page.locator('#attItem option[value="'+id+'"]').evaluate(el=>({
      text:el.textContent.trim(),label:el.label
     }));
