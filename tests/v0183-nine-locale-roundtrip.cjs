@@ -117,6 +117,13 @@ const path=require('node:path');
      if(lang==='es'){
       assert.ok(!/damage|Sp\\. Def/.test(state.attItem+' '+state.defItem),'Spanish item modifiers must not remain English');
      }
+     // Inspect all native item options, including unselected items.
+     if(lang==='es'){
+      const labels=await page.locator('#attItem option, #defItem option').evaluateAll(nodes=>nodes.map(n=>n.textContent.trim()));
+      for(const expected of ['Cinta Elección (Ataque ×1,5)','Gafas Elección (At. Esp. ×1,5)','Cinta Experto (supereficaz ×1,2)']){
+       assert.ok(labels.includes(expected),'missing Spanish item translation: '+expected);
+      }
+     }
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
