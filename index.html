@@ -1130,8 +1130,9 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     // Search results must never fall back to Japanese names in non-Japanese UI.
     // Prefer the locale catalog, then a grounded English species name.
     const translatedName=locale==='ja'?null:localizedName('pokemon',o.value,locale);
+    const fallbackName=!/[ぁ-ゟ゠-ヿ]/u.test(englishName)?englishName:o.value;
     const displayName=locale==='ja'?o.label:
-     (translatedName&&!/[ぁ-ゟ゠-ヿ]/u.test(translatedName)?translatedName:englishName);
+     (translatedName&&!/[ぁ-ゟ゠-ヿ]/u.test(translatedName)?translatedName:fallbackName);
     const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
     item.setAttribute('aria-label',displayName);item.setAttribute('aria-selected','false');
     const spriteId=window.ChlohaSpriteIds?.[o.value];
@@ -1148,9 +1149,21 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     const copy=node('span');copy.append(node('span','',displayName),node('small','',typeText));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
-   if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
+   if(!matches.length){
+    const emptyText={ja:'該当するポケモンがありません',en:'No matching Pokémon',
+     fr:'Aucun Pokémon correspondant',de:'Keine passenden Pokémon',
+     es:'No hay Pokémon coincidentes',it:'Nessun Pokémon corrispondente',
+     ko:'일치하는 포켓몬이 없습니다','zh-Hans':'没有匹配的宝可梦',
+     'zh-Hant':'沒有符合的寶可夢'};
+    list.append(node('div','pokemon-suggestion-empty',
+     emptyText[window.ChlohaLocale?.get?.()||'ja']||emptyText.en));
+   }
    list.hidden=false;input.setAttribute('aria-expanded','true');
   };
+  // Keep an already-open search list in sync with live locale changes.
+  document.addEventListener('chloha:localechange',()=>{
+   if(input.value.trim()&&!composing)update();
+  });
   input.addEventListener('compositionstart',()=>{composing=true;});
   input.addEventListener('compositionend',()=>{composing=false;update();});
   input.addEventListener('input',()=>{if(!composing)update();});
