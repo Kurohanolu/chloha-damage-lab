@@ -795,6 +795,31 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   'アローラ':{en:'Alolan ',fr:"d’Alola ",de:'Alola-',es:'de Alola ',it:'di Alola ',ko:'알로라 ','zh-Hans':'阿罗拉','zh-Hant':'阿羅拉'},
   'ガラル':{en:'Galarian ',fr:'de Galar ',de:'Galar-',es:'de Galar ',it:'di Galar ',ko:'가라르 ','zh-Hans':'伽勒尔','zh-Hant':'伽勒爾'}
  };
+ const formLabels={
+  'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
+  'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'},
+  'シールド':{en:'Shield Forme',fr:'Forme Parade',de:'Schildform',es:'Forma Escudo',it:'Forma Scudo',ko:'실드폼','zh-Hans':'盾牌形态','zh-Hant':'盾牌形態'},
+  'ブレード':{en:'Blade Forme',fr:'Forme Assaut',de:'Klingenform',es:'Forma Filo',it:'Forma Spada',ko:'블레이드폼','zh-Hans':'刀剑形态','zh-Hant':'刀劍形態'},
+  'ウォッシュ':{en:'Wash',fr:'Lavage',de:'Wasch',es:'Lavado',it:'Lavaggio',ko:'워시','zh-Hans':'清洗','zh-Hant':'清洗'},
+  'ヒート':{en:'Heat',fr:'Chaleur',de:'Hitze',es:'Calor',it:'Calore',ko:'히트','zh-Hans':'加热','zh-Hant':'加熱'},
+  'カット':{en:'Mow',fr:'Tonte',de:'Schneid',es:'Corte',it:'Taglio',ko:'커트','zh-Hans':'切割','zh-Hant':'切割'},
+  'フロスト':{en:'Frost',fr:'Froid',de:'Frost',es:'Frío',it:'Gelo',ko:'프로스트','zh-Hans':'结冰','zh-Hant':'結冰'},
+  'スピン':{en:'Fan',fr:'Hélice',de:'Wirbel',es:'Ventilador',it:'Vortice',ko:'스핀','zh-Hans':'旋转','zh-Hant':'旋轉'},
+  'ハイ':{en:'Amped',fr:'Aiguë',de:'Hoch',es:'Aguda',it:'Melodia',ko:'하이','zh-Hans':'高调','zh-Hant':'高調'},
+  'ロー':{en:'Low Key',fr:'Grave',de:'Tief',es:'Grave',it:'Basso',ko:'로우','zh-Hans':'低调','zh-Hant':'低調'},
+  'グリーン':{en:'Green Plumage',fr:'Vert',de:'Grün',es:'Verde',it:'Verde',ko:'그린','zh-Hans':'绿羽毛','zh-Hant':'綠羽毛'},
+  'ブルー':{en:'Blue Plumage',fr:'Bleu',de:'Blau',es:'Azul',it:'Blu',ko:'블루','zh-Hans':'蓝羽毛','zh-Hant':'藍羽毛'},
+  'イエロー':{en:'Yellow Plumage',fr:'Jaune',de:'Gelb',es:'Amarillo',it:'Giallo',ko:'옐로','zh-Hans':'黄羽毛','zh-Hant':'黃羽毛'},
+  'ホワイト':{en:'White Plumage',fr:'Blanc',de:'Weiß',es:'Blanco',it:'Bianco',ko:'화이트','zh-Hans':'白羽毛','zh-Hant':'白羽毛'},
+  'えいえんのはな':{en:'Eternal Flower',fr:'Fleur Éternelle',de:'Ewigblütler',es:'Flor Eterna',it:'Fiore Eterno',ko:'영원의 꽃','zh-Hans':'永恒之花','zh-Hant':'永恆之花'},
+  'かくとう':{en:'Combat Breed',fr:'Race Combative',de:'Kampfvariante',es:'Variedad Combatiente',it:'Forma Combattiva',ko:'컴뱃종','zh-Hans':'斗战种','zh-Hant':'鬥戰種'},
+  'ほのお':{en:'Blaze Breed',fr:'Race Flamboyante',de:'Flammenvariante',es:'Variedad Ardiente',it:'Forma Infuocata',ko:'블레이즈종','zh-Hans':'火炽种','zh-Hant':'火熾種'},
+  'みず':{en:'Aqua Breed',fr:'Race Aquatique',de:'Wasservariante',es:'Variedad Acuática',it:'Forma Acquatica',ko:'아쿠아종','zh-Hans':'水澜种','zh-Hant':'水瀾種'},
+  'ナイーブ':{en:'Zero Form',fr:'Forme Super',de:'Alltagsform',es:'Forma Ingenua',it:'Forma Ingenua',ko:'나이브폼','zh-Hans':'全能形态','zh-Hant':'全能形態'},
+  'マイティ':{en:'Hero Form',fr:'Forme Héroïque',de:'Heldenform',es:'Forma Heroica',it:'Forma Possente',ko:'마이티폼','zh-Hans':'全能形态','zh-Hant':'全能形態'}
+ };
+ // Species names come from the PokeAPI language tables. Form qualifiers are
+ // provisional localized labels, not asserted to be official form spellings.
  const localizedName=(category,key,locale)=>{
   const exact=window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||
    window.ChlohaPokeAPILocalizedNames?.[category]?.[key]?.[locale];
@@ -802,30 +827,18 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const p=pokemonById.get(key);if(!p)return null;
   const raw=p.name;
   const prefix=Object.keys(formPrefixes).find(k=>raw.startsWith(k)&&raw.length>k.length);
-  const baseJapanese=(prefix?raw.slice(prefix.length):raw)
-   .replace(/[XYZ]$/,'').replace(/\([^)]*\)$/,'');
-  const speciesCatalog=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
-  const baseRecord=[...pokemonById.values()].find(q=>q.name===baseJapanese);
-  const catalogEntry=Object.values(speciesCatalog).find(entry=>entry.ja===baseJapanese);
-  const baseTranslated=window.ChlohaFormSpeciesBases?.[key]?.base?.[locale]||
-   (baseRecord&&(
-    window.ChlohaLocalizedNames?.pokemon?.[baseRecord.id]?.[locale]||
-    speciesCatalog[baseRecord.id]?.[locale]))||catalogEntry?.[locale];
+  const suffix=raw.match(/\(([^)]+)\)$/)?.[1]||null;
+  const baseTranslated=window.ChlohaFormSpeciesBases?.[key]?.base?.[locale];
   if(!baseTranslated)return null;
-  if(prefix){
-   const affix=raw.match(/[XYZ]$/)?.[0]||'';
-   const gender=raw.match(/\((オス|メス)\)$/)?.[1];
-   const genderSuffix=gender?(gender==='オス'?' ♂':' ♀'):'';
-   const formName=baseTranslated+(affix?' '+affix:'')+genderSuffix;
-   const marker=formPrefixes[prefix][locale]||formPrefixes[prefix].en;
-   return ['fr','es','it'].includes(locale)&&prefix!=='メガ'
-    ?formName+' '+marker.trim():marker+formName;
-  }
-  const form=raw.match(/\(([^)]+)\)$/)?.[1];
-  if(!form)return null;
-  const forms={'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
-   'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'}};
-  return forms[form]?baseTranslated+' ('+forms[form][locale]+')':null;
+  const formLabel=suffix?(formLabels[suffix]?.[locale]||suffix):'';
+  const affix=raw.match(/[XYZ]$/)?.[0]||'';
+  const baseWithForm=baseTranslated+(affix?' '+affix:'')+(formLabel?' ('+formLabel+')':'');
+  if(!prefix)return baseWithForm;
+  const marker=formPrefixes[prefix]?.[locale]||formPrefixes[prefix]?.en;
+  if(!marker)return baseWithForm;
+  if(['fr','es','it'].includes(locale)&&prefix!=='メガ')
+   return baseWithForm+' '+marker.trim();
+  return marker+baseWithForm;
  };
  const localizedMatch=(category,key,query)=>Object.values(window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]||{}).some(name=>window.ChlohaNameSearch?.normalize(name).includes(window.ChlohaNameSearch.normalize(query)));
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
