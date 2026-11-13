@@ -18,7 +18,7 @@ const document={
  getElementById:id=>id==='chloha-locale'?{addEventListener:(event,fn)=>handlers[event]=fn}:null,
  body:{}
 };
-const context={window:{ChlohaLocale:{get:()=>locale}},document,MutationObserver:class{observe(){}},queueMicrotask:fn=>fn(),globalThis:null};
+const context={window:{ChlohaLocale:{get:()=>locale}},document,MutationObserver:class{observe(){}},queueMicrotask:fn=>fn()};
 for(const file of ['locale-names-pokeapi-v0183.js','locale-names-v0183.js']){
  vm.runInNewContext(fs.readFileSync(require.resolve('../'+file),'utf8'),context);
 }
