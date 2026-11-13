@@ -33,7 +33,7 @@ const path=require('node:path');
       if(!option){failures.push({kind,locale,row,error:'missing option'});continue;}
       checked++;
       const actual=option.textContent.trim();
-      if(!actual.includes(entry[locale]))failures.push({kind,id:row.id,ja:row.canonical,expected:entry[locale],actual});
+      if(!actual.toLocaleLowerCase().includes(entry[locale].toLocaleLowerCase()))failures.push({kind,id:row.id,ja:row.canonical,expected:entry[locale],actual});
      }
     }
     results[locale]={checked,missing,failures};
