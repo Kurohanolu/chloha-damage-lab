@@ -260,6 +260,27 @@ function translateOptions(){
    const plateJapanese=select.id==='attItem'&&base.match(/^(.+プレート)（([^（）]+)技×1\.2）$/);
    const plateEnglish=plateJapanese&&((window.ChlohaNames?.items?.[plateJapanese[1]])||entityNames[plateJapanese[1]]);
    const plateLabel=plateEnglish?plateEnglish+' ('+(typeNames[plateJapanese[2]]||plateJapanese[2])+' moves ×1.2)':null;
+   // Localize every Plate and resistance Berry by canonical Japanese item name
+   // plus the localized type; avoid English-only effect suffixes.
+   const itemDictionary=window.ChlohaPokeAPILocalizedNames?.items||{};
+   const plateName=plateJapanese&&itemDictionary[plateJapanese[1]]?.[locale];
+   const berryName=berryJapanese&&itemDictionary[berryJapanese[1]]?.[locale];
+   const plateType=plateJapanese&&localizedPokemonType(plateJapanese[2],locale);
+   const berryTypeLocalized=berryJapanese&&localizedPokemonType(
+    Object.keys(berryType).length?Object.entries(typeNames).find(([,en])=>en===berryType)?.[0]:null,locale);
+   const itemEffectSuffix={
+    fr:[' (capacités ',' ×1,2)',' (dégâts ',' ×0,5)'],
+    de:[' (','-Attacken ×1,2)',' (','-Schaden ×0,5)'],
+    es:[' (movimientos ',' ×1,2)',' (daño de ',' ×0,5)'],
+    it:[' (mosse ',' ×1,2)',' (danni ',' ×0,5)'],
+    ko:[' (','타입 기술 ×1.2)',' (','타입 기술 데미지 ×0.5)'],
+    'zh-Hans':['（','属性招式×1.2）','（','属性伤害×0.5）'],
+    'zh-Hant':['（','屬性招式×1.2）','（','屬性傷害×0.5）']
+   }[locale];
+   const localizedPlate=plateName&&plateType&&itemEffectSuffix?
+    plateName+itemEffectSuffix[0]+plateType+itemEffectSuffix[1]:null;
+   const localizedBerry=berryName&&berryTypeLocalized&&itemEffectSuffix?
+    berryName+itemEffectSuffix[2]+berryTypeLocalized+itemEffectSuffix[3]:null;
    const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
    const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
    const typeEnglish=typeNames[base];
@@ -290,7 +311,7 @@ function translateOptions(){
    };
    const moveType=localizedTypeNames[move?.[2]]?.[locale]||typeNames[move?.[2]]||move?.[2];
    const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[locale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[locale]||moveStatuses[move[4]]||move[4]);
-   const next=locale==='ja'?base:locale==='en'?englishOption:((plateJapanese&&localizedPlateOptions[plateJapanese[1]]?.[locale])||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
+   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedPlate||localizedBerry||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
