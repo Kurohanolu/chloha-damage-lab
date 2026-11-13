@@ -442,6 +442,13 @@ const localeUiPhrases={
  'Search Pokémon':{fr:'Rechercher un Pokémon',de:'Pokémon suchen',es:'Buscar Pokémon',it:'Cerca Pokémon',ko:'포켓몬 검색','zh-Hans':'搜索宝可梦','zh-Hant':'搜尋寶可夢'},
  'Search moves':{fr:'Rechercher une capacité',de:'Attacke suchen',es:'Buscar movimientos',it:'Cerca mosse',ko:'기술 검색','zh-Hans':'搜索招式','zh-Hant':'搜尋招式'},
  'Type a name to select':{fr:'Saisissez un nom',de:'Namen eingeben',es:'Escribe un nombre',it:'Inserisci un nome',ko:'이름을 입력하세요','zh-Hans':'输入名称以选择','zh-Hant':'輸入名稱以選擇'},
+ 'Guaranteed KO':{fr:'KO garanti',de:'Garantierter K. o.',es:'KO garantizado',it:'KO garantito',ko:'확정 KO','zh-Hans':'必定击倒','zh-Hant':'必定擊倒'},
+ 'Possible KO':{fr:'KO possible',de:'Möglicher K. o.',es:'Posible KO',it:'KO possibile',ko:'난수 KO','zh-Hans':'可能击倒','zh-Hant':'可能擊倒'},
+ 'No damage':{fr:'Aucun dégât',de:'Kein Schaden',es:'Sin daño',it:'Nessun danno',ko:'데미지 없음','zh-Hans':'无伤害','zh-Hant':'無傷害'},
+ 'Target already fainted':{fr:'La cible est déjà K.O.',de:'Ziel ist bereits kampfunfähig',es:'El objetivo ya está debilitado',it:'Il bersaglio è già esausto',ko:'대상은 이미 기절함','zh-Hans':'目标已经昏厥','zh-Hant':'目標已經昏厥'},
+ 'Current HP':{fr:'PV actuels',de:'Aktuelle KP',es:'PS actuales',it:'PS attuali',ko:'현재 HP','zh-Hans':'当前HP','zh-Hant':'目前HP'},
+ 'KO chance':{fr:'Probabilité de KO',de:'K.-o.-Chance',es:'Probabilidad de KO',it:'Probabilità di KO',ko:'KO 확률','zh-Hans':'击倒概率','zh-Hant':'擊倒機率'},
+ 'Not applicable':{fr:'Sans objet',de:'Nicht anwendbar',es:'No aplicable',it:'Non applicabile',ko:'해당 없음','zh-Hans':'不适用','zh-Hant':'不適用'},
  'Guaranteed survival':{fr:'Survie garantie',de:'Überlebt garantiert',es:'Supervivencia garantizada',it:'Sopravvivenza garantita',ko:'확정 생존','zh-Hans':'必定存活','zh-Hant':'必定存活'},
  'Damage relative to max HP':{fr:'Dégâts en % des PV max',de:'Schaden relativ zu max. KP',es:'Daño respecto a los PS máximos',it:'Danno rispetto ai PS massimi',ko:'최대 HP 대비 데미지','zh-Hans':'占最大HP的伤害','zh-Hant':'佔最大HP的傷害'},
  'Final damage':{fr:'Dégâts finaux',de:'Endschaden',es:'Daño final',it:'Danno finale',ko:'최종 데미지','zh-Hans':'最终伤害','zh-Hant':'最終傷害'},
@@ -454,6 +461,29 @@ const localeUiPhrases={
  'ダブル':{fr:'Duo',de:'Doppel',es:'Doble',it:'Doppio',ko:'더블','zh-Hans':'双打','zh-Hant':'雙打'},
  'シングル':{fr:'Solo',de:'Einzel',es:'Individual',it:'Singolo',ko:'싱글','zh-Hans':'单打','zh-Hant':'單打'}
 };
+// Verdicts are UI-only: preserve HP values and calculated KO percentages.
+const verdictSource={
+ '確定KO':'Guaranteed KO','乱数KO':'Possible KO','ダメージなし':'No damage',
+ '対象はすでにひんし':'Target already fainted'
+};
+function localizedVerdict(base,target){
+ const source=String(base);
+ const label=verdictSource[source]||source;
+ if(localeUiPhrases[label]){
+  return target==='ja'?Object.keys(verdictSource).find(key=>verdictSource[key]===label)||source:
+   target==='en'?label:localeUiPhrases[label][target]||label;
+ }
+ const detail=source.match(/^現在HP\\s*(\\d+)\\s*\\/\\s*KO率\\s*(対象外|(?:\\d+(?:\\.\\d+)?)%)$/);
+ if(detail){
+  const hp=detail[1],chance=detail[2];
+  if(target==='ja')return '現在HP '+hp+' / KO率 '+chance;
+  const name=key=>target==='en'?key:localeUiPhrases[key]?.[target]||key;
+  return name('Current HP')+' '+hp+' / '+name('KO chance')+' '+(chance==='対象外'?name('Not applicable'):chance);
+ }
+ const mini=source.match(/^(確定KO|乱数KO|ダメージなし|対象はすでにひんし)\\s*[·・]\\s*(\\d+(?:\\.\\d+)?%)$/);
+ if(mini)return localizedVerdict(mini[1],target)+' · '+mini[2];
+ return null;
+}
 // Numeric damage ranges are localized without touching battle calculation values.
 const damageRangeSuffix={
  ja:'ダメージ',en:'damage',fr:'dégâts',de:'Schaden',es:'de daño',it:'danni',ko:'데미지','zh-Hans':'伤害','zh-Hant':'傷害'
@@ -467,7 +497,7 @@ function localizedDamageRange(base,target){
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
- const dynamic=localizedDamageRange(base,locale);
+ const dynamic=localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
@@ -478,6 +508,7 @@ function localizedUi(base){
  return translateRuntime(base);
 }
 const original=new WeakMap();
+const lastRenderedText=new WeakMap();
 function translate(root){
  if(!root||root.nodeType!==1)return;
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
@@ -488,12 +519,14 @@ function translate(root){
   const value=node.nodeValue,trim=value.trim();
   if(!trim)continue;
   const cached=original.get(node);
-  const cachedRendered=cached===undefined?null:translateRuntime(cached);
-  // Calculator updates existing text nodes in place; detect new source content.
+  const cachedRendered=lastRenderedText.get(node);
+  // Preserve original Japanese when switching between non-English locales.
+  // Treat a changed value as fresh calculator output, not a translation.
   if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,recoverJapanese(trim));
   const base=original.get(node);
   const next=locale==='ja'?base:localizedUi(base);
   if(trim!==next)node.nodeValue=value.replace(trim,next);
+  lastRenderedText.set(node,next);
  }
  for(const element of [root,...root.querySelectorAll('[title],[aria-label],[placeholder]')]){
   for(const attr of ['title','aria-label','placeholder']){
