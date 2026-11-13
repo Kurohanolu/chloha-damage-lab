@@ -63,6 +63,17 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    }
    return {roster:roster.length,checked:roster.length*locales.length,errors};
   });
+  // Independent official Pokémon World Championships multilingual dictionary
+  // (WC12_Battle_Dictionary.pdf): Charizard names are not derived from the
+  // application's localization dictionaries. Keep provenance explicit.
+  const officialSpeciesSamples=await page.evaluate(()=>[
+   ['charizard','en','Charizard'],
+   ['charizard','fr','Dracaufeu'],
+   ['charizard','de','Glurak'],
+   ['charizard','ko','리자몽']
+  ].map(([id,locale,expected])=>({id,locale,expected,actual:window.ChlohaLocalePokemonName(id,locale)})));
+  assert.deepEqual(officialSpeciesSamples.filter(x=>x.actual!==x.expected),[],
+   'official multilingual Charizard spellings differ from displayed labels');
   // Reference spellings: official French Mega Evolution site, official
   // Chinese Palafin Pokédex and Bulbapedia multilingual form table.
   const officialFormSamples=await page.evaluate(()=>[
