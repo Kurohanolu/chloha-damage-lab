@@ -54,6 +54,23 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
     if(en&&ja&&en!==ja&&en===item.text&&/[A-Za-z]{3}/.test(en))
      candidates.push({key:item.key,text:item.text});
    }
+   // Group by content rather than DOM occurrence, and separate prose from UI labels.
+   // This avoids mistaking repeated controls for distinct translation gaps.
+   const unique=[...new Set(candidates.map(x=>x.text))];
+   const category=text=>{
+    if(/(?:\\b(?:HP|STAB|Pokémon|Showdown)\\b|^v\\d)/i.test(text)&&text.length<24)return 'shared-terminology';
+    if(text.split(/\\s+/).length>=8)return 'explanatory-prose';
+    if(/^(?:About versions:|Verification status:|Of max HP:|Type effectiveness|OHKO chance)/i.test(text))return 'dynamic-result';
+    if(/^(?:Auto-fill|Attack|Defense|Move |Type |Stat |Base stat|Level |Nature|Speed|HP)/i.test(text))return 'form-controls';
+    return 'other-ui';
+   };
+   const buckets={};
+   for(const value of unique)(buckets[category(value)]||=[]).push(value);
+   console.log('AUDIT UI TRIAGE '+target+' '+JSON.stringify(
+    Object.fromEntries(Object.entries(buckets).map(([kind,values])=>
+     [kind,{unique:values.length,examples:values.slice(0,35)}]))));
+   // All non-Japanese locales must retain their own text after a full UI sweep.
+   // Actual translation coverage remains diagnostic until the baseline is cleaned.
    console.log('AUDIT EXPANDED UI '+target+' English-equal='+candidates.length+
     '; examples='+JSON.stringify(candidates.slice(0,30)));
   }
