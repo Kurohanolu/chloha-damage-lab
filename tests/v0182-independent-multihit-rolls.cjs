@@ -3,7 +3,8 @@
 // The oracle enumerates 256 equally likely pairs rather than using the
 // implementation's convolution/distribution helpers.
 const assert=require('node:assert/strict');
-const {totalDistribution,convolve,koProbability}=require('../multi-hit.js');
+const multiHitModule=require('../multi-hit.js');
+const {totalDistribution,convolve,koProbability}=multiHitModule.default||globalThis.ChlohaMultiHit||multiHitModule;
 const first=Array.from({length:16},(_,i)=>11+Math.floor(i/3));
 const second=Array.from({length:16},(_,i)=>17+Math.floor(i/4));
 const counts=new Map();
