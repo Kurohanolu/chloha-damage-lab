@@ -82,6 +82,7 @@ jobs:
       - run: node tests/v0182-move-coverage-inventory.cjs
       - run: node tests/v0182-move-triage-ledger.cjs
       - run: node tests/v0182-multihit-weight-reconciliation.cjs
+      - run: node tests/v0182-spit-up-browser.cjs
       - run: node tests/v0182-four-move-policy-engine.mjs
       - run: node tests/v0182-remaining-37-ui-wiring.mjs
       - run: node tests/v0182-conditional-power-rolls.mjs
