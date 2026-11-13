@@ -85,24 +85,30 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    }
   }
   console.log('PASS Loaded Dice and Earth Plate native labels in seven non-Japanese/non-English locales');
-  const plateIds=['flamePlate','splashPlate','zapPlate','meadowPlate','iciclePlate',
-   'fistPlate','toxicPlate','earthPlate','skyPlate','mindPlate','insectPlate',
-   'stonePlate','spookyPlate','dracoPlate','dreadPlate','ironPlate','pixiePlate'];
+  const plateCases=[
+   ['flamePlate','ほのお'],['splashPlate','みず'],['zapPlate','でんき'],
+   ['meadowPlate','くさ'],['iciclePlate','こおり'],['fistPlate','かくとう'],
+   ['toxicPlate','どく'],['earthPlate','じめん'],['skyPlate','ひこう'],
+   ['mindPlate','エスパー'],['insectPlate','むし'],['stonePlate','いわ'],
+   ['spookyPlate','ゴースト'],['dracoPlate','ドラゴン'],['dreadPlate','あく'],
+   ['ironPlate','はがね'],['pixiePlate','フェアリー']
+  ];
+  await page.locator('#dbAuto').uncheck();
   for(const locale of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
    await page.locator('#chloha-locale').selectOption(locale);
-   const options=await page.locator('#attItem option').evaluateAll(nodes=>
-    nodes.map(el=>({id:el.value,text:el.textContent.trim(),label:el.label})));
-   for(const id of plateIds){
-    const item=options.find(x=>x.id===id);
-    assert.ok(item,'Missing Plate option: '+id);
-    assert.equal(item.text,item.label,'Native Android option label mismatch: '+locale+' '+id);
+   for(const [id,type] of plateCases){
+    await page.locator('#moveType').selectOption(type);
+    const item=await page.locator('#attItem option[value="'+id+'"]').evaluate(el=>({
+     text:el.textContent.trim(),label:el.label
+    }));
+    assert.equal(item.text,item.label,'Android option label mismatch: '+locale+' '+id);
     assert.ok(!/[ぁ-んァ-ヶ]/.test(item.text),
-     'Japanese leakage in Plate item: '+locale+' '+id+' '+item.text);
+     'Japanese leakage in Plate: '+locale+' '+id+' '+item.text);
     assert.ok(!/\\b(?:moves|damage|Ground|Fire|Water|Electric|Grass|Ice|Fighting|Poison|Flying|Psychic|Bug|Rock|Ghost|Dragon|Dark|Steel|Fairy)\\b/i.test(item.text),
-     'English leakage in Plate item: '+locale+' '+id+' '+item.text);
+     'English leakage in Plate: '+locale+' '+id+' '+item.text);
    }
   }
-  console.log('PASS all 17 Plate item options x seven locales (119 Android labels)');
+  console.log('PASS all 17 context-filtered Plate options x seven locales (119 Android labels)');
   // All 18 resistance Berries exist in the damage engine, but the current
   // defender UI exposes an auto-matching Berry option, not 18 individual options.
   // Audit the underlying dictionary separately so future selectors stay safe.
