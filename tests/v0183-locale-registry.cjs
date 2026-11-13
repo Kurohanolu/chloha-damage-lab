@@ -19,5 +19,5 @@ assert.equal(locale.lookup(catalogs,'fr','onlyJa'),'日本語');
 assert.equal(locale.lookup(catalogs,'ko','notYetTranslated'),'notYetTranslated');
 assert.deepEqual(Array.from(locale.missing(catalogs,'fr',['attack','onlyJa'])),['onlyJa']);
 assert.deepEqual(Array.from(locale.missing(catalogs,'ko',['attack','onlyJa'])),['attack','onlyJa']);
-assert.throws(()=>locale.lookup(catalogs,'ja',''),TypeError);
+assert.throws(()=>locale.lookup(catalogs,'ja',''),error=>error?.name==='TypeError');
 console.log('PASS v0.183 nine-language registry, fallback, and missing-translation audit');
