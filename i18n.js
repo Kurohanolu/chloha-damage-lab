@@ -561,6 +561,14 @@ const expandedPanelTranslations={
  'Undo one turn':{fr:'Annuler un tour',de:'Einen Zug rückgängig machen',es:'Deshacer un turno',it:'Annulla un turno',ko:'한 턴 되돌리기','zh-Hans':'撤销一回合','zh-Hant':'復原一回合'},
  'Clear history':{fr:'Effacer l’historique',de:'Verlauf löschen',es:'Borrar historial',it:'Cancella cronologia',ko:'기록 지우기','zh-Hans':'清除历史记录','zh-Hant':'清除歷史記錄'},
  'Observed damage':{fr:'Dégâts observés',de:'Beobachteter Schaden',es:'Daño observado',it:'Danni osservati',ko:'실측 피해','zh-Hans':'实测伤害','zh-Hant':'實測傷害'},
+ 'Collapse stats':{fr:'Réduire les statistiques',de:'Werte einklappen',es:'Contraer estadísticas',it:'Comprimi statistiche',ko:'능력치 접기','zh-Hans':'收起能力值','zh-Hant':'收合能力值'},
+ 'Stat':{fr:'Statistique',de:'Wert',es:'Estadística',it:'Statistica',ko:'능력치','zh-Hans':'能力值','zh-Hant':'能力值'},
+ 'Points':{fr:'Points',de:'Punkte',es:'Puntos',it:'Punti',ko:'포인트','zh-Hans':'点数','zh-Hant':'點數'},
+ 'Nature':{fr:'Nature',de:'Wesen',es:'Naturaleza',it:'Natura',ko:'성격','zh-Hans':'性格','zh-Hant':'性格'},
+ 'Actual stat':{fr:'Statistique réelle',de:'Tatsächlicher Wert',es:'Valor real',it:'Valore effettivo',ko:'실제 능력치','zh-Hans':'实际能力值','zh-Hant':'實際能力值'},
+ 'Validate every move.':{fr:'Vérifiez chaque capacité.',de:'Jede Attacke überprüfen.',es:'Verifica cada movimiento.',it:'Verifica ogni mossa.',ko:'각 기술을 확인하세요.','zh-Hans':'请核对每个招式。','zh-Hant':'請核對每個招式。'},
+ 'Experimental build; not fully verified on hardware.':{fr:'Version expérimentale, non entièrement vérifiée sur console.',de:'Experimentelle Version; nicht vollständig auf Hardware geprüft.',es:'Versión experimental; no verificada completamente en consola.',it:'Versione sperimentale; non completamente verificata su console.',ko:'실험 버전으로 실기 검증이 완료되지 않았습니다.','zh-Hans':'实验版本，尚未完成实机验证。','zh-Hant':'實驗版本，尚未完成實機驗證。'},
+ 'Damage results, availability and learnsets are not guaranteed.':{fr:'Les dégâts, la disponibilité et les capacités apprises ne sont pas garantis.',de:'Schadenswerte, Verfügbarkeit und erlernbare Attacken sind nicht garantiert.',es:'No se garantizan los daños, la disponibilidad ni los movimientos aprendidos.',it:'Danni, disponibilità e mosse apprendibili non sono garantiti.',ko:'피해량, 사용 가능 여부 및 기술 습득 여부는 보장되지 않습니다.','zh-Hans':'伤害结果、可用性和可学招式均不保证准确。','zh-Hant':'傷害結果、可用性與可學招式均不保證準確。'},
  'Show calculation trace':{fr:'Afficher les étapes du calcul',de:'Berechnungsschritte anzeigen',es:'Mostrar los pasos del cálculo',it:'Mostra i passaggi del calcolo',ko:'계산 과정 표시','zh-Hans':'显示计算过程','zh-Hant':'顯示計算過程'}
 };
 const localeUiPhrases={
