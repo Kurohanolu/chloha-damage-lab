@@ -132,6 +132,16 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
     formStructurePending.push(item);
    }
   }
+  // The sole previously pending German Frost Rotom has an established form name.
+  const frost=await page.evaluate(async()=>{
+   document.querySelector('#chloha-locale').value='de';
+   document.querySelector('#chloha-locale').dispatchEvent(new Event('change',{bubbles:true}));
+   const option=[...document.querySelector('#dbAttPokemon').options]
+    .find(x=>x.value==='candidate093_34');
+   return option?.textContent.trim()||null;
+  });
+  console.log('AUDIT GERMAN FROST ROTOM actual='+JSON.stringify(frost));
+  assert.equal(frost,'Frost-Rotom','German Frost Rotom must use the verified form name');
   console.log('AUDIT FORM STRUCTURE verified='+formStructureVerified.length+
    '; pending official-form verification='+formStructurePending.length);
   for(const item of formStructurePending)console.log('AUDIT FORM PENDING '+JSON.stringify(item));
