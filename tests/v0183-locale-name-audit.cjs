@@ -18,8 +18,12 @@ for(const locale of Array.from(context.ChlohaNameLocaleAudit.locales)){
  assert.equal(result.coverage.pokemon[locale].translated,1);
  assert.ok(result.coverage.moves[locale].total>=1);
 }
-assert.equal(result.coverage.abilities.ko.translated,0);
-assert.equal(result.coverage.items.fr.translated,0);
+assert.equal(result.counts.abilities.localized,9);
+assert.equal(result.counts.items.localized,9);
+for(const locale of Array.from(context.ChlohaNameLocaleAudit.locales)){
+ assert.equal(result.coverage.abilities[locale].translated,1);
+ assert.equal(result.coverage.items[locale].translated,1);
+}
 const bad=audit(catalog,{moves:{'missing-id':{fr:'test'},'かえんほうしゃ':{xx:'wrong',en:'Not Flamethrower',ja:''}}});
 assert.equal(bad.ok,false);
 for(const code of ['unknown-id','unsupported-locale','english-mismatch','empty-name']){
