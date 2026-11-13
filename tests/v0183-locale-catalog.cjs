@@ -1,0 +1,20 @@
+'use strict';
+const assert=require('node:assert/strict');
+const registry=require('../locale-registry.js');
+const catalogs=require('../locale-catalog.js');
+const codes=registry.entries.map(x=>x.code);
+assert.deepEqual(Object.keys(catalogs),codes);
+const keys=Object.keys(catalogs.ja);
+assert.ok(keys.length>=12);
+for(const code of codes){
+ assert.deepEqual(Object.keys(catalogs[code]),keys,'locale key parity: '+code);
+ assert.deepEqual(registry.missing(catalogs,code,keys),[],'missing locale entries: '+code);
+ for(const key of keys){
+  assert.equal(registry.lookup(catalogs,code,key),catalogs[code][key]);
+  assert.ok(catalogs[code][key].trim());
+ }
+}
+assert.equal(registry.lookup(catalogs,'fr','missing-key'),'missing-key');
+assert.equal(registry.lookup({ja:{damage:'ダメージ'},en:{damage:'Damage'}},'ko','damage'),'Damage');
+assert.equal(registry.lookup({ja:{damage:'ダメージ'}},'ko','damage'),'ダメージ');
+console.log('PASS v0.183 nine-language initial UI key parity and fallback');
