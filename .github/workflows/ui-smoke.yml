@@ -80,6 +80,7 @@ jobs:
       - run: node tests/v0182-four-move-policy-engine.mjs
       - run: node tests/v0182-remaining-37-ui-wiring.mjs
       - run: node tests/v0182-conditional-power-rolls.mjs
+      - run: node tests/stat-reference-forced-critical-audit.mjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
