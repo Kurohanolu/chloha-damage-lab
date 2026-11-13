@@ -1,0 +1,45 @@
+name: Damage Lab CI and status ledger
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test dependencies
+        run: npm install --no-save
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Showdown calculation comparison
+        run: npm run test:showdown
+      - name: Nine-locale rotation and translated form search
+        run: node tests/v0183-nine-locale-roundtrip.cjs
+
+  report:
+    if: ${{ always() && github.event_name != 'pull_request' }}
+    needs: [verify]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record exact commit and CI result in issue 53
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          RESULT: ${{ needs.verify.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          printf 'CI result: **%s**\nCommit: `%s`\nWorkflow: %s\n' "$RESULT" "$SHA" "$RUN_URL" > /tmp/ci-status.md
+          gh issue comment 53 --repo "$REPO" --body-file /tmp/ci-status.md
