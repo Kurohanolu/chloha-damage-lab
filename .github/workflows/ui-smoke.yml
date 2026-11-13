@@ -20,8 +20,9 @@ on:
       - 'names-*.js'
       - weight-power.js
       - variable-power.js
+      - multi-hit.js
       - tests/**
-      - data/showdown-ability-flags-v0182.json
+      - data/**
       - .github/workflows/ui-smoke.yml
   workflow_dispatch:
 permissions:
