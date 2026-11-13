@@ -807,13 +807,16 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const speciesCatalog=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
   const baseRecord=[...pokemonById.values()].find(q=>q.name===baseJapanese);
   const catalogEntry=Object.values(speciesCatalog).find(entry=>entry.ja===baseJapanese);
-  const baseTranslated=(baseRecord&&(
-   window.ChlohaLocalizedNames?.pokemon?.[baseRecord.id]?.[locale]||
-   speciesCatalog[baseRecord.id]?.[locale]))||catalogEntry?.[locale];
+  const baseTranslated=window.ChlohaFormSpeciesBases?.[key]?.base?.[locale]||
+   (baseRecord&&(
+    window.ChlohaLocalizedNames?.pokemon?.[baseRecord.id]?.[locale]||
+    speciesCatalog[baseRecord.id]?.[locale]))||catalogEntry?.[locale];
   if(!baseTranslated)return null;
   if(prefix){
    const affix=raw.match(/[XYZ]$/)?.[0]||'';
-   const formName=baseTranslated+(affix?' '+affix:'');
+   const gender=raw.match(/\((オス|メス)\)$/)?.[1];
+   const genderSuffix=gender?(gender==='オス'?' ♂':' ♀'):'';
+   const formName=baseTranslated+(affix?' '+affix:'')+genderSuffix;
    const marker=formPrefixes[prefix][locale]||formPrefixes[prefix].en;
    return ['fr','es','it'].includes(locale)&&prefix!=='メガ'
     ?formName+' '+marker.trim():marker+formName;
@@ -1240,4 +1243,4 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  refreshUI();
 })();
 
-</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script src="./names-catalog-v0179.js"></script><script src="./names-forms-v0179.js"></script><script src="./locale-registry.js"></script><script src="./locale-catalog.js"></script><script defer src="./i18n.js"></script><script src="./locale-name-search.js"></script><script src="./locale-names-pokeapi-v0183.js"></script><script src="./locale-names-v0183.js"></script><script defer src="./names-ui-v0179.js"></script><script defer src="./names-ui-v0183.js"></script></body></html>
+</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script src="./names-catalog-v0179.js"></script><script src="./names-forms-v0179.js"></script><script src="./locale-registry.js"></script><script src="./locale-catalog.js"></script><script defer src="./i18n.js"></script><script src="./locale-name-search.js"></script><script src="./locale-names-pokeapi-v0183.js"></script><script src="./locale-form-species-v0183.js"></script><script src="./locale-names-v0183.js"></script><script defer src="./names-ui-v0179.js"></script><script defer src="./names-ui-v0183.js"></script></body></html>
