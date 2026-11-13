@@ -47,6 +47,35 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   assert.deepEqual(officialEuResults.filter(row=>
    String(row.actual).normalize('NFC')!==row.expected.normalize('NFC')),[],
    'EU species spellings differ from individually sourced official names');
+  // Audit the entire registered Pokémon-name dictionary, not just roster
+  // options or the handful of official-source samples. Missing translations
+  // remain reported as debt until independently reviewed; never auto-pass
+  // them as official spellings or silently fill them from another language.
+  const asianDictionaryAudit=await page.evaluate(()=>{
+   const registry=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
+   const locales=['ko','zh-Hans','zh-Hant'];
+   const totals=Object.fromEntries(locales.map(locale=>[locale,{registered:0,missing:[],unresolved:[]}]));
+   for(const [id,record] of Object.entries(registry)){
+    for(const locale of locales){
+     const stats=totals[locale],value=record?.[locale];
+     if(!value||!String(value).trim()){stats.missing.push(id);continue;}
+     stats.registered++;
+     const display=window.ChlohaLocalePokemonName?.(id,locale);
+     if(!display||String(display).normalize('NFC')!==String(value).normalize('NFC'))
+      stats.unresolved.push(id);
+    }
+   }
+   return {species:Object.keys(registry).length,locales:totals};
+  });
+  for(const locale of ['ko','zh-Hans','zh-Hant']){
+   const stats=asianDictionaryAudit.locales[locale];
+   assert.equal(stats.registered+stats.missing.length,asianDictionaryAudit.species,
+    'Asian registry accounting mismatch: '+locale);
+   assert.deepEqual(stats.unresolved,[],
+    'Asian localized-name resolver mismatch: '+locale);
+  }
+  console.log('Asian dictionary audit (coverage, NOT official verification): '+
+   JSON.stringify(asianDictionaryAudit));
   // Asian three-locale regression baseline. Provenance status is deliberately
   // separate from the official-verified European fixture.
   const asianFixture=require('./v0183-asian-species-regression.json');
