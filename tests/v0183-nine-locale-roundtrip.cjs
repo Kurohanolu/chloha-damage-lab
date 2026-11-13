@@ -8,6 +8,13 @@ const typeMatch=typeSource.match(/const localizedTypeNames=(\{[^;]+\});/);
 assert.ok(typeMatch,'localized type dictionary must exist');
 const canonicalTypes=JSON.parse(typeMatch[1]);
 const referenceTypes=require('./v0183-type-reference.json').types;
+const europeanOfficial=require('./v0183-european-official-types.json').types;
+for(const locale of ['fr','de','es','it']){
+ const actual=Object.values(canonicalTypes).map(names=>names[locale]);
+ assert.deepEqual(actual,europeanOfficial[locale],
+  'official Pokémon 18-type names mismatch for '+locale);
+}
+
 // Independent English game-type reference from the official Pokémon Pokédex
 // type filter (pokemon.com/pokedex/), not copied from our i18n dictionary.
 // Keep official evidence separate from the internal regression fixture.
