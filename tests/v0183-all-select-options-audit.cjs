@@ -74,6 +74,28 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
    console.log('AUDIT EXPANDED UI '+target+' English-equal='+candidates.length+
     '; examples='+JSON.stringify(candidates.slice(0,30)));
   }
+  // Regression gate: known dynamic result phrases must not silently fall back
+  // to English in any of the seven non-English locales.
+  const forbidden=[
+   /^Of max HP:/,
+   /^Type effectiveness\\s*×/,
+   /^OHKO chance against current HP:/,
+   /^Verification status: Not hardware-verified$/,
+   /^Attack and damage modifiers$/,
+   /^Defensive modifiers and ally support$/,
+   /^Critical hit \\(advanced\\)$/,
+   /^Helping Hand \\(ally support\\)$/
+  ];
+  const regressions=[];
+  for(const target of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
+   for(const item of uiSnapshots[target]){
+    if(forbidden.some(pattern=>pattern.test(item.text)))
+     regressions.push({locale:target,text:item.text});
+   }
+  }
+  console.log('AUDIT UI STRICT known-English-regressions='+regressions.length+
+   '; examples='+JSON.stringify(regressions.slice(0,20)));
+  assert.deepEqual(regressions,[],'Known translated UI phrases reverted to English');
   await selector.selectOption('ja');
   const key=o=>o.select+'|'+o.value+'|'+o.index;
   const japanese=new Map(snapshots.ja.map(o=>[key(o),o]));
