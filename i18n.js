@@ -721,16 +721,16 @@ const expandedPanelTranslations={
  'Show calculation trace':{fr:'Afficher les étapes du calcul',de:'Berechnungsschritte anzeigen',es:'Mostrar los pasos del cálculo',it:'Mostra i passaggi del calcolo',ko:'계산 과정 표시','zh-Hans':'显示计算过程','zh-Hant':'顯示計算過程'}
 };
 const screenshotLocalePhrases={
- 'Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.':{ko:'능력치 포인트는 각 0~32, 총합 최대 66입니다. 빈칸은 0으로 처리됩니다. 자동 입력을 끄면 능력치, 타입, 기술 위력을 수정할 수 있습니다.','zh-Hans':'能力点数：每项0～32点，总计最多66点。留空视为0。关闭自动填充后可编辑能力值、属性和招式威力。','zh-Hant':'能力點數：每項0～32點，總計最多66點。留空視為0。關閉自動填入後可編輯能力值、屬性和招式威力。'},
- 'Level (fixed at 50)':{ko:'레벨 (50 고정)','zh-Hans':'等级（固定50）','zh-Hant':'等級（固定50）'},
- 'Move power':{ko:'기술 위력','zh-Hans':'招式威力','zh-Hant':'招式威力'},
- 'Attack / Sp. Atk stat':{ko:'공격 / 특수공격 실수치','zh-Hans':'攻击／特攻实际值','zh-Hant':'攻擊／特攻實際值'},
- 'Defense / Sp. Def stat':{ko:'방어 / 특수방어 실수치','zh-Hans':'防御／特防实际值','zh-Hant':'防禦／特防實際值'},
- 'Move type':{ko:'기술 타입','zh-Hans':'招式属性','zh-Hant':'招式屬性'},
- 'Move category':{ko:'기술 분류','zh-Hans':'招式分类','zh-Hant':'招式分類'},
- 'Type 1':{ko:'타입 1','zh-Hans':'属性1','zh-Hant':'屬性1'},
- 'Type 2':{ko:'타입 2','zh-Hans':'属性2','zh-Hant':'屬性2'},
- 'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.','zh-Hans':'373只宝可梦和335个招式的数据包含候选项目。尚未验证招式学习范围；遇到不支持的特性时将停止计算。复杂交互、太晶化及实机的取整顺序仍未验证。','zh-Hant':'373隻寶可夢和335個招式的資料包含候選項目。尚未驗證招式學習範圍；遇到不支援的特性時將停止計算。複雜交互、太晶化及實機的取整順序仍未驗證。'}
+ 'Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.':{fr:"Points de stats : 0 à 32 par stat, 66 au total. Une case vide vaut zéro. Désactivez le remplissage automatique pour modifier les stats, les types et la puissance.",de:"Statuspunkte: 0–32 pro Wert, insgesamt höchstens 66. Leer bedeutet null. Automatisches Ausfüllen deaktivieren, um Werte, Typen und Stärke zu bearbeiten.",es:"Puntos de estadísticas: de 0 a 32 por estadística, máximo 66 en total. Los campos vacíos valen cero. Desactiva el autocompletado para editar estadísticas, tipos y potencia.",it:"Punti statistiche: da 0 a 32 per statistica, massimo 66 in totale. I campi vuoti valgono zero. Disattiva la compilazione automatica per modificare statistiche, tipi e potenza.",ko:'능력치 포인트는 각 0~32, 총합 최대 66입니다. 빈칸은 0으로 처리됩니다. 자동 입력을 끄면 능력치, 타입, 기술 위력을 수정할 수 있습니다.','zh-Hans':'能力点数：每项0～32点，总计最多66点。留空视为0。关闭自动填充后可编辑能力值、属性和招式威力。','zh-Hant':'能力點數：每項0～32點，總計最多66點。留空視為0。關閉自動填入後可編輯能力值、屬性和招式威力。'},
+ 'Level (fixed at 50)':{fr:"Niveau (fixé à 50)",de:"Level (fest auf 50)",es:"Nivel (fijo en 50)",it:"Livello (fisso a 50)",ko:'레벨 (50 고정)','zh-Hans':'等级（固定50）','zh-Hant':'等級（固定50）'},
+ 'Move power':{fr:"Puissance de la capacité",de:"Attackenstärke",es:"Potencia del movimiento",it:"Potenza della mossa",ko:'기술 위력','zh-Hans':'招式威力','zh-Hant':'招式威力'},
+ 'Attack / Sp. Atk stat':{fr:"Attaque / Att. Spé. réelle",de:"Angriff / Spezial-Angriff",es:"Ataque / At. Esp. real",it:"Attacco / Att. Sp. effettivo",ko:'공격 / 특수공격 실수치','zh-Hans':'攻击／特攻实际值','zh-Hant':'攻擊／特攻實際值'},
+ 'Defense / Sp. Def stat':{fr:"Défense / Déf. Spé. réelle",de:"Verteidigung / Spezial-Verteidigung",es:"Defensa / Def. Esp. real",it:"Difesa / Dif. Sp. effettiva",ko:'방어 / 특수방어 실수치','zh-Hans':'防御／特防实际值','zh-Hant':'防禦／特防實際值'},
+ 'Move type':{fr:"Type de la capacité",de:"Attackentyp",es:"Tipo del movimiento",it:"Tipo della mossa",ko:'기술 타입','zh-Hans':'招式属性','zh-Hant':'招式屬性'},
+ 'Move category':{fr:"Catégorie de la capacité",de:"Attackenkategorie",es:"Categoría del movimiento",it:"Categoria della mossa",ko:'기술 분류','zh-Hans':'招式分类','zh-Hant':'招式分類'},
+ 'Type 1':{fr:"Type 1",de:"Typ 1",es:"Tipo 1",it:"Tipo 1",ko:'타입 1','zh-Hans':'属性1','zh-Hant':'屬性1'},
+ 'Type 2':{fr:"Type 2",de:"Typ 2",es:"Tipo 2",it:"Tipo 2",ko:'타입 2','zh-Hans':'属性2','zh-Hant':'屬性2'},
+ 'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{fr:"Les 373 Pokémon et 335 capacités comprennent des entrées provisoires. Les capacités apprises ne sont pas vérifiées. Les talents non pris en charge interrompent le calcul. Les interactions complexes, la Téracristallisation et les arrondis sur console restent non vérifiés.",de:"Die 373 Pokémon und 335 Attacken enthalten vorläufige Einträge. Erlernbare Attacken sind nicht geprüft. Nicht unterstützte Fähigkeiten stoppen die Berechnung. Komplexe Wechselwirkungen, Terakristallisierung und Rundungsreihenfolge auf Hardware sind ungeprüft.",es:"Los 373 Pokémon y 335 movimientos incluyen entradas provisionales. No se ha verificado qué movimientos pueden aprender. Las habilidades no compatibles detienen el cálculo. Las interacciones complejas, la teracristalización y el orden de redondeo en consola siguen sin verificarse.",it:"I 373 Pokémon e le 335 mosse includono voci provvisorie. Le mosse apprendibili non sono verificate. Le abilità non supportate interrompono il calcolo. Le interazioni complesse, la teracristallizzazione e gli arrotondamenti su console non sono verificati.",ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.','zh-Hans':'373只宝可梦和335个招式的数据包含候选项目。尚未验证招式学习范围；遇到不支持的特性时将停止计算。复杂交互、太晶化及实机的取整顺序仍未验证。','zh-Hant':'373隻寶可夢和335個招式的資料包含候選項目。尚未驗證招式學習範圍；遇到不支援的特性時將停止計算。複雜交互、太晶化及實機的取整順序仍未驗證。'}
 };
 const localeUiPhrases={
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
@@ -1058,6 +1058,20 @@ function localizedUi(base){
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
+ if(['fr','de','es','it'].includes(locale)&&screenshotText.startsWith('About versions:')){
+  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
+  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
+  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
+  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
+  const v=version?.[1]||'v0.183',c=core?.[1]||'v0.162',reg=regression?.[1]||'v0.183',count=cases?.[1]||'54';
+  const translations={
+   fr:'À propos des versions : « '+v+' » est la version publique de l’interface. Le cœur de calcul « '+c+' » désigne la base de l’API interne et ne signifie pas que la vérification est terminée. Les tests de régression '+reg+' et '+count+' comparaisons Showdown ont réussi. Seules certaines conditions ont été comparées sur Pokémon Champions ; une correspondance parfaite n’est pas garantie.',
+   de:'Versionshinweis: „'+v+'“ ist die öffentliche UI-Version. Der Rechenkern „'+c+'“ bezeichnet die interne API-Grundlage und bedeutet keine vollständige Verifizierung. Die Regressionstests für '+reg+' und '+count+' Showdown-Vergleichsfälle wurden bestanden. Nur einige Bedingungen wurden auf Pokémon Champions-Hardware geprüft; identische Ergebnisse sind nicht garantiert.',
+   es:'Sobre las versiones: «'+v+'» es la versión pública de la interfaz. El núcleo de cálculo «'+c+'» identifica la base de la API interna y no implica que la verificación esté completa. Se superaron las pruebas de regresión de '+reg+' y '+count+' comparaciones con Showdown. Solo se han contrastado algunas condiciones en Pokémon Champions; no se garantizan resultados idénticos en todos los casos.',
+   it:'Informazioni sulle versioni: «'+v+'» è la versione pubblica dell’interfaccia. Il motore di calcolo «'+c+'» indica la base dell’API interna e non implica una verifica completa. Sono stati superati i test di regressione per '+reg+' e '+count+' confronti con Showdown. Solo alcune condizioni sono state confrontate su Pokémon Champions; non si garantiscono risultati identici in ogni situazione.'
+  };
+  return translations[locale];
+ }
  if((locale==='zh-Hans'||locale==='zh-Hant')&&screenshotText.startsWith('About versions:')){
   const traditional=locale==='zh-Hant';
   const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
