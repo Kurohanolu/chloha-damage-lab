@@ -1,0 +1,26 @@
+{
+  "head_sha": "6659cc61df96e95687694b44f9fd58070369be58",
+  "workflow": "UI & damage regression",
+  "run_id": 43416162380,
+  "run_number": 920,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T11:20:33Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43416162380",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43416162380/job/131854502897",
+      "failed_steps": [
+        {
+          "name": "Run node tests/v0183-locale-name-audit.cjs",
+          "number": 49,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T11:20:20.5035629Z ##[endgroup]\n2026-11-13T11:20:20.5570110Z node:assert:150\n2026-11-13T11:20:20.5570749Z   throw new AssertionError(obj);\n2026-11-13T11:20:20.5571203Z   ^\n2026-11-13T11:20:20.5571400Z \n2026-11-13T11:20:20.5571646Z AssertionError [ERR_ASSERTION]: [\"pokemon:pikachu:unknown-id\"]\n2026-11-13T11:20:20.5571885Z \n2026-11-13T11:20:20.5571966Z false !== true\n2026-11-13T11:20:20.5572071Z \n2026-11-13T11:20:20.5572488Z     at Object.<anonymous> (/home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0183-locale-name-audit.cjs:14:8)\n2026-11-13T11:20:20.5573041Z     at Module._compile (node:internal/modules/cjs/loader:1781:14)\n2026-11-13T11:20:20.5573402Z     at Object..js (node:internal/modules/cjs/loader:1913:10)\n2026-11-13T11:20:20.5573815Z     at Module.load (node:internal/modules/cjs/loader:1505:32)\n2026-11-13T11:20:20.5574174Z     at Function._load (node:internal/modules/cjs/loader:1309:12)\n2026-11-13T11:20:20.5574436Z     at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)\n2026-11-13T11:20:20.5575139Z   generatedMessage: false,\n2026-11-13T11:20:20.5575274Z   code: 'ERR_ASSERTION',\n2026-11-13T11:20:20.5575397Z   actual: false,\n2026-11-13T11:20:20.5575510Z   expected: true,\n2026-11-13T11:20:20.5575628Z   operator: 'strictEqual',\n2026-11-13T11:20:20.5575752Z   diff: 'simple'\n2026-11-13T11:20:20.5575859Z }\n2026-11-13T11:20:20.5575918Z \n2026-11-13T11:20:20.5575966Z Node.js v22.23.4\n      content: Buffer.from(JSON.stringify(report, null, 2) + '\\n').toString('base64'),\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T11:20:28.8668222Z   debug: false\n2026-11-13T11:20:28.8668348Z   user-agent: actions/github-script\n2026-11-13T11:20:28.8668503Z   result-encoding: json\n2026-11-13T11:20:28.8668632Z   retries: 0\n2026-11-13T11:20:28.8669000Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T11:20:28.8669162Z env:\n2026-11-13T11:20:28.8669275Z   CI_JOB_STATUS: failure\n2026-11-13T11:20:28.8669405Z ##[endgroup]\n2026-11-13T11:20:30.5231499Z Post job cleanup.\n2026-11-13T11:20:30.5796731Z [command]/usr/bin/git version\n2026-11-13T11:20:30.5861857Z git version 2.56.0\n2026-11-13T11:20:30.5886682Z Temporarily overriding HOME='/home/runner/work/_temp/76e32caa-cacf-4eca-b4f1-998591b6ef47' before making global git config changes\n2026-11-13T11:20:30.5887504Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T11:20:30.5890682Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T11:20:30.5979549Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T11:20:30.6012448Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T11:20:30.6225120Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T11:20:30.6252793Z http.https://github.com/.extraheader\n2026-11-13T11:20:30.6261641Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T11:20:30.6298135Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T11:20:30.6513843Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T11:20:30.6550871Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T11:20:30.6850292Z Cleaning up orphan processes\n2026-11-13T11:20:30.7089000Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 814
+    }
+  ]
+}
