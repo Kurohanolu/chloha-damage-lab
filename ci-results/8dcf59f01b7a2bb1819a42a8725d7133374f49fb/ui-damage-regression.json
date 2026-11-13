@@ -1,0 +1,10 @@
+{
+  "head_sha": "8dcf59f01b7a2bb1819a42a8725d7133374f49fb",
+  "workflow": "UI & damage regression",
+  "run_id": 43386288513,
+  "run_number": 829,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T07:32:18Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43386288513"
+}
