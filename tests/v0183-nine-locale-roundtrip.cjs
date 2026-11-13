@@ -68,7 +68,7 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   const itemLabelChecks={
    fr:['Dé Pipé (4 à 5 coups)','Plaque Terre (capacités Sol ×1,2)'],
    de:['Gezinkter Würfel (4–5 Treffer)','Erdtafel (Boden-Attacken ×1,2)'],
-   es:['Dado Trucado (4–5 golpes)','Tabla Terra (movimientos Tierra ×1,2)'],
+   es:['Dado Trucado (4–5 golpes)','Tabla Terrax (movimientos Tierra ×1,2)'],
    it:['Dado Truccato (4–5 colpi)','Lastrageo (mosse Terra ×1,2)'],
    ko:['속임수주사위 (4~5회 명중)','대지플레이트 (땅타입 기술 ×1.2)'],
    'zh-Hans':['机变骰子（命中4～5次）','大地石板（地面属性招式×1.2）'],
