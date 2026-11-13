@@ -9,7 +9,10 @@ const path=require('node:path');
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
-  await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
+  // Match the app's species selection listener on initial load as well as reload.
+  await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
+  await page.locator('#dbAttPokemon').selectOption('dragapult');
+  await page.locator('#dbAttPokemon').dispatchEvent('input');
   for(const locale of locales){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.waitForFunction(()=>{
