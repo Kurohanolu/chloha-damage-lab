@@ -57,6 +57,9 @@ const path=require('node:path');
     move:document.querySelector('#dbMove')?.selectedOptions?.[0]?.textContent?.trim(),
     hits:document.querySelector('#hits')?.textContent?.trim(),
     selectedMove:document.querySelector('#moveSelected')?.textContent?.trim(),
+    swap:document.querySelector('#swapSides')?.textContent?.trim(),
+    attackerAdvanced:document.querySelector('#attackerCard details summary')?.textContent?.trim(),
+    defenderAbilityLabel:document.querySelector('#defAbility')?.closest('label')?.textContent?.trim(),
     attackerTypes:[...document.querySelectorAll('#attTypes .type-pill')].map(n=>n.textContent.trim()),
     defenderTypes:[...document.querySelectorAll('#defTypes .type-pill')].map(n=>n.textContent.trim()),
     pokemonPlaceholder:document.querySelector('#attPokemonSearch')?.getAttribute('placeholder')||document.querySelector('#defPokemonSearch')?.getAttribute('placeholder'),
@@ -87,12 +90,13 @@ const path=require('node:path');
      }
     }
     if(lang!=='ja'){
-     for(const field of ['selectedMove','movePlaceholder']){
+     for(const field of ['selectedMove','movePlaceholder','swap','defenderAbilityLabel']){
       const value=state[field]||'';
       assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(value),field+' has untranslated Japanese: '+value);
      }
      for(const type of [...state.attackerTypes,...state.defenderTypes])assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(type),'untranslated type badge: '+type);
      if(state.selectedMove)assert.ok(!state.selectedMove.includes('選択中：'),'selected move prefix');
+     if(lang==='es')assert.ok(!/Swap sides|Defender ability/.test(state.swap+' '+state.defenderAbilityLabel),'Spanish controls remain in English');
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
