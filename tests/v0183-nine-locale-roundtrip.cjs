@@ -27,7 +27,7 @@ const path=require('node:path');
    const source=window.ChlohaFormSpeciesBases||{};
    const species=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
    const known=Object.keys(source);
-   const suffixes=new Set(known.map(id=>source[id].ja.match(/\\(([^)]+)\\)$/)?.[1]).filter(Boolean));
+   const suffixes=new Set(known.map(id=>source[id].ja.match(/\(([^)]+)\)$/)?.[1]).filter(Boolean));
    const recognized=new Set(['オス','メス','シールド','ブレード','ウォッシュ','ヒート','カット','フロスト','スピン','ハイ','ロー','グリーン','ブルー','イエロー','ホワイト','えいえんのはな','かくとう','ほのお','みず','ナイーブ','マイティ']);
    const missingSuffixes=[...suffixes].filter(x=>!recognized.has(x));
    const missingSpecies=known.filter(id=>!source[id]?.base?.en);
