@@ -255,10 +255,11 @@ function translateOptions(){
    const berryType={chilanBerry:'Normal',occaBerry:'Fire',passhoBerry:'Water',wacanBerry:'Electric',rindoBerry:'Grass',yacheBerry:'Ice',chopleBerry:'Fighting',kebiaBerry:'Poison',shucaBerry:'Ground',cobaBerry:'Flying',payapaBerry:'Psychic',tangaBerry:'Bug',chartiBerry:'Rock',kasibBerry:'Ghost',habanBerry:'Dragon',colburBerry:'Dark',babiriBerry:'Steel',roseliBerry:'Fairy'}[option.value];
    const berryJapanese=berryType&&base.match(/^(.+?)（[^（）]+技半減）$/);
    const berryEnglish=berryJapanese&&((window.ChlohaNames?.items?.[berryJapanese[1]])||entityNames[berryJapanese[1]]);
+   const autoBerryEnglish=select.id==='defItem'&&option.value==='autoResistBerry'?'Resist Berry (auto-matches move type)':null;
    const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
    const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
    const typeEnglish=typeNames[base];
-   const next=locale==='en'?((berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
+   const next=locale==='en'?(autoBerryEnglish||(berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
     ? (abilityEnglish[ability[1]]||entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
       (ability[2]==='対応'?' (supported)':ability[2]==='一部技のみ対応'?' (partially supported)':' (unsupported)')
     : move
