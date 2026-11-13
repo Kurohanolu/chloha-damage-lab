@@ -7,7 +7,7 @@ Status: IN PROGRESS. Do not change the version or claim completion until the gat
 - `cd04b63`: 24 Mold Breaker-family cross-feature checks; UI and differential PASS.
 - `4e6d6eb`: 14 critical/screen/weather/item checks; UI and differential PASS.
 - `09b6433`: 6 terrain/grounding checks; UI and differential PASS.
-- `2c5c7a8`: JA→EN→JA calculation/form-preservation regression added; **latest CI outcome not yet confirmed**.
+- `2c5c7a8`: JA→EN→JA calculation/form-preservation regression; UI regression **PASS** (run 43348684787), Showdown differential **PASS** (#638, run 43348684738).
 
 ## Release blockers / acceptance criteria
 - [ ] Latest HEAD: UI & damage regression PASS.
@@ -30,3 +30,11 @@ Status: IN PROGRESS. Do not change the version or claim completion until the gat
 ## Known limits of current differential
 - Nine scenarios, not exhaustive coverage. Passing 16 rolls per scenario is not proof of full engine correctness.
 - Engine-level invariant tests do not replace independent Showdown reference comparisons.
+
+## Inventory findings (2026-11-13)
+- The reference comparator currently contains **9** explicit @smogon/calc scenarios; it is a selective regression baseline, not a complete Pokémon/move/ability/item matrix.
+- The current localization layer (`i18n.js`) initializes only **Japanese and English** in its locale selector. Korean and other languages are **not yet implemented**.
+- The current localization layer uses Japanese UI copy as translation lookup keys and observes dynamic DOM mutations. v0.183 should plan stable IDs/keys and non-destructive switching before adding six locales.
+- Current project HTML still identifies itself as **v0.182 Pre-Release 25**. No version bump has been made.
+- A complete supported-versus-implemented catalog reconciliation remains **OPEN**; don't mark move, ability or item coverage as complete based solely on green CI.
+- Separate reference-data correctness (Showdown) from hardware-specific Pokémon Champions differences. Preserve explicit manual exceptions and note their evidence.
