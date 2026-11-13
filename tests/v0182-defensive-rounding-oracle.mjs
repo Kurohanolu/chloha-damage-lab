@@ -16,6 +16,7 @@ try{
     for(const defAbility of ['none','multiscale','shadowShield']){
      for(const screen of ['none','reflect']){
       for(const friendGuardCount of [0,1]){
+       if(format==='singles'&&friendGuardCount>0)continue;
        const a={...base,power,battleFormat:format,defAbility,screen,friendGuardCount};
        const r=window.ChlohaDamageEngine.calculate(a);
        out.push({power,format,defAbility,screen,friendGuardCount,base:r.base,rolls:r.rolls});
