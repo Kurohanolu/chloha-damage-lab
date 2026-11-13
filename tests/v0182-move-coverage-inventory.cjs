@@ -23,7 +23,15 @@ for(const [family,names] of Object.entries(families))for(const name of names){
  assert.ok(!familyOf.has(name),'duplicate triage: '+name);
  familyOf.set(name,family);
 }
-const triage={familyCounts:Object.fromEntries(Object.entries(families).map(([key,names])=>[key,names.length])),needsManualReview:unsupported.filter(m=>!familyOf.has(m.name)).map(m=>m.name),classified:unsupported.map(m=>({name:m.name,family:familyOf.get(m.name)||'manualReview'}))};
+// An explicit catalog/engine consistency signal, not an automatic activation.
+const engineMechanics=[
+ ['からげんき',"a.moveMechanic==='facade'"],
+ ['はたきおとす',"a.moveMechanic==='knockOff'"],
+ ['ワイドフォース',"a.moveMechanic==='expandingForce'"],
+ ['アクロバット',"a.moveMechanic==='acrobatics'"]
+];
+const apparentMismatches=engineMechanics.filter(([name,token])=>byName.has(name)&&html.includes(token)).map(([name,token])=>({name,engineToken:token,status:'review-required: catalog false while mechanic code present'}));
+const triage={apparentMismatches,familyCounts:Object.fromEntries(Object.entries(families).map(([key,names])=>[key,names.length])),needsManualReview:unsupported.filter(m=>!familyOf.has(m.name)).map(m=>m.name),classified:unsupported.map(m=>({name:m.name,family:familyOf.get(m.name)||'manualReview'}))};
 assert.equal(triage.classified.length,unsupported.length);
 const report={version:'v0.182',scope:'catalog metadata only; not game-hardware verified',total:moves.length,flaggedSupported:supported.length,flaggedUnsupported:unsupported.length,damagingMoves:noStatus.length,breakdown,triage,unsupported:unsupported.map(m=>({id:m.id,name:m.name,category:m.category,power:m.power,verificationStatus:m.verificationStatus||null}))};
 assert.equal(report.flaggedSupported+report.flaggedUnsupported,report.total);
@@ -32,5 +40,6 @@ assert.equal(report.damagingMoves,334);
 fs.mkdirSync(path.join(__dirname,'../reports'),{recursive:true});
 fs.writeFileSync(path.join(__dirname,'../reports/v0182-move-coverage-inventory.json'),JSON.stringify(report,null,2)+'\n');
 console.log('PASS v0.182 move metadata inventory',JSON.stringify({total:report.total,flaggedSupported:report.flaggedSupported,flaggedUnsupported:report.flaggedUnsupported,breakdown}));
+console.log('CATALOG_ENGINE_MISMATCHES',JSON.stringify(apparentMismatches));
 console.log('TRIAGE',JSON.stringify({familyCounts:triage.familyCounts,manualReview:triage.needsManualReview.length,names:triage.needsManualReview}));
 console.log('NOTE calculationSupported is a catalog flag, not evidence of hardware parity or full mechanic coverage');
