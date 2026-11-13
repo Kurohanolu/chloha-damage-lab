@@ -21,6 +21,20 @@ const path=require('node:path');
     unexpected:Object.entries(db).filter(([,record])=>record.status!=='base-verified-form-provisional')
      .map(([id])=>id)};
   });
+  // Render every missing form in each locale, rather than merely checking
+  // that a translated base species exists in the backing dictionary.
+  const formLabelsCoverage=await page.evaluate(()=>{
+   const source=window.ChlohaFormSpeciesBases||{};
+   const species=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
+   const known=Object.keys(source);
+   const suffixes=new Set(known.map(id=>source[id].ja.match(/\\(([^)]+)\\)$/)?.[1]).filter(Boolean));
+   const recognized=new Set(['オス','メス','シールド','ブレード','ウォッシュ','ヒート','カット','フロスト','スピン','ハイ','ロー','グリーン','ブルー','イエロー','ホワイト','えいえんのはな','かくとう','ほのお','みず','ナイーブ','マイティ']);
+   const missingSuffixes=[...suffixes].filter(x=>!recognized.has(x));
+   const missingSpecies=known.filter(id=>!source[id]?.base?.en);
+   return {missingSuffixes,missingSpecies,all:known.length};
+  });
+  assert.deepEqual(formLabelsCoverage.missingSuffixes,[],'all Pokémon form qualifiers have localized display labels');
+  assert.deepEqual(formLabelsCoverage.missingSpecies,[],'all form base species have English names');
   assert.equal(formCoverage.count,129,'all 129 missing form records have species bases');
   assert.deepEqual(formCoverage.missing,[],'eight-language species base coverage');
   assert.deepEqual(formCoverage.unexpected,[],'provisional forms must remain explicitly labeled');
