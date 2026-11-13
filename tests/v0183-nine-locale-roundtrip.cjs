@@ -118,6 +118,16 @@ const path=require('node:path');
    assert.equal(typeOptions.length,18,'expected 18 move types in '+locale);
    assert.equal(new Set(typeOptions.map(n=>n.label)).size,18,
     'duplicate localized move type labels in '+locale);
+   if(locale==='ko'){
+    // Exact Korean game terminology: catch regressions that a Japanese-only
+    // leakage check would miss (English fallback, wrong Korean translation).
+    const expectedKoreanTypes=[
+     '노말','불꽃','물','전기','풀','얼음','격투','독','땅',
+     '비행','에스퍼','벌레','바위','고스트','드래곤','악','강철','페어리'
+    ];
+    assert.deepEqual(typeOptions.map(n=>n.label).sort(),
+     expectedKoreanTypes.sort(),'Korean type names differ from the 18 canonical labels');
+   }
    assert.deepEqual(typeOptions.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label)),[],
     'missing or untranslated move type options in '+locale);
    // Full-option audit: include off-screen move and ability entries, not just
