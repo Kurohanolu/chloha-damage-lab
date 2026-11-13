@@ -1024,9 +1024,34 @@ function localizedDynamicControl(base,target){
  }
  return null;
 }
+// Result summaries are assembled dynamically and can mix English species with
+// Japanese move labels. Resolve each entity by canonical name data, not a
+// hard-coded Earthquake-only replacement.
+function localizedBattleSummary(base,target){
+ const match=String(base).match(/^(.+?)\\s+(.+?)\\s+[（(](\\d+)[）)]\\s*→\\s*(.+?)\\s+[（(](\\d+)\\s*\\/\\s*HP\\s*(\\d+)[）)]$/);
+ if(!match)return null;
+ const registries=globalThis.ChlohaPokeAPILocalizedNames||{};
+ const local=globalThis.ChlohaLocalizedNames||{};
+ const resolve=(name,kind)=>{
+  for(const table of [local[kind],registries[kind]]){
+   if(!table)continue;
+   const entry=Object.values(table).find(row=>row&&typeof row==='object'&&
+    (row.ja===name||row.en===name||Object.values(row).includes(name)));
+   if(entry)return entry[target]||entry.en||name;
+  }
+  if(target==='en')return entityNames[name]||name;
+  return name;
+ };
+ const attacker=resolve(match[1],'pokemon');
+ const move=resolve(match[2],'moves');
+ const defender=resolve(match[4],'pokemon');
+ return attacker+' '+move+' ('+match[3]+') → '+defender+' ('+match[5]+' / HP '+match[6]+')';
+}
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
+ const battleSummary=localizedBattleSummary(base,locale);
+ if(battleSummary)return battleSummary;
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
  const reviewed={
  'Referenced stat stage (own Defense for Body Press; target Attack for Foul Play)':['Niveau de la statistique utilisée (Défense du lanceur pour Big Splash ; Attaque de la cible pour Tricherie)','Stufe des verwendeten Werts (eigene Verteidigung für Body Press; gegnerischer Angriff für Schmarotzer)','Nivel de la estadística usada (Defensa propia para Plancha Corporal; Ataque del objetivo para Juego Sucio)','Livello della statistica usata (Difesa propria per Schiacciacorpo; Attacco del bersaglio per Ripicca)','참조 능력 랭크 (바디프레스는 자신의 방어, 속임수는 대상의 공격)','引用能力等级（扑击使用自身防御；欺诈使用目标攻击）','引用能力等級（撲擊使用自身防禦；欺詐使用目標攻擊）'],
