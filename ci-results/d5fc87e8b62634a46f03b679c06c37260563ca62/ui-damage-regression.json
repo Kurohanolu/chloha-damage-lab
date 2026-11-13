@@ -1,0 +1,26 @@
+{
+  "head_sha": "d5fc87e8b62634a46f03b679c06c37260563ca62",
+  "workflow": "UI & damage regression",
+  "run_id": 43474580163,
+  "run_number": 952,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T17:37:37Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43474580163",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43474580163/job/132054935460",
+      "failed_steps": [
+        {
+          "name": "Run node tests/defensive-abilities.mjs",
+          "number": 6,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T17:37:25.6280111Z     ^\n2026-11-13T17:37:25.6280214Z \n2026-11-13T17:37:25.6280415Z AssertionError [ERR_ASSERTION]: English auto resist berry option\n2026-11-13T17:37:25.6280841Z     at file:///home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/defensive-abilities.mjs:155:9 {\n2026-11-13T17:37:25.6281145Z   generatedMessage: false,\n2026-11-13T17:37:25.6281305Z   code: 'ERR_ASSERTION',\n2026-11-13T17:37:25.6281512Z   actual: 'Resistance Berry (auto-matched to move type)',\n2026-11-13T17:37:25.6281727Z   expected: /Resist Berry/i,\n2026-11-13T17:37:25.6281887Z   operator: 'match',\n2026-11-13T17:37:25.6282019Z   diff: 'simple'\n2026-11-13T17:37:25.6282203Z }\n2026-11-13T17:37:25.6282264Z \n2026-11-13T17:37:25.6282323Z Node.js v22.23.4\n      content: Buffer.from(JSON.stringify(report, null, 2) + '\\n').toString('base64'),\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T17:37:33.2011477Z   debug: false\n2026-11-13T17:37:33.2011690Z   user-agent: actions/github-script\n2026-11-13T17:37:33.2011862Z   result-encoding: json\n2026-11-13T17:37:33.2011988Z   retries: 0\n2026-11-13T17:37:33.2012127Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T17:37:33.2012296Z env:\n2026-11-13T17:37:33.2012416Z   CI_JOB_STATUS: failure\n2026-11-13T17:37:33.2012546Z ##[endgroup]\n2026-11-13T17:37:35.0653831Z Post job cleanup.\n2026-11-13T17:37:35.1300317Z [command]/usr/bin/git version\n2026-11-13T17:37:35.1341100Z git version 2.56.1\n2026-11-13T17:37:35.1370386Z Temporarily overriding HOME='/home/runner/work/_temp/7209bdb7-b46d-4087-bbc2-631e25c9b4aa' before making global git config changes\n2026-11-13T17:37:35.1371204Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T17:37:35.1374051Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T17:37:35.1424100Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T17:37:35.1460341Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T17:37:35.1718674Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T17:37:35.1757227Z http.https://github.com/.extraheader\n2026-11-13T17:37:35.1777828Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T17:37:35.1813128Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T17:37:35.2059506Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T17:37:35.2105283Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T17:37:35.2452123Z Cleaning up orphan processes\n2026-11-13T17:37:35.2708228Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 320
+    }
+  ]
+}
