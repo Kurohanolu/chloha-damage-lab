@@ -11,8 +11,7 @@ const path=require('node:path');
   const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
   // Match the app's species selection listener on initial load as well as reload.
   await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
-  await page.locator('#dbAttPokemon').selectOption('dragapult');
-  await page.locator('#dbAttPokemon').dispatchEvent('input');
+  await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('input',{bubbles:true}));});
   for(const locale of locales){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.waitForFunction(()=>{
@@ -27,10 +26,9 @@ const path=require('node:path');
    // Wait for the page's asynchronous default Pokémon render to finish before changing the selection.
    // Otherwise a pending initial render can overwrite Dragapult's badges after the change event.
    await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
-   await page.locator('#dbAttPokemon').selectOption('dragapult');
-   // The calculator listens to 'input' (not 'change') for species updates.
-   // Force that event even when persisted state already selects Dragapult.
-   await page.locator('#dbAttPokemon').dispatchEvent('input');
+   // The native select is hidden behind a custom picker; Playwright selectOption waits for visibility.
+   // Set the underlying select directly and emit the app's input event.
+   await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('input',{bubbles:true}));});
    await page.waitForFunction(expected=>{
     const badges=[...document.querySelectorAll('#attTypes .type-pill')].map(el=>el.textContent.trim());
     const nodes=[...document.querySelectorAll('#attTypes .type-pill')];
