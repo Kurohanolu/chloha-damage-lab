@@ -77,6 +77,7 @@ jobs:
       - run: node tests/v0177-version-provenance.cjs
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0182-move-coverage-inventory.cjs
+      - run: node tests/v0182-four-move-policy-engine.mjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
