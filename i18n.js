@@ -448,7 +448,7 @@ const localeUiPhrases={
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
- const direct=localeUiPhrases[base]?.[locale];
+ const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
  if(!catalog)return translateRuntime(base);
  const source=catalog.ja||{};
