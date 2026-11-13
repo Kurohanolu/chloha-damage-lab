@@ -81,6 +81,11 @@ try {
    ['Intimidate does not lower Body Press',same(rolls({defAbility:'intimidate',moveMechanic:'bodyPress'}),rolls({moveMechanic:'bodyPress'}))],
    ['Intimidate does not lower Foul Play',same(rolls({defAbility:'intimidate',moveMechanic:'foulPlay'}),rolls({moveMechanic:'foulPlay'}))],
    ['Critical hit ignores Intimidate negative stage',same(rolls({defAbility:'intimidate',critical:true}),rolls({critical:true}))],
+   ['Flame Plate boosts matching Fire power',rolls({attItem:'flamePlate',moveType:'ほのお',defTypes:['ノーマル']}).every((v,i)=>v>rolls({moveType:'ほのお',defTypes:['ノーマル']})[i])],
+   ['Flame Plate leaves Water unchanged',same(rolls({attItem:'flamePlate',moveType:'みず'}),rolls({moveType:'みず'}))],
+   ['Pixie Plate boosts matching Fairy power',rolls({attItem:'pixiePlate',moveType:'フェアリー'}).every((v,i)=>v>rolls({moveType:'フェアリー'})[i])],
+   ['Plates boost special attacks',rolls({attItem:'splashPlate',moveType:'みず',category:'special'}).every((v,i)=>v>rolls({moveType:'みず',category:'special'})[i])],
+   ['Plates boost physical attacks',rolls({attItem:'earthPlate',moveType:'じめん',category:'physical'}).every((v,i)=>v>rolls({moveType:'じめん',category:'physical'})[i])],
    ['Auto berry halves super-effective Ice',same(rolls({defItem:'autoResistBerry',moveType:'こおり',defTypes:['ドラゴン']}),rolls({defItem:'yacheBerry',moveType:'こおり',defTypes:['ドラゴン']}))],
    ['Auto berry switches to Ground with move type',same(rolls({defItem:'autoResistBerry',moveType:'じめん',defTypes:['ほのお']}),rolls({defItem:'shucaBerry',moveType:'じめん',defTypes:['ほのお']}))],
    ['Auto berry inactive on neutral Ice',same(rolls({defItem:'autoResistBerry',moveType:'こおり',defTypes:['ほのお']}),rolls({moveType:'こおり',defTypes:['ほのお']}))],
@@ -109,6 +114,19 @@ try {
  await page.locator('#chloha-locale').selectOption('ja');
  assert.equal(await page.locator('#defItem option[value="autoResistBerry"]').textContent(),berryOptions[2].label,'Auto berry JA/EN/JA roundtrip');
  console.log('PASS compact automatic resist berry option and JA/EN/JA roundtrip');
+ // Check the full plate catalog and locale roundtrip.
+ const plateIds=['flamePlate','splashPlate','zapPlate','meadowPlate','iciclePlate','fistPlate','toxicPlate','earthPlate','skyPlate','mindPlate','insectPlate','stonePlate','spookyPlate','dracoPlate','dreadPlate','ironPlate','pixiePlate'];
+ const jaPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
+ assert.deepEqual(jaPlates.map(o=>o.id),plateIds,'All 17 attacker plate items');
+ await page.locator('#chloha-locale').selectOption('en');
+ const enPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
+ for(const option of enPlates){
+  assert.ok(option.label.endsWith('moves ×1.2)')&&!/[ぁ-んァ-ヶ一-龯]/.test(option.label),'Untranslated plate: '+option.id+' / '+option.label);
+ }
+ await page.locator('#chloha-locale').selectOption('ja');
+ const restoredPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
+ assert.deepEqual(restoredPlates,jaPlates,'Plate JA/EN/JA roundtrip');
+ console.log('PASS all 17 type plate labels and JA/EN/JA roundtrip');
  // Guard every supported defensive ability against missing English labels and stale JA/EN/JA options.
  const html=readFileSync(resolve(root,'index.html'),'utf8');
  const catalogSource=html.match(/const defensiveAbilities=(\{[^;]+\});/);
