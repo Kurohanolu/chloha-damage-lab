@@ -944,9 +944,14 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
    moveList.append(item);
   }
-  if(!moveHits.length)moveList.append(node('div','move-empty','該当する技がありません'));
+  if(!moveHits.length){
+   const empty={ja:'該当する技がありません',en:'No matching moves',fr:'Aucune capacité correspondante',de:'Keine passenden Attacken',es:'No hay movimientos coincidentes',it:'Nessuna mossa corrispondente',ko:'일치하는 기술이 없습니다','zh-Hans':'没有匹配的招式','zh-Hant':'沒有符合的招式'};
+   const lang=window.ChlohaLocale?.get?.()||'ja';
+   moveList.append(node('div','move-empty',empty[lang]||empty.en));
+  }
   moveList.hidden=false;moveInput.setAttribute('aria-expanded','true');
  }
+ document.addEventListener('chloha:localechange',()=>{if(!moveList.hidden&&moveInput.value.trim()&&!moveComposing)renderMoveSuggestions();});
  moveInput.addEventListener('compositionstart',()=>{moveComposing=true;});
  moveInput.addEventListener('compositionend',()=>{moveComposing=false;renderMoveSuggestions();});
  moveInput.addEventListener('input',()=>{if(!moveComposing)renderMoveSuggestions();});
