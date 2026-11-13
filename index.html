@@ -931,13 +931,15 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    const moveName=locale==='ja'?(m?.name||o.textContent):(localizedName('moves',m?.name,locale)||(english?moveEnglishAliases[m?.name]||window.ChlohaNames?.moves?.[m?.name]:null)||m?.name||o.textContent);
    item.append(node('span','',moveName));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
-   const typeName=english?({'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'}[m?.type]||m?.type||''):(m?.type||'');
-   const statusName=english?({'計算未対応':'Unsupported','基本計算のみ':'Basic damage only','計算試算':'Estimated'}[status]):status;
-   item.append(node('span','move-meta',typeName+' / '+(m?.id==='electroBall'?(english?'Variable':'可変'):m?.power||'?')+'　'+statusName));
+   const typeName=locale==='ja'?(m?.type||''):(window.ChlohaLocale?.typeName?.(m?.type)||pokemonTypeEnglish[m?.type]||m?.type||'');
+   const statusEnglish={'計算未対応':'Unsupported','基本計算のみ':'Basic damage only','計算試算':'Estimated'};
+   const statusName=locale==='ja'?status:(window.ChlohaLocale?.text?.(statusEnglish[status])||statusEnglish[status]);
+   const variablePower=locale==='ja'?'可変':(window.ChlohaLocale?.text?.('Variable')||'Variable');
+   item.append(node('span','move-meta',typeName+' / '+(m?.id==='electroBall'?variablePower:m?.power||'?')+'　'+statusName));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
    moveList.append(item);
   }
-  if(!moveHits.length)moveList.append(node('div','move-empty','該当する技がありません'));
+  if(!moveHits.length)moveList.append(node('div','move-empty',(window.ChlohaLocale?.get?.()||'ja')==='ja'?'該当する技がありません':(window.ChlohaLocale?.text?.('No matching moves')||'No matching moves'));
   moveList.hidden=false;moveInput.setAttribute('aria-expanded','true');
  }
  moveInput.addEventListener('compositionstart',()=>{moveComposing=true;});
