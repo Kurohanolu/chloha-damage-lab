@@ -12,7 +12,10 @@ const path=require('node:path');
   await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
   for(const locale of locales){
    await page.locator('#chloha-locale').selectOption(locale);
-   await page.waitForFunction(()=>document.querySelector('#dbAttPokemon')?.value==='dragapult'&&document.querySelectorAll('#attTypes .type-pill').length===2);
+   await page.waitForFunction(()=>{
+    const badges=[...document.querySelectorAll('#attTypes .type-pill')];
+    return document.querySelector('#dbAttPokemon')?.value==='dragapult'&&badges.length===2&&badges[0].dataset.jaType==='ドラゴン'&&badges[1].dataset.jaType==='ゴースト';
+   });
    const before=await page.locator('#attTypes .type-pill').allTextContents();
    assert.equal(before.length,2,'missing type badges '+locale);
    await page.reload();
@@ -20,7 +23,8 @@ const path=require('node:path');
    await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
    await page.waitForFunction(expected=>{
     const badges=[...document.querySelectorAll('#attTypes .type-pill')].map(el=>el.textContent.trim());
-    return badges.length===expected.length&&badges.every((value,i)=>value===expected[i]);
+    const nodes=[...document.querySelectorAll('#attTypes .type-pill')];
+    return document.querySelector('#dbAttPokemon')?.value==='dragapult'&&nodes.length===2&&nodes[0].dataset.jaType==='ドラゴン'&&nodes[1].dataset.jaType==='ゴースト'&&badges.length===expected.length&&badges.every((value,i)=>value===expected[i]);
    },before,{timeout:10000});
    const after=await page.locator('#attTypes .type-pill').allTextContents();
    assert.deepEqual(after,before,'type badges changed language on reload '+locale+': '+JSON.stringify({before,after}));
