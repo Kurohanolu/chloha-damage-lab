@@ -420,7 +420,7 @@ function recoverJapanese(value){
   const selected=value.slice('Selected: ').replace(/\bVariable\b/g,'可変');
   return '選択中：'+selected.replace(/\b(?:Earthquake|Garchomp|Tyranitar)\b/g,name=>reverseNames[name]||reverse[name]||name);
  }
- const range=String(value).match(/^(\\d+)\\s*[〜–-]\\s*(\\d+)\\s*(?:ダメージ|damage|dégâts|Schaden|de daño|danni|데미지|伤害|傷害)$/);
+ const range=String(value).match(/^(\d+)\s*[〜–-]\s*(\d+)\s*(?:ダメージ|damage|dégâts|Schaden|de daño|danni|데미지|伤害|傷害)$/);
  if(range)return range[1]+'〜'+range[2]+' ダメージ';
  if(/^Guaranteed survival\s*[·・]/.test(value))return value.replace('Guaranteed survival','確定耐え');
  let result=value;
