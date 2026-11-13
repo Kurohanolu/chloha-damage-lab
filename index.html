@@ -842,7 +842,20 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   return marker+baseWithForm;
  };
  window.ChlohaLocalePokemonName=(key,locale)=>localizedName('pokemon',key,locale);
- const localizedMatch=(category,key,query)=>Object.values(window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]||{}).some(name=>window.ChlohaNameSearch?.normalize(name).includes(window.ChlohaNameSearch.normalize(query)));
+ const localizedMatch=(category,key,query)=>{
+  const normalize=window.ChlohaNameSearch?.normalize;
+  if(typeof normalize!=='function'||!query)return false;
+  const needle=normalize(query);
+  const records=[
+   window.ChlohaLocalizedNames?.[category]?.[key],
+   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]
+  ];
+  if(category==='pokemon'){
+   const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+   records.push(Object.fromEntries(locales.map(locale=>[locale,localizedName(category,key,locale)])));
+  }
+  return records.some(record=>Object.values(record||{}).some(name=>typeof name==='string'&&normalize(name).includes(needle)));
+ };
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
  let moveHits=[],moveActive=-1,moveComposing=false;
