@@ -87,6 +87,16 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    })));
   for(const entry of asianProvenance.filter(x=>x.source))
    assert.match(entry.source,/^https:\/\//,'official source must be an HTTPS URL');
+  // The two mainland-China samples are tied to numbered official Pokédex
+  // detail pages. A generic homepage is not enough for this stricter check.
+  for(const entry of asianFixture.species){
+   const source=entry.officialSources?.['zh-Hans'];
+   assert.ok(source&&new URL(source).pathname.endsWith('/'+
+    String(entry.nationalDex).padStart(4,'0')),
+    'Simplified Chinese sample requires numbered official Pokédex source: '+entry.key);
+   assert.match(new URL(source).hostname,/(^|\\.)pokemon\\.cn$/,
+    'Simplified Chinese source must be hosted by pokemon.cn');
+  }
   console.log('Asian official-source provenance: '+JSON.stringify({
    reviewed:asianProvenance.filter(x=>x.source).length,
    pending:asianProvenance.filter(x=>!x.source).map(x=>x.dex+':'+x.locale)
