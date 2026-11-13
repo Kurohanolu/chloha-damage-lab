@@ -47,10 +47,13 @@ const path=require('node:path');
     for(const field of ['weather','terrain','screen'])assert.equal(state[field],none,field);
     if(state.format!==undefined)assert.equal(state.format,double,'battle format');
     // Calculated numeric values must not change when only the UI language changes.
-    if(i===0)page._baselineNumeric={damage:state.resultDamage,percent:state.resultPercent};
+    // Compare numeric results only: labels and range separators are localized.
+    const numbers=value=>(String(value||'').match(/\d+(?:\.\d+)?/g)||[]).map(Number);
+    const numeric={damage:numbers(state.resultDamage),percent:numbers(state.resultPercent)};
+    if(i===0)page._baselineNumeric=numeric;
     else{
-     assert.equal(state.resultDamage,page._baselineNumeric.damage,'calculated damage invariant');
-     assert.equal(state.resultPercent,page._baselineNumeric.percent,'calculated percentage invariant');
+     assert.deepEqual(numeric.damage,page._baselineNumeric.damage,'calculated damage invariant');
+     assert.deepEqual(numeric.percent,page._baselineNumeric.percent,'calculated percentage invariant');
     }
     // Catch untranslated Japanese source leaking into non-Japanese UI, including
     // dynamic KO details and native item/ability selectors.
