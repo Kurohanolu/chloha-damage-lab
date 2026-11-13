@@ -591,7 +591,7 @@ const localizedControlPhrases={
 function localizedDynamicControl(base,target){
  const english=translateRuntime(base);
  if(target!=='ja'&&target!=='en'){
-  const swap=String(english).match(/^(⇄\\s*)Swap sides$/);
+  const swap=String(english).match(/^(⇄\s*)Swap sides$/);
   if(swap)return swap[1]+localeUiPhrases['Swap sides'][target];
   const controls={'Defender ability':'Defender ability','Attacker ability':'Attacker ability','None / Not applied':'None / Not applied'};
   if(controls[english]&&localizedControlPhrases[english]?.[target])return localizedControlPhrases[english][target];
