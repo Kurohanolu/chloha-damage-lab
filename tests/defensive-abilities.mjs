@@ -172,6 +172,17 @@ try {
  await page.locator('#chloha-locale').selectOption('ja');
  assert.match((await plateOptions())[0].label,/つららのプレート/,'Japanese plate restored');
  console.log('PASS context-sensitive plate choice and locale roundtrip');
+ // Locale switching must preserve selections and produce identical engine damage rolls.
+ const localeSnapshot=()=>page.evaluate(()=>{
+  const args={level:50,power:100,attack:150,defense:100,hp:200,currentHp:200,attackStage:1,defenseStage:0,moveType:'ほのお',category:'special',attTypes:['ほのお'],defTypes:['くさ'],attItem:'lifeOrb',attAbility:'moldBreaker',defItem:'none',defAbility:'multiscale',attCurrentHp:200,attMaxHp:200,terrain:'none',weather:'sun',spread:'single',battleFormat:'doubles',screen:'lightScreen',helpingHand:false,friendGuardCount:0,burn:false,critical:true,stabMode:'auto',moveMechanic:'none'};
+  return {rolls:window.ChlohaDamageEngine.calculate(args).rolls,selected:{attItem:document.getElementById('attItem').value,moveType:document.getElementById('moveType').value,defItem:document.getElementById('defItem').value}};
+ });
+ const beforeLocale=await localeSnapshot();
+ await page.locator('#chloha-locale').selectOption('en');
+ assert.deepEqual(await localeSnapshot(),beforeLocale,'JA/EN locale switch must preserve calculations and selections');
+ await page.locator('#chloha-locale').selectOption('ja');
+ assert.deepEqual(await localeSnapshot(),beforeLocale,'EN/JA locale switch must preserve calculations and selections');
+ console.log('PASS locale-invariant calculation and form selections');
  // Guard every supported defensive ability against missing English labels and stale JA/EN/JA options.
  const html=readFileSync(resolve(root,'index.html'),'utf8');
  const catalogSource=html.match(/const defensiveAbilities=(\{[^;]+\});/);
