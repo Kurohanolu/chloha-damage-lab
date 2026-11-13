@@ -15,6 +15,22 @@ const path=require('node:path');
    ['ko','없음','더블'],['zh-Hans','无','双打'],['zh-Hant','無','雙打'],
    ['ja','なし','ダブル']
   ];
+  // Exercise real controls before switching locales; preserve their selected
+  // semantic values while translated labels and dynamic results are rebuilt.
+  const exercised={
+   weather:'rain',terrain:'electric',screen:'reflect',
+   attItem:'lifeOrb',defItem:'assaultVest'
+  };
+  for(const [id,value] of Object.entries(exercised)){
+   await page.locator('#'+id).selectOption(value);
+  }
+  const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
+  if(abilities.length){exercised.attAbility=abilities[0];await page.locator('#attAbility').selectOption(abilities[0]);}
+  const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
+  if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
+  const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
+  if(moves.length>1){exercised.dbMove=moves[1];await page.locator('#dbMove').selectOption(moves[1]);}
+  await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
   for(let i=0;i<steps.length;i++){
    const [lang,none,double]=steps[i];
@@ -39,11 +55,13 @@ const path=require('node:path');
     attItem:document.querySelector('#attItem')?.selectedOptions?.[0]?.textContent?.trim(),
     defItem:document.querySelector('#defItem')?.selectedOptions?.[0]?.textContent?.trim(),
     move:document.querySelector('#dbMove')?.selectedOptions?.[0]?.textContent?.trim(),
-    hits:document.querySelector('#hits')?.textContent?.trim()
+    hits:document.querySelector('#hits')?.textContent?.trim(),
+    selected:Object.fromEntries(Object.keys(window.__roundtripControls||{}).map(id=>[id,document.getElementById(id)?.value]))
    }));
    snapshots.push({transition:from+' → '+lang,...state});
    try{
     assert.equal(state.lang,lang,'html lang');
+    for(const [id,value] of Object.entries(exercised))assert.equal(state.selected[id],value,'selected control '+id);
     for(const field of ['weather','terrain','screen'])assert.equal(state[field],none,field);
     if(state.format!==undefined)assert.equal(state.format,double,'battle format');
     // Calculated numeric values must not change when only the UI language changes.
@@ -63,7 +81,7 @@ const path=require('node:path');
       assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(value),field+' has Japanese characters: '+value);
      }
     }
-    if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 なし'), 'Japanese board');
+    if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
    }catch(e){
     console.error('FAILED transition '+from+' → '+lang+'; snapshot='+JSON.stringify(state));
