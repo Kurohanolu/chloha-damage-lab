@@ -802,7 +802,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const p=pokemonById.get(key);if(!p)return null;
   const raw=p.name;
   const prefix=Object.keys(formPrefixes).find(k=>raw.startsWith(k)&&raw.length>k.length);
-  const baseJapanese=prefix?raw.slice(prefix.length):raw.replace(/\\([^)]*\\)$/,'');
+  const baseJapanese=prefix?raw.slice(prefix.length):raw.replace(/\([^)]*\)$/,'');
   const base=[...pokemonById.values()].find(q=>q.name===baseJapanese);
   const baseTranslated=base&&(window.ChlohaLocalizedNames?.pokemon?.[base.id]?.[locale]||
    window.ChlohaPokeAPILocalizedNames?.pokemon?.[base.id]?.[locale]);
@@ -814,7 +814,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    return ['fr','es','it'].includes(locale)&&prefix!=='メガ'
     ?formName+' '+marker.trim():marker+formName;
   }
-  const form=raw.match(/\\(([^)]+)\\)$/)?.[1];
+  const form=raw.match(/\(([^)]+)\)$/)?.[1];
   if(!form)return null;
   const forms={'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
    'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'}};
