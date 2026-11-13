@@ -581,11 +581,35 @@ function localizedLiveSummary(base,target){
  return null;
 }
 const localizedTypeNames={"ノーマル":{"en":"Normal","fr":"Normal","de":"Normal","es":"Normal","it":"Normale","ko":"노말","zh-Hans":"一般","zh-Hant":"一般"},"ほのお":{"en":"Fire","fr":"Feu","de":"Feuer","es":"Fuego","it":"Fuoco","ko":"불꽃","zh-Hans":"火","zh-Hant":"火"},"みず":{"en":"Water","fr":"Eau","de":"Wasser","es":"Agua","it":"Acqua","ko":"물","zh-Hans":"水","zh-Hant":"水"},"でんき":{"en":"Electric","fr":"Électrik","de":"Elektro","es":"Eléctrico","it":"Elettro","ko":"전기","zh-Hans":"电","zh-Hant":"電"},"くさ":{"en":"Grass","fr":"Plante","de":"Pflanze","es":"Planta","it":"Erba","ko":"풀","zh-Hans":"草","zh-Hant":"草"},"こおり":{"en":"Ice","fr":"Glace","de":"Eis","es":"Hielo","it":"Ghiaccio","ko":"얼음","zh-Hans":"冰","zh-Hant":"冰"},"かくとう":{"en":"Fighting","fr":"Combat","de":"Kampf","es":"Lucha","it":"Lotta","ko":"격투","zh-Hans":"格斗","zh-Hant":"格鬥"},"どく":{"en":"Poison","fr":"Poison","de":"Gift","es":"Veneno","it":"Veleno","ko":"독","zh-Hans":"毒","zh-Hant":"毒"},"じめん":{"en":"Ground","fr":"Sol","de":"Boden","es":"Tierra","it":"Terra","ko":"땅","zh-Hans":"地面","zh-Hant":"地面"},"ひこう":{"en":"Flying","fr":"Vol","de":"Flug","es":"Volador","it":"Volante","ko":"비행","zh-Hans":"飞行","zh-Hant":"飛行"},"エスパー":{"en":"Psychic","fr":"Psy","de":"Psycho","es":"Psíquico","it":"Psico","ko":"에스퍼","zh-Hans":"超能力","zh-Hant":"超能力"},"むし":{"en":"Bug","fr":"Insecte","de":"Käfer","es":"Bicho","it":"Coleottero","ko":"벌레","zh-Hans":"虫","zh-Hant":"蟲"},"いわ":{"en":"Rock","fr":"Roche","de":"Gestein","es":"Roca","it":"Roccia","ko":"바위","zh-Hans":"岩石","zh-Hant":"岩石"},"ゴースト":{"en":"Ghost","fr":"Spectre","de":"Geist","es":"Fantasma","it":"Spettro","ko":"고스트","zh-Hans":"幽灵","zh-Hant":"幽靈"},"ドラゴン":{"en":"Dragon","fr":"Dragon","de":"Drache","es":"Dragón","it":"Drago","ko":"드래곤","zh-Hans":"龙","zh-Hant":"龍"},"あく":{"en":"Dark","fr":"Ténèbres","de":"Unlicht","es":"Siniestro","it":"Buio","ko":"악","zh-Hans":"恶","zh-Hant":"惡"},"はがね":{"en":"Steel","fr":"Acier","de":"Stahl","es":"Acero","it":"Acciaio","ko":"강철","zh-Hans":"钢","zh-Hant":"鋼"},"フェアリー":{"en":"Fairy","fr":"Fée","de":"Fee","es":"Hada","it":"Folletto","ko":"페어리","zh-Hans":"妖精","zh-Hant":"妖精"}};
+const localizedControlPhrases={
+ 'Defender ability':{fr:'Talent du défenseur',de:'Fähigkeit des Verteidigers',es:'Habilidad del defensor',it:'Abilità del difensore',ko:'방어 측 특성','zh-Hans':'防御方特性','zh-Hant':'防禦方特性'},
+ 'Attacker ability':{fr:'Talent de l’attaquant',de:'Fähigkeit des Angreifers',es:'Habilidad del atacante',it:'Abilità dell’attaccante',ko:'공격 측 특성','zh-Hans':'攻击方特性','zh-Hant':'攻擊方特性'},
+ 'Held item':{fr:'Objet tenu',de:'Getragenes Item',es:'Objeto equipado',it:'Strumento tenuto',ko:'지닌 도구','zh-Hans':'携带道具','zh-Hant':'攜帶道具'},
+ 'HP attack modifiers and Speed':{fr:'PV, modificateurs d’attaque et Vitesse',de:'KP, Angriffsmodifikatoren und Initiative',es:'PS, modificadores de ataque y Velocidad',it:'PS, modificatori d’attacco e Velocità',ko:'HP, 공격 보정 및 스피드','zh-Hans':'HP、攻击修正与速度','zh-Hant':'HP、攻擊修正與速度'},
+ 'None / Not applied':{fr:'Aucun / Non appliqué',de:'Keine / Nicht angewendet',es:'Ninguna / No aplicada',it:'Nessuna / Non applicata',ko:'없음 / 미적용','zh-Hans':'无 / 未应用','zh-Hant':'無 / 未套用'}
+};
+function localizedDynamicControl(base,target){
+ if(target==='ja'||target==='en')return null;
+ const exact=localizedControlPhrases[base]?.[target];
+ if(exact)return exact;
+ const point=String(base).match(/^(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)\s+(\d+)$/);
+ if(point){
+  const ja={'HP':'HP','Attack':'攻撃','Defense':'防御','Sp. Atk':'特攻','Sp. Def':'特防','Speed':'素早さ'}[point[1]];
+  return (localizedTypeNames[ja]?.[target]||localeUiPhrases[point[1]]?.[target]||point[1])+' '+point[2];
+ }
+ const budget=String(base).match(/^Stat points\s+(\d+)\s*\/\s*(\d+)\s*\(remaining\s+(\d+)\)(.*)$/);
+ if(budget){
+  const labels={fr:['Points','restants'],de:['Punkte','übrig'],es:['Puntos','restantes'],it:['Punti','rimanenti'],ko:['능력 포인트','남음'],'zh-Hans':['能力点','剩余'],'zh-Hant':['能力點','剩餘']};
+  const [name,remaining]=labels[target]||labels.fr;
+  return name+' '+budget[1]+' / '+budget[2]+' ('+remaining+' '+budget[3]+')'+budget[4];
+ }
+ return null;
+}
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
- const dynamic=localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
+ const dynamic=localizedDynamicControl(base,locale)||localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
