@@ -38,4 +38,5 @@ const report={version:'v0.182',meaning:'Per-move audit queue. No category here i
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
 fs.writeFileSync(path.join(root,'reports/v0182-move-triage-ledger.json'),JSON.stringify(report,null,2)+'\n');
 console.log('PASS v0.182 per-move triage ledger',JSON.stringify(summary));
-console.log('ACTIONABLE_17',JSON.stringify(actionable.map(x=>x.name)));\nconsole.log('INTENTIONALLY_EXCLUDED_14',JSON.stringify(intentionalExclusions.map(x=>x.name)));
+console.log('ACTIONABLE_17',JSON.stringify(actionable.map(x=>x.name));
+console.log('INTENTIONALLY_EXCLUDED_14',JSON.stringify(intentionalExclusions.map(x=>x.name)));
