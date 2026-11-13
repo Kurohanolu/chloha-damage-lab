@@ -770,9 +770,8 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  // Type badges are dynamic and must change immediately with the language.
  const pokemonTypeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
  function syncPokemonTypeBadges(){
-  const en=window.ChlohaLocale?.get()==='en';
   for(const badge of document.querySelectorAll('#attTypes .type-pill,#defTypes .type-pill')){
-   badge.textContent=en?(pokemonTypeEnglish[badge.dataset.jaType]||badge.dataset.jaType):badge.dataset.jaType;
+   badge.textContent=window.ChlohaLocale?.typeName?.(badge.dataset.jaType)||badge.dataset.jaType;
   }
  }
  document.addEventListener('chloha:localechange',syncPokemonTypeBadges);
@@ -799,13 +798,16 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  }
  function syncMovePicker(){
   const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';
-  const english=window.ChlohaLocale?.get()==='en';
-  const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
-  const moveName=english?(moveEnglishAliases[current?.name]||window.ChlohaNames?.moves?.[current?.name]||current?.name):current?.name;
-  const typeName=english?(typeEnglish[current?.type]||current?.type):current?.type;
+  const lang=window.ChlohaLocale?.get()||'ja';
+  const translate=window.ChlohaLocale?.text||((value)=>value);
+  const typeName=window.ChlohaLocale?.typeName||((value)=>value);
+  const moveName=lang==='ja'?current?.name:(localizedName('moves',current?.name,lang)||moveEnglishAliases[current?.name]||window.ChlohaNames?.moves?.[current?.name]||current?.name);
   const status=selected.match(/［[^］]+］/)?.[0]||'';
-  const statusEnglish={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
-  el('moveSelected').textContent=current?(english?'Selected: ':'選択中：')+moveName+(english?' (':'（')+typeName+' / '+(current.power||(english?'Variable':'可変'))+(english?')':'）')+(english?(statusEnglish[status]||status):status):(english?'Select a move':'技を選択してください');
+  const statusEnglish={'［計算未対応］':'Unsupported','［基本ダメージのみ・実機未照合］':'Basic damage only; unverified','［計算試算・実機未照合］':'Estimated; not hardware-verified'};
+  const localizedStatus=lang==='ja'?status:(status?' ['+translate(statusEnglish[status]||status)+']':'');
+  const prefixes={ja:'選択中：',en:'Selected: ',fr:'Sélection : ',de:'Ausgewählt: ',es:'Seleccionado: ',it:'Selezionato: ',ko:'선택: ','zh-Hans':'已选择：','zh-Hant':'已選擇：'};
+  const power=current?.power||(lang==='ja'?'可変':'Variable');
+  el('moveSelected').textContent=current?(prefixes[lang]||prefixes.en)+moveName+(lang==='ja'?'（':' (')+typeName(current.type)+' / '+power+(lang==='ja'?'）':')')+localizedStatus:(lang==='ja'?'技を選択してください':translate('Select a move'));
  }
  // This status is composed bilingually by syncMovePicker; generic DOM translation
  // must not translate its already-localized English text a second time.
