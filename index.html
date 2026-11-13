@@ -1010,7 +1010,14 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  function refreshUI(){
   reconcileResultState();
   syncMovePicker();
-  const getLabel=id=>el(id).selectedOptions?.[0]?.textContent?.trim()||'なし';
+  // Use stable option values: translated option text must never leak into the
+  // canonical Japanese summary when switching through multiple locales.
+  const boardLabels={
+   weather:{none:'なし',sun:'晴れ',rain:'雨',sand:'砂嵐',snow:'雪'},
+   terrain:{none:'なし',electric:'エレキフィールド',grassy:'グラスフィールド',misty:'ミストフィールド',psychic:'サイコフィールド'},
+   screen:{none:'なし',reflect:'リフレクター',lightScreen:'ひかりのかべ',lightscreen:'ひかりのかべ',both:'両壁'}
+  };
+  const getLabel=id=>boardLabels[id][el(id).value]||el(id).selectedOptions?.[0]?.textContent?.trim()||'なし';
   el('boardSummary').textContent='現在の盤面：天候 '+getLabel('weather')+' ／ フィールド '+getLabel('terrain')+' ／ 壁 '+getLabel('screen');
   for(const side of ['att','def']){
    const p=species(side),m=models[side];
