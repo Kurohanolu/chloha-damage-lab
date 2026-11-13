@@ -94,7 +94,7 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    assert.ok(source&&new URL(source).pathname.endsWith('/'+
     String(entry.nationalDex).padStart(4,'0')),
     'Simplified Chinese sample requires numbered official Pokédex source: '+entry.key);
-   assert.match(new URL(source).hostname,/(^|\\.)pokemon\\.cn$/,
+   assert.ok(new URL(source).hostname==='pokemon.cn'||new URL(source).hostname.endsWith('.pokemon.cn'),
     'Simplified Chinese source must be hosted by pokemon.cn');
   }
   console.log('Asian official-source provenance: '+JSON.stringify({
