@@ -1,0 +1,26 @@
+{
+  "head_sha": "f664de6c80ab52f0f254fc7ce3a7e81c5dc835fc",
+  "workflow": "UI & damage regression",
+  "run_id": 43403541456,
+  "run_number": 880,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T09:44:36Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43403541456",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43403541456/job/131812109450",
+      "failed_steps": [
+        {
+          "name": "Nine-locale rotation regression (90 transitions)",
+          "number": 59,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T09:44:20.5134607Z shell: /usr/bin/bash -e {0}\n2026-11-13T09:44:20.5134816Z ##[endgroup]\n2026-11-13T09:44:21.1767433Z page.evaluate: ReferenceError: localizedName is not defined\n2026-11-13T09:44:21.1768179Z     at eval (eval at evaluate (:290:30), <anonymous>:7:18)\n2026-11-13T09:44:21.1768684Z     at UtilityScript.evaluate (<anonymous>:292:16)\n2026-11-13T09:44:21.1769071Z     at UtilityScript.<anonymous> (<anonymous>:1:44)\n2026-11-13T09:44:21.1769519Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0183-nine-locale-roundtrip.cjs:43:39\n2026-11-13T09:44:21.1860573Z ##[error]Process completed with exit code 1.\n2026-11-13T09:44:21.1950537Z ##[group]Run node tests/damage-regression.cjs\n2026-11-13T09:44:21.1950791Z \u001b[36;1mnode tests/damage-regression.cjs\u001b[0m\n2026-11-13T09:44:21.1960716Z shell: /usr/bin/bash -e {0}\n2026-11-13T09:44:21.1960913Z ##[endgroup]\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T09:44:32.7606120Z   debug: false\n2026-11-13T09:44:32.7606331Z   user-agent: actions/github-script\n2026-11-13T09:44:32.7606562Z   result-encoding: json\n2026-11-13T09:44:32.7606741Z   retries: 0\n2026-11-13T09:44:32.7606930Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T09:44:32.7607155Z env:\n2026-11-13T09:44:32.7607311Z   CI_JOB_STATUS: failure\n2026-11-13T09:44:32.7607498Z ##[endgroup]\n2026-11-13T09:44:33.3330998Z Skipping stale CI run #43403541456; latest is #43403580099\n2026-11-13T09:44:33.3482742Z Post job cleanup.\n2026-11-13T09:44:33.4143089Z [command]/usr/bin/git version\n2026-11-13T09:44:33.4176795Z git version 2.56.1\n2026-11-13T09:44:33.4203106Z Temporarily overriding HOME='/home/runner/work/_temp/f7023a72-7c6b-488c-97e5-1fd1a714a9df' before making global git config changes\n2026-11-13T09:44:33.4204293Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T09:44:33.4207730Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T09:44:33.4245310Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T09:44:33.4272984Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T09:44:33.4460947Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T09:44:33.4487854Z http.https://github.com/.extraheader\n2026-11-13T09:44:33.4491625Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T09:44:33.4522258Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T09:44:33.4708323Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T09:44:33.4736932Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T09:44:33.5021779Z Cleaning up orphan processes\n2026-11-13T09:44:33.5266298Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 845
+    }
+  ]
+}
