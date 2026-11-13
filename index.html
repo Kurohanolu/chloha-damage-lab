@@ -713,7 +713,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  header('att');header('def');
  const movePicker=node('div','move-picker');movePicker.id='movePicker';
  movePicker.innerHTML='<label for="moveSearch">技名を検索</label><input type="search" id="moveSearch" placeholder="例：じしん、10まんボルト" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="moveSuggestions"><div id="moveSuggestions" role="listbox" hidden></div><p id="moveSelected" class="move-selected" aria-live="polite"></p><details class="move-list-fallback"><summary>技一覧から選ぶ</summary><div id="moveSelectMount"></div></details>';
- el('attQuick').append(movePicker);mount('dbMove','moveSelectMount');movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',flingPowerPanel);movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',dragonDartsPanel);movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',beatUpPanel);
+ el('attQuick').append(movePicker);mount('dbMove','moveSelectMount');movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',spitUpPanel);movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',flingPowerPanel);movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',dragonDartsPanel);movePicker.querySelector('.move-list-fallback').insertAdjacentElement('beforebegin',beatUpPanel);
  // Keep the conditional-power toggle immediately below the move picker, not inside advanced manual inputs.
  movePicker.append(el('conditionalPowerPanel'));
  const credits=node('p','move-data-note');
