@@ -894,7 +894,7 @@ const localizedItemOptionPhrases={
  'Life Orb (damage ×1.3)':{fr:'Orbe Vie (dégâts ×1,3)',de:'Leben-Orb (Schaden ×1,3)',es:'Vidasfera (daño ×1,3)',it:'Assorbisfera (danni ×1,3)',ko:'생명의구슬 (데미지 ×1.3)','zh-Hans':'生命宝珠（伤害×1.3）','zh-Hant':'生命寶珠（傷害×1.3）'},
  'Assault Vest (Sp. Def ×1.5)':{fr:'Veste de Combat (Déf. Spé. ×1,5)',de:'Offensivweste (Spezial-Verteidigung ×1,5)',es:'Chaleco Asalto (Def. Esp. ×1,5)',it:'Corpetto assalto (Dif. Sp. ×1,5)',ko:'돌격조끼 (특수방어 ×1.5)','zh-Hans':'突击背心（特防×1.5）','zh-Hant':'突擊背心（特防×1.5）'},
  'Choice Band (Attack ×1.5)':{fr:'Bandeau Choix (Attaque ×1,5)',de:'Wahlband (Angriff ×1,5)',es:'Cinta Elección (Ataque ×1,5)',it:'Bendascelta (Attacco ×1,5)',ko:'구애머리띠 (공격 ×1.5)','zh-Hans':'讲究头带（攻击×1.5）','zh-Hant':'講究頭帶（攻擊×1.5）'},
- 'Choice Specs (Sp. Atk ×1.5)':{fr:'Lunettes Choix (Att. Spé. ×1,5)',de:'Wahlglas (Spezial-Angriff ×1,5)',es:'Gafas Elección (At. Esp. ×1,5)',it:'Lentiscelta (Att. Sp. ×1,5)',ko:'구애안경 (특수공격 ×1.5)','zh-Hans':'讲究眼镜（特攻×1.5）','zh-Hant':'講究眼鏡（特攻×1.5）'},
+ 'Choice Specs (Sp. Atk ×1.5)':{fr:'Lunettes Choix (Att. Spé. ×1,5)',de:'Wahlbrille (Spezial-Angriff ×1,5)',es:'Gafas Elección (At. Esp. ×1,5)',it:'Lentiscelta (Att. Sp. ×1,5)',ko:'구애안경 (특수공격 ×1.5)','zh-Hans':'讲究眼镜（特攻×1.5）','zh-Hant':'講究眼鏡（特攻×1.5）'},
  'Expert Belt (super-effective ×1.2)':{fr:'Ceinture Pro (super efficace ×1,2)',de:'Expertengurt (sehr effektiv ×1,2)',es:'Cinta Experto (supereficaz ×1,2)',it:'Abilcintura (superefficace ×1,2)',ko:'달인의띠 (효과가 굉장함 ×1.2)','zh-Hans':'达人带（效果绝佳×1.2）','zh-Hant':'達人帶（效果絕佳×1.2）'}
 };
 const localizedControlPhrases={
