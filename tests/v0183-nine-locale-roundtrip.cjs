@@ -65,6 +65,7 @@ const path=require('node:path');
    'real Pokémon damage calculation must produce a nonzero range before locale rotations: '+JSON.stringify({initialDamage,initialError,initialVisibility}));
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
+  let globalBaselineNumeric=null;
   // Rotate the starting locale through all nine languages. Every rotation
   // exercises a different predecessor/successor history and returns to start.
   const languages=steps.slice(0,9);
@@ -115,6 +116,13 @@ const path=require('node:path');
     // Compare numeric results only: labels and range separators are localized.
     const numbers=value=>(String(value||'').match(/\d+(?:\.\d+)?/g)||[]).map(Number);
     const numeric={damage:numbers(state.resultDamage),percent:numbers(state.resultPercent)};
+    assert.ok(numeric.damage.length>=2&&numeric.damage[1]>0,
+     'real damage must remain nonzero after '+from+' → '+lang+': '+state.resultDamage);
+    if(globalBaselineNumeric===null)globalBaselineNumeric=numeric;
+    else{
+     assert.deepEqual(numeric.damage,globalBaselineNumeric.damage,'damage invariant across all 90 transitions');
+     assert.deepEqual(numeric.percent,globalBaselineNumeric.percent,'percentage invariant across all 90 transitions');
+    }
     if(i===0)baselineNumeric=numeric;
     else{
      assert.deepEqual(numeric.damage,baselineNumeric.damage,'calculated damage invariant');
