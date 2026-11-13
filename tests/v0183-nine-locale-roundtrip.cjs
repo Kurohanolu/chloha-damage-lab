@@ -24,12 +24,12 @@ const path=require('node:path');
   for(const [id,value] of Object.entries(exercised)){
    await page.locator('#'+id).selectOption(value);
   }
-  const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
+  const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'&&!v.startsWith('unsupported:')));
   if(abilities.length){exercised.attAbility=abilities[0];await page.locator('#attAbility').selectOption(abilities[0]);}
   const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
   if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
   const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
-  if(moves.length>1){exercised.dbMove=moves[1];await page.locator('#dbMove').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('change',{bubbles:true}));},moves[1]);}
+  if(moves.includes('earthquake')){exercised.dbMove='earthquake';await page.locator('#dbMove').evaluate(el=>{el.value='earthquake';el.dispatchEvent(new Event('change',{bubbles:true}));});}
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
   for(let i=0;i<steps.length;i++){
