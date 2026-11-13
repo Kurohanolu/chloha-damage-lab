@@ -10,6 +10,7 @@ on:
     types: [completed]
 permissions:
   contents: write
+  actions: read
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -22,6 +23,17 @@ jobs:
             const run = context.payload.workflow_run;
             const fileName = run.name.replace(/[^a-zA-Z0-9_-]+/g, '-').toLowerCase();
             const path = `ci-results/${run.head_sha}/${fileName}.json`;
+            const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {
+              ...context.repo, run_id: run.id, per_page: 100
+            });
+            const jobResults = jobs.map(job => ({
+              name: job.name,
+              conclusion: job.conclusion,
+              html_url: job.html_url,
+              failed_steps: (job.steps || []).filter(step => step.conclusion === 'failure').map(step => ({
+                name: step.name, number: step.number, conclusion: step.conclusion
+              }))
+            }));
             const payload = {
               head_sha: run.head_sha,
               workflow: run.name,
@@ -30,7 +42,8 @@ jobs:
               conclusion: run.conclusion,
               status: run.status,
               completed_at: run.updated_at,
-              html_url: run.html_url
+              html_url: run.html_url,
+              jobs: jobResults
             };
             let sha;
             try {
