@@ -47,6 +47,24 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   assert.deepEqual(officialEuResults.filter(row=>
    String(row.actual).normalize('NFC')!==row.expected.normalize('NFC')),[],
    'EU species spellings differ from individually sourced official names');
+  // Registry-level completeness: official fixture species must be registered
+  // in the translation data even when they are NOT in the battle roster.
+  // This catches the missing Pikachu mapping that roster-only checks missed.
+  const speciesRegistryAudit=await page.evaluate(entries=>{
+   const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+   const registry=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
+   return entries.flatMap(entry=>{
+    const record=registry[entry.key];
+    return locales.flatMap(locale=>{
+     const raw=record?.[locale];
+     const resolved=window.ChlohaLocalePokemonName?.(entry.key,locale);
+     return raw&&resolved&&String(raw).normalize('NFC')===String(resolved).normalize('NFC')
+      ? [] : [{nationalDex:entry.nationalDex,key:entry.key,locale,raw:raw||null,resolved:resolved||null}];
+    });
+   });
+  },officialEuSpecies);
+  assert.deepEqual(speciesRegistryAudit,[],
+   'official fixture species must exist in the full nine-locale registry, even outside the roster');
   // Every previously missing form must now have a source-backed base species
   // in all eight non-Japanese locales. This checks data coverage, not whether
   // each constructed form label has been verified as an official spelling.
