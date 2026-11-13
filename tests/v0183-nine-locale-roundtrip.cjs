@@ -36,6 +36,17 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   const page=await browser.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  // Independently reviewed official Pokémon names, keyed by National Dex.
+  // Only the fixture entries are official-verified; never imply full coverage.
+  const officialEuSpecies=require('./v0183-european-official-species.json').species;
+  const officialEuResults=await page.evaluate(entries=>
+   entries.flatMap(entry=>Object.entries(entry.names).map(([locale,record])=>({
+    nationalDex:entry.nationalDex,locale,expected:record.name,
+    actual:window.ChlohaLocalePokemonName(entry.key,locale)
+   }))),officialEuSpecies);
+  assert.deepEqual(officialEuResults.filter(row=>
+   String(row.actual).normalize('NFC')!==row.expected.normalize('NFC')),[],
+   'EU species spellings differ from individually sourced official names');
   // Every previously missing form must now have a source-backed base species
   // in all eight non-Japanese locales. This checks data coverage, not whether
   // each constructed form label has been verified as an official spelling.
