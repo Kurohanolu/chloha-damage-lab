@@ -114,19 +114,22 @@ try {
  await page.locator('#chloha-locale').selectOption('ja');
  assert.equal(await page.locator('#defItem option[value="autoResistBerry"]').textContent(),berryOptions[2].label,'Auto berry JA/EN/JA roundtrip');
  console.log('PASS compact automatic resist berry option and JA/EN/JA roundtrip');
- // Check the full plate catalog and locale roundtrip.
- const plateIds=['flamePlate','splashPlate','zapPlate','meadowPlate','iciclePlate','fistPlate','toxicPlate','earthPlate','skyPlate','mindPlate','insectPlate','stonePlate','spookyPlate','dracoPlate','dreadPlate','ironPlate','pixiePlate'];
- const jaPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
- assert.deepEqual(jaPlates.map(o=>o.id),plateIds,'All 17 attacker plate items');
+ // Only the matching plate should appear; changing the move must not auto-equip it.
+ await page.locator('#dbAuto').uncheck();
+ await page.locator('#moveType').selectOption('ほのお');
+ const plateOptions=()=>page.locator('#attItem option[value$="Plate"]').evaluateAll(opts=>opts.map(o=>({id:o.value,label:o.textContent})));
+ assert.deepEqual((await plateOptions()).map(o=>o.id),['flamePlate'],'Only Fire Plate visible');
+ assert.equal(await page.locator('#attItem').inputValue(),'none','Plate not automatically equipped');
+ await page.locator('#attItem').selectOption('flamePlate');
+ await page.locator('#moveType').selectOption('こおり');
+ assert.deepEqual((await plateOptions()).map(o=>o.id),['iciclePlate'],'Switch to Ice Plate');
+ assert.equal(await page.locator('#attItem').inputValue(),'none','Old plate reset when move type changes');
  await page.locator('#chloha-locale').selectOption('en');
- const enPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
- for(const option of enPlates){
-  assert.ok(option.label.endsWith('moves ×1.2)')&&!/[ぁ-んァ-ヶ一-龯]/.test(option.label),'Untranslated plate: '+option.id+' / '+option.label);
- }
+ const enPlate=(await plateOptions())[0];
+ assert.ok(enPlate.label.startsWith('Icicle Plate')&&enPlate.label.includes('moves ×1.2'),'English visible plate');
  await page.locator('#chloha-locale').selectOption('ja');
- const restoredPlates=await page.evaluate(()=>[...document.querySelectorAll('#attItem option')].filter(o=>o.value.endsWith('Plate')).map(o=>({id:o.value,label:o.textContent})));
- assert.deepEqual(restoredPlates,jaPlates,'Plate JA/EN/JA roundtrip');
- console.log('PASS all 17 type plate labels and JA/EN/JA roundtrip');
+ assert.match((await plateOptions())[0].label,/つららのプレート/,'Japanese plate restored');
+ console.log('PASS context-sensitive plate choice and locale roundtrip');
  // Guard every supported defensive ability against missing English labels and stale JA/EN/JA options.
  const html=readFileSync(resolve(root,'index.html'),'utf8');
  const catalogSource=html.match(/const defensiveAbilities=(\{[^;]+\});/);
