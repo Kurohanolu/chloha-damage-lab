@@ -234,7 +234,7 @@ function localizedProvisionalForm(id,ja,locale){
  'イエロー':{en:'Yellow',fr:'Jaune',de:'Gelb',es:'Amarillo',it:'Giallo',ko:'옐로','zh-Hans':'黄色','zh-Hant':'黃色'},
  'ホワイト':{en:'White',fr:'Blanc',de:'Weiß',es:'Blanco',it:'Bianco',ko:'화이트','zh-Hans':'白色','zh-Hant':'白色'}
  };
- const desc=((formLabels[suffix]||additionalFormLabels[suffix])||additionalFormLabels[suffix])?.[locale]||formLabels[suffix]?.en;
+ const desc=(formLabels[suffix]||additionalFormLabels[suffix])?.[locale]||(formLabels[suffix]||additionalFormLabels[suffix])?.en;
  return desc?base+' ('+desc+')':null;
 }
 const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
