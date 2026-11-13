@@ -17,7 +17,7 @@ const screenshotEnd=source.indexOf('const localeUiPhrases=',screenshotStart);
 assert.ok(screenshotStart>0&&screenshotEnd>screenshotStart,'screenshot locale catalog missing');
 const screenshotContext={};
 vm.runInNewContext(source.slice(screenshotStart,screenshotEnd)+'\nthis.screenshot=screenshotLocalePhrases;',screenshotContext);
-for(const lang of ['ko','zh-Hans','zh-Hant']){
+for(const lang of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
  for(const label of ['Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.','Level (fixed at 50)','Move power','Attack / Sp. Atk stat','Defense / Sp. Def stat','Move type','Move category','Type 1','Type 2','The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.']){
   assert.ok(screenshotContext.screenshot[label]?.[lang],lang+' missing '+label);
  }
