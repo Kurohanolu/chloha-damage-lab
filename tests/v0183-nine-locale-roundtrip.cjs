@@ -42,11 +42,11 @@ const path=require('node:path');
   // Pokémon and every non-Japanese locale (not just backing data presence).
   const rosterDisplayAudit=await page.evaluate(()=>{
    const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
-   const roster=ChlohaPokemonDB.pokemon;
+   const roster=[...document.querySelectorAll('#dbAttPokemon option')].map(o=>({id:o.value})).filter(o=>o.id);
    const errors=[];
    for(const p of roster){
     for(const locale of locales){
-     const value=localizedName('pokemon',p.id,locale);
+     const value=window.ChlohaLocalePokemonName?.(p.id,locale);
      if(!value||/[ぁ-ゟ゠-ヿ]/u.test(value)||value===p.id)
       errors.push({id:p.id,locale,value});
     }
