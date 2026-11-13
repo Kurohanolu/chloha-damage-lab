@@ -721,16 +721,16 @@ const expandedPanelTranslations={
  'Show calculation trace':{fr:'Afficher les étapes du calcul',de:'Berechnungsschritte anzeigen',es:'Mostrar los pasos del cálculo',it:'Mostra i passaggi del calcolo',ko:'계산 과정 표시','zh-Hans':'显示计算过程','zh-Hant':'顯示計算過程'}
 };
 const screenshotLocalePhrases={
- 'Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.':{ko:'능력치 포인트는 각 0~32, 총합 최대 66입니다. 빈칸은 0으로 처리됩니다. 자동 입력을 끄면 능력치, 타입, 기술 위력을 수정할 수 있습니다.'},
- 'Level (fixed at 50)':{ko:'레벨 (50 고정)'},
- 'Move power':{ko:'기술 위력'},
- 'Attack / Sp. Atk stat':{ko:'공격 / 특수공격 실수치'},
- 'Defense / Sp. Def stat':{ko:'방어 / 특수방어 실수치'},
- 'Move type':{ko:'기술 타입'},
- 'Move category':{ko:'기술 분류'},
- 'Type 1':{ko:'타입 1'},
- 'Type 2':{ko:'타입 2'},
- 'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.'}
+ 'Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.':{ko:'능력치 포인트는 각 0~32, 총합 최대 66입니다. 빈칸은 0으로 처리됩니다. 자동 입력을 끄면 능력치, 타입, 기술 위력을 수정할 수 있습니다.','zh-Hans':'能力点数：每项0～32点，总计最多66点。留空视为0。关闭自动填充后可编辑能力值、属性和招式威力。','zh-Hant':'能力點數：每項0～32點，總計最多66點。留空視為0。關閉自動填入後可編輯能力值、屬性和招式威力。'},
+ 'Level (fixed at 50)':{ko:'레벨 (50 고정)','zh-Hans':'等级（固定50）','zh-Hant':'等級（固定50）'},
+ 'Move power':{ko:'기술 위력','zh-Hans':'招式威力','zh-Hant':'招式威力'},
+ 'Attack / Sp. Atk stat':{ko:'공격 / 특수공격 실수치','zh-Hans':'攻击／特攻实际值','zh-Hant':'攻擊／特攻實際值'},
+ 'Defense / Sp. Def stat':{ko:'방어 / 특수방어 실수치','zh-Hans':'防御／特防实际值','zh-Hant':'防禦／特防實際值'},
+ 'Move type':{ko:'기술 타입','zh-Hans':'招式属性','zh-Hant':'招式屬性'},
+ 'Move category':{ko:'기술 분류','zh-Hans':'招式分类','zh-Hant':'招式分類'},
+ 'Type 1':{ko:'타입 1','zh-Hans':'属性1','zh-Hant':'屬性1'},
+ 'Type 2':{ko:'타입 2','zh-Hans':'属性2','zh-Hant':'屬性2'},
+ 'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.','zh-Hans':'373只宝可梦和335个招式的数据包含候选项目。尚未验证招式学习范围；遇到不支持的特性时将停止计算。复杂交互、太晶化及实机的取整顺序仍未验证。','zh-Hant':'373隻寶可夢和335個招式的資料包含候選項目。尚未驗證招式學習範圍；遇到不支援的特性時將停止計算。複雜交互、太晶化及實機的取整順序仍未驗證。'}
 };
 const localeUiPhrases={
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
@@ -1043,7 +1043,7 @@ function localizedUi(base){
  'Attacker Tailwind (Speed ×2)':['Vent arrière de l’attaquant (Vitesse ×2)','Rückenwind des Angreifers (Initiative ×2)','Viento Afín del atacante (Velocidad ×2)','Ventoincoda dell’attaccante (Velocità ×2)','공격 측 순풍 (스피드 ×2)','攻击方顺风（速度×2）','攻擊方順風（速度×2）']
  };
  const screenshotEnglish=translateRuntime(base);
- const warning=screenshotEnglish.match(/^Selected move “(.+?)”\s*[:：]\s*learnset, effects, variable power and accuracy are unverified\. Treat results as provisional until compared against hardware\.$/);
+ const warning=screenshotEnglish.match(/^Selected move [“"](.+?)[”"]\s*[:：]\s*learnset, effects, variable power and accuracy are unverified\. Treat results as provisional until compared against hardware\.$/);
  if(warning){
   const labels={
    fr:['Capacité sélectionnée','Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.'],
@@ -1058,6 +1058,16 @@ function localizedUi(base){
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
+ if((locale==='zh-Hans'||locale==='zh-Hant')&&screenshotText.startsWith('About versions:')){
+  const traditional=locale==='zh-Hant';
+  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
+  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
+  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
+  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
+  return traditional
+   ?'版本說明：畫面顯示的「'+(version?.[1]||'目前版本')+'」是公開UI版本。計算核心「'+(core?.[1]||'內部版本')+'」表示內部API基礎版本，不代表目前公開版本，也不表示驗證已完成。'+(regression?.[1]||'目前版本')+'的自動回歸測試及'+(cases?.[1]||'54')+'個Showdown比較案例已通過。僅部分條件與Pokémon Champions實機比較過，無法保證所有條件下的結果完全一致。'
+   :'版本说明：画面显示的“'+(version?.[1]||'当前版本')+'”是公开UI版本。计算核心“'+(core?.[1]||'内部版本')+'”表示内部API基础版本，不代表当前公开版本，也不表示验证已完成。'+(regression?.[1]||'当前版本')+'的自动回归测试及'+(cases?.[1]||'54')+'个Showdown比较案例已通过。仅部分条件与Pokémon Champions实机比较过，无法保证所有条件下的结果完全一致。';
+ }
  if(locale==='ko'&&screenshotText.startsWith('About versions:'))return screenshotText
   .replace(/^About versions:/,'버전 안내:')
   .replace(' is the public UI version. The calculation core ','는 공개 UI 버전입니다. 계산 코어 ')
