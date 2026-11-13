@@ -56,6 +56,11 @@ const path=require('node:path');
     defItem:document.querySelector('#defItem')?.selectedOptions?.[0]?.textContent?.trim(),
     move:document.querySelector('#dbMove')?.selectedOptions?.[0]?.textContent?.trim(),
     hits:document.querySelector('#hits')?.textContent?.trim(),
+    selectedMove:document.querySelector('#moveSelected')?.textContent?.trim(),
+    attackerTypes:[...document.querySelectorAll('#attTypes .type-pill')].map(n=>n.textContent.trim()),
+    defenderTypes:[...document.querySelectorAll('#defTypes .type-pill')].map(n=>n.textContent.trim()),
+    pokemonPlaceholder:document.querySelector('#attPokemonSearch')?.getAttribute('placeholder')||document.querySelector('#defPokemonSearch')?.getAttribute('placeholder'),
+    movePlaceholder:document.querySelector('#moveSearch')?.getAttribute('placeholder'),
     selected:Object.fromEntries(Object.keys(window.__roundtripControls||{}).map(id=>[id,document.getElementById(id)?.value]))
    }));
    snapshots.push({transition:from+' → '+lang,...state});
@@ -80,6 +85,14 @@ const path=require('node:path');
       const value=state[field]||'';
       assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(value),field+' has Japanese characters: '+value);
      }
+    }
+    if(lang!=='ja'){
+     for(const field of ['selectedMove','movePlaceholder']){
+      const value=state[field]||'';
+      assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(value),field+' has untranslated Japanese: '+value);
+     }
+     for(const type of [...state.attackerTypes,...state.defenderTypes])assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(type),'untranslated type badge: '+type);
+     if(state.selectedMove)assert.ok(!state.selectedMove.includes('選択中：'),'selected move prefix');
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
