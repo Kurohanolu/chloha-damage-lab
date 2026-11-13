@@ -952,6 +952,11 @@ function localizedDynamicControl(base,target){
   const label={fr:'Des PV max. :',de:'Von max. KP:',es:'De los PS máximos:',it:'Dei PS massimi:',ko:'최대 HP 대비:','zh-Hans':'占最大HP：','zh-Hant':'佔最大HP：'}[target];
   return label+' '+maxHp[1];
  }
+ // Dynamic result headings must be localized after every calculation and locale switch.
+ const rollHeading=String(english).match(/^256 two-hit damage combinations \(including duplicates\)$/);
+ if(rollHeading){
+  return {fr:'256 combinaisons de dégâts sur deux coups (doublons inclus)',de:'256 Schadenskombinationen aus zwei Treffern (einschließlich Duplikaten)',es:'256 combinaciones de daño de dos golpes (incluidos duplicados)',it:'256 combinazioni di danno su due colpi (duplicati inclusi)',ko:'2회 공격 합계 데미지 256가지 조합 (중복 포함)','zh-Hans':'两次攻击合计伤害的256种组合（含重复）','zh-Hant':'兩次攻擊合計傷害的256種組合（含重複）'}[target];
+ }
  const estimatedHits=String(english).match(/^([0-9]+)[–-]([0-9]+) hits \(estimate; no recovery\)$/);
  if(estimatedHits){
   const labels={
