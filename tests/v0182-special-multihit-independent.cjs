@@ -6,16 +6,19 @@ const api=require('../multi-hit.js');
 const {specialMoveDistribution,specialItemDistribution,koProbability}=api.default||globalThis.ChlohaMultiHit||api;
 const tolerance=1e-11;
 function oracle(rolls,accuracy){
- const done=new Map();
- function add(d,p){done.set(d,(done.get(d)||0)+p);}
- function visit(i,total,p){
-  if(i===rolls.length){add(total,p);return;}
-  add(total,p*(1-accuracy[i]));
-  if(accuracy[i]===0)return;
-  for(const damage of rolls[i])visit(i+1,total+damage,p*accuracy[i]/16);
+ let active=new Map([[0,1]]);
+ const finished=new Map();
+ for(let i=0;i<rolls.length;i++){
+  const next=new Map();
+  for(const [total,p] of active){
+   finished.set(total,(finished.get(total)||0)+p*(1-accuracy[i]));
+   for(const damage of rolls[i])
+    next.set(total+damage,(next.get(total+damage)||0)+p*accuracy[i]/16);
+  }
+  active=next;
  }
- visit(0,0,1);
- return done;
+ for(const [total,p] of active)finished.set(total,(finished.get(total)||0)+p);
+ return finished;
 }
 function verify(label,actual,expected){
  for(const d of new Set([...actual.keys(),...expected.keys()]))
