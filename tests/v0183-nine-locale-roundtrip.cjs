@@ -106,6 +106,17 @@ const path=require('node:path');
      const expectedAbility={fr:'Talent du défenseur',de:'Fähigkeit des Verteidigers',es:'Habilidad del defensor',it:'Abilità del difensore',ko:'방어 측 특성','zh-Hans':'防御方特性','zh-Hant':'防禦方特性'};
      if(expectedSwap[lang])assert.ok(state.swap?.includes(expectedSwap[lang]),'swap control must be in '+lang+': '+state.swap);
      if(expectedAbility[lang])assert.ok(state.defenderAbilityLabel?.startsWith(expectedAbility[lang]),'defender ability label must be in '+lang+': '+state.defenderAbilityLabel);
+     // Exact localized move and type names: no silent English fallback.
+     const expectedEarthquake={en:'Earthquake',fr:'Séisme',de:'Erdbeben',es:'Terremoto',it:'Terremoto',ko:'지진','zh-Hans':'地震','zh-Hant':'地震'};
+     const expectedGround={en:'Ground',fr:'Sol',de:'Boden',es:'Tierra',it:'Terra',ko:'땅','zh-Hans':'地面','zh-Hant':'地面'};
+     if(exercised.dbMove==='earthquake'&&expectedEarthquake[lang]){
+      assert.ok(state.selectedMove?.includes(expectedEarthquake[lang]),'selected move name must be '+lang+': '+state.selectedMove);
+      assert.ok(state.selectedMove?.includes(expectedGround[lang]),'selected move type must be '+lang+': '+state.selectedMove);
+     }
+     // Native item options are part of the visible UI, not just the calculation engine.
+     if(lang==='es'){
+      assert.ok(!/damage|Sp\\. Def/.test(state.attItem+' '+state.defItem),'Spanish item modifiers must not remain English');
+     }
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
