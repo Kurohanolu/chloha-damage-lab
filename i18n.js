@@ -199,6 +199,36 @@ function localizedMegaForm(id,ja,locale){
   ko:'메가','zh-Hans':'超级','zh-Hant':'超級'}[locale];
  return prefix?prefix+base+suffix:null;
 }
+// For forms absent from the exact-name catalog, retain the verified localized
+// base species name and a transparent provisional form descriptor.
+function localizedProvisionalForm(id,ja,locale){
+ const entry=window.ChlohaFormSpeciesBases?.[id];
+ const base=entry?.base?.[locale];
+ if(!base)return null;
+ if(/^メガ/.test(ja))return localizedMegaForm(id,ja,locale);
+ const prefix=[
+  ['ヒスイ',{en:'Hisuian ',fr:'Hisui ',de:'Hisui-',es:'Hisui ',it:'Hisui ',ko:'히스이 ','zh-Hans':'洗翠','zh-Hant':'洗翠'}],
+  ['アローラ',{en:'Alolan ',fr:'Alola ',de:'Alola-',es:'Alola ',it:'Alola ',ko:'알로라 ','zh-Hans':'阿罗拉','zh-Hant':'阿羅拉'}],
+  ['ガラル',{en:'Galarian ',fr:'Galar ',de:'Galar-',es:'Galar ',it:'Galar ',ko:'가라르 ','zh-Hans':'伽勒尔','zh-Hant':'伽勒爾'}],
+  ['パルデア',{en:'Paldean ',fr:'Paldea ',de:'Paldea-',es:'Paldea ',it:'Paldea ',ko:'팔데아 ','zh-Hans':'帕底亚','zh-Hant':'帕底亞'}]
+ ].find(([jaPrefix])=>ja.startsWith(jaPrefix));
+ if(prefix)return (prefix[1][locale]||prefix[1].en)+base;
+ const suffix=ja.slice(entry.baseJa.length).replace(/^\(|^（/,'').replace(/\)|）$/,'');
+ if(!suffix)return base;
+ const formLabels={
+  'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
+  'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'},
+  'ウォッシュ':{en:'Wash',fr:'Lavage',de:'Wasch',es:'Lavado',it:'Lavaggio',ko:'워시','zh-Hans':'清洗','zh-Hant':'清洗'},
+  'ヒート':{en:'Heat',fr:'Chaleur',de:'Hitze',es:'Calor',it:'Calore',ko:'히트','zh-Hans':'加热','zh-Hant':'加熱'},
+  'カット':{en:'Mow',fr:'Tonte',de:'Schneid',es:'Corte',it:'Taglio',ko:'커트','zh-Hans':'切割','zh-Hant':'切割'},
+  'フロスト':{en:'Frost',fr:'Gel',de:'Frost',es:'Frío',it:'Gelo',ko:'프로스트','zh-Hans':'结冰','zh-Hant':'結冰'},
+  'スピン':{en:'Fan',fr:'Hélice',de:'Wirbel',es:'Ventilador',it:'Ventola',ko:'스핀','zh-Hans':'旋转','zh-Hant':'旋轉'},
+  'シールド':{en:'Shield',fr:'Bouclier',de:'Schild',es:'Escudo',it:'Scudo',ko:'실드','zh-Hans':'盾牌','zh-Hant':'盾牌'},
+  'ブレード':{en:'Blade',fr:'Lame',de:'Klinge',es:'Filo',it:'Lama',ko:'블레이드','zh-Hans':'刀剑','zh-Hant':'刀劍'}
+ };
+ const desc=formLabels[suffix]?.[locale]||formLabels[suffix]?.en;
+ return desc?base+' ('+desc+')':null;
+}
 const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
  .filter(entry=>entry?.ja)
  .map(entry=>[entry.ja,entry]));
@@ -258,7 +288,7 @@ function translateOptions(){
  const root=document.getElementById('app');
  if(!root)return;
  // Legacy move-form selectors live outside #app; include them in native option localization.
- const selects=[...root.querySelectorAll('select'),...['ragingBullForm','auraWheelForm'].map(id=>document.getElementById(id)).filter(Boolean)];
+ const selects=[...document.querySelectorAll('select')];
  for(const select of selects){
   if(select.id==='chloha-locale')continue;
   for(const option of select.options){
@@ -307,7 +337,7 @@ function translateOptions(){
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
    const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||(pokemonOption?pokemonByJapanese.get(base)?.[locale]:null)
-    ||(pokemonOption&&/^メガ/.test(base)?localizedMegaForm(option.value,base,locale):null);
+    ||(pokemonOption?localizedProvisionalForm(option.value,base,locale):null);
    const abilityStatusLabels={
     fr:[' (pris en charge)',' (partiellement pris en charge)',' (non pris en charge)'],
     de:[' (unterstützt)',' (teilweise unterstützt)',' (nicht unterstützt)'],
