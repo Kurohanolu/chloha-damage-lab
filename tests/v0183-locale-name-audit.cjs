@@ -13,6 +13,13 @@ const result=audit(catalog,translations);
 assert.equal(result.ok,true,JSON.stringify(Array.from(result.issues)));
 assert.equal(result.counts.moves.localized,9);
 assert.equal(result.counts.pokemon.localized,9);
+for(const locale of Array.from(context.ChlohaNameLocaleAudit.locales)){
+ assert.equal(result.coverage.moves[locale].translated,1);
+ assert.equal(result.coverage.pokemon[locale].translated,1);
+ assert.ok(result.coverage.moves[locale].total>=1);
+}
+assert.equal(result.coverage.abilities.ko.translated,0);
+assert.equal(result.coverage.items.fr.translated,0);
 const bad=audit(catalog,{moves:{'missing-id':{fr:'test'},'かえんほうしゃ':{xx:'wrong',en:'Not Flamethrower',ja:''}}});
 assert.equal(bad.ok,false);
 for(const code of ['unknown-id','unsupported-locale','english-mismatch','empty-name']){
