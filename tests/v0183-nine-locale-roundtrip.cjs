@@ -45,14 +45,19 @@ const path=require('node:path');
   const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
   if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
   const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
-  if(moves.includes('earthquake')){exercised.dbMove='earthquake';await page.locator('#dbMove').evaluate(el=>{el.value='earthquake';el.dispatchEvent(new Event('change',{bubbles:true}));});}
+  assert.ok(moves.includes('earthquake'),'Garchomp move selector must contain Earthquake: '+JSON.stringify(moves.slice(0,15)));
+  exercised.dbMove='earthquake';
+  await page.locator('#dbMove').evaluate(el=>{el.value='earthquake';el.dispatchEvent(new Event('change',{bubbles:true}));});
   // Prevent a false green: numerical invariance of an empty result is not a
   // valid calculation test. Require a populated nonzero damage range first.
   await page.waitForTimeout(250);
   const initialDamage=await page.locator('#damage').textContent();
+  const initialError=await page.locator('#error').textContent();
+  const initialVisibility=await page.locator('#output').evaluate(el=>el.hidden);
+  console.log('Initial calculation diagnostic:',JSON.stringify({initialDamage,initialError,initialVisibility,selected:await page.evaluate(()=>({att:document.querySelector('#dbAttPokemon').value,def:document.querySelector('#dbDefPokemon').value,move:document.querySelector('#dbMove').value,auto:document.querySelector('#dbAuto').checked}))}));
   const initialNumbers=(initialDamage||'').match(/\d+/g)||[];
   assert.ok(initialNumbers.length>=2&&Number(initialNumbers[1])>0,
-   'real Pokémon damage calculation must produce a nonzero range before locale rotations: '+initialDamage);
+   'real Pokémon damage calculation must produce a nonzero range before locale rotations: '+JSON.stringify({initialDamage,initialError,initialVisibility}));
   await page.evaluate(controls=>{window.__roundtripControls=controls;},exercised);
   const snapshots=[];
   // Rotate the starting locale through all nine languages. Every rotation
