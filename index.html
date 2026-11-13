@@ -787,7 +787,39 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  'かえんほうしゃ':'Flamethrower','だいちのちから':'Earth Power',
  'ボルトチェンジ':'Volt Switch','とんぼがえり':'U-turn'
  });
- const localizedName=(category,key,locale)=>window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]?.[locale]||null;
+ // Resolve localized species forms from the translated base species.
+ // Derived labels are provisional until each form is checked against official naming.
+ const formPrefixes={
+  'メガ':{en:'Mega ',fr:'Méga-',de:'Mega-',es:'Mega-',it:'Mega ',ko:'메가','zh-Hans':'超级','zh-Hant':'超級'},
+  'ヒスイ':{en:'Hisuian ',fr:"de Hisui ",de:'Hisui-',es:'de Hisui ',it:'di Hisui ',ko:'히스이 ','zh-Hans':'洗翠','zh-Hant':'洗翠'},
+  'アローラ':{en:'Alolan ',fr:"d’Alola ",de:'Alola-',es:'de Alola ',it:'di Alola ',ko:'알로라 ','zh-Hans':'阿罗拉','zh-Hant':'阿羅拉'},
+  'ガラル':{en:'Galarian ',fr:'de Galar ',de:'Galar-',es:'de Galar ',it:'di Galar ',ko:'가라르 ','zh-Hans':'伽勒尔','zh-Hant':'伽勒爾'}
+ };
+ const localizedName=(category,key,locale)=>{
+  const exact=window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||
+   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]?.[locale];
+  if(exact||category!=='pokemon'||locale==='ja')return exact||null;
+  const p=pokemonById.get(key);if(!p)return null;
+  const raw=p.name;
+  const prefix=Object.keys(formPrefixes).find(k=>raw.startsWith(k)&&raw.length>k.length);
+  const baseJapanese=prefix?raw.slice(prefix.length):raw.replace(/\\([^)]*\\)$/,'');
+  const base=[...pokemonById.values()].find(q=>q.name===baseJapanese);
+  const baseTranslated=base&&(window.ChlohaLocalizedNames?.pokemon?.[base.id]?.[locale]||
+   window.ChlohaPokeAPILocalizedNames?.pokemon?.[base.id]?.[locale]);
+  if(!baseTranslated)return null;
+  if(prefix){
+   const affix=raw.match(/[XYZ]$/)?.[0]||'';
+   const formName=baseTranslated+(affix?' '+affix:'');
+   const marker=formPrefixes[prefix][locale]||formPrefixes[prefix].en;
+   return ['fr','es','it'].includes(locale)&&prefix!=='メガ'
+    ?formName+' '+marker.trim():marker+formName;
+  }
+  const form=raw.match(/\\(([^)]+)\\)$/)?.[1];
+  if(!form)return null;
+  const forms={'オス':{en:'Male',fr:'Mâle',de:'Männlich',es:'Macho',it:'Maschio',ko:'수컷','zh-Hans':'雄性','zh-Hant':'雄性'},
+   'メス':{en:'Female',fr:'Femelle',de:'Weiblich',es:'Hembra',it:'Femmina',ko:'암컷','zh-Hans':'雌性','zh-Hant':'雌性'}};
+  return forms[form]?baseTranslated+' ('+forms[form][locale]+')':null;
+ };
  const localizedMatch=(category,key,query)=>Object.values(window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]||{}).some(name=>window.ChlohaNameSearch?.normalize(name).includes(window.ChlohaNameSearch.normalize(query)));
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
