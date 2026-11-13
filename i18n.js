@@ -589,6 +589,14 @@ const localizedControlPhrases={
  'None / Not applied':{fr:'Aucun / Non appliqué',de:'Keine / Nicht angewendet',es:'Ninguna / No aplicada',it:'Nessuna / Non applicata',ko:'없음 / 미적용','zh-Hans':'无 / 未应用','zh-Hant':'無 / 未套用'}
 };
 function localizedDynamicControl(base,target){
+ const english=translateRuntime(base);
+ if(target!=='ja'&&target!=='en'){
+  const swap=String(english).match(/^(⇄\\s*)Swap sides$/);
+  if(swap)return swap[1]+localeUiPhrases['Swap sides'][target];
+  const controls={'Defender ability':'Defender ability','Attacker ability':'Attacker ability','None / Not applied':'None / Not applied'};
+  if(controls[english]&&localizedControlPhrases[english]?.[target])return localizedControlPhrases[english][target];
+ }
+
  if(target==='ja'||target==='en')return null;
  const exact=localizedControlPhrases[base]?.[target];
  if(exact)return exact;
