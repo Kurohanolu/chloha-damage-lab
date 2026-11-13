@@ -283,7 +283,13 @@ function translateOptions(){
    const abilityStatus=ability&&(ability[2]==='対応'?0:ability[2]==='一部技のみ対応'?1:2);
    const localizedAbility=ability&&abilityName+(abilityStatusLabels[locale]?.[abilityStatus]||'');
    const moveName=move&&(window.ChlohaLocalizedNames?.moves?.[move[1]]?.[locale]||window.ChlohaPokeAPILocalizedNames?.moves?.[move[1]]?.[locale]||entityNames[move[1]]||move[1]);
-   const localizedMove=move&&moveName+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4]);
+   const moveStatusLocalized={
+    '［計算未対応］':{fr:' [Non pris en charge]',de:' [Nicht unterstützt]',es:' [No compatible]',it:' [Non supportato]',ko:' [미지원]','zh-Hans':'［暂不支持］','zh-Hant':'［暫不支援］'},
+    '［基本ダメージのみ・実機未照合］':{fr:' [Dégâts de base uniquement ; non vérifié]',de:' [Nur Grundschaden; ungeprüft]',es:' [Solo daño básico; sin verificar]',it:' [Solo danno base; non verificato]',ko:' [기본 데미지만; 미검증]','zh-Hans':'［仅基础伤害；未经验证］','zh-Hant':'［僅基礎傷害；未經驗證］'},
+    '［計算試算・実機未照合］':{fr:' [Estimation ; non vérifiée]',de:' [Schätzung; ungeprüft]',es:' [Estimado; sin verificar]',it:' [Stima; non verificata]',ko:' [추정치; 미검증]','zh-Hans':'［估算；未经验证］','zh-Hant':'［估算；未經驗證］'}
+   };
+   const moveType=localizedTypeNames[move?.[2]]?.[locale]||typeNames[move?.[2]]||move?.[2];
+   const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[locale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[locale]||moveStatuses[move[4]]||move[4]);
    const next=locale==='ja'?base:locale==='en'?englishOption:(localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
