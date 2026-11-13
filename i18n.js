@@ -433,6 +433,16 @@ let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocale
 // v0.183: reviewed high-visibility labels, separate from damage engine.
 const localeUiPhrases={
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
+ 'e.g. Earthquake, Thunderbolt':{fr:'Ex. : Séisme, Tonnerre',de:'z. B. Erdbeben, Donnerblitz',es:'p. ej., Terremoto, Rayo',it:'es. Terremoto, Fulmine',ko:'예: 지진, 10만볼트','zh-Hans':'例如：地震、十万伏特','zh-Hant':'例如：地震、十萬伏特'},
+ 'Attack':{fr:'Attaque',de:'Angriff',es:'Ataque',it:'Attacco',ko:'공격','zh-Hans':'攻击','zh-Hant':'攻擊'},
+ 'Defense':{fr:'Défense',de:'Verteidigung',es:'Defensa',it:'Difesa',ko:'방어','zh-Hans':'防御','zh-Hant':'防禦'},
+ 'Sp. Atk':{fr:'Att. Spé.',de:'Sp.-Ang.',es:'At. Esp.',it:'Att. Sp.',ko:'특수공격','zh-Hans':'特攻','zh-Hant':'特攻'},
+ 'Sp. Def':{fr:'Déf. Spé.',de:'Sp.-Vert.',es:'Def. Esp.',it:'Dif. Sp.',ko:'특수방어','zh-Hans':'特防','zh-Hant':'特防'},
+ 'Speed':{fr:'Vitesse',de:'Initiative',es:'Velocidad',it:'Velocità',ko:'스피드','zh-Hans':'速度','zh-Hant':'速度'},
+ 'Attacker':{fr:'Attaquant',de:'Angreifer',es:'Atacante',it:'Attaccante',ko:'공격 측','zh-Hans':'攻击方','zh-Hant':'攻擊方'},
+ 'Defender':{fr:'Défenseur',de:'Verteidiger',es:'Defensor',it:'Difensore',ko:'방어 측','zh-Hans':'防御方','zh-Hant':'防禦方'},
+ 'Guaranteed survival':{fr:'Survie garantie',de:'Überlebt garantiert',es:'Supervivencia garantizada',it:'Sopravvivenza garantita',ko:'확정 생존','zh-Hans':'必定存活','zh-Hant':'必定存活'},
+ 'Estimated; not hardware-verified':{fr:'Estimation non vérifiée sur console',de:'Schätzung; nicht auf Hardware geprüft',es:'Estimación sin verificar en consola',it:'Stima non verificata su console',ko:'추정값 · 실기기 미검증','zh-Hans':'估算值，未经实机验证','zh-Hant':'估算值，未經實機驗證'},
  'Choose from list':{fr:'Choisir dans la liste',de:'Aus Liste wählen',es:'Elegir de la lista',it:'Scegli dall’elenco',ko:'목록에서 선택','zh-Hans':'从列表选择','zh-Hant':'從清單選擇'},
  'Choose from move list':{fr:'Choisir une capacité',de:'Attacke aus Liste wählen',es:'Elegir de la lista de movimientos',it:'Scegli una mossa dall’elenco',ko:'기술 목록에서 선택','zh-Hans':'从招式列表选择','zh-Hant':'從招式清單選擇'},
  'Attacker advanced settings':{fr:'Paramètres avancés de l’attaquant',de:'Erweiterte Angreifereinstellungen',es:'Ajustes avanzados del atacante',it:'Impostazioni avanzate attaccante',ko:'공격 측 상세 설정','zh-Hans':'攻击方高级设置','zh-Hant':'攻擊方進階設定'},
@@ -464,7 +474,6 @@ const localeUiPhrases={
  'Current HP':{fr:'PV actuels',de:'Aktuelle KP',es:'PS actuales',it:'PS attuali',ko:'현재 HP','zh-Hans':'当前HP','zh-Hant':'目前HP'},
  'KO chance':{fr:'Probabilité de KO',de:'K.-o.-Chance',es:'Probabilidad de KO',it:'Probabilità di KO',ko:'KO 확률','zh-Hans':'击倒概率','zh-Hant':'擊倒機率'},
  'Not applicable':{fr:'Sans objet',de:'Nicht anwendbar',es:'No aplicable',it:'Non applicabile',ko:'해당 없음','zh-Hans':'不适用','zh-Hant':'不適用'},
- 'Guaranteed survival':{fr:'Survie garantie',de:'Überlebt garantiert',es:'Supervivencia garantizada',it:'Sopravvivenza garantita',ko:'확정 생존','zh-Hans':'必定存活','zh-Hant':'必定存活'},
  'Damage relative to max HP':{fr:'Dégâts en % des PV max',de:'Schaden relativ zu max. KP',es:'Daño respecto a los PS máximos',it:'Danno rispetto ai PS massimi',ko:'최대 HP 대비 데미지','zh-Hans':'占最大HP的伤害','zh-Hant':'佔最大HP的傷害'},
  'Final damage':{fr:'Dégâts finaux',de:'Endschaden',es:'Daño final',it:'Danno finale',ko:'최종 데미지','zh-Hans':'最终伤害','zh-Hant':'最終傷害'},
  'Normal damage':{fr:'Dégâts normaux',de:'Normaler Schaden',es:'Daño normal',it:'Danno normale',ko:'일반 데미지','zh-Hans':'普通伤害','zh-Hant':'普通傷害'},
@@ -540,10 +549,26 @@ function localizedBattlefield(base,target){
  const choice=value=>battlefieldNames[value]?.[target]||value;
  return labels[0]+choice(m[1])+labels[1]+choice(m[2])+labels[2]+choice(m[3]);
 }
+function localizedLiveSummary(base,target){
+ const value=String(base);
+ const max=value.match(/^(?:最大HPに対する割合：|Of max HP:)\s*(.+)$/);
+ if(max){
+  if(target==='ja')return '最大HPに対する割合：'+max[1];
+  const label=target==='en'?'Of max HP:':localeUiPhrases['Of max HP:']?.[target]||'Of max HP:';
+  return label+' '+max[1];
+ }
+ const survival=value.match(/^(?:確定耐え|Guaranteed survival)\s*[·・]\s*(\d+(?:\.\d+)?%)$/);
+ if(survival){
+  if(target==='ja')return '確定耐え · '+survival[1];
+  const label=target==='en'?'Guaranteed survival':localeUiPhrases['Guaranteed survival']?.[target]||'Guaranteed survival';
+  return label+' · '+survival[1];
+ }
+ return null;
+}
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
- const dynamic=localizedBattlefield(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
+ const dynamic=localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
