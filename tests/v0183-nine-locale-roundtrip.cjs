@@ -2,6 +2,11 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const path=require('node:path');
+const fs=require('node:fs');
+const typeSource=fs.readFileSync(path.resolve(__dirname,'../i18n.js'),'utf8');
+const typeMatch=typeSource.match(/const localizedTypeNames=(\{[^;]+\});/);
+assert.ok(typeMatch,'localized type dictionary must exist');
+const canonicalTypes=JSON.parse(typeMatch[1]);
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
@@ -121,10 +126,7 @@ const path=require('node:path');
    // All eight global locales: verify every type selector against the
    // central translation catalog, including fallback and secondary slots.
    // The Korean canonical spellings also have an independent fixed baseline.
-   const typeAudit=await page.evaluate(lang=>{
-    const dictionary=localizedTypeNames;
-    return Object.entries(dictionary).map(([ja,names])=>({ja,label:names[lang]}));
-   },locale);
+   const typeAudit=Object.entries(canonicalTypes).map(([ja,names])=>({ja,label:names[locale]}));
    assert.equal(typeAudit.length,18,'type dictionary must contain 18 entries');
    const expectedLabels=typeAudit.map(x=>x.label).sort();
    assert.deepEqual(typeOptions.map(n=>n.label).sort(),expectedLabels,
