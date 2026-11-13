@@ -85,6 +85,25 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    }
   }
   console.log('PASS Loaded Dice and Earth Plate native labels in seven non-Japanese/non-English locales');
+  const plateIds=['flamePlate','splashPlate','zapPlate','meadowPlate','iciclePlate',
+   'fistPlate','toxicPlate','earthPlate','skyPlate','mindPlate','insectPlate',
+   'stonePlate','spookyPlate','dracoPlate','dreadPlate','ironPlate','pixiePlate'];
+  for(const locale of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
+   await page.locator('#chloha-locale').selectOption(locale);
+   const options=await page.locator('#attItem option').evaluateAll(nodes=>
+    nodes.map(el=>({id:el.value,text:el.textContent.trim(),label:el.label})));
+   for(const id of plateIds){
+    const item=options.find(x=>x.id===id);
+    assert.ok(item,'Missing Plate option: '+id);
+    assert.equal(item.text,item.label,'Native Android option label mismatch: '+locale+' '+id);
+    assert.ok(!/[ぁ-んァ-ヶ一-龯]/.test(item.text),
+     'Japanese leakage in Plate item: '+locale+' '+id+' '+item.text);
+    assert.ok(!/\\b(?:moves|damage|Ground|Fire|Water|Electric|Grass|Ice|Fighting|Poison|Flying|Psychic|Bug|Rock|Ghost|Dragon|Dark|Steel|Fairy)\\b/i.test(item.text),
+     'English leakage in Plate item: '+locale+' '+id+' '+item.text);
+   }
+  }
+  console.log('PASS all 17 Plate item options x seven locales (119 Android labels)');
+
 
 
   // Independently reviewed official Pokémon names, keyed by National Dex.
