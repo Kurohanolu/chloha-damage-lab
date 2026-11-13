@@ -54,7 +54,7 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
   const counts={};
   for(const x of suspicious)counts[x.reason]=(counts[x.reason]||0)+1;
   console.log('AUDIT total stable option checks='+total+'; findings='+suspicious.length+'; by reason='+JSON.stringify(counts));
-  for(const x of suspicious.slice(0,35))console.log('AUDIT FINDING '+JSON.stringify(x));
+  for(const x of [...confirmedKana,...englishMatches.slice(0,12)])console.log('AUDIT FINDING '+JSON.stringify(x));
   assert.deepEqual(errors,[],'browser errors during select audit');
   assert.equal(confirmedKana.length,0,'Japanese kana must not remain in non-Japanese native selectors');
   console.log('PASS full native select option audit across nine languages');
