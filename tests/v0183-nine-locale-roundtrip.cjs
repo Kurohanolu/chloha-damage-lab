@@ -79,8 +79,18 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   // Asian three-locale regression baseline. Provenance status is deliberately
   // separate from the official-verified European fixture.
   const asianFixture=require('./v0183-asian-species-regression.json');
-  assert.equal(asianFixture.verificationStatus,'pending-official-source-review',
-   'Asian samples must not be misrepresented as official-verified');
+  assert.equal(asianFixture.verificationStatus,'partial-official-source-review',
+   'Asian samples must carry honest source-verification status');
+  const asianProvenance=asianFixture.species.flatMap(entry=>
+   Object.keys(entry.names).map(locale=>({
+    dex:entry.nationalDex,locale,source:entry.officialSources?.[locale]||null
+   })));
+  for(const entry of asianProvenance.filter(x=>x.source))
+   assert.match(entry.source,/^https:\/\//,'official source must be an HTTPS URL');
+  console.log('Asian official-source provenance: '+JSON.stringify({
+   reviewed:asianProvenance.filter(x=>x.source).length,
+   pending:asianProvenance.filter(x=>!x.source).map(x=>x.dex+':'+x.locale)
+  }));
   const asianResults=await page.evaluate(entries=>
    entries.flatMap(entry=>Object.entries(entry.names).map(([locale,expected])=>({
     nationalDex:entry.nationalDex,locale,expected,
