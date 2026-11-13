@@ -7,6 +7,11 @@ const typeSource=fs.readFileSync(path.resolve(__dirname,'../i18n.js'),'utf8');
 const typeMatch=typeSource.match(/const localizedTypeNames=(\{[^;]+\});/);
 assert.ok(typeMatch,'localized type dictionary must exist');
 const canonicalTypes=JSON.parse(typeMatch[1]);
+const referenceTypes=require('./v0183-type-reference.json').types;
+for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
+ assert.deepEqual(Object.fromEntries(Object.entries(canonicalTypes).map(([ja,names])=>[ja,names[locale]])),referenceTypes[locale],
+  'type dictionary differs from independent reference baseline for '+locale);
+}
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
