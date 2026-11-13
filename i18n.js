@@ -420,7 +420,8 @@ function recoverJapanese(value){
   const selected=value.slice('Selected: ').replace(/\bVariable\b/g,'可変');
   return '選択中：'+selected.replace(/\b(?:Earthquake|Garchomp|Tyranitar)\b/g,name=>reverseNames[name]||reverse[name]||name);
  }
- if(/^\d+[–-]\d+ damage$/.test(value))return value.replace(' damage',' ダメージ').replace('–','〜');
+ const range=String(value).match(/^(\\d+)\\s*[〜–-]\\s*(\\d+)\\s*(?:ダメージ|damage|dégâts|Schaden|de daño|danni|데미지|伤害|傷害)$/);
+ if(range)return range[1]+'〜'+range[2]+' ダメージ';
  if(/^Guaranteed survival\s*[·・]/.test(value))return value.replace('Guaranteed survival','確定耐え');
  let result=value;
  for(const [en,ja] of reverseUiEntries)result=result.split(en).join(ja);
@@ -453,9 +454,21 @@ const localeUiPhrases={
  'ダブル':{fr:'Duo',de:'Doppel',es:'Doble',it:'Doppio',ko:'더블','zh-Hans':'双打','zh-Hant':'雙打'},
  'シングル':{fr:'Solo',de:'Einzel',es:'Individual',it:'Singolo',ko:'싱글','zh-Hans':'单打','zh-Hant':'單打'}
 };
+// Numeric damage ranges are localized without touching battle calculation values.
+const damageRangeSuffix={
+ ja:'ダメージ',en:'damage',fr:'dégâts',de:'Schaden',es:'de daño',it:'danni',ko:'데미지','zh-Hans':'伤害','zh-Hant':'傷害'
+};
+function localizedDamageRange(base,target){
+ const source=String(base).match(/^(\\d+)\\s*[〜–-]\\s*(\\d+)\\s*(?:ダメージ|damage)$/);
+ if(!source)return null;
+ const range=source[1]+(target==='ja'?'〜':'–')+source[2];
+ return range+' '+damageRangeSuffix[target];
+}
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
+ const dynamic=localizedDamageRange(base,locale);
+ if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
  if(!catalog)return translateRuntime(base);
