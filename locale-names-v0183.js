@@ -6,6 +6,12 @@ const ChlohaLocalizedNames=Object.freeze({
  }),
  moves:Object.freeze({
   'かえんほうしゃ':Object.freeze({ja:'かえんほうしゃ',en:'Flamethrower',fr:'Lance-Flammes',de:'Flammenwurf',es:'Lanzallamas',it:'Lanciafiamme',ko:'화염방사','zh-Hans':'喷射火焰','zh-Hant':'噴射火焰'})
+ }),
+ abilities:Object.freeze({
+  'いかく':Object.freeze({ja:'いかく',en:'Intimidate',fr:'Intimidation',de:'Bedroher',es:'Intimidación',it:'Prepotenza',ko:'위협','zh-Hans':'威吓','zh-Hant':'威嚇'})
+ }),
+ items:Object.freeze({
+  'いのちのたま':Object.freeze({ja:'いのちのたま',en:'Life Orb',fr:'Orbe Vie',de:'Leben-Orb',es:'Vidasfera',it:'Assorbisfera',ko:'생명의구슬','zh-Hans':'生命宝珠','zh-Hant':'生命寶珠'})
  })
 });
 if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaLocalizedNames;
