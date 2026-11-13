@@ -10,6 +10,7 @@ const gen=Generations.get(9);
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage();
 let failures=0;
+let caseCount=0;
 try{
  const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
  await page.goto('about:blank');
@@ -26,6 +27,7 @@ try{
   {name:'Life Orb / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく'],attItem:'lifeOrb'},
   {name:'Choice Specs / Flamethrower',att:'Charizard',def:'Blastoise',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'none',attTypes:['ほのお','ひこう'],defTypes:['みず'],attItem:'choiceSpecs'}
  ];
+ caseCount=cases.length;
  for(const c of cases){
   const attacker=new Pokemon(gen,c.att,{level:50,nature:'Serious',ability:'',item:({lifeOrb:'Life Orb',choiceSpecs:'Choice Specs'}[c.attItem]||''),status:c.burn?'brn':'',boosts:{atk:c.attackStage||0},evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
   const defender=new Pokemon(gen,c.def,{level:50,nature:'Serious',ability:'',item:'',boosts:{def:c.defenseStage||0},evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
@@ -52,4 +54,4 @@ try{
  }
 }finally{await browser.close();}
 if(failures){console.error(failures+' Showdown comparisons failed');process.exitCode=1;}
-else console.log(`All ${4+5} Showdown differential cases matched.`);
+else console.log(`All ${caseCount} Showdown differential cases matched.`);
