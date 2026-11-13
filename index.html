@@ -1127,7 +1127,11 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     const english=window.ChlohaLocale?.get()==='en';
     const englishName=window.ChlohaNames?.pokemon?.[o.value]||p?.englishName||englishAliases[o.value]||o.label;
     const locale=window.ChlohaLocale?.get?.()||'ja';
-    const displayName=locale==='ja'?o.label:(localizedName('pokemon',o.value,locale)||(english?englishName:null)||o.label);
+    // Search results must never fall back to Japanese names in non-Japanese UI.
+    // Prefer the locale catalog, then a grounded English species name.
+    const translatedName=locale==='ja'?null:localizedName('pokemon',o.value,locale);
+    const displayName=locale==='ja'?o.label:
+     (translatedName&&!/[ぁ-ゟ゠-ヿ]/u.test(translatedName)?translatedName:englishName);
     const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
     item.setAttribute('aria-label',displayName);item.setAttribute('aria-selected','false');
     const spriteId=window.ChlohaSpriteIds?.[o.value];
@@ -1136,7 +1140,11 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
      img.src=window.ChlohaLocalSprites?.[o.value]||'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+spriteId+'.png';
      img.onerror=()=>img.remove();item.append(img);
     }
-    const typeText=(p?.types||[]).map(type=>english?(typeEnglish[type]||type):type).join(' / ');
+    const typeText=(p?.types||[]).map(type=>{
+     if(locale==='ja')return type;
+     const translated=window.ChlohaLocale?.typeName?.(type);
+     return translated&&translated!==type?translated:(typeEnglish[type]||type);
+    }).join(' / ');
     const copy=node('span');copy.append(node('span','',displayName),node('small','',typeText));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
