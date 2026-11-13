@@ -892,12 +892,18 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const localizedStatus=lang==='ja'?status:(status?' ['+translate(statusEnglish[status]||status)+']':'');
   const prefixes={ja:'選択中：',en:'Selected: ',fr:'Sélection : ',de:'Ausgewählt: ',es:'Seleccionado: ',it:'Selezionato: ',ko:'선택: ','zh-Hans':'已选择：','zh-Hant':'已選擇：'};
   const power=current?.power||(lang==='ja'?'可変':'Variable');
-  el('moveSelected').textContent=current?(prefixes[lang]||prefixes.en)+moveName+(lang==='ja'?'（':' (')+typeName(current.type)+' / '+power+(lang==='ja'?'）':')')+localizedStatus:(lang==='ja'?'技を選択してください':translate('Select a move'));
+  const summary=current?(prefixes[lang]||prefixes.en)+moveName+(lang==='ja'?'（':' (')+typeName(current.type)+' / '+power+(lang==='ja'?'）':')')+localizedStatus:(lang==='ja'?'技を選択してください':translate('Select a move'));
+  if(el('moveSelected').textContent!==summary)el('moveSelected').textContent=summary;
  }
  // This status is composed bilingually by syncMovePicker; generic DOM translation
  // must not translate its already-localized English text a second time.
  el('moveSelected').setAttribute('data-no-translate','');
  document.addEventListener('chloha:localechange',syncMovePicker);
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncMovePicker,{once:true});
+ else queueMicrotask(syncMovePicker);
+ moveSelect.addEventListener('change',syncMovePicker);
+ moveSelect.addEventListener('input',syncMovePicker);
+
  function chooseMove(option){
   moveSelect.value=option.value;
   if(moveSelect.value!==option.value)return;
