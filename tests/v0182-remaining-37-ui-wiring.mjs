@@ -1,4 +1,4 @@
-// Browser audit: all 37 conservative catalog flags with explicit runtime policies.
+// Browser audit: all 38 conservative catalog flags with explicit runtime policies.
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {chromium} from 'playwright';
@@ -9,7 +9,7 @@ assert.ok(dbMatch&&policyMatch);
 const moves=JSON.parse(dbMatch[1]).moves,policies=JSON.parse(policyMatch[1]);
 const excluded=new Set(['からげんき','はたきおとす','ワイドフォース','アクロバット']);
 const candidates=moves.filter(m=>!m.calculationSupported&&!excluded.has(m.name)&&['physical','special'].includes(m.category)&&policies[m.id]?.standardDamageSupported===true&&!!policies[m.id]?.mechanic);
-assert.equal(candidates.length,37,'37 remaining moves under audit');
+assert.equal(candidates.length,38,'38 runtime-policy moves under audit (including Spit Up)');
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
@@ -34,5 +34,5 @@ try{
   if(m.power>0)assert.equal(r.power,m.power,m.name+' base power');
   results.push({name:m.name,mechanic:r.mechanic,power:r.power,uiConnected:true});
  }
- console.log('PASS all 37 runtime-policy moves select and wire to engine',JSON.stringify(results));
+ console.log('PASS all 38 runtime-policy moves select and wire to engine',JSON.stringify(results));
 }finally{await browser.close();}
