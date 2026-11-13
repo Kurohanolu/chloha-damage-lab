@@ -1,0 +1,26 @@
+{
+  "head_sha": "e21d683bebdfab22b79b6c65dc8b82f68c8cafdf",
+  "workflow": "UI & damage regression",
+  "run_id": 43397805408,
+  "run_number": 859,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T09:03:02Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43397805408",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43397805408/job/131792920788",
+      "failed_steps": [
+        {
+          "name": "Nine-locale rotation regression (90 transitions)",
+          "number": 59,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T09:02:40.9883800Z shell: /usr/bin/bash -e {0}\n2026-11-13T09:02:40.9884060Z ##[endgroup]\n2026-11-13T09:02:42.5738766Z AssertionError [ERR_ASSERTION]: real Pokémon damage calculation must produce a nonzero range before locale rotations: —\n2026-11-13T09:02:42.5740383Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0183-nine-locale-roundtrip.cjs:54:10 {\n2026-11-13T09:02:42.5741265Z   generatedMessage: false,\n2026-11-13T09:02:42.5741640Z   code: 'ERR_ASSERTION',\n2026-11-13T09:02:42.5742071Z   actual: false,\n2026-11-13T09:02:42.5742472Z   expected: true,\n2026-11-13T09:02:42.5742861Z   operator: '==',\n2026-11-13T09:02:42.5743202Z   diff: 'simple'\n2026-11-13T09:02:42.5743565Z }\n2026-11-13T09:02:42.5900174Z ##[error]Process completed with exit code 1.\n2026-11-13T09:02:42.6046354Z ##[group]Run node tests/damage-regression.cjs\n      content: Buffer.from(JSON.stringify(report, null, 2) + '\\n').toString('base64'),\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T09:02:55.5879741Z   debug: false\n2026-11-13T09:02:55.5879970Z   user-agent: actions/github-script\n2026-11-13T09:02:55.5880255Z   result-encoding: json\n2026-11-13T09:02:55.5880478Z   retries: 0\n2026-11-13T09:02:55.5880715Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T09:02:55.5881007Z env:\n2026-11-13T09:02:55.5881197Z   CI_JOB_STATUS: failure\n2026-11-13T09:02:55.5881431Z ##[endgroup]\n2026-11-13T09:02:57.8810073Z Post job cleanup.\n2026-11-13T09:02:57.9722721Z [command]/usr/bin/git version\n2026-11-13T09:02:57.9772982Z git version 2.56.0\n2026-11-13T09:02:57.9815424Z Temporarily overriding HOME='/home/runner/work/_temp/aa7b72a4-fc77-4581-abcd-09949b250d65' before making global git config changes\n2026-11-13T09:02:57.9817628Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T09:02:57.9821396Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T09:02:57.9867569Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T09:02:57.9910368Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T09:02:58.0219410Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T09:02:58.0256144Z http.https://github.com/.extraheader\n2026-11-13T09:02:58.0271105Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T09:02:58.0316784Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T09:02:58.0611999Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T09:02:58.0665619Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T09:02:58.1090993Z Cleaning up orphan processes\n2026-11-13T09:02:58.1454131Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 848
+    }
+  ]
+}
