@@ -47,6 +47,19 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   assert.deepEqual(officialEuResults.filter(row=>
    String(row.actual).normalize('NFC')!==row.expected.normalize('NFC')),[],
    'EU species spellings differ from individually sourced official names');
+  // Asian three-locale regression baseline. Provenance status is deliberately
+  // separate from the official-verified European fixture.
+  const asianFixture=require('./v0183-asian-species-regression.json');
+  assert.equal(asianFixture.verificationStatus,'pending-official-source-review',
+   'Asian samples must not be misrepresented as official-verified');
+  const asianResults=await page.evaluate(entries=>
+   entries.flatMap(entry=>Object.entries(entry.names).map(([locale,expected])=>({
+    nationalDex:entry.nationalDex,locale,expected,
+    actual:window.ChlohaLocalePokemonName(entry.key,locale)
+   }))),asianFixture.species);
+  assert.deepEqual(asianResults.filter(row=>
+   String(row.actual).normalize('NFC')!==row.expected.normalize('NFC')),[],
+   'Asian Korean/Simplified/Traditional Chinese species regression mismatch');
   // Registry-level completeness: official fixture species must be registered
   // in the translation data even when they are NOT in the battle roster.
   // This catches the missing Pikachu mapping that roster-only checks missed.
