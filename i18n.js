@@ -717,7 +717,7 @@ function initialize(){
   app.addEventListener('pointerdown',event=>{if(event.target.closest('select'))translateOptions();},true);
   app.addEventListener('focusin',event=>{if(event.target.closest('select'))translateOptions();},true);
  }
- window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale});
+ window.ChlohaLocale=Object.freeze({get:()=>locale,set:setLocale,typeName:name=>locale==='ja'?name:(localizedTypeNames[name]?.[locale]||name),text:localizedUi});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});
 else initialize();
