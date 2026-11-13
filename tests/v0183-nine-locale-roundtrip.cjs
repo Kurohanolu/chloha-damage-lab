@@ -109,6 +109,18 @@ const path=require('node:path');
   }
   await page.locator('#attSearch').fill('');
   const selector=page.locator('#chloha-locale');
+  // Audit every type option after each locale switch, not only the currently
+  // selected type. Catch missing/duplicated labels in hidden dropdown options.
+  for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
+   await selector.selectOption(locale);
+   const typeOptions=await page.locator('#moveType option').evaluateAll(nodes=>
+    nodes.map(n=>({value:n.value,label:n.textContent.trim()})).filter(n=>n.value));
+   assert.equal(typeOptions.length,18,'expected 18 move types in '+locale);
+   assert.equal(new Set(typeOptions.map(n=>n.label)).size,18,
+    'duplicate localized move type labels in '+locale);
+   assert.deepEqual(typeOptions.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label)),[],
+    'missing or untranslated move type options in '+locale);
+  }
   const steps=[
    ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
    ['de','Keine','Doppel'],['es','Ninguno','Doble'],['it','Nessuno','Doppio'],
