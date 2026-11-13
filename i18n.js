@@ -896,12 +896,40 @@ function localizedDynamicControl(base,target){
  if(target==='ja'||target==='en')return null;
  const exact=localizedControlPhrases[base]?.[target];
  if(exact)return exact;
+ const statNames={
+  'HP':['PV','KP','PS','PS','HP','HP','HP'],
+  'Attack':['Attaque','Angriff','Ataque','Attacco','공격','攻击','攻擊'],
+  'Defense':['Défense','Verteidigung','Defensa','Difesa','방어','防御','防禦'],
+  'Sp. Atk':['Attaque Spé.','Spezial-Angriff','Ataque Especial','Attacco Speciale','특수공격','特攻','特攻'],
+  'Sp. Def':['Défense Spé.','Spezial-Verteidigung','Defensa Especial','Difesa Speciale','특수방어','特防','特防'],
+  'Speed':['Vitesse','Initiative','Velocidad','Velocità','스피드','速度','速度']
+ };
+ const order=['fr','de','es','it','ko','zh-Hans','zh-Hant'];
+ const idx=order.indexOf(target);
+ const compound=String(english).match(/^(Attacker|Defender)?\\s*(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)\\s*(stat points|nature modifier|actual stat|stat points slider|stat|stage|max HP|remaining HP|points)$/);
+ if(compound&&idx>=0){
+  const role=compound[1],stat=statNames[compound[2]][idx],kind=compound[3];
+  const roles={Attacker:['Attaquant','Angreifer','Atacante','Attaccante','공격 측','攻击方','攻擊方'],Defender:['Défenseur','Verteidiger','Defensor','Difensore','방어 측','防御方','防禦方']};
+  const kinds={
+   'stat points':['points de statistique','Statuspunkte','puntos de estadística','punti statistica','능력 포인트','能力点','能力點'],
+   'nature modifier':['modificateur de nature','Wesen-Modifikator','modificador de naturaleza','modificatore natura','성격 보정','性格修正','性格修正'],
+   'actual stat':['statistique réelle','tatsächlicher Wert','estadística real','statistica effettiva','실제 능력치','实际能力值','實際能力值'],
+   'stat points slider':['curseur de points','Punkte-Schieberegler','control de puntos','cursore punti','능력 포인트 슬라이더','能力点滑块','能力點滑桿'],
+   stat:['statistique','Wert','estadística','statistica','능력치','能力值','能力值'],
+   stage:['niveau','Stufe','nivel','livello','랭크','等级','等級'],
+   'max HP':['PV max.','max. KP','PS máximos','PS massimi','최대 HP','最大HP','最大HP'],
+   'remaining HP':['PV restants','verbleibende KP','PS restantes','PS rimanenti','남은 HP','剩余HP','剩餘HP'],
+   points:['points','Punkte','puntos','punti','포인트','点数','點數']
+  };
+  const prefix=role?roles[role][idx]+' ':'';
+  return prefix+stat+' '+kinds[kind][idx];
+ }
  const maxHp=String(english).match(/^Of max HP:\s*(.+)$/);
  if(maxHp){
   const label={fr:'Des PV max. :',de:'Von max. KP:',es:'De los PS máximos:',it:'Dei PS massimi:',ko:'최대 HP 대비:','zh-Hans':'占最大HP：','zh-Hant':'佔最大HP：'}[target];
   return label+' '+maxHp[1];
  }
- const effectiveness=String(english).match(/^Type effectiveness\s*(×[\\d.]+)\s*\/\s*STAB\s*(×[\\d.]+)$/);
+ const effectiveness=String(english).match(/^Type effectiveness\s*(×[\d.]+)\s*\/\s*STAB\s*(×[\\d.]+)$/);
  if(effectiveness){
   const label={fr:'Efficacité du type',de:'Typenwirksamkeit',es:'Eficacia de tipo',it:'Efficacia del tipo',ko:'타입 상성','zh-Hans':'属性克制','zh-Hant':'屬性克制'}[target];
   return label+' '+effectiveness[1]+' / STAB '+effectiveness[2];
