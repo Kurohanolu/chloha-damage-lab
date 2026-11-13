@@ -188,6 +188,17 @@ const dictionary={
 const optionOriginal=new WeakMap();
 // The PokeAPI catalog uses canonical species IDs, while our calculator roster
 // also uses legacy IDs. Resolve exact Japanese names without guessing forms.
+// Form names are derived from verified base-species translations. They are
+// provisional until individual form spellings are checked against official UI.
+function localizedMegaForm(id,ja,locale){
+ const form=window.ChlohaFormSpeciesBases?.[id];
+ const base=form?.base?.[locale];
+ if(!base)return null;
+ const suffix=/[XY]$/.exec(ja)?.[0]||'';
+ const prefix={en:'Mega ',fr:'Méga-',de:'Mega-',es:'Mega-',it:'Mega ',
+  ko:'메가','zh-Hans':'超级','zh-Hant':'超級'}[locale];
+ return prefix?prefix+base+suffix:null;
+}
 const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
  .filter(entry=>entry?.ja)
  .map(entry=>[entry.ja,entry]));
@@ -295,7 +306,8 @@ function translateOptions(){
     : move
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
-   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||(pokemonOption?pokemonByJapanese.get(base)?.[locale]:null);
+   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||(pokemonOption?pokemonByJapanese.get(base)?.[locale]:null)
+    ||(pokemonOption&&/^メガ/.test(base)?localizedMegaForm(option.value,base,locale):null);
    const abilityStatusLabels={
     fr:[' (pris en charge)',' (partiellement pris en charge)',' (non pris en charge)'],
     de:[' (unterstützt)',' (teilweise unterstützt)',' (nicht unterstützt)'],
