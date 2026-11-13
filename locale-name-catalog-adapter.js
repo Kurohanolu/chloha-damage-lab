@@ -2,7 +2,7 @@
 'use strict';
 const ChlohaNameCatalogAdapter=(()=>{
  const categories=Object.freeze(['pokemon','moves','abilities','items']);
- function recordsFrom(names){
+ function recordsFrom(names,localized){
   if(!names||typeof names!=='object')throw new TypeError('Name catalog required');
   const result=[];
   for(const category of categories){
@@ -11,15 +11,17 @@ const ChlohaNameCatalogAdapter=(()=>{
     if(typeof englishName!=='string'||!englishName.trim())continue;
     // Preserve the source key as identity; do not guess Showdown IDs for Japanese keys.
     const isJapanese=/[\u3040-\u30ff\u3400-\u9fff]/u.test(sourceKey);
-    const localized=isJapanese?{ja:sourceKey,en:englishName}:{en:englishName};
-    result.push({category,id:sourceKey,names:localized,aliases:[sourceKey]});
+    const baseNames=isJapanese?{ja:sourceKey,en:englishName}:{en:englishName};
+    const translations=localized?.[category]?.[sourceKey]||{};
+    // Existing canonical source key always wins; only add names for this exact key.
+    result.push({category,id:sourceKey,names:{...baseNames,...translations},aliases:[sourceKey]});
    }
   }
   return result;
  }
- function build(names,engine){
+ function build(names,engine,localized){
   if(!engine||typeof engine.buildIndex!=='function')throw new TypeError('Search engine required');
-  return engine.buildIndex(recordsFrom(names));
+  return engine.buildIndex(recordsFrom(names,localized));
  }
  return Object.freeze({categories,recordsFrom,build});
 })();
