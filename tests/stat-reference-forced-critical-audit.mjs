@@ -15,7 +15,7 @@ const expected = (a) => {
 const base = {
  level:50,power:80,attack:150,defense:110,hp:200,currentHp:200,
  attackStage:0,defenseStage:0,moveType:'エスパー',category:'special',
- attTypes:['ノーマル'],defTypes:['ノーマル'],attItem:'none',attAbility:'none',
+ attTypes:['ノーマル'],defTypes:['みず'],attItem:'none',attAbility:'none',
  defItem:'none',defAbility:'none',attCurrentHp:200,attMaxHp:200,
  moveId:'',customMultiplier:1,attGrounding:'auto',defGrounding:'auto',
  terrain:'none',weather:'none',spread:'single',battleFormat:'singles',
@@ -35,6 +35,7 @@ try {
    assert.deepEqual(actual,reference,name+' all 16 rolls');
    console.log('PASS '+name); count++;
  };
+ // Neutral Water defender avoids Fighting-vs-Normal 2x type effectiveness in the independent baseline.
  // Body Press uses the user's Defense as the attacking stat; a dedicated stage input governs it.
  for (const s of [-2,0,2]) {
    const a={...base,category:'physical',moveType:'かくとう',power:80,attack:160,attackStage:-4,bodyPressDefenseStage:s,moveMechanic:'bodyPress'};
