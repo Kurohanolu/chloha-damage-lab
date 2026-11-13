@@ -1079,7 +1079,15 @@ function localizedUi(base){
    'zh-Hans':['所选招式','尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。'],
    'zh-Hant':['所選招式','尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。']
   };
-  if(labels[locale])return labels[locale][0]+' “'+warning[1]+'”：'+labels[locale][1];
+  if(labels[locale]){
+   const moveTables=[globalThis.ChlohaLocalizedNames?.moves,globalThis.ChlohaPokeAPILocalizedNames?.moves];
+   let localizedMove=warning[1];
+   for(const table of moveTables){
+    const entry=Object.values(table||{}).find(row=>row&&typeof row==='object'&&(row.ja===warning[1]||row.en===warning[1]||Object.values(row).includes(warning[1])));
+    if(entry){localizedMove=entry[locale]||entry.en||warning[1];break;}
+   }
+   return labels[locale][0]+' “'+localizedMove+'”：'+labels[locale][1];
+  }
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
