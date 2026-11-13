@@ -459,7 +459,7 @@ const damageRangeSuffix={
  ja:'ダメージ',en:'damage',fr:'dégâts',de:'Schaden',es:'de daño',it:'danni',ko:'데미지','zh-Hans':'伤害','zh-Hant':'傷害'
 };
 function localizedDamageRange(base,target){
- const source=String(base).match(/^(\\d+)\\s*[〜–-]\\s*(\\d+)\\s*(?:ダメージ|damage)$/);
+ const source=String(base).match(/^(\d+)\s*[〜–-]\s*(\d+)\s*(?:ダメージ|damage)$/);
  if(!source)return null;
  const range=source[1]+(target==='ja'?'〜':'–')+source[2];
  return range+' '+damageRangeSuffix[target];
