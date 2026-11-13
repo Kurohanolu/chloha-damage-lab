@@ -6,6 +6,7 @@ on:
       - index.html
       - i18n.js
       - 'names-*.js'
+      - 'locale-*.js'
       - weight-power.js
       - variable-power.js
       - multi-hit.js
@@ -83,6 +84,7 @@ jobs:
       - run: node tests/v0183-locale-name-search.cjs
       - run: node tests/v0183-bulk-name-adapter.cjs
       - run: node tests/v0183-locale-name-audit.cjs
+      - run: node tests/v0183-name-ui-roundtrip.cjs
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0182-move-coverage-inventory.cjs
       - run: node tests/v0182-move-triage-ledger.cjs
