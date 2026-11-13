@@ -15,6 +15,15 @@ try {
   const rolls=o=>calc({...base,...o}).rolls;
   const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
   return [
+   ['Mold Breaker ignores Multiscale',same(rolls({attAbility:'moldBreaker',defAbility:'multiscale'}),rolls({}))],
+   ['Teravolt ignores Multiscale',same(rolls({attAbility:'teravolt',defAbility:'multiscale'}),rolls({}))],
+   ['Turboblaze ignores Multiscale',same(rolls({attAbility:'turboblaze',defAbility:'multiscale'}),rolls({}))],
+   ['Mold Breaker ignores Levitate',same(rolls({attAbility:'moldBreaker',defAbility:'levitate',moveType:'じめん',defTypes:['でんき']}),rolls({moveType:'じめん',defTypes:['でんき']}))],
+   ['Teravolt ignores Wonder Guard',same(rolls({attAbility:'teravolt',defAbility:'wonderGuard',moveType:'ノーマル'}),rolls({moveType:'ノーマル'}))],
+   ['Turboblaze ignores Fur Coat',same(rolls({attAbility:'turboblaze',defAbility:'furCoat'}),rolls({}))],
+   ['Mold Breaker does not bypass Shadow Shield',same(rolls({attAbility:'moldBreaker',defAbility:'shadowShield'}),rolls({defAbility:'shadowShield'}))],
+   ['Teravolt does not bypass Prism Armor',same(rolls({attAbility:'teravolt',defAbility:'prismArmor',moveType:'かくとう'}),rolls({defAbility:'prismArmor',moveType:'かくとう'}))],
+   ['Mold Breaker preserves natural type immunity',same(rolls({attAbility:'moldBreaker',defAbility:'wonderGuard',moveType:'ノーマル',defTypes:['ゴースト']}),rolls({moveType:'ノーマル',defTypes:['ゴースト']}))],
    ['Fur Coat physical doubles defense',same(rolls({defAbility:'furCoat'}),rolls({defense:200}))],
    ['Fur Coat special unchanged',same(rolls({defAbility:'furCoat',category:'special'}),rolls({category:'special'}))],
    ['Ice Scales physical unchanged',same(rolls({defAbility:'iceScales'}),rolls({}))],
