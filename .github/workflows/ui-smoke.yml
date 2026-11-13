@@ -80,6 +80,7 @@ jobs:
       - run: node tests/v0177-version-provenance.cjs
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0182-move-coverage-inventory.cjs
+      - run: node tests/v0182-move-triage-ledger.cjs
       - run: node tests/v0182-four-move-policy-engine.mjs
       - run: node tests/v0182-remaining-37-ui-wiring.mjs
       - run: node tests/v0182-conditional-power-rolls.mjs
@@ -119,6 +120,7 @@ jobs:
             cross-calculator-report.json
             english-untranslated-audit.json
             reports/v0182-move-coverage-inventory.json
+            reports/v0182-move-triage-ledger.json
             reports/v0182-comprehensive-audit.json
           if-no-files-found: ignore
       # Publish a machine-readable CI verdict on a dedicated branch for connector-based auditing.
