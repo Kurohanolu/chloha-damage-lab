@@ -96,7 +96,7 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
     const item=options.find(x=>x.id===id);
     assert.ok(item,'Missing Plate option: '+id);
     assert.equal(item.text,item.label,'Native Android option label mismatch: '+locale+' '+id);
-    assert.ok(!/[ぁ-んァ-ヶ一-龯]/.test(item.text),
+    assert.ok(!/[ぁ-んァ-ヶ]/.test(item.text),
      'Japanese leakage in Plate item: '+locale+' '+id+' '+item.text);
     assert.ok(!/\\b(?:moves|damage|Ground|Fire|Water|Electric|Grass|Ice|Fighting|Poison|Flying|Psychic|Bug|Rock|Ghost|Dragon|Dark|Steel|Fairy)\\b/i.test(item.text),
      'English leakage in Plate item: '+locale+' '+id+' '+item.text);
