@@ -262,12 +262,14 @@ function translateOptions(){
    const pokemonOption=/^db(?:Att|Def)Pokemon$/.test(select.id);
    const pokemonEnglish=pokemonOption?nameGroups.pokemon?.[option.value]:null;
    const typeEnglish=typeNames[base];
-   const next=locale==='en'?(plateLabel||autoBerryEnglish||(berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
+   const englishOption=plateLabel||autoBerryEnglish||(berryEnglish?berryEnglish+' ('+berryType+' damage ×0.5)':null)||pokemonEnglish||typeEnglish||(ability
     ? (abilityEnglish[ability[1]]||entityNames[ability[1]]||dictionary[ability[1]]||translateRuntime(ability[1]))+
       (ability[2]==='対応'?' (supported)':ability[2]==='一部技のみ対応'?' (partially supported)':' (unsupported)')
     : move
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
-     : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)))):base;
+     : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
+   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale];
+   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedEntity||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
@@ -427,9 +429,28 @@ function recoverJapanese(value){
 const key='chloha.damageLab.locale';
 const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
+// v0.183: reviewed high-visibility labels, separate from damage engine.
+const localeUiPhrases={
+ 'Battlefield settings':{fr:'Paramètres du terrain',de:'Kampffeld-Einstellungen',es:'Configuración del campo',it:'Impostazioni del campo',ko:'배틀 필드 설정','zh-Hans':'对战场地设置','zh-Hant':'對戰場地設定'},
+ 'Change weather, terrain and screens here':{fr:'Modifier la météo, le champ et les protections',de:'Wetter, Feld und Schutzschilde ändern',es:'Cambia el clima, el campo y las pantallas',it:'Modifica meteo, campo e barriere',ko:'날씨, 필드, 벽을 변경하세요','zh-Hans':'在此更改天气、场地和屏障','zh-Hant':'在此變更天氣、場地和屏障'},
+ 'Reset battlefield':{fr:'Réinitialiser le terrain',de:'Kampffeld zurücksetzen',es:'Restablecer campo',it:'Ripristina campo',ko:'배틀 필드 초기화','zh-Hans':'重置对战场地','zh-Hant':'重設對戰場地'},
+ 'Screens':{fr:'Protections',de:'Schutzschilde',es:'Pantallas',it:'Barriere',ko:'벽','zh-Hans':'屏障','zh-Hant':'屏障'},
+ 'Battle format':{fr:'Format du combat',de:'Kampfformat',es:'Formato de combate',it:'Formato lotta',ko:'배틀 형식','zh-Hans':'对战形式','zh-Hant':'對戰形式'},
+ 'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
+ 'Results ↓':{fr:'Résultats ↓',de:'Ergebnisse ↓',es:'Resultados ↓',it:'Risultati ↓',ko:'결과 ↓','zh-Hans':'结果 ↓','zh-Hant':'結果 ↓'},
+ 'Search Pokémon':{fr:'Rechercher un Pokémon',de:'Pokémon suchen',es:'Buscar Pokémon',it:'Cerca Pokémon',ko:'포켓몬 검색','zh-Hans':'搜索宝可梦','zh-Hant':'搜尋寶可夢'},
+ 'Search moves':{fr:'Rechercher une capacité',de:'Attacke suchen',es:'Buscar movimientos',it:'Cerca mosse',ko:'기술 검색','zh-Hans':'搜索招式','zh-Hant':'搜尋招式'},
+ 'Type a name to select':{fr:'Saisissez un nom',de:'Namen eingeben',es:'Escribe un nombre',it:'Inserisci un nome',ko:'이름을 입력하세요','zh-Hans':'输入名称以选择','zh-Hant':'輸入名稱以選擇'},
+ 'なし':{fr:'Aucun',de:'Keine',es:'Ninguno',it:'Nessuno',ko:'없음','zh-Hans':'无','zh-Hant':'無'},
+ 'ダブル':{fr:'Duo',de:'Doppel',es:'Doble',it:'Doppio',ko:'더블','zh-Hans':'双打','zh-Hant':'雙打'},
+ 'シングル':{fr:'Solo',de:'Einzel',es:'Individual',it:'Singolo',ko:'싱글','zh-Hans':'单打','zh-Hant':'單打'}
+};
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
- if(locale==='ja'||!catalog)return base;
+ if(locale==='ja')return base;
+ const direct=localeUiPhrases[base]?.[locale];
+ if(direct)return direct;
+ if(!catalog)return translateRuntime(base);
  const source=catalog.ja||{};
  const entry=Object.keys(source).find(key=>source[key]===base||catalog.en?.[key]===base);
  if(entry&&catalog[locale]?.[entry])return catalog[locale][entry];
