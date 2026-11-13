@@ -8,6 +8,17 @@ const typeMatch=typeSource.match(/const localizedTypeNames=(\{[^;]+\});/);
 assert.ok(typeMatch,'localized type dictionary must exist');
 const canonicalTypes=JSON.parse(typeMatch[1]);
 const referenceTypes=require('./v0183-type-reference.json').types;
+// Independent English game-type reference from the official Pokémon Pokédex
+// type filter (pokemon.com/pokedex/), not copied from our i18n dictionary.
+// Keep official evidence separate from the internal regression fixture.
+const officialEnglishTypes=[
+ 'Normal','Fire','Water','Electric','Grass','Ice','Fighting','Poison',
+ 'Ground','Flying','Psychic','Bug','Rock','Ghost','Dragon','Dark',
+ 'Steel','Fairy'
+];
+assert.deepEqual(Object.values(referenceTypes.en).sort(),[...officialEnglishTypes].sort(),
+ 'English type reference differs from official Pokémon Pokédex type names');
+
 for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
  assert.deepEqual(Object.fromEntries(Object.entries(canonicalTypes).map(([ja,names])=>[ja,names[locale]])),referenceTypes[locale],
   'type dictionary differs from independent reference baseline for '+locale);
