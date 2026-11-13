@@ -1,0 +1,26 @@
+{
+  "head_sha": "e51bac396e7e5fe19fb5b250248df201c0c4c0a1",
+  "workflow": "UI & damage regression",
+  "run_id": 43397092775,
+  "run_number": 858,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T08:58:31Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43397092775",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43397092775/job/131790554561",
+      "failed_steps": [
+        {
+          "name": "Nine-locale rotation regression (90 transitions)",
+          "number": 59,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T08:58:15.3150929Z        - waiting 500ms\n2026-11-13T08:58:15.3151197Z \n2026-11-13T08:58:15.3151916Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0183-nine-locale-roundtrip.cjs:36:31 {\n2026-11-13T08:58:15.3152883Z   name: 'TimeoutError'\n2026-11-13T08:58:15.3153285Z }\n2026-11-13T08:58:15.3269511Z ##[error]Process completed with exit code 1.\n2026-11-13T08:58:15.3424105Z ##[group]Run node tests/damage-regression.cjs\n2026-11-13T08:58:15.3424465Z \u001b[36;1mnode tests/damage-regression.cjs\u001b[0m\n      content: Buffer.from(JSON.stringify(report, null, 2) + '\\n').toString('base64'),\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T08:58:27.5111313Z   debug: false\n2026-11-13T08:58:27.5111682Z   user-agent: actions/github-script\n2026-11-13T08:58:27.5112139Z   result-encoding: json\n2026-11-13T08:58:27.5112504Z   retries: 0\n2026-11-13T08:58:27.5112891Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T08:58:27.5113378Z env:\n2026-11-13T08:58:27.5113691Z   CI_JOB_STATUS: failure\n2026-11-13T08:58:27.5114055Z ##[endgroup]\n2026-11-13T08:58:29.3143340Z Post job cleanup.\n2026-11-13T08:58:29.4057000Z [command]/usr/bin/git version\n2026-11-13T08:58:29.4106010Z git version 2.56.1\n2026-11-13T08:58:29.4153231Z Temporarily overriding HOME='/home/runner/work/_temp/82f54e76-060a-419c-abf2-84e339c564b9' before making global git config changes\n2026-11-13T08:58:29.4154793Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T08:58:29.4159570Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T08:58:29.4204344Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T08:58:29.4244407Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T08:58:29.4526544Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T08:58:29.4564016Z http.https://github.com/.extraheader\n2026-11-13T08:58:29.4577527Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T08:58:29.4627622Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T08:58:29.4906711Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T08:58:29.4953932Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T08:58:29.5405632Z Cleaning up orphan processes\n2026-11-13T08:58:29.5738284Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 860
+    }
+  ]
+}
