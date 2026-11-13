@@ -1,0 +1,36 @@
+{
+  "head_sha": "9229ebcbf88411c258f2fbeb53818d50e0c3506d",
+  "workflow": "UI & damage regression",
+  "run_id": 43494875638,
+  "run_number": 990,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T19:44:30Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43494875638",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43494875638/job/132125250709",
+      "failed_steps": [
+        {
+          "name": "Run node tests/defensive-abilities.mjs",
+          "number": 6,
+          "conclusion": "failure"
+        },
+        {
+          "name": "Run node tests/damage-regression.cjs",
+          "number": 90,
+          "conclusion": "failure"
+        },
+        {
+          "name": "Run node tests/v0171-runtime.cjs",
+          "number": 92,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-13T19:44:17.4545476Z   - waiting for locator('#chloha-locale')\n2026-11-13T19:44:17.4545826Z \n2026-11-13T19:44:17.4546571Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/defensive-abilities.mjs:154:39 {\n2026-11-13T19:44:17.4547318Z   name: 'TimeoutError'\n2026-11-13T19:44:17.4547676Z }\n2026-11-13T19:44:17.4547851Z \n2026-11-13T19:44:17.4547997Z Node.js v22.23.4\n2026-11-13T19:44:17.4621880Z ##[error]Process completed with exit code 1.\n2026-11-13T19:44:21.0647058Z FIELD_CASE_01 {\"attacker\":\"リザードン\",\"move\":\"かえんほうしゃ\",\"defender\":\"フシギバナ\",\"points\":0,\"attSpA\":129,\"defSpD\":120,\"defHp\":155,\"min\":110,\"max\":132,\"rolls\":[110,110,114,114,116,116,120,120,120,122,122,126,126,128,128,132]}\n2026-11-13T19:44:21.1601845Z FIELD_CASE_02 {\"attacker\":\"リザードン\",\"move\":\"かえんほうしゃ\",\"defender\":\"フシギバナ\",\"attPoints\":\"H32/C32/S2\",\"defPoints\":\"H32/D32/B2\",\"attSpA\":161,\"defSpD\":152,\"defHp\":187,\"min\":108,\"max\":128,\"rolls\":[108,108,110,110,114,114,116,116,116,120,120,122,122,126,126,128]}\n2026-11-13T19:44:22.8228425Z AssertionError [ERR_ASSERTION]: uncaught browser errors\n2026-11-13T19:44:22.8229110Z + actual - expected\n2026-11-13T19:44:22.8229345Z \n2026-11-13T19:44:22.8229487Z + [\n2026-11-13T19:44:22.8229975Z +   'Invalid regular expression flags'\n2026-11-13T19:44:22.8230238Z + ]\n2026-11-13T19:44:22.8230473Z - []\n2026-11-13T19:44:22.8230577Z \n2026-11-13T19:44:22.8230946Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/damage-regression.cjs:90:10 {\n2026-11-13T19:44:22.8231420Z   generatedMessage: false,\n2026-11-13T19:44:22.8231760Z   code: 'ERR_ASSERTION',\n2026-11-13T19:44:22.8232004Z   actual: [Array],\n2026-11-13T19:44:22.8232225Z   expected: [],\n2026-11-13T19:44:22.8232496Z   operator: 'deepStrictEqual',\n2026-11-13T19:44:22.8232804Z   diff: 'simple'\n2026-11-13T19:44:22.8233022Z }\n2026-11-13T19:44:22.8341953Z ##[error]Process completed with exit code 1.\n2026-11-13T19:44:22.8371248Z ##[group]Run node tests/v0171-moves.cjs\n2026-11-13T19:44:22.8779617Z shell: /usr/bin/bash -e {0}\n2026-11-13T19:44:22.8779876Z ##[endgroup]\n2026-11-13T19:44:26.3401873Z AssertionError [ERR_ASSERTION]: no page errors\n2026-11-13T19:44:26.3402510Z + actual - expected\n2026-11-13T19:44:26.3403037Z \n2026-11-13T19:44:26.3403200Z + [\n2026-11-13T19:44:26.3403638Z +   'Invalid regular expression flags'\n2026-11-13T19:44:26.3404077Z + ]\n2026-11-13T19:44:26.3404399Z - []\n2026-11-13T19:44:26.3404580Z \n2026-11-13T19:44:26.3405148Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0171-runtime.cjs:148:10 {\n2026-11-13T19:44:26.3405611Z   generatedMessage: false,\n2026-11-13T19:44:26.3405853Z   code: 'ERR_ASSERTION',\n2026-11-13T19:44:26.3406083Z   actual: [Array],\n2026-11-13T19:44:26.3406310Z   expected: [],\n2026-11-13T19:44:26.3406872Z   operator: 'deepStrictEqual',\n2026-11-13T19:44:26.3407128Z   diff: 'simple'\n2026-11-13T19:44:26.3407422Z }\n2026-11-13T19:44:26.3551684Z ##[error]Process completed with exit code 1.\n2026-11-13T19:44:26.3657690Z ##[group]Run actions/upload-artifact@v4\n      content: Buffer.from(JSON.stringify(report, null, 2) + '\\n').toString('base64'),\n      ...(fileSha ? {sha: fileSha} : {})\n    });\n    break;\n  } catch (error) {\n    if (attempt === 4 || ![409, 422].includes(error.status)) throw error;\n    core.warning(`Concurrent CI verdict update; retry ${attempt + 1}/5`);\n  }\n}\n\n2026-11-13T19:44:26.6157575Z   debug: false\n2026-11-13T19:44:26.6157937Z   user-agent: actions/github-script\n2026-11-13T19:44:26.6158378Z   result-encoding: json\n2026-11-13T19:44:26.6158744Z   retries: 0\n2026-11-13T19:44:26.6159125Z   retry-exempt-status-codes: 400,401,403,404,422\n2026-11-13T19:44:26.6159543Z env:\n2026-11-13T19:44:26.6159822Z   CI_JOB_STATUS: failure\n2026-11-13T19:44:26.6160191Z ##[endgroup]\n2026-11-13T19:44:28.3594494Z Post job cleanup.\n2026-11-13T19:44:28.4444599Z [command]/usr/bin/git version\n2026-11-13T19:44:28.4483927Z git version 2.56.1\n2026-11-13T19:44:28.4523924Z Temporarily overriding HOME='/home/runner/work/_temp/86166a24-bf86-491b-b085-4ab572f8c89c' before making global git config changes\n2026-11-13T19:44:28.4525816Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-13T19:44:28.4530681Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-13T19:44:28.4571392Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-13T19:44:28.4603888Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-13T19:44:28.4814586Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-13T19:44:28.4844674Z http.https://github.com/.extraheader\n2026-11-13T19:44:28.4855220Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-13T19:44:28.4886817Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-13T19:44:28.5110823Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-13T19:44:28.5146405Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-13T19:44:28.5500241Z Cleaning up orphan processes\n2026-11-13T19:44:28.5874897Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 350
+    }
+  ]
+}
