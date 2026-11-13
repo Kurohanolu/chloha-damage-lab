@@ -85,6 +85,23 @@ const path=require('node:path');
    assert.ok(text.some(x=>x.includes(term)),
     'translated form not present in suggestions: '+locale+' '+term);
   }
+  // Cover every non-Japanese locale, both attacker and defender search boxes,
+  // and verify the suggestion is actually for the requested Pokémon ID.
+  const allFormLocales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+  for(const locale of allFormLocales){
+   await page.locator('#chloha-locale').selectOption(locale);
+   const term=await page.evaluate(lang=>window.ChlohaLocalePokemonName('mega_charizard_x',lang),locale);
+   assert.ok(term&&term!=='mega_charizard_x','localized Mega name missing: '+locale);
+   for(const side of ['att','def']){
+    const input=page.locator('#'+side+'Search');
+    const suggestions=page.locator('#'+side+'Suggestions .pokemon-suggestion');
+    await input.fill(term);
+    const labels=await suggestions.allTextContents();
+    assert.ok(labels.some(label=>label.includes(term)),
+     'localized Mega form not searchable on '+side+' side in '+locale+': '+term);
+    await input.fill('');
+   }
+  }
   await page.locator('#attSearch').fill('');
   const selector=page.locator('#chloha-locale');
   const steps=[
