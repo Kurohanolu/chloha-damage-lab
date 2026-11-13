@@ -1,5 +1,5 @@
 {
-  "description": "Asian Pokémon-name regression with per-name official provenance. A missing officialSource means unverified; regression match alone is not official validation.",
+  "description": "Asian Pokémon-name regression with official regional provenance. Source URLs identify reference pages; only independently checked exact names count as official verified.",
   "verificationStatus": "partial-official-source-review",
   "species": [
     {
@@ -12,7 +12,7 @@
       },
       "officialSources": {
         "ko": "https://www.pokemonkorea.co.kr/pokedex",
-        "zh-Hans": "https://dex.pokemon.cn/play/pokedex",
+        "zh-Hans": "https://dex.pokemon.cn/play/pokedex/0006",
         "zh-Hant": "https://tw.portal-pokemon.com/pokedex/0006/"
       }
     },
@@ -26,7 +26,8 @@
       },
       "officialSources": {
         "ko": "https://pokemonkorea.co.kr/pokemon_tcg_pocket_pby/docs/Localized_pack_probability_AN011_0010_00_000.html",
-        "zh-Hant": "https://tw.portal-pokemon.com/pokedex/0025/"
+        "zh-Hant": "https://tw.portal-pokemon.com/pokedex/0025/",
+        "zh-Hans": "https://pokedex.pokemon.cn/play/pokedex/0025"
       }
     }
   ]
