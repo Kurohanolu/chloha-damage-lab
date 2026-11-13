@@ -1,7 +1,13 @@
 'use strict';
 const assert=require('node:assert/strict');
-const registry=require('../locale-registry.js');
-const catalogs=require('../locale-catalog.js');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const registryContext={};
+vm.runInNewContext(fs.readFileSync(require.resolve('../locale-registry.js'),'utf8'),registryContext);
+const registry=registryContext.ChlohaLocales;
+const catalogContext={};
+vm.runInNewContext(fs.readFileSync(require.resolve('../locale-catalog.js'),'utf8'),catalogContext);
+const catalogs=catalogContext.ChlohaLocaleCatalog;
 const codes=registry.entries.map(x=>x.code);
 assert.deepEqual(Object.keys(catalogs),codes);
 const keys=Object.keys(catalogs.ja);
