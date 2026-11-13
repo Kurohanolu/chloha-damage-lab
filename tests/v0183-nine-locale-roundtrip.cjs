@@ -106,6 +106,26 @@ const path=require('node:path');
     movePlaceholder:document.querySelector('#moveSearch')?.getAttribute('placeholder'),
     selected:Object.fromEntries(Object.keys(window.__roundtripControls||{}).map(id=>[id,document.getElementById(id)?.value]))
    }));
+   // Search suggestions are dynamically generated, so the static UI i18n
+   // audit does not cover their names and type badges.
+   if(i===0){
+    const search=page.locator('#attSearch');
+    await search.fill('ガ');
+    const suggestions=page.locator('#attSuggestions .pokemon-suggestion');
+    const count=await suggestions.count();
+    assert.ok(count>0,'Pokémon suggestions must be available in '+lang);
+    const labels=await suggestions.allTextContents();
+    if(lang!=='ja'){
+     for(const label of labels)assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(label),
+      'untranslated Pokémon search suggestion in '+lang+': '+label);
+    }
+    if(lang==='zh-Hans'||lang==='zh-Hant'||lang==='ko'){
+     const types=await suggestions.locator('small').allTextContents();
+     for(const type of types)assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(type),
+      'untranslated Pokémon search type in '+lang+': '+type);
+    }
+    await search.fill('');
+   }
    snapshots.push({transition:from+' → '+lang,...state});
    try{
     assert.equal(state.lang,lang,'html lang');
