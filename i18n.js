@@ -269,7 +269,7 @@ function translateOptions(){
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
    const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale];
-   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedEntity||localeUiPhrases[base]?.[locale]||localizedUi(base));
+   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedEntity||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
@@ -432,6 +432,17 @@ const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
 // v0.183: reviewed high-visibility labels, separate from damage engine.
 const localeUiPhrases={
+ 'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
+ 'Choose from list':{fr:'Choisir dans la liste',de:'Aus Liste wählen',es:'Elegir de la lista',it:'Scegli dall’elenco',ko:'목록에서 선택','zh-Hans':'从列表选择','zh-Hant':'從清單選擇'},
+ 'Choose from move list':{fr:'Choisir une capacité',de:'Attacke aus Liste wählen',es:'Elegir de la lista de movimientos',it:'Scegli una mossa dall’elenco',ko:'기술 목록에서 선택','zh-Hans':'从招式列表选择','zh-Hant':'從招式清單選擇'},
+ 'Attacker advanced settings':{fr:'Paramètres avancés de l’attaquant',de:'Erweiterte Angreifereinstellungen',es:'Ajustes avanzados del atacante',it:'Impostazioni avanzate attaccante',ko:'공격 측 상세 설정','zh-Hans':'攻击方高级设置','zh-Hant':'攻擊方進階設定'},
+ 'Defender advanced settings':{fr:'Paramètres avancés du défenseur',de:'Erweiterte Verteidigereinstellungen',es:'Ajustes avanzados del defensor',it:'Impostazioni avanzate difensore',ko:'방어 측 상세 설정','zh-Hans':'防御方高级设置','zh-Hant':'防禦方進階設定'},
+ 'Attacker stats':{fr:'Stats de l’attaquant',de:'Angreiferwerte',es:'Estadísticas del atacante',it:'Statistiche attaccante',ko:'공격 측 능력치','zh-Hans':'攻击方能力值','zh-Hant':'攻擊方能力值'},
+ 'Defender stats':{fr:'Stats du défenseur',de:'Verteidigerwerte',es:'Estadísticas del defensor',it:'Statistiche difensore',ko:'방어 측 능력치','zh-Hans':'防御方能力值','zh-Hant':'防禦方能力值'},
+ 'Show stats':{fr:'Afficher les stats',de:'Werte anzeigen',es:'Mostrar estadísticas',it:'Mostra statistiche',ko:'능력치 표시','zh-Hans':'显示能力值','zh-Hant':'顯示能力值'},
+ 'Quick allocation':{fr:'Répartition rapide',de:'Schnellverteilung',es:'Distribución rápida',it:'Distribuzione rapida',ko:'빠른 배분','zh-Hans':'快速分配','zh-Hant':'快速分配'},
+ 'Reset all to 0':{fr:'Tout remettre à 0',de:'Alles auf 0 setzen',es:'Restablecer todo a 0',it:'Azzera tutto',ko:'모두 0으로 초기화','zh-Hans':'全部重置为0','zh-Hant':'全部重設為0'},
+ 'Learnsets are unverified. Only supported moves can be calculated.':{fr:'Les capacités apprises ne sont pas vérifiées. Seules les capacités prises en charge peuvent être calculées.',de:'Erlernbare Attacken sind nicht verifiziert. Nur unterstützte Attacken können berechnet werden.',es:'Los movimientos aprendidos no están verificados. Solo se pueden calcular los movimientos compatibles.',it:'Le mosse apprendibili non sono verificate. Si possono calcolare solo le mosse supportate.',ko:'배울 수 있는 기술 목록은 검증되지 않았습니다. 지원하는 기술만 계산할 수 있습니다.','zh-Hans':'可学习招式尚未验证。只能计算已支持的招式。','zh-Hant':'可學習招式尚未驗證。只能計算已支援的招式。'},
  'Battlefield settings':{fr:'Paramètres du terrain',de:'Kampffeld-Einstellungen',es:'Configuración del campo',it:'Impostazioni del campo',ko:'배틀 필드 설정','zh-Hans':'对战场地设置','zh-Hant':'對戰場地設定'},
  'Change weather, terrain and screens here':{fr:'Modifier la météo, le champ et les protections',de:'Wetter, Feld und Schutzschilde ändern',es:'Cambia el clima, el campo y las pantallas',it:'Modifica meteo, campo e barriere',ko:'날씨, 필드, 벽을 변경하세요','zh-Hans':'在此更改天气、场地和屏障','zh-Hant':'在此變更天氣、場地和屏障'},
  'Reset battlefield':{fr:'Réinitialiser le terrain',de:'Kampffeld zurücksetzen',es:'Restablecer campo',it:'Ripristina campo',ko:'배틀 필드 초기화','zh-Hans':'重置对战场地','zh-Hant':'重設對戰場地'},
@@ -498,10 +509,41 @@ function localizedDamageRange(base,target){
  const range=source[1]+(target==='ja'?'〜':'–')+source[2];
  return range+' '+damageRangeSuffix[target];
 }
+const battlefieldNames={
+ 'なし':{en:'None',fr:'Aucun',de:'Keine',es:'Ninguno',it:'Nessuno',ko:'없음','zh-Hans':'无','zh-Hant':'無'},
+ '晴れ':{en:'Sun',fr:'Soleil',de:'Sonne',es:'Sol',it:'Sole',ko:'쾌청','zh-Hans':'晴天','zh-Hant':'晴天'},
+ '雨':{en:'Rain',fr:'Pluie',de:'Regen',es:'Lluvia',it:'Pioggia',ko:'비','zh-Hans':'下雨','zh-Hant':'下雨'},
+ '砂嵐':{en:'Sandstorm',fr:'Tempête de sable',de:'Sandsturm',es:'Tormenta de arena',it:'Terrempesta',ko:'모래바람','zh-Hans':'沙暴','zh-Hant':'沙暴'},
+ '雪':{en:'Snow',fr:'Neige',de:'Schnee',es:'Nieve',it:'Neve',ko:'눈','zh-Hans':'下雪','zh-Hant':'下雪'},
+ 'エレキフィールド':{en:'Electric Terrain',fr:'Champ Électrifié',de:'Elektrofeld',es:'Campo Eléctrico',it:'Campo Elettrico',ko:'일렉트릭필드','zh-Hans':'电气场地','zh-Hant':'電氣場地'},
+ 'グラスフィールド':{en:'Grassy Terrain',fr:'Champ Herbu',de:'Grasfeld',es:'Campo de Hierba',it:'Campo Erboso',ko:'그래스필드','zh-Hans':'青草场地','zh-Hant':'青草場地'},
+ 'ミストフィールド':{en:'Misty Terrain',fr:'Champ Brumeux',de:'Nebelfeld',es:'Campo de Niebla',it:'Campo Nebbioso',ko:'미스트필드','zh-Hans':'薄雾场地','zh-Hant':'薄霧場地'},
+ 'サイコフィールド':{en:'Psychic Terrain',fr:'Champ Psychique',de:'Psychofeld',es:'Campo Psíquico',it:'Campo Psichico',ko:'사이코필드','zh-Hans':'精神场地','zh-Hant':'精神場地'},
+ 'リフレクター':{en:'Reflect',fr:'Protection',de:'Reflektor',es:'Reflejo',it:'Riflesso',ko:'리플렉터','zh-Hans':'反射壁','zh-Hant':'反射壁'},
+ 'ひかりのかべ':{en:'Light Screen',fr:'Mur Lumière',de:'Lichtschild',es:'Pantalla de Luz',it:'Schermoluce',ko:'빛의장막','zh-Hans':'光墙','zh-Hant':'光牆'}
+};
+const battlefieldHeadings={
+ en:['Current battlefield: Weather ',' / Terrain ',' / Screen '],
+ fr:['Terrain actuel : Météo ',' / Champ ',' / Protection '],
+ de:['Aktuelles Kampffeld: Wetter ',' / Feld ',' / Schild '],
+ es:['Campo actual: Clima ',' / Campo ',' / Pantalla '],
+ it:['Campo attuale: Meteo ',' / Campo ',' / Barriera '],
+ ko:['현재 배틀 필드: 날씨 ',' / 필드 ',' / 벽 '],
+ 'zh-Hans':['当前对战场地：天气 ',' / 场地 ',' / 屏障 '],
+ 'zh-Hant':['目前對戰場地：天氣 ',' / 場地 ',' / 屏障 ']
+};
+function localizedBattlefield(base,target){
+ const m=String(base).match(/^現在の盤面：天候\s+(.+?)\s*[／/]\s*フィールド\s+(.+?)\s*[／/]\s*壁\s+(.+)$/);
+ if(!m)return null;
+ if(target==='ja')return base;
+ const labels=battlefieldHeadings[target]||battlefieldHeadings.en;
+ const choice=value=>battlefieldNames[value]?.[target]||value;
+ return labels[0]+choice(m[1])+labels[1]+choice(m[2])+labels[2]+choice(m[3]);
+}
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
- const dynamic=localizedVerdict(base,locale)||localizedDamageRange(base,locale);
+ const dynamic=localizedBattlefield(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
  const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
@@ -539,7 +581,7 @@ function translate(root){
    let originals=originalAttributes.get(element);
    if(!originals){originals={};originalAttributes.set(element,originals);}
    const previous=originals[attr];
-   const previousEnglish=previous===undefined?null:(translateAccessibilityLabel(previous));
+   const previousEnglish=previous===undefined?null:localizedUi(translateAccessibilityLabel(previous));
    if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
    const base=originals[attr];
    const next=locale==='ja'?base:localizedUi(translateAccessibilityLabel(base));
