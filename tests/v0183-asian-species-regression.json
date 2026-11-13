@@ -1,0 +1,24 @@
+{
+  "description": "Asian three-locale Pokémon name regression samples. These are NOT yet independently verified against official regional pages; do not label them official-verified.",
+  "verificationStatus": "pending-official-source-review",
+  "species": [
+    {
+      "nationalDex": 6,
+      "key": "charizard",
+      "names": {
+        "ko": "리자몽",
+        "zh-Hans": "喷火龙",
+        "zh-Hant": "噴火龍"
+      }
+    },
+    {
+      "nationalDex": 25,
+      "key": "pikachu",
+      "names": {
+        "ko": "피카츄",
+        "zh-Hans": "皮卡丘",
+        "zh-Hant": "皮卡丘"
+      }
+    }
+  ]
+}
