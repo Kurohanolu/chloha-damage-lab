@@ -1043,11 +1043,18 @@ function localizedUi(base){
  'Attacker Tailwind (Speed ×2)':['Vent arrière de l’attaquant (Vitesse ×2)','Rückenwind des Angreifers (Initiative ×2)','Viento Afín del atacante (Velocidad ×2)','Ventoincoda dell’attaccante (Velocità ×2)','공격 측 순풍 (스피드 ×2)','攻击方顺风（速度×2）','攻擊方順風（速度×2）']
  };
  const screenshotEnglish=translateRuntime(base);
- if(locale==='ko'){
-  const warning=screenshotEnglish.match(/^Selected move “(.+?)”\s*[:：]\s*learnset, effects, variable power and accuracy are unverified\. Treat results as provisional until compared against hardware\.$/);
-  if(warning)return '선택한 기술 “'+warning[1]+'”: 습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.';
-  const stats=screenshotEnglish.match(/^(.+?)\s*→\s*(.+?)\s*\((\d+)\s*\/\s*HP\s*(\d+)\)$/);
-  if(stats)return stats[1]+' → '+stats[2]+' (방어 '+stats[3]+' / HP '+stats[4]+')';
+ const warning=screenshotEnglish.match(/^Selected move “(.+?)”\s*[:：]\s*learnset, effects, variable power and accuracy are unverified\. Treat results as provisional until compared against hardware\.$/);
+ if(warning){
+  const labels={
+   fr:['Capacité sélectionnée','Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.'],
+   de:['Ausgewählte Attacke','Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.'],
+   es:['Movimiento seleccionado','No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.'],
+   it:['Mossa selezionata','Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.'],
+   ko:['선택한 기술','습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.'],
+   'zh-Hans':['所选招式','尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。'],
+   'zh-Hant':['所選招式','尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。']
+  };
+  if(labels[locale])return labels[locale][0]+' “'+warning[1]+'”：'+labels[locale][1];
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
