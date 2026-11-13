@@ -8,13 +8,13 @@ const registry=registryContext.ChlohaLocales;
 const catalogContext={};
 vm.runInNewContext(fs.readFileSync(require.resolve('../locale-catalog.js'),'utf8'),catalogContext);
 const catalogs=catalogContext.ChlohaLocaleCatalog;
-const codes=registry.entries.map(x=>x.code);
+const codes=Array.from(registry.entries,x=>x.code);
 assert.deepEqual(Object.keys(catalogs),codes);
 const keys=Object.keys(catalogs.ja);
 assert.ok(keys.length>=12);
 for(const code of codes){
  assert.deepEqual(Object.keys(catalogs[code]),keys,'locale key parity: '+code);
- assert.deepEqual(registry.missing(catalogs,code,keys),[],'missing locale entries: '+code);
+ assert.deepEqual(Array.from(registry.missing(catalogs,code,keys)),[],'missing locale entries: '+code);
  for(const key of keys){
   assert.equal(registry.lookup(catalogs,code,key),catalogs[code][key]);
   assert.ok(catalogs[code][key].trim());
