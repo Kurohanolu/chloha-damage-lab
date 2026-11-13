@@ -841,6 +841,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    return baseWithForm+' '+marker.trim();
   return marker+baseWithForm;
  };
+ window.ChlohaLocalePokemonName=(key,locale)=>localizedName('pokemon',key,locale);
  const localizedMatch=(category,key,query)=>Object.values(window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]||{}).some(name=>window.ChlohaNameSearch?.normalize(name).includes(window.ChlohaNameSearch.normalize(query)));
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
