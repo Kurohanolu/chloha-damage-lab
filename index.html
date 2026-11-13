@@ -788,6 +788,8 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  'かえんほうしゃ':'Flamethrower','だいちのちから':'Earth Power',
  'ボルトチェンジ':'Volt Switch','とんぼがえり':'U-turn'
  });
+ const localizedName=(category,key,locale)=>window.ChlohaLocalizedNames?.[category]?.[key]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]?.[locale]||null;
+ const localizedMatch=(category,key,query)=>Object.values(window.ChlohaLocalizedNames?.[category]?.[key]||window.ChlohaPokeAPILocalizedNames?.[category]?.[key]||{}).some(name=>window.ChlohaNameSearch?.normalize(name).includes(window.ChlohaNameSearch.normalize(query)));
  const normalizeMove=t=>String(t||'').normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96)).replace(/[\s_\-]/g,'');
  let moveHits=[],moveActive=-1,moveComposing=false;
@@ -829,7 +831,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   if(!query){hideMoveSuggestions();return;}
   moveHits=[...moveSelect.options].filter(o=>{
    const m=movesById.get(o.value);
-   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query)||normalizeMove(window.ChlohaNames?.moves?.[m?.name]).includes(query);
+   return normalizeMove(m?.name).includes(query)||normalizeMove(o.value).includes(query)||normalizeMove(moveEnglishAliases[m?.name]).includes(query)||normalizeMove(window.ChlohaNames?.moves?.[m?.name]).includes(query)||localizedMatch('moves',m?.name,moveInput.value.trim());
   }).sort((a,b)=>{
    const rank=o=>{const m=movesById.get(o.value);
     return (normalizeMove(m?.name).startsWith(query)?0:2)+(m&&moveCalculationReady(m)?0:1);
@@ -842,7 +844,8 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    item.setAttribute('role','option');item.setAttribute('aria-label',m?.name||o.textContent);
    item.setAttribute('aria-selected','false');
    const english=window.ChlohaLocale?.get()==='en';
-   const moveName=english?(moveEnglishAliases[m?.name]||window.ChlohaNames?.moves?.[m?.name]||m?.name||o.textContent):(m?.name||o.textContent);
+   const locale=window.ChlohaLocale?.get?.()||'ja';
+   const moveName=locale==='ja'?(m?.name||o.textContent):(localizedName('moves',m?.name,locale)||(english?moveEnglishAliases[m?.name]||window.ChlohaNames?.moves?.[m?.name]:null)||m?.name||o.textContent);
    item.append(node('span','',moveName));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
    const typeName=english?({'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'}[m?.type]||m?.type||''):(m?.type||'');
@@ -1104,7 +1107,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    if(!q){hide();return;}
    matches=options.filter(o=>{
     const p=pokemonById.get(o.value);
-    return [o.label,p?.englishName||'',englishAliases[o.value]||'',window.ChlohaNames?.pokemon?.[o.value]||'',o.value].some(t=>normalize(t).includes(q));
+    return [o.label,p?.englishName||'',englishAliases[o.value]||'',window.ChlohaNames?.pokemon?.[o.value]||'',o.value].some(t=>normalize(t).includes(q))||localizedMatch('pokemon',o.value,input.value.trim());
    }).sort((a,b)=>{
     const score=o=>normalize(o.label).startsWith(q)?0:normalize(window.ChlohaNames?.pokemon?.[o.value]||englishAliases[o.value]||o.value).startsWith(q)?1:2;
     return score(a)-score(b);
@@ -1114,8 +1117,10 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
     item.type='button';item.id=side+'Suggestion'+i;item.setAttribute('role','option');
     const english=window.ChlohaLocale?.get()==='en';
     const englishName=window.ChlohaNames?.pokemon?.[o.value]||p?.englishName||englishAliases[o.value]||o.label;
+    const locale=window.ChlohaLocale?.get?.()||'ja';
+    const displayName=locale==='ja'?o.label:(localizedName('pokemon',o.value,locale)||(english?englishName:null)||o.label);
     const typeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
-    item.setAttribute('aria-label',english?englishName:o.label);item.setAttribute('aria-selected','false');
+    item.setAttribute('aria-label',displayName);item.setAttribute('aria-selected','false');
     const spriteId=window.ChlohaSpriteIds?.[o.value];
     if(spriteId){
      const img=node('img');img.alt='';img.loading='lazy';
@@ -1123,7 +1128,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
      img.onerror=()=>img.remove();item.append(img);
     }
     const typeText=(p?.types||[]).map(type=>english?(typeEnglish[type]||type):type).join(' / ');
-    const copy=node('span');copy.append(node('span','',english?englishName:o.label),node('small','',typeText));item.append(copy);
+    const copy=node('span');copy.append(node('span','',displayName),node('small','',typeText));item.append(copy);
     item.addEventListener('click',()=>choose(o));item.addEventListener('pointerenter',()=>setActive(i));list.append(item);
    }
    if(!matches.length)list.append(node('div','pokemon-suggestion-empty','該当するポケモンがありません'));
@@ -1169,4 +1174,4 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  refreshUI();
 })();
 
-</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script src="./names-catalog-v0179.js"></script><script src="./names-forms-v0179.js"></script><script defer src="./i18n.js"></script><script defer src="./names-ui-v0179.js"></script></body></html>
+</script><script src="./names-v0179.js"></script><script src="./names-ja-en.js"></script><script src="./names-catalog-v0179.js"></script><script src="./names-forms-v0179.js"></script><script src="./locale-registry.js"></script><script src="./locale-catalog.js"></script><script defer src="./i18n.js"></script><script src="./locale-name-search.js"></script><script src="./locale-names-pokeapi-v0183.js"></script><script src="./locale-names-v0183.js"></script><script defer src="./names-ui-v0179.js"></script><script defer src="./names-ui-v0183.js"></script></body></html>

@@ -425,7 +425,16 @@ function recoverJapanese(value){
  return result;
 }
 const key='chloha.damageLab.locale';
-let locale='ja';try{locale=localStorage.getItem(key)==='en'?'en':'ja';}catch{}
+const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
+function localizedUi(base){
+ const catalog=globalThis.ChlohaLocaleCatalog;
+ if(locale==='ja'||!catalog)return base;
+ const source=catalog.ja||{};
+ const entry=Object.keys(source).find(key=>source[key]===base||catalog.en?.[key]===base);
+ if(entry&&catalog[locale]?.[entry])return catalog[locale][entry];
+ return translateRuntime(base);
+}
 const original=new WeakMap();
 function translate(root){
  if(!root||root.nodeType!==1)return;
@@ -441,7 +450,7 @@ function translate(root){
   // Calculator updates existing text nodes in place; detect new source content.
   if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,recoverJapanese(trim));
   const base=original.get(node);
-  const next=locale==='en'?translateRuntime(base):base;
+  const next=locale==='ja'?base:localizedUi(base);
   if(trim!==next)node.nodeValue=value.replace(trim,next);
  }
  for(const element of [root,...root.querySelectorAll('[title],[aria-label],[placeholder]')]){
@@ -454,13 +463,13 @@ function translate(root){
    const previousEnglish=previous===undefined?null:(translateAccessibilityLabel(previous));
    if(previous===undefined||(value!==previous&&value!==previousEnglish))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
    const base=originals[attr];
-   const next=locale==='en'?(translateAccessibilityLabel(base)):base;
+   const next=locale==='ja'?base:localizedUi(translateAccessibilityLabel(base));
    if(next!==value)element.setAttribute(attr,next);
   }
  }
 }
 function setLocale(next){
- locale=next==='en'?'en':'ja';
+ locale=supportedLocales.includes(next)?next:'ja';
  document.documentElement.lang=locale;
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
@@ -511,7 +520,7 @@ function initialize(){
  select.id='chloha-locale';
  select.setAttribute('aria-label','Language / 言語');
  select.style.cssText='width:auto;min-height:36px;padding:5px 8px';
- for(const [value,title] of [['ja','日本語'],['en','English']]){
+ for(const [value,title] of [['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文']]){
   const option=document.createElement('option');option.value=value;option.textContent=title;select.append(option);
  }
  select.addEventListener('change',()=>setLocale(select.value));

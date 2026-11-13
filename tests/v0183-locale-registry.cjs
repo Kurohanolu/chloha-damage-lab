@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const context={};
+vm.runInNewContext(fs.readFileSync(require.resolve('../locale-registry.js'),'utf8'),context);
+const locale=context.ChlohaLocales;
+assert.deepEqual(Array.from(locale.entries,x=>x.code),['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant']);
+assert.equal(new Set(Array.from(locale.entries,x=>x.code)).size,9);
+assert.deepEqual(Array.from(locale.chain('ja')),['ja']);
+assert.deepEqual(Array.from(locale.chain('en')),['en','ja']);
+for(const code of ['fr','de','es','it','ko','zh-Hans','zh-Hant'])
+ assert.deepEqual(Array.from(locale.chain(code)),[code,'en','ja']);
+assert.deepEqual(Array.from(locale.chain('invalid')),['ja']);
+const catalogs={ja:{attack:'攻撃',onlyJa:'日本語'},en:{attack:'Attack'},fr:{attack:'Attaque'}};
+assert.equal(locale.lookup(catalogs,'fr','attack'),'Attaque');
+assert.equal(locale.lookup(catalogs,'de','attack'),'Attack');
+assert.equal(locale.lookup(catalogs,'fr','onlyJa'),'日本語');
+assert.equal(locale.lookup(catalogs,'ko','notYetTranslated'),'notYetTranslated');
+assert.deepEqual(Array.from(locale.missing(catalogs,'fr',['attack','onlyJa'])),['onlyJa']);
+assert.deepEqual(Array.from(locale.missing(catalogs,'ko',['attack','onlyJa'])),['attack','onlyJa']);
+assert.throws(()=>locale.lookup(catalogs,'ja',''),error=>error?.name==='TypeError');
+console.log('PASS v0.183 nine-language registry, fallback, and missing-translation audit');

@@ -6,6 +6,7 @@ on:
       - index.html
       - i18n.js
       - 'names-*.js'
+      - 'locale-*.js'
       - weight-power.js
       - variable-power.js
       - multi-hit.js
@@ -78,6 +79,14 @@ jobs:
       - run: node tests/v0177-move-policy-consistency.cjs
       - run: node tests/v0177-conditional-power-clarity.cjs
       - run: node tests/v0177-version-provenance.cjs
+      - run: node tests/v0183-locale-registry.cjs
+      - run: node tests/v0183-locale-catalog.cjs
+      - run: node tests/v0183-locale-name-search.cjs
+      - run: node tests/v0183-bulk-name-adapter.cjs
+      - run: node tests/v0183-locale-name-audit.cjs
+      - run: node tests/v0183-name-ui-roundtrip.cjs
+      - run: node tests/v0183-multilingual-autocomplete.cjs
+      - run: node tests/v0183-nine-locale-browser.cjs
       - run: node tests/move-catalog-audit.cjs
       - run: node tests/v0182-move-coverage-inventory.cjs
       - run: node tests/v0182-move-triage-ledger.cjs
