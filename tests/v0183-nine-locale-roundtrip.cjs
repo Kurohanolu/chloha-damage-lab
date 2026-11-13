@@ -68,6 +68,24 @@ const path=require('node:path');
   assert.equal(rosterDisplayAudit.roster,373,'all roster Pokémon audited');
   assert.equal(rosterDisplayAudit.checked,2984,'eight-language roster display checks');
   assert.deepEqual(rosterDisplayAudit.errors,[],'no missing, Japanese, or internal-ID display names');
+  // A form generated from the official species name must also be discoverable
+  // when users type its translated name, not merely when browsing the roster.
+  const formSearchCases=[
+   ['en','Mega Charizard X','mega_charizard_x'],
+   ['fr','Méga-Dracaufeu X','mega_charizard_x'],
+   ['ko','메가리자몽 X','mega_charizard_x'],
+   ['zh-Hans','超级喷火龙 X','mega_charizard_x']
+  ];
+  for(const [locale,term,id] of formSearchCases){
+   await page.locator('#chloha-locale').selectOption(locale);
+   await page.locator('#attSearch').fill(term);
+   const suggestions=page.locator('#attSuggestions .pokemon-suggestion');
+   assert.ok(await suggestions.count()>0,'translated form search returned no results: '+locale+' '+term);
+   const text=await suggestions.allTextContents();
+   assert.ok(text.some(x=>x.includes(term)),
+    'translated form not present in suggestions: '+locale+' '+term);
+  }
+  await page.locator('#attSearch').fill('');
   const selector=page.locator('#chloha-locale');
   const steps=[
    ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
