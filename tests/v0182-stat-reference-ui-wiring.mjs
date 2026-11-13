@@ -7,7 +7,7 @@ const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
  await page.goto('file://'+resolve(root,'index.html'),{waitUntil:'load'});
- await page.locator('#dbMove option').first().waitFor();
+ await page.waitForFunction(()=>document.querySelector('#dbMove')?.options.length>0);
  const result=await page.evaluate(()=>{
   const $=id=>document.getElementById(id);
   const set=(id,value)=>{const el=$(id);el.value=String(value);el.dispatchEvent(new Event('input',{bubbles:true}));};
