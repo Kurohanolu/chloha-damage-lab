@@ -94,6 +94,37 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
   console.log('AUDIT OFFICIAL species English-equal verified='+officialVerified.length+
    '; official-name mismatches='+officialMismatch.length);
   for(const x of officialMismatch)console.log('AUDIT OFFICIAL MISMATCH '+JSON.stringify(x));
+  // Review candidates by canonical species identity, not just English display text.
+  // Form variants can share an English base name, so report those separately.
+  const speciesIndex=await page.evaluate(()=>({
+   names:window.ChlohaPokeAPILocalizedNames?.pokemon||{},
+   forms:window.ChlohaFormSpeciesBases||{}
+  }));
+  const verifiedById=[],needsFormReview=[],needsSpeciesReview=[],canonicalMismatch=[];
+  for(const [locale,groups] of Object.entries(reviewGroups)){
+   for(const [value,display] of groups.pokemon||[]){
+    const exact=speciesIndex.names[value];
+    const form=speciesIndex.forms[value];
+    if(exact?.[locale]&&exact.en===display){
+     const item={locale,value,display,expected:exact[locale]};
+     if(display===exact[locale])verifiedById.push(item);
+     else canonicalMismatch.push(item);
+    }else if(form){
+     needsFormReview.push({locale,value,display,baseJa:form.baseJa,
+      officialBase:form.base?.[locale]||null});
+    }else{
+     needsSpeciesReview.push({locale,value,display});
+    }
+   }
+  }
+  console.log('AUDIT CANONICAL verified='+verifiedById.length+
+   '; mismatches='+canonicalMismatch.length+
+   '; form-review='+needsFormReview.length+
+   '; species-review='+needsSpeciesReview.length);
+  for(const item of canonicalMismatch)console.log('AUDIT CANONICAL MISMATCH '+JSON.stringify(item));
+  for(const item of needsFormReview)console.log('AUDIT FORM REVIEW '+JSON.stringify(item));
+  for(const item of needsSpeciesReview)console.log('AUDIT SPECIES REVIEW '+JSON.stringify(item));
+
   for(const x of confirmedKana)console.log('AUDIT FINDING '+JSON.stringify(x));
   assert.deepEqual(errors,[],'browser errors during select audit');
   assert.equal(confirmedKana.length,0,'Japanese kana must not remain in non-Japanese native selectors');
