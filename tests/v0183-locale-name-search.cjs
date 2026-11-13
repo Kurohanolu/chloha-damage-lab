@@ -1,6 +1,10 @@
 'use strict';
 const assert=require('node:assert/strict');
-const search=require('../locale-name-search.js');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const context={};
+vm.runInNewContext(fs.readFileSync(require.resolve('../locale-name-search.js'),'utf8'),context);
+const search=context.ChlohaNameSearch;
 assert.deepEqual(Array.from(search.supported),['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant']);
 const records=[
  {category:'moves',id:'flamethrower',names:{ja:'かえんほうしゃ',en:'Flamethrower',fr:'Lance-Flammes',de:'Flammenwurf',es:'Lanzallamas',it:'Lanciafiamme',ko:'화염방사','zh-Hans':'喷射火焰','zh-Hant':'噴射火焰'}},
