@@ -13,14 +13,14 @@ const records=[
  {category:'items',id:'lifeorb',names:{ja:'いのちのたま',en:'Life Orb'}}
 ];
 const index=search.buildIndex(records);
-for(const name of Object.values(records[0].names))assert.deepEqual(search.search(index,'moves',name),['flamethrower']);
-assert.deepEqual(search.search(index,'moves','lance flammes'),['flamethrower']);
-assert.deepEqual(search.search(index,'moves','LANCE-FLAMMES'),['flamethrower']);
-assert.deepEqual(search.search(index,'moves','flamme'),['flamethrower']);
-assert.deepEqual(search.search(index,'pokemon','피카츄'),['pikachu']);
-assert.deepEqual(search.search(index,'abilities','Intimidate'),['intimidate']);
-assert.deepEqual(search.search(index,'items','Life Orb'),['lifeorb']);
-assert.deepEqual(search.search(index,'pokemon','Flamethrower'),[]);
-assert.deepEqual(search.search(index,'moves',''),[]);
-assert.throws(()=>search.buildIndex([{category:'moves',id:''}]),TypeError);
+for(const name of Object.values(records[0].names))assert.deepEqual(Array.from(search.search(index,'moves',name)),['flamethrower']);
+assert.deepEqual(Array.from(search.search(index,'moves','lance flammes')),['flamethrower']);
+assert.deepEqual(Array.from(search.search(index,'moves','LANCE-FLAMMES')),['flamethrower']);
+assert.deepEqual(Array.from(search.search(index,'moves','flamme')),['flamethrower']);
+assert.deepEqual(Array.from(search.search(index,'pokemon','피카츄')),['pikachu']);
+assert.deepEqual(Array.from(search.search(index,'abilities','Intimidate')),['intimidate']);
+assert.deepEqual(Array.from(search.search(index,'items','Life Orb')),['lifeorb']);
+assert.deepEqual(Array.from(search.search(index,'pokemon','Flamethrower')),[]);
+assert.deepEqual(Array.from(search.search(index,'moves','')),[]);
+assert.throws(()=>search.buildIndex([{category:'moves',id:''}]),error=>error?.name==='TypeError');
 console.log('PASS v0.183 multilingual canonical-ID entity-name search');
