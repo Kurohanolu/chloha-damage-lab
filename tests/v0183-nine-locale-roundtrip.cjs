@@ -33,7 +33,12 @@ const path=require('node:path');
   assert.ok(attacker&&defender,'Garchomp and Tyranitar must exist in Pokémon database');
   for(const [id,value] of [['dbAttPokemon',attacker],['dbDefPokemon',defender]]){
    exercised[id]=value;
-   await page.locator('#'+id).selectOption(value);
+   // Pokémon database selects are hidden behind search UI; Playwright's
+   // selectOption waits for visibility and times out on these native controls.
+   await page.locator('#'+id).evaluate((el,selected)=>{
+    el.value=selected;
+    el.dispatchEvent(new Event('change',{bubbles:true}));
+   },value);
   }
   const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'&&!v.startsWith('unsupported:')));
   if(abilities.length){exercised.attAbility=abilities[0];await page.locator('#attAbility').selectOption(abilities[0]);}
