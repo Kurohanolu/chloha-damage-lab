@@ -771,10 +771,24 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
  const pokemonTypeEnglish={'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'};
  function syncPokemonTypeBadges(){
   for(const badge of document.querySelectorAll('#attTypes .type-pill,#defTypes .type-pill')){
-   badge.textContent=window.ChlohaLocale?.typeName?.(badge.dataset.jaType)||badge.dataset.jaType;
+   const original=badge.dataset.jaType||badge.textContent;
+   const localized=window.ChlohaLocale?.typeName?.(original)||original;
+   if(badge.textContent!==localized)badge.textContent=localized;
   }
  }
  document.addEventListener('chloha:localechange',syncPokemonTypeBadges);
+ // The locale may have been restored from localStorage before this listener
+ // was registered. Reconcile badges after initialization and after async
+ // Pokémon data renders, including on a hard refresh.
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncPokemonTypeBadges,{once:true});
+ else queueMicrotask(syncPokemonTypeBadges);
+ const typeBadgeObserver=new MutationObserver(records=>{
+  if(records.some(record=>record.addedNodes.length))syncPokemonTypeBadges();
+ });
+ for(const id of ['attTypes','defTypes']){
+  const container=document.getElementById(id);
+  if(container)typeBadgeObserver.observe(container,{childList:true});
+ }
  // Move picker: search the CURRENT native move options, rebuilt when the attacker changes.
  const moveInput=el('moveSearch'),moveList=el('moveSuggestions'),moveSelect=el('dbMove');
  // Verified bilingual aliases; these affect search only, never the battle identifiers.
