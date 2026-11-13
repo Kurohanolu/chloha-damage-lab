@@ -53,6 +53,18 @@ const path=require('node:path');
    }
    return {roster:roster.length,checked:roster.length*locales.length,errors};
   });
+  // Reference spellings: official French Mega Evolution site, official
+  // Chinese Palafin Pokédex and Bulbapedia multilingual form table.
+  const officialFormSamples=await page.evaluate(()=>[
+   ['mega_charizard_x','fr','Méga-Dracaufeu X'],
+   ['mega_charizard_x','it','MegaCharizard X'],
+   ['gw_screen_087','fr','Superdofin (Forme Ordinaire)'],
+   ['gw_screen_087','zh-Hans','海豚侠 (平凡形态)'],
+   ['gw_screen_087','zh-Hant','海豚俠 (平凡形態)'],
+   ['gw_screen_088','zh-Hans','海豚侠 (全能形态)']
+  ].map(([id,locale,expected])=>({id,locale,expected,actual:window.ChlohaLocalePokemonName(id,locale)})));
+  assert.deepEqual(officialFormSamples.filter(x=>x.actual!==x.expected),[],
+   'officially cross-checked Mega and Palafin form spellings');
   assert.equal(rosterDisplayAudit.roster,373,'all roster Pokémon audited');
   assert.equal(rosterDisplayAudit.checked,2984,'eight-language roster display checks');
   assert.deepEqual(rosterDisplayAudit.errors,[],'no missing, Japanese, or internal-ID display names');
