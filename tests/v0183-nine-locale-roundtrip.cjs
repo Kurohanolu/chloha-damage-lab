@@ -120,6 +120,18 @@ const path=require('node:path');
     'duplicate localized move type labels in '+locale);
    assert.deepEqual(typeOptions.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label)),[],
     'missing or untranslated move type options in '+locale);
+   // Full-option audit: include off-screen move and ability entries, not just
+   // the selected entry. Values are stable IDs; labels must be localized.
+   for(const [id,minimum] of [['dbMove',50],['attAbility',10],['defAbility',10]]){
+    const options=await page.locator('#'+id+' option').evaluateAll(nodes=>
+     nodes.map(n=>({value:n.value,label:n.textContent.trim()}))
+      .filter(n=>n.value&&n.value!=='none'));
+    assert.ok(options.length>=minimum,
+     id+' option list unexpectedly small in '+locale+': '+options.length);
+    const missing=options.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label));
+    assert.deepEqual(missing,[],
+     'untranslated or empty '+id+' options in '+locale);
+   }
   }
   const steps=[
    ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
