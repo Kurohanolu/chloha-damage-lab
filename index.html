@@ -931,32 +931,15 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
    const moveName=locale==='ja'?(m?.name||o.textContent):(localizedName('moves',m?.name,locale)||(english?moveEnglishAliases[m?.name]||window.ChlohaNames?.moves?.[m?.name]:null)||m?.name||o.textContent);
    item.append(node('span','',moveName));
    const status=m&&!moveCalculationReady(m)?'計算未対応':m?.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'基本計算のみ':'計算試算';
-   const typeName=locale==='ja'?(m?.type||''):(window.ChlohaLocale?.typeName?.(m?.type)||pokemonTypeEnglish[m?.type]||m?.type||'');
-   const statusByLocale={
-    ja:['計算未対応','基本計算のみ','計算試算'],en:['Unsupported','Basic damage only','Estimated'],
-    fr:['Non pris en charge','Dégâts de base uniquement','Estimation'],
-    de:['Nicht unterstützt','Nur Grundschaden','Geschätzt'],
-    es:['No compatible','Solo daño básico','Estimado'],
-    it:['Non supportato','Solo danno base','Stimato'],
-    ko:['계산 미지원','기본 데미지만','추정치'],
-    'zh-Hans':['不支持计算','仅基础伤害','估算'],
-    'zh-Hant':['不支援計算','僅基礎傷害','估算']
-   };
-   const statusIndex=['計算未対応','基本計算のみ','計算試算'].indexOf(status);
-   const statusName=statusIndex<0?status:(statusByLocale[locale]||statusByLocale.en)[statusIndex];
-   const variableByLocale={ja:'可変',en:'Variable',fr:'Variable',de:'Variabel',es:'Variable',it:'Variabile',ko:'가변','zh-Hans':'可变','zh-Hant':'可變'};
-   const variablePower=variableByLocale[locale]||variableByLocale.en;
-   item.append(node('span','move-meta',typeName+' / '+(m?.id==='electroBall'?variablePower:m?.power||'?')+'　'+statusName));
+   const typeName=english?({'ノーマル':'Normal','ほのお':'Fire','みず':'Water','でんき':'Electric','くさ':'Grass','こおり':'Ice','かくとう':'Fighting','どく':'Poison','じめん':'Ground','ひこう':'Flying','エスパー':'Psychic','むし':'Bug','いわ':'Rock','ゴースト':'Ghost','ドラゴン':'Dragon','あく':'Dark','はがね':'Steel','フェアリー':'Fairy'}[m?.type]||m?.type||''):(m?.type||'');
+   const statusName=english?({'計算未対応':'Unsupported','基本計算のみ':'Basic damage only','計算試算':'Estimated'}[status]):status;
+   item.append(node('span','move-meta',typeName+' / '+(m?.id==='electroBall'?(english?'Variable':'可変'):m?.power||'?')+'　'+statusName));
    item.addEventListener('click',()=>chooseMove(o));item.addEventListener('pointerenter',()=>setMoveActive(i));
    moveList.append(item);
   }
-  if(!moveHits.length){
-   const emptyByLocale={ja:'該当する技がありません',en:'No matching moves',fr:'Aucune capacité correspondante',de:'Keine passenden Attacken',es:'No hay movimientos coincidentes',it:'Nessuna mossa corrispondente',ko:'일치하는 기술이 없습니다','zh-Hans':'没有匹配的招式','zh-Hant':'沒有符合的招式'};
-   moveList.append(node('div','move-empty',emptyByLocale[window.ChlohaLocale?.get?.()||'ja']||emptyByLocale.en));
-  }
+  if(!moveHits.length)moveList.append(node('div','move-empty','該当する技がありません'));
   moveList.hidden=false;moveInput.setAttribute('aria-expanded','true');
  }
- document.addEventListener('chloha:localechange',()=>{if(!moveList.hidden&&moveInput.value.trim()&&!moveComposing)renderMoveSuggestions();});
  moveInput.addEventListener('compositionstart',()=>{moveComposing=true;});
  moveInput.addEventListener('compositionend',()=>{moveComposing=false;renderMoveSuggestions();});
  moveInput.addEventListener('input',()=>{if(!moveComposing)renderMoveSuggestions();});
