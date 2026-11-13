@@ -25,7 +25,7 @@ for(const [family,names] of Object.entries(families))for(const name of names){
 }
 // Runtime policy can explicitly enable conditional damage despite conservative catalog metadata.
 // Keep catalog flags unchanged: they describe baseline coverage, not full-mechanic parity.
-const policyMatch=html.match(/const ChlohaMovePolicy = (\\{[^\\n]+\\});/);
+const policyMatch=html.match(/const ChlohaMovePolicy = (\{[^\n]+\});/);
 assert.ok(policyMatch,'runtime move policy must exist');
 const policies=JSON.parse(policyMatch[1]);
 const policyEnabled=moves.filter(m=>m.calculationSupported!==true&&['physical','special'].includes(m.category)&&policies[m.id]?.priority!=='P0'&&policies[m.id]?.standardDamageSupported===true&&!!policies[m.id]?.mechanic);
