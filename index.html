@@ -802,10 +802,14 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const p=pokemonById.get(key);if(!p)return null;
   const raw=p.name;
   const prefix=Object.keys(formPrefixes).find(k=>raw.startsWith(k)&&raw.length>k.length);
-  const baseJapanese=prefix?raw.slice(prefix.length):raw.replace(/\([^)]*\)$/,'');
-  const base=[...pokemonById.values()].find(q=>q.name===baseJapanese);
-  const baseTranslated=base&&(window.ChlohaLocalizedNames?.pokemon?.[base.id]?.[locale]||
-   window.ChlohaPokeAPILocalizedNames?.pokemon?.[base.id]?.[locale]);
+  const baseJapanese=(prefix?raw.slice(prefix.length):raw)
+   .replace(/[XYZ]$/,'').replace(/\\([^)]*\\)$/,'');
+  const speciesCatalog=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
+  const baseRecord=[...pokemonById.values()].find(q=>q.name===baseJapanese);
+  const catalogEntry=Object.values(speciesCatalog).find(entry=>entry.ja===baseJapanese);
+  const baseTranslated=(baseRecord&&(
+   window.ChlohaLocalizedNames?.pokemon?.[baseRecord.id]?.[locale]||
+   speciesCatalog[baseRecord.id]?.[locale]))||catalogEntry?.[locale];
   if(!baseTranslated)return null;
   if(prefix){
    const affix=raw.match(/[XYZ]$/)?.[0]||'';
