@@ -50,6 +50,13 @@ try {
    ['Life Orb and Reflect stack',rolls({attItem:'lifeOrb',screen:'reflect'}).every((n,i)=>n<=rolls({attItem:'lifeOrb'})[i])],
    ['Friend Guard and Life Orb stack',rolls({friendGuardCount:1,attItem:'lifeOrb'}).every((n,i)=>n<=rolls({attItem:'lifeOrb'})[i])],
    ['Natural immunity persists through critical and weather',rolls({defTypes:['ゴースト'],moveType:'ノーマル',critical:true,weather:'sun'}).every(n=>n===0)],
+   // Terrain audit: compare supported grounded/ungrounded and type-specific effects.
+   ['Electric Terrain does not boost Normal',same(rolls({terrain:'electric'}),rolls({}))],
+   ['Psychic Terrain does not boost Normal',same(rolls({terrain:'psychic'}),rolls({}))],
+   ['Misty Terrain does not boost Normal',same(rolls({terrain:'misty'}),rolls({}))],
+   ['Grassy Terrain does not boost Normal',same(rolls({terrain:'grassy'}),rolls({}))],
+   ['Electric Terrain does not boost ungrounded Electric attacker',same(rolls({terrain:'electric',moveType:'でんき',attGrounding:'airborne'}),rolls({moveType:'でんき',attGrounding:'airborne'}))],
+   ['Misty Terrain does not reduce non-Dragon',same(rolls({terrain:'misty',moveType:'ノーマル'}),rolls({moveType:'ノーマル'}))],
    ['Fur Coat physical doubles defense',same(rolls({defAbility:'furCoat'}),rolls({defense:200}))],
    ['Fur Coat special unchanged',same(rolls({defAbility:'furCoat',category:'special'}),rolls({category:'special'}))],
    ['Ice Scales physical unchanged',same(rolls({defAbility:'iceScales'}),rolls({}))],
