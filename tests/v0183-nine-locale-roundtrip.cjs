@@ -8,6 +8,22 @@ const path=require('node:path');
   const page=await browser.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  // Every previously missing form must now have a source-backed base species
+  // in all eight non-Japanese locales. This checks data coverage, not whether
+  // each constructed form label has been verified as an official spelling.
+  const formCoverage=await page.evaluate(()=>{
+   const db=window.ChlohaFormSpeciesBases||{};
+   const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+   return {count:Object.keys(db).length,
+    missing:Object.entries(db).flatMap(([id,record])=>
+     locales.filter(locale=>!record.base?.[locale])
+      .map(locale=>id+':'+locale)),
+    unexpected:Object.entries(db).filter(([,record])=>record.status!=='base-verified-form-provisional')
+     .map(([id])=>id)};
+  });
+  assert.equal(formCoverage.count,129,'all 129 missing form records have species bases');
+  assert.deepEqual(formCoverage.missing,[],'eight-language species base coverage');
+  assert.deepEqual(formCoverage.unexpected,[],'provisional forms must remain explicitly labeled');
   const selector=page.locator('#chloha-locale');
   const steps=[
    ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
