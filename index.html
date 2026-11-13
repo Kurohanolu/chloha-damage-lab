@@ -605,6 +605,20 @@ const dbInputs=new Set(['beatUpStats','dragonDartsHits','flingPower','dbAttPokem
 function syncCriticalToggle(){const active=$('critical').checked;const btn=$('criticalToggle');btn.setAttribute('aria-pressed',String(active));btn.textContent=active?'急所ダメージ ×1.5':'通常ダメージ';btn.style.background=active?'#b72751':'#28364e';btn.style.borderColor=active?'#ff8caf':'#75839b';}
 $('criticalToggle').addEventListener('click',()=>{$('critical').checked=!$('critical').checked;syncCriticalToggle();$('critical').dispatchEvent(new Event('input',{bubbles:true}));});
 $('critical').addEventListener('input',syncCriticalToggle);syncCriticalToggle();
+// Show only the plate matching the currently selected move type.
+// Keep the existing option nodes so locale translation metadata survives updates.
+const plateOptions=new Map([...$('attItem').options].filter(o=>Object.hasOwn(TYPE_PLATES,o.value)).map(o=>[o.value,o]));
+function syncPlateChoice(){
+ const select=$('attItem');
+ const selected=select.value;
+ const moveType=$('dbAuto').checked?(movesById.get($('dbMove').value)?.type||$('moveType').value):$('moveType').value;
+ const matching=[...plateOptions].find(([id])=>TYPE_PLATES[id]===moveType);
+ for(const [id,option] of plateOptions)if(option.parentElement===select)option.remove();
+ if(matching)select.append(matching[1]);
+ if(plateOptions.has(selected)&&selected!==matching?.[0])select.value='none';
+ else if([...select.options].some(o=>o.value===selected))select.value=selected;
+}
+syncPlateChoice();
 document.querySelectorAll('input,select').forEach(el=>{
  if(el.id==='battleObservedDamage')return;
  el.addEventListener('input',()=>{
@@ -619,6 +633,7 @@ document.querySelectorAll('input,select').forEach(el=>{
     if(el.id==='dbAuto'&&$('dbAuto').checked)window.ChlohaCurrentAttMaxHp=Number($('attMaxHp').value);
     applyDb();dbInputError=null;
    }
+   syncPlateChoice();
    if(dbInputError){showInputError(dbInputError);return;}
    render();
   }catch(e){showInputError(e);}
