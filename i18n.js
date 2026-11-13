@@ -753,6 +753,16 @@ function localizedDynamicControl(base,target){
  if(target==='ja'||target==='en')return null;
  const exact=localizedControlPhrases[base]?.[target];
  if(exact)return exact;
+ const baseStat=String(english).match(/^Base stat\s+(\d+)$/);
+ if(baseStat){
+  const label={fr:'Statistique de base',de:'Basiswert',es:'Estadística base',it:'Statistica base',ko:'종족값','zh-Hans':'种族值','zh-Hant':'種族值'}[target];
+  return label+' '+baseStat[1];
+ }
+ const dynamicStat=String(english).match(/^(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)\s+(\d+)$/);
+ if(dynamicStat){
+  const label=localeUiPhrases[dynamicStat[1]]?.[target]||dynamicStat[1];
+  return label+' '+dynamicStat[2];
+ }
  const point=String(base).match(/^(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)\s+(\d+)$/);
  if(point){
   const ja={'HP':'HP','Attack':'攻撃','Defense':'防御','Sp. Atk':'特攻','Sp. Def':'特防','Speed':'素早さ'}[point[1]];
