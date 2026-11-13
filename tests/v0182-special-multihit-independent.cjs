@@ -62,4 +62,20 @@ for(const name of ['トリプルアクセル','ネズミざん']){
  for(const [damage,p] of full)expected.set(damage,(expected.get(damage)||0)+.9*p);
  verify(name+' Skill Link single accuracy check',specialItemDistribution(name,i=>hitRolls[i],{accuracy:.9,skillLink:true}),expected);
 }
+// Population Bomb + Loaded Dice: one accuracy check, then uniformly 4-10 hits.
+// Compute the mixture independently rather than reusing the production distribution.
+{
+ const name='ネズミざん',accuracy=.9;
+ const expected=new Map([[0,1-accuracy]]);
+ for(let hits=4;hits<=10;hits++){
+  const partial=fullHitOracle(rolls.slice(0,hits));
+  for(const [damage,p] of partial)
+   expected.set(damage,(expected.get(damage)||0)+accuracy*p/7);
+ }
+ verify('Population Bomb Loaded Dice 4-10 hits',specialItemDistribution(name,i=>rolls[i],{accuracy,loadedDice:true}),expected);
+ const allHit=fullHitOracle(rolls);
+ const skillExpected=new Map([[0,.1]]);
+ for(const [damage,p] of allHit)skillExpected.set(damage,(skillExpected.get(damage)||0)+.9*p);
+ verify('Population Bomb Skill Link overrides Loaded Dice',specialItemDistribution(name,i=>rolls[i],{accuracy,skillLink:true,loadedDice:true}),skillExpected);
+}
 console.log('PASS independent special multi-hit accuracy and KO audit');
