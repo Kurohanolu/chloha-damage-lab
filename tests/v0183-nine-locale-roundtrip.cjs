@@ -93,7 +93,11 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    ['spookyPlate','ゴースト'],['dracoPlate','ドラゴン'],['dreadPlate','あく'],
    ['ironPlate','はがね'],['pixiePlate','フェアリー']
   ];
-  await page.locator('#dbAuto').uncheck();
+  await page.locator('#dbAuto').evaluate(el=>{
+   el.checked=false;
+   el.dispatchEvent(new Event('input',{bubbles:true}));
+   el.dispatchEvent(new Event('change',{bubbles:true}));
+  });
   for(const locale of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
    await page.locator('#chloha-locale').selectOption(locale);
    for(const [id,type] of plateCases){
