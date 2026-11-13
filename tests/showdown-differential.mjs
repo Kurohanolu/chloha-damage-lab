@@ -19,11 +19,16 @@ try{
   {name:'neutral physical / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく']},
   {name:'neutral special / Flamethrower',att:'Charizard',def:'Blastoise',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'none',attTypes:['ほのお','ひこう'],defTypes:['みず']},
   {name:'rain / Flamethrower',att:'Charizard',def:'Blastoise',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'rain',attTypes:['ほのお','ひこう'],defTypes:['みず']},
-  {name:'rain / Surf',att:'Blastoise',def:'Charizard',move:'Surf',type:'みず',category:'special',power:90,weather:'rain',attTypes:['みず'],defTypes:['ほのお','ひこう']}
+  {name:'rain / Surf',att:'Blastoise',def:'Charizard',move:'Surf',type:'みず',category:'special',power:90,weather:'rain',attTypes:['みず'],defTypes:['ほのお','ひこう']},
+  {name:'attack +1 / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく'],attackStage:1},
+  {name:'defense +2 / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく'],defenseStage:2},
+  {name:'burned attacker / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく'],burn:true},
+  {name:'Life Orb / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく'],attItem:'lifeOrb'},
+  {name:'Choice Specs / Flamethrower',att:'Charizard',def:'Blastoise',move:'Flamethrower',type:'ほのお',category:'special',power:90,weather:'none',attTypes:['ほのお','ひこう'],defTypes:['みず'],attItem:'choiceSpecs'}
  ];
  for(const c of cases){
-  const attacker=new Pokemon(gen,c.att,{level:50,nature:'Serious',ability:'',item:'',evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
-  const defender=new Pokemon(gen,c.def,{level:50,nature:'Serious',ability:'',item:'',evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
+  const attacker=new Pokemon(gen,c.att,{level:50,nature:'Serious',ability:'',item:({lifeOrb:'Life Orb',choiceSpecs:'Choice Specs'}[c.attItem]||''),status:c.burn?'brn':'',boosts:{atk:c.attackStage||0},evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
+  const defender=new Pokemon(gen,c.def,{level:50,nature:'Serious',ability:'',item:'',boosts:{def:c.defenseStage||0},evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0}});
   const move=new Move(gen,c.move,{});
   const field=new Field({gameType:'Singles',weather:c.weather==='rain'?'Rain':undefined});
   const reference=calculate(gen,attacker,defender,move,field);
@@ -32,11 +37,11 @@ try{
   const args={
    level:50,power:c.power,attack:attacker.stats[statKey],defense:defender.stats[defKey],
    hp:defender.stats.hp,currentHp:defender.stats.hp,
-   attackStage:0,defenseStage:0,attAbility:'none',defAbility:'none',
-   attItem:'none',defItem:'none',stabMode:'auto',attMaxHp:attacker.stats.hp,
+   attackStage:c.attackStage||0,defenseStage:c.defenseStage||0,attAbility:'none',defAbility:'none',
+   attItem:c.attItem||'none',defItem:'none',stabMode:'auto',attMaxHp:attacker.stats.hp,
    attCurrentHp:attacker.stats.hp,helpingHand:false,friendGuardCount:0,
    battleFormat:'singles',spread:'single',weather:c.weather,terrain:'none',
-   category:c.category,screen:'none',burn:false,critical:false,
+   category:c.category,screen:'none',burn:!!c.burn,critical:false,
    moveMechanic:'none',attTypes:c.attTypes,defTypes:c.defTypes,moveType:c.type
   };
   try{
@@ -47,4 +52,4 @@ try{
  }
 }finally{await browser.close();}
 if(failures){console.error(failures+' Showdown comparisons failed');process.exitCode=1;}
-else console.log('All Showdown differential cases matched.');
+else console.log(`All ${4+5} Showdown differential cases matched.`);
