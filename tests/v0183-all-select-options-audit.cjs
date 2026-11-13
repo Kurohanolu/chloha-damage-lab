@@ -20,6 +20,44 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
     })));
    });
   }
+  // Expand every details panel before auditing visible text, not only native selects.
+  // Capture English-identical UI text as review candidates; legitimate names remain nonfatal.
+  const uiSnapshots={};
+  for(const target of ['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
+   await selector.selectOption(target);
+   uiSnapshots[target]=await page.evaluate(()=>{
+    document.querySelectorAll('details').forEach(d=>d.open=true);
+    const root=document.getElementById('app')||document.body;
+    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    const items=[];let node;
+    while((node=walker.nextNode())){
+     const p=node.parentElement;
+     if(!p||p.closest('script,style,option,textarea,[data-no-translate]'))continue;
+     const value=node.nodeValue.trim();
+     if(!value||!p.getClientRects().length)continue;
+     const chain=[];let e=p;
+     while(e&&e!==root&&chain.length<5){
+      const index=e.parentElement?[...e.parentElement.children].indexOf(e):0;
+      chain.unshift(e.tagName.toLowerCase()+':'+index);e=e.parentElement;
+     }
+     items.push({key:chain.join('/')+':'+items.filter(x=>x.key.startsWith(chain.join('/')+':')).length,text:value});
+    }
+    return items;
+   });
+  }
+  const englishUi=new Map(uiSnapshots.en.map(x=>[x.key,x.text]));
+  const japaneseUi=new Map(uiSnapshots.ja.map(x=>[x.key,x.text]));
+  for(const target of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
+   const candidates=[];
+   for(const item of uiSnapshots[target]){
+    const en=englishUi.get(item.key),ja=japaneseUi.get(item.key);
+    if(en&&ja&&en!==ja&&en===item.text&&/[A-Za-z]{3}/.test(en))
+     candidates.push({key:item.key,text:item.text});
+   }
+   console.log('AUDIT EXPANDED UI '+target+' English-equal='+candidates.length+
+    '; examples='+JSON.stringify(candidates.slice(0,30)));
+  }
+  await selector.selectOption('ja');
   const key=o=>o.select+'|'+o.value+'|'+o.index;
   const japanese=new Map(snapshots.ja.map(o=>[key(o),o]));
   const english=new Map(snapshots.en.map(o=>[key(o),o]));
