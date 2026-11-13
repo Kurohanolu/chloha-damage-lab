@@ -27,6 +27,8 @@ jobs:
         run: npm run test:showdown
       - name: Nine-locale rotation and translated form search
         run: node tests/v0183-nine-locale-roundtrip.cjs
+      - name: Exhaustive nine-language native select audit
+        run: node tests/v0183-all-select-options-audit.cjs
 
   report:
     if: ${{ always() && github.event_name != 'pull_request' }}
