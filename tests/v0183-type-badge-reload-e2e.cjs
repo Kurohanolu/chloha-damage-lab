@@ -21,7 +21,10 @@ const path=require('node:path');
    assert.equal(before.length,2,'missing type badges '+locale);
    await page.reload();
    assert.equal(await page.locator('#chloha-locale').inputValue(),locale,'locale lost on reload '+locale);
-   await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
+   // Wait for the page's asynchronous default Pokémon render to finish before changing the selection.
+   // Otherwise a pending initial render can overwrite Dragapult's badges after the change event.
+   await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
+   await page.locator('#dbAttPokemon').selectOption('dragapult');
    await page.waitForFunction(expected=>{
     const badges=[...document.querySelectorAll('#attTypes .type-pill')].map(el=>el.textContent.trim());
     const nodes=[...document.querySelectorAll('#attTypes .type-pill')];
