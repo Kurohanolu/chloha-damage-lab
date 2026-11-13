@@ -70,6 +70,30 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
      candidates:[...entries].map(([value,text])=>({value,text}))}));
    }
   }
+  // Compare exact species names against the bundled PokeAPI official translations.
+  // Exclude forms and ambiguous English names: those require separate form-aware verification.
+  const official=await page.evaluate(()=>Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
+   .filter(x=>x?.en&&x?.ja).map(x=>({en:x.en,ja:x.ja,
+    fr:x.fr,de:x.de,es:x.es,it:x.it,ko:x.ko,'zh-Hans':x['zh-Hans'],'zh-Hant':x['zh-Hant']})));
+  const byEnglish=new Map();
+  for(const entry of official){
+   if(!byEnglish.has(entry.en))byEnglish.set(entry.en,[]);
+   byEnglish.get(entry.en).push(entry);
+  }
+  const officialMismatch=[],officialVerified=[];
+  for(const [locale,groups] of Object.entries(reviewGroups)){
+   for(const [value,display] of groups.pokemon||[]){
+    const matches=byEnglish.get(display)||[];
+    if(matches.length!==1||!matches[0][locale])continue;
+    const expected=matches[0][locale];
+    const item={locale,value,display,expected};
+    if(display===expected)officialVerified.push(item);
+    else officialMismatch.push(item);
+   }
+  }
+  console.log('AUDIT OFFICIAL species English-equal verified='+officialVerified.length+
+   '; official-name mismatches='+officialMismatch.length);
+  for(const x of officialMismatch)console.log('AUDIT OFFICIAL MISMATCH '+JSON.stringify(x));
   for(const x of confirmedKana)console.log('AUDIT FINDING '+JSON.stringify(x));
   assert.deepEqual(errors,[],'browser errors during select audit');
   assert.equal(confirmedKana.length,0,'Japanese kana must not remain in non-Japanese native selectors');
