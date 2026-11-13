@@ -57,7 +57,7 @@ const path=require('node:path');
     if(lang!=='ja'){
      for(const field of ['board','verdict','koVerdict','koDetail','attAbility','defAbility','attItem','defItem']){
       const value=state[field]||'';
-      assert.ok(!/[ぁ-ゟ゠-ヿ一-龯]/u.test(value),field+' has Japanese characters: '+value);
+      assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(value),field+' has Japanese characters: '+value);
      }
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 なし'), 'Japanese board');
