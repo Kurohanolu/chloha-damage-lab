@@ -553,6 +553,16 @@ const key='chloha.damageLab.locale';
 const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
 // v0.183: reviewed high-visibility labels, separate from damage engine.
+const expandedPanelTranslations={
+ 'Input mode and manual stats':{fr:'Mode de saisie et statistiques manuelles',de:'Eingabemodus und manuelle Werte',es:'Modo de entrada y estadísticas manuales',it:'Modalità di inserimento e statistiche manuali',ko:'입력 방식 및 수동 능력치','zh-Hans':'输入模式与手动能力值','zh-Hant':'輸入模式與手動能力值'},
+ 'Observed damage and battle-state carryover':{fr:'Dégâts observés et report de l’état du combat',de:'Beobachteter Schaden und Übernahme des Kampfzustands',es:'Daño observado y continuidad del estado de combate',it:'Danni osservati e mantenimento dello stato di lotta',ko:'실측 피해 및 배틀 상태 이어받기','zh-Hans':'实测伤害与对战状态继承','zh-Hant':'實測傷害與對戰狀態繼承'},
+ 'Verification status and calculation model notes':{fr:'État de vérification et remarques sur le modèle de calcul',de:'Prüfstatus und Hinweise zum Berechnungsmodell',es:'Estado de verificación y notas del modelo de cálculo',it:'Stato della verifica e note sul modello di calcolo',ko:'검증 상태 및 계산 모델 참고 사항','zh-Hans':'验证状态与计算模型说明','zh-Hant':'驗證狀態與計算模型說明'},
+ 'Confirm move use':{fr:'Confirmer l’utilisation de la capacité',de:'Attackeneinsatz bestätigen',es:'Confirmar el uso del movimiento',it:'Conferma l’uso della mossa',ko:'기술 사용 확정','zh-Hans':'确认使用招式','zh-Hant':'確認使用招式'},
+ 'Undo one turn':{fr:'Annuler un tour',de:'Einen Zug rückgängig machen',es:'Deshacer un turno',it:'Annulla un turno',ko:'한 턴 되돌리기','zh-Hans':'撤销一回合','zh-Hant':'復原一回合'},
+ 'Clear history':{fr:'Effacer l’historique',de:'Verlauf löschen',es:'Borrar historial',it:'Cancella cronologia',ko:'기록 지우기','zh-Hans':'清除历史记录','zh-Hant':'清除歷史記錄'},
+ 'Observed damage':{fr:'Dégâts observés',de:'Beobachteter Schaden',es:'Daño observado',it:'Danni osservati',ko:'실측 피해','zh-Hans':'实测伤害','zh-Hant':'實測傷害'},
+ 'Show calculation trace':{fr:'Afficher les étapes du calcul',de:'Berechnungsschritte anzeigen',es:'Mostrar los pasos del cálculo',it:'Mostra i passaggi del calcolo',ko:'계산 과정 표시','zh-Hans':'显示计算过程','zh-Hant':'顯示計算過程'}
+};
 const localeUiPhrases={
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
  'e.g. Earthquake, Thunderbolt':{fr:'Ex. : Séisme, Tonnerre',de:'z. B. Erdbeben, Donnerblitz',es:'p. ej., Terremoto, Rayo',it:'es. Terremoto, Fulmine',ko:'예: 지진, 10만볼트','zh-Hans':'例如：地震、十万伏特','zh-Hant':'例如：地震、十萬伏特'},
@@ -754,7 +764,7 @@ function localizedUi(base){
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
  const dynamic=localizedDynamicControl(base,locale)||localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
- const direct=localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
+ const direct=expandedPanelTranslations[base]?.[locale]||expandedPanelTranslations[translateRuntime(base)]?.[locale]||localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
  if(!catalog)return translateRuntime(base);
  const source=catalog.ja||{};
