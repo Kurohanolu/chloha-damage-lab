@@ -186,6 +186,11 @@ const dictionary={
 };
 // One source of truth for battle display names. The battle IDs are never changed.
 const optionOriginal=new WeakMap();
+// The PokeAPI catalog uses canonical species IDs, while our calculator roster
+// also uses legacy IDs. Resolve exact Japanese names without guessing forms.
+const pokemonByJapanese=new Map(Object.values(window.ChlohaPokeAPILocalizedNames?.pokemon||{})
+ .filter(entry=>entry?.ja)
+ .map(entry=>[entry.ja,entry]));
 const nameGroups=window.ChlohaNames||{};
 const entityNames=Object.assign({},...Object.values(nameGroups));
 const reverseNames=Object.fromEntries(Object.entries(entityNames).map(([ja,en])=>[en,ja]));
@@ -290,7 +295,7 @@ function translateOptions(){
     : move
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
-   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale];
+   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||(pokemonOption?pokemonByJapanese.get(base)?.[locale]:null);
    const abilityStatusLabels={
     fr:[' (pris en charge)',' (partiellement pris en charge)',' (non pris en charge)'],
     de:[' (unterstützt)',' (teilweise unterstützt)',' (nicht unterstützt)'],
