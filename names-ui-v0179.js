@@ -11,6 +11,11 @@ function english(option,select){
   return data.pokemon[option.value]||null;
  }
  if(/ability/i.test(select.id))return data.abilities[norm(ja)]||null;
+ if(select.id==='attItem' && /Plate$/.test(option.value)){
+  const plateType={flamePlate:'Fire',splashPlate:'Water',zapPlate:'Electric',meadowPlate:'Grass',iciclePlate:'Ice',fistPlate:'Fighting',toxicPlate:'Poison',earthPlate:'Ground',skyPlate:'Flying',mindPlate:'Psychic',insectPlate:'Bug',stonePlate:'Rock',spookyPlate:'Ghost',dracoPlate:'Dragon',dreadPlate:'Dark',ironPlate:'Steel',pixiePlate:'Fairy'}[option.value];
+  const plateName=data.items[norm(ja.split('（')[0])];
+  if(plateName&&plateType)return plateName+' ('+plateType+' moves ×1.2)';
+ }
  if(select.id==='defItem' && /Berry$/.test(option.value)){
   const berryType={chilanBerry:'Normal',occaBerry:'Fire',passhoBerry:'Water',wacanBerry:'Electric',rindoBerry:'Grass',yacheBerry:'Ice',chopleBerry:'Fighting',kebiaBerry:'Poison',shucaBerry:'Ground',cobaBerry:'Flying',payapaBerry:'Psychic',tangaBerry:'Bug',chartiBerry:'Rock',kasibBerry:'Ghost',habanBerry:'Dragon',colburBerry:'Dark',babiriBerry:'Steel',roseliBerry:'Fairy'}[option.value];
   const berryName=data.items[norm(ja.split('（')[0])];
