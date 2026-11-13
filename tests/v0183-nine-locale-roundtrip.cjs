@@ -72,7 +72,7 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
    it:['Dado Truccato (4–5 colpi)','Lastrageo (mosse Terra ×1,2)'],
    ko:['속임수주사위 (4~5회 명중)','대지플레이트 (땅타입 기술 ×1.2)'],
    'zh-Hans':['机变骰子（命中4～5次）','大地石板（地面属性招式×1.2）'],
-   'zh-Hant':['機變骰子（命中4～5次）','大地石板（地面屬性招式×1.2）']
+   'zh-Hant':['老千骰子（命中4～5次）','大地石板（地面屬性招式×1.2）']
   };
   for(const [locale,expected] of Object.entries(itemLabelChecks)){
    await page.locator('#chloha-locale').selectOption(locale);
