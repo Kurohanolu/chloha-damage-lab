@@ -117,6 +117,24 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
     }
    }
   }
+  // Mega forms in Italian use the same English species name with the Mega prefix.
+  // Verify that the suffix exactly equals the official Italian base species name.
+  // This is a structural check, not a claim that every form title is official.
+  const formStructureVerified=[],formStructurePending=[];
+  for(const item of needsFormReview){
+   const mega=item.locale==='it'&&item.display.startsWith('Mega ');
+   const rotom=item.locale==='de'&&item.display.startsWith('Rotom (');
+   if(mega&&item.officialBase&&item.display==='Mega '+item.officialBase){
+    formStructureVerified.push({...item,rule:'Italian Mega + official base species'});
+   }else if(rotom&&item.officialBase==='Rotom'&&item.display==='Rotom (Frost)'){
+    formStructurePending.push({...item,rule:'German Rotom form name needs form-specific official check'});
+   }else{
+    formStructurePending.push(item);
+   }
+  }
+  console.log('AUDIT FORM STRUCTURE verified='+formStructureVerified.length+
+   '; pending official-form verification='+formStructurePending.length);
+  for(const item of formStructurePending)console.log('AUDIT FORM PENDING '+JSON.stringify(item));
   console.log('AUDIT CANONICAL verified='+verifiedById.length+
    '; mismatches='+canonicalMismatch.length+
    '; form-review='+needsFormReview.length+
