@@ -87,6 +87,7 @@ jobs:
       - run: node tests/v0182-forced-critical-immunity.mjs
       - run: node tests/v0182-defensive-modifier-composition.mjs
       - run: node tests/v0182-defensive-rounding-oracle.mjs
+      - run: node tests/v0182-offense-defense-rounding-oracle.mjs
       - run: node tests/v0177-engine-audit.cjs
       - run: node tests/v0177-independent-vectors.cjs
       - run: node tests/v0177-modifier-vectors.cjs
