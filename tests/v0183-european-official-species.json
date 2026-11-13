@@ -1,0 +1,27 @@
+{
+  "description": "Official Pokémon species spellings, keyed by National Pokédex number; source URLs verified individually. Not a claim of complete species coverage.",
+  "species": [
+    {
+      "nationalDex": 6,
+      "key": "charizard",
+      "names": {
+        "fr": {
+          "name": "Dracaufeu",
+          "sourceUrl": "https://www.pokemon.com/fr/pokedex/dracaufeu/"
+        },
+        "de": {
+          "name": "Glurak",
+          "sourceUrl": "https://www.pokemon.com/de/pokemon-news/erhalte-in-pokemon-karmesin-oder-pokemon-purpur-ein-glurak-vom-tera-typ-unlicht"
+        },
+        "es": {
+          "name": "Charizard",
+          "sourceUrl": "https://www.pokemon.com/es/noticias-pokemon/recibe-un-charizard-de-teratipo-siniestro-en-pokemon-escarlata-o-pokemon-purpura"
+        },
+        "it": {
+          "name": "Charizard",
+          "sourceUrl": "https://www.pokemon.com/it/pokedex?type=flying"
+        }
+      }
+    }
+  ]
+}
