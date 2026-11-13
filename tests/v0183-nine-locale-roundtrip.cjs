@@ -106,6 +106,22 @@ const path=require('node:path');
     movePlaceholder:document.querySelector('#moveSearch')?.getAttribute('placeholder'),
     selected:Object.fromEntries(Object.keys(window.__roundtripControls||{}).map(id=>[id,document.getElementById(id)?.value]))
    }));
+   // Verify all 18 types in both Japanese and English source forms.
+   const typeAudit=await page.evaluate(()=>{
+    const types=[['ノーマル','Normal'],['ほのお','Fire'],['みず','Water'],['でんき','Electric'],
+     ['くさ','Grass'],['こおり','Ice'],['かくとう','Fighting'],['どく','Poison'],
+     ['じめん','Ground'],['ひこう','Flying'],['エスパー','Psychic'],['むし','Bug'],
+     ['いわ','Rock'],['ゴースト','Ghost'],['ドラゴン','Dragon'],['あく','Dark'],
+     ['はがね','Steel'],['フェアリー','Fairy']];
+    return types.map(([ja,en])=>({ja,en,fromJa:window.ChlohaLocale.typeName(ja),
+     fromEn:window.ChlohaLocale.typeName(en)}));
+   });
+   for(const t of typeAudit){
+    assert.equal(t.fromEn,t.fromJa,'mixed-source type translation '+lang+': '+t.en);
+    assert.ok(t.fromJa&&t.fromJa!=='undefined','type label missing '+lang+': '+t.ja);
+    if(lang!=='ja')assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(t.fromJa),
+     'untranslated type '+lang+': '+t.ja+' => '+t.fromJa);
+   }
    // Search suggestions are dynamically generated, so the static UI i18n
    // audit does not cover their names and type badges.
    if(i===0){
