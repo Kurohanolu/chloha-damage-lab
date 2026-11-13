@@ -553,6 +553,143 @@ const key='chloha.damageLab.locale';
 const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
 // v0.183: reviewed high-visibility labels, separate from damage engine.
+const expandedSettingsTranslations={
+ "Attack and damage modifiers": {
+  "fr": "Modificateurs d’attaque et de dégâts",
+  "de": "Angriffs- und Schadensmodifikatoren",
+  "es": "Modificadores de ataque y daño",
+  "it": "Modificatori di attacco e danno",
+  "ko": "공격 및 피해 보정",
+  "zh-Hans": "攻击与伤害修正",
+  "zh-Hant": "攻擊與傷害修正"
+ },
+ "HP, attack modifiers and Speed": {
+  "fr": "PV, modificateurs d’attaque et Vitesse",
+  "de": "KP, Angriffsmodifikatoren und Initiative",
+  "es": "PS, modificadores de ataque y Velocidad",
+  "it": "PS, modificatori di attacco e Velocità",
+  "ko": "HP, 공격 보정 및 스피드",
+  "zh-Hans": "HP、攻击修正与速度",
+  "zh-Hant": "HP、攻擊修正與速度"
+ },
+ "HP, ally support and Speed": {
+  "fr": "PV, soutien allié et Vitesse",
+  "de": "KP, Unterstützung und Initiative",
+  "es": "PS, apoyo aliado y Velocidad",
+  "it": "PS, supporto alleato e Velocità",
+  "ko": "HP, 아군 지원 및 스피드",
+  "zh-Hans": "HP、队友支援与速度",
+  "zh-Hant": "HP、隊友支援與速度"
+ },
+ "HP and bulk adjustments": {
+  "fr": "Ajustements des PV et de la résistance",
+  "de": "KP- und Defensivanpassungen",
+  "es": "Ajustes de PS y resistencia",
+  "it": "Regolazioni di PS e resistenza",
+  "ko": "HP 및 내구 조정",
+  "zh-Hans": "HP与耐久调整",
+  "zh-Hant": "HP與耐久調整"
+ },
+ "Speed and action state": {
+  "fr": "Vitesse et état des actions",
+  "de": "Initiative und Aktionsstatus",
+  "es": "Velocidad y estado de acción",
+  "it": "Velocità e stato delle azioni",
+  "ko": "스피드 및 행동 상태",
+  "zh-Hans": "速度与行动状态",
+  "zh-Hant": "速度與行動狀態"
+ },
+ "Defensive modifiers and ally support": {
+  "fr": "Modificateurs défensifs et soutien allié",
+  "de": "Defensivmodifikatoren und Unterstützung",
+  "es": "Modificadores defensivos y apoyo aliado",
+  "it": "Modificatori difensivi e supporto alleato",
+  "ko": "방어 보정 및 아군 지원",
+  "zh-Hans": "防御修正与队友支援",
+  "zh-Hant": "防禦修正與隊友支援"
+ },
+ "Critical hit (advanced)": {
+  "fr": "Coup critique (avancé)",
+  "de": "Volltreffer (erweitert)",
+  "es": "Golpe crítico (avanzado)",
+  "it": "Brutto colpo (avanzato)",
+  "ko": "급소 (고급)",
+  "zh-Hans": "击中要害（高级）",
+  "zh-Hant": "擊中要害（進階）"
+ },
+ "Helping Hand (ally support)": {
+  "fr": "Coup d’Main (soutien allié)",
+  "de": "Rechte Hand (Unterstützung)",
+  "es": "Refuerzo (apoyo aliado)",
+  "it": "Altruismo (supporto alleato)",
+  "ko": "도우미 (아군 지원)",
+  "zh-Hans": "帮助（队友支援）",
+  "zh-Hant": "幫助（隊友支援）"
+ },
+ "Defender grounding": {
+  "fr": "Contact au sol du défenseur",
+  "de": "Bodenkontakt des Verteidigers",
+  "es": "Contacto con el suelo del defensor",
+  "it": "Contatto col terreno del difensore",
+  "ko": "방어 측 지면 접촉",
+  "zh-Hans": "防御方着地状态",
+  "zh-Hant": "防禦方著地狀態"
+ },
+ "Attacker grounding": {
+  "fr": "Contact au sol de l’attaquant",
+  "de": "Bodenkontakt des Angreifers",
+  "es": "Contacto con el suelo del atacante",
+  "it": "Contatto col terreno dell’attaccante",
+  "ko": "공격 측 지면 접촉",
+  "zh-Hans": "攻击方着地状态",
+  "zh-Hant": "攻擊方著地狀態"
+ },
+ "Additional damage multiplier (0.01–10)": {
+  "fr": "Multiplicateur de dégâts supplémentaire (0,01–10)",
+  "de": "Zusätzlicher Schadensmultiplikator (0,01–10)",
+  "es": "Multiplicador de daño adicional (0,01–10)",
+  "it": "Moltiplicatore di danno aggiuntivo (0,01–10)",
+  "ko": "추가 피해 배율 (0.01–10)",
+  "zh-Hans": "额外伤害倍率（0.01–10）",
+  "zh-Hant": "額外傷害倍率（0.01–10）"
+ },
+ "Ally Friend Guard (max 1 in doubles)": {
+  "fr": "Garde Amie alliée (1 max. en duo)",
+  "de": "Verbündeter Freundeshutzeffekt (max. 1 im Doppelkampf)",
+  "es": "Compiescolta aliada (máx. 1 en dobles)",
+  "it": "Amicoscudo alleato (max 1 in doppio)",
+  "ko": "아군 프렌드가드 (더블 최대 1)",
+  "zh-Hans": "队友友情防守（双打最多1个）",
+  "zh-Hant": "隊友友情防守（雙打最多1個）"
+ },
+ "Copy": {
+  "fr": "Copier",
+  "de": "Kopieren",
+  "es": "Copiar",
+  "it": "Copia",
+  "ko": "복사",
+  "zh-Hans": "复制",
+  "zh-Hant": "複製"
+ },
+ "Targets": {
+  "fr": "Cibles",
+  "de": "Ziele",
+  "es": "Objetivos",
+  "it": "Bersagli",
+  "ko": "대상",
+  "zh-Hans": "目标",
+  "zh-Hant": "目標"
+ },
+ "Defense stage": {
+  "fr": "Niveau de Défense",
+  "de": "Verteidigungsstufe",
+  "es": "Nivel de Defensa",
+  "it": "Livello Difesa",
+  "ko": "방어 랭크",
+  "zh-Hans": "防御等级",
+  "zh-Hant": "防禦等級"
+ }
+};
 const expandedLongTextTranslations={
  'Auto-fill stats, types and moves from selected data':{fr:'Remplir automatiquement les statistiques, types et capacités à partir des données sélectionnées',de:'Werte, Typen und Attacken automatisch aus den ausgewählten Daten übernehmen',es:'Completar automáticamente estadísticas, tipos y movimientos según los datos seleccionados',it:'Compila automaticamente statistiche, tipi e mosse dai dati selezionati',ko:'선택한 데이터에서 능력치, 타입, 기술 자동 입력','zh-Hans':'根据所选数据自动填入能力值、属性和招式','zh-Hant':'依據所選資料自動填入能力值、屬性與招式'},
  'Carry over battle state (manual confirmation)':{fr:'Conserver l’état du combat (confirmation manuelle)',de:'Kampfzustand übernehmen (manuelle Bestätigung)',es:'Conservar el estado del combate (confirmación manual)',it:'Mantieni lo stato della lotta (conferma manuale)',ko:'배틀 상태 이어받기 (수동 확인)','zh-Hans':'继承对战状态（手动确认）','zh-Hant':'繼承對戰狀態（手動確認）'},
@@ -809,7 +946,7 @@ function localizedUi(base){
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
  const dynamic=localizedDynamicControl(base,locale)||localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
  if(dynamic)return dynamic;
- const direct=expandedLongTextTranslations[base]?.[locale]||expandedLongTextTranslations[translateRuntime(base)]?.[locale]||expandedPanelTranslations[base]?.[locale]||expandedPanelTranslations[translateRuntime(base)]?.[locale]||localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
+ const direct=expandedSettingsTranslations[base]?.[locale]||expandedSettingsTranslations[translateRuntime(base)]?.[locale]||expandedLongTextTranslations[base]?.[locale]||expandedLongTextTranslations[translateRuntime(base)]?.[locale]||expandedPanelTranslations[base]?.[locale]||expandedPanelTranslations[translateRuntime(base)]?.[locale]||localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
  if(direct)return direct;
  if(!catalog)return translateRuntime(base);
  const source=catalog.ja||{};
