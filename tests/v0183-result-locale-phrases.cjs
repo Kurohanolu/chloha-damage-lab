@@ -22,4 +22,11 @@ for(const lang of ['fr','de','es','it','ko','zh-Hans','zh-Hant']){
   assert.ok(screenshotContext.screenshot[label]?.[lang],lang+' missing '+label);
  }
 }
+const normalizerStart=source.indexOf('const reverseLocalePhrases=new Map();');
+const normalizerEnd=source.indexOf('const original=new WeakMap();',normalizerStart);
+assert.ok(normalizerStart>0&&normalizerEnd>normalizerStart,'locale rerender normalization missing');
+const normalizerCode=source.slice(normalizerStart,normalizerEnd);
+assert.ok(normalizerCode.includes('recoverJapanese(source||value)'),'rerendered translations must recover canonical source');
+assert.ok(source.includes('original.set(node,normalizeFreshLocaleText(trim))'),'DOM rerenders must normalize translated text');
+assert.ok(source.includes('normalizeFreshLocaleText(value)'),'translated attributes must normalize too');
 console.log('PASS v0.183 damage result phrase catalog across seven additional languages');
