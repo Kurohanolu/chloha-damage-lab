@@ -1,9 +1,9 @@
 {
   "workflow": "UI & damage regression",
-  "run_id": 43364014034,
-  "run_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43364014034",
-  "commit": "4a2cb80b989078353148b735ee9330efb5004c33",
+  "run_id": 43364030756,
+  "run_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43364030756",
+  "commit": "a7cd25dcfb691395c09322395c799bf0b1459d1c",
   "ref": "refs/heads/main",
   "status": "failure",
-  "recorded_at": "2026-11-13T04:13:08.710Z"
+  "recorded_at": "2026-11-13T04:13:19.167Z"
 }
