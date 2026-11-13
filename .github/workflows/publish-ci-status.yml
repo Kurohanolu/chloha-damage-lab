@@ -34,6 +34,42 @@ jobs:
                 name: step.name, number: step.number, conclusion: step.conclusion
               }))
             }));
+            // Fetch failed job logs with actions:read; keep a bounded diagnostic excerpt.
+            // Log retrieval failures must never prevent publishing the CI verdict.
+            for (const job of jobs.filter(job => job.conclusion === 'failure')) {
+              const summary = jobResults.find(item => item.html_url === job.html_url);
+              if (!summary) continue;
+              try {
+                const response = await github.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs', {
+                  ...context.repo, job_id: job.id
+                });
+                const raw = response.data;
+                const logText = typeof raw === 'string' ? raw :
+                  Buffer.isBuffer(raw) ? raw.toString('utf8') :
+                  raw instanceof ArrayBuffer ? Buffer.from(raw).toString('utf8') :
+                  ArrayBuffer.isView(raw) ? Buffer.from(raw.buffer, raw.byteOffset, raw.byteLength).toString('utf8') : '';
+                if (!logText) {
+                  summary.log_note = 'Job logs unavailable in API response';
+                  continue;
+                }
+                const lines = logText.split(/\\r?\\n/);
+                const hits = [];
+                const pattern = /AssertionError|Error:|failed|FAIL|not ok|expected:|actual:|at .*tests\\//i;
+                for (let i = 0; i < lines.length; i++) {
+                  if (pattern.test(lines[i])) hits.push(i);
+                }
+                const selected = new Set();
+                for (const i of hits.slice(-20)) {
+                  for (let j = Math.max(0, i - 2); j <= Math.min(lines.length - 1, i + 5); j++) selected.add(j);
+                }
+                for (let i = Math.max(0, lines.length - 35); i < lines.length; i++) selected.add(i);
+                summary.error_excerpt = [...selected].sort((a, b) => a - b)
+                  .map(i => lines[i]).join('\\n').slice(-12000);
+                summary.log_lines = lines.length;
+              } catch (error) {
+                summary.log_note = `Job log retrieval failed: ${error.status || error.message}`;
+              }
+            }
             const payload = {
               head_sha: run.head_sha,
               workflow: run.name,
