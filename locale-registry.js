@@ -37,5 +37,5 @@ const ChlohaLocales=(()=>{
  }
  return Object.freeze({entries,normalize,chain,lookup,missing});
 })();
-if(typeof module!=='undefined'&&module.exports)module.exports=ChlohaLocales;
+if(typeof module!=='undefined'&&module.exports)module.exports={entries:ChlohaLocales.entries,normalize:ChlohaLocales.normalize,chain:ChlohaLocales.chain,lookup:ChlohaLocales.lookup,missing:ChlohaLocales.missing};
 if(typeof globalThis!=='undefined')globalThis.ChlohaLocales=ChlohaLocales;
