@@ -504,6 +504,7 @@ const localeUiPhrases={
  'No matching Pokémon':{fr:'Aucun Pokémon correspondant',de:'Keine passenden Pokémon',es:'No hay Pokémon coincidentes',it:'Nessun Pokémon corrispondente',ko:'일치하는 포켓몬 없음','zh-Hans':'没有匹配的宝可梦','zh-Hant':'沒有符合的寶可夢'},
  'なし':{fr:'Aucun',de:'Keine',es:'Ninguno',it:'Nessuno',ko:'없음','zh-Hans':'无','zh-Hant':'無'},
  'ダブル':{fr:'Duo',de:'Doppel',es:'Doble',it:'Doppio',ko:'더블','zh-Hans':'双打','zh-Hant':'雙打'},
+ 'シングル（検証用）':{fr:'Solo (expérimental)',de:'Einzel (experimentell)',es:'Individual (experimental)',it:'Singolo (sperimentale)',ko:'싱글 (실험용)','zh-Hans':'单打（实验性）','zh-Hant':'單打（實驗性）'},
  'シングル':{fr:'Solo',de:'Einzel',es:'Individual',it:'Singolo',ko:'싱글','zh-Hans':'单打','zh-Hant':'單打'}
 };
 // Verdicts are UI-only: preserve HP values and calculated KO percentages.
