@@ -720,6 +720,18 @@ const expandedPanelTranslations={
  'Damage results, availability and learnsets are not guaranteed.':{fr:'Les dégâts, la disponibilité et les capacités apprises ne sont pas garantis.',de:'Schadenswerte, Verfügbarkeit und erlernbare Attacken sind nicht garantiert.',es:'No se garantizan los daños, la disponibilidad ni los movimientos aprendidos.',it:'Danni, disponibilità e mosse apprendibili non sono garantiti.',ko:'피해량, 사용 가능 여부 및 기술 습득 여부는 보장되지 않습니다.','zh-Hans':'伤害结果、可用性和可学招式均不保证准确。','zh-Hant':'傷害結果、可用性與可學招式均不保證準確。'},
  'Show calculation trace':{fr:'Afficher les étapes du calcul',de:'Berechnungsschritte anzeigen',es:'Mostrar los pasos del cálculo',it:'Mostra i passaggi del calcolo',ko:'계산 과정 표시','zh-Hans':'显示计算过程','zh-Hant':'顯示計算過程'}
 };
+const screenshotLocalePhrases={
+ 'Stat points: 0–32 per stat, 66 total maximum. Blank means zero. Disable auto-fill to edit stats, types and power.':{ko:'능력치 포인트는 각 0~32, 총합 최대 66입니다. 빈칸은 0으로 처리됩니다. 자동 입력을 끄면 능력치, 타입, 기술 위력을 수정할 수 있습니다.'},
+ 'Level (fixed at 50)':{ko:'레벨 (50 고정)'},
+ 'Move power':{ko:'기술 위력'},
+ 'Attack / Sp. Atk stat':{ko:'공격 / 특수공격 실수치'},
+ 'Defense / Sp. Def stat':{ko:'방어 / 특수방어 실수치'},
+ 'Move type':{ko:'기술 타입'},
+ 'Move category':{ko:'기술 분류'},
+ 'Type 1':{ko:'타입 1'},
+ 'Type 2':{ko:'타입 2'},
+ 'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.'}
+};
 const localeUiPhrases={
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
  'e.g. Earthquake, Thunderbolt':{fr:'Ex. : Séisme, Tonnerre',de:'z. B. Erdbeben, Donnerblitz',es:'p. ej., Terremoto, Rayo',it:'es. Terremoto, Fulmine',ko:'예: 지진, 10만볼트','zh-Hans':'例如：地震、十万伏特','zh-Hant':'例如：地震、十萬伏特'},
@@ -841,6 +853,8 @@ function localizedBattlefield(base,target){
 }
 function localizedLiveSummary(base,target){
  const value=String(base);
+ const localizedMax=Object.values(localeUiPhrases['Of max HP:']||{}).find(label=>value.startsWith(label));
+ if(localizedMax)return localizedLiveSummary('Of max HP: '+value.slice(localizedMax.length).trim(),target);
  const max=value.match(/^(?:最大HPに対する割合：|Of max HP:)\s*(.+)$/);
  if(max){
   if(target==='ja')return '最大HPに対する割合：'+max[1];
@@ -1028,6 +1042,16 @@ function localizedUi(base){
  'Defender Tailwind (Speed ×2)':['Vent arrière du défenseur (Vitesse ×2)','Rückenwind des Verteidigers (Initiative ×2)','Viento Afín del defensor (Velocidad ×2)','Ventoincoda del difensore (Velocità ×2)','방어 측 순풍 (스피드 ×2)','防御方顺风（速度×2）','防禦方順風（速度×2）'],
  'Attacker Tailwind (Speed ×2)':['Vent arrière de l’attaquant (Vitesse ×2)','Rückenwind des Angreifers (Initiative ×2)','Viento Afín del atacante (Velocidad ×2)','Ventoincoda dell’attaccante (Velocità ×2)','공격 측 순풍 (스피드 ×2)','攻击方顺风（速度×2）','攻擊方順風（速度×2）']
  };
+ const screenshotText=translateRuntime(base);
+ if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
+ if(locale==='ko'&&screenshotText.startsWith('About versions:'))return screenshotText
+  .replace(/^About versions:/,'버전 안내:')
+  .replace(' is the public UI version. The calculation core ','는 공개 UI 버전입니다. 계산 코어 ')
+  .replace(' identifies the internal API foundation; it does not indicate the current public version or that verification is complete.','는 내부 API 기반 버전으로, 현재 공개 버전이나 검증 완료를 뜻하지 않습니다.')
+  .replace('Automated regression checks for ','자동 회귀 검사 ')
+  .replace(' and ',' 및 ')
+  .replace(' Showdown comparison cases have passed.','건의 Showdown 비교 테스트를 통과했습니다.')
+  .replace('Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.','일부 조건만 Pokémon Champions 실기기와 비교했으며, 모든 조건에서 동일한 결과를 보장하지 않습니다.');
  const reviewedEntry=reviewed[translateRuntime(base)]||reviewed[base];
  if(reviewedEntry){
   const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(locale);
