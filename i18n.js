@@ -269,7 +269,21 @@ function translateOptions(){
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
    const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale];
-   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedEntity||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
+   const abilityStatusLabels={
+    fr:[' (pris en charge)',' (partiellement pris en charge)',' (non pris en charge)'],
+    de:[' (unterstützt)',' (teilweise unterstützt)',' (nicht unterstützt)'],
+    es:[' (compatible)',' (parcialmente compatible)',' (no compatible)'],
+    it:[' (supportata)',' (parzialmente supportata)',' (non supportata)'],
+    ko:[' (지원)',' (일부 지원)',' (미지원)'],
+    'zh-Hans':['（支持）','（部分支持）','（不支持）'],
+    'zh-Hant':['（支援）','（部分支援）','（不支援）']
+   };
+   const abilityName=ability&&(window.ChlohaLocalizedNames?.abilities?.[ability[1]]?.[locale]||window.ChlohaPokeAPILocalizedNames?.abilities?.[ability[1]]?.[locale]||abilityEnglish[ability[1]]||entityNames[ability[1]]||translateRuntime(ability[1]));
+   const abilityStatus=ability&&(ability[2]==='対応'?0:ability[2]==='一部技のみ対応'?1:2);
+   const localizedAbility=ability&&abilityName+(abilityStatusLabels[locale]?.[abilityStatus]||'');
+   const moveName=move&&(window.ChlohaLocalizedNames?.moves?.[move[1]]?.[locale]||window.ChlohaPokeAPILocalizedNames?.moves?.[move[1]]?.[locale]||entityNames[move[1]]||move[1]);
+   const localizedMove=move&&moveName+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4]);
+   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
