@@ -127,6 +127,14 @@ const path=require('node:path');
     ];
     assert.deepEqual(typeOptions.map(n=>n.label).sort(),
      expectedKoreanTypes.sort(),'Korean type names differ from the 18 canonical labels');
+    // The move type dropdown is not the only type surface. Check both
+    // attacker and defender's primary/secondary type selectors as well.
+    for(const id of ['attType1','attType2','defType1','defType2']){
+     const labels=await page.locator('#'+id+' option').evaluateAll(nodes=>
+      nodes.filter(n=>n.value&&n.value!=='none').map(n=>n.textContent.trim()));
+     assert.deepEqual([...new Set(labels)].sort(),expectedKoreanTypes,
+      'Korean type labels regressed in '+id);
+    }
    }
    assert.deepEqual(typeOptions.filter(n=>!n.label||/[ぁ-ゟ゠-ヿ]/u.test(n.label)),[],
     'missing or untranslated move type options in '+locale);
