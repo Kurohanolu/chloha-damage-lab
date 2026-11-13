@@ -112,6 +112,7 @@ const path=require('node:path');
      if(exercised.dbMove==='earthquake'&&expectedEarthquake[lang]){
       assert.ok(state.selectedMove?.includes(expectedEarthquake[lang]),'selected move name must be '+lang+': '+state.selectedMove);
       assert.ok(state.selectedMove?.includes(expectedGround[lang]),'selected move type must be '+lang+': '+state.selectedMove);
+      assert.ok(state.move?.includes(expectedGround[lang]),'native move option type must be '+lang+': '+state.move);
      }
      // Native item options are part of the visible UI, not just the calculation engine.
      if(lang==='es'){
