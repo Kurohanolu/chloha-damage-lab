@@ -88,6 +88,25 @@ const path=require('node:path');
     throw e;
    }
   }
+  // Second pass: unsupported abilities must still have localized labels,
+  // even though they are intentionally excluded from damage calculations.
+  const unsupported=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.find(n=>n.value.startsWith('unsupported:'))?.value||null);
+  if(unsupported){
+   await page.locator('#attAbility').selectOption(unsupported);
+   for(let i=0;i<steps.length;i++){
+    const lang=steps[i][0],from=i===0?'initial':steps[i-1][0];
+    await selector.selectOption(lang);
+    await page.waitForTimeout(120);
+    const label=await page.locator('#attAbility').evaluate(el=>el.selectedOptions[0]?.textContent?.trim()||'');
+    try{
+     assert.ok(label,'unsupported ability label must not be empty');
+     if(lang!=='ja')assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(label),'untranslated unsupported ability: '+label);
+    }catch(e){
+     console.error('FAILED unsupported ability transition '+from+' → '+lang+'; option='+unsupported+' label='+JSON.stringify(label));
+     throw e;
+    }
+   }
+  }
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS nine-language full-cycle UI roundtrip '+JSON.stringify(snapshots));
  }finally{await browser.close();}
