@@ -290,7 +290,7 @@ function translateOptions(){
    };
    const moveType=localizedTypeNames[move?.[2]]?.[locale]||typeNames[move?.[2]]||move?.[2];
    const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[locale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[locale]||moveStatuses[move[4]]||move[4]);
-   const next=locale==='ja'?base:locale==='en'?englishOption:(localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
+   const next=locale==='ja'?base:locale==='en'?englishOption:((plateJapanese&&localizedPlateOptions[plateJapanese[1]]?.[locale])||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base));
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
@@ -599,7 +599,16 @@ function localizedPokemonType(value,target){
  if(!ja)return raw;
  return target==='ja'?ja:(localizedTypeNames[ja][target]||localizedTypeNames[ja].en);
 }
+const localizedPlateOptions={
+ 'だいちのプレート':{
+  fr:'Plaque Terre (capacités Sol ×1,2)',de:'Erdtafel (Boden-Attacken ×1,2)',
+  es:'Tabla Terra (movimientos Tierra ×1,2)',it:'Lastrageo (mosse Terra ×1,2)',
+  ko:'대지플레이트 (땅타입 기술 ×1.2)','zh-Hans':'大地石板（地面属性招式×1.2）',
+  'zh-Hant':'大地石板（地面屬性招式×1.2）'
+ }
+};
 const localizedItemOptionPhrases={
+ 'Loaded Dice (4–5 hits)':{fr:'Dé Pipé (4 à 5 coups)',de:'Gezinkter Würfel (4–5 Treffer)',es:'Dado Trucado (4–5 golpes)',it:'Dado Truccato (4–5 colpi)',ko:'속임수주사위 (4~5회 명중)','zh-Hans':'机变骰子（命中4～5次）','zh-Hant':'機變骰子（命中4～5次）'},
  'Life Orb (damage ×1.3)':{fr:'Orbe Vie (dégâts ×1,3)',de:'Leben-Orb (Schaden ×1,3)',es:'Vidasfera (daño ×1,3)',it:'Assorbisfera (danni ×1,3)',ko:'생명의구슬 (데미지 ×1.3)','zh-Hans':'生命宝珠（伤害×1.3）','zh-Hant':'生命寶珠（傷害×1.3）'},
  'Assault Vest (Sp. Def ×1.5)':{fr:'Veste de Combat (Déf. Spé. ×1,5)',de:'Offensivweste (Spezial-Verteidigung ×1,5)',es:'Chaleco Asalto (Def. Esp. ×1,5)',it:'Corpetto assalto (Dif. Sp. ×1,5)',ko:'돌격조끼 (특수방어 ×1.5)','zh-Hans':'突击背心（特防×1.5）','zh-Hant':'突擊背心（特防×1.5）'},
  'Choice Band (Attack ×1.5)':{fr:'Bandeau Choix (Attaque ×1,5)',de:'Wahlband (Angriff ×1,5)',es:'Cinta Elección (Ataque ×1,5)',it:'Bendascelta (Attacco ×1,5)',ko:'구애머리띠 (공격 ×1.5)','zh-Hans':'讲究头带（攻击×1.5）','zh-Hant':'講究頭帶（攻擊×1.5）'},
