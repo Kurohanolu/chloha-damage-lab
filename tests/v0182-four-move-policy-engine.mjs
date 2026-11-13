@@ -38,6 +38,20 @@ try{
   assert.ok(Array.isArray(regular.rolls)&&regular.rolls.length===16,'normal 16 rolls');
   assert.ok(Array.isArray(enhanced.rolls)&&enhanced.rolls.length===16,'enhanced 16 rolls');
   assert.ok(enhanced.rolls[0]>regular.rolls[0],c.name+' enhanced damage');
+  // Browser end-to-end: a catalog false flag must not block a supported runtime policy.
+  const ui=await page.evaluate(id=>{
+    const select=document.getElementById('dbMove');
+    select.value=id;
+    select.dispatchEvent(new Event('input',{bubbles:true}));
+    select.dispatchEvent(new Event('change',{bubbles:true}));
+    const option=select.selectedOptions[0]?.textContent||'';
+    return {selected:select.value,option,mechanic:window.ChlohaMoveMechanic,status:document.getElementById('dbStatus')?.textContent||'',power:document.getElementById('power')?.value};
+  },c.id);
+  assert.equal(ui.selected,c.id,c.name+' UI selection');
+  assert.equal(ui.mechanic,c.mechanic,c.name+' UI-to-engine mechanic wiring');
+  assert.ok(!ui.option.includes('［計算未対応］'),c.name+' should not be labelled unsupported');
+  assert.ok(!ui.status.includes('計算未対応'),c.name+' UI status');
+  assert.equal(Number(ui.power),c.power,c.name+' UI base power');
   console.log('PASS policy and engine numeric',c.name,regular.effectivePower,'→',enhanced.effectivePower);
  }
 }finally{await browser.close();}
