@@ -10,7 +10,7 @@ const path=require('node:path');
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   const selector=page.locator('#chloha-locale');
   const steps=[
-   ['ja','なし','ダブル'],['en','None','Double'],['fr','Aucun','Duo'],
+   ['ja','なし','ダブル'],['en','None','Doubles'],['fr','Aucun','Duo'],
    ['de','Keine','Doppel'],['es','Ninguno','Doble'],['it','Nessuno','Doppio'],
    ['ko','없음','더블'],['zh-Hans','无','双打'],['zh-Hant','無','雙打'],
    ['ja','なし','ダブル']
