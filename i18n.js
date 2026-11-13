@@ -473,14 +473,14 @@ function localizedVerdict(base,target){
   return target==='ja'?Object.keys(verdictSource).find(key=>verdictSource[key]===label)||source:
    target==='en'?label:localeUiPhrases[label][target]||label;
  }
- const detail=source.match(/^現在HP\\s*(\\d+)\\s*\\/\\s*KO率\\s*(対象外|(?:\\d+(?:\\.\\d+)?)%)$/);
+ const detail=source.match(/^現在HP\s*(\d+)\s*\/\s*KO率\s*(対象外|(?:\d+(?:\.\d+)?)%)$/);
  if(detail){
   const hp=detail[1],chance=detail[2];
   if(target==='ja')return '現在HP '+hp+' / KO率 '+chance;
   const name=key=>target==='en'?key:localeUiPhrases[key]?.[target]||key;
   return name('Current HP')+' '+hp+' / '+name('KO chance')+' '+(chance==='対象外'?name('Not applicable'):chance);
  }
- const mini=source.match(/^(確定KO|乱数KO|ダメージなし|対象はすでにひんし)\\s*[·・]\\s*(\\d+(?:\\.\\d+)?%)$/);
+ const mini=source.match(/^(確定KO|乱数KO|ダメージなし|対象はすでにひんし)\s*[·・]\s*(\d+(?:\.\d+)?%)$/);
  if(mini)return localizedVerdict(mini[1],target)+' · '+mini[2];
  return null;
 }
