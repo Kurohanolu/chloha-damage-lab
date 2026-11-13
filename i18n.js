@@ -1105,6 +1105,21 @@ function localizedUi(base){
  if(entry&&catalog[locale]?.[entry])return catalog[locale][entry];
  return translateRuntime(base);
 }
+// Reverse every known UI translation before caching fresh DOM text.
+// This prevents a rerendered Spanish/French/Korean label from becoming the
+// canonical source when the user switches to another language.
+const reverseLocalePhrases=new Map();
+for(const table of [screenshotLocalePhrases,localeUiPhrases,expandedSettingsTranslations,expandedLongTextTranslations,expandedPanelTranslations]){
+ for(const [english,variants] of Object.entries(table)){
+  for(const translated of Object.values(variants||{})){
+   if(typeof translated==='string'&&translated&&translated!==english&&!reverseLocalePhrases.has(translated))reverseLocalePhrases.set(translated,english);
+  }
+ }
+}
+function normalizeFreshLocaleText(value){
+ const source=reverseLocalePhrases.get(value);
+ return recoverJapanese(source||value);
+}
 const original=new WeakMap();
 const lastRenderedText=new WeakMap();
 function translate(root){
@@ -1120,7 +1135,7 @@ function translate(root){
   const cachedRendered=lastRenderedText.get(node);
   // Preserve original Japanese when switching between non-English locales.
   // Treat a changed value as fresh calculator output, not a translation.
-  if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,recoverJapanese(trim));
+  if(cached===undefined||(trim!==cached&&trim!==cachedRendered))original.set(node,normalizeFreshLocaleText(trim));
   const base=original.get(node);
   const next=locale==='ja'?base:localizedUi(base);
   if(trim!==next)node.nodeValue=value.replace(trim,next);
@@ -1134,7 +1149,7 @@ function translate(root){
    if(!originals){originals={};originalAttributes.set(element,originals);}
    const previous=originals[attr];
    const rendered=lastRenderedAttributes.get(element)?.[attr];
-   if(previous===undefined||(value!==previous&&value!==rendered))originals[attr]=attributeLabels[value]?value:recoverJapanese(value);
+   if(previous===undefined||(value!==previous&&value!==rendered))originals[attr]=attributeLabels[value]?value:normalizeFreshLocaleText(value);
    const base=originals[attr];
    const next=locale==='ja'?base:localizedUi(translateAccessibilityLabel(base));
    if(next!==value)element.setAttribute(attr,next);
