@@ -803,7 +803,7 @@ window.ChlohaSpriteIds={"dragonite":149,"tyranitar":248,"garchomp":445,"venusaur
   const raw=p.name;
   const prefix=Object.keys(formPrefixes).find(k=>raw.startsWith(k)&&raw.length>k.length);
   const baseJapanese=(prefix?raw.slice(prefix.length):raw)
-   .replace(/[XYZ]$/,'').replace(/\\([^)]*\\)$/,'');
+   .replace(/[XYZ]$/,'').replace(/\([^)]*\)$/,'');
   const speciesCatalog=window.ChlohaPokeAPILocalizedNames?.pokemon||{};
   const baseRecord=[...pokemonById.values()].find(q=>q.name===baseJapanese);
   const catalogEntry=Object.values(speciesCatalog).find(entry=>entry.ja===baseJapanese);
