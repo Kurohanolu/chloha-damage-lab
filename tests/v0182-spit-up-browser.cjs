@@ -8,6 +8,7 @@ const {chromium}=require('playwright');
   const page=await browser.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+  await page.locator('.move-list-fallback summary').click();
   await page.locator('#dbMove').selectOption('gw0169_s040');
   await page.locator('#spitUpPanel').waitFor({state:'visible'});
   for(const [count,power] of [[1,100],[2,200],[3,300],[1,100]]){
