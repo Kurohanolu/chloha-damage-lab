@@ -51,7 +51,7 @@ for(const locale of ['en','fr','de','es','it','ko','zh-Hans','zh-Hant']){
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   // Android native select sheets use option.label; assert both label and text.
   const singlesLabels={
-   ja:'シングル（検証用）',en:'Singles (experimental)',
+   ja:'シングル（検証用）',en:'Singles (testing only)',
    fr:'Solo (expérimental)',de:'Einzel (experimentell)',
    es:'Individual (experimental)',it:'Singolo (sperimentale)',
    ko:'싱글 (실험용)','zh-Hans':'单打（实验性）','zh-Hant':'單打（實驗性）'
