@@ -91,6 +91,7 @@ jobs:
       - run: node tests/v0183-screenshot-locale-e2e.cjs
       - run: node tests/v0183-battle-summary-name-e2e.cjs
       - run: node tests/v0183-all-move-summary-locale-e2e.cjs
+      - run: node tests/v0183-dynamic-warning-locale-e2e.cjs
       - run: node tests/v0183-localized-battlefield.cjs
       - run: node tests/v0183-result-locale-phrases.cjs
       - run: node tests/v0183-dynamic-damage-range.cjs
