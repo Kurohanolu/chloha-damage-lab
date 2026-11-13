@@ -1,0 +1,24 @@
+{
+  "head_sha": "d4257b6bcf6c564d93cf79903148b5ba48f419c6",
+  "workflow": "UI & damage regression",
+  "run_id": 43396435260,
+  "run_number": 856,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-13T08:52:39Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43396435260",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43396435260/job/131788362322",
+      "failed_steps": [
+        {
+          "name": "Nine-locale rotation regression (90 transitions)",
+          "number": 59,
+          "conclusion": "failure"
+        }
+      ]
+    }
+  ]
+}
