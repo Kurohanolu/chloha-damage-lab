@@ -9,6 +9,10 @@ assert.ok(typeMatch,'localized type dictionary must exist');
 const canonicalTypes=JSON.parse(typeMatch[1]);
 const referenceTypes=require('./v0183-type-reference.json').types;
 const europeanOfficial=require('./v0183-european-official-types.json').types;
+const officialZhHans=require('./v0183-zh-hans-official-types.json');
+assert.deepEqual(Object.values(canonicalTypes).map(x=>x['zh-Hans']),officialZhHans.types,
+ 'Simplified Chinese type labels differ from official mainland Pokémon Pokédex');
+
 for(const locale of ['fr','de','es','it']){
  const actual=Object.values(canonicalTypes).map(names=>names[locale]);
  assert.deepEqual(actual,europeanOfficial[locale],
