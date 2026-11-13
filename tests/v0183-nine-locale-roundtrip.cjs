@@ -40,10 +40,15 @@ const path=require('node:path');
     el.dispatchEvent(new Event('change',{bubbles:true}));
    },value);
   }
-  const abilities=await page.locator('#attAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'&&!v.startsWith('unsupported:')));
-  if(abilities.length){exercised.attAbility=abilities[0];await page.locator('#attAbility').selectOption(abilities[0]);}
-  const defenderAbilities=await page.locator('#defAbility option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(v=>v!=='none'));
-  if(defenderAbilities.length){exercised.defAbility=defenderAbilities[0];await page.locator('#defAbility').selectOption(defenderAbilities[0]);}
+  // A species' first ability can be a display-only entry not supported by
+  // the numeric engine (e.g. Rough Skin). Use supported neutral abilities
+  // for the damage baseline; the unsupported-label pass runs separately.
+  for(const id of ['attAbility','defAbility']){
+   const available=await page.locator('#'+id+' option').evaluateAll(nodes=>nodes.map(n=>n.value));
+   assert.ok(available.includes('none'),id+' must offer the neutral ability');
+   exercised[id]='none';
+   await page.locator('#'+id).selectOption('none');
+  }
   const moves=await page.locator('#dbMove option').evaluateAll(nodes=>nodes.map(n=>n.value).filter(Boolean));
   assert.ok(moves.includes('earthquake'),'Garchomp move selector must contain Earthquake: '+JSON.stringify(moves.slice(0,15)));
   exercised.dbMove='earthquake';
