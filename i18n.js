@@ -759,6 +759,27 @@ function localizedDynamicControl(base,target){
  if(target==='ja'||target==='en')return null;
  const exact=localizedControlPhrases[base]?.[target];
  if(exact)return exact;
+ const maxHp=String(english).match(/^Of max HP:\s*(.+)$/);
+ if(maxHp){
+  const label={fr:'Des PV max. :',de:'Von max. KP:',es:'De los PS máximos:',it:'Dei PS massimi:',ko:'최대 HP 대비:','zh-Hans':'占最大HP：','zh-Hant':'佔最大HP：'}[target];
+  return label+' '+maxHp[1];
+ }
+ const effectiveness=String(english).match(/^Type effectiveness\s*(×[\\d.]+)\s*\/\s*STAB\s*(×[\\d.]+)$/);
+ if(effectiveness){
+  const label={fr:'Efficacité du type',de:'Typenwirksamkeit',es:'Eficacia de tipo',it:'Efficacia del tipo',ko:'타입 상성','zh-Hans':'属性克制','zh-Hant':'屬性克制'}[target];
+  return label+' '+effectiveness[1]+' / STAB '+effectiveness[2];
+ }
+ const ohko=String(english).match(/^OHKO chance against current HP:\s*(.+)$/);
+ if(ohko){
+  const label={fr:'Probabilité de K.O. en un coup avec les PV actuels :',de:'Chance auf einen K.O. mit einem Treffer bei aktuellen KP:',es:'Probabilidad de debilitar de un golpe con los PS actuales:',it:'Probabilità di KO in un colpo con i PS attuali:',ko:'현재 HP 기준 일격 KO 확률:','zh-Hans':'当前HP下一击击倒概率：','zh-Hant':'目前HP下一擊擊倒機率：'}[target];
+  return label+' '+ohko[1];
+ }
+ const verify=String(english).match(/^Verification status:\s*(.+)$/);
+ if(verify){
+  const label={fr:'État de vérification :',de:'Prüfstatus:',es:'Estado de verificación:',it:'Stato della verifica:',ko:'검증 상태:','zh-Hans':'验证状态：','zh-Hant':'驗證狀態：'}[target];
+  const pending={fr:'Non vérifié sur console',de:'Nicht auf Hardware geprüft',es:'No verificado en consola',it:'Non verificato su console',ko:'실기 미검증','zh-Hans':'尚未实机验证','zh-Hant':'尚未實機驗證'}[target];
+  return label+' '+(verify[1]==='Not hardware-verified'?pending:verify[1]);
+ }
  const baseStat=String(english).match(/^Base stat\s+(\d+)$/);
  if(baseStat){
   const label={fr:'Statistique de base',de:'Basiswert',es:'Estadística base',it:'Statistica base',ko:'종족값','zh-Hans':'种族值','zh-Hant':'種族值'}[target];
