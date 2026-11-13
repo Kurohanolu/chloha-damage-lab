@@ -25,9 +25,9 @@ const path=require('node:path');
    // Otherwise a pending initial render can overwrite Dragapult's badges after the change event.
    await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
    await page.locator('#dbAttPokemon').selectOption('dragapult');
-   // The selector may already hold Dragapult from persisted state; force the change handler
-   // after the initial render to synchronize its badges with the selected species.
-   await page.locator('#dbAttPokemon').dispatchEvent('change');
+   // The calculator listens to 'input' (not 'change') for species updates.
+   // Force that event even when persisted state already selects Dragapult.
+   await page.locator('#dbAttPokemon').dispatchEvent('input');
    await page.waitForFunction(expected=>{
     const badges=[...document.querySelectorAll('#attTypes .type-pill')].map(el=>el.textContent.trim());
     const nodes=[...document.querySelectorAll('#attTypes .type-pill')];
