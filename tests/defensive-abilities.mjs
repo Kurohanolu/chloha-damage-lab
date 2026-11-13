@@ -115,7 +115,7 @@ try {
  assert.equal(await page.locator('#defItem option[value="autoResistBerry"]').textContent(),berryOptions[2].label,'Auto berry JA/EN/JA roundtrip');
  console.log('PASS compact automatic resist berry option and JA/EN/JA roundtrip');
  // Only the matching plate should appear; changing the move must not auto-equip it.
- await page.locator('#dbAuto').uncheck();
+ await page.locator('#dbAuto').evaluate(el=>{el.checked=false;el.dispatchEvent(new Event('input',{bubbles:true}));});
  await page.locator('#moveType').selectOption('ほのお');
  const plateOptions=()=>page.locator('#attItem option[value$="Plate"]').evaluateAll(opts=>opts.map(o=>({id:o.value,label:o.textContent})));
  assert.deepEqual((await plateOptions()).map(o=>o.id),['flamePlate'],'Only Fire Plate visible');
