@@ -99,6 +99,11 @@ const path=require('node:path');
     const labels=await suggestions.allTextContents();
     assert.ok(labels.some(label=>label.includes(term)),
      'localized Mega form not searchable on '+side+' side in '+locale+': '+term);
+    // Verify the suggestion resolves to the exact form, not just a text match.
+    await suggestions.filter({hasText:term}).first().click();
+    const selected=await page.locator('#db'+(side==='att'?'Att':'Def')+'Pokemon').inputValue();
+    assert.equal(selected,'mega_charizard_x',
+     'translated Mega search selected wrong Pokémon on '+side+' side in '+locale);
     await input.fill('');
    }
   }
