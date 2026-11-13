@@ -1,3 +1,12 @@
+## 2026-11-14: v0.183 full-select audit follow-up (latest green baseline)
+
+- Verified main commit `830a86d9baddba2b5a353fdcfa53e3b4fec8787d`, Damage Lab CI https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628658 **success**; UI & damage regression https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628713 **success**.
+- The full browser audit compared **11,472** stable native select entries (1,434 per non-Japanese locale). **Zero Japanese-kana findings**, zero known-English UI regressions, and no native-label mismatch findings were reported.
+- **1,288 English-equal review candidates remain**, distributed as French 82, German 79, Spanish 493, Italian 634. These are *not* 1,288 confirmed missing translations. Most come from Pokémon selectors repeated for attacker and defender. Spanish and Italian Pokémon names often legitimately equal their English official names.
+- Official canonical-name cross-check: **558 verified, 0 mismatches**. Form structure: **73 verified, 0 pending** in the existing audit's defined scope. This is not a full national-dex or hardware-accuracy certification.
+- Review next: deduplicate mirrored Pokémon selectors; compare each unique locale/species/form candidate against official name references, prioritizing French/German cases and actual UI labels. Keep same-spelling official names unchanged. Avoid bulk translating Spanish/Italian Pokémon names simply because they match English.
+- Release gate: CI green does not replace manual acceptance of the deployed Chloha Labs version. Follow `docs/v0183-release-closure.md`.
+
 # Damage Lab — Development memo
 
 ## 2026-11-13: Full nine-language select-option audit
