@@ -102,7 +102,10 @@ const path=require('node:path');
      }
      for(const type of [...state.attackerTypes,...state.defenderTypes])assert.ok(!/[ぁ-ゟ゠-ヿ]/u.test(type),'untranslated type badge: '+type);
      if(state.selectedMove)assert.ok(!state.selectedMove.includes('選択中：'),'selected move prefix');
-     if(lang==='es')assert.ok(!/Swap sides|Defender ability/.test(state.swap+' '+state.defenderAbilityLabel),'Spanish controls remain in English');
+     const expectedSwap={fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'};
+     const expectedAbility={fr:'Talent du défenseur',de:'Fähigkeit des Verteidigers',es:'Habilidad del defensor',it:'Abilità del difensore',ko:'방어 측 특성','zh-Hans':'防御方特性','zh-Hant':'防禦方特性'};
+     if(expectedSwap[lang])assert.ok(state.swap?.includes(expectedSwap[lang]),'swap control must be in '+lang+': '+state.swap);
+     if(expectedAbility[lang])assert.ok(state.defenderAbilityLabel?.startsWith(expectedAbility[lang]),'defender ability label must be in '+lang+': '+state.defenderAbilityLabel);
     }
     if(lang==='ja')assert.ok(state.board?.startsWith('現在の盤面：天候 雨'), 'Japanese board');
     else assert.ok(state.board&&!state.board.includes('現在の盤面')&&!state.board.includes('Current battlefield: Weather Ninguno'),'board language');
