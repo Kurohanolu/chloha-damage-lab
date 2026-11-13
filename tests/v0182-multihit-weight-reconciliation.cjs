@@ -46,7 +46,7 @@ for(const name of excluded){
 }
 const spit=moves.find(x=>x.name==='はきだす');
 assert.ok(spit,'Spit Up missing');
-assert.equal(policies[spit.id]?.priority,'P0','Spit Up policy changed; review before changing categorization');
+assert.equal(policies[spit.id]?.priority,'P1','Spit Up enabled policy');assert.equal(policies[spit.id]?.mechanic,'spitUp','Spit Up mechanic');
 const report={version:'v0.182',scope:'17 move helper reconciliation, not a claim of full in-game parity',summary:{multiHit:multi.length,weightDependent:weighted.length,specialMultiHit:2,excludedByPolicy:excluded.length,spitUpNeedsSeparateReview:1},rows,reviewItems:[{name:'はきだす',reason:'Stockpile-dependent variable-power attack currently excluded under fixed_damage; verify Champions power, UI stockpile input and damage engine before enabling'},{name:'ネズミざん',reason:'Sequential accuracy engine exists but standard hit distribution intentionally unavailable; verify UI and per-hit behavior'},{name:'トリプルアクセル',reason:'Sequential accuracy and varying power engine exists; verify UI and per-hit behavior'}]};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
 fs.writeFileSync(path.join(root,'reports/v0182-multihit-weight-reconciliation.json'),JSON.stringify(report,null,2)+'\n');
