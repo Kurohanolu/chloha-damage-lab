@@ -19,8 +19,10 @@ for(const m of moves){
 for(const p of pokemon){assert.ok(p.types.every(t=>typeName[t]));assert.ok(Object.values(p.baseStats).every(n=>Number.isInteger(n)&&n>0));assert.ok(Number.isFinite(weights[p.id])&&weights[p.id]>0);}
 const speciesReview=[];
 for(const p of pokemon){const ref=findSpecies(p,0)||findSpecies(p,9),differences=speciesDifference(p,ref);if(differences.length)speciesReview.push({id:p.id,differences});}
-// This known source conflict is visible and remains a release review item. It
-// is not silently normalized to Gen9 or treated as verified Champions data.
+// This historical candidate-data conflict remains visible. The owner confirmed
+// Dudunsparce is absent from current Champions and the supplied image is SV.
+// It is deferred outside the current rule scope, not promoted to Verified or
+// silently normalized to Gen9; re-audit before any future roster adoption.
 assert.deepEqual(speciesReview,[{id:'roster_v0107_033',differences:['specialAttack: 58 vs 85']}]);
 const source=html.match(/function natureFactor\([^\n]+\nfunction calcStat\([^\n]+/);
 assert.ok(source,'public stat functions must be extracted without copying their implementation');

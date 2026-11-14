@@ -14,7 +14,7 @@ const rows=[];
 const add=(kind,id,name,status,evidence,hardware='なし')=>{assert.ok(statuses.includes(status));rows.push({kind,id,name,status,evidence,hardware});};
 for(const p of pokemon){
  const zero=findSpecies(p,0),ref=zero||findSpecies(p,9),differences=speciesDifference(p,ref);
- add('Pokémon / forms',p.id,p.name,differences.length?'Unverified':'Verified',differences.length?'SpA 58/85の資料不一致。値を維持し実機確認待ち。':'6種族値・タイプ集合・体重 / '+(zero?'Champions':'Gen9')+'データ一致',p.screenshotStatsAbilitiesConfirmed===true?'過去の能力画面確認フラグ。今回再実測なし。':'なし');
+ add('Pokémon / forms',p.id,p.name,differences.length?'Unverified':'Verified',differences.length?'現行Champions未登場（所有者確認）。SV画像はSpA85/実数値105。既存58は未検証の候補データとして保持し、将来登場時に再監査。':'6種族値・タイプ集合・体重 / '+(zero?'Champions':'Gen9')+'データ一致',p.screenshotStatsAbilitiesConfirmed===true?'過去の能力画面確認フラグ。今回再実測なし。':'なし');
 }
 const independentlyTested=new Set(Object.keys(moveEvidence.tested));
 for(const m of moves){
@@ -86,7 +86,7 @@ lines.push('','## 証拠・制限','',
 '- 独立参照: `@smogon/calc@0.12.0` / `d7a69cf40616057ef40faf7623df7a628e58b535`。Champions generation 0 と Gen9 を区別する。',
 '- 固定シード `0x0186ac`: 4,000条件 / Champions '+seedEvidence.generations[0]+'、Gen9 '+seedEvidence.generations[9]+'。登録技'+moveEvidence.moves+'件・'+moveEvidence.comparisons+'条件を追加照合。',
 '- 役割別特性321条件、タグ2,680所属＋2,672数値、連続技126分布、体重2,068条件。これらの件数は上の項目検証率の分母に使わない。',
-'- [Champions差分](v0186-champions-parity.md) / [実機検証計画](v0186-hardware-test-plan.md)。ノココッチの特攻58/85は推測で変更しない。',
+'- [Champions差分](v0186-champions-parity.md) / [実機検証計画](v0186-hardware-test-plan.md)。所有者がノココッチの現行Champions未登場・提示画像のSVモードを確認。H01の現行リリース保留を解除し、候補データの特攻58/85はUnverifiedのまま将来へ引き継ぐ。',
 '- 極端な非実戦手入力値、未表現の状態変化・命中補正・全ヒット別能力変化は一律に検証済みとしない。',
 '','## 全数台帳','');
 const escape=s=>String(s).replaceAll('|','/').replaceAll('\n',' ');

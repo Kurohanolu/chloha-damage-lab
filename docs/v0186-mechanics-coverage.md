@@ -51,7 +51,7 @@ Verifiedは記載した自動検証の範囲内であり、Championsの全状況
 - 独立参照: `@smogon/calc@0.12.0` / `d7a69cf40616057ef40faf7623df7a628e58b535`。Champions generation 0 と Gen9 を区別する。
 - 固定シード `0x0186ac`: 4,000条件 / Champions 494、Gen9 3506。登録技256件・657条件を追加照合。
 - 役割別特性321条件、タグ2,680所属＋2,672数値、連続技126分布、体重2,068条件。これらの件数は上の項目検証率の分母に使わない。
-- [Champions差分](v0186-champions-parity.md) / [実機検証計画](v0186-hardware-test-plan.md)。ノココッチの特攻58/85は推測で変更しない。
+- [Champions差分](v0186-champions-parity.md) / [実機検証計画](v0186-hardware-test-plan.md)。所有者がノココッチの現行Champions未登場・提示画像のSVモードを確認。H01の現行リリース保留を解除し、候補データの特攻58/85はUnverifiedのまま将来へ引き継ぐ。
 - 極端な非実戦手入力値、未表現の状態変化・命中補正・全ヒット別能力変化は一律に検証済みとしない。
 
 ## 全数台帳
@@ -395,7 +395,7 @@ Verifiedは記載した自動検証の範囲内であり、Championsの全状況
 | roster_v0107_030 | ヌオー | Verified | 6種族値・タイプ集合・体重 / Gen9データ一致 | なし |
 | roster_v0107_031 | キリンリキ | Verified | 6種族値・タイプ集合・体重 / Gen9データ一致 | なし |
 | roster_v0107_032 | リキキリン | Verified | 6種族値・タイプ集合・体重 / Championsデータ一致 | 過去の能力画面確認フラグ。今回再実測なし。 |
-| roster_v0107_033 | ノココッチ | Unverified | SpA 58/85の資料不一致。値を維持し実機確認待ち。 | なし |
+| roster_v0107_033 | ノココッチ | Unverified | 現行Champions未登場（所有者確認）。SV画像はSpA85/実数値105。既存58は未検証の候補データとして保持し、将来登場時に再監査。 | なし |
 | roster_v0107_034 | ナマズン | Verified | 6種族値・タイプ集合・体重 / Gen9データ一致 | なし |
 | roster_v0107_035 | ジーランス | Verified | 6種族値・タイプ集合・体重 / Gen9データ一致 | なし |
 | roster_v0107_036 | ドクロッグ | Verified | 6種族値・タイプ集合・体重 / Championsデータ一致 | 過去の能力画面確認フラグ。今回再実測なし。 |
