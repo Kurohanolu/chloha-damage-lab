@@ -1,28 +1,52 @@
 'use strict';
 // Read-only acceptance gate for a later, explicitly approved public cutover.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-const {verifyPublication}=require('./verify-publication-approval.cjs');
+const {verifyCutoverApproval,verifyPublication}=require('./verify-publication-approval.cjs');
+const {buildSites,dependencies}=require('./v0187-build-sites.cjs');
 const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
-async function checkLiveSites(directory,{fetchImpl=globalThis.fetch}={}){
- const release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));verifyPublication(release);
- assert.equal(release.migration.legacyUrl,'https://kurohanolu.github.io/chloha-damage-lab/');
+async function checkLiveSites(directory,{fetchImpl=globalThis.fetch,mode='publication'}={}){
+ assert.ok(['publication','new-target'].includes(mode),'explicit migration verification mode required');
+ const release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));
+ if(mode==='new-target')verifyCutoverApproval(release);else verifyPublication(release);
  const manifest=JSON.parse(fs.readFileSync(path.join(directory,'migration-artifacts.json')));
  const bases={'singularity':release.publicUrl,'chloha-damage-lab':release.migration.legacyUrl};
- const files=Object.entries(manifest.files).filter(([file])=>!file.endsWith('/.nojekyll')&&!file.endsWith('/brand-preview.html'));
+ const sites=mode==='new-target'?['singularity']:Object.keys(bases);
+ assert.ok(manifest.files&&typeof manifest.files==='object'&&!Array.isArray(manifest.files),'public artifact inventory required');
+ const entries=Object.entries(manifest.files),files=[];
+ const excluded=file=>file.endsWith('/.nojekyll')||file==='singularity/brand-preview.html';
+ for(const [file,expected] of entries){
+  const [site,...parts]=file.split('/');
+  assert.ok(Object.hasOwn(bases,site)&&parts.length&&parts.every(p=>p&&p!=='.'&&p!=='..'&&(!p.startsWith('.')||p==='.nojekyll')),'only known public artifacts are checked');
+  assert.match(expected,/^[a-f0-9]{64}$/,'SHA256 artifact inventory: '+file);
+ }
+ // Validate the entire selected local tree before making even a read request.
+ // An empty/truncated inventory must not turn a missing deployment into PASS.
+ for(const site of sites){
+  const html=fs.readFileSync(path.join(directory,site,'index.html'),'utf8');
+  const required=[...new Set(['index.html','release.json',...dependencies(html),...(site==='singularity'?Object.values(release.branding):[])])].map(file=>site+'/'+file).sort();
+  const selected=entries.filter(([file])=>file.startsWith(site+'/')&&!excluded(file));
+  assert.deepEqual(selected.map(([file])=>file).sort(),required,'complete public artifact inventory: '+site);
+  for(const [file,expected] of selected){
+   assert.equal(hash(fs.readFileSync(path.join(directory,file))),expected,'artifact manifest integrity: '+file);
+   files.push([file,expected]);
+  }
+ }
  for(let offset=0;offset<files.length;offset+=6){
   await Promise.all(files.slice(offset,offset+6).map(async([file,expected])=>{
-   const [site,...parts]=file.split('/');assert.ok(bases[site]&&parts.length&&parts.every(p=>p&&p!=='.'&&p!=='..'&&!p.startsWith('.')),'only known public artifacts are checked');
-   const body=fs.readFileSync(path.join(directory,file));assert.equal(hash(body),expected,'artifact manifest integrity: '+file);
+   const [site,...parts]=file.split('/');
    const relative=parts.join('/'),url=new URL(relative==='index.html'?'':relative,bases[site]);url.searchParams.set('migration-check',release.tag+'-'+expected.slice(0,12));
    const response=await fetchImpl(url.href,{method:'GET',redirect:'manual',credentials:'omit',cache:'no-store',headers:{'User-Agent':'ChlohaLabs-MigrationCheck/0.187'},signal:AbortSignal.timeout(10000)});
    assert.equal(response.status,200,'public artifact HTTP: '+file);assert.equal(hash(Buffer.from(await response.arrayBuffer())),expected,'deployed artifact SHA256: '+file);
   }));
  }
- return {ready:true,mode:'read-only-public-artifact-verification',checkedPublicFiles:files.length,productionMutations:0};
+ return {ready:true,mode:mode==='new-target'?'read-only-new-target-verification':'read-only-public-artifact-verification',checkedSites:sites,checkedPublicFiles:files.length,publicationReady:mode==='publication',productionMutations:0};
 }
 module.exports={checkLiveSites};
 if(require.main===module)(async()=>{
+ const args=process.argv.slice(2);assert.ok(!args.length||(args.length===1&&args[0]==='--accept-new-target'),'Usage: node scripts/v0187-live-migration-check.cjs [--accept-new-target]');
+ const mode=args.length?'new-target':'publication';
  const release=JSON.parse(fs.readFileSync('release.json'));if(!release.migration){console.log('No URL migration in this release');return;}
- verifyPublication(release);const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-live-'));
- try{require('./v0187-build-sites.cjs').buildSites(temp);console.log(JSON.stringify(await checkLiveSites(temp),null,2));}finally{fs.rmSync(temp,{recursive:true,force:true});}
+ if(mode==='new-target')verifyCutoverApproval(release);else verifyPublication(release);
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-live-'));
+ try{buildSites(temp);console.log(JSON.stringify(await checkLiveSites(temp,{mode}),null,2));}finally{fs.rmSync(temp,{recursive:true,force:true});}
 })().catch(error=>{console.error(error.message);process.exitCode=1;});

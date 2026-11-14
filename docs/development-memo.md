@@ -1,3 +1,9 @@
+## 2026-11-15: v0.187 acceptance lifecycle correction
+
+- Found a cutover bootstrap problem: the only actual-URL checker required the verified flag and deployed old notice before it could establish initial new-target acceptance. Added owner/design-authorized read-only new-target verification; final publication retains the verified flag and exact hashes of both sites. Neither mode sets its own approval or publishes.
+- Removed pending-state assumptions from migration contract fixtures so recording real owner approval does not itself fail CI. Current source flags remain pending/false. Empty/truncated/unsafe inventories and changed local bytes are rejected before public reads; missing/redirected/stale public artifacts still fail. Only synthetic fixtures were used for these lifecycle cases.
+- The calculation engine, all gameplay data, nine-language runtime, private-feedback Worker, logo/UI and public sites are unchanged. Exact-head CI evidence is recorded in Draft PR #64 after this follow-up.
+
 ## 2026-11-15: v0.187 development candidate and review evidence
 
 - Continuation rechecked GitHub main, the immutable v0.186 release and all ten successful workflows at `4410036`; existing production feedback passed ten read-only checks again and the live old HTML still matched v0.186 while the new path returned404. Added a concrete post-approval cutover/rollback runbook and exact SHA256 preservation of the supplied logo. No production change was performed.
