@@ -239,4 +239,4 @@ let hitRolls=null,koProbability=null;if(a.moveMechanic==='dualWingbeat'){
  ctx.trace.push('2発合計KO率（256組）: '+(koProbability===null?'対象がひんし':(koProbability*100).toFixed(2)+'%'));
  }
 const probe={...ctx,trace:ctx.trace};let d=base;if(immune){ctx.trace.push('無効判定: タイプまたは特性によってダメージ0');d=0;}else{d=applyLayer('postRandom',probe,d);d=applyLayer('final',probe,d);d=Math.max(1,d);}ctx.trace.push(`最終ダメージ（乱数100${hitRolls?'・2発合計':''}）: ${hitRolls?d*2:d}`);return {rolls,hitRolls,koProbability,trace:ctx.trace,attack,defense,base,effectivePower,stab:ctx.stab,effectiveness:a.defTypes.reduce((x,t)=>x*(EFFECT[a.moveType]?.[t]??1),1)};}
-const DamageEngine=Object.freeze({calculate,hpScaledPower,effectiveSpeed,electroBallPower,registerModifier,GameData,pokeRound,FIXED_MODS,version:'0.162'});window.ChlohaDamageEngine=DamageEngine;
+const DamageEngine=Object.freeze({calculate,hpScaledPower,effectiveSpeed,electroBallPower,registerModifier,GameData,pokeRound,FIXED_MODS,version:'0.184'});window.ChlohaDamageEngine=DamageEngine;
