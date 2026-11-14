@@ -27,6 +27,7 @@ function english(option,select){
 function render(){
  const en=window.ChlohaLocale?.get()==='en';
  for(const select of document.querySelectorAll('select')){
+  if(select.closest('[data-no-translate]'))continue;
   for(const option of select.options){
    if(!original.has(option))original.set(option,option.textContent);
    const ja=original.get(option),translated=english(option,select);

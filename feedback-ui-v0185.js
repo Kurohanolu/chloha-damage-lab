@@ -25,7 +25,7 @@
    $('Status').textContent=(statusKey?t(statusKey):'')+(receipt?'\n'+t('reference')+': '+receipt:'');
    $('Errors').hidden=!errorKey;$('Errors').textContent=errorKey?t(errorKey):'';controls();
   }
-  function renderLocale(){button.textContent=t('button');for(const node of panel.querySelectorAll('[data-fb]'))node.textContent=t(node.dataset.fb);messages();if(ready&&!busy)renderWidget();}
+  function renderLocale(){button.textContent=t('button');for(const node of panel.querySelectorAll('[data-fb]')){const text=t(node.dataset.fb);node.textContent=text;if(node.tagName==='OPTION')node.label=text;}messages();if(ready&&!busy)renderWidget();}
   function dirty(){if(busy)return;submission=null;delivered=false;receipt='';errorKey='';statusKey=ready?'':preparing?'preparing':'unavailable';messages();}
   function attachment(){
    $('Attachment').hidden=!$('Attach').checked;snapshot=null;stale=false;$('Stale').hidden=true;$('Confirm').checked=false;

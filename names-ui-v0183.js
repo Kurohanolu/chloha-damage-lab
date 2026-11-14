@@ -20,6 +20,7 @@ function render(){
  const locale=window.ChlohaLocale?.get?.()||'ja';
  if(!categories.length)return;
  for(const select of document.querySelectorAll('select')){
+  if(select.closest('[data-no-translate]'))continue;
   const kind=category(select);
   if(!kind)continue;
   for(const option of select.options){
