@@ -2,7 +2,7 @@
 // Read-only acceptance gate for a later, explicitly approved public cutover.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {verifyCutoverApproval,verifyPublication}=require('./verify-publication-approval.cjs');
-const {buildSites,dependencies}=require('./v0187-build-sites.cjs');
+const {buildSites,dependencies,assetReferences}=require('./v0187-build-sites.cjs');
 const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 async function checkLiveSites(directory,{fetchImpl=globalThis.fetch,mode='publication'}={}){
  assert.ok(['publication','new-target'].includes(mode),'explicit migration verification mode required');
@@ -26,20 +26,29 @@ async function checkLiveSites(directory,{fetchImpl=globalThis.fetch,mode='public
   const required=[...new Set(['index.html','release.json',...dependencies(html),...(site==='singularity'?Object.values(release.branding):[])])].map(file=>site+'/'+file).sort();
   const selected=entries.filter(([file])=>file.startsWith(site+'/')&&!excluded(file));
   assert.deepEqual(selected.map(([file])=>file).sort(),required,'complete public artifact inventory: '+site);
+  const browserURLs=new Map();
+  for(const reference of assetReferences(html)){
+   const file=site+'/'+reference.split(/[?#]/)[0].replace(/^\.\//,''),url=new URL(reference,bases[site]);url.hash='';
+   if(!browserURLs.has(file))browserURLs.set(file,new Set());browserURLs.get(file).add(url.href);
+  }
   for(const [file,expected] of selected){
    assert.equal(hash(fs.readFileSync(path.join(directory,file))),expected,'artifact manifest integrity: '+file);
-   files.push([file,expected]);
+   files.push([file,expected,[...(browserURLs.get(file)||[])]]);
   }
  }
  for(let offset=0;offset<files.length;offset+=6){
-  await Promise.all(files.slice(offset,offset+6).map(async([file,expected])=>{
+  await Promise.all(files.slice(offset,offset+6).map(async([file,expected,browserURLs])=>{
    const [site,...parts]=file.split('/');
    const relative=parts.join('/'),url=new URL(relative==='index.html'?'':relative,bases[site]);url.searchParams.set('migration-check',release.tag+'-'+expected.slice(0,12));
-   const response=await fetchImpl(url.href,{method:'GET',redirect:'manual',credentials:'omit',cache:'no-store',headers:{'User-Agent':'ChlohaLabs-MigrationCheck/0.187'},signal:AbortSignal.timeout(10000)});
-   assert.equal(response.status,200,'public artifact HTTP: '+file);assert.equal(hash(Buffer.from(await response.arrayBuffer())),expected,'deployed artifact SHA256: '+file);
+   // Probe the exact URLs loaded by the browser as well as fresh-origin bytes.
+   // A cache-busting request alone could conceal stale versioned asset URLs.
+   await Promise.all([...new Set([url.href,...browserURLs])].map(async requestURL=>{
+    const response=await fetchImpl(requestURL,{method:'GET',redirect:'manual',credentials:'omit',cache:'no-store',headers:{'User-Agent':'ChlohaLabs-MigrationCheck/0.187'},signal:AbortSignal.timeout(10000)});
+    assert.equal(response.status,200,'public artifact HTTP: '+file);assert.equal(hash(Buffer.from(await response.arrayBuffer())),expected,'deployed artifact SHA256: '+file);
+   }));
   }));
  }
- return {ready:true,mode:mode==='new-target'?'read-only-new-target-verification':'read-only-public-artifact-verification',checkedSites:sites,checkedPublicFiles:files.length,publicationReady:mode==='publication',productionMutations:0};
+ return {ready:true,mode:mode==='new-target'?'read-only-new-target-verification':'read-only-public-artifact-verification',checkedSites:sites,checkedPublicFiles:files.length,checkedBrowserAssetUrls:files.reduce((sum,[,,urls])=>sum+urls.length,0),publicationReady:mode==='publication',productionMutations:0};
 }
 module.exports={checkLiveSites};
 if(require.main===module)(async()=>{

@@ -20,6 +20,13 @@
 - The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
 - [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
 
+## 2026-11-15: static migration cache and legacy-phone regression follow-up
+
+- Continue the owner's requested work outside Cloudflare. Reproduce two failing native checks before fixing them: notice assets incorrectly reused the frozen v0.186 cache key, and fresh cache-busting URLs could conceal stale bytes at the browser's normal versioned URL.
+- Generate per-content notice cache keys while preserving the entire audited old calculator. Extend public artifact acceptance to both exact HTML-reference URLs and fresh probes, with negative tests for stale normal URLs on the new site and legacy notice.
+- Strengthen legacy browser acceptance with exact nine-language titles/link names,320px touch geometry, preservation of the original URL/input/draft, and no old query/fragment transfer into the new tab. Add `noreferrer` and verify that neither the navigation Referer nor the new document's referrer exposes the old URL. The original300 contracts and unchanged calculation/runtime checks pass locally; final-head browser and complete CI results belong in PR #64.
+- Actual target verification remains false; the old-site notice is prepared, not deployed. No Cloudflare login, API operation, production security change or protected-acceptance bypass is part of this work.
+
 ## 2026-11-15: Cloudflare dashboard403 isolated from working API authentication
 
 - Stop repeated dashboard sign-in attempts. Observed failure is `POST https://dash.cloudflare.com/api/v4/login`403; the specific provider rejection reason is unconfirmed, not inferred from the status alone.

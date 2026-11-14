@@ -6,6 +6,17 @@ const {startPreview}=require('../scripts/v0187-preview-server.cjs');
 const {loadPublicContracts}=require('./helpers/public-release-contract.cjs');
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];
+const legacyLabels=[
+ ['Damage LabからSingularityへ','Singularityを開く'],
+ ['Damage Lab is moving to Singularity','Open Singularity'],
+ ['Damage Lab devient Singularity','Ouvrir Singularity'],
+ ['Damage Lab wird zu Singularity','Singularity öffnen'],
+ ['Damage Lab pasa a ser Singularity','Abrir Singularity'],
+ ['Damage Lab diventa Singularity','Apri Singularity'],
+ ['Damage Lab이 Singularity로 이전합니다','Singularity 열기'],
+ ['Damage Lab 将迁移至 Singularity','打开 Singularity'],
+ ['Damage Lab 將遷移至 Singularity','開啟 Singularity']
+];
 const widget=`(()=>{let n=0;const widgets=new Map();window.turnstile={render(node,options){const id='migration-'+(++n);widgets.set(id,options);queueMicrotask(()=>options.callback('valid-'+crypto.randomUUID()));return id;},reset(id){const options=widgets.get(id);if(options)queueMicrotask(()=>options.callback('valid-'+crypto.randomUUID()));},remove(id){widgets.delete(id);}};})();`;
 const contracts=loadPublicContracts().cases;
 const state=page=>page.evaluate(()=>JSON.stringify({input:window.ChlohaLastCalculation.a,result:window.ChlohaLastCalculation.r,ids:['dbAttPokemon','dbDefPokemon','dbMove','attAbility','defAbility','attItem','defItem','weather','terrain','attackStage','defenseStage'].map(id=>[id,document.getElementById(id).value])}));
@@ -38,7 +49,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
  const preview=await startPreview(temp);let browser;
  try{browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});}
  catch(error){await preview.close();fs.rmSync(temp,{recursive:true,force:true});throw error;}
- const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,productionRequests:0,productionMutations:0};
+ const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,legacyNoticeLocales:0,legacyViewportWidth:320,legacyURLDataTransferred:false,productionRequests:0,productionMutations:0};
  fs.mkdirSync('reports/v0187',{recursive:true});
  try{
   for(let index=0;index<locales.length;index++){
@@ -87,14 +98,26 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
   }
   // Existing URL remains a complete calculator. The explicit link opens a new
   // tab; old inputs and unsent feedback stay in the original document.
-  const api=await startLocalApp(),context=await contextFor(browser,preview,api,'en',390),legacy=await context.newPage();
+  const api=await startLocalApp(),context=await contextFor(browser,preview,api,'en',320),legacy=await context.newPage();
   try{
-   await legacy.goto(preview.origin+'/chloha-damage-lab/');await ready(legacy);assert.equal(await legacy.title(),'Chloha Damage Lab v0.186 Pre-Release 32');evidence.numericChecks+=await vectors(legacy);
+   const legacyURL=preview.origin+'/chloha-damage-lab/?draft=synthetic-private-input#synthetic-private-state';
+   await legacy.goto(legacyURL);await ready(legacy);assert.equal(await legacy.title(),'Chloha Damage Lab v0.186 Pre-Release 32');evidence.numericChecks+=await vectors(legacy);
    await openFeedback(legacy);await legacy.fill('#feedbackDescription','Unsent old-URL draft');await legacy.click('#feedbackClose');const previous=await state(legacy);
-   for(const locale of locales){await legacy.selectOption('#chloha-locale',locale);assert.ok((await legacy.locator('#singularityMigrationNotice').innerText()).includes('Singularity'));assert.equal(await state(legacy),previous);}
+   for(let index=0;index<locales.length;index++){
+    await legacy.selectOption('#chloha-locale',locales[index]);
+    assert.equal(await legacy.locator('#singularityMigrationNotice strong').textContent(),legacyLabels[index][0]);
+    assert.equal(await legacy.locator('#singularityMigrationNotice').getAttribute('aria-label'),legacyLabels[index][0]);
+    assert.equal(await legacy.locator('#singularityMigrationNotice a').textContent(),legacyLabels[index][1]);
+    const geometry=await legacy.locator('#singularityMigrationNotice a').evaluate(node=>{const r=node.getBoundingClientRect();return {left:r.left,right:r.right,height:r.height,width:innerWidth};});
+    assert.ok(geometry.left>=0&&geometry.right<=geometry.width&&geometry.height>=44,'localized migration link fits a320px phone and retains its touch target');
+    assert.equal(await state(legacy),previous);evidence.legacyNoticeLocales++;
+   }
    await legacy.selectOption('#chloha-locale','en');await legacy.screenshot({path:'reports/v0187/legacy-en.png',fullPage:true});
-   const opened=context.waitForEvent('page');await legacy.locator('#singularityMigrationNotice a').click();const next=await opened;await ready(next);
-   assert.equal(new URL(next.url()).pathname,'/singularity/');assert.equal(await next.evaluate(()=>window.opener===null),true);assert.equal(new URL(legacy.url()).pathname,'/chloha-damage-lab/');assert.equal(await state(legacy),previous);assert.equal(await legacy.inputValue('#feedbackDescription'),'Unsent old-URL draft');assert.equal(await next.inputValue('#feedbackDescription'),'');
+   const opened=context.waitForEvent('page'),navigation=context.waitForEvent('request',{predicate:request=>request.isNavigationRequest()&&request.url()===preview.origin+'/singularity/'});
+   await legacy.locator('#singularityMigrationNotice a').click();const next=await opened;await ready(next);
+   assert.equal(new URL(next.url()).pathname,'/singularity/');assert.equal(new URL(next.url()).search,'','legacy URL parameters must not leak into the new URL');assert.equal(new URL(next.url()).hash,'','legacy fragments must not leak into the new URL');
+   assert.equal((await navigation).headers().referer,undefined,'same-origin navigation must not send a private old URL as Referer');assert.equal(await next.evaluate(()=>document.referrer),'','the new document must not expose the old URL');
+   assert.equal(await next.evaluate(()=>window.opener===null),true);assert.equal(legacy.url(),legacyURL,'the original bookmark and document remain intact');assert.equal(await state(legacy),previous);assert.equal(await legacy.inputValue('#feedbackDescription'),'Unsent old-URL draft');assert.equal(await next.inputValue('#feedbackDescription'),'');
    // A retry after an API outage retains text and uses the real local Worker.
    await openFeedback(next);await next.selectOption('#feedbackCategory','bug');await next.fill('#feedbackDescription','Retained after outage');
    await next.route('**/v1/reports',route=>route.request().method()==='POST'?route.fulfill({status:503,headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':preview.origin},body:'{"error":"temporarily_unavailable"}'}):route.continue());

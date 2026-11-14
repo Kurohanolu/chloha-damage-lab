@@ -5,7 +5,7 @@ const {buildSites}=require('../scripts/v0187-build-sites.cjs');
 const {checkLiveSites}=require('../scripts/v0187-live-migration-check.cjs');
 const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 (async()=>{
- const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-live-mock-'));buildSites(temp);const calls=[];
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-live-mock-'));buildSites(temp);const calls=[],requestedURLs=[];
  try{
   const releasePath=path.join(temp,'singularity/release.json'),manifestPath=path.join(temp,'migration-artifacts.json');
   const originalRelease=JSON.parse(fs.readFileSync(releasePath)),originalManifest=JSON.parse(fs.readFileSync(manifestPath));
@@ -13,11 +13,11 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
    const release=structuredClone(originalRelease);Object.assign(release.migration,migration);
    fs.writeFileSync(releasePath,JSON.stringify(release));
    const manifest=structuredClone(originalManifest);manifest.files['singularity/release.json']=hash(fs.readFileSync(releasePath));
-   fs.writeFileSync(manifestPath,JSON.stringify(manifest));calls.length=0;
+   fs.writeFileSync(manifestPath,JSON.stringify(manifest));calls.length=0;requestedURLs.length=0;
    return {release,manifest};
   }
   const fetchMock=async(input,options)=>{
-   const url=new URL(input);calls.push(url.pathname);
+   const url=new URL(input);calls.push(url.pathname);requestedURLs.push(url);
    assert.equal(options.method,'GET');assert.equal(options.credentials,'omit');assert.equal(options.redirect,'manual');assert.equal(options.cache,'no-store');
    assert.equal(url.origin,'https://kurohanolu.github.io');
    const file=url.pathname.replace(/^\//,'').replace(/\/$/,'/index.html');
@@ -35,6 +35,8 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
   const acceptance=await checkLiveSites(temp,{fetchImpl:fetchMock,mode:'new-target'});
   assert.equal(acceptance.ready,true);assert.equal(acceptance.publicationReady,false);assert.deepEqual(acceptance.checkedSites,['singularity']);
   assert.ok(calls.length>30);assert.ok(calls.every(file=>file.startsWith('/singularity/')),'initial new-target acceptance must not require an old-site notice');
+  assert.ok(requestedURLs.some(url=>url.pathname.endsWith('/brand-v0187.js')&&url.searchParams.get('v')===originalRelease.tag.slice(1)&&!url.searchParams.has('migration-check')),'check the exact versioned runtime URL used by the browser');
+  assert.ok(acceptance.checkedBrowserAssetUrls>=30);
   assert.equal(JSON.parse(fs.readFileSync(releasePath)).migration.liveTargetVerified,false,'read-only acceptance must not set its own approval flag');
   const missingNew=async(url,options)=>new URL(url).pathname.endsWith('/brand-v0187.js')?new Response('',{status:404}):fetchMock(url,options);
   await assert.rejects(checkLiveSites(temp,{fetchImpl:missingNew,mode:'new-target'}),/public artifact HTTP: singularity\/brand/);
@@ -42,6 +44,8 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
   await assert.rejects(checkLiveSites(temp,{fetchImpl:redirectNew,mode:'new-target'}),/public artifact HTTP: singularity\/index.html/);
   const staleNew=async(url,options)=>new URL(url).pathname.endsWith('/brand-v0187.js')?new Response('stale new asset',{status:200}):fetchMock(url,options);
   await assert.rejects(checkLiveSites(temp,{fetchImpl:staleNew,mode:'new-target'}),/deployed artifact SHA256: singularity\/brand-v0187.js/);
+  const staleBrowserCache=async(url,options)=>{const parsed=new URL(url);return parsed.pathname.endsWith('/brand-v0187.js')&&parsed.searchParams.has('v')&&!parsed.searchParams.has('migration-check')?new Response('stale browser asset URL',{status:200}):fetchMock(url,options);};
+  await assert.rejects(checkLiveSites(temp,{fetchImpl:staleBrowserCache,mode:'new-target'}),/deployed artifact SHA256: singularity\/brand-v0187.js/,'a fresh cache-busting probe must not hide stale bytes at the exact browser URL');
   fixture({...approved,targetRepository:'someone-else/singularity'});
   await assert.rejects(checkLiveSites(temp,{fetchImpl:fetchMock,mode:'new-target'}));assert.equal(calls.length,0);
   fixture(approved);
@@ -67,6 +71,8 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
   await assert.rejects(checkLiveSites(temp,{fetchImpl:missingNotice}),/public artifact HTTP: chloha-damage-lab\/legacy-notice/);
   const staleOld=async(url,options)=>new URL(url).pathname==='/chloha-damage-lab/'?new Response('stale old page',{status:200}):fetchMock(url,options);
   await assert.rejects(checkLiveSites(temp,{fetchImpl:staleOld}),/deployed artifact SHA256: chloha-damage-lab\/index.html/);
-  console.log('PASS v0.187 lifecycle: owner/design approval required; new-target acceptance before verified flag and old notice; final publication checks both sites; missing/unsafe/incomplete/stale artifacts fail; synthetic fixtures only, zero production mutations');
+  const staleNoticeCache=async(url,options)=>{const parsed=new URL(url);return parsed.pathname.endsWith('/legacy-notice-v0187.js')&&parsed.searchParams.has('v')&&!parsed.searchParams.has('migration-check')?new Response('stale notice cache',{status:200}):fetchMock(url,options);};
+  await assert.rejects(checkLiveSites(temp,{fetchImpl:staleNoticeCache}),/deployed artifact SHA256: chloha-damage-lab\/legacy-notice-v0187.js/);
+  console.log('PASS v0.187 lifecycle: owner/design approval required; new-target acceptance before verified flag and old notice; both public trees and exact browser cache URLs checked; missing/unsafe/incomplete/stale artifacts fail; synthetic fixtures only, zero production mutations');
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 })().catch(error=>{console.error(error);process.exitCode=1;});

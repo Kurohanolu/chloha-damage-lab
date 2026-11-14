@@ -15,7 +15,7 @@
  function init(){
   const notice=document.createElement('aside');notice.id='singularityMigrationNotice';notice.className='singularity-migration-notice';notice.dataset.noTranslate='';
   const title=document.createElement('strong'),text=document.createElement('p'),link=document.createElement('a');
-  link.href='../singularity/';link.target='_blank';link.rel='noopener';notice.append(title,text,link);document.body.prepend(notice);
+  link.href='../singularity/';link.target='_blank';link.rel='noopener noreferrer';notice.append(title,text,link);document.body.prepend(notice);
   const refresh=()=>{const locale=window.ChlohaLocale?.get?.()||'ja',[a,b,c]=labels[locale]||labels.ja;title.textContent=a;text.textContent=b;link.textContent=c;notice.setAttribute('aria-label',a);};
   document.addEventListener('chloha:localechange',refresh);refresh();
  }

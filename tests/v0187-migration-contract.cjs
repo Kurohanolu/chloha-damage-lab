@@ -30,7 +30,11 @@ try{
  for(const [file,digest] of Object.entries(manifest.files))assert.equal(hash(fs.readFileSync(path.join(out,file))),digest,file);
  assert.ok(!Object.keys(manifest.files).some(file=>/services\/|\.wrangler|node_modules|tests\/|\.git\//.test(file)),'public artifacts must exclude backend, secrets and development dependencies');
  for(const file of dependencies(frozen))assert.equal(hash(fs.readFileSync(path.join(out,'chloha-damage-lab',file))),hash(old(file)),'old URL retains its audited runtime');
- const legacy=fs.readFileSync(path.join(out,'chloha-damage-lab/index.html'),'utf8');assert.equal(legacy.replace('<link rel="stylesheet" href="./legacy-notice-v0187.css?v=0.186-pre.32">','').replace('<script defer src="./legacy-notice-v0187.js?v=0.186-pre.32"></script>',''),frozen,'only the explicit migration notice is added to the old calculator');
+ const legacy=fs.readFileSync(path.join(out,'chloha-damage-lab/index.html'),'utf8');
+ const noticeReferences=[...legacy.matchAll(/(?:href|src)="(\.\/legacy-notice-v0187\.(?:css|js)\?[^\"]+)"/g)].map(match=>new URL(match[1],'https://preview.invalid/chloha-damage-lab/'));
+ assert.equal(noticeReferences.length,2);
+ for(const url of noticeReferences)assert.equal(url.searchParams.get('v'),manifest.files[url.pathname.slice(1)].slice(0,16),'notice cache key must follow its own content, independent of frozen calculator version');
+ assert.equal(legacy.replace(/<link rel="stylesheet" href="\.\/legacy-notice-v0187\.css\?v=[a-f0-9]{16}">/,'').replace(/<script defer src="\.\/legacy-notice-v0187\.js\?v=[a-f0-9]{16}"><\/script>/,''),frozen,'only the explicit migration notice is added to the old calculator');
  assert.equal(fs.readFileSync(path.join(out,'singularity/index.html'),'utf8'),html);
  assert.throws(()=>buildSites(temp),/empty output/);assert.throws(()=>buildSites(process.cwd()),/source tree/);
  let publicationBlocked=false;try{verifyPublication(release);}catch{publicationBlocked=true;}

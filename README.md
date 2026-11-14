@@ -2,7 +2,7 @@
 
 Pokémon Damage Calculator by **Chloha Labs**. This development branch prepares the supplied Orbital S identity, black/pink/purple interface and a new GitHub Pages project. The owner approved name/logo/UI adoption, the new repository/Pages setup, production acceptance/publication and main merge on 2026-11-15 JST; see [approval scope](docs/v0187-owner-approval.md). Actual target/service acceptance remains a separate gate.
 
-The [published calculator](https://kurohanolu.github.io/chloha-damage-lab/) remains **Chloha Damage Lab v0.186 Pre-Release32** at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`. The public `Kurohanolu/singularity` static target has been created; actual new-URL acceptance is in progress. Source/Issues/PR/CI/history and private feedback stay in this repository; a separately approved project would serve generated static files.
+The [published calculator](https://kurohanolu.github.io/chloha-damage-lab/) remains **Chloha Damage Lab v0.186 Pre-Release32** at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`. The public `Kurohanolu/singularity` static target has been created; actual new-URL acceptance is in progress. Source/Issues/PR/CI/history and private feedback stay in this repository; the Singularity project serves generated static files.
 
 The old site's Pages source is isolated on `pages-legacy`; the new project deploys generated files through the canonical [exact-source Pages workflow](deployment/singularity-pages.yml). The owner supplies a full approved source SHA, and eight exact-source regression gates must pass before deployment. Actual public-content/feedback checks and immutable release publication follow deployment; no deployment secret or second engine source is maintained.
 
@@ -24,6 +24,7 @@ node tests/v0184-engine-initialization.cjs
 node tests/v0184-public-baseline.cjs
 node tests/v0187-migration-contract.cjs
 node tests/v0187-live-readiness.cjs
+node tests/v0187-deployment-gate.cjs
 node scripts/verify-release.cjs
 ```
 
@@ -36,6 +37,6 @@ node scripts/v0187-preview-server.cjs dist/v0187
 
 The loopback server exposes `/singularity/` and `/chloha-damage-lab/`. This is a static preview, not a deployment or a false-success feedback demo. Real production intake intentionally rejects unapproved local origins; reproducible browser tests use the local Worker/SQLite harness and mocked challenge/GitHub services. No credential is needed for those tests.
 
-After recorded owner cutover/design approval, `node scripts/v0187-live-migration-check.cjs --accept-new-target` performs read-only new-site hash acceptance before the verified flag or old-site notice exists. It cannot publish or record its own approval. The default command remains the strict final check of both sites. See the cutover runbook for actual feedback acceptance and final-metadata redeployment; the approved manifest enables initial acceptance while the unverified target still blocks final publication.
+After recorded owner cutover/design approval, `node scripts/v0187-live-migration-check.cjs --accept-new-target` performs read-only new-site hash acceptance before the verified flag or old-site notice exists. It checks the exact versioned asset URLs in the HTML as well as fresh cache-busting probes; stale browser URLs cannot be hidden by a fresh probe. It cannot publish or record its own approval. The default command remains the strict final check of both sites. Legacy notice assets use their own content hashes for cache keys while the audited v0.186 calculator stays frozen. See the cutover runbook for actual feedback acceptance and final-metadata redeployment; the approved manifest enables initial acceptance while the unverified target still blocks final publication.
 
 Eight required regression/migration workflows preserve Showdown, engine baseline, UI/nine-language, private-feedback and v0.186 audit coverage. Pages live smoke and release-metadata validation provide supplementary gates. PR publication is skipped. A later approved release also requires exact-commit CI, actual new/legacy public file hashes, private-service readiness and explicit design/cutover approval; the current manifest blocks publication. Final exact-head results are recorded in the Draft PR rather than inferred from an older green commit.
