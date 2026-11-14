@@ -7,7 +7,7 @@ const weights=weightNamespace.default||globalThis.ChlohaPokemonWeights||weightNa
 const weightModule=require('../weight-power.js');
 const power=weightModule.weightDependentPower||globalThis.ChlohaWeightPower?.weightDependentPower;
 assert.equal(typeof power,'function','weight-power.js must expose weightDependentPower');
-assert.match(html,/<script src="\.\/pokemon-weights-v0181\.js"><\/script><script src="\.\/weight-power\.js"><\/script>/);
+assert.match(html,/<script src="\.\/pokemon-weights-v0181\.js(?:\?v=[^"]+)?"><\/script><script src="\.\/weight-power\.js(?:\?v=[^"]+)?"><\/script>/);
 assert.match(html,/assign\('power',mechanic==='spitUp'\?spitUpCount\*100:mechanic==='flingManual'\?Number\(\$\('flingPower'\)\.value\):weightMove\?weightPower:Math\.max\(1,m\.power\)\)/);
 assert.match(html,/if\(weightMove&&weightPower===null\)throw Error/);
 for(const id of ['charizard','mega_charizard_x','mega_charizard_y','garchomp','mega_garchomp_z','mega_lucario_z']){

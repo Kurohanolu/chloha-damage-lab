@@ -4,7 +4,7 @@ Status: **proposed sequence**, subject to owner approval and CI/manual release g
 
 ## Current position: v0.184 publication
 
-The owner authorized completion and publication of the engine-extraction iteration as v0.184 Pre-Release 29. Entry-point inventory, isolated modules, compatibility bindings, DOM-independent move orchestration, and 300 frozen public-baseline cases are implemented. Exact-commit PR/main CI and deployed-content checks gate publication. See `docs/v0184-release-readiness.md`.
+The owner authorized completion and publication of the engine-extraction iteration as v0.184 Pre-Release 30. Entry-point inventory, isolated modules, compatibility bindings, DOM-independent move orchestration, and 300 frozen public-baseline cases are implemented. Exact-commit PR/main CI and deployed-content checks gate publication. See `docs/v0184-release-readiness.md`.
 
 ## Historical v0.183 closure
 - Finish nine-language localization, official-name and native-select audits; classify same-spelling official labels as valid rather than automatically calling them missing translations.
