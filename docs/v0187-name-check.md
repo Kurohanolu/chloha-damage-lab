@@ -10,6 +10,8 @@ This is a bounded preliminary search for the owner's proposed product name, not 
 | Proposed repository | Connected GitHub GET for `Kurohanolu/singularity` returned 404 | The connection can be permission-filtered and private repositories may be invisible; this does not reserve or guarantee the name. No repository was created |
 | Proposed Pages path | Default project-site URL structure supports `/singularity/` for that project name | Real deployment, permissions and actual-host checks remain pending approval; localhost path simulation is not a published URL |
 
+Public HTTP recheck on 2026-11-15: the proposed `/singularity/` path returned404. The old calculator returned200 and its HTML matched v0.186's released bytes. This confirms no public cutover at that check; it does not establish the availability of an unseen private repository name.
+
 Do not reuse Activision's game logo, visual identity or claims of affiliation. The prototype uses the owner's supplied Orbital S reference and identifies the developer as Chloha Labs and the product as a Pokémon damage calculator. That does not itself settle naming rights. No ®/exclusive-rights claim is introduced.
 
 Sources checked:

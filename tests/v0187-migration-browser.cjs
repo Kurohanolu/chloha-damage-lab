@@ -50,6 +50,9 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     assert.equal(await page.locator('.product-description').textContent(),descriptions[index]);
     assert.ok((await page.locator('[data-singularity=credit]').textContent()).includes('Chloha Labs'));
     assert.equal(await page.locator('.brand-logo').evaluate(img=>img.decode().then(()=>img.naturalWidth>0)),true);
+    const header=await page.evaluate(()=>{const rect=selector=>{const r=document.querySelector(selector).getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,height:r.height};};return {logo:rect('.brand-logo'),locale:rect('#chloha-locale-control'),control:rect('#chloha-locale'),version:rect('.version')};});
+    const overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top);
+    assert.equal(overlaps(header.logo,header.locale),false,'logo and language control must not overlap');assert.equal(overlaps(header.locale,header.version),false);assert.ok(header.control.height>=44,'language touch target');
     assert.equal((await page.request.get(preview.origin+'/singularity/assets/singularity/favicon.png')).status(),200);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no horizontal overflow: '+locale);
     const visible=await page.locator('#app').innerText();assert.ok(!/Chloha Damage Lab|CHLOHA TOOLS|DAMAGE LAB/.test(visible),'no unintended previous product name: '+locale);
@@ -64,9 +67,11 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     await page.locator('#moveSearch').fill('Grav Apple');await page.locator('#moveSuggestions [role=option]').first().click();await page.waitForFunction(()=>window.ChlohaLastCalculation.a.moveId==='gravApple');
     const before=await state(page),other=locales[(index+1)%locales.length];await page.selectOption('#chloha-locale',other);assert.equal(await state(page),before,'locale preserves all numeric inputs/results');await page.selectOption('#chloha-locale',locale);
     evidence.numericChecks+=await vectors(page);
+    if(locale==='ja'){await page.locator('#resultCard').scrollIntoViewIfNeeded();await page.screenshot({path:'reports/v0187/mobile-ja-result.png'});}
     await openFeedback(page);assert.equal(await state(page),before,'opening feedback preserves calculation');assert.equal(await page.isChecked('#feedbackAttach'),false);
     await page.click('#feedbackSubmit');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.fill('#feedbackDescription','Synthetic migration feedback '+locale);await page.check('#feedbackAttach');
+    if(locale==='ja')await page.screenshot({path:'reports/v0187/feedback-ja.png'});
     const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,'v0.187 Pre-Release 33');assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
     await page.selectOption('#chloha-locale',other);assert.equal(await page.inputValue('#feedbackDescription'),'Synthetic migration feedback '+locale);assert.equal(await page.isChecked('#feedbackConfirm'),true);await page.selectOption('#chloha-locale',locale);
     let requests=0,releasePost;const waiting=new Promise(resolve=>{releasePost=resolve;});

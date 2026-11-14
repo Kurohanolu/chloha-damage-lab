@@ -44,6 +44,7 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .stat-row input,.singularity .stat-row select{background:var(--sg-input);color:var(--sg-text)}
 .singularity .stat-toggle,.singularity .point-presets button.preset-reset{background:#241d2d;color:var(--sg-text);border-color:#85738e}
 .singularity .stat-overview .stat-preview{background:#1d1725;color:var(--sg-text);border-color:#63536f}
+.singularity .stat-overview .stat-preview.has-points{background:#35233a;color:#ffddf4;border-color:#bc75a4}
 .singularity .type-pill{background:#30263c;color:#f6edff;border:1px solid #776784}
 .singularity .ko-summary{background:#211a2a;color:var(--sg-text);border-color:#6c5b7a}
 .singularity .ko-summary[data-outcome=possible]{background:#292116;border-color:#a78a54}
@@ -92,11 +93,12 @@ body.singularity #feedbackPanel a{color:#ffb3e3}
 body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{color:var(--sg-danger)}
 @media(max-width:700px){
  .singularity .lab{padding-inline:12px;padding-bottom:110px}
- .singularity .lab-header{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;min-height:0;padding-block:10px}
- .singularity .brand-logo{width:210px;height:70px}
+ .singularity .lab-header{grid-template-columns:minmax(0,1fr) minmax(72px,90px) auto;gap:8px;min-height:0;padding-block:10px}
+ .singularity .brand-logo{width:155px;height:54px;max-width:100%}
  .singularity .brand{grid-column:1;grid-row:1}
- .singularity .version{grid-column:2;grid-row:1;margin:0;font-size:11px;text-align:right}
- .singularity #chloha-locale-control{grid-column:1/-1;grid-row:2;justify-self:end;max-width:100%}
+ .singularity .version{grid-column:3;grid-row:1;margin:0;font-size:11px;text-align:right}
+ .singularity #chloha-locale-control{grid-column:2;grid-row:1;justify-self:stretch;max-width:100%;font-size:10px!important}
+ .singularity #chloha-locale{font-size:12px;width:100%!important;max-width:100%}
  .singularity .lab-intro{padding:22px 0 12px;display:block}
  .singularity .lab-intro h1{font-size:34px}
  .singularity .release-note{font-size:11px;margin-top:12px;max-width:none}
@@ -110,5 +112,5 @@ body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{co
  .singularity .result-card{padding:18px 15px}
  .singularity .mobile-result{padding-bottom:max(10px,env(safe-area-inset-bottom))}
 }
-@media(max-width:360px){.singularity .brand-logo{width:184px;height:62px}.singularity .lab{padding-inline:9px}.singularity .fighter{padding-inline:10px}}
+@media(max-width:360px){.singularity .lab{padding-inline:9px}.singularity .fighter{padding-inline:10px}}
 @media(prefers-reduced-motion:reduce){.singularity *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

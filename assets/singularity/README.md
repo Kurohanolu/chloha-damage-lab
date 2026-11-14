@@ -8,6 +8,7 @@ These are branch-only candidates. Final logo/design adoption is pending owner ap
 | orbital-s-icon.webp | Square icon adaptation | 512×512, lossless WebP encoding after deterministic downscale |
 | header.webp | Compact horizontal adaptation | 600×200, lossless WebP encoding after deterministic downscale |
 | favicon.png | Small tab icon from the square adaptation | 64×64 PNG |
+| apple-touch-icon.png | Mobile home-screen icon export | 180×180 PNG |
 
 The supplied reference SHA256 is `21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c`. It is unchanged. The header and square icon were prepared with the built-in image generation/editing tool using that reference. Curves, glow and letterforms are approximate adaptations, not pixel-identical extraction. The favicon is a deterministic small-size export of the icon; no unrelated official Pokémon logo is incorporated. The product description is ordinary text, not an official Pokémon wordmark.
 

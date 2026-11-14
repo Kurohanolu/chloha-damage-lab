@@ -11,7 +11,8 @@
     "reference": "assets/singularity/orbital-s-reference.png",
     "icon": "assets/singularity/orbital-s-icon.webp",
     "header": "assets/singularity/header.webp",
-    "favicon": "assets/singularity/favicon.png"
+    "favicon": "assets/singularity/favicon.png",
+    "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
     "status": "awaiting-owner-approval",

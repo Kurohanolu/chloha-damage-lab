@@ -14,7 +14,7 @@ assert.deepEqual(inline(html),inline(frozen),'inline mechanics/data/control logi
 const ids=source=>[...new Set([...source.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]))].sort();
 assert.deepEqual(ids(html),ids(frozen),'existing input/control IDs must be preserved');
 const release=JSON.parse(fs.readFileSync('release.json'));
-const initialPresentationBytes=['brand-v0187.js','singularity-v0187.css',release.branding.header,release.branding.favicon].reduce((sum,file)=>sum+fs.statSync(file).size,0);
+const initialPresentationBytes=['brand-v0187.js','singularity-v0187.css',release.branding.header,release.branding.favicon,release.branding.appleTouch].reduce((sum,file)=>sum+fs.statSync(file).size,0);
 assert.ok(initialPresentationBytes<80*1024,'new required presentation assets must remain under80KiB');
 assert.equal(fs.statSync(release.branding.reference).size,979837,'preserve the supplied full logo reference');
 assert.throws(()=>verifyPublication(release),/final owner/);
