@@ -1,5 +1,5 @@
 'use strict';
-// Ability labels and coverage metadata; preserve the existing catalog verbatim.
+// Ability labels, coverage metadata, and bypass sets; preserve existing values verbatim.
 (()=>{
 const ABILITY_CATALOG=Object.freeze({
  moldBreaker:{ja:'かたやぶり',en:'Mold Breaker',coverage:'supported'},
@@ -75,5 +75,8 @@ const ABILITY_CATALOG=Object.freeze({
 });
 const ABILITY_ID_BY_JA=Object.freeze(Object.fromEntries(Object.entries(ABILITY_CATALOG).map(([id,data])=>[data.ja,id])));
 
-window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA});
+const MOLD_BREAKER_ABILITIES=new Set(['moldBreaker','teravolt','turboblaze']);
+const MOLD_BREAKER_IGNORED_DEFENSE=new Set(['multiscale','furCoat','iceScales','punkRock','fluffy','auraGuard','bulletproof','soundproof','unaware','purifyingSalt','shellArmor','battleArmor','grassPelt','marvelScale','wonderGuard','drySkin','heatproof','waterBubble','thickFat','levitate','waterAbsorb','stormDrain','sapSipper','lightningRod','motorDrive','earthEater','wellBakedBody','voltAbsorb','flashFire','filter','solidRock']);
+
+window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE});
 })();

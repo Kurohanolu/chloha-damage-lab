@@ -61,6 +61,28 @@ const input={
 };
 const snapshot=JSON.stringify(input);
 const result=context.ChlohaDamageEngine.calculate(input);
-assert.deepEqual(Array.from(result.rolls),[72,73,73,75,75,76,76,78,79,79,81,81,82,82,84,85],'initialization must preserve the characterized sixteen-roll vector');
+const standardRolls=[72,73,73,75,75,76,76,78,79,79,81,81,82,82,84,85];
+assert.deepEqual(Array.from(result.rolls),standardRolls,'initialization must preserve the characterized sixteen-roll vector');
 assert.equal(JSON.stringify(input),snapshot,'initialization probe must not mutate its input');
-console.log('PASS v0.184 engine initialization: scoped data modules, UI metadata, and sixteen-roll vector');
+
+// Characterized boundaries: ability immunity is bypassed; type immunity and Shadow Shield remain.
+const zeroRolls=Array(16).fill(0);
+const shieldRolls=[36,36,36,37,37,38,38,39,39,39,40,40,41,41,42,42];
+const bypassProbes=[
+ ['Levitate blocks Ground',{defAbility:'levitate'},zeroRolls],
+ ['Shadow Shield halves full-HP damage',{defAbility:'shadowShield'},shieldRolls]
+];
+for(const attAbility of ['moldBreaker','teravolt','turboblaze']){
+ bypassProbes.push(
+  [attAbility+' bypasses Levitate',{attAbility,defAbility:'levitate'},standardRolls],
+  [attAbility+' preserves Shadow Shield',{attAbility,defAbility:'shadowShield'},shieldRolls],
+  [attAbility+' preserves Flying type immunity',{attAbility,defAbility:'levitate',defTypes:['ひこう']},zeroRolls]
+ );
+}
+for(const [name,overrides,expected] of bypassProbes){
+ const probe={...input,...overrides};
+ const before=JSON.stringify(probe);
+ assert.deepEqual(Array.from(context.ChlohaDamageEngine.calculate(probe).rolls),expected,name);
+ assert.equal(JSON.stringify(probe),before,name+': caller input must remain unchanged');
+}
+console.log('PASS v0.184 engine initialization: scoped data modules, UI metadata, sixteen-roll vector, and '+bypassProbes.length+' ability-bypass probes');

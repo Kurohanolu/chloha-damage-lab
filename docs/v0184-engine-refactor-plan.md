@@ -8,12 +8,12 @@ Status: implementation in progress on Draft PR #56. Public UI remains **v0.183 P
 | --- | --- |
 | `battle-data-v0184.js` | Type effectiveness, type plates, resist berries, and existing game-data references |
 | `move-mechanics-data-v0184.js` | Stable move ID sets and skin ability type mappings |
-| `ability-data-v0184.js` | Existing 70-entry ability label/coverage catalog and Japanese ID lookup |
+| `ability-data-v0184.js` | Existing 70-entry ability label/coverage catalog, Japanese ID lookup, and Mold Breaker family/bypass sets |
 | `damage-engine-v0184.js` | Validation, calculation functions, modifier registration, and the public engine API |
 
 Data files keep their declarations in isolated scopes and expose explicit `window` namespaces. They load synchronously before the engine; existing inline UI consumers retain their catalog bindings.
 
-`tests/v0184-engine-initialization.cjs` checks script presence/order, isolated data bindings, UI metadata access, and a fixed sixteen-roll vector before browser dependency installation. The browser baseline and all five required CI workflows remain mandatory. Engine/data file changes must trigger the Showdown comparison and UI regression workflows even when `index.html` is unchanged.
+`tests/v0184-engine-initialization.cjs` checks script presence/order, isolated data bindings, UI metadata access, and fixed sixteen-roll vectors before browser dependency installation. Its ability-bypass probes preserve Levitate bypass, Shadow Shield protection, and Flying-type immunity for the three Mold Breaker family abilities. The browser baseline and all five required CI workflows remain mandatory. Engine/data file changes must trigger the Showdown comparison and UI regression workflows even when `index.html` is unchanged.
 
 ## Objective
 Separate the damage calculation core, move-specific rules, ability modifiers, item/field modifiers, data access, and presentation/localization without changing validated results. A historical `v0.162` core label is not proof that calculation logic is frozen at v0.162. Audit version provenance before renaming anything.
