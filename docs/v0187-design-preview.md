@@ -1,5 +1,7 @@
 # Singularity v0.187 — デザイン確認用
 
+[新URLの実画面と本番受入記録](v0187-live-acceptance.md)を追加しました。以下のレビュー時画像と実際の公開受入結果を区別して保存します。
+
 **2026-11-15に名称・ロゴ・UIの採用と公開工程が承認されました。実URLの受入・切替は別途検証します。** [承認範囲](v0187-owner-approval.md)。製品はSingularity、開発元はChloha Labs。元画像のOrbital Sを保持し、ブラック・ホワイト・ネオンピンク・パープルの表示層を計算処理から分離しています。
 
 以下はGitHub CIの実ブラウザ画像で、生成したUIモックではありません。画面ソースは `4410036663748cdc04e5feb7a59066af75200c01`、[検証run](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43611635903)。PRの一時マージ参照で検証されるため、成果物に記録したcheckout SHAとPR head SHAは区別します。後続の資料更新は同じUI・計算処理を保持します。

@@ -6,6 +6,8 @@ The [published calculator](https://kurohanolu.github.io/chloha-damage-lab/) rema
 
 The old site's Pages source is isolated on `pages-legacy`; the new project deploys generated files through the canonical [exact-source Pages workflow](deployment/singularity-pages.yml). The owner supplies a full approved source SHA, and eight exact-source regression gates must pass before deployment. Actual public-content/feedback checks and immutable release publication follow deployment; no deployment secret or second engine source is maintained.
 
+[The new Singularity URL](https://kurohanolu.github.io/singularity/) is now live for acceptance: exact public hashes, nine real-browser locales and actual anonymous report persistence passed. Protected owner moderation/Issue acceptance remains the blocker before final main/release cutover. See [actual-site evidence](docs/v0187-live-acceptance.md); the old calculator remains available.
+
 - [Design preview and actual browser screenshots](docs/v0187-design-preview.md)
 - [Development/readiness report](docs/v0187-release-readiness.md)
 - [Migration/deployment/rollback plan](docs/v0187-singularity-migration-preparation.md)
