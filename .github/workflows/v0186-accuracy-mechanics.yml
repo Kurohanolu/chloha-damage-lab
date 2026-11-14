@@ -45,6 +45,8 @@ jobs:
         run: node tests/v0186-seeded-differential.cjs
       - name: Verify exhaustive inventory and reproducible coverage counts
         run: node scripts/v0186-mechanics-coverage.cjs --check
+      - name: Require the audit workflow before any release publication
+        run: node tests/v0186-release-gate.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

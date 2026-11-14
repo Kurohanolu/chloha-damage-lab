@@ -14,6 +14,7 @@ H01's current-rule release hold is resolved by that availability clarification. 
 - No remaining confirmed P0/P1 defect has been identified within the current modeled rule scope. Existing Partial/Unsupported boundaries remain documented, including the five-move Sheer Force whitelist and explicit Multiscale/multi-hit rejection.
 - Extreme non-battle manual-stat overflow remains Unverified; software reference parity is not full hardware certification.
 - The candidate is ready for final owner review once all seven required workflows complete successfully on the new head. Earlier green commits do not substitute for that check.
+- The release publisher also requires the v0.186 audit workflow on the exact main release commit whenever that audit workflow exists, in addition to its existing CI and live-content gates. A PR run validates the release metadata but does not publish.
 - Main merge and production publication still require explicit final owner approval. The owner's instruction to continue after clarifying SV evidence is not treated as merge/deployment approval.
 - Public release metadata and Cloudflare infrastructure remain at v0.185 Pre-Release31. A release operation must include the version/prerelease metadata and publication gates; this audit checkpoint does not itself deploy or retag a release.
 
