@@ -1,8 +1,6 @@
 // Compare Chloha's 16 damage rolls against @smogon/calc in a real browser.
 // Run: npm install --no-save @smogon/calc playwright && npx playwright install chromium && node tests/showdown-differential.mjs
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { pathToFileURL } from 'node:url';
 import { chromium } from 'playwright';
 import { Generations, Pokemon, Move, Field, calculate } from '@smogon/calc';
 
@@ -12,9 +10,7 @@ const page=await browser.newPage();
 let failures=0;
 let caseCount=0;
 try{
- const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
- await page.goto('about:blank');
- await page.setContent(html,{waitUntil:'load'});
+ await page.goto(new URL('../index.html',import.meta.url).href,{waitUntil:'load'});
  await page.waitForFunction(()=>!!window.ChlohaDamageEngine?.calculate,{timeout:15000});
  const cases=[
   {name:'neutral physical / Earthquake',att:'Garchomp',def:'Tyranitar',move:'Earthquake',type:'じめん',category:'physical',power:100,weather:'none',attTypes:['ドラゴン','じめん'],defTypes:['いわ','あく']},
