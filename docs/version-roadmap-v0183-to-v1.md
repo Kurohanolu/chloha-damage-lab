@@ -24,7 +24,7 @@ The owner authorized completion and publication of the engine-extraction iterati
 - Nine-language accessible UI retains drafts across language changes. Production intake remains disconnected until explicitly configured and approved.
 - Worker + Turnstile + D1 intake, authenticated moderation, retention/deletion, and explicit technical-summary publication to GitHub Issues. No browser-side secrets.
 - Dedicated deterministic local/CI security and browser tests, in addition to all five existing workflows and the frozen 300-case baseline.
-- Issue #58; branch `feature/v0185-feedback-system`. Draft PR only; no merge or publication is authorized for this development task.
+- Issue #58 / PR #59; branch `feature/v0185-feedback-system`. The owner subsequently authorized publication; target v0.185 Pre-Release 31. Keep the PR in draft until production connection and real-service acceptance are complete.
 
 ### Integration audit retained within existing and v0.185 CI
 - Cross-validate refactored engine against baseline and Showdown differential fixtures.
@@ -53,4 +53,4 @@ The proposed feedback milestone moved into v0.185 by explicit owner instruction.
 The latest explicit owner brief assigns v0.185 to private anonymous feedback, superseding the earlier proposed v0.185 audit / v0.186 feedback numbering. Existing integration audits remain required CI. Development completion is separate from owner-approved production connection and publication.
 
 ## Next iteration
-Finish the v0.185 feedback candidate and verify all required CI; keep main at the verified v0.184 Pre-Release 30 until the owner separately authorizes merge and publication.
+Connect the private production service, pass its readiness/live acceptance checks, and rerun required CI for v0.185 Pre-Release 31. Publication authorization is already recorded; main stays at the verified v0.184 Pre-Release 30 until those connection prerequisites pass.

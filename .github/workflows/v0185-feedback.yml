@@ -6,6 +6,8 @@ on:
       - 'feedback-*.js'
       - locale-registry.js
       - i18n.js
+      - release.json
+      - scripts/feedback-production-check.cjs
       - 'services/feedback/**'
       - 'tests/v0185-feedback-*.cjs'
       - '.github/workflows/v0185-feedback.yml'
@@ -16,6 +18,8 @@ on:
       - 'feedback-*.js'
       - locale-registry.js
       - i18n.js
+      - release.json
+      - scripts/feedback-production-check.cjs
       - 'services/feedback/**'
       - 'tests/v0185-feedback-*.cjs'
       - '.github/workflows/v0185-feedback.yml'
@@ -37,6 +41,8 @@ jobs:
         run: npm ci --prefix services/feedback --no-audit --no-fund
       - name: Validate complete nine-language contract
         run: node tests/v0185-feedback-contract.cjs
+      - name: Validate fail-closed production release checks
+        run: node tests/v0185-feedback-production.cjs
       - name: Exercise private API, security and moderated Issue state machine
         run: npm test --prefix services/feedback
       - name: Validate the undeployed Worker bundle

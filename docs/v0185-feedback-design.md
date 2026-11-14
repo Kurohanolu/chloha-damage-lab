@@ -1,6 +1,6 @@
 # v0.185 — Private anonymous feedback design
 
-Baseline: public main `4444dce9e560026ee26c20e0677d182155aa19af`, v0.184 Pre-Release 30. Issue #58, branch `feature/v0185-feedback-system`. **Draft development only. No merge, deployment, external accounts, billing, or production secrets are authorized.** Public release metadata stays at v0.184 until a separately approved release is prepared.
+Baseline: public main `4444dce9e560026ee26c20e0677d182155aa19af`, v0.184 Pre-Release 30. Issue #58, branch `feature/v0185-feedback-system`. The owner authorized continuing through publication on 2026-11-14 after the development candidate passed CI. Target: **v0.185 Pre-Release 31**. Private production infrastructure must be connected and verified before merge; account access, secrets and any paid services cannot be invented or assumed.
 
 ## Delivered boundaries
 

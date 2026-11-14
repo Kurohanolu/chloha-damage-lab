@@ -21,7 +21,7 @@
 
 ## Backlog: tester feedback and bug-report interface (after engine refactor)
 
-**Status:** implemented for the owner-directed v0.185 development candidate in Draft PR (Issue #58); production connection is intentionally disabled. See `docs/v0185-feedback-design.md` and `docs/v0185-feedback-operations.md`. The latest owner brief replaces screenshot uploads with optional, explicitly reviewed calculation snapshots and optional email. No file upload or public report/status lookup is included.
+**Status:** implemented in PR #59 (Issue #58); the owner subsequently authorized publication. Release candidate: v0.185 Pre-Release 31. Private production connection and real-service acceptance remain prerequisites. See `docs/v0185-feedback-design.md`, `docs/v0185-feedback-operations.md` and `docs/v0185-release-readiness.md`. The latest owner brief replaces screenshot uploads with optional, explicitly reviewed calculation snapshots and optional email. No file upload or public report/status lookup is included.
 
 **Purpose:** let testers report damage mismatches, UI defects, translations, and feature requests directly from Damage Lab, similar to a blog comment form but structured for reproduction.
 

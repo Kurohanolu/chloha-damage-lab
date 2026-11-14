@@ -1,6 +1,6 @@
 # v0.185 feedback — local verification and production connection
 
-**Current state: development candidate; production disabled.** No main merge or publication is authorized. The repository's public version remains v0.184 Pre-Release 30. New files use its current release cache key only to keep the unreleased branch consistent with `release.json`; all cache keys and public version metadata must be bumped together for a separately approved v0.185 release.
+**Current state: release candidate; production connection pending.** The owner authorized continuing through merge and publication on 2026-11-14. The candidate is v0.185 Pre-Release 31 with updated metadata/cache keys; the actual public site remains v0.184 until backend acceptance and merge. Publication permission does not supply Cloudflare account access, secrets or consent to a paid plan.
 
 ## Local demo, no external accounts/secrets
 
@@ -26,9 +26,9 @@ node tests/v0184-public-baseline.cjs
 
 If a managed machine prevents browser launch/download, use the dedicated GitHub CI run; never skip or report the browser suite as passed. `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` can select an already installed test browser. CI uses the matching Playwright Chromium by default.
 
-## Production setup requiring owner approval and account access
+## Production account access and protected setup
 
-Do not run these steps automatically during this development task. Do not put secrets in the repository, screenshots, chat, browser config or GitHub Pages.
+The publication task authorizes necessary setup within the existing scope. First obtain access to the owner's Cloudflare account, and keep any new paid service or legal/account agreement for explicit owner action. Do not put secrets in the repository, screenshots, chat, browser config or GitHub Pages.
 
 | Setting / resource | Where | Required value / purpose |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ Do not run these steps automatically during this development task. Do not put se
 | Dedicated D1 database | Cloudflare | Private feedback only; select data location/backup policy |
 | `database_id` | `services/feedback/wrangler.jsonc` | Replace the all-zero placeholder with the approved database ID |
 | Migrations | Approved D1 database | Apply `migrations/0001_feedback.sql`; never point at another existing database |
-| HTTPS API hostname / routes | Cloudflare | Dedicated hostname; `workers_dev` and preview URLs are disabled by default |
+| HTTPS API hostname / routes | Cloudflare | Dedicated approved `workers.dev` or custom hostname; `workers_dev` and preview URLs stay disabled until that hostname/Access configuration is selected |
 | Turnstile widget | Cloudflare | Managed widget for `kurohanolu.github.io`; no public test keys |
 | `TURNSTILE_SITE_KEY` | Worker public variable | Approved widget public key |
 | `TURNSTILE_SECRET` | Worker secret | Matching private verification key |
@@ -53,7 +53,9 @@ Do not run these steps automatically during this development task. Do not put se
 | Daily Cron and alerts | Cloudflare | Verify 03:17 UTC purge schedule, failure alerts, storage/traffic limits and no body logging |
 | `apiBase` | `feedback-config-v0185.js` | Approved HTTPS API origin only; no secret or path/query |
 
-After approval, the owner/operator can create the dedicated D1 database, replace its ID, apply migrations remotely, and enter secrets with `wrangler secret put NAME`. Use interactive secret entry; do not include values in command history. Review the account's actual plan and spending/usage controls before any deployment. This repository adds no automatic deployment workflow.
+The owner/operator can create the dedicated D1 database, replace its ID, apply migrations remotely, and enter secrets with `wrangler secret put NAME` or the provider's secure dashboard. Use interactive secret entry; do not include values in command history. Review the account's actual plan and spending/usage controls before any deployment. This repository adds no automatic backend deployment workflow.
+
+Cloudflare's current Workers Access documentation permits hostname/path-specific protection on `workers.dev` as well as custom domains: https://developers.cloudflare.com/workers/configuration/cloudflare-access/. Protect the admin paths while leaving the anonymous intake paths public. Do not enable whole-Worker authentication on the public intake. A domain purchase is not a prerequisite merely to prepare this connection; choose the actual account hostname after sign-in.
 
 ## Connection acceptance before public release
 
@@ -61,8 +63,8 @@ After approval, the owner/operator can create the dedicated D1 database, replace
 2. Test with synthetic data and the real Turnstile widget; check allowed hostname/action, replay/limits, invalid requests and D1 outages. Confirm that no request bodies, email, IP or keys enter application logs.
 3. Verify administrator list/detail/status/delete on synthetic reports. For the first real GitHub integration probe, obtain approval to create a clearly labeled synthetic Issue; inspect the exact public title/body before sending. Review ambiguous-result reconciliation without a second POST.
 4. Verify the scheduled purge, expired-report denial and D1 backup retention. Confirm the privacy text matches the selected provider plan and actual operational policy.
-5. Set the approved frontend `apiBase` and prepare v0.185 public metadata/cache keys/release notes. Run all five existing workflows, the v0.185 workflow and live-content checks. Review the dedicated Draft PR.
-6. Obtain the owner's separate merge/publication approval. Only then enable intake and publish the approved release. Verify public endpoint errors/success, nine-language mobile/desktop behavior, and rollback.
+5. Set the approved frontend `apiBase`. Run `node scripts/feedback-production-check.cjs`; it must report `ready: true`. This read-only check requires HTTPS production configuration, exact CORS/retention, denied anonymous admin access, and no public report listing. It never posts a report, solves a challenge, or supplies administrator credentials. Dedicated tests exercise its failure cases using mocks.
+6. Run all five existing workflows, the v0.185 workflow and live-content checks on the updated release candidate. Publication authorization has already been received; merge only after real backend acceptance and readiness. The release workflow independently runs the production check before packaging. Verify public endpoint errors/success, nine-language mobile/desktop behavior, and rollback.
 
 ## Incident and rollback
 

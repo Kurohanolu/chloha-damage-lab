@@ -5,6 +5,7 @@ on:
       - release.json
       - docs/releases/**
       - scripts/verify-release.cjs
+      - scripts/feedback-production-check.cjs
       - .github/workflows/publish-release.yml
   push:
     branches: [main]
@@ -25,6 +26,7 @@ jobs:
       - run: node scripts/verify-release.cjs
       - run: node tests/v0184-engine-initialization.cjs
       - run: node tests/v0184-public-baseline.cjs
+      - run: node tests/v0185-feedback-production.cjs
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     needs: [validate]
@@ -35,6 +37,11 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Require a connected private feedback service
+        run: node scripts/feedback-production-check.cjs
       - name: Package the exact release commit
         run: git archive --format=zip --prefix=chloha-damage-lab/ -o release.zip HEAD
       - name: Require exact-commit CI and deployed-content checks
