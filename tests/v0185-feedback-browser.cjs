@@ -30,6 +30,12 @@ async function fill(page){await page.selectOption('#feedbackCategory','bug');awa
    const app=await startLocalApp();const {page,context,errors}=await newPage(browser,app,locale,{productionMessage:true,viewport:locale==='en'?{width:1280,height:900}:undefined});
    try{
     const original=await calculation(page);await open(page);assert.equal(await calculation(page),original,'Opening feedback must preserve calculation');assert.equal(await page.locator('#feedbackAttach').isChecked(),false);
+    const contrasts=await page.evaluate(()=>{
+     const rgb=value=>value.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4;});
+     const luminance=value=>rgb(value).reduce((sum,n,i)=>sum+n*[0.2126,0.7152,0.0722][i],0);
+     const background=luminance(getComputedStyle(document.getElementById('feedbackPanel')).backgroundColor);
+     return ['feedbackTitle','feedbackDescriptionHelp','feedbackPrivacy','feedbackCategory','feedbackPreview'].map(id=>{const style=getComputedStyle(document.getElementById(id)),foreground=luminance(style.color);let bg=background;if(style.backgroundColor!=='rgba(0, 0, 0, 0)')bg=luminance(style.backgroundColor);return {id,ratio:(Math.max(foreground,bg)+0.05)/(Math.min(foreground,bg)+0.05)};});
+    });assert.ok(contrasts.every(c=>c.ratio>=4.5),JSON.stringify(contrasts));
     const mismatches=await page.evaluate(()=>[...document.querySelectorAll('#feedbackPanel [data-fb]')].filter(n=>n.id!=='feedbackSubmit').map(n=>({key:n.dataset.fb,actual:n.textContent,expected:window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),n.dataset.fb)})).filter(x=>x.actual!==x.expected));assert.deepEqual(mismatches,[],locale);
     await page.click('#feedbackSubmit');await textEquals(page,'#feedbackErrors','requiredCategory');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.click('#feedbackSubmit');await textEquals(page,'#feedbackErrors','requiredDescription');
