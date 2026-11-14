@@ -8,7 +8,7 @@ Baseline: public main `4444dce9e560026ee26c20e0677d182155aa19af`, v0.184 Pre-Rel
 | --- | --- |
 | `feedback-contract-v0185.js` | Shared categories, statuses, size limits, and strict snapshot allowlists |
 | `feedback-locales-v0185.js` | 42 explicit keys in the existing registry's nine locales; no fallback for supported languages |
-| `feedback-config-v0185.js` | Public API origin only, empty by default; never a private credential |
+| `feedback-config-v0185.js` | Approved public API origin only; never a private credential |
 | `feedback-snapshot-v0185.js` | Read controls/current UI input and valid numeric result without calling or changing the engine |
 | `feedback-ui-v0185.js` | Nonmodal form, validation, preview/consent, challenge, delivery state and in-memory draft |
 | `services/feedback/src/worker.js` | Private intake, server validation, Bot verification, limits, authenticated moderation and controlled Issue creation |
@@ -26,7 +26,7 @@ Attachment is off by default. The user sees a frozen JSON preview with canonical
 | --- | --- | --- |
 | Hosted generic form | Simple intake, but provider-specific API/admin/retention/Issue bridge and consent UX would still need integration | Not chosen |
 | GitHub Issues/Discussions directly | Public by default and requires a GitHub account | Does not meet the brief |
-| Workers + Turnstile + D1 + Access | Separate private store, server validation, explicit owner moderation, no frontend tokens; small operational surface | Chosen; no account or paid plan enabled |
+| Workers + Turnstile + D1 + Access | Separate private store, server validation, explicit owner moderation, no frontend tokens; small operational surface | Chosen; dedicated resources connected without paid-plan changes |
 
 Pricing reference checked 2026-11-14: Workers Free advertises 100,000 requests/day; D1 Free 5 million rows read/day, 100,000 rows written/day and 5 GB total storage; Turnstile Free includes unlimited challenges. The application applies a much lower global intake quota. These are provider limits, not a promise that a particular account or paid plan is configured or necessary. D1 queries fail after free-plan limits; intake then returns failure. Account plan, Access identity policy, data location and usage alerts must be reviewed before activation.
 

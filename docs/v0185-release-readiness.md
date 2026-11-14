@@ -1,33 +1,31 @@
 # v0.185 Pre-Release 31 — publication readiness
 
-The owner authorized proceeding through publication on 2026-11-14. PR #59 is the release candidate. This supersedes its original draft-only authorization boundary; it does not manufacture provider access, credentials or paid-plan consent.
+The owner authorized merge/publication and zero-incremental-cost operation on 2026-11-14. PR #59 is the candidate. Existing D1, Worker, Turnstile and Access resources are reused; no repeated enrollment, resource creation, credential sharing or protection disablement is needed.
 
-## Ready in source
+## Verified production connection
 
-- Anonymous/private feedback UI, nine locales, reviewed optional calculation snapshots and authenticated moderation are implemented.
-- The provisioned-resource head `48ebb73cb43dc238b7ab9fd3933accfc1cfdc839` passed all five existing workflows, dedicated v0.185 CI, release validation and the current-public-base smoke. Any subsequent commit must receive its own exact-head CI verification.
-- Public metadata, package metadata, release notes and runtime cache keys are prepared for v0.185 Pre-Release 31; internal calculation API stays v0.184.
-- A read-only production gate blocks archive publication when intake is missing, in demo mode, unsafe, unavailable, or exposes admin routes. Its deterministic tests run in CI; real readiness is a separate actual-service check.
-- Main/live Pages checks must include the deployed feedback controls and their native labels without generating a public report or bypassing Bot protection.
+- The owner registered the repository-restricted `GITHUB_TOKEN` directly; the provider confirms all four expected secret names without exposing values.
+- The deployed Worker has the existing dedicated DB, real Access issuer/AUD, owner-only allowlist and `INTAKE_ENABLED=true`. Previews and application logging remain disabled.
+- The real read-only production gate passes all ten checks, including exact-origin CORS, no-store caching, production Turnstile configuration, denied anonymous admin access and no public report listing.
+- Nine actual negative-input cases reject malformed/unknown/oversized/script-category/PII-snapshot/media-type/origin/invalid-Turnstile requests; no report was stored.
+- The owner completed an encrypted Access transfer. Work verified the real application JWT signature, issuer, audience, owner and expiry, then successfully read the private API. Credential values and org tokens are not published or used as a substitute for authorization.
+- Actual admin CSRF checks deny missing/foreign Origin. A platform Assets `/index.html` canonical redirect was detected with the authenticated session, reproduced in tests, and fixed by requesting the canonical asset root while retaining the outer protected admin path. The handler continues to authenticate every HTML/asset request.
+- Local API/security tests now cover 15 cases, including that platform redirect regression. All 300 frozen full calculation outputs remain identical.
 
-## Concrete blocker observed
+## Candidate and CI
 
-The candidate frontend now uses the actual HTTPS API origin. The existing Access application's real issuer/AUD are configured in the deployed Worker, and three admin paths redirect to that application without exposing content. Intake remains off and `GITHUB_TOKEN` is absent. The real-service readiness check therefore correctly blocks publication. These observations establish **remaining secret and authenticated acceptance pending**, not release completion.
+The last verified source head `4d57520ca7618c7ad1d2a96051012b2d56726c79` passed all five existing workflows, dedicated v0.185 CI, release validation and current-public-base smoke. The subsequent intake/Assets fix must receive its own exact-head CI before merge. PR smoke checks the public base; its release publish job is skipped.
 
-Wrangler authentication has now succeeded. The owner already approved its account/user-read, Workers-script, D1 and Turnstile scopes; authenticated `whoami` and read-only API calls verified access to one account. Do not request the same scope approval again. Earlier background attempts encountered execution-policy denials, but fresh endpoint checks succeeded and the foreground device flow completed. The exact earlier failure cause is not established.
+Release metadata, nine-language UI, optional reviewed snapshots, immutable package/cache keys and internal v0.184 calculation API are prepared. Main/public Pages are still v0.184 Pre-Release 30 until the authorized candidate deployment.
 
-The owner subsequently approved the concrete production resources, APAC placement and completing v0.185 publication within Free allowances and zero incremental cost. The dedicated D1, Worker, Workers namespace and Turnstile are created; the DB migration and three secrets are registered. The dedicated workers.dev URL is now active with previews disabled and intake stopped. The existing Access application was reused; no additional application, Worker or database was created. Direct registration of the Issues-only GitHub token remains necessary; see `docs/v0185-feedback-owner-setup.md`. No paid-plan or subscription change has been made. Do not request already-received scope, resource or publication approvals again.
+## Final deployment and acceptance
 
-Cloud Browser dashboard sign-in returned HTTP 403, while Wrangler/API deployment continues to work. The Access page currently offers Cloudflare login only; real owner sign-in, moderation and approved Issue export are unverified. A generic library User-Agent separately caused workers.dev error 1010; a truthful descriptive application User-Agent reaches the service, and the read-only release checker now uses it. No browser impersonation, protection change or network-path change was used.
+1. Verify final PR head CI: all five required workflows plus v0.185 and release validation/current-base smoke must be completed/success.
+2. Merge only that expected head, then directly verify main CI and deployed HTML/assets/calculation/feedback labels.
+3. Immediately exercise successful synthetic delivery with the real Turnstile widget on the approved Pages origin, then authenticated review/status/approved technical-summary Issue creation and duplicate prevention. The widget hostname stays restricted; this successful form round trip requires the candidate to be deployed on that origin. Read-only readiness and mocks do not establish delivery or GitHub write permission.
+4. Verify the actual prerelease tag/archive/checksum targets the successful merge commit. Report publication complete only after the real-service round trip and deployed-content/main-CI checks finish.
+5. On failure, retain client drafts, report the actual error, fix and reverify; use the approved rollback if required. Never show false success or disable tests.
 
-Required operator work is listed in `docs/v0185-feedback-operations.md`. Use secure provider sign-in/secret entry, never paste passwords, Turnstile secrets or GitHub tokens into a public file or chat. A new account's agreement or paid plan needs explicit owner action.
-
-## Final release gate
-
-1. Complete the approved private backend setup and a synthetic real-service acceptance report/admin review.
-2. Configure the approved HTTPS API origin and verify `node scripts/feedback-production-check.cjs` reports `ready: true`.
-3. Verify all five existing workflows, v0.185 CI, release validation and current public-base smoke for the final PR head.
-4. Merge with the verified head SHA only, then verify main CI, deployed HTML/assets/calculation/feedback labels, and the immutable release archive/checksum.
-5. Report the actual live version and connection state. Do not publish a disconnected form as a completed feedback system.
+A synthetic production report is retained for audit and normal expiry; do not permanently delete production data merely to clean up a verification run. No paid-plan or subscription change is authorized.
 
 Rollback: complete v0.184 Pre-Release 30 tree at `4444dce9e560026ee26c20e0677d182155aa19af`, with feedback intake disabled as necessary.

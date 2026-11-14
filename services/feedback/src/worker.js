@@ -216,7 +216,9 @@ export function createWorker({externalFetch=globalThis.fetch,now=()=>Date.now(),
      await authenticate(request,env);if(request.method!=='GET')fail(405,'method');
      const path=url.pathname.replace(/^\/admin\/?/,'')||'index.html';if(!['index.html','admin.js','admin.css'].includes(path))fail(404,'not_found');
      if(!env.ADMIN_ASSETS)fail(503,'admin_unavailable');
-     const response=await env.ADMIN_ASSETS.fetch(new Request(new URL('/'+path,url),request)),out=new Response(response.body,response);
+     // Request the canonical index URL so Assets does not redirect the outer admin path to /.
+     const assetPath=path==='index.html'?'/':'/'+path;
+     const response=await env.ADMIN_ASSETS.fetch(new Request(new URL(assetPath,url),request)),out=new Response(response.body,response);
      for(const [key,value] of Object.entries(headers))out.headers.set(key,value);return out;
     }
     fail(404,'not_found');

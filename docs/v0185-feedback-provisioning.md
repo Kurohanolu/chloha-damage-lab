@@ -1,6 +1,6 @@
 # v0.185 feedback — production resources for owner review
 
-Status on 2026-11-14: **dedicated D1, Worker and Turnstile reused; existing Access application connected; intake disabled; GitHub secret and real-service acceptance pending.** The owner explicitly approved the concrete resources, APAC placement hint and proceeding through v0.185 publication under a zero-incremental-cost/Free-plan condition. Wrangler scope and publication approvals also remain valid. Never request the same approvals again.
+Status on 2026-11-14: **existing D1, Worker, Turnstile and Access reused; four secrets registered; intake enabled; authenticated backend/readiness checks passed; deployed-form acceptance pending.** The owner explicitly approved the concrete resources, APAC placement hint and proceeding through v0.185 publication under a zero-incremental-cost/Free-plan condition. Wrangler scope and publication approvals also remain valid. Never request the same approvals again.
 
 The earlier execution-review rejection was resolved by that explicit resource approval. The subsequent creation succeeded through the normal Wrangler/API clients. Do not recreate the resources below or treat the historical rejection as a current blocker.
 
@@ -11,15 +11,15 @@ The earlier execution-review rejection was resolved by that explicit resource ap
 | D1 | `chloha-private-feedback`, ID `17330885-dc0f-4dfd-a703-89cd34547e6c`, created in APAC; `0001_feedback.sql` applied successfully |
 | Database contents | Required tables/indexes present; `reports` count is zero |
 | Account namespace | `kurohanolu-labs` |
-| Worker | `chloha-private-feedback`, deployed with the dedicated DB and admin assets; `INTAKE_ENABLED=false` |
-| Public routing | Dedicated workers.dev URL deployed; preview URLs remain disabled; anonymous intake returns 503 |
+| Worker | `chloha-private-feedback`, deployed with the dedicated DB and admin assets; `INTAKE_ENABLED=true` |
+| Public routing | Dedicated workers.dev URL deployed; preview URLs remain disabled; anonymous configuration returns production readiness; invalid submissions are rejected |
 | Turnstile | Managed widget, public site key `0x4AAAAAAGAh8_mA5oJtA6fs`, hostname `kurohanolu.github.io` only |
-| Secrets | Provider confirms `TURNSTILE_SECRET`, `RATE_LIMIT_SECRET`, `ADMIN_EMAILS` as `secret_text`; values have not been committed or printed |
+| Secrets | Provider confirms `TURNSTILE_SECRET`, `RATE_LIMIT_SECRET`, `ADMIN_EMAILS`, `GITHUB_TOKEN` as `secret_text`; values have not been committed or printed |
 | Cron | Provider confirms `17 3 * * *` |
 | Existing Access application | `Chloha Feedback Admin`; `/admin/`, `/admin/admin.js` and `/v1/admin/reports` all redirect to the same real Access issuer/AUD; no duplicate created |
-| Remaining owner setup | Repository-restricted `GITHUB_TOKEN` directly registered in the existing Worker; real owner sign-in still needs verification |
+| Owner setup | GitHub secret registration and real Access owner authentication completed; no repeated setup requested |
 
-No paid-plan or subscription change was made. The minimal remaining Japanese owner steps are in `v0185-feedback-owner-setup.md`. The API hostname is `chloha-private-feedback.kurohanolu-labs.workers.dev`; its public URL is active but it does not yet accept reports. Worker version `855ffdce-4729-4850-af7f-0435864cab29` has the actual Access issuer/AUD and keeps `INTAKE_ENABLED=false`.
+No paid-plan or subscription change was made. The minimal remaining Japanese owner steps are in `v0185-feedback-owner-setup.md`. The API hostname is `chloha-private-feedback.kurohanolu-labs.workers.dev`; its public URL and intake are active. Worker version `14f57433-090a-435a-b753-38d568308f75` preserves the actual Access issuer/AUD and four secrets. Actual readiness and negative-input checks pass; successful real-widget delivery/Issue export still require the deployed form.
 
 ## Approved resource configuration
 
@@ -43,14 +43,14 @@ D1 Free includes 10 databases, 5 GB total storage, 5 million daily row reads and
 
 Saved application details and actual edge responses verify an existing application. Do not repeat Zero Trust enrollment or application creation. The current Wrangler grant has Workers/D1/Turnstile permissions but no Access-specific read grant: an empty Access API list is not evidence that the saved application is absent. Actual protected-path redirects identify `https://billowing-fog-54f4.cloudflareaccess.com` and AUD `4427567a8c8371ea5d07e641f92105ec0ef0697d33c7611bc124c0e57b1fe1b9`. Its public signing-key endpoint returns RS256 keys. These public settings are now in the Worker configuration.
 
-Cloud Browser dashboard sign-in returned a generic login HTTP 403. No credential failure or bot-detection cause was established, and automatic login retries were stopped. The Access sign-in page currently offers Cloudflare login only; authenticated owner acceptance is still outstanding. Do not disable authentication or request session cookies, cURL exports or verification codes in chat.
+Cloud Browser dashboard sign-in returned a generic login HTTP 403. No credential failure or bot-detection cause was established, and automatic login retries were stopped. The Access sign-in page currently offers Cloudflare login only; the owner subsequently completed an encrypted Access CLI-protocol transfer, and Work verified the application JWT signature, issuer/AUD, owner and expiry before successfully reading the real private API. Do not disable authentication or request session cookies, cURL exports or verification codes in chat.
 
-The existing API connection can deploy and read secret **names**, but cannot issue a repository-restricted GitHub credential on behalf of the owner. Create a fine-grained GitHub token restricted to `Kurohanolu/chloha-damage-lab`, with **Issues: read and write** and default Metadata read only, then register it directly as `GITHUB_TOKEN` in the existing Worker. Set an explicit expiry and record its renewal date privately. Do not send the value in chat or reuse the GitHub connector's credentials. See `v0185-feedback-owner-setup.md`.
+The existing API connection can deploy and read secret **names**, but cannot issue a repository-restricted GitHub credential on behalf of the owner. The owner has now registered that secret directly. For future rotation, use a fine-grained GitHub token restricted to `Kurohanolu/chloha-damage-lab`, with **Issues: read and write** and default Metadata read only, then register it directly as `GITHUB_TOKEN` in the existing Worker. Set an explicit expiry and record its renewal date privately. Do not send the value in chat or reuse the GitHub connector's credentials. See `v0185-feedback-owner-setup.md`.
 
 ## Starting state and remaining rollout
 
-The initial authenticated inspection found no Worker scripts, D1 databases or Turnstile widgets. The dedicated resources listed above have since been created. The owner's existing Access application is now connected without recreation. No production report has been accepted. The candidate frontend points at the verified HTTPS API origin; the production readiness check must continue to fail while intake is disabled or required secrets are missing.
+The initial authenticated inspection found no Worker scripts, D1 databases or Turnstile widgets. The dedicated resources listed above have since been created. The owner's existing Access application is now connected without recreation. No production report has been accepted. The candidate frontend points at the verified HTTPS API origin; the real production readiness check now passes all ten checks. No successful report delivery or Issue export is inferred from that read-only result.
 
-Continue from the verified resources and register the remaining GitHub secret. Check ownership/configuration before changing a resource and do not repeat ambiguous creation requests blindly. Keep intake disabled until the remaining secret, authenticated owner access and operational prerequisites are verified. Then run the real-service acceptance and release gates in `v0185-feedback-operations.md` and `v0185-release-readiness.md`.
+Continue from the verified resources and registered GitHub secret. Check ownership/configuration before changing a resource and do not repeat ambiguous creation requests blindly. Intake was enabled after the four-secret/configuration/anonymous-access checks. Owner authentication and actual private reads subsequently succeeded. Complete the deployed-form acceptance and release gates in `v0185-feedback-operations.md` and `v0185-release-readiness.md`.
 
 Reports expire at 90 days and are purged daily. D1 Free Time Travel can retain a recoverable copy for a further seven days; confirm the selected plan and operational privacy notice. Creating infrastructure is not equivalent to testing actual anonymous receipt, administrator login or GitHub Issue export.

@@ -66,6 +66,17 @@ test('administrator JWT verification checks signature, expiry, issuer, audience,
  const page=await h.request('/admin/',{admin:true});assert.equal(page.status,200);assert.match(page.headers.get('content-security-policy'),/frame-ancestors 'none'/);
  h.env.ADMIN_EMAILS='';assert.equal((await h.request('/v1/admin/reports',{admin:true})).status,503);
 }));
+test('administrator entry points serve HTML without escaping the protected path via an Assets canonical redirect',withHarness(async h=>{
+ for(const path of ['/admin','/admin/','/admin/index.html']){
+  assert.equal((await h.request(path)).status,401,path+' must authenticate first');
+  const response=await h.request(path,{admin:true});
+  assert.equal(response.status,200,path);assert.equal(response.headers.get('location'),null,path);
+  assert.match(await response.text(),/src="\/admin\/admin.js"/);
+  assert.match(response.headers.get('cache-control'),/no-store/);
+ }
+ assert.equal((await h.request('/admin/admin.js',{admin:true})).status,200);
+ assert.equal((await h.request('/admin/admin.css',{admin:true})).status,200);
+}));
 test('admin CSRF, category/status filters, revision conflicts and parameterized text are enforced',withHarness(async h=>{
  const dangerous='<img src=x onerror="window.stolen=true"><script>alert(1)</script>\n\'; DROP TABLE reports; --';const id=await add(h,{description:dangerous,email:'private@example.test'});let row=await detail(h,id);assert.equal(row.description,dangerous);assert.equal(row.email,'private@example.test');
  const token=await h.token();const forged=new Request('http://127.0.0.1:8787/v1/admin/reports/'+id,{method:'PATCH',headers:{'Content-Type':'application/json','Cf-Access-Jwt-Assertion':token,'Origin':'https://attacker.invalid','X-Chloha-Admin':'1'},body:JSON.stringify({revision:row.revision,status:'Accepted'})});assert.equal((await h.worker.fetch(forged,h.env)).status,403);

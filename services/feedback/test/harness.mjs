@@ -30,7 +30,13 @@ export async function createHarness(){
  const db=new SQLiteD1(),clock={ms:Date.now()},calls={siteverify:[],github:[],issues:[]},state={github:'success',challenge:'success'};
  const {privateKey,publicKey}=await generateKeyPair('RS256',{modulusLength:2048});const jwk=await exportJWK(publicKey);jwk.kid='local-test-key';jwk.alg='RS256';
  const env={ENVIRONMENT:'local',INTAKE_ENABLED:'true',ALLOWED_ORIGINS:'http://127.0.0.1:8787',TURNSTILE_HOSTNAMES:'127.0.0.1',TURNSTILE_SITE_KEY:'local-test-site-key',TURNSTILE_SECRET:'local-test-turnstile-secret',RATE_LIMIT_SECRET:'local-test-rate-secret-at-least-32-characters',ACCESS_ISSUER:'https://chloha-local-test.cloudflareaccess.com',ACCESS_AUDIENCE:'local-test-audience',ADMIN_EMAILS:'owner@example.test',GITHUB_REPOSITORY:'Kurohanolu/chloha-damage-lab',GITHUB_TOKEN:'local-test-github-credential',DB:db,
- ADMIN_ASSETS:{async fetch(request){const name=basename(new URL(request.url).pathname);const body=await readFile(resolve(root,'services/feedback/admin',name));return new Response(body,{headers:{'Content-Type':name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':'text/html'}});}}};
+ ADMIN_ASSETS:{async fetch(request){
+  const path=new URL(request.url).pathname;
+  // Workers Assets canonicalizes /index.html to / before serving HTML.
+  if(path==='/index.html')return new Response(null,{status:307,headers:{Location:'/'}});
+  const name=path==='/'?'index.html':basename(path),body=await readFile(resolve(root,'services/feedback/admin',name));
+  return new Response(body,{headers:{'Content-Type':name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':'text/html'}});
+ }}};
  const externalFetch=async(input,options={})=>{
   const url=String(input);
   if(url===env.ACCESS_ISSUER+'/cdn-cgi/access/certs')return Response.json({keys:[jwk]});

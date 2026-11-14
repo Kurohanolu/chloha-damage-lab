@@ -10,7 +10,7 @@
   "triggers": {"crons": ["17 3 * * *"]},
   "vars": {
     "ENVIRONMENT": "production",
-    "INTAKE_ENABLED": "false",
+    "INTAKE_ENABLED": "true",
     "ALLOWED_ORIGINS": "https://kurohanolu.github.io",
     "TURNSTILE_HOSTNAMES": "kurohanolu.github.io",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAGAh8_mA5oJtA6fs",
