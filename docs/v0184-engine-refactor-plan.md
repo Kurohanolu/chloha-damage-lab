@@ -6,12 +6,14 @@ Status: implementation in progress on Draft PR #56. Public UI remains **v0.183 P
 
 | File | Responsibility |
 | --- | --- |
-| `battle-data-v0184.js` | Type effectiveness, type plates, resist berries, and existing game-data references |
+| `battle-data-v0184.js` | Type effectiveness, type plates, resist berries, attacker/defender item validation IDs, and existing game-data references |
 | `move-mechanics-data-v0184.js` | Stable move ID sets, core mechanic validation IDs, and skin ability type mappings |
 | `ability-data-v0184.js` | Existing ability catalog, Japanese ID lookup, attacker/defender validation IDs, Mold Breaker family/bypass sets, and weather/terrain mappings |
 | `damage-engine-v0184.js` | Validation, calculation functions, modifier registration, and the public engine API |
 
 Data files keep their declarations in isolated scopes and expose explicit `window` namespaces. They load synchronously before the engine; existing inline UI consumers retain their catalog bindings.
+
+Item validation preserves the original 23 attacker IDs and 21 defender IDs, including `none`. Frozen arrays retain the existing `TYPE_PLATES` and `RESIST_BERRIES` key expansion, role restrictions, item effects, validation order, and rejection messages.
 
 Validation preserves the original 71 attacker IDs and 40 defender IDs, including `none`, in separate frozen arrays. These lists are not generated from the 70-entry display catalog: catalog presence alone does not imply that an ID is accepted for either role. Rejection messages and validation order remain unchanged.
 

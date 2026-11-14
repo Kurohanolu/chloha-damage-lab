@@ -49,6 +49,23 @@ for(const [id,ability] of Object.entries(ABILITY_CATALOG)){
 }
 assert.ok(vm.runInContext('ABILITY_CATALOG===window.ChlohaAbilityData.ABILITY_CATALOG&&ABILITY_ID_BY_JA===window.ChlohaAbilityData.ABILITY_ID_BY_JA',context),'inline UI must retain access to the same ability metadata');
 
+const {TYPE_PLATES,RESIST_BERRIES,ATTACKER_ITEM_IDS,DEFENDER_ITEM_IDS}=context.ChlohaBattleData;
+for(const [name,ids,count] of [['attacker',ATTACKER_ITEM_IDS,23],['defender',DEFENDER_ITEM_IDS,21]]){
+ assert.ok(Array.isArray(ids)&&Object.isFrozen(ids),name+' item IDs must be an immutable array');
+ assert.equal(ids.length,count,name+' existing item count, including none');
+ assert.equal(new Set(ids).size,count,name+' item IDs must be unique');
+ assert.ok(ids.every(id=>typeof id==='string'),name+' item IDs must be strings');
+ assert.ok(ids.includes('none'),name+' must accept no item');
+}
+for(const id of Object.keys(TYPE_PLATES)){
+ assert.ok(ATTACKER_ITEM_IDS.includes(id),'attacker must accept plate '+id);
+ assert.ok(!DEFENDER_ITEM_IDS.includes(id),'defender must reject plate '+id);
+}
+for(const id of Object.keys(RESIST_BERRIES)){
+ assert.ok(DEFENDER_ITEM_IDS.includes(id),'defender must accept berry '+id);
+ assert.ok(!ATTACKER_ITEM_IDS.includes(id),'attacker must reject berry '+id);
+}
+
 const input={
  level:50,power:100,attack:150,defense:120,hp:180,currentHp:180,
  attackStage:0,defenseStage:0,attAbility:'none',defAbility:'none',
@@ -64,6 +81,18 @@ const result=context.ChlohaDamageEngine.calculate(input);
 const standardRolls=[72,73,73,75,75,76,76,78,79,79,81,81,82,82,84,85];
 assert.deepEqual(Array.from(result.rolls),standardRolls,'initialization must preserve the characterized sixteen-roll vector');
 assert.equal(JSON.stringify(input),snapshot,'initialization probe must not mutate its input');
+
+const rejectedItems=[
+ {attItem:'assaultVest'},{attItem:'autoResistBerry'},{attItem:'unknownItem'},
+ {defItem:'lifeOrb'},{defItem:'flamePlate'},{defItem:'unknownItem'},
+ {attItem:null},{defItem:''}
+];
+for(const overrides of rejectedItems){
+ const probe={...input,...overrides};
+ const before=JSON.stringify(probe);
+ assert.throws(()=>context.ChlohaDamageEngine.calculate(probe),{message:'持ち物・特性・タイプ一致補正の指定が不正'},'item validation: '+JSON.stringify(overrides));
+ assert.equal(JSON.stringify(probe),before,'rejected item input must remain unchanged');
+}
 
 // Characterized boundaries: ability immunity is bypassed; type immunity and Shadow Shield remain.
 const zeroRolls=Array(16).fill(0);
@@ -85,4 +114,4 @@ for(const [name,overrides,expected] of bypassProbes){
  assert.deepEqual(Array.from(context.ChlohaDamageEngine.calculate(probe).rolls),expected,name);
  assert.equal(JSON.stringify(probe),before,name+': caller input must remain unchanged');
 }
-console.log('PASS v0.184 engine initialization: scoped data modules, UI metadata, sixteen-roll vector, and '+bypassProbes.length+' ability-bypass probes');
+console.log('PASS v0.184 engine initialization: scoped data modules, UI metadata, item IDs, sixteen-roll vector, '+rejectedItems.length+' item rejections, and '+bypassProbes.length+' ability-bypass probes');
