@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chloha-private-feedback",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-14",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {"enabled": false},
+  "assets": {"directory": "./admin", "binding": "ADMIN_ASSETS", "run_worker_first": true},
+  "triggers": {"crons": ["17 3 * * *"]},
+  "vars": {
+    "ENVIRONMENT": "production",
+    "INTAKE_ENABLED": "true",
+    "ALLOWED_ORIGINS": "https://kurohanolu.github.io",
+    "TURNSTILE_HOSTNAMES": "kurohanolu.github.io",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAGAh8_mA5oJtA6fs",
+    "ACCESS_ISSUER": "https://billowing-fog-54f4.cloudflareaccess.com",
+    "ACCESS_AUDIENCE": "4427567a8c8371ea5d07e641f92105ec0ef0697d33c7611bc124c0e57b1fe1b9",
+    "GITHUB_REPOSITORY": "Kurohanolu/chloha-damage-lab"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "chloha-private-feedback",
+    "database_id": "17330885-dc0f-4dfd-a703-89cd34547e6c",
+    "migrations_dir": "migrations"
+  }]
+}

@@ -10,11 +10,13 @@ const selects=[
  {id:'attAbility',options:[option('いかく','いかく')]},
  {id:'defItem',options:[option('いのちのたま','いのちのたま')]},
  {id:'attMove',options:[option('じしん','じしん')]}
-];
+].map(select=>({...select,closest:()=>null}));
+// A separate module owns this select's language and must not be overwritten.
+const independentlyLocalized={id:'independentMove',options:[option('earthquake','じしん')],closest:selector=>selector==='[data-no-translate]'?{}:null};
 let locale='ja';
 const document={
  readyState:'complete',
- querySelectorAll:selector=>selector==='select'?selects:[],
+ querySelectorAll:selector=>selector==='select'?[...selects,independentlyLocalized]:[],
  getElementById:id=>id==='chloha-locale'?{addEventListener:(event,fn)=>handlers[event]=fn}:null,
  body:{}
 };
@@ -38,5 +40,10 @@ for(const [code,expected] of [
  locale=code;handlers.change();
  assert.deepEqual(selects.map(s=>s.options[0].textContent),expected,code);
  assert.deepEqual(selects.map(s=>s.options[0].value),values,'Values must remain stable '+code);
+ assert.equal(independentlyLocalized.options[0].textContent,'じしん','Independent module must retain its own label '+code);
 }
+vm.runInNewContext(fs.readFileSync(require.resolve('../names-ui-v0179.js'),'utf8'),context);
+independentlyLocalized.options[0].textContent='Independent module translation';
+context.window.ChlohaNameDisplay.refresh();
+assert.equal(independentlyLocalized.options[0].textContent,'Independent module translation','Legacy English/Japanese refresh must respect independently localized controls');
 console.log('PASS v0.183 nine-language select labels and Japanese roundtrip');

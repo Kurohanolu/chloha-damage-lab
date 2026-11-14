@@ -323,7 +323,7 @@ function translateOptions(){
  // Legacy move-form selectors live outside #app; include them in native option localization.
  const selects=[...document.querySelectorAll('select')];
  for(const select of selects){
-  if(select.id==='chloha-locale')continue;
+  if(select.id==='chloha-locale'||select.closest('[data-no-translate]'))continue;
   for(const option of select.options){
    if(!optionOriginal.has(option))optionOriginal.set(option,reverseNames[option.textContent]||option.textContent);
    const base=optionOriginal.get(option);
@@ -1175,6 +1175,7 @@ function translate(root){
   lastRenderedText.set(node,next);
  }
  for(const element of [root,...root.querySelectorAll('[title],[aria-label],[placeholder]')]){
+  if(element.closest('[data-no-translate]'))continue;
   for(const attr of ['title','aria-label','placeholder']){
    if(!element.hasAttribute(attr))continue;
    const value=element.getAttribute(attr);

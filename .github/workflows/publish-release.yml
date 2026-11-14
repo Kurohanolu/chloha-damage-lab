@@ -5,6 +5,7 @@ on:
       - release.json
       - docs/releases/**
       - scripts/verify-release.cjs
+      - scripts/feedback-production-check.cjs
       - .github/workflows/publish-release.yml
   push:
     branches: [main]
@@ -25,6 +26,7 @@ jobs:
       - run: node scripts/verify-release.cjs
       - run: node tests/v0184-engine-initialization.cjs
       - run: node tests/v0184-public-baseline.cjs
+      - run: node tests/v0185-feedback-production.cjs
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     needs: [validate]
@@ -35,6 +37,11 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Require a connected private feedback service
+        run: node scripts/feedback-production-check.cjs
       - name: Package the exact release commit
         run: git archive --format=zip --prefix=chloha-damage-lab/ -o release.zip HEAD
       - name: Require exact-commit CI and deployed-content checks
@@ -45,6 +52,7 @@ jobs:
             const crypto = require('crypto');
             const manifest = JSON.parse(fs.readFileSync('release.json', 'utf8'));
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'GitHub Pages live smoke'];
+            if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
             let verified;
             for (let attempt = 0; attempt < 40; attempt++) {
               const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});

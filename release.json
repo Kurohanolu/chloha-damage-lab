@@ -1,8 +1,8 @@
 {
-  "version": "0.184",
-  "preRelease": 30,
-  "tag": "v0.184-pre.30",
-  "name": "Chloha Damage Lab v0.184 Pre-Release 30",
-  "notes": "docs/releases/v0.184-pre.30.md",
+  "version": "0.185",
+  "preRelease": 31,
+  "tag": "v0.185-pre.31",
+  "name": "Chloha Damage Lab v0.185 Pre-Release 31",
+  "notes": "docs/releases/v0.185-pre.31.md",
   "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/"
 }

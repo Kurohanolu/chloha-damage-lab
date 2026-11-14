@@ -5,6 +5,9 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'feedback-*.js'
+      - 'services/feedback/**'
+      - 'tests/v0185-feedback-*.cjs'
       - 'battle-data-v0184.js'
       - 'move-mechanics-data-v0184.js'
       - 'ability-data-v0184.js'

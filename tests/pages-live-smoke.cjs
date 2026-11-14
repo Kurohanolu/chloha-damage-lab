@@ -71,11 +71,22 @@ const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
    assert.equal(await page.locator('html').getAttribute('lang'),'en');
    assert.equal(await page.locator('#copy').textContent(),'Copy');
    if(source.includes('damage-calculator-v0184.js'))assert.match(await page.locator('#versionProvenance').textContent(),/calculation core “v0\.184”/,'published version provenance must use the actual API version');
+   if(source.includes('feedback-ui-v0185.js')){
+    await page.locator('#feedbackButton').click();
+    await page.locator('#feedbackPanel').waitFor({state:'visible'});
+    await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled,undefined,{timeout:20000});
+    assert.equal(await page.locator('#feedbackAttach').isChecked(),false,'Public calculation attachment is opt-in');
+    assert.equal(await page.locator('#feedbackMode').isVisible(),false,'Published form must not use local-demo delivery');
+   }
    await page.screenshot({path:'pages-live-en.png',fullPage:true});
    for(const lang of ['ja','fr','de','es','it','ko','zh-Hans','zh-Hant','ja']){
     await locale.selectOption(lang);
     await page.waitForFunction(value=>document.documentElement.lang===value,lang);
     assert.equal(await page.locator('html').getAttribute('lang'),lang,'published language '+lang);
+    if(source.includes('feedback-ui-v0185.js')){
+     const labels=await page.evaluate(()=>[...document.querySelectorAll('#feedbackCategory option')].map(option=>({text:option.textContent,label:option.label,expected:window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),option.dataset.fb)})));
+     assert.ok(labels.every(item=>item.text===item.expected&&item.label===item.expected),'Published feedback native labels: '+lang);
+    }
    }
    await page.screenshot({path:'pages-live-ja.png',fullPage:true});
    await locale.selectOption('en');
