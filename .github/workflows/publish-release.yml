@@ -5,6 +5,7 @@ on:
       - release.json
       - docs/releases/**
       - scripts/verify-release.cjs
+      - scripts/verify-publication-approval.cjs
       - scripts/feedback-production-check.cjs
       - .github/workflows/publish-release.yml
   push:
@@ -40,6 +41,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Require final migration approval before any publication
+        run: node scripts/verify-publication-approval.cjs
       - name: Require a connected private feedback service
         run: node scripts/feedback-production-check.cjs
       - name: Package the exact release commit
@@ -54,6 +57,7 @@ jobs:
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'GitHub Pages live smoke'];
             if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
             if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
+            if (fs.existsSync('.github/workflows/v0187-singularity-migration.yml')) required.push('v0.187 Singularity Migration');
             let verified;
             for (let attempt = 0; attempt < 40; attempt++) {
               const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});

@@ -1,3 +1,11 @@
+## 2026-11-15: v0.187 branch-only migration implementation
+
+- Reuse Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`; the recommended feature branch is not duplicated. Production main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, v0.186 Pre-Release32.
+- Implement the supplied Orbital S brand reference/adaptations, token-based black/pink/purple theme, nine-language product explanation/attribution, relative-path assets and Pre-Release33 candidate metadata. Existing runtime modules, data/control logic, IDs, frozen300 fixtures/errata and production Worker are verified unchanged.
+- Offline new/legacy artifact build retains the old calculator with a localized separate-tab migration link. New repository/Pages setup, logo adoption, real-target acceptance and final cutover remain approval gates; no production configuration, private-data mutation or repository rename is performed.
+- Native manifest/provenance/baseline/artifact/approval-gate/inventory checks pass. Local Chromium launch is restricted by the managed runtime, so actual browser regression and screenshot capture use GitHub CI. This is not treated as a browser PASS. Fetch final-head CI and any failed job logs directly before reporting completion.
+- Naming research found an Activision game using SINGULARITY with trademark attribution. Record the bounded search and registration/availability limits; do not claim clearance or exclusive rights.
+
 ## 2026-11-14: v0.186 Pre-Release32 published; v0.187 preparation started
 
 - Verified public main/tag/archive commit: `4b2cde61f92610c5bb970618d34147a2c16a8d7b` (merged PR #62, Issue #61). All seven mandatory workflows, live Pages smoke and release publication completed / success on that exact SHA; Pages deployment passed too.

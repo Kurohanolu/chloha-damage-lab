@@ -1,0 +1,45 @@
+name: v0.187 Singularity Migration
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  WRANGLER_SEND_METRICS: 'false'
+jobs:
+  migration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-package-lock --no-audit --no-fund
+      - run: npm ci --prefix services/feedback --no-audit --no-fund
+      - run: npx playwright install chromium
+      - name: Validate brand manifest and unchanged calculation contracts
+        run: |
+          node scripts/verify-release.cjs
+          node tests/v0177-version-provenance.cjs
+          node tests/v0184-public-baseline.cjs
+          node tests/v0187-migration-contract.cjs
+          node tests/v0186-release-gate.cjs
+      - name: Nine-language proposed-path, legacy, mobile and private-feedback regression
+        run: node tests/v0187-migration-browser.cjs
+      - name: Prepare both static sites without deployment
+        run: node scripts/v0187-build-sites.cjs --output dist/v0187
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v0187-migration-preview-and-evidence
+          path: |
+            dist/v0187/
+            reports/v0187/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 14

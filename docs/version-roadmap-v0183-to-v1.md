@@ -48,7 +48,7 @@ v0.186 Pre-Release32 is published at `4b2cde61f92610c5bb970618d34147a2c16a8d7b` 
 
 Agreed direction, pending formal validation/adoption approval:
 
-Issue #63 / branch `prep/v0187-singularity-migration`. See [the preparation and dependency survey](v0187-singularity-migration-preparation.md). This stage documents hosting options, a reviewable design/rollout plan and preservation of old-URL and private-feedback users; it performs no actual rename, URL cutover or production configuration change.
+Issue #63 / Draft PR #64 / branch `prep/v0187-singularity-migration`. The 2026-11-15 execution brief now authorizes branch-only branding, logo/theme implementation and dedicated migration tests. See [the implementation and deployment plan](v0187-singularity-migration-preparation.md). The candidate includes a new-path artifact and an old calculator with a non-forcing migration notice, while preserving numerical behavior and private feedback. Actual name/logo adoption, Pages administration, repository creation/rename, URL cutover, production changes and main merge remain subject to final approval.
 
 - Product: **Singularity**, an independent damage calculator developed by **Chloha Labs**.
 - First free-URL candidate: `https://kurohanolu.github.io/singularity/`.

@@ -1,6 +1,26 @@
 # v0.187 — Singularity brand and URL migration preparation
 
-Status: planning only. No product rename, repository creation/rename, Pages configuration, URL cutover, Cloudflare mutation or private-data operation is authorized by this document. Formal adoption/publication approval is required after the concrete preview and migration checks are reviewable.
+Status: implementation and validation in Draft PR #64 / Issue #63, using the existing `prep/v0187-singularity-migration` branch. The 2026-11-15 execution brief authorizes branch-only brand/UI/logo implementation and tests. No repository creation/rename, Pages configuration, URL cutover, Cloudflare mutation or private-data operation is performed. Formal adoption/publication approval is still required.
+
+## Implemented candidate — 2026-11-15
+
+- Proposed public metadata: Singularity v0.187 Pre-Release33, product explanation in all nine languages, developer Chloha Labs; API identifier and existing gameplay data remain v0.184/v0.186 respectively. The new URL in the development manifest is a candidate, not a deployed site.
+- `singularity-v0187.css` isolates black/white/pink/purple presentation tokens from the engine. `brand-v0187.js` only updates product description, attribution and accessible metadata. Existing 28 runtime modules, the inline logic outside the presentation template, control IDs, backend Worker, frozen 300 fixtures and their explicit v0.186 errata are checked byte-for-byte against the released commit.
+- `brand-preview.html` presents the untouched user-supplied reference and square/header/favicon adaptations. The derived icons/header are AI-assisted approximations, not pixel-identical recreations. Header WebP is about31KB; no large background image, remote font, animation dependency or new gameplay control is introduced.
+- `scripts/v0187-build-sites.cjs` produces two isolated public static artifacts, a file/hash manifest and no deployment. `/singularity/` contains the new candidate. `/chloha-damage-lab/` retains the released v0.186 calculator and adds only a localized notice/link opening a separate tab; no automatic redirect, input transfer or private-draft transfer occurs. Backend sources/secrets and development dependencies are excluded.
+- Dedicated `v0.187 Singularity Migration` CI preserves all seven mandatory workflows. It exercises current/legacy path simulations, nine locales, logo loading, reload/search/input/numeric parity, mobile/desktop, local private-feedback success/error/retry/duplicate prevention and anonymous administrator denial. Exact CI results must be retrieved for each final head; preparation is not a PASS claim.
+- Publication rejects this manifest until owner cutover/design approval and actual target verification are recorded. The existing branch-based Pages source must also be changed only under the final approved rollout; this code guard is not a substitute for that administration/merge gate.
+- Same-name games/software and the repository404/search limits are documented in [name check](v0187-name-check.md). Final name/logo/design adoption remains open.
+
+## Chosen deployment design, pending cutover approval
+
+Retain `Kurohanolu/chloha-damage-lab` as the authoritative source, Issues/PR/CI/history and feedback Issue destination. After approval, create or reuse the verified `Kurohanolu/singularity` project strictly as the generated static deployment target. Do not maintain a second independent engine source. Deploy only the `singularity/` artifact there, with source-commit/hash evidence retained; keep release history in the source repository.
+
+The existing Pages run uses GitHub's built-in `dynamic/pages/pages-build-deployment` flow. Its current branch-based deployment must not be allowed to publish the prototype root under the old URL accidentally. Before merging the branded source, the approved rollout must switch the old source repository to an explicitly controlled artifact-based Pages workflow (or an equivalently reviewed separate publishing source). Deploy the generated legacy artifact to the old site. New-repository Pages administration/permissions and any protected deployment identity are configured only after approval; no credentials are embedded in this branch.
+
+Order: verify availability/management capability and exact approved assets; prepare both destinations and rollback; deploy/verify the approved new artifact; retain old calculator and add the old-site notice only once the new site is accepted; run actual public HTML/asset/locale/feedback checks; then permit immutable prerelease publication. If any target/security check fails, retain the working v0.186 old site and do not switch links or disable protections. No paid domain or existing repository rename/deletion is needed by this design.
+
+The preliminary option comparison below is retained as decision history. Localhost `/singularity/` tests establish relative-path and integration behavior, not live publication or full Turnstile/Access acceptance on the new target.
 
 Baseline: v0.186 Pre-Release32, release commit `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, PR #62. Publication evidence is recorded in the v0.186 closure issue/PR and immutable release. Continue the existing restriction against expanding Pokémon, moves, abilities, items or rules until the owner reopens that scope.
 
