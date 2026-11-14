@@ -20,6 +20,13 @@
 - The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
 - [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
 
+## 2026-11-15: Cloudflare dashboard403 isolated from working API authentication
+
+- Stop repeated dashboard sign-in attempts. Observed failure is `POST https://dash.cloudflare.com/api/v4/login`403; the specific provider rejection reason is unconfirmed, not inferred from the status alone.
+- Existing locked Wrangler4.162.0 OAuth authentication, four Worker secret-binding metadata checks and an exact synthetic D1 SELECT succeed. The stored acceptance record remains New / no Issue; rows written0 and database unchanged. No credential values, private existing feedback, new resources or security settings are exposed or changed.
+- All ten source workflows at `7e872c4d4f32f8aeb57c7f3ff34f70c128b5264f` and all ten current production read-only checks pass. Frontend Pages uses GitHub identity; feedback CI tests an undeployed bundle. API/CI development can continue without dashboard login or new Cloudflare credentials.
+- Real protected administrator moderation/Issue acceptance remains separate from management OAuth. Keep the actual-target flag false; do not replace protected acceptance with direct database edits or manual Issue creation. Device Login/narrow API tokens are recovery options only if the existing management session actually becomes unusable. See [authentication diagnosis](v0187-cloudflare-auth-diagnostics.md).
+
 ## 2026-11-15: v0.187 branch-only migration implementation
 
 - Reuse Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`; the recommended feature branch is not duplicated. Production main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, v0.186 Pre-Release32.

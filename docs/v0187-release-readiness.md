@@ -2,7 +2,7 @@
 
 ## Owner-approved rollout in progress — 2026-11-15 JST
 
-Actual HTTPS checkpoint: the new site is deployed successfully, all37 required public files match source, all nine real-browser locale checks preserve the default numeric range/input, and a real anonymous report was received and persisted exactly once. The ten production read-only checks pass. Protected administrator authentication and its moderated Issue round trip remain incomplete; `liveTargetVerified` is still false and main is not merged. See [actual-site evidence and screenshot](v0187-live-acceptance.md). Do not request rollout approval again; complete the existing owner sign-in handoff.
+Actual HTTPS checkpoint: the new site is deployed successfully, all37 required public files match source, all nine real-browser locale checks preserve the default numeric range/input, and a real anonymous report was received and persisted exactly once. The ten production read-only checks pass. Protected administrator authentication and its moderated Issue round trip remain incomplete; `liveTargetVerified` is still false and main is not merged. See [actual-site evidence and screenshot](v0187-live-acceptance.md). Do not request rollout approval again. Dashboard login retries have stopped after403; [existing Wrangler OAuth/API access is valid](v0187-cloudflare-auth-diagnostics.md), so continue development/CI without that screen. Management credentials do not replace the application's administrator Access identity.
 
 The owner approved the reviewed name/logo/UI, new repository/Pages configuration, production acceptance/publication and main merge after the ten-workflow green head `d0c00a7cde3f194b7afc3b46debf52c701a442dc`. See [approval scope](v0187-owner-approval.md). The public `Kurohanolu/singularity` target has been created and Pages management is available through the owner's management UI. Source approval flags are now approved; actual target acceptance remains false until independently verified. Current rollout checkpoints and exact-head CI are recorded in PR #64. The pre-approval checkpoint evidence and remaining operational tests below are retained as history, not a new approval request.
 
@@ -43,7 +43,9 @@ The first new migration run exposed a test using the hidden native move select. 
 
 Local Chromium launch was restricted by the managed environment; it was not reported as a browser PASS. Actual browser results and screenshots above came from GitHub CI. No new hardware damage measurements are claimed.
 
-## Real-service checks and current publication state
+## Historical preparation checks before the approved rollout
+
+The following snapshot predates the approved rollout above. It is retained as history; it does not describe the current new URL, approval flags or publishing-source configuration.
 
 - Existing production feedback read-only readiness passed all ten checks: configured approved HTTPS origin, reachable enabled intake with a non-test Turnstile key, retention90days, exact frontend CORS origin, no-store, no public report listing, and denial on three administrator routes. No production report, Issue export, authenticated report read/deletion, secret or Cloudflare setting mutation was performed.
 - The candidate path and old path share `https://kurohanolu.github.io` and the same Turnstile hostname. Existing code/config supports reuse; no CORS or authentication protection was relaxed. Local path/API tests do not replace future real new-target challenge/delivery/Issue acceptance.
@@ -51,7 +53,7 @@ Local Chromium launch was restricted by the managed environment; it was not repo
 - Existing Pages deployments use the built-in `dynamic/pages/pages-build-deployment` flow from main. The approved rollout must deliberately control that publishing source before merging branded code, deploy the isolated legacy artifact to the old URL and deploy the new artifact to the approved target. Do not let the existing branch-based mechanism accidentally publish the prototype root.
 - Main was not merged, v0.187 was not released, and no existing infrastructure was recreated. Prepared metadata says `awaiting-owner-approval`, design approval is pending and actual target verification is false.
 
-## Outstanding decisions and acceptance
+## Historical pre-approval decisions and acceptance checklist
 
 1. Owner review and adoption of the exact logo and phone/desktop design. Adaptation limits are explicit.
 2. Name-collision decision: Activision has a same-name game with trademark attribution. The bounded [name check](v0187-name-check.md) does not establish legal clearance or exclusive rights.
@@ -59,4 +61,4 @@ Local Chromium launch was restricted by the managed environment; it was not repo
 4. Verify actual new/old HTTPS content, all runtime assets, native challenge/CORS/private delivery and authorized Issue export/duplicate prevention before setting the target acceptance flag and publishing. Any necessary synthetic production report must be part of the explicitly approved acceptance operation.
 5. Main merge and public cutover require the owner's final approval. Keep the working v0.186 site until both destinations and rollback are accepted. No old URL shutdown, paid domain, repository rename/deletion, production data deletion or Cloudflare authentication change is included.
 
-Existing v0.186 Unverified/Partial/Unsupported and hardware limits carry forward unchanged. They are not resolved or newly implemented by this migration. Code and automated verification can be complete while official target construction, design/name adoption and publication remain pending; these states must be reported separately.
+Existing v0.186 Unverified/Partial/Unsupported and hardware limits carry forward unchanged. They are not resolved or newly implemented by this migration. Current approval, deployment and remaining acceptance state is recorded at the top of this document and in the actual-site checkpoint; development and formal release completion must still be reported separately.
