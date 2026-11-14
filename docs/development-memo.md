@@ -1,4 +1,11 @@
-## 2026-11-14: v0.186 Pre-Release32 — conditional publication approved
+## 2026-11-14: v0.186 Pre-Release32 published; v0.187 preparation started
+
+- Verified public main/tag/archive commit: `4b2cde61f92610c5bb970618d34147a2c16a8d7b` (merged PR #62, Issue #61). All seven mandatory workflows, live Pages smoke and release publication completed / success on that exact SHA; Pages deployment passed too.
+- Public manifest/HTML and all 28 runtime scripts match the release source. The actual site passed nine-language browser smoke. The downloaded release ZIP, checksum asset, GitHub digest and archive commit comment all match; detailed evidence is in [release closure](v0186-release-readiness.md).
+- Existing private feedback readiness and administrator-denial checks passed without posting a report or changing production resources/settings/data. No confirmed current-scope P0/P1 remains; software parity is not full hardware certification and existing support limits remain explicit.
+- Next: Issue #63, `prep/v0187-singularity-migration`, [migration preparation](v0187-singularity-migration-preparation.md). Prepare the agreed Singularity direction and old-URL/private-feedback preservation for formal review. No actual product/repository/URL adoption or expanded gameplay support is authorized by the preparation work.
+
+## 2026-11-14: v0.186 Pre-Release32 — conditional publication approved (preparation history)
 
 - After the completed-candidate/final-approval report, the owner instructed progression if no bug remained evident. Proceed with v0.186 merge/publication only after the final exact-head checks succeed and no unresolved critical known defect is present. This does not authorize actual v0.187 name/URL adoption or production feedback configuration/data changes.
 - Prepare v0.186 Pre-Release32 manifest, visible badge/title/provenance, complete runtime cache keys and release notes. Preserve the v0.184 internal API identifier. Check deployed HTML and every runtime asset against the release source before reporting publication.

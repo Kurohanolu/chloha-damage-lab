@@ -1,6 +1,16 @@
-# v0.186 Pre-Release32 publication candidate
+# v0.186 Pre-Release32 — verified publication
 
-Issue #61 / PR #62 / `audit/v0186-accuracy-mechanics`.
+Issue #61 / merged PR #62 / `audit/v0186-accuracy-mechanics`.
+
+## Publication verified — 2026-11-14
+
+- Published release: [v0.186 Pre-Release32](https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.186-pre.32), `draft:false`, `prerelease:true`. Public URL: <https://kurohanolu.github.io/chloha-damage-lab/>.
+- Main, tag target and the downloaded ZIP's git-archive commit comment all equal `4b2cde61f92610c5bb970618d34147a2c16a8d7b`. PR #62's final source head was `47d055ec092fa8374b6069ae97377d04b8aae94f`.
+- All seven mandatory regression/audit workflows, live Pages smoke and verified-prerelease publication completed / success on that exact main commit. Pages deployment itself also completed / success. Full run links are recorded in the release body and Issue #61.
+- Public `release.json` and HTML returned HTTP200 and matched the release source byte-for-byte. All 28 published runtime assets matched their source SHA256; live browser smoke passed nine languages and selected calculation/feedback checks without submitting a report.
+- The release job's real read-only feedback checks passed: intake enabled with a production Turnstile key, correct origin/retention/no-store policy, no public report listing and anonymous access denied for all three administrator routes. API/security/browser regression tests also passed; this release did not create a synthetic production report or change Cloudflare settings/data.
+- Independently downloaded archive: 846,824 bytes; SHA256 `ebed13066faa6b782b6bb0e59091437875ceff913d2922e2d11f77d2c408a7ab`, matching both the checksum asset and GitHub's asset digest. The archive's manifest tag is `v0.186-pre.32`.
+- No confirmed unresolved current-scope P0/P1 remains. The documented Unverified/Partial/Unsupported limits and hardware plan are retained. See [v0.187 preparation](v0187-singularity-migration-preparation.md) / Issue #63 for the next stage; no name/URL adoption or feature expansion occurred in this release.
 
 ## Conditional publication authorization — 2026-11-14
 
@@ -14,7 +24,7 @@ The owner explicitly confirmed that Dudunsparce is absent from current Champions
 
 H01's current-rule release hold is resolved by that availability clarification. Do not ask for an unobtainable current Champions stat screen. The historical candidate record (`roster_v0107_033`, SpA58 versus Gen9 reference85) remains **Unverified**; no data value, roster filter or rule support is changed. Reopen H01 before adopting this species if it becomes available under a future rule. Existing coverage counts remain unchanged; no item is promoted to Verified to improve a rate.
 
-## Readiness
+## Pre-publication gates (historical preparation record)
 
 - The 24 recorded corrections, exhaustive inventory, fixed references, nine-language and feedback regression gates remain in Draft PR #62.
 - No remaining confirmed P0/P1 defect has been identified within the current modeled rule scope. Existing Partial/Unsupported boundaries remain documented, including the five-move Sheer Force whitelist and explicit Multiscale/multi-hit rejection.
