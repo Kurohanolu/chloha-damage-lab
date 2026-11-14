@@ -41,7 +41,7 @@ const path=require('node:path');
    return results;
   });
   for(const [locale,data] of Object.entries(report)){
-   console.log('AUDIT ABILITY/ITEM '+locale+' checked=+data.checked+' missing-data='+data.missing+' failures='+data.failures.length+' missing-samples='+JSON.stringify(data.missingEntries.slice(0,20))+' samples='+JSON.stringify(data.failures.slice(0,12)));
+   console.log('AUDIT ABILITY/ITEM '+locale+' checked='+data.checked+' missing-data='+data.missing+' failures='+data.failures.length+' missing-samples='+JSON.stringify(data.missingEntries.slice(0,20))+' samples='+JSON.stringify(data.failures.slice(0,12)));
    assert.equal(data.failures.length,0,'ability/item locale failures '+locale);
    // Record missing names for follow-up; do not mark missing translations as verified.
    if(data.missing)console.log('AUDIT MISSING ABILITY/ITEM '+locale+' '+JSON.stringify(data.missingEntries));
