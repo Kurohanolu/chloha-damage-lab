@@ -1,6 +1,6 @@
 # v0.184 Engine Refactoring — Planning Memo (Draft)
 
-Status: implementation in progress on Draft PR #56. Public UI remains **v0.183 Pre-Release 28**; the internal engine API is v0.184. Preserve calculator behavior throughout extraction.
+Status: the v0.184 extraction iteration is implemented on PR #56. Release target: **v0.184 Pre-Release 29**, with internal engine API v0.184. Publication is gated by owner authorization, five exact-commit CI workflows, and deployed-content verification.
 
 ## Current data boundaries
 
@@ -51,10 +51,9 @@ Separate the damage calculation core, move-specific rules, ability modifiers, it
 - Nine-language browser roundtrip and persistence stable; native select labels and dynamic warnings tested.
 - Rollback possible at each extraction step.
 
-## Open design questions
-- Which functions are the authoritative damage entry point today?
-- Which effects are currently applied in multiple places?
-- Which rounding rules are backed by hardware evidence versus Showdown only?
-- Should the core expose detailed modifier traces for future debugging?
+## Completed iteration and next audit
+The authoritative entry points, compatibility bindings, mutable registration state, modifier order, rounding, and existing verification limits are recorded in `docs/v0184-engine-inventory.md`. All direct calculation orchestration has been removed from `render()`. Three hundred complete public-release vectors are frozen independently of the new implementation.
 
-**Decision rule:** first deliver an inventory and baseline test report; do not begin large-scale extraction based only on this memo.
+The staged migration above remains a long-term direction, rather than a requirement to rewrite every canonical database ID or legacy trace message in this release. The next integration audit can extend profiling, canonical type IDs, and trace localization without combining those changes with this preservation-focused publication.
+
+The owner authorized publication after completing the remaining v0.184 work. No additional move, ability, item, or translation feature is included in this release.

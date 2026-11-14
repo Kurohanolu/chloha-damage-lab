@@ -185,6 +185,7 @@ const path=require('node:path');
   assert.match(traceEn,/Attack stat: \d+[\s\S]*Defense stat: \d+[\s\S]*Before random factor: \d+/,'real trace labels are English');
   assert.match(traceEn,/Final damage \(roll 100\): \d+/,'final trace roll is English');
   assert.match(provenanceEn,/About versions:.*public UI version.*internal API foundation/,'version provenance is translated');
+  assert.match(provenanceEn,/calculation core “v0\.184”/,'published provenance must identify the actual internal API');
   assert.match(provenanceEn,/Pokémon Champions hardware/,'hardware verification caveat preserved');
   await page.locator('#chloha-locale').selectOption('ja');
   const traceJa=await page.locator('#trace').textContent();

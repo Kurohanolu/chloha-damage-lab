@@ -6,8 +6,10 @@ const assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');
 const workflow=fs.readFileSync(path.join(root,'.github/workflows/ui-smoke.yml'),'utf8');
 const packageJson=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
+const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
+assert.equal(packageJson.version,release.version+'.0','package metadata must match this release');
 const lines=workflow.split(/\r?\n/);
-const runs=[...workflow.matchAll(/^\s+- run: node (tests\/[^\s]+)$/gm)].map(m=>m[1]);
+const runs=[...workflow.matchAll(/^\s+(?:- )?run: node (tests\/[^\s]+)$/gm)].map(m=>m[1]);
 const duplicates=runs.filter((p,i)=>runs.indexOf(p)!==i);
 assert.deepEqual(duplicates,[],'CI must not run duplicate test scripts');
 for(const script of runs)assert.ok(fs.existsSync(path.join(root,script)),'CI script missing: '+script);
@@ -23,7 +25,7 @@ for(const line of lines){
 }
 for(const event of ['push','pull_request']){
  const filters=sections[event]||[];
- for(const required of ['index.html','damage-engine-v0184.js','battle-data-v0184.js','move-mechanics-data-v0184.js','ability-data-v0184.js','i18n.js','names-*.js','weight-power.js','variable-power.js','multi-hit.js','tests/**','data/**','.github/workflows/ui-smoke.yml'])
+ for(const required of ['index.html','damage-engine-v0184.js','damage-calculator-v0184.js','damage-ui-adapter-v0184.js','battle-data-v0184.js','move-mechanics-data-v0184.js','ability-data-v0184.js','i18n.js','names-*.js','weight-power.js','variable-power.js','multi-hit.js','tests/**','data/**','.github/workflows/ui-smoke.yml'])
   assert.ok(filters.includes(required),event+' missing CI trigger: '+required);
 }
 const suites={
@@ -32,24 +34,23 @@ const suites={
  multiHit:['tests/v0182-independent-multihit-rolls.cjs','tests/v0182-special-multihit-independent.cjs','tests/v0182-multihit-browser.cjs'],
  abilities:['tests/v0182-showdown-ability-flags.cjs','tests/v0182-forced-critical-immunity.mjs','tests/v0182-moldbreaker-composition.mjs'],
  ui:['tests/ui-smoke.cjs','tests/v0182-stat-reference-ui-wiring.mjs','tests/v0182-all-select-locale-roundtrip.cjs'],
- locale:['tests/v0179-localization-coverage.cjs','tests/v0182-bilingual-move-search.cjs','tests/v0182-move-status-locale-toggle.cjs','tests/v0182-source-labels-i18n.cjs'],
+ locale:['tests/v0179-localization-coverage.cjs','tests/v0182-bilingual-move-search.cjs','tests/v0182-move-status-locale-toggle.cjs','tests/v0182-source-labels-i18n.cjs','tests/v0183-nine-locale-roundtrip.cjs'],
  data:['tests/v0181-weight-data-audit.cjs','tests/v0181-mega-weight-integrity.cjs','tests/v0181-sprite-coverage.cjs']
 };
 for(const [group,required] of Object.entries(suites))for(const script of required)
  assert.ok(runs.includes(script),'release audit lacks '+group+' suite: '+script);
 const evidence={
- versionTarget:'v0.182',status:'pre-release / evidence collection',
+ versionTarget:'v'+release.version,status:'pre-release / automated coverage verified',
  checks:{ciScriptCount:runs.length,uniqueCiScripts:new Set(runs).size,groups:Object.fromEntries(Object.entries(suites).map(([k,v])=>[k,v.length])),triggerParity:true},
  observations:[
-  {severity:'review',subject:'package.json version',detail:'Package metadata '+packageJson.version+' differs from v0.182 app release label; confirm intentional tooling-only version before v0.183'},
-  {severity:'review',subject:'move catalog',detail:'calculationSupported flags and runtime-policy overrides are not proof of in-game parity; review generated move inventory'},
-  {severity:'review',subject:'language coverage',detail:'CI contains Japanese/English locale tests; independently verify Korean completeness and live toggle behavior before release'},
-  {severity:'review',subject:'hardware parity',detail:'Automated engine/reference parity does not replace Champions hardware test vectors'}
+  {severity:'scope',subject:'move catalog',detail:'Legacy catalog flags remain distinct from runtime support; existing unverified game-parity conditions are preserved'},
+  {severity:'scope',subject:'language coverage',detail:'CI includes nine-language rotation and native select audits; this does not claim new official-name verification'},
+  {severity:'scope',subject:'hardware parity',detail:'Automated engine/reference preservation does not establish additional Champions hardware validation'}
  ],
- decision:'NOT_RELEASE_APPROVED: open review items remain; CI passing only confirms automated checks'
+ decision:'AUTOMATED_COVERAGE_CHECKS_PASSED: publication additionally requires owner authorization and exact-commit CI'
 };
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
 fs.writeFileSync(path.join(root,'reports/v0182-comprehensive-audit.json'),JSON.stringify(evidence,null,2)+'\n');
-console.log('PASS v0.182 comprehensive CI coverage gate',JSON.stringify(evidence.checks));
+console.log('PASS v'+release.version+' comprehensive CI coverage gate',JSON.stringify(evidence.checks));
 console.log('RELEASE_REVIEW',JSON.stringify(evidence.observations));
 console.log(evidence.decision);

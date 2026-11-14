@@ -7,7 +7,9 @@ const abilities=fs.readFileSync(path.resolve(__dirname,'../ability-data-v0184.js
 const titleMatch=html.match(/<title>Chloha Damage Lab (v0\.\d+) (Pre-Release \d+)<\/title>/);
 assert.ok(titleMatch,'public title must contain version and pre-release');
 const [,publicVersion,preRelease]=titleMatch;
-assert.equal(publicVersion,'v0.183','release series must match the current v0.183 public preview');
+const release=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../release.json'),'utf8'));
+assert.equal(publicVersion,'v'+release.version,'public release series must match the manifest');
+assert.equal(preRelease,'Pre-Release '+release.preRelease,'public prerelease number must match the manifest');
 assert.match(html,new RegExp('class="version"[^>]*>'+publicVersion.replaceAll('.','\\.')+' <span>'+preRelease+'</span>'),'visible release badge must match title');
 assert.ok(html.includes('Pages publish: '+publicVersion+' '+preRelease),'publish marker must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);

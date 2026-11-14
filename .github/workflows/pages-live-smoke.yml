@@ -8,8 +8,8 @@ on:
     branches: [main]
     paths:
       - index.html
-      - i18n.js
-      - names-*.js
+      - '*.js'
+      - release.json
       - tests/pages-live-smoke.cjs
       - .github/workflows/pages-live-smoke.yml
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
       - run: npx playwright install chromium
       - run: node tests/pages-live-smoke.cjs
         env:
-          PAGES_BASELINE_REF: ${{ github.event_name == 'pull_request' && 'HEAD^1' || '' }}
+          PAGES_BASELINE_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || '' }}
       - if: always()
         uses: actions/upload-artifact@v4
         with:

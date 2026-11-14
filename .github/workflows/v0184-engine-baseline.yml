@@ -1,5 +1,7 @@
 name: v0.184 engine baseline
 on:
+  push:
+    branches: [main]
   pull_request:
     paths:
       - 'index.html'
