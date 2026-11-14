@@ -2,6 +2,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
+const engine=fs.readFileSync(path.resolve(__dirname,'../damage-engine-v0184.js'),'utf8');
 const titleMatch=html.match(/<title>Chloha Damage Lab (v0\.\d+) (Pre-Release \d+)<\/title>/);
 assert.ok(titleMatch,'public title must contain version and pre-release');
 const [,publicVersion,preRelease]=titleMatch;
@@ -10,11 +11,11 @@ assert.match(html,new RegExp('class="version"[^>]*>'+publicVersion.replaceAll('.
 assert.ok(html.includes('Pages publish: '+publicVersion+' '+preRelease),'publish marker must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);
 assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
-assert.match(html,/version:'0\.162'/);
+assert.match(engine,/version:'0\.162'/);
 
 // Regression coverage: Technician is selectable and modifies per-hit effective move power.
 assert.match(html, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
-const technicianLine=html.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
+const technicianLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
 assert.ok(technicianLine,'Technician power-layer registration exists');
 const vm=require('node:vm');
 let technician;
@@ -29,7 +30,7 @@ assert.equal(technician.run({a:{attAbility:'technician',power:25}},25),37);
 assert.equal(technician.run({a:{attAbility:'technician',power:60}},60),90);
 assert.equal(technician.run({a:{attAbility:'technician',power:65}},65),65);
 assert.match(html, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
-const sheerForceLine=html.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
+const sheerForceLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
 assert.ok(sheerForceLine,'Sheer Force power modifier exists');
 let sheerForce;
 vm.runInNewContext("const SHEER_FORCE_VERIFIED_MOVES=new Set(['flamethrower','fireBlast','iceBeam','thunderbolt','sludgeBomb']);\n"+sheerForceLine,{
@@ -45,7 +46,7 @@ for(const [ability,move,expected] of [
  ['sharpness','airSlash',true],['sharpness','gw0170_s055',true],['sharpness','earthquake',false]
 ]){
  const id=ability==='megaLauncher'?'megaLauncher':'sharpness';
- const line=html.split('\n').find(x=>x.startsWith("registerModifier('power','"+id+"',"));
+ const line=engine.split('\n').find(x=>x.startsWith("registerModifier('power','"+id+"',"));
  assert.ok(line,id+' modifier registered');
  let modifier;
  vm.runInNewContext(
