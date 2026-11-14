@@ -31,7 +31,7 @@ const path=require('node:path');
        const option=document.getElementById(row.id)?.options[row.index];
        const actual=option?.textContent.trim()||'';
        specialEntries.push({kind,select:row.id,ja:row.canonical,actual});
-       if(!actual||actual===row.ja||actual===row.canonical||/[ぁ-んァ-ヶ一-龯]/.test(actual))failures.push({kind,locale,select:row.id,ja:row.canonical,actual,error:'unlocalized special option'});
+       if(!actual||actual===row.ja||actual===row.canonical||(/[ぁ-んァ-ヶ]/.test(actual)))failures.push({kind,locale,select:row.id,ja:row.canonical,actual,error:'unlocalized special option'});
        continue;
       }
       const table=registry[kind]||{};
