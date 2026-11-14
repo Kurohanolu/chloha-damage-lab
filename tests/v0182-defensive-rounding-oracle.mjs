@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {dirname,resolve} from 'node:path';
 const round=(value,modifier)=>Math.floor((value*modifier+2047)/4096);
+// v0.186: compose factors before rounding the value (independent reference util.chainMods).
+const chain=mods=>mods.reduce((m,n)=>Math.floor((m*n+2048)/4096),4096);
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
@@ -30,12 +32,11 @@ try{
  for(const c of cases){
   const expected=Array.from({length:16},(_,i)=>{
    let d=Math.floor(c.base*(85+i)/100);
-   if(c.screen==='reflect'){
-    let modifier=c.format==='singles'?2048:2732;
-    if(c.friendGuardCount)modifier=round(modifier,3072);
-    d=round(d,modifier);
-   }else if(c.friendGuardCount)d=round(d,3072);
-   if(c.defAbility!=='none')d=round(d,2048);
+   const mods=[];
+   if(c.screen==='reflect')mods.push(c.format==='singles'?2048:2732);
+   if(c.defAbility!=='none')mods.push(2048);
+   if(c.friendGuardCount)mods.push(3072);
+   d=round(Math.max(1,d),chain(mods));
    return Math.max(1,d);
   });
   assert.deepEqual(c.rolls,expected,JSON.stringify({power:c.power,format:c.format,defAbility:c.defAbility,screen:c.screen,friendGuardCount:c.friendGuardCount}));

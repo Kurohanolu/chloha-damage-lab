@@ -32,8 +32,8 @@ for(const id of ['battery','powerSpot','unknownAbility','unsupported:unknownAbil
 for(const id of ['none','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','normalize','overgrow','blaze','torrent','swarm','guts','adaptability','tintedLens','levitate'])
  assert.ok(allowed.has(id),'Attacker ability must pass validation: '+id);
 for(const id of ['technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','ironFist','strongJaw','transistor','dragonsMaw','reckless','toughClaws','steelworker','rockyPayload','sandForce','punkRock','overgrow','blaze','torrent','swarm'])
- assert.match(source,new RegExp("registerModifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
-assert.match(source,/registerModifier\('final','analytic',41,/,'Analytic final-damage modifier must exist');
+ assert.match(source,new RegExp("register(?:Fixed)?Modifier\\('(?:power|stat)','"+id+"'"),'damage modifier must exist: '+id);
+assert.match(source,/registerFixedModifier\('power','analytic',15,/,'Analytic must modify base power');
 assert.match(source,/アナライズ：発動条件を満たした前提/,'Analytic assumed-active warning must exist');
 assert.match(source,/RECKLESS_MOVES=new Set/,'Reckless move list exists');
 assert.doesNotMatch(source.match(/const RECKLESS_MOVES=new Set\([^;]+;/)[0],/gw0169_s030/,'Steel Beam must not be boosted');
@@ -48,16 +48,16 @@ assert.equal(Object.keys(snapshot.moves).length,335,'complete move flag coverage
 assert.equal(expected.length,149,'Showdown contact move count');
 assert.deepEqual([...actual].sort(),expected.sort(),'Tough Claws set must match pinned Showdown contact flags');
 assert.match(source,/toughClaws:\{ja:'かたいツメ',en:'Tough Claws',coverage:'supported'\}/);
-assert.match(source,/registerModifier\('power','sandForce',1,c=>c\.a\.attAbility==='sandForce'&&c\.a\.weather==='sand'&&\['いわ','じめん','はがね'\]\.includes\(c\.a\.moveType\)/);
+assert.match(source,/registerFixedModifier\('power','sandForce',15,c=>c\.a\.attAbility==='sandForce'&&c\.a\.weather==='sand'&&\['いわ','じめん','はがね'\]\.includes\(c\.a\.moveType\)/);
 assert.match(source,/PUNK_ROCK_SOUND_MOVES=new Set/);
-assert.match(source,/registerModifier\('power','punkRock'/);
+assert.match(source,/registerFixedModifier\('power','punkRock'/);
 assert.doesNotMatch(source.match(/const PUNK_ROCK_SOUND_MOVES=new Set\([^;]+;/)[0],/'earthquake'/);
 assert.match(source,/SKIN_ABILITY_TYPES=Object.freeze\(\{pixilate:'フェアリー',aerilate:'ひこう',refrigerate:'こおり',galvanize:'でんき',dragonize:'ドラゴン'\}\)/);
-assert.match(source,/registerModifier\('power','skinAbility',0,c=>c\.a\.skinBoost===true/);
+assert.match(source,/registerFixedModifier\('power','skinAbility',18,c=>c\.a\.skinBoost===true/);
 assert.match(source,/a\.moveType==='ノーマル'&&Object\.hasOwn\(SKIN_ABILITY_TYPES,a\.attAbility\)/);
 assert.match(source,/SKIN_TYPE_EXCLUDED_MOVES=new Set/);
 assert.match(source,/a\.attAbility==='normalize'/);
 assert.match(source,/\['weatherBall','terrainPulse'\]\.includes\(a\.moveMechanic\)/);
-for(const id of ['overgrow','blaze','torrent','swarm'])assert.match(source,new RegExp("registerModifier\\('power','"+id+"',1,c=>c\\.a\\.attAbility==='"+id+"'"));
+for(const id of ['overgrow','blaze','torrent','swarm'])assert.match(source,new RegExp("registerFixedModifier\\('stat','"+id+"',13,c=>c\\.side==='attack'&&c\\.a\\.attAbility==='"+id+"'"));
 assert.match(source,/c\.a\.attCurrentHp\*3<=c\.a\.attMaxHp/);
 console.log('PASS attacker ability validation and modifier registration');

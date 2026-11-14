@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {dirname,resolve} from 'node:path';
 const round=(v,m)=>Math.floor((v*m+2047)/4096);
+// v0.186: compose factors before rounding the value (independent reference util.chainMods).
+const chain=mods=>mods.reduce((m,n)=>Math.floor((m*n+2048)/4096),4096);
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
@@ -31,9 +33,7 @@ try{
   return out;
  });
  for(const c of cases){
-  let power=c.power;
-  if(c.terrainFactor!==4096)power=round(power,c.terrainFactor);
-  if(c.helpingHand)power=round(power,6144);
+  const power=round(c.power,chain([...(c.helpingHand?[6144]:[]),c.terrainFactor]));
   const raw=Math.floor(Math.floor(Math.floor(22*power*170/125)/50)+2);
   const expectedBase=c.weatherFactor===4096?raw:round(raw,c.weatherFactor);
   assert.equal(c.base,expectedBase,'independent base '+JSON.stringify(c));

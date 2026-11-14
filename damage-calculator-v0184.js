@@ -7,12 +7,17 @@ let r;
  if(a.moveMechanic==='shellSideArm'){
   const stats=options.shellSideArmStats;
   if(!stats)throw Error('シェルアームズはポケモンDBの能力値設定で計算してください');
-  const physical=DamageEngine.calculate({...a,...stats.physical,category:'physical',moveMechanic:'none'});
-  const special=DamageEngine.calculate({...a,...stats.special,category:'special',moveMechanic:'none'});
-  const mean=rolls=>rolls.reduce((sum,n)=>sum+n,0)/rolls.length;
-  const physicalChosen=mean(physical.rolls)>mean(special.rolls);
-  r=physicalChosen?physical:special;
-  r.trace.unshift('シェルアームズ: 物理・特殊のダメージを比較し、'+(physicalChosen?'物理':'特殊')+'方式を採用（同値は特殊）。');
+  for(const pair of [stats.physical,stats.special])if(!pair||!['attack','defense'].every(k=>Number.isSafeInteger(pair[k])&&pair[k]>=1&&pair[k]<=9999))throw Error('シェルアームズの能力値が不正です');
+  const ranked=(value,rank)=>Math.max(1,Math.floor(value*(rank>=0?(2+rank)/2:2/(2-rank))));
+  let physicalStage=a.attackStage;
+  if(a.defAbility==='intimidate'&&!['clearBody','whiteSmoke','hyperCutter','fullMetalBody','innerFocus','oblivious','ownTempo','scrappy'].includes(a.attAbility))physicalStage=Math.max(-6,physicalStage-1);
+  if(a.attAbility==='thermalExchange'&&a.thermalExchangeActivated)physicalStage=Math.min(6,physicalStage+1);
+  if(a.attAbility==='angerPoint'&&a.angerPointActivated)physicalStage=6;
+  // Category is chosen from ranked Atk/Def vs SpA/SpD before critical,
+  // ability, item, screen and other damage modifiers (pinned reference util).
+  const physicalChosen=ranked(stats.physical.attack,physicalStage)*ranked(stats.special.defense,a.defenseStage)>ranked(stats.special.attack,a.attackStage)*ranked(stats.physical.defense,a.defenseStage);
+  r=DamageEngine.calculate({...a,...(physicalChosen?stats.physical:stats.special),category:physicalChosen?'physical':'special',moveMechanic:'none'});
+  r.trace.unshift('シェルアームズ: 物理・特殊の能力比を比較し、'+(physicalChosen?'物理':'特殊')+'方式を採用（同値は特殊）。');
  }else r=DamageEngine.calculate(a);const multiName=options.multiHitMove||null;
 const specialName=options.specialMultiHitMove||null;
 if(a.moveMechanic==='beatUpManual'){

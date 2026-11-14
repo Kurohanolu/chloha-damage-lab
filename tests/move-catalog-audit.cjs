@@ -86,15 +86,15 @@ const context={window:{}};
 vm.runInNewContext(mechanics,context,{filename:'move-mechanics-data-v0184.js'});
 const mechanicIDs=context.window.ChlohaMoveMechanicsData.MOVE_MECHANIC_IDS;
 assert.ok(Array.isArray(mechanicIDs)&&Object.isFrozen(mechanicIDs),'core mechanic IDs must be an immutable array');
-assert.equal(mechanicIDs.length,45,'existing core mechanic count, including none');
+assert.equal(mechanicIDs.length,46,'existing core mechanic count, including none');
 const acceptedMechanics=new Set(mechanicIDs);
-assert.equal(acceptedMechanics.size,45,'core mechanic IDs must be unique');
+assert.equal(acceptedMechanics.size,46,'core mechanic IDs must be unique');
 assert.ok(mechanicIDs.every(id=>typeof id==='string'),'core mechanic IDs must be strings');
 assert.match(engine,/if\(!MOVE_MECHANIC_IDS\.includes\(a\.moveMechanic\|\|'none'\)\)/,'engine must use core mechanic IDs and preserve its fallback');
 assert.ok(acceptedMechanics.has('none'),'normal damage mechanic must remain accepted');
-for(const id of ['gravApple','shellSideArm','futureSight','unknownMechanic','constructor'])
+for(const id of ['shellSideArm','futureSight','unknownMechanic','constructor'])
  assert.ok(!acceptedMechanics.has(id),'preserve existing core mechanic rejection: '+id);
-for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics'])assert.ok(acceptedMechanics.has(mechanic),'validator accepts '+mechanic);
+for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics','gravApple'])assert.ok(acceptedMechanics.has(mechanic),'validator accepts '+mechanic);
 for(const name of ['ウェザーボール','だいちのはどう'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' dynamic type and power supported');
 assert.ok(source.includes("a.moveMechanic==='weatherBall'"),'Weather Ball dynamic weather typing');
 assert.ok(source.includes("a.moveMechanic==='terrainPulse'"),'Terrain Pulse dynamic terrain typing');
@@ -114,7 +114,7 @@ assert.ok(source.includes('"gw0170b_018":{"priority":"P1","standardDamageSupport
 assert.equal(moves.find(m=>m.name==='ハードプレス').calculationSupported,true,'Hard Press target HP power supported');
 assert.ok(source.includes("a.moveMechanic==='hardPress'?Math.max(1,Math.floor(100*a.currentHp/a.hp))"),'Hard Press uses target remaining HP');
 assert.equal(moves.find(m=>m.name==='やまあらし').calculationSupported,true,'Storm Throw guaranteed critical enabled');
-assert.ok(source.includes("a.moveMechanic==='sacredSword')ds=Math.min(0,ds)"),'Sacred Sword must ignore positive defense stages');
+assert.ok(source.includes("a.moveMechanic==='sacredSword')ds=0"),'Sacred Sword must ignore all target defense stages');
 assert.equal(moves.find(m=>m.name==='フリーズドライ').calculationSupported,true,'Freeze-Dry type override enabled');
 assert.equal(moves.find(m=>m.name==='せいなるつるぎ').calculationSupported,true,'Sacred Sword defense-stage bypass enabled');
 assert.equal(moves.find(m=>m.name==='パワージェム').calculationSupported,true,'simple attack calculable');
@@ -147,7 +147,7 @@ assert.ok(source.includes("mechanic==='flingManual'?Number($('flingPower').value
 assert.equal(policies['gw0169_s060'].mechanic,'activationAssumed','Future Sight uses activation-assumed normal damage');
 assert.ok(!source.includes("a.moveMechanic==='futureSight'"),'Future Sight has no custom damage branch');
 assert.equal(policies['gw0169_s020'].mechanic,'shellSideArm','Shell Side Arm adaptive category');
-assert.ok(source.includes("physicalChosen=mean(physical.rolls)>mean(special.rolls)"),'Shell Side Arm damage comparison');
+assert.ok(source.includes("physicalChosen=ranked(stats.physical.attack,physicalStage)"),'Shell Side Arm stat-ratio comparison');
 assert.ok(source.includes("if(a.moveMechanic==='chargeSpABoost')as=Math.min(6,as+1)"),'pre-hit stage applied');
 assert.ok(!missingRuntimeMechanic.some(m=>m.name==='メテオビーム'),'Meteor Beam is no longer an unsupported flagged move');
 console.log('Coverage audit: catalog='+damaging.length+', P0 excluded='+excluded.length+', candidates='+candidates.length+', legacy flags overridden='+legacyFlagMismatch.length+', policy without runtime mechanic='+missingRuntimeMechanic.map(m=>m.name).join('/'));
