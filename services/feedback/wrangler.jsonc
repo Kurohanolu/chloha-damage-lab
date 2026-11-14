@@ -3,7 +3,7 @@
   "name": "chloha-private-feedback",
   "main": "src/worker.js",
   "compatibility_date": "2026-11-14",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": false,
   "observability": {"enabled": false},
   "assets": {"directory": "./admin", "binding": "ADMIN_ASSETS", "run_worker_first": true},
@@ -14,8 +14,8 @@
     "ALLOWED_ORIGINS": "https://kurohanolu.github.io",
     "TURNSTILE_HOSTNAMES": "kurohanolu.github.io",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAGAh8_mA5oJtA6fs",
-    "ACCESS_ISSUER": "",
-    "ACCESS_AUDIENCE": "",
+    "ACCESS_ISSUER": "https://billowing-fog-54f4.cloudflareaccess.com",
+    "ACCESS_AUDIENCE": "4427567a8c8371ea5d07e641f92105ec0ef0697d33c7611bc124c0e57b1fe1b9",
     "GITHUB_REPOSITORY": "Kurohanolu/chloha-damage-lab"
   },
   "d1_databases": [{

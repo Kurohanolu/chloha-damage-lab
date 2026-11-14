@@ -2,6 +2,8 @@
 // Read-only release gate. Never posts a report, solves a challenge, or supplies admin credentials.
 const fs=require('node:fs');
 const vm=require('node:vm');
+// Identify this application honestly; workers.dev can reject generic library agents.
+const USER_AGENT='ChlohaDamageLab-ReleaseCheck/0.185 (+https://github.com/Kurohanolu/chloha-damage-lab)';
 
 function readSettings(){
  const context=vm.createContext({window:{}});
@@ -17,7 +19,7 @@ async function checkProduction({apiBase,publicOrigin,fetchImpl=globalThis.fetch}
  if(!check('Approved HTTPS feedback API origin is configured',safe))return {ready:false,checks,blockers};
  let origin;
  try{origin=new URL(publicOrigin);if(origin.origin!==publicOrigin||origin.protocol!=='https:')throw Error();}catch{check('Public frontend origin is HTTPS',false);return {ready:false,checks,blockers};}
- const get=path=>fetchImpl(api.origin+path,{method:'GET',redirect:'manual',credentials:'omit',cache:'no-store',headers:{Origin:publicOrigin},signal:AbortSignal.timeout(10000)});
+ const get=path=>fetchImpl(api.origin+path,{method:'GET',redirect:'manual',credentials:'omit',cache:'no-store',headers:{Origin:publicOrigin,'User-Agent':USER_AGENT},signal:AbortSignal.timeout(10000)});
  try{
   const response=await get('/v1/config');
   if(!check('Public intake configuration is reachable without login',response.status===200))return {ready:false,checks,blockers};

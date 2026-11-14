@@ -6,6 +6,8 @@ function mock(options={}){
  return {calls,fetchImpl:async(url,request)=>{
   calls.push({url,request});const path=new URL(url).pathname;
   assert.equal(request.method,'GET');assert.equal(request.credentials,'omit');assert.equal(request.redirect,'manual');assert.equal(request.headers.Origin,origin);assert.equal(request.body,undefined);
+  assert.match(request.headers['User-Agent'],/^ChlohaDamageLab-ReleaseCheck\/0\.185 /);
+  assert.equal(new Headers(request.headers).has('authorization'),false);assert.equal(new Headers(request.headers).has('cookie'),false);
   if(options.offline)throw Error('simulated outage');
   if(path==='/v1/config')return options.malformed?new Response('not json',{status:200}):Response.json({enabled:true,mode:'production',siteKey:'production-site-key-placeholder',retentionDays:90,...options.config},{status:options.status||200,headers:{'Access-Control-Allow-Origin':options.cors||origin,'Cache-Control':options.cache||'no-store'}});
   if(path==='/v1/reports')return new Response(null,{status:options.publicListing?200:405});
