@@ -27,7 +27,7 @@ if(a.moveMechanic==='beatUpManual'){
  const baseAttacks=raw.split(',').map(x=>Number(x.trim()));
  if(baseAttacks.some(n=>n<1||n>255))throw Error('攻撃種族値は1〜255の範囲で入力してください');
  const powers=baseAttacks.map(n=>5+Math.floor(n/10));
- const hitRolls=powers.map(power=>DamageEngine.calculate({...a,power,moveMechanic:'none'}).rolls);
+ const hitRolls=powers.map((power,index)=>DamageEngine.calculate({...(index?DamageEngine.afterFirstHit(a):a),power,moveMechanic:'none'}).rolls);
  const dist=window.ChlohaMultiHit.convolve(hitRolls,hitRolls.length);
  r={...r,rolls:[...dist.keys()],hitRolls,multiHitDistribution:dist,koProbability:a.currentHp===0?null:window.ChlohaMultiHit.koProbability(dist,a.currentHp)};
 }
@@ -35,14 +35,15 @@ if(specialName){
  if(a.defAbility==='multiscale')throw Error('特殊連続技とマルチスケイルのヒット別処理は未対応です');
 
  const engine=window.ChlohaMultiHit,spec=engine.specialMoveSpec(specialName);
- const hitRolls=spec.powers.map(power=>DamageEngine.calculate({...a,power}).rolls);
+ const hitRolls=spec.powers.map((power,index)=>DamageEngine.calculate({...(index?DamageEngine.afterFirstHit(a):a),power}).rolls);
  const dist=engine.specialItemDistribution(specialName,i=>hitRolls[i],{accuracy:spec.accuracy,skillLink:a.attAbility==='skillLink',loadedDice:a.attItem==='loadedDice'});
  const koProbability=a.currentHp===0?null:engine.koProbability(dist,a.currentHp);
  r={...r,rolls:[...dist.keys()],hitRolls,multiHitDistribution:dist,koProbability};
 }
-if(multiName&&!(multiName==='ドラゴンアロー'&&(options.dragonDartsHits??'2')==='1')){
+if(multiName&&a.moveMechanic!=='dualWingbeat'&&!(multiName==='ドラゴンアロー'&&(options.dragonDartsHits??'2')==='1')){
  if(a.defAbility==='multiscale')throw Error('連続技とマルチスケイルのヒット別処理は未対応です');
- const engine=window.ChlohaMultiHit,dist=engine.totalDistribution(multiName,()=>r.rolls,{skillLink:a.attAbility==='skillLink',loadedDice:a.attItem==='loadedDice'});
+ const engine=window.ChlohaMultiHit,laterInput=DamageEngine.afterFirstHit(a),laterRolls=laterInput===a?r.rolls:DamageEngine.calculate(laterInput).rolls;
+ const dist=engine.totalDistribution(multiName,index=>index?laterRolls:r.rolls,{skillLink:a.attAbility==='skillLink',loadedDice:a.attItem==='loadedDice'});
  const totals=[...dist.keys()],koProbability=a.currentHp===0?null:engine.koProbability(dist,a.currentHp);
  r={...r,rolls:totals,hitRolls:r.rolls.slice(),multiHitDistribution:dist,koProbability};
 }

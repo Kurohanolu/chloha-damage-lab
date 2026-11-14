@@ -33,6 +33,14 @@ jobs:
           node tests/v0186-shell-side-arm.cjs
       - name: Check attack and defense ability witnesses
         run: node tests/v0186-ability-differential.cjs
+      - name: Compare registered moves and stat-source interactions
+        run: node tests/v0186-move-differential.cjs
+      - name: Audit all move-flag memberships and damage effects
+        run: node tests/v0186-move-flag-audit.cjs
+      - name: Compare hit distributions, consumable effects and KO probabilities
+        run: node tests/v0186-multihit-differential.cjs
+      - name: Compare weight boundaries and all existing form weights
+        run: node tests/v0186-weight-differential.cjs
       - name: Compare fixed-seed combinations against Champions and Gen9
         run: node tests/v0186-seeded-differential.cjs
       - uses: actions/upload-artifact@v4
@@ -54,6 +62,8 @@ jobs:
       - run: npx playwright install chromium
       - name: Nine-language numeric rotations from every starting locale
         run: node tests/v0183-nine-locale-roundtrip.cjs
+      - name: Nine-language corrected mechanics, UI paths and reloads
+        run: node tests/v0186-nine-locale-mechanics.cjs
       - name: Existing private-feedback API and administrator security contracts
         run: npm test --prefix services/feedback
       - name: Nine-language feedback and administrator browser regressions
@@ -62,5 +72,7 @@ jobs:
         if: always()
         with:
           name: v0186-locale-feedback-evidence
-          path: reports/v0185-feedback/
+          path: |
+            reports/v0185-feedback/
+            reports/v0186/
           if-no-files-found: ignore

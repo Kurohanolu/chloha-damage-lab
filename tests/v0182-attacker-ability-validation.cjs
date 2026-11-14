@@ -45,7 +45,7 @@ assert.ok(contactSet,'Tough Claws contact list');
 const actual=new Set(JSON.parse(contactSet[1]));
 const expected=Object.entries(snapshot.moves).filter(([,move])=>move.flags.includes('contact')).map(([id])=>id);
 assert.equal(Object.keys(snapshot.moves).length,335,'complete move flag coverage');
-assert.equal(expected.length,149,'Showdown contact move count');
+assert.equal(expected.length,170,'Showdown contact move count');
 assert.deepEqual([...actual].sort(),expected.sort(),'Tough Claws set must match pinned Showdown contact flags');
 assert.match(source,/toughClaws:\{ja:'かたいツメ',en:'Tough Claws',coverage:'supported'\}/);
 assert.match(source,/registerFixedModifier\('power','sandForce',15,c=>c\.a\.attAbility==='sandForce'&&c\.a\.weather==='sand'&&\['いわ','じめん','はがね'\]\.includes\(c\.a\.moveType\)/);
