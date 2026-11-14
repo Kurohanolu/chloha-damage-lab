@@ -10,8 +10,8 @@ assert.equal(publicVersion,'v0.183','release series must match the current v0.18
 assert.match(html,new RegExp('class="version"[^>]*>'+publicVersion.replaceAll('.','\\.')+' <span>'+preRelease+'</span>'),'visible release badge must match title');
 assert.ok(html.includes('Pages publish: '+publicVersion+' '+preRelease),'publish marker must match title');
 assert.match(html,/id="versionProvenance"[^>]*>[^<]*公開UI版/);
-assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
-assert.match(engine,/version:'0\.162'/);
+assert.match(html,/計算コアの内部API識別子は「v0\.184」/);
+assert.match(engine,/version:'0\.184'/);
 
 // Regression coverage: Technician is selectable and modifies per-hit effective move power.
 assert.match(engine, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
