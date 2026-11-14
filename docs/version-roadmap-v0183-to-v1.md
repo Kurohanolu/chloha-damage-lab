@@ -2,9 +2,11 @@
 
 Status: **proposed sequence**, subject to owner approval and CI/manual release gates. This supersedes the *future version numbering* in the older `v0183-internationalization-plan.md`, but does not erase its i18n requirements.
 
-## Current position: v0.185 released; v0.186 audit authorized
+## Current position: v0.185 released; v0.186 Pre-Release32 publication prepared
 
 v0.185 Pre-Release 31 is published at `2fc88af6390f286fa7d1a531203f99c35dfa6767` (PR #59). All required CI, real private feedback delivery, signed-owner moderation, approved Issue export, duplicate prevention and the release archive were verified. Its existing production infrastructure is outside v0.186's mutation scope.
+
+v0.186's development candidate passed all seven required workflows plus publisher PR validation at `93cbfbba4d37ac8b62ed5ad1687247cd8a8205f7`. The owner subsequently approved progression conditional on no unresolved critical known defect and successful final checks. Pre-Release32 metadata is now prepared; fresh exact-head PR/main CI and live-content/release verification remain required. See `v0186-release-readiness.md`; preparation is not a completed deployment.
 
 ## Historical v0.183 closure
 - Finish nine-language localization, official-name and native-select audits; classify same-spelling official labels as valid rather than automatically calling them missing translations.
@@ -40,7 +42,7 @@ v0.185 Pre-Release 31 is published at `2fc88af6390f286fa7d1a531203f99c35dfa6767`
 - Reproduce existing bugs with failing regressions, apply minimal evidence-based fixes, and account explicitly for any intentionally corrected old baseline behavior.
 - Regress all nine languages, reload/state/search/warnings/numeric parity and the existing feedback system. Add dedicated audit CI while preserving the six existing mandatory workflows.
 - No feature expansion until the owner decides the usable Pokémon pool has expanded. No new Pokémon/moves/abilities/items/rules, major redesign, rename or URL changes.
-- Issue #61; branch `audit/v0186-accuracy-mechanics`; keep the PR draft. A final owner approval is required for merge/publication, production settings, unsupported-feature additions or insufficiently grounded specification changes.
+- Issue #61 / PR #62; branch `audit/v0186-accuracy-mechanics`. The owner has conditionally approved v0.186 publication after final successful verification. Retain separate approval gates for production settings, unsupported-feature additions or insufficiently grounded specification changes.
 
 ## v0.187 — Singularity brand/URL migration preparation
 
@@ -58,4 +60,4 @@ Clear critical correctness defects, expose transparent support/verification limi
 
 ## Sequencing and precedence
 
-The latest owner brief fixes v0.186 as an existing-feature quality audit and v0.187 as migration preparation. This supersedes older provisional numbering and expansion plans. v0.185 publication approval does not authorize v0.186 publication.
+The latest owner brief fixes v0.186 as an existing-feature quality audit and v0.187 as migration preparation. This supersedes older provisional numbering and expansion plans. The v0.186 conditional approval is recorded separately from earlier v0.185 approval; actual v0.187 adoption still requires formal owner approval.

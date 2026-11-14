@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - tests/pages-live-smoke.cjs
+      - tests/helpers/public-release-contract.cjs
+      - tests/fixtures/v0184-public-baseline.json
+      - tests/fixtures/v0186-baseline-corrections.json
       - .github/workflows/pages-live-smoke.yml
   push:
     branches: [main]
@@ -11,6 +14,9 @@ on:
       - '*.js'
       - release.json
       - tests/pages-live-smoke.cjs
+      - tests/helpers/public-release-contract.cjs
+      - tests/fixtures/v0184-public-baseline.json
+      - tests/fixtures/v0186-baseline-corrections.json
       - .github/workflows/pages-live-smoke.yml
   workflow_dispatch:
 permissions:
