@@ -1,5 +1,9 @@
 # v0.187 — development candidate, production cutover pending
 
+## Owner-approved rollout in progress — 2026-11-15 JST
+
+The owner approved the reviewed name/logo/UI, new repository/Pages configuration, production acceptance/publication and main merge after the ten-workflow green head `d0c00a7cde3f194b7afc3b46debf52c701a442dc`. See [approval scope](v0187-owner-approval.md). The public `Kurohanolu/singularity` target has been created and Pages management is available through the owner's management UI. Source approval flags are now approved; actual target acceptance remains false until independently verified. Current rollout checkpoints and exact-head CI are recorded in PR #64. The pre-approval checkpoint evidence and remaining operational tests below are retained as history, not a new approval request.
+
 Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`. The existing branch/PR were reused instead of creating duplicates. Production main remains v0.186 Pre-Release32 at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`.
 
 ## Implemented and verified

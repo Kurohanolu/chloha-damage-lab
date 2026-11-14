@@ -1,3 +1,5 @@
+> Rollout update, 2026-11-15 JST: the owner approved this reviewed name/logo/UI and cutover through main merge/publication. The new public static target repository was created; Pages management is available through the owner UI. [Approval scope](v0187-owner-approval.md). Historical pending-approval statements below describe preparation checkpoints. Actual target/service verification is recorded separately in PR #64 and is not implied by approval.
+
 # v0.187 — Singularity brand and URL migration preparation
 
 Status: implementation and validation in Draft PR #64 / Issue #63, using the existing `prep/v0187-singularity-migration` branch. The 2026-11-15 execution brief authorizes branch-only brand/UI/logo implementation and tests. No repository creation/rename, Pages configuration, URL cutover, Cloudflare mutation or private-data operation is performed. Formal adoption/publication approval is still required.

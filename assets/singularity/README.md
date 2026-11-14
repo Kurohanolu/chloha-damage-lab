@@ -1,6 +1,6 @@
 # Orbital S review assets
 
-These are branch-only candidates. Final logo/design adoption is pending owner approval.
+The owner approved these exact Orbital S reference/adaptations and the reviewed UI on 2026-11-15 JST. See [approval scope](../../docs/v0187-owner-approval.md). The original-versus-adaptation limits below remain applicable; adoption does not imply pixel-identical reconstruction or completed publication.
 
 | File | Purpose | Export |
 |---|---|---|

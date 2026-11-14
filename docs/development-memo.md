@@ -1,3 +1,8 @@
+## 2026-11-15: v0.187 owner-approved rollout begins
+
+- Owner explicitly approved the reviewed name/logo/UI, public target repository and Pages setup, production acceptance/publication and main merge after `d0c00a7` passed all ten workflows. Approval is recorded separately from actual live-target acceptance; `liveTargetVerified` remains false.
+- Created the public static deployment target `Kurohanolu/singularity` through the signed-in owner UI, initialized at `5d4369ed730ebc413bada1cb60ba8dc7eb5e4f1e`. Verified source Pages currently uses main/root and that its management controls are available. Existing repository/history/Issue destination and Cloudflare resources are retained.
+
 ## 2026-11-15: v0.187 acceptance lifecycle correction
 
 - Found a cutover bootstrap problem: the only actual-URL checker required the verified flag and deployed old notice before it could establish initial new-target acceptance. Added owner/design-authorized read-only new-target verification; final publication retains the verified flag and exact hashes of both sites. Neither mode sets its own approval or publishes.
