@@ -1,5 +1,5 @@
 'use strict';
-// Ability labels, coverage metadata, bypass sets, and field mappings; preserve existing values.
+// Ability labels, validation IDs, bypass sets, and field mappings; preserve existing values.
 (()=>{
 const ABILITY_CATALOG=Object.freeze({
  moldBreaker:{ja:'かたやぶり',en:'Mold Breaker',coverage:'supported'},
@@ -81,5 +81,8 @@ const MOLD_BREAKER_IGNORED_DEFENSE=new Set(['multiscale','furCoat','iceScales','
 const TERRAIN_BY_ABILITY=Object.freeze({electricSurge:'electric',grassySurge:'grassy',mistySurge:'misty',psychicSurge:'psychic'});
 const WEATHER_BY_ABILITY=Object.freeze({drizzle:'rain',drought:'sun',sandStream:'sand',snowWarning:'snow'});
 
-window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE,TERRAIN_BY_ABILITY,WEATHER_BY_ABILITY});
+const ATTACKER_ABILITY_IDS=Object.freeze(['none','moldBreaker','teravolt','turboblaze','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','flareBoost','toxicBoost','fireMane','flashFire','defeatist','orichalcumPulse','hadronEngine','waterBubble','fairyAura','darkAura','auraBreak','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','steelSpirit','plus','minus','infiltrator','scrappy','thermalExchange','angerPoint','rattled','drizzle','drought','sandStream','snowWarning','electricSurge','grassySurge','mistySurge','psychicSurge','sniper','neuroforce','stakeout','supremeOverlord','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','normalize','overgrow','blaze','torrent','swarm','guts','adaptability','tintedLens','levitate','unaware','clearBody']);
+const DEFENDER_ABILITY_IDS=Object.freeze(['none','thickFat','multiscale','furCoat','iceScales','punkRock','fluffy','auraGuard','bulletproof','soundproof','overcoat','unaware','clearBody','intimidate','purifyingSalt','shellArmor','battleArmor','grassPelt','marvelScale','wonderGuard','drySkin','heatproof','waterBubble','prismArmor','shadowShield','levitate','waterAbsorb','voltAbsorb','lightningRod','motorDrive','sapSipper','stormDrain','earthEater','wellBakedBody','flashFire','filter','solidRock','fairyAura','darkAura','auraBreak']);
+
+window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE,TERRAIN_BY_ABILITY,WEATHER_BY_ABILITY,ATTACKER_ABILITY_IDS,DEFENDER_ABILITY_IDS});
 })();

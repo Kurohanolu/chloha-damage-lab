@@ -8,10 +8,12 @@ Status: implementation in progress on Draft PR #56. Public UI remains **v0.183 P
 | --- | --- |
 | `battle-data-v0184.js` | Type effectiveness, type plates, resist berries, and existing game-data references |
 | `move-mechanics-data-v0184.js` | Stable move ID sets and skin ability type mappings |
-| `ability-data-v0184.js` | Existing 70-entry ability catalog, Japanese ID lookup, Mold Breaker family/bypass sets, and weather/terrain ability mappings |
+| `ability-data-v0184.js` | Existing ability catalog, Japanese ID lookup, attacker/defender validation IDs, Mold Breaker family/bypass sets, and weather/terrain mappings |
 | `damage-engine-v0184.js` | Validation, calculation functions, modifier registration, and the public engine API |
 
 Data files keep their declarations in isolated scopes and expose explicit `window` namespaces. They load synchronously before the engine; existing inline UI consumers retain their catalog bindings.
+
+Validation preserves the original 71 attacker IDs and 40 defender IDs, including `none`, in separate frozen arrays. These lists are not generated from the 70-entry display catalog: catalog presence alone does not imply that an ID is accepted for either role. Rejection messages and validation order remain unchanged.
 
 The weather/terrain maps preserve explicit field choices and the existing attacker-first lookup order. Current validation permits the eight field-setting abilities only on the attacking side: the defender fallback lookup exists, but those IDs are rejected as defender inputs. Expanding defender support is a separate behavior change, outside this extraction.
 
