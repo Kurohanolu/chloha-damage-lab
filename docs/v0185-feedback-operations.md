@@ -30,6 +30,28 @@ If a managed machine prevents browser launch/download, use the dedicated GitHub 
 
 The publication task authorizes necessary setup within the existing scope. First obtain access to the owner's Cloudflare account, and keep any new paid service or legal/account agreement for explicit owner action. Do not put secrets in the repository, screenshots, chat, browser config or GitHub Pages.
 
+### Approved authentication and environment prerequisite
+
+On 2026-11-14 the owner explicitly approved Wrangler access for account/user information, Workers scripts, D1 and Turnstile management. The owner subsequently completed the official device-authorization screen, which reported that authorization was granted to Wrangler. Do not ask for the same permission again.
+
+The local client did **not** finish connecting: the execution environment stopped its request to `https://dash.cloudflare.com:443` with a network-policy denial. A subsequent presence-only check found no Wrangler credential file or Cloudflare API token in the environment. This is a separate environment-access blocker; it does not establish that the owner's approval failed or that the password was incorrect. No production resource has been provisioned or connected.
+
+Before another attempt, the environment operator must permit outbound HTTPS to `dash.cloudflare.com` for device authorization/token exchange and `api.cloudflare.com` for the intended Cloudflare API operations. Only the former has produced a directly observed policy denial; the latter is a prerequisite for subsequent operations. No environment network-policy editing tool is available in this session. Apply changes through the environment's supported settings, then verify a fresh connection. Do not change proxies, disable TLS checks, relay requests through another service, or repeatedly retry the blocked destination.
+
+After the missing network grant is applied, start a new official device flow if the previous request expired. Use the installed, locked Wrangler version and the already-approved scope set:
+
+```sh
+cd services/feedback
+umask 077
+WRANGLER_SEND_METRICS=false node node_modules/wrangler/bin/wrangler.js login \
+  --device --browser=false \
+  --scopes account:read user:read workers_scripts:write d1:write challenge-widgets.write
+```
+
+Give the owner the freshly printed verification URL and short user code immediately through the private authentication conversation; never commit a live code, credentials or a token. The owner reviews and approves on their device. Device authorization is designed to connect the CLI on a different machine; an ordinary browser login alone does not connect it. The supported flow and expiry behavior are documented at https://developers.cloudflare.com/workers/wrangler/commands/general/#use-wrangler-login-without-a-local-callback-server.
+
+Require the CLI's successful completion, then verify the account with `wrangler whoami`. Never use `wrangler auth token` or print stored credentials as a verification step. The selected OAuth permissions can affect existing resources of those types; restrict actual operations to the dedicated Damage Lab service. The Access application/administrator configuration and every production-readiness gate below still apply after Wrangler authentication succeeds.
+
 | Setting / resource | Where | Required value / purpose |
 | --- | --- | --- |
 | Cloudflare account and plan | Owner dashboard | Confirm Free-plan limits/cost policy; no paid upgrade is assumed |
