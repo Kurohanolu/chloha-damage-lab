@@ -2,6 +2,15 @@ name: Publish verified prerelease
 on:
   pull_request:
     paths:
+      - docs/v0187-*.md
+      - docs/v0187-preview/**
+      - assets/singularity/**
+      - singularity-v0187.css
+      - brand-preview.html
+      - brand-v0187.js
+      - migration/**
+      - scripts/v0187-*.cjs
+      - tests/v0187-*.cjs
       - release.json
       - docs/releases/**
       - scripts/verify-release.cjs

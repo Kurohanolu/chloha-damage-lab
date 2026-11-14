@@ -35,7 +35,9 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
 (async()=>{
  const {startLocalApp}=await import('../services/feedback/test/harness.mjs');
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-browser-'));buildSites(temp);
- const preview=await startPreview(temp),browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
+ const preview=await startPreview(temp);let browser;
+ try{browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});}
+ catch(error){await preview.close();fs.rmSync(temp,{recursive:true,force:true});throw error;}
  const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,productionRequests:0,productionMutations:0};
  fs.mkdirSync('reports/v0187',{recursive:true});
  try{
@@ -52,11 +54,14 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no horizontal overflow: '+locale);
     const visible=await page.locator('#app').innerText();assert.ok(!/Chloha Damage Lab|CHLOHA TOOLS|DAMAGE LAB/.test(visible),'no unintended previous product name: '+locale);
     const color=await page.locator('body').evaluate(node=>getComputedStyle(node).backgroundColor);assert.equal(color,'rgb(8, 8, 13)');
-    if(['ja','en','de'].includes(locale))await page.screenshot({path:'reports/v0187/'+(locale==='en'?'desktop-en':locale==='de'?'mobile-de-320':'mobile-ja')+'.png',fullPage:true});
+    if(['ja','en','de'].includes(locale)){
+     const name=locale==='en'?'desktop-en':locale==='de'?'mobile-de-320':'mobile-ja';
+     await page.screenshot({path:'reports/v0187/'+name+'.png',fullPage:true});await page.screenshot({path:'reports/v0187/'+name+'-top.png'});
+    }
     await page.locator('#chloha-locale').selectOption(locale);await page.reload();await ready(page);assert.equal(await page.locator('#chloha-locale').inputValue(),locale,'locale survives path reload');
     await page.locator('#moveSearch').fill('Erdbeben');assert.ok(await page.locator('#moveSuggestions [role=option]').count(),'multilingual move search');await page.locator('#moveSearch').fill('');
     await page.locator('#attSearch').fill('Dracolosse');assert.ok(await page.locator('#attSuggestions [role=option]').count(),'multilingual species search');await page.locator('#attSearch').fill('');
-    await page.selectOption('#dbMove','gravApple');await page.waitForFunction(()=>window.ChlohaLastCalculation.a.moveId==='gravApple');
+    await page.locator('#moveSearch').fill('Grav Apple');await page.locator('#moveSuggestions [role=option]').first().click();await page.waitForFunction(()=>window.ChlohaLastCalculation.a.moveId==='gravApple');
     const before=await state(page),other=locales[(index+1)%locales.length];await page.selectOption('#chloha-locale',other);assert.equal(await state(page),before,'locale preserves all numeric inputs/results');await page.selectOption('#chloha-locale',locale);
     evidence.numericChecks+=await vectors(page);
     await openFeedback(page);assert.equal(await state(page),before,'opening feedback preserves calculation');assert.equal(await page.isChecked('#feedbackAttach'),false);

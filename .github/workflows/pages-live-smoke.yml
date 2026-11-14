@@ -2,6 +2,13 @@ name: GitHub Pages live smoke
 on:
   pull_request:
     paths:
+      - docs/v0187-*.md
+      - docs/v0187-preview/**
+      - brand-preview.html
+      - brand-v0187.js
+      - migration/**
+      - scripts/v0187-*.cjs
+      - tests/v0187-*.cjs
       - tests/pages-live-smoke.cjs
       - singularity-v0187.css
       - assets/singularity/**
@@ -12,6 +19,13 @@ on:
   push:
     branches: [main]
     paths:
+      - docs/v0187-*.md
+      - docs/v0187-preview/**
+      - brand-preview.html
+      - brand-v0187.js
+      - migration/**
+      - scripts/v0187-*.cjs
+      - tests/v0187-*.cjs
       - index.html
       - '*.js'
       - singularity-v0187.css

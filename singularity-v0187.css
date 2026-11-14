@@ -9,7 +9,8 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .lab{max-width:1140px;padding-top:0}
 .singularity h1,.singularity h2,.singularity h3,.singularity strong{color:var(--sg-text)}
 .singularity p,.singularity small,.singularity label,.singularity summary{color:var(--sg-muted)}
-.singularity .lab-header{border-color:var(--sg-border);min-height:100px;flex-wrap:wrap;gap:10px 16px;padding:10px 0}
+.singularity .lab-header{display:grid;grid-template-columns:minmax(240px,1fr) auto auto;border-color:var(--sg-border);min-height:100px;gap:10px 16px;padding:10px 0}
+.singularity #chloha-locale-control{margin:0!important}
 .singularity .brand{letter-spacing:0;flex-shrink:0;min-width:0}
 .singularity .brand-logo{display:block;width:240px;height:80px;object-fit:contain;background:#000;border-radius:8px}
 .singularity .version{color:var(--sg-text);font-variant-numeric:tabular-nums}
@@ -41,6 +42,13 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .stat-row.is-active{background:var(--tint);border-color:#695064}
 .singularity .stat-row input[id$=actual]{color:var(--accent)}
 .singularity .stat-row input,.singularity .stat-row select{background:var(--sg-input);color:var(--sg-text)}
+.singularity .stat-toggle,.singularity .point-presets button.preset-reset{background:#241d2d;color:var(--sg-text);border-color:#85738e}
+.singularity .stat-overview .stat-preview{background:#1d1725;color:var(--sg-text);border-color:#63536f}
+.singularity .type-pill{background:#30263c;color:#f6edff;border:1px solid #776784}
+.singularity .ko-summary{background:#211a2a;color:var(--sg-text);border-color:#6c5b7a}
+.singularity .ko-summary[data-outcome=possible]{background:#292116;border-color:#a78a54}
+.singularity .ko-summary[data-outcome=guaranteed]{border-color:var(--sg-pink-soft)}
+.singularity .ko-summary :is(strong,span,small){color:var(--sg-text)}
 .singularity input[type=range]{background:transparent;border:0}
 .singularity input[type=range]::-webkit-slider-runnable-track{background:#61596c}
 .singularity input[type=range]::-webkit-slider-thumb{border-color:var(--sg-input)}
@@ -72,6 +80,7 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .lab-footer strong{font-size:11px;letter-spacing:.05em}
 .singularity .mobile-result{background:#141019f5;border-color:#796085;box-shadow:0 -2px 20px #0008;color:var(--sg-text);backdrop-filter:none}
 .singularity .mobile-result a,.singularity .mobile-result span,.singularity .mobile-result small,.singularity .mobile-result b{color:var(--sg-text)}
+.singularity #miniDamage,.singularity #miniPercent,.singularity #miniVerdict{color:var(--sg-text)}
 .singularity .mini-track{background:#55445e}
 body.singularity #feedbackPanel{background:var(--sg-surface);color:var(--sg-text);border-color:#94749f}
 body.singularity #feedbackPanel :is(h2,h3,label,p){color:var(--sg-text)}
@@ -83,15 +92,16 @@ body.singularity #feedbackPanel a{color:#ffb3e3}
 body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{color:var(--sg-danger)}
 @media(max-width:700px){
  .singularity .lab{padding-inline:12px;padding-bottom:110px}
- .singularity .lab-header{gap:8px 12px;min-height:0;padding-block:10px}
+ .singularity .lab-header{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;min-height:0;padding-block:10px}
  .singularity .brand-logo{width:210px;height:70px}
- .singularity .brand{flex:1 1 auto}
- .singularity .version{margin-left:auto;font-size:11px}
- .singularity #chloha-locale-control{flex:1 1 auto;margin:0!important;max-width:100%}
+ .singularity .brand{grid-column:1;grid-row:1}
+ .singularity .version{grid-column:2;grid-row:1;margin:0;font-size:11px;text-align:right}
+ .singularity #chloha-locale-control{grid-column:1/-1;grid-row:2;justify-self:end;max-width:100%}
  .singularity .lab-intro{padding:22px 0 12px;display:block}
  .singularity .lab-intro h1{font-size:34px}
  .singularity .release-note{font-size:11px;margin-top:12px;max-width:none}
- .singularity .quick-nav a{padding:10px 7px;min-height:44px;font-size:12px}
+ .singularity .quick-nav{flex-wrap:wrap}
+ .singularity .quick-nav a{flex:1 1 auto;text-align:center;padding:10px 7px;min-height:44px;font-size:12px}
  .singularity .quick-nav button{font-size:12px;padding:8px;white-space:normal;max-width:48%}
  .singularity .fighter{padding:15px 13px}
  .singularity .stat-head,.singularity .stat-row{grid-template-columns:minmax(60px,1fr) 60px 62px 64px;gap:5px}
