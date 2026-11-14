@@ -20,12 +20,20 @@ const path=require('node:path');
      canonical:kind==='abilities'?option.textContent.trim().replace(/（(?:一部技のみ対応|対応|効果未対応|未対応)）$/,''):option.textContent.trim().replace(/（.*$/,'').replace(/ \(.*$/,'')
     })));
    }
+   const specialNames=new Set(['なし／未適用','なし','半減きのみ']);
    const results={};
    for(const locale of locales){
     window.ChlohaLocale.set(locale);
-    const failures=[],missingEntries=[];let checked=0,missing=0;
+    const failures=[],missingEntries=[],specialEntries=[];let checked=0,missing=0;
     for(const kind of ['abilities','items']){
      for(const row of source[kind]){
+      if(specialNames.has(row.canonical)){
+       const option=document.getElementById(row.id)?.options[row.index];
+       const actual=option?.textContent.trim()||'';
+       specialEntries.push({kind,select:row.id,ja:row.canonical,actual});
+       if(!actual||actual===row.ja||actual===row.canonical||/[ぁ-んァ-ヶ一-龯]/.test(actual))failures.push({kind,locale,select:row.id,ja:row.canonical,actual,error:'unlocalized special option'});
+       continue;
+      }
       const table=registry[kind]||{};
       const entry=table[row.canonical]||Object.values(table).find(x=>x?.ja===row.canonical);
       if(!entry?.[locale]){missing++;missingEntries.push({kind,select:row.id,ja:row.canonical});continue;}
@@ -36,13 +44,15 @@ const path=require('node:path');
       if(!actual.toLocaleLowerCase().includes(entry[locale].toLocaleLowerCase()))failures.push({kind,id:row.id,ja:row.canonical,expected:entry[locale],actual});
      }
     }
-    results[locale]={checked,missing,missingEntries,failures};
+    results[locale]={checked,missing,missingEntries,specialEntries,failures};
    }
    return results;
   });
   for(const [locale,data] of Object.entries(report)){
    console.log('AUDIT ABILITY/ITEM '+locale+' checked='+data.checked+' missing-data='+data.missing+' failures='+data.failures.length+' missing-samples='+JSON.stringify(data.missingEntries.slice(0,20))+' samples='+JSON.stringify(data.failures.slice(0,12)));
+   console.log('AUDIT SPECIAL OPTIONS '+locale+' '+JSON.stringify(data.specialEntries));
    assert.equal(data.failures.length,0,'ability/item locale failures '+locale);
+   assert.equal(data.missing,0,'missing actual ability/item translations '+locale);
    // Record missing names for follow-up; do not mark missing translations as verified.
    if(data.missing)console.log('AUDIT MISSING ABILITY/ITEM '+locale+' '+JSON.stringify(data.missingEntries));
   }
