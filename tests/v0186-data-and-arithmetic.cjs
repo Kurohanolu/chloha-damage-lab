@@ -1,11 +1,21 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const {root,context,reference,compare,typeName,baseInput,abilityName}=require('./helpers/v0186-reference.cjs');
-const {html,pokemon,moves,findSpecies,speciesDifference,weights,statNames}=require('./helpers/v0186-catalog.cjs');
+const {root,context,reference,compare,typeName,baseInput,abilityName,flags}=require('./helpers/v0186-reference.cjs');
+const {html,pokemon,moves,names,findSpecies,isMega,speciesDifference,weights,statNames}=require('./helpers/v0186-catalog.cjs');
 const g9=reference.Generations.get(9),g0=reference.Generations.get(0);
 assert.equal(pokemon.length,373);assert.equal(moves.length,335);
+assert.equal(pokemon.filter(isMega).length,82,'count resolved Mega forms; do not count Meganium by substring');
+for(const p of pokemon)assert.equal(isMega(p),(names.pokemon[p.id]||'').startsWith('Mega '),p.id+': independent display/form classification');
 assert.equal(new Set(pokemon.map(p=>p.id)).size,pokemon.length);
 assert.equal(new Set(moves.map(m=>m.id)).size,moves.length);
+assert.deepEqual(Object.keys(flags).sort(),moves.map(m=>m.id).sort(),'every mapped move ID must refer to exactly one existing record');
+for(const m of moves){
+ const id=flags[m.id].showdownId,ref=g0.moves.get(id)||g9.moves.get(id);
+ assert.ok(ref,m.id+': independent move record must exist');
+ assert.equal(typeName[m.type],ref.type,m.id+': registered type');
+ assert.equal(m.category,ref.category.toLowerCase(),m.id+': registered category');
+ assert.equal(m.power,ref.basePower,m.id+': registered base power, using Champions before Gen9');
+}
 for(const p of pokemon){assert.ok(p.types.every(t=>typeName[t]));assert.ok(Object.values(p.baseStats).every(n=>Number.isInteger(n)&&n>0));assert.ok(Number.isFinite(weights[p.id])&&weights[p.id]>0);}
 const speciesReview=[];
 for(const p of pokemon){const ref=findSpecies(p,0)||findSpecies(p,9),differences=speciesDifference(p,ref);if(differences.length)speciesReview.push({id:p.id,differences});}
@@ -51,5 +61,5 @@ for(const [id,type] of Object.entries(context.ChlohaBattleData.RESIST_BERRIES)){
  const c=compare({moveType:type,defTypes:[type],defItem:id},{generation:9});assert.deepEqual(c.actual,c.expected,id+': non-effective berry must not activate');
 }
 fs.mkdirSync(root+'/reports/v0186',{recursive:true});
-fs.writeFileSync(root+'/reports/v0186/data-and-arithmetic.json',JSON.stringify({pokemon:pokemon.length,megaForms:pokemon.filter(p=>p.name.includes('メガ')).length,moves:moves.length,speciesReview,statCases,typeCases,roundingCases,itemCases},null,2)+'\n');
-console.log('PASS v0.186 data/arithmetic:',JSON.stringify({statCases,typeCases,roundingCases,itemCases:itemCases.length,sourceConflicts:speciesReview.length}));
+fs.writeFileSync(root+'/reports/v0186/data-and-arithmetic.json',JSON.stringify({pokemon:pokemon.length,megaForms:pokemon.filter(isMega).length,moves:moves.length,moveDataChecks:moves.length,speciesReview,statCases,typeCases,roundingCases,itemCases},null,2)+'\n');
+console.log('PASS v0.186 data/arithmetic:',JSON.stringify({moveDataChecks:moves.length,statCases,typeCases,roundingCases,itemCases:itemCases.length,sourceConflicts:speciesReview.length}));

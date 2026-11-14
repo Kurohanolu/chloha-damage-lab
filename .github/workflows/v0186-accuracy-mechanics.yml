@@ -43,6 +43,8 @@ jobs:
         run: node tests/v0186-weight-differential.cjs
       - name: Compare fixed-seed combinations against Champions and Gen9
         run: node tests/v0186-seeded-differential.cjs
+      - name: Verify exhaustive inventory and reproducible coverage counts
+        run: node scripts/v0186-mechanics-coverage.cjs --check
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -26,6 +26,8 @@ function findSpecies(p,generation){
  const gen=reference.Generations.get(generation);
  return speciesCandidates(names.pokemon[p.id]||'').map(id=>gen.species.get(id)).find(Boolean)||null;
 }
+// Meganium contains メガ but is not a Mega form. Use the resolved form suffix.
+function isMega(p){return /-Mega(?:-|$)/.test((findSpecies(p,0)||findSpecies(p,9))?.name||'');}
 function ready(m){
  const p=policies[m.id];
  if(!['physical','special'].includes(m.category)||p?.priority==='P0')return false;
@@ -44,4 +46,4 @@ function speciesDifference(p,ref){
  if(weights[p.id]!==ref.weightkg)differences.push('weight: '+weights[p.id]+' vs '+ref.weightkg);
  return differences;
 }
-module.exports={html,pokemonDB,pokemon:pokemonDB.pokemon,moves,policies,names,weights,ready,findSpecies,speciesDifference,statNames};
+module.exports={html,pokemonDB,pokemon:pokemonDB.pokemon,moves,policies,names,weights,ready,findSpecies,isMega,speciesDifference,statNames};
