@@ -7,6 +7,8 @@ const vm=require('node:vm');
 const root=path.resolve(__dirname,'..');
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const engineFile='damage-engine-v0184.js';
+const calculatorFile='damage-calculator-v0184.js';
+const adapterFile='damage-ui-adapter-v0184.js';
 const modules=new Map([
  ['battle-data-v0184.js','ChlohaBattleData'],
  ['move-mechanics-data-v0184.js','ChlohaMoveMechanicsData'],
@@ -16,12 +18,14 @@ const scripts=[...html.matchAll(/<script\b([^>]*)>/gi)].flatMap(match=>{
  const src=match[1].match(/\bsrc\s*=\s*["']([^"']+)["']/i);
  return src?[{file:src[1].replace(/^\.\//,''),attributes:match[1]}]:[];
 });
-for(const file of [...modules.keys(),engineFile]){
+for(const file of [...modules.keys(),engineFile,calculatorFile,adapterFile]){
  const matches=scripts.filter(script=>script.file===file);
  assert.equal(matches.length,1,file+' must load exactly once');
  assert.doesNotMatch(matches[0].attributes,/(?:\b(?:async|defer)\b|\btype\s*=)/i,file+' must execute as a synchronous classic script');
 }
 const engineIndex=scripts.findIndex(script=>script.file===engineFile);
+assert.ok(scripts.findIndex(script=>script.file===calculatorFile)>engineIndex,'calculator must load after the core engine');
+assert.ok(scripts.findIndex(script=>script.file===adapterFile)>engineIndex,'UI adapter must load after the core engine');
 for(const file of modules.keys()){
  assert.ok(scripts.findIndex(script=>script.file===file)<engineIndex,file+' must load before the engine');
 }
@@ -29,7 +33,7 @@ for(const file of modules.keys()){
 const context=vm.createContext({});
 vm.runInContext('window=globalThis',context);
 for(const {file} of scripts){
- if(!modules.has(file)&&file!==engineFile)continue;
+ if(!modules.has(file)&&file!==engineFile&&file!==calculatorFile&&file!==adapterFile)continue;
  vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file,timeout:1000});
  if(modules.has(file)){
   const data=context[modules.get(file)];
@@ -40,6 +44,10 @@ for(const {file} of scripts){
  }
 }
 assert.equal(typeof context.ChlohaDamageEngine?.calculate,'function','engine must initialize');
+assert.equal(typeof context.ChlohaDamageCalculator?.calculate,'function','DOM-independent move calculator must initialize');
+for(const name of ['pipeline','registerModifier','applyLayer','calculate','validate'])
+ assert.equal(vm.runInContext('typeof '+name,context),'undefined','core binding must remain private: '+name);
+assert.equal(typeof context.ChlohaDamageEngine.registerModifier,'function','legacy registration API remains available');
 assert.equal(context.ChlohaDamageEngine.version,'0.184','internal engine version');
 const {ABILITY_CATALOG,ABILITY_ID_BY_JA}=context.ChlohaAbilityData;
 assert.equal(Object.keys(ABILITY_CATALOG).length,70,'existing ability catalog size');

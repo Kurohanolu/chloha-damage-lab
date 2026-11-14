@@ -10,8 +10,12 @@ Status: implementation in progress on Draft PR #56. Public UI remains **v0.183 P
 | `move-mechanics-data-v0184.js` | Stable move ID sets, core mechanic validation IDs, and skin ability type mappings |
 | `ability-data-v0184.js` | Existing ability catalog, Japanese ID lookup, attacker/defender validation IDs, Mold Breaker family/bypass sets, and weather/terrain mappings |
 | `damage-engine-v0184.js` | Validation, calculation functions, modifier registration, and the public engine API |
+| `damage-calculator-v0184.js` | DOM-independent Shell Side Arm, Beat Up, and standard/special multi-hit orchestration |
+| `damage-ui-adapter-v0184.js` | Explicit legacy bindings used by the existing UI |
 
 Data files keep their declarations in isolated scopes and expose explicit `window` namespaces. They load synchronously before the engine; existing inline UI consumers retain their catalog bindings.
+
+The core is also scoped. Internal pipeline/validation functions remain private; the compatibility adapter exposes only the names still needed by the UI. See `docs/v0184-engine-inventory.md` for entry points, shared state, modifier order, rounding, preserved limits, and the immutable 300-case public baseline.
 
 Item validation preserves the original 23 attacker IDs and 21 defender IDs, including `none`. Frozen arrays retain the existing `TYPE_PLATES` and `RESIST_BERRIES` key expansion, role restrictions, item effects, validation order, and rejection messages.
 

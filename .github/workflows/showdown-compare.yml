@@ -4,6 +4,8 @@ on:
     paths:
       - 'index.html'
       - 'damage-engine-v0184.js'
+      - 'damage-calculator-v0184.js'
+      - 'damage-ui-adapter-v0184.js'
       - 'battle-data-v0184.js'
       - 'move-mechanics-data-v0184.js'
       - 'ability-data-v0184.js'

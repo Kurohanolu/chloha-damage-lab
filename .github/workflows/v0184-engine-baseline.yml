@@ -7,8 +7,13 @@ on:
       - 'move-mechanics-data-v0184.js'
       - 'ability-data-v0184.js'
       - 'damage-engine-v0184.js'
+      - 'damage-calculator-v0184.js'
+      - 'damage-ui-adapter-v0184.js'
       - 'tests/v0184-engine-contract-baseline.cjs'
       - 'tests/v0184-engine-initialization.cjs'
+      - 'tests/v0184-public-baseline.cjs'
+      - 'tests/helpers/v0184-engine-harness.cjs'
+      - 'tests/fixtures/v0184-public-baseline.json'
       - '.github/workflows/v0184-engine-baseline.yml'
   workflow_dispatch:
 jobs:
@@ -22,6 +27,8 @@ jobs:
           node-version: '22'
       - name: Validate engine initialization and data loading
         run: node tests/v0184-engine-initialization.cjs
+      - name: Compare frozen public v0.183 outputs
+        run: node tests/v0184-public-baseline.cjs
       - name: Install Playwright
         run: |
           npm install --no-save --no-package-lock playwright@1.58.2
