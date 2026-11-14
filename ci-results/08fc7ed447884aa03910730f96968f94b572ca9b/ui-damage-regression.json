@@ -1,0 +1,26 @@
+{
+  "head_sha": "08fc7ed447884aa03910730f96968f94b572ca9b",
+  "workflow": "UI & damage regression",
+  "run_id": 43595278439,
+  "run_number": 1067,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-14T12:32:55Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43595278439",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43595278439/job/132448330942",
+      "failed_steps": [
+        {
+          "name": "Run node tests/v0182-low-hp-abilities-numeric.cjs",
+          "number": 39,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-14T12:32:40.7522988Z shell: /usr/bin/bash -e {0}\n2026-11-14T12:32:40.7523243Z ##[endgroup]\n2026-11-14T12:32:41.7275755Z AssertionError [ERR_ASSERTION]: overgrow boosts at exactly 1/3 HP\n2026-11-14T12:32:41.7276549Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0182-low-hp-abilities-numeric.cjs:58:11 {\n2026-11-14T12:32:41.7277134Z   generatedMessage: false,\n2026-11-14T12:32:41.7277393Z   code: 'ERR_ASSERTION',\n2026-11-14T12:32:41.7277629Z   actual: false,\n2026-11-14T12:32:41.7277844Z   expected: true,\n2026-11-14T12:32:41.7278059Z   operator: '==',\n2026-11-14T12:32:41.7278268Z   diff: 'simple'\n2026-11-14T12:32:41.7278505Z }\n2026-11-14T12:32:41.7421539Z ##[error]Process completed with exit code 1.\n2026-11-14T12:32:41.7638208Z ##[group]Run node tests/damage-regression.cjs\nreports/v0182-move-triage-ledger.json\nreports/v0182-multihit-weight-reconciliation.json\nreports/v0182-comprehensive-audit.json\n\n2026-11-14T12:32:51.9450971Z   if-no-files-found: ignore\n2026-11-14T12:32:51.9451215Z   compression-level: 6\n2026-11-14T12:32:51.9451660Z   overwrite: false\n2026-11-14T12:32:51.9451876Z   include-hidden-files: false\n2026-11-14T12:32:51.9452143Z ##[endgroup]\n2026-11-14T12:32:52.1218016Z (node:4062) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-11-14T12:32:52.1218889Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-11-14T12:32:52.1322645Z No files were found with the provided path: smoke-*.png\n2026-11-14T12:32:52.1323355Z cross-calculator-report.json\n2026-11-14T12:32:52.1323946Z english-untranslated-audit.json\n2026-11-14T12:32:52.1324592Z reports/v0182-move-coverage-inventory.json\n2026-11-14T12:32:52.1325177Z reports/v0182-move-triage-ledger.json\n2026-11-14T12:32:52.1325991Z reports/v0182-multihit-weight-reconciliation.json\n2026-11-14T12:32:52.1326935Z reports/v0182-comprehensive-audit.json. No artifacts will be uploaded.\n2026-11-14T12:32:52.1584989Z Post job cleanup.\n2026-11-14T12:32:52.2539985Z [command]/usr/bin/git version\n2026-11-14T12:32:52.2577130Z git version 2.56.1\n2026-11-14T12:32:52.2653076Z Temporarily overriding HOME='/home/runner/work/_temp/c7aa1690-10c1-427e-867d-dde1f1ff1751' before making global git config changes\n2026-11-14T12:32:52.2654564Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-14T12:32:52.2660065Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-14T12:32:52.2707390Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-14T12:32:52.2745896Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-14T12:32:52.3022055Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-14T12:32:52.3064708Z http.https://github.com/.extraheader\n2026-11-14T12:32:52.3101881Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-14T12:32:52.3142218Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-14T12:32:52.3418178Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-14T12:32:52.3471236Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-14T12:32:52.3871711Z Cleaning up orphan processes\n2026-11-14T12:32:52.4319535Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 616
+    }
+  ]
+}
