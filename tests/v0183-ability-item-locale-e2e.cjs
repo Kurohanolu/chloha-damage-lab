@@ -23,12 +23,12 @@ const path=require('node:path');
    const results={};
    for(const locale of locales){
     window.ChlohaLocale.set(locale);
-    const failures=[];let checked=0,missing=0;
+    const failures=[],missingEntries=[];let checked=0,missing=0;
     for(const kind of ['abilities','items']){
      for(const row of source[kind]){
       const table=registry[kind]||{};
       const entry=table[row.canonical]||Object.values(table).find(x=>x?.ja===row.canonical);
-      if(!entry?.[locale]){missing++;continue;}
+      if(!entry?.[locale]){missing++;missingEntries.push({kind,select:row.id,ja:row.canonical});continue;}
       const option=document.getElementById(row.id)?.options[row.index];
       if(!option){failures.push({kind,locale,row,error:'missing option'});continue;}
       checked++;
@@ -36,12 +36,12 @@ const path=require('node:path');
       if(!actual.toLocaleLowerCase().includes(entry[locale].toLocaleLowerCase()))failures.push({kind,id:row.id,ja:row.canonical,expected:entry[locale],actual});
      }
     }
-    results[locale]={checked,missing,failures};
+    results[locale]={checked,missing,missingEntries,failures};
    }
    return results;
   });
   for(const [locale,data] of Object.entries(report)){
-   console.log('AUDIT ABILITY/ITEM '+locale+' checked='+data.checked+' missing-data='+data.missing+' failures='+data.failures.length+' samples='+JSON.stringify(data.failures.slice(0,12)));
+   console.log('AUDIT ABILITY/ITEM '+locale+' checked='+data.checked+' missing-data='+data.missing+' failures='+data.failures.length+' missing-samples='+JSON.stringify(data.missingEntries.slice(0,20))+' samples='+JSON.stringify(data.failures.slice(0,12)));
    assert.equal(data.failures.length,0,'ability/item locale failures '+locale);
   }
   assert.deepEqual(errors,[],'browser errors');
