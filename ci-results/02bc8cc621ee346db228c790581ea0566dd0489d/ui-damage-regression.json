@@ -1,0 +1,36 @@
+{
+  "head_sha": "02bc8cc621ee346db228c790581ea0566dd0489d",
+  "workflow": "UI & damage regression",
+  "run_id": 43542897389,
+  "run_number": 1038,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-14T01:51:40Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43542897389",
+  "jobs": [
+    {
+      "name": "ui-smoke",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43542897389/job/132287296266",
+      "failed_steps": [
+        {
+          "name": "Run node tests/defensive-abilities.mjs",
+          "number": 6,
+          "conclusion": "failure"
+        },
+        {
+          "name": "Run node tests/damage-regression.cjs",
+          "number": 95,
+          "conclusion": "failure"
+        },
+        {
+          "name": "Run node tests/v0171-runtime.cjs",
+          "number": 97,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-14T01:50:51.3059098Z \n2026-11-14T01:50:51.3059326Z page.waitForFunction: Timeout 30000ms exceeded.\n2026-11-14T01:50:51.3060053Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/defensive-abilities.mjs:11:13 {\n2026-11-14T01:50:51.3060484Z   name: 'TimeoutError'\n2026-11-14T01:50:51.3060747Z }\n2026-11-14T01:50:51.3060866Z \n2026-11-14T01:50:51.3060976Z Node.js v22.23.4\n2026-11-14T01:50:51.3126054Z ##[error]Process completed with exit code 1.\n2026-11-14T01:51:06.8722844Z   - waiting for locator('#attStats .stat-row').first()\n2026-11-14T01:51:06.8723147Z \n2026-11-14T01:51:06.8723475Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/damage-regression.cjs:11:53 {\n2026-11-14T01:51:06.8723897Z   name: 'TimeoutError'\n2026-11-14T01:51:06.8724159Z }\n2026-11-14T01:51:07.2455079Z ##[error]Process completed with exit code 1.\n2026-11-14T01:51:07.2478861Z ##[group]Run node tests/v0171-moves.cjs\n2026-11-14T01:51:07.2479123Z \u001b[36;1mnode tests/v0171-moves.cjs\u001b[0m\n2026-11-14T01:51:37.8071016Z   - waiting for locator('#attStats .stat-row').first() to be visible\n2026-11-14T01:51:37.8071366Z \n2026-11-14T01:51:37.8071608Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/v0171-runtime.cjs:11:53 {\n2026-11-14T01:51:37.8071934Z   name: 'TimeoutError'\n2026-11-14T01:51:37.8072100Z }\n2026-11-14T01:51:38.2680063Z ##[error]Process completed with exit code 1.\n2026-11-14T01:51:38.2722826Z ##[group]Run actions/upload-artifact@v4\n2026-11-14T01:51:38.2723050Z with:\nreports/v0182-move-triage-ledger.json\nreports/v0182-multihit-weight-reconciliation.json\nreports/v0182-comprehensive-audit.json\n\n2026-11-14T01:51:38.2724818Z   if-no-files-found: ignore\n2026-11-14T01:51:38.2725004Z   compression-level: 6\n2026-11-14T01:51:38.2725175Z   overwrite: false\n2026-11-14T01:51:38.2725365Z   include-hidden-files: false\n2026-11-14T01:51:38.2725547Z ##[endgroup]\n2026-11-14T01:51:38.4024920Z (node:2480) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-11-14T01:51:38.4025939Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-11-14T01:51:38.4103315Z No files were found with the provided path: smoke-*.png\n2026-11-14T01:51:38.4103720Z cross-calculator-report.json\n2026-11-14T01:51:38.4103958Z english-untranslated-audit.json\n2026-11-14T01:51:38.4104208Z reports/v0182-move-coverage-inventory.json\n2026-11-14T01:51:38.4104467Z reports/v0182-move-triage-ledger.json\n2026-11-14T01:51:38.4104732Z reports/v0182-multihit-weight-reconciliation.json\n2026-11-14T01:51:38.4105120Z reports/v0182-comprehensive-audit.json. No artifacts will be uploaded.\n2026-11-14T01:51:38.4296706Z Post job cleanup.\n2026-11-14T01:51:38.4974151Z [command]/usr/bin/git version\n2026-11-14T01:51:38.5003540Z git version 2.56.1\n2026-11-14T01:51:38.5028014Z Temporarily overriding HOME='/home/runner/work/_temp/90cedc9a-8ff5-4f0e-aaaf-f8ed09563fa0' before making global git config changes\n2026-11-14T01:51:38.5028997Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-14T01:51:38.5031668Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-14T01:51:38.5060883Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-14T01:51:38.5085163Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-14T01:51:38.5250704Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-14T01:51:38.5272286Z http.https://github.com/.extraheader\n2026-11-14T01:51:38.5280679Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-14T01:51:38.5306368Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-14T01:51:38.5480830Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-14T01:51:38.5504619Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-14T01:51:38.5785470Z Cleaning up orphan processes\n2026-11-14T01:51:38.6007585Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 276
+    }
+  ]
+}
