@@ -16,7 +16,7 @@ const modules=new Map([
 ]);
 const scripts=[...html.matchAll(/<script\b([^>]*)>/gi)].flatMap(match=>{
  const src=match[1].match(/\bsrc\s*=\s*["']([^"']+)["']/i);
- return src?[{file:src[1].replace(/^\.\//,''),attributes:match[1]}]:[];
+ return src?[{file:src[1].replace(/^\.\//,'').split(/[?#]/)[0],attributes:match[1]}]:[];
 });
 for(const file of [...modules.keys(),engineFile,calculatorFile,adapterFile]){
  const matches=scripts.filter(script=>script.file===file);

@@ -11,9 +11,9 @@ const source=process.env.PAGES_BASELINE_REF
  ? execFileSync('git',['show',process.env.PAGES_BASELINE_REF+':index.html'],{encoding:'utf8'})
  : fs.readFileSync('index.html','utf8');
 const expected=(source.match(/<title>([^<]+)<\/title>/)||[])[1];
-const runtimeAssets=[...source.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)].map(match=>match[1]);
+const runtimeAssets=[...source.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)].map(match=>({src:match[1],file:match[1].split(/[?#]/)[0]}));
 const readAsset=file=>process.env.PAGES_BASELINE_REF?execFileSync('git',['show',process.env.PAGES_BASELINE_REF+':'+file]):fs.readFileSync(file);
-const assetHashes=new Map(runtimeAssets.map(file=>[file,crypto.createHash('sha256').update(readAsset(file)).digest('hex')]));
+const assetHashes=new Map(runtimeAssets.map(({src,file})=>[src,crypto.createHash('sha256').update(readAsset(file)).digest('hex')]));
 const expectedHash=crypto.createHash('sha256').update(source).digest('hex');
 if(!expected)throw Error('Cannot determine expected title from checked-out index.html');
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -64,7 +64,7 @@ const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
    }
   }
   const locale=page.locator('#chloha-locale');
-  const expectsLocale=source.includes('id="chloha-locale"') || source.includes('src="i18n.js"');
+  const expectsLocale=source.includes('id="chloha-locale"') || runtimeAssets.some(asset=>asset.file==='i18n.js');
   if(expectsLocale)assert.equal(await locale.count(),1,'Published site must contain the language selector');
   if(await locale.count()){
    await locale.selectOption('en');

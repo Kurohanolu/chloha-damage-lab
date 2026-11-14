@@ -1,6 +1,6 @@
 # v0.184 Engine Refactoring — Planning Memo (Draft)
 
-Status: the v0.184 extraction iteration is implemented on PR #56. Release target: **v0.184 Pre-Release 29**, with internal engine API v0.184. Publication is gated by owner authorization, five exact-commit CI workflows, and deployed-content verification.
+Status: the v0.184 extraction iteration is implemented on PR #56. Release target: **v0.184 Pre-Release 30**, with internal engine API v0.184. Publication is gated by owner authorization, five exact-commit CI workflows, and deployed-content verification.
 
 ## Current data boundaries
 

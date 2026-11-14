@@ -39,7 +39,8 @@ function loadLegacy(reader){
 function loadCurrent({legacyUI=false}={}){
  const context=createContext(),html=local('index.html');
  for(const match of html.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)){
-  if(runtimeFiles.has(match[1]))run(context,local(match[1]),match[1]);
+  const file=match[1].split(/[?#]/)[0];
+  if(runtimeFiles.has(file))run(context,local(file),file);
  }
  if(legacyUI)legacyCalculator(context,html);
  else assert.equal(typeof context.ChlohaDamageCalculator?.calculate,'function','DOM-independent calculator API must initialize');

@@ -13,6 +13,8 @@ assert.equal(html.match(/<title>([^<]+)<\/title>/)?.[1],release.name,'public tit
 assert.ok(html.includes('Pages publish: v'+release.version+' Pre-Release '+release.preRelease),'publish marker must match');
 assert.equal(JSON.parse(fs.readFileSync('package.json','utf8')).version,release.version+'.0','verification package metadata');
 for(const match of html.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)){
- assert.ok(!match[1].includes('://')&&fs.existsSync(match[1]),'published runtime asset must exist: '+match[1]);
+ const asset=new URL(match[1],'https://release.invalid/');
+ assert.ok(!match[1].includes('://')&&fs.existsSync(asset.pathname.slice(1)),'published runtime asset must exist: '+match[1]);
+ assert.equal(asset.searchParams.get('v'),release.tag.slice(1),'every runtime URL must carry the current release cache key');
 }
 console.log('PASS release manifest, public metadata, notes, and runtime assets: '+release.tag);
