@@ -21,7 +21,7 @@
 
 ## Backlog: tester feedback and bug-report interface (after engine refactor)
 
-**Status:** planned, not implemented. **Priority:** after engine cleanup/stabilization; target before v1.0 if feasible. Avoid adding a complex submission backend during the v0.183 localization closure.
+**Status:** implemented for the owner-directed v0.185 development candidate in Draft PR (Issue #58); production connection is intentionally disabled. See `docs/v0185-feedback-design.md` and `docs/v0185-feedback-operations.md`. The latest owner brief replaces screenshot uploads with optional, explicitly reviewed calculation snapshots and optional email. No file upload or public report/status lookup is included.
 
 **Purpose:** let testers report damage mismatches, UI defects, translations, and feature requests directly from Damage Lab, similar to a blog comment form but structured for reproduction.
 

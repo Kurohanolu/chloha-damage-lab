@@ -1,0 +1,13 @@
+{
+  "name": "chloha-private-feedback",
+  "version": "0.185.0-dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "dev": "node test/local-server.mjs",
+    "check:bundle": "wrangler deploy --dry-run --outdir .wrangler/dry-run"
+  },
+  "dependencies": {"jose": "6.2.17"},
+  "devDependencies": {"wrangler": "4.162.0"}
+}

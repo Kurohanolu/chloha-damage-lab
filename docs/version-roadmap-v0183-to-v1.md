@@ -19,17 +19,21 @@ The owner authorized completion and publication of the engine-extraction iterati
 - Compare behavior after every extraction. No silent changes to numeric results or unsupported-mechanic warnings.
 - See `docs/v0184-engine-refactor-plan.md`. Do not bump version simply to replace the historical core label.
 
-## v0.185 — Full engine + nine-language integration audit
+## v0.185 — Anonymous Feedback System (owner-approved scope, 2026-11-14)
+- Reuse the existing feedback backlog: four categories, private no-login reports, optional email, and optional reviewed calculation snapshots.
+- Nine-language accessible UI retains drafts across language changes. Production intake remains disconnected until explicitly configured and approved.
+- Worker + Turnstile + D1 intake, authenticated moderation, retention/deletion, and explicit technical-summary publication to GitHub Issues. No browser-side secrets.
+- Dedicated deterministic local/CI security and browser tests, in addition to all five existing workflows and the frozen 300-case baseline.
+- Issue #58; branch `feature/v0185-feedback-system`. Draft PR only; no merge or publication is authorized for this development task.
+
+### Integration audit retained within existing and v0.185 CI
 - Cross-validate refactored engine against baseline and Showdown differential fixtures.
 - Browser regression across nine languages, mobile widths, reloads, search, native selectors, warning messages and result parity.
 - Profile performance and startup size; fix regressions, not speculative optimizations.
 - Require manual hardware comparison for claims of Pokémon Champions accuracy.
 
-## v0.186 — Tester feedback intake (conditional)
-- Decide hosted form versus trusted endpoint, considering privacy, spam, screenshots and maintenance.
-- MVP: category, reproduction, expected/actual, optional screenshot and contact; explicit preview/consent for calculator inputs.
-- Nine-language UI, mobile validation and private-by-default submissions. No client-side GitHub secrets.
-- If scope or backend cost is too high, defer without blocking engine correctness.
+## v0.186 — Not assigned
+The proposed feedback milestone moved into v0.185 by explicit owner instruction. Choose the next milestone after the feedback candidate and production connection are reviewed.
 
 ## v0.187+ — v1.0 readiness (provisional, not committed)
 - Clear remaining critical correctness defects, accessibility/mobile issues, documentation and provenance.
@@ -46,7 +50,7 @@ The owner authorized completion and publication of the engine-extraction iterati
 - **Open:** whether the final product name should be just `Singularity` or include a qualifier, and whether the Chloha Labs umbrella remains in the header.
 
 ## Sequencing and precedence
-The old i18n memo assigned v0.184 to translation expansion and v0.185 to browser audit. Translation expansion and initial browser audit have already been implemented within v0.183, although closure is still pending. Therefore this consolidated proposal reserves v0.184 for the engine and v0.185 for post-refactor integration verification. Do not silently treat this roadmap as a released version or an owner-approved milestone.
+The latest explicit owner brief assigns v0.185 to private anonymous feedback, superseding the earlier proposed v0.185 audit / v0.186 feedback numbering. Existing integration audits remain required CI. Development completion is separate from owner-approved production connection and publication.
 
 ## Next iteration
-After the verified v0.184 publication, proceed to the v0.185 integration audit. Keep new gameplay features and rebranding outside this engine-preservation release.
+Finish the v0.185 feedback candidate and verify all required CI; keep main at the verified v0.184 Pre-Release 30 until the owner separately authorizes merge and publication.

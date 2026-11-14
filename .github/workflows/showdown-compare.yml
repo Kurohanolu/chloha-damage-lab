@@ -5,6 +5,8 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'feedback-*.js'
+      - 'services/feedback/**'
       - 'damage-engine-v0184.js'
       - 'damage-calculator-v0184.js'
       - 'damage-ui-adapter-v0184.js'
