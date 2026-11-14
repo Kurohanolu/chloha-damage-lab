@@ -9,7 +9,9 @@ const path=require('node:path');
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'));
   const locales=['en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
-  await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
+  // Match the app's species selection listener on initial load as well as reload.
+  await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
+  await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('input',{bubbles:true}));});
   for(const locale of locales){
    await page.locator('#chloha-locale').selectOption(locale);
    await page.waitForFunction(()=>{
@@ -21,7 +23,12 @@ const path=require('node:path');
    assert.equal(before.length,2,'missing type badges '+locale);
    await page.reload();
    assert.equal(await page.locator('#chloha-locale').inputValue(),locale,'locale lost on reload '+locale);
-   await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('change',{bubbles:true}));});
+   // Wait for the page's asynchronous default Pokémon render to finish before changing the selection.
+   // Otherwise a pending initial render can overwrite Dragapult's badges after the change event.
+   await page.waitForFunction(()=>document.querySelectorAll('#attTypes .type-pill').length>0);
+   // The native select is hidden behind a custom picker; Playwright selectOption waits for visibility.
+   // Set the underlying select directly and emit the app's input event.
+   await page.locator('#dbAttPokemon').evaluate(el=>{el.value='dragapult';el.dispatchEvent(new Event('input',{bubbles:true}));});
    await page.waitForFunction(expected=>{
     const badges=[...document.querySelectorAll('#attTypes .type-pill')].map(el=>el.textContent.trim());
     const nodes=[...document.querySelectorAll('#attTypes .type-pill')];
