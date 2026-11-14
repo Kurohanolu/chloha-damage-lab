@@ -4,6 +4,8 @@
 
 The owner approved the reviewed name/logo/UI, new repository/Pages configuration, production acceptance/publication and main merge after the ten-workflow green head `d0c00a7cde3f194b7afc3b46debf52c701a442dc`. See [approval scope](v0187-owner-approval.md). The public `Kurohanolu/singularity` target has been created and Pages management is available through the owner's management UI. Source approval flags are now approved; actual target acceptance remains false until independently verified. Current rollout checkpoints and exact-head CI are recorded in PR #64. The pre-approval checkpoint evidence and remaining operational tests below are retained as history, not a new approval request.
 
+Approval checkpoint `d33776be1f24c20793be88527d20189954d73052` passed all ten workflows. The old site's source was saved as `pages-legacy`/root at `aac68ac8eb7a23a72f91d8045833baadd97ec0c3`; Pages deployment43647174221 succeeded and all30 old HTML/manifest/runtime files matched v0.186 by SHA256. The new repository is public and readable, but the connected GitHub App cannot write it. Its owner UI installs the canonical `deployment/singularity-pages.yml` as `.github/workflows/deploy.yml`; Pages uses that workflow's generated artifact instead of a second engine source. Native tests exercise its actual eight-workflow exact-source gate with missing/failed/wrong/stale metadata. No PAT, deploy key, permission expansion or Cloudflare change is introduced.
+
 Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`. The existing branch/PR were reused instead of creating duplicates. Production main remains v0.186 Pre-Release32 at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`.
 
 ## Implemented and verified

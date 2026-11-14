@@ -4,6 +4,8 @@ Pokémon Damage Calculator by **Chloha Labs**. This development branch prepares 
 
 The [published calculator](https://kurohanolu.github.io/chloha-damage-lab/) remains **Chloha Damage Lab v0.186 Pre-Release32** at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`. The public `Kurohanolu/singularity` static target has been created; actual new-URL acceptance is in progress. Source/Issues/PR/CI/history and private feedback stay in this repository; a separately approved project would serve generated static files.
 
+The old site's Pages source is isolated on `pages-legacy`; the new project deploys generated files through the canonical [exact-source Pages workflow](deployment/singularity-pages.yml). The owner supplies a full approved source SHA, and eight exact-source regression gates must pass before deployment. Actual public-content/feedback checks and immutable release publication follow deployment; no deployment secret or second engine source is maintained.
+
 - [Design preview and actual browser screenshots](docs/v0187-design-preview.md)
 - [Development/readiness report](docs/v0187-release-readiness.md)
 - [Migration/deployment/rollback plan](docs/v0187-singularity-migration-preparation.md)
