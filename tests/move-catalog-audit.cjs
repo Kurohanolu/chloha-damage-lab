@@ -2,6 +2,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const assert=require('node:assert/strict');
+const vm=require('node:vm');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const engine=fs.readFileSync(path.resolve(__dirname,'../damage-engine-v0184.js'),'utf8');
 const source=html+'\n'+engine;
@@ -79,9 +80,19 @@ for(const [name,type,power,supported] of [
  assert.equal(m.calculationSupported,supported,name+' safety gate');
 }
 for(const name of ['きあいパンチ','であいがしら','とっておき','デカハンマー','ポルターガイスト','ゲップ'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' activation assumed');
-const mechanicWhitelist=source.match(/if\(!\[([^\]]+)\]\.includes\(a\.moveMechanic\|\|'none'\)\)/);
-assert.ok(mechanicWhitelist,'mechanic whitelist exists');
-const acceptedMechanics=new Set([...mechanicWhitelist[1].matchAll(/'([^']+)'/g)].map(m=>m[1]));
+const mechanics=fs.readFileSync(path.resolve(__dirname,'../move-mechanics-data-v0184.js'),'utf8');
+const context={window:{}};
+vm.runInNewContext(mechanics,context,{filename:'move-mechanics-data-v0184.js'});
+const mechanicIDs=context.window.ChlohaMoveMechanicsData.MOVE_MECHANIC_IDS;
+assert.ok(Array.isArray(mechanicIDs)&&Object.isFrozen(mechanicIDs),'core mechanic IDs must be an immutable array');
+assert.equal(mechanicIDs.length,45,'existing core mechanic count, including none');
+const acceptedMechanics=new Set(mechanicIDs);
+assert.equal(acceptedMechanics.size,45,'core mechanic IDs must be unique');
+assert.ok(mechanicIDs.every(id=>typeof id==='string'),'core mechanic IDs must be strings');
+assert.match(engine,/if\(!MOVE_MECHANIC_IDS\.includes\(a\.moveMechanic\|\|'none'\)\)/,'engine must use core mechanic IDs and preserve its fallback');
+assert.ok(acceptedMechanics.has('none'),'normal damage mechanic must remain accepted');
+for(const id of ['gravApple','shellSideArm','futureSight','unknownMechanic','constructor'])
+ assert.ok(!acceptedMechanics.has(id),'preserve existing core mechanic rejection: '+id);
 for(const mechanic of ['activationAssumed','freezeDry','hardPress','acrobatics'])assert.ok(acceptedMechanics.has(mechanic),'validator accepts '+mechanic);
 for(const name of ['ウェザーボール','だいちのはどう'])assert.equal(moves.find(m=>m.name===name).calculationSupported,true,name+' dynamic type and power supported');
 assert.ok(source.includes("a.moveMechanic==='weatherBall'"),'Weather Ball dynamic weather typing');
