@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs');
+const assert=require('node:assert/strict');
+const {root,context,baseInput}=require('./helpers/v0186-reference.cjs');
+const html=fs.readFileSync(root+'/index.html','utf8');
+const policies=JSON.parse(html.match(/const ChlohaMovePolicy = (\{[^\n]+\});/)[1]);
+const accepted=new Set([...context.ChlohaMoveMechanicsData.MOVE_MECHANIC_IDS,'shellSideArm']);
+for(const [id,p] of Object.entries(policies))if(p.standardDamageSupported&&p.mechanic)assert.ok(accepted.has(p.mechanic),id+': advertised existing mechanic must reach the calculator');
+const input={...baseInput,moveId:'gravApple',moveMechanic:'gravApple',moveType:'くさ',power:90,conditionalPower:true};
+const result=context.ChlohaDamageEngine.calculate(input);
+assert.equal(result.effectivePower,135,'existing Gravity checkbox must enable Grav Apple');
+assert.deepEqual(Array.from(result.rolls),Array.from(context.ChlohaDamageEngine.calculate({...input,power:135,moveMechanic:'none'}).rolls));
+console.log('PASS v0.186 runtime policy-to-engine contract and Grav Apple execution');

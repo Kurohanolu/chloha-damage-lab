@@ -18,26 +18,26 @@ assert.match(engine,/version:'0\.184'/);
 
 // Regression coverage: Technician is selectable and modifies per-hit effective move power.
 assert.match(abilities, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
-const technicianLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
+const technicianLine=engine.split('\n').find(line=>line.startsWith("registerFixedModifier('power','technician',"));
 assert.ok(technicianLine,'Technician power-layer registration exists');
 const vm=require('node:vm');
 let technician;
 vm.runInNewContext(technicianLine,{
-  registerModifier:(layer,id,priority,applies,run)=>{technician={layer,id,priority,applies,run};},
+  registerFixedModifier:(layer,id,priority,applies,factor)=>{technician={layer,id,priority,applies,run:(c,v)=>applies(c)?Math.floor((v*factor+2047)/4096):v};},
   pokeRound:(v,mod)=>Math.floor((v*mod+2047)/4096)
 });
 assert.equal(technician.layer,'power');
-assert.equal(technician.applies({a:{attAbility:'technician',power:25}}),true);
-assert.equal(technician.applies({a:{attAbility:'none',power:25}}),false);
-assert.equal(technician.run({a:{attAbility:'technician',power:25}},25),37);
-assert.equal(technician.run({a:{attAbility:'technician',power:60}},60),90);
-assert.equal(technician.run({a:{attAbility:'technician',power:65}},65),65);
+assert.equal(technician.applies({a:{attAbility:'technician',power:25},effectivePower:25}),true);
+assert.equal(technician.applies({a:{attAbility:'none',power:25},effectivePower:25}),false);
+assert.equal(technician.run({a:{attAbility:'technician',power:25},effectivePower:25},25),37);
+assert.equal(technician.run({a:{attAbility:'technician',power:60},effectivePower:60},60),90);
+assert.equal(technician.run({a:{attAbility:'technician',power:65},effectivePower:65},65),65);
 assert.match(abilities, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
-const sheerForceLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
+const sheerForceLine=engine.split('\n').find(line=>line.startsWith("registerFixedModifier('power','sheerForce',"));
 assert.ok(sheerForceLine,'Sheer Force power modifier exists');
 let sheerForce;
 vm.runInNewContext("const SHEER_FORCE_VERIFIED_MOVES=new Set(['flamethrower','fireBlast','iceBeam','thunderbolt','sludgeBomb']);\n"+sheerForceLine,{
- registerModifier:(layer,id,priority,applies,run)=>{sheerForce={layer,id,priority,applies,run};},
+ registerFixedModifier:(layer,id,priority,applies,factor)=>{sheerForce={layer,id,priority,applies,run:(_,v)=>Math.floor((v*factor+2047)/4096)};},
  pokeRound:(v,mod)=>Math.floor((v*mod+2047)/4096)
 });
 assert.equal(sheerForce.applies({a:{attAbility:'sheerForce',moveId:'flamethrower'}}),true);
@@ -49,13 +49,13 @@ for(const [ability,move,expected] of [
  ['sharpness','airSlash',true],['sharpness','gw0170_s055',true],['sharpness','earthquake',false]
 ]){
  const id=ability==='megaLauncher'?'megaLauncher':'sharpness';
- const line=engine.split('\n').find(x=>x.startsWith("registerModifier('power','"+id+"',"));
+ const line=engine.split('\n').find(x=>x.startsWith("registerFixedModifier('power','"+id+"',"));
  assert.ok(line,id+' modifier registered');
  let modifier;
  vm.runInNewContext(
  "const MEGA_LAUNCHER_MOVES=new Set(['darkPulse','auraSphere','gw0169_s059','gw0169_s065']);\n"+
  "const SHARPNESS_MOVES=new Set(['airSlash','gw0170b_019','gw0170_s055','gw0169_p044','gw0170b_013','v096_086','v096_076']);\n"+line,
- {registerModifier:(layer,name,priority,applies,run)=>{modifier={layer,name,applies,run};},
+ {registerFixedModifier:(layer,name,priority,applies,factor)=>{modifier={layer,name,applies,run:(_,v)=>Math.floor((v*factor+2047)/4096)};},
   pokeRound:(v,mod)=>Math.floor((v*mod+2047)/4096)});
  assert.equal(modifier.applies({a:{attAbility:ability,moveId:move}}),expected,ability+'/'+move);
  assert.equal(modifier.run({},80),120,id+' boost 1.5x');

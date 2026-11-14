@@ -1,0 +1,230 @@
+{
+  "sourceCommit": "08fc7ed447884aa03910730f96968f94b572ca9b",
+  "primarySource": "7e743761cd13cdb361fc0f58eb5a866284894f5b",
+  "cases": [
+    {
+      "set": "IRON_FIST_MOVES",
+      "id": "v096_081",
+      "showdownId": "hammerarm",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "IRON_FIST_MOVES",
+      "id": "gw0169_p002",
+      "showdownId": "icehammer",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "IRON_FIST_MOVES",
+      "id": "gw0169_p071",
+      "showdownId": "doubleshock",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "IRON_FIST_MOVES",
+      "id": "gw0170_s027",
+      "showdownId": "headlongrush",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "STRONG_JAW_MOVES",
+      "id": "gw0169_p035",
+      "showdownId": "jawlock",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "SHARPNESS_MOVES",
+      "id": "gw0170_s024",
+      "showdownId": "direclaw",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "SHARPNESS_MOVES",
+      "id": "gw0170_s029",
+      "showdownId": "crushclaw",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "v096_080",
+      "showdownId": "acrobatics",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p006",
+      "showdownId": "superfang",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p013",
+      "showdownId": "counter",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p020",
+      "showdownId": "endeavor",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p028",
+      "showdownId": "reversal",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p040",
+      "showdownId": "lowkick",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_p048",
+      "showdownId": "gyroball",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0169_s016",
+      "showdownId": "grassknot",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u019",
+      "showdownId": "hardpress",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u023",
+      "showdownId": "heatcrash",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u031",
+      "showdownId": "ragefist",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u033",
+      "showdownId": "heavyslam",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u034",
+      "showdownId": "comeuppance",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u052",
+      "showdownId": "temperflare",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170_u054",
+      "showdownId": "avalanche",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_007",
+      "showdownId": "flail",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_008",
+      "showdownId": "stompingtantrum",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_009",
+      "showdownId": "payback",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_015",
+      "showdownId": "assurance",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_018",
+      "showdownId": "powertrip",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "TOUGH_CLAWS_CONTACT_MOVES",
+      "id": "gw0170b_025",
+      "showdownId": "tripleaxel",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "RECKLESS_MOVES",
+      "id": "gw0169_p015",
+      "showdownId": "axekick",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "RECKLESS_MOVES",
+      "id": "gw0169_p045",
+      "showdownId": "supercellslam",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "RECKLESS_MOVES",
+      "id": "gw0169_s043",
+      "showdownId": "lightofruin",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "set": "RECKLESS_MOVES",
+      "id": "gw0170b_022",
+      "showdownId": "highjumpkick",
+      "expected": true,
+      "actual": false
+    }
+  ]
+}

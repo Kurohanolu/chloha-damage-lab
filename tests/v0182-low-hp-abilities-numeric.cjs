@@ -55,10 +55,10 @@ const path=require('node:path');
    });
   });
   for(const {ability,active,inactive,wrongType,forced} of results){
-   assert.ok(active.trace.some(x=>x.includes('power/'+ability+': 80 → 120')),ability+' boosts at exactly 1/3 HP');
-   assert.ok(!inactive.trace.some(x=>x.includes('power/'+ability)),ability+' inactive above threshold');
-   assert.ok(!wrongType.trace.some(x=>x.includes('power/'+ability)),ability+' ignores other types');
-   assert.ok(forced.trace.some(x=>x.includes('power/'+ability+': 80 → 120')),ability+' checkbox overrides HP');
+   assert.ok(active.trace.some(x=>x.includes('stat/'+ability+': 150 → 225')),ability+' boosts at exactly 1/3 HP');
+   assert.ok(!inactive.trace.some(x=>x.includes('stat/'+ability)),ability+' inactive above threshold');
+   assert.ok(!wrongType.trace.some(x=>x.includes('stat/'+ability)),ability+' ignores other types');
+   assert.ok(forced.trace.some(x=>x.includes('stat/'+ability+': 150 → 225')),ability+' checkbox overrides HP');
    assert.deepEqual(forced.rolls,active.rolls,ability+' forced rolls equal natural activation');
    assert.ok(active.rolls[0]>inactive.rolls[0],ability+' increases actual damage');
   }
@@ -99,7 +99,7 @@ const path=require('node:path');
     burned:calc({attAbility:'waterBubble',burn:true}),
     burnedNormal:calc({burn:true})};
   });
-  assert.ok(bubble.water.trace.some(x=>x.includes('power/waterBubble: 80 → 160')),'Water Bubble doubles Water move power');
+  assert.ok(bubble.water.trace.some(x=>x.includes('stat/waterBubble: 150 → 300')),'Water Bubble doubles the attacking stat for Water damage');
   assert.ok(bubble.water.rolls[0]>bubble.normal.rolls[0],'Water Bubble increases Water damage');
   assert.deepEqual(bubble.other.rolls,bubble.otherNormal.rolls,'Water Bubble does not boost other types');
   assert.deepEqual(bubble.burned.rolls,bubble.water.rolls,'Water Bubble ignores physical burn penalty');

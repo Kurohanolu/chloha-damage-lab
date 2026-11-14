@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {dirname,resolve} from 'node:path';
 const round=(v,m)=>Math.floor((v*m+2047)/4096);
+// v0.186: compose factors before rounding the value (independent reference util.chainMods).
+const chain=mods=>mods.reduce((m,n)=>Math.floor((m*n+2048)/4096),4096);
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
@@ -31,13 +33,12 @@ try{
   assert.equal(c.base,expectedBase,'base formula '+JSON.stringify(c));
   const expected=Array.from({length:16},(_,i)=>{
    let d=Math.floor(expectedBase*(85+i)/100);
-   if(c.screen==='reflect'){
-    let modifier=2732;
-    if(c.friendGuardCount)modifier=round(modifier,3072);
-    d=round(d,modifier);
-   }else if(c.friendGuardCount)d=round(d,3072);
-   if(c.defAbility==='multiscale')d=round(d,2048);
-   if(c.attItem==='lifeOrb')d=round(d,5324);
+   const mods=[];
+   if(c.screen==='reflect')mods.push(2732);
+   if(c.defAbility==='multiscale')mods.push(2048);
+   if(c.friendGuardCount)mods.push(3072);
+   if(c.attItem==='lifeOrb')mods.push(5324);
+   d=round(Math.max(1,d),chain(mods));
    return Math.max(1,d);
   });
   assert.deepEqual(c.rolls,expected,'16-roll independent oracle '+JSON.stringify({power:c.power,attAbility:c.attAbility,helpingHand:c.helpingHand,attItem:c.attItem,defAbility:c.defAbility,screen:c.screen,friendGuardCount:c.friendGuardCount}));

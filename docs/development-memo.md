@@ -1,3 +1,29 @@
+## 2026-11-14: v0.186 Pre-Release32 — conditional publication approved
+
+- After the completed-candidate/final-approval report, the owner instructed progression if no bug remained evident. Proceed with v0.186 merge/publication only after the final exact-head checks succeed and no unresolved critical known defect is present. This does not authorize actual v0.187 name/URL adoption or production feedback configuration/data changes.
+- Prepare v0.186 Pre-Release32 manifest, visible badge/title/provenance, complete runtime cache keys and release notes. Preserve the v0.184 internal API identifier. Check deployed HTML and every runtime asset against the release source before reporting publication.
+- Correct the release smoke test's obsolete Shell Side Arm tie expectation using the selected deployment tree's digest-checked errata. Historical PR bases retain the original contract. Native regressions cover current vectors, old-source isolation and changed-evidence rejection.
+- [Release readiness](v0186-release-readiness.md) records the distinction between conditional approval, prepared metadata and verified deployment. No publication is claimed in this preparation commit.
+
+## 2026-11-14: v0.186 audit results — completed development candidate
+
+- Issue #61 / Draft PR #62 / `audit/v0186-accuracy-mechanics`. Public main remains v0.185 Pre-Release 31 at `2fc88af6390f286fa7d1a531203f99c35dfa6767`. No Cloudflare production changes, roster expansion, new mechanic implementation, rename or URL changes.
+- The [complete inventory](v0186-mechanics-coverage.md) has 1,184 scoped audit entries: Verified 870, Unverified 2, Partial 153, Unsupported 143, Not Applicable 16, current confirmed Incorrect 0. Partial/unsupported entries are not added as features to increase the figures. Presence and verification rates have separate, explicit denominators.
+- [24 recorded corrections](v0186-defect-register.md) cover two calculation failures, existing modifier/order/rounding issues, Unaware stat-source precedence, multi-hit consumable/full-HP effects, move tags and existing Mega Staraptor type data. The original 300 fixtures remain immutable: 269 unchanged, 26 independently justified numeric corrections, 5 trace/metadata corrections.
+- The audit-only reference is pinned to `@smogon/calc@0.12.0`, including Champions generation 0 and separately identified Gen9 comparisons. All 335 registered move type/category/power records match those references. All 15 known Champions power differences are retained, not overwritten with Gen9 values.
+- Checkpoint `05c043a823af09efac6007384f9f8515a50ba5eb` was retrieved directly from GitHub: all six existing mandatory workflows plus the new v0.186 audit completed successfully. Additional test/document commits still require their own exact-head CI checks; this checkpoint does not substitute for them.
+- [Champions parity](v0186-champions-parity.md) and [hardware plan](v0186-hardware-test-plan.md) separate software parity from real-game evidence. **Owner clarification (2026-11-14): Dudunsparce is absent from current Champions; the supplied SpA105 image is SV mode. H01 no longer blocks the current release. Keep candidate SpA58 Unverified and reopen before future roster adoption; do not infer a Champions stat or rule change.** Extreme non-battle manual-stat overflow boundaries are also not certified.
+- The current-rule source-scope hold is resolved. The candidate required exact-head CI and final merge/publication approval; the subsequent conditional approval is recorded above. v0.187 Singularity branding/URL preparation is the next theme after v0.186 review; no branding work is performed in v0.186.
+
+## 2026-11-14: v0.186 Accuracy & Mechanics Audit — confirmed owner scope
+
+- Baseline/public release: v0.185 Pre-Release 31, `2fc88af6390f286fa7d1a531203f99c35dfa6767`; PR #59 / Issue #58 completed. Actual private intake, owner moderation, approved Issue export and duplicate prevention were verified; production remains intact.
+- Issue #61; branch `audit/v0186-accuracy-mechanics`. Audit all registered data and existing calculation paths; reproduce and fix existing defects with independently justified expectations.
+- No new Pokémon, moves, abilities, items, rules, major UI changes, rename, repository/URL changes or Cloudflare production changes. Main merge and publication require a new final owner approval for v0.186.
+- Required evidence: `v0186-mechanics-coverage.md`, `v0186-champions-parity.md`, `v0186-hardware-test-plan.md`, deterministic seeded differential tests, nine-language numeric/feedback regressions and dedicated CI alongside all six existing mandatory workflows.
+- Verified/Unverified/Incorrect/Partial/Unsupported/Not Applicable describe defined automated coverage. Hardware evidence is a separate column; imported data and passing regressions are not hardware certification.
+- v0.187 prepares the agreed Singularity direction: independent calculator under Chloha Labs, candidate free `/singularity/` URL, Orbital S, black/white/neon pink and legacy-user migration. Validate and obtain formal adoption approval then; implement none of it in v0.186.
+
 ## 2026-11-14: v0.183 full-select audit follow-up (latest green baseline)
 
 - Verified main commit `830a86d9baddba2b5a353fdcfa53e3b4fec8787d`, Damage Lab CI https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628658 **success**; UI & damage regression https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628713 **success**.

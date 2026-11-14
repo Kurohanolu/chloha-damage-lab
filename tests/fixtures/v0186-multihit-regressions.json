@@ -1,0 +1,349 @@
+{
+  "sourceCommit": "08fc7ed447884aa03910730f96968f94b572ca9b",
+  "reference": "@smogon/calc@0.12.0",
+  "cases": [
+    {
+      "input": {
+        "level": 50,
+        "power": 40,
+        "attack": 150,
+        "defense": 120,
+        "hp": 180,
+        "currentHp": 180,
+        "attackStage": 0,
+        "defenseStage": 0,
+        "attAbility": "none",
+        "defAbility": "none",
+        "attItem": "none",
+        "defItem": "none",
+        "stabMode": "auto",
+        "attMaxHp": 180,
+        "attCurrentHp": 180,
+        "helpingHand": false,
+        "friendGuardCount": 0,
+        "battleFormat": "doubles",
+        "spread": "single",
+        "weather": "none",
+        "terrain": "none",
+        "category": "physical",
+        "screen": "none",
+        "burn": false,
+        "critical": false,
+        "moveMechanic": "dualWingbeat",
+        "moveId": "v096_093",
+        "attTypes": [
+          "ひこう"
+        ],
+        "defTypes": [
+          "みず"
+        ],
+        "moveType": "ひこう",
+        "customMultiplier": 1,
+        "attGrounding": "auto",
+        "defGrounding": "auto",
+        "conditionalPower": false,
+        "bodyPressDefenseStage": 0,
+        "foulPlayTargetStage": 0,
+        "attSpeed": 100,
+        "defSpeed": 150,
+        "attSpeedStage": 0,
+        "defSpeedStage": 0,
+        "attParalyzed": false,
+        "defParalyzed": false,
+        "attTailwind": false,
+        "defTailwind": false,
+        "hitsTaken": 2,
+        "faintedAllies": 2,
+        "storedPowerBoosts": {
+          "atk": 2,
+          "def": 0,
+          "spa": 1,
+          "spd": 0,
+          "spe": 0,
+          "accuracy": 0,
+          "evasion": 0
+        },
+        "ragingBullForm": "combat",
+        "auraWheelForm": "hangry"
+      },
+      "options": {
+        "multiHitMove": "ダブルウイング"
+      },
+      "referenceHitRolls": [
+        [
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          31,
+          33,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          34,
+          36
+        ],
+        [
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          31,
+          33,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          34,
+          36
+        ]
+      ],
+      "expected": {
+        "min": 60,
+        "max": 72
+      },
+      "observed": {
+        "error": "Expected 16 nonnegative integer damage rolls"
+      }
+    },
+    {
+      "input": {
+        "level": 50,
+        "power": 35,
+        "attack": 150,
+        "defense": 120,
+        "hp": 180,
+        "currentHp": 180,
+        "attackStage": 0,
+        "defenseStage": 0,
+        "attAbility": "none",
+        "defAbility": "none",
+        "attItem": "none",
+        "defItem": "chilanBerry",
+        "stabMode": "auto",
+        "attMaxHp": 180,
+        "attCurrentHp": 180,
+        "helpingHand": false,
+        "friendGuardCount": 0,
+        "battleFormat": "doubles",
+        "spread": "single",
+        "weather": "none",
+        "terrain": "none",
+        "category": "physical",
+        "screen": "none",
+        "burn": false,
+        "critical": false,
+        "moveMechanic": "none",
+        "moveId": "gw0169_p060",
+        "attTypes": [
+          "ノーマル"
+        ],
+        "defTypes": [
+          "みず"
+        ],
+        "moveType": "ノーマル",
+        "customMultiplier": 1,
+        "attGrounding": "auto",
+        "defGrounding": "auto",
+        "conditionalPower": false,
+        "bodyPressDefenseStage": 0,
+        "foulPlayTargetStage": 0,
+        "attSpeed": 100,
+        "defSpeed": 150,
+        "attSpeedStage": 0,
+        "defSpeedStage": 0,
+        "attParalyzed": false,
+        "defParalyzed": false,
+        "attTailwind": false,
+        "defTailwind": false,
+        "hitsTaken": 2,
+        "faintedAllies": 2,
+        "storedPowerBoosts": {
+          "atk": 2,
+          "def": 0,
+          "spa": 1,
+          "spd": 0,
+          "spe": 0,
+          "accuracy": 0,
+          "evasion": 0
+        },
+        "ragingBullForm": "combat",
+        "auraWheelForm": "hangry"
+      },
+      "options": {
+        "multiHitMove": "ダブルアタック"
+      },
+      "referenceHitRolls": [
+        [
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        [
+          25,
+          27,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          28,
+          28,
+          30,
+          30,
+          30,
+          30,
+          31
+        ]
+      ],
+      "expected": {
+        "min": 37,
+        "max": 46
+      },
+      "observed": {
+        "min": 24,
+        "max": 30,
+        "koProbability": 0
+      }
+    },
+    {
+      "input": {
+        "level": 50,
+        "power": 35,
+        "attack": 150,
+        "defense": 120,
+        "hp": 180,
+        "currentHp": 180,
+        "attackStage": 0,
+        "defenseStage": 0,
+        "attAbility": "none",
+        "defAbility": "shadowShield",
+        "attItem": "none",
+        "defItem": "none",
+        "stabMode": "auto",
+        "attMaxHp": 180,
+        "attCurrentHp": 180,
+        "helpingHand": false,
+        "friendGuardCount": 0,
+        "battleFormat": "doubles",
+        "spread": "single",
+        "weather": "none",
+        "terrain": "none",
+        "category": "physical",
+        "screen": "none",
+        "burn": false,
+        "critical": false,
+        "moveMechanic": "none",
+        "moveId": "gw0169_p060",
+        "attTypes": [
+          "ノーマル"
+        ],
+        "defTypes": [
+          "みず"
+        ],
+        "moveType": "ノーマル",
+        "customMultiplier": 1,
+        "attGrounding": "auto",
+        "defGrounding": "auto",
+        "conditionalPower": false,
+        "bodyPressDefenseStage": 0,
+        "foulPlayTargetStage": 0,
+        "attSpeed": 100,
+        "defSpeed": 150,
+        "attSpeedStage": 0,
+        "defSpeedStage": 0,
+        "attParalyzed": false,
+        "defParalyzed": false,
+        "attTailwind": false,
+        "defTailwind": false,
+        "hitsTaken": 2,
+        "faintedAllies": 2,
+        "storedPowerBoosts": {
+          "atk": 2,
+          "def": 0,
+          "spa": 1,
+          "spd": 0,
+          "spe": 0,
+          "accuracy": 0,
+          "evasion": 0
+        },
+        "ragingBullForm": "combat",
+        "auraWheelForm": "hangry"
+      },
+      "options": {
+        "multiHitMove": "ダブルアタック"
+      },
+      "referenceHitRolls": [
+        [
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        [
+          25,
+          27,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          28,
+          28,
+          30,
+          30,
+          30,
+          30,
+          31
+        ]
+      ],
+      "expected": {
+        "min": 37,
+        "max": 46
+      },
+      "observed": {
+        "min": 24,
+        "max": 30,
+        "koProbability": 0
+      }
+    }
+  ]
+}

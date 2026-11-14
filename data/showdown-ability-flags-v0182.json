@@ -1,6 +1,6 @@
 {
   "source": "smogon/pokemon-showdown/data/moves.ts",
-  "sourceCommit": "a9bb56dce2c45a34b44afdf2378aa0d0c35b540d",
+  "sourceCommit": "7e743761cd13cdb361fc0f58eb5a866284894f5b",
   "note": "All 335 catalog moves mapped by Japanese->English names, Showdown IDs and two aliases; default Showdown power may differ from Champions; contact flags imported from the same pinned Showdown commit",
   "championsPowerOverrides": {
     "gw0169_p031": {
@@ -143,14 +143,22 @@
       "showdownId": "earthquake",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "dragonClaw": {
       "showdownId": "dragonclaw",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "outrage": {
@@ -158,40 +166,64 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "rockSlide": {
       "showdownId": "rockslide",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "crunch": {
       "showdownId": "crunch",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "flamethrower": {
       "showdownId": "flamethrower",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "fireBlast": {
       "showdownId": "fireblast",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "airSlash": {
       "showdownId": "airslash",
       "basePower": 75,
       "category": "Special",
       "flags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
         "slicing"
       ]
     },
@@ -199,75 +231,126 @@
       "showdownId": "solarbeam",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "charge",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect"
+      ]
     },
     "sludgeBomb": {
       "showdownId": "sludgebomb",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "leafStorm": {
       "showdownId": "leafstorm",
       "basePower": 130,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "hydroPump": {
       "showdownId": "hydropump",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "iceBeam": {
       "showdownId": "icebeam",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "thunderbolt": {
       "showdownId": "thunderbolt",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "protect": {
       "showdownId": "protect",
       "basePower": 0,
       "category": "Status",
-      "flags": []
+      "flags": [
+        "failcopycat",
+        "noassist"
+      ]
     },
     "highHorsepower": {
       "showdownId": "highhorsepower",
       "basePower": 95,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "heatWave": {
       "showdownId": "heatwave",
       "basePower": 95,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ]
     },
     "icyWind": {
       "showdownId": "icywind",
       "basePower": 55,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ]
     },
     "makeItRain": {
       "showdownId": "makeitrain",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "darkPulse": {
       "showdownId": "darkpulse",
       "basePower": 80,
       "category": "Special",
       "flags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
         "pulse"
       ]
     },
@@ -275,84 +358,135 @@
       "showdownId": "psychic",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "psyshock": {
       "showdownId": "psyshock",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "clearSmog": {
       "showdownId": "clearsmog",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "frostBreath": {
       "showdownId": "frostbreath",
       "basePower": 60,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "ancientPower": {
       "showdownId": "ancientpower",
       "basePower": 60,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "ddLariat": {
       "showdownId": "darkestlariat",
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gravApple": {
       "showdownId": "gravapple",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "hyperVoice": {
       "showdownId": "hypervoice",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "closeCombat": {
       "showdownId": "closecombat",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "shadowBall": {
       "showdownId": "shadowball",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "moonblast": {
       "showdownId": "moonblast",
       "basePower": 95,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "dazzlingGleam": {
       "showdownId": "dazzlinggleam",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "waterfall": {
       "showdownId": "waterfall",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "flareBlitz": {
@@ -360,7 +494,11 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "woodHammer": {
@@ -368,7 +506,10 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "ironHead": {
@@ -376,27 +517,43 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "energyBall": {
       "showdownId": "energyball",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "dracoMeteor": {
       "showdownId": "dracometeor",
       "basePower": 130,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "braveBird": {
       "showdownId": "bravebird",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "suckerPunch": {
@@ -404,46 +561,75 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "earthPower": {
       "showdownId": "earthpower",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "flashCannon": {
       "showdownId": "flashcannon",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "playRough": {
       "showdownId": "playrough",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "surf": {
       "showdownId": "surf",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "sludgeWave": {
       "showdownId": "sludgewave",
       "basePower": 95,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "auraSphere": {
       "showdownId": "aurasphere",
       "basePower": 80,
       "category": "Special",
       "flags": [
+        "bullet",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
         "pulse"
       ]
     },
@@ -452,69 +638,115 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "electroBall": {
       "showdownId": "electroball",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "eruption": {
       "showdownId": "eruption",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "waterSpout": {
       "showdownId": "waterspout",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "thunder": {
       "showdownId": "thunder",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "blizzard": {
       "showdownId": "blizzard",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ]
     },
     "discharge": {
       "showdownId": "discharge",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "muddyWater": {
       "showdownId": "muddywater",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "bugBuzz": {
       "showdownId": "bugbuzz",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "stoneEdge": {
       "showdownId": "stoneedge",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "liquidation": {
       "showdownId": "liquidation",
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "poisonJab": {
@@ -522,7 +754,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "xScissor": {
@@ -530,8 +765,11 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "wildCharge": {
@@ -539,89 +777,146 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v095_61": {
       "showdownId": "acidspray",
       "basePower": 40,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_62": {
       "showdownId": "armorcannon",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "v095_63": {
       "showdownId": "aircutter",
       "basePower": 60,
       "category": "Special",
       "flags": [
-        "slicing"
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing",
+        "wind"
       ]
     },
     "v095_64": {
       "showdownId": "electroweb",
       "basePower": 55,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_65": {
       "showdownId": "chargebeam",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_66": {
       "showdownId": "scorchingsands",
       "basePower": 70,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_67": {
       "showdownId": "voltswitch",
       "basePower": 70,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_68": {
       "showdownId": "mysticalfire",
       "basePower": 75,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_69": {
       "showdownId": "mudshot",
       "basePower": 55,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_70": {
       "showdownId": "strugglebug",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_71": {
       "showdownId": "meteorbeam",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "charge",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v095_72": {
       "showdownId": "fierydance",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "dance",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v096_073": {
       "showdownId": "irontail",
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_074": {
@@ -629,7 +924,10 @@
       "basePower": 130,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_075": {
@@ -637,7 +935,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_076": {
@@ -645,6 +946,9 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
+        "metronome",
+        "mirror",
+        "protect",
         "slicing"
       ]
     },
@@ -653,7 +957,10 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_078": {
@@ -661,7 +968,10 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_079": {
@@ -669,21 +979,34 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_080": {
       "showdownId": "acrobatics",
       "basePower": 55,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v096_081": {
       "showdownId": "hammerarm",
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "v096_082": {
@@ -691,7 +1014,10 @@
       "basePower": 95,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_083": {
@@ -699,7 +1025,10 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_084": {
@@ -707,7 +1036,11 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_085": {
@@ -715,7 +1048,11 @@
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_086": {
@@ -723,8 +1060,11 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "v096_087": {
@@ -732,7 +1072,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_088": {
@@ -740,7 +1083,10 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_089": {
@@ -748,7 +1094,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_090": {
@@ -756,7 +1105,10 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_091": {
@@ -764,35 +1116,53 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_092": {
       "showdownId": "seedbomb",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v096_093": {
       "showdownId": "dualwingbeat",
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_094": {
       "showdownId": "flowertrick",
       "basePower": 70,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "v096_095": {
       "showdownId": "fakeout",
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_096": {
@@ -800,7 +1170,11 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "v096_097": {
@@ -808,7 +1182,10 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "v096_098": {
@@ -816,21 +1193,31 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p001": {
       "showdownId": "triplearrows",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p002": {
       "showdownId": "icehammer",
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0169_p003": {
@@ -838,7 +1225,11 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "dance",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p004": {
@@ -846,7 +1237,15 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nonsky",
+        "nosleeptalk",
+        "protect"
       ]
     },
     "gw0169_p005": {
@@ -854,35 +1253,56 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p006": {
       "showdownId": "superfang",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p007": {
       "showdownId": "wavecrash",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p008": {
       "showdownId": "smackdown",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0169_p009": {
       "showdownId": "hornleech",
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p010": {
@@ -890,53 +1310,85 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p011": {
       "showdownId": "lastrespects",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p012": {
       "showdownId": "aurawheel",
       "basePower": 110,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p013": {
       "showdownId": "counter",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "noassist",
+        "protect"
+      ]
     },
     "gw0169_p014": {
       "showdownId": "pyroball",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "defrost",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p015": {
       "showdownId": "axekick",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p016": {
       "showdownId": "spiritshackle",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p017": {
       "showdownId": "bite",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p018": {
@@ -944,7 +1396,11 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p019": {
@@ -952,21 +1408,34 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0169_p020": {
       "showdownId": "endeavor",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_p021": {
       "showdownId": "facade",
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p022": {
@@ -974,7 +1443,10 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p023": {
@@ -982,28 +1454,48 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p024": {
       "showdownId": "rocktomb",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p025": {
       "showdownId": "rockwrecker",
       "basePower": 150,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0169_p026": {
       "showdownId": "focuspunch",
       "basePower": 150,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "noassist",
+        "nosleeptalk",
+        "protect",
+        "punch"
       ]
     },
     "gw0169_p027": {
@@ -1011,21 +1503,33 @@
       "basePower": 150,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
       ]
     },
     "gw0169_p028": {
       "showdownId": "reversal",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p029": {
       "showdownId": "glaiverush",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p030": {
@@ -1033,7 +1537,10 @@
       "basePower": 30,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p031": {
@@ -1041,8 +1548,11 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p032": {
@@ -1050,7 +1560,10 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p033": {
@@ -1058,21 +1571,35 @@
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p034": {
       "showdownId": "beakblast",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ]
     },
     "gw0169_p035": {
       "showdownId": "jawlock",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p036": {
@@ -1080,7 +1607,10 @@
       "basePower": 55,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p037": {
@@ -1088,7 +1618,10 @@
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p038": {
@@ -1096,7 +1629,10 @@
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p039": {
@@ -1104,28 +1640,48 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p040": {
       "showdownId": "lowkick",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p041": {
       "showdownId": "skyattack",
       "basePower": 140,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "charge",
+        "distance",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect"
+      ]
     },
     "gw0169_p042": {
       "showdownId": "meteormash",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0169_p043": {
@@ -1133,7 +1689,13 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk"
       ]
     },
     "gw0169_p044": {
@@ -1141,6 +1703,9 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
+        "metronome",
+        "mirror",
+        "protect",
         "slicing"
       ]
     },
@@ -1149,63 +1714,106 @@
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p046": {
       "showdownId": "selfdestruct",
       "basePower": 200,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_p047": {
       "showdownId": "bind",
       "basePower": 15,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p048": {
       "showdownId": "gyroball",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p049": {
       "showdownId": "shadowpunch",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0169_p050": {
       "showdownId": "fissure",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0169_p051": {
       "showdownId": "tailslap",
       "basePower": 25,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p052": {
       "showdownId": "scaleshot",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p053": {
       "showdownId": "fly",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "charge",
+        "contact",
+        "distance",
+        "failinstruct",
+        "gravity",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk",
+        "protect"
       ]
     },
     "gw0169_p054": {
@@ -1213,48 +1821,83 @@
       "basePower": 125,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p055": {
       "showdownId": "explosion",
       "basePower": 250,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_p056": {
       "showdownId": "dive",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "allyanim",
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nonsky",
+        "nosleeptalk",
+        "protect"
       ]
     },
     "gw0169_p057": {
       "showdownId": "ragingfury",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p058": {
       "showdownId": "gunkshot",
       "basePower": 120,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p059": {
       "showdownId": "bulletseed",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p060": {
       "showdownId": "doublehit",
       "basePower": 35,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p061": {
@@ -1262,42 +1905,65 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p062": {
       "showdownId": "iciclecrash",
       "basePower": 85,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p063": {
       "showdownId": "iciclespear",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p064": {
       "showdownId": "firstimpression",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p065": {
       "showdownId": "gigatonhammer",
       "basePower": 160,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "cantusetwice",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p066": {
       "showdownId": "lastresort",
       "basePower": 140,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p067": {
@@ -1305,7 +1971,10 @@
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p068": {
@@ -1313,7 +1982,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p069": {
@@ -1321,7 +1993,9 @@
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p070": {
@@ -1329,7 +2003,10 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p071": {
@@ -1337,7 +2014,9 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p072": {
@@ -1345,7 +2024,10 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p073": {
@@ -1353,42 +2035,68 @@
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p074": {
       "showdownId": "barbbarrage",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_p075": {
       "showdownId": "kowtowcleave",
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0169_p076": {
       "showdownId": "fling",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "allyanim",
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_p077": {
       "showdownId": "dragondarts",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_p078": {
       "showdownId": "dragonrush",
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_p079": {
@@ -1396,164 +2104,298 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failcopycat",
+        "metronome",
+        "mirror",
+        "noassist",
+        "protect"
       ]
     },
     "gw0169_s001": {
       "showdownId": "storedpower",
       "basePower": 20,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s003": {
       "showdownId": "finalgambit",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "noparentalbond",
+        "protect"
+      ]
     },
     "gw0169_s004": {
       "showdownId": "snore",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s005": {
       "showdownId": "weatherball",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s006": {
       "showdownId": "whirlpool",
       "basePower": 35,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s007": {
       "showdownId": "sparklingaria",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s008": {
       "showdownId": "bittermalice",
       "basePower": 75,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s009": {
       "showdownId": "electroshot",
       "basePower": 130,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "charge",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s010": {
       "showdownId": "overdrive",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s011": {
       "showdownId": "overheat",
       "basePower": 130,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s012": {
       "showdownId": "pollenpuff",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "allyanim",
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s013": {
       "showdownId": "focusblast",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s014": {
       "showdownId": "gigadrain",
       "basePower": 75,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s015": {
       "showdownId": "ficklebeam",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s016": {
       "showdownId": "grassknot",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0169_s017": {
       "showdownId": "belch",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "failmimic",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ]
     },
     "gw0169_s018": {
       "showdownId": "psychicnoise",
       "basePower": 75,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s019": {
       "showdownId": "uproar",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s020": {
       "showdownId": "shellsidearm",
       "basePower": 90,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s021": {
       "showdownId": "burningjealousy",
       "basePower": 70,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s022": {
       "showdownId": "matchagotcha",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "defrost",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s023": {
       "showdownId": "vacuumwave",
       "basePower": 40,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s024": {
       "showdownId": "extrasensory",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s025": {
       "showdownId": "clangingscales",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s026": {
       "showdownId": "sheercold",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s027": {
       "showdownId": "terrainpulse",
       "basePower": 50,
       "category": "Special",
       "flags": [
+        "metronome",
+        "mirror",
+        "protect",
         "pulse"
       ]
     },
@@ -1561,199 +2403,338 @@
       "showdownId": "hex",
       "basePower": 65,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s029": {
       "showdownId": "twinbeam",
       "basePower": 40,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s030": {
       "showdownId": "steelbeam",
       "basePower": 140,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s031": {
       "showdownId": "triattack",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s032": {
       "showdownId": "zapcannon",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s033": {
       "showdownId": "nightdaze",
       "basePower": 85,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s034": {
       "showdownId": "nightshade",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s035": {
       "showdownId": "drainingkiss",
       "basePower": 50,
       "category": "Special",
       "flags": [
-        "contact"
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_s036": {
       "showdownId": "scald",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s037": {
       "showdownId": "snipeshot",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s038": {
       "showdownId": "hydrocannon",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0169_s039": {
       "showdownId": "hyperbeam",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0169_s040": {
       "showdownId": "spitup",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "protect"
+      ]
     },
     "gw0169_s041": {
       "showdownId": "boomburst",
       "basePower": 140,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s042": {
       "showdownId": "petaldance",
       "basePower": 120,
       "category": "Special",
       "flags": [
-        "contact"
+        "contact",
+        "dance",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_s043": {
       "showdownId": "lightofruin",
       "basePower": 140,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s044": {
       "showdownId": "paraboliccharge",
       "basePower": 65,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s045": {
       "showdownId": "powergem",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s046": {
       "showdownId": "snarl",
       "basePower": 55,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s047": {
       "showdownId": "frenzyplant",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0169_s048": {
       "showdownId": "infernalparade",
       "basePower": 60,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s049": {
       "showdownId": "chillingwater",
       "basePower": 50,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s050": {
       "showdownId": "eeriespell",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s051": {
       "showdownId": "blastburn",
       "basePower": 150,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0169_s052": {
       "showdownId": "freezedry",
       "basePower": 70,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s053": {
       "showdownId": "torchsong",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s054": {
       "showdownId": "lavaplume",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s055": {
       "showdownId": "infestation",
       "basePower": 20,
       "category": "Special",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0169_s056": {
       "showdownId": "syrupbomb",
       "basePower": 60,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s057": {
       "showdownId": "watershuriken",
       "basePower": 15,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s058": {
       "showdownId": "mistyexplosion",
       "basePower": 100,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s059": {
       "showdownId": "waterpulse",
       "basePower": 60,
       "category": "Special",
       "flags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
         "pulse"
       ]
     },
@@ -1761,37 +2742,64 @@
       "showdownId": "futuresight",
       "basePower": 120,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "allyanim",
+        "futuremove",
+        "metronome"
+      ]
     },
     "gw0169_s061": {
       "showdownId": "mirrorcoat",
       "basePower": 0,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "failmefirst",
+        "noassist",
+        "protect"
+      ]
     },
     "gw0169_s062": {
       "showdownId": "alluringvoice",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s063": {
       "showdownId": "burnup",
       "basePower": 130,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s064": {
       "showdownId": "risingvoltage",
       "basePower": 70,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s065": {
       "showdownId": "dragonpulse",
       "basePower": 85,
       "category": "Special",
       "flags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
         "pulse"
       ]
     },
@@ -1799,38 +2807,62 @@
       "showdownId": "appleacid",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s067": {
       "showdownId": "round",
       "basePower": 60,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ]
     },
     "gw0169_s068": {
       "showdownId": "luminacrash",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0169_s069": {
       "showdownId": "inferno",
       "basePower": 100,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s001": {
       "showdownId": "drumbeating",
       "basePower": 80,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s002": {
       "showdownId": "drillpeck",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s003": {
@@ -1838,7 +2870,10 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s004": {
@@ -1846,7 +2881,12 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_s005": {
@@ -1854,7 +2894,12 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "mirror",
+        "noassist",
+        "protect"
       ]
     },
     "gw0170_s006": {
@@ -1862,7 +2907,10 @@
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s007": {
@@ -1870,7 +2918,12 @@
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
       ]
     },
     "gw0170_u008": {
@@ -1878,8 +2931,10 @@
       "basePower": 20,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170_s009": {
@@ -1887,7 +2942,10 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s010": {
@@ -1895,7 +2953,10 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s011": {
@@ -1903,7 +2964,10 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s012": {
@@ -1911,7 +2975,11 @@
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_u013": {
@@ -1919,7 +2987,10 @@
       "basePower": 0,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u014": {
@@ -1927,7 +2998,10 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s015": {
@@ -1935,21 +3009,32 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s016": {
       "showdownId": "petalblizzard",
       "basePower": 90,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ]
     },
     "gw0170_u017": {
       "showdownId": "upperhand",
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s018": {
@@ -1957,70 +3042,111 @@
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u019": {
       "showdownId": "hardpress",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s020": {
       "showdownId": "ceaselessedge",
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170_s021": {
       "showdownId": "mountaingale",
       "basePower": 100,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s022": {
       "showdownId": "zingzap",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u023": {
       "showdownId": "heatcrash",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0170_s024": {
       "showdownId": "direclaw",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s025": {
       "showdownId": "feint",
       "basePower": 30,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "failcopycat",
+        "mirror",
+        "noassist"
+      ]
     },
     "gw0170_u026": {
       "showdownId": "beatup",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "allyanim",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s027": {
       "showdownId": "headlongrush",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_u028": {
@@ -2028,7 +3154,14 @@
       "basePower": 100,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "distance",
+        "gravity",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
       ]
     },
     "gw0170_s029": {
@@ -2036,7 +3169,10 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s030": {
@@ -2044,41 +3180,69 @@
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u031": {
       "showdownId": "ragefist",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "mirror",
+        "protect",
+        "punch"
+      ]
     },
     "gw0170_s032": {
       "showdownId": "brutalswing",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u033": {
       "showdownId": "heavyslam",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0170_u034": {
       "showdownId": "comeuppance",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "failmefirst",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s035": {
       "showdownId": "covet",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "mirror",
+        "noassist",
+        "protect"
       ]
     },
     "gw0170_s036": {
@@ -2086,7 +3250,10 @@
       "basePower": 20,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s037": {
@@ -2094,7 +3261,11 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s038": {
@@ -2102,7 +3273,11 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_s039": {
@@ -2110,35 +3285,52 @@
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u040": {
       "showdownId": "poltergeist",
       "basePower": 110,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s041": {
       "showdownId": "volttackle",
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u042": {
       "showdownId": "bonerush",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s043": {
       "showdownId": "wrap",
       "basePower": 15,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s044": {
@@ -2146,21 +3338,32 @@
       "basePower": 40,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_u045": {
       "showdownId": "pinmissile",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s046": {
       "showdownId": "bugbite",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s047": {
@@ -2168,8 +3371,12 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170_s048": {
@@ -2177,7 +3384,10 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s049": {
@@ -2185,50 +3395,77 @@
       "basePower": 120,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u050": {
       "showdownId": "metalburst",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "failmefirst",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s051": {
       "showdownId": "headsmash",
       "basePower": 150,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u052": {
       "showdownId": "temperflare",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_u053": {
       "showdownId": "stormthrow",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u054": {
       "showdownId": "avalanche",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s055": {
       "showdownId": "leafblade",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170_u056": {
@@ -2236,7 +3473,9 @@
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_s057": {
@@ -2244,35 +3483,54 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170_u058": {
       "showdownId": "rockblast",
       "basePower": 25,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170_s059": {
       "showdownId": "lowsweep",
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170_u060": {
       "showdownId": "expandingforce",
       "basePower": 80,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_001": {
       "showdownId": "rapidspin",
       "basePower": 50,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_002": {
@@ -2280,80 +3538,129 @@
       "basePower": 65,
       "category": "Physical",
       "flags": [
-        "contact"
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_003": {
       "showdownId": "iceshard",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_004": {
       "showdownId": "jetpunch",
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect",
+        "punch"
       ]
     },
     "gw0170b_005": {
       "showdownId": "saltcure",
       "basePower": 40,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_006": {
       "showdownId": "throatchop",
       "basePower": 80,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_007": {
       "showdownId": "flail",
       "basePower": 0,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_008": {
       "showdownId": "stompingtantrum",
       "basePower": 75,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_009": {
       "showdownId": "payback",
       "basePower": 50,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_010": {
       "showdownId": "bulldoze",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ]
     },
     "gw0170b_011": {
       "showdownId": "meteorassault",
       "basePower": 150,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "failinstruct",
+        "mirror",
+        "protect",
+        "recharge"
+      ]
     },
     "gw0170b_012": {
       "showdownId": "sandtomb",
       "basePower": 35,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_013": {
       "showdownId": "sacredsword",
       "basePower": 90,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170b_014": {
@@ -2361,21 +3668,32 @@
       "basePower": 75,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_015": {
       "showdownId": "assurance",
       "basePower": 60,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_016": {
       "showdownId": "seismictoss",
       "basePower": 0,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
       ]
     },
     "gw0170b_017": {
@@ -2383,22 +3701,34 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_018": {
       "showdownId": "powertrip",
       "basePower": 20,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_019": {
       "showdownId": "nightslash",
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "slicing",
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
       ]
     },
     "gw0170b_020": {
@@ -2406,7 +3736,10 @@
       "basePower": 0,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_021": {
@@ -2414,7 +3747,16 @@
       "basePower": 85,
       "category": "Physical",
       "flags": [
-        "contact"
+        "charge",
+        "contact",
+        "distance",
+        "failinstruct",
+        "gravity",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk",
+        "protect"
       ]
     },
     "gw0170b_022": {
@@ -2422,7 +3764,11 @@
       "basePower": 130,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "gravity",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_023": {
@@ -2430,7 +3776,12 @@
       "basePower": 60,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "failcopycat",
+        "metronome",
+        "mirror",
+        "noassist",
+        "protect"
       ]
     },
     "gw0170b_024": {
@@ -2438,46 +3789,74 @@
       "basePower": 35,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170b_025": {
       "showdownId": "tripleaxel",
       "basePower": 20,
       "category": "Physical",
-      "flags": []
+      "flags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170b_026": {
       "showdownId": "tropkick",
       "basePower": 70,
       "category": "Physical",
       "flags": [
-        "contact"
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
       ]
     },
     "gw0170c_001": {
       "showdownId": "mudslap",
       "basePower": 20,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170c_002": {
       "showdownId": "venoshock",
       "basePower": 65,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     },
     "gw0170c_003": {
       "showdownId": "hurricane",
       "basePower": 110,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ]
     },
     "gw0170c_004": {
       "showdownId": "firespin",
       "basePower": 35,
       "category": "Special",
-      "flags": []
+      "flags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ]
     }
   },
   "championsSlicingOverrides": {
@@ -2490,6 +3869,28 @@
       "name": "シャドークロー",
       "slicing": true,
       "evidence": "Official Pokémon Champions buffs/nerfs image supplied by user, 2026-11-12"
+    },
+    "gw0170_s024": {
+      "slicing": true,
+      "evidence": "Pinned Pokémon Showdown Champions moves.ts 7e743761cd13cdb361fc0f58eb5a866284894f5b; corroborated by @smogon/calc 0.12.0 Champions data; not hardware certification"
+    },
+    "gw0170_s029": {
+      "slicing": true,
+      "evidence": "Pinned Pokémon Showdown Champions moves.ts 7e743761cd13cdb361fc0f58eb5a866284894f5b; corroborated by @smogon/calc 0.12.0 Champions data; not hardware certification"
+    }
+  },
+  "auditV0186": {
+    "originalSourceCommit": "a9bb56dce2c45a34b44afdf2378aa0d0c35b540d",
+    "originalSourceResolution": "GitHub returned 404 for the prior source commit on 2026-11-14; no parity claim is based on that unresolved pin",
+    "flagsRevalidatedFrom": "7e743761cd13cdb361fc0f58eb5a866284894f5b",
+    "championsFlagSource": "smogon/pokemon-showdown/data/mods/champions/moves.ts",
+    "reference": "@smogon/calc@0.12.0",
+    "scope": "flags revalidated; original base-power provenance remains historical; Champions powers independently matched in v0186 audit"
+  },
+  "championsPunchingOverrides": {
+    "gw0169_p071": {
+      "punch": true,
+      "evidence": "Pinned Pokémon Showdown Champions doubleshock override 7e743761cd13cdb361fc0f58eb5a866284894f5b"
     }
   }
 }

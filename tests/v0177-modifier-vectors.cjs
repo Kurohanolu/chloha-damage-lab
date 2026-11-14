@@ -13,14 +13,14 @@ const oracle=(a)=>{
  if(a.battleFormat==='doubles'&&a.spread==='spread')base=round(base,3072);
  if((a.weather==='sun'||a.weather==='rain')&&['ほのお','みず'].includes(a.moveType))
   base=round(base,(a.weather==='sun'&&a.moveType==='ほのお')||(a.weather==='rain'&&a.moveType==='みず')?6144:2048);
- if(a.critical)base=round(base,6144);
+ if(a.critical)base=Math.floor(base*1.5);
  const stab=a.attTypes.includes(a.moveType)?6144:4096;
  const effectiveness=a.moveType==='ほのお'&&a.defTypes.includes('くさ')?2:1;
  return Array.from({length:16},(_,i)=>{
   let n=Math.floor(base*(85+i)/100);
   n=round(n,stab);
   n=Math.floor(n*effectiveness);
-  if(a.burn&&a.category==='physical'&&a.moveMechanic!=='facade')n=round(n,2048);
+  if(a.burn&&a.category==='physical'&&a.moveMechanic!=='facade')n=Math.floor(n/2);
   if(!a.critical&&((a.screen==='reflect'&&a.category==='physical')||(a.screen==='lightScreen'&&a.category==='special')))
    n=round(n,a.battleFormat==='singles'?2048:2732);
   return Math.max(1,n);

@@ -1,0 +1,1395 @@
+{
+  "frozenBaselineSha256": "ffc88f9684ef16f2d67b319ab427ae1f8fa89e54ebb30b5075de3fe1f8165ebd",
+  "reference": "@smogon/calc@0.12.0",
+  "referenceSourceCommit": "d7a69cf40616057ef40faf7623df7a628e58b535",
+  "numericCorrections": 26,
+  "traceOrMetadataCorrections": 5,
+  "cases": [
+    {
+      "name": "attacker technician",
+      "reason": "Inactive Technician no longer records a no-op modifier",
+      "originalExpectedSha256": "9c091a3499a29e8bdd7683673cc1882d4840beaef590787e17b04469b25eeb37",
+      "referenceGeneration": null,
+      "expected": {
+        "output": {
+          "rolls": [
+            58,
+            58,
+            60,
+            60,
+            60,
+            61,
+            61,
+            63,
+            63,
+            64,
+            64,
+            66,
+            66,
+            67,
+            67,
+            69
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "postRandom/stab: 46 → 69",
+            "postRandom/type: 69 → 69",
+            "最終ダメージ（乱数100）: 69"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 46,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    },
+    {
+      "name": "attacker analytic",
+      "reason": "Analytic is a base-power modifier, not a final multiplier",
+      "originalExpectedSha256": "28896cae6134c8d96a5d92c59fe3d789069129d0289c2ba5648522d77fcc9fa8",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            75,
+            75,
+            76,
+            76,
+            78,
+            79,
+            79,
+            81,
+            81,
+            82,
+            84,
+            84,
+            85,
+            85,
+            87,
+            88
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/analytic: 80 → 104",
+            "postRandom/stab: 59 → 88",
+            "postRandom/type: 88 → 88",
+            "最終ダメージ（乱数100）: 88"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 59,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    },
+    {
+      "name": "mechanic flyingPress",
+      "reason": "Effectiveness metadata now uses the same dual-type calculation as damage",
+      "originalExpectedSha256": "c71d1ffced0d9e9d9121b63da3f3582a89d5526a93de5404a50a303150edf798",
+      "referenceGeneration": null,
+      "expected": {
+        "output": {
+          "rolls": [
+            174,
+            176,
+            180,
+            180,
+            182,
+            186,
+            186,
+            188,
+            192,
+            192,
+            194,
+            198,
+            198,
+            200,
+            204,
+            206
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "preRandom/critical: 46 → 69",
+            "postRandom/stab: 69 → 103",
+            "postRandom/type: 103 → 206",
+            "最終ダメージ（乱数100）: 206"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 69,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field none/none",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field none/electric",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field none/grassy",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field none/misty",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field none/psychic",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field rain/none",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "7d4f537711913dac490322c6f2e154ef949f7fc18a965b2ccfcf7f0d58696d6c",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            140,
+            143,
+            144,
+            146,
+            147,
+            149,
+            150,
+            152,
+            155,
+            156,
+            158,
+            159,
+            161,
+            162,
+            164,
+            167
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 76",
+            "preRandom/critical: 76 → 114",
+            "postRandom/stab: 114 → 171",
+            "postRandom/type: 171 → 342",
+            "final/friendGuard+lifeOrb+resistBerry: 342 → 167",
+            "最終ダメージ（乱数100）: 167"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 114,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field rain/electric",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "7d4f537711913dac490322c6f2e154ef949f7fc18a965b2ccfcf7f0d58696d6c",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            140,
+            143,
+            144,
+            146,
+            147,
+            149,
+            150,
+            152,
+            155,
+            156,
+            158,
+            159,
+            161,
+            162,
+            164,
+            167
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 76",
+            "preRandom/critical: 76 → 114",
+            "postRandom/stab: 114 → 171",
+            "postRandom/type: 171 → 342",
+            "final/friendGuard+lifeOrb+resistBerry: 342 → 167",
+            "最終ダメージ（乱数100）: 167"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 114,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field rain/grassy",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "7d4f537711913dac490322c6f2e154ef949f7fc18a965b2ccfcf7f0d58696d6c",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            140,
+            143,
+            144,
+            146,
+            147,
+            149,
+            150,
+            152,
+            155,
+            156,
+            158,
+            159,
+            161,
+            162,
+            164,
+            167
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 76",
+            "preRandom/critical: 76 → 114",
+            "postRandom/stab: 114 → 171",
+            "postRandom/type: 171 → 342",
+            "final/friendGuard+lifeOrb+resistBerry: 342 → 167",
+            "最終ダメージ（乱数100）: 167"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 114,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field rain/misty",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "7d4f537711913dac490322c6f2e154ef949f7fc18a965b2ccfcf7f0d58696d6c",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            140,
+            143,
+            144,
+            146,
+            147,
+            149,
+            150,
+            152,
+            155,
+            156,
+            158,
+            159,
+            161,
+            162,
+            164,
+            167
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 76",
+            "preRandom/critical: 76 → 114",
+            "postRandom/stab: 114 → 171",
+            "postRandom/type: 171 → 342",
+            "final/friendGuard+lifeOrb+resistBerry: 342 → 167",
+            "最終ダメージ（乱数100）: 167"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 114,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field rain/psychic",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "7d4f537711913dac490322c6f2e154ef949f7fc18a965b2ccfcf7f0d58696d6c",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            140,
+            143,
+            144,
+            146,
+            147,
+            149,
+            150,
+            152,
+            155,
+            156,
+            158,
+            159,
+            161,
+            162,
+            164,
+            167
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 76",
+            "preRandom/critical: 76 → 114",
+            "postRandom/stab: 114 → 171",
+            "postRandom/type: 171 → 342",
+            "final/friendGuard+lifeOrb+resistBerry: 342 → 167",
+            "最終ダメージ（乱数100）: 167"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 114,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sun/none",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "9b60af623b2c20edde57a849dfce01317a352e5962663ca9ffed9ef6ce50b5f4",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            45,
+            45,
+            47,
+            47,
+            47,
+            48,
+            48,
+            50,
+            50,
+            50,
+            51,
+            51,
+            51,
+            53,
+            53,
+            54
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 25",
+            "preRandom/critical: 25 → 37",
+            "postRandom/stab: 37 → 55",
+            "postRandom/type: 55 → 110",
+            "final/friendGuard+lifeOrb+resistBerry: 110 → 54",
+            "最終ダメージ（乱数100）: 54"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 37,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sun/electric",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "9b60af623b2c20edde57a849dfce01317a352e5962663ca9ffed9ef6ce50b5f4",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            45,
+            45,
+            47,
+            47,
+            47,
+            48,
+            48,
+            50,
+            50,
+            50,
+            51,
+            51,
+            51,
+            53,
+            53,
+            54
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 25",
+            "preRandom/critical: 25 → 37",
+            "postRandom/stab: 37 → 55",
+            "postRandom/type: 55 → 110",
+            "final/friendGuard+lifeOrb+resistBerry: 110 → 54",
+            "最終ダメージ（乱数100）: 54"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 37,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sun/grassy",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "9b60af623b2c20edde57a849dfce01317a352e5962663ca9ffed9ef6ce50b5f4",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            45,
+            45,
+            47,
+            47,
+            47,
+            48,
+            48,
+            50,
+            50,
+            50,
+            51,
+            51,
+            51,
+            53,
+            53,
+            54
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 25",
+            "preRandom/critical: 25 → 37",
+            "postRandom/stab: 37 → 55",
+            "postRandom/type: 55 → 110",
+            "final/friendGuard+lifeOrb+resistBerry: 110 → 54",
+            "最終ダメージ（乱数100）: 54"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 37,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sun/misty",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "9b60af623b2c20edde57a849dfce01317a352e5962663ca9ffed9ef6ce50b5f4",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            45,
+            45,
+            47,
+            47,
+            47,
+            48,
+            48,
+            50,
+            50,
+            50,
+            51,
+            51,
+            51,
+            53,
+            53,
+            54
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 25",
+            "preRandom/critical: 25 → 37",
+            "postRandom/stab: 37 → 55",
+            "postRandom/type: 55 → 110",
+            "final/friendGuard+lifeOrb+resistBerry: 110 → 54",
+            "最終ダメージ（乱数100）: 54"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 37,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sun/psychic",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "9b60af623b2c20edde57a849dfce01317a352e5962663ca9ffed9ef6ce50b5f4",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            45,
+            45,
+            47,
+            47,
+            47,
+            48,
+            48,
+            50,
+            50,
+            50,
+            51,
+            51,
+            51,
+            53,
+            53,
+            54
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/weather: 51 → 25",
+            "preRandom/critical: 25 → 37",
+            "postRandom/stab: 37 → 55",
+            "postRandom/type: 55 → 110",
+            "final/friendGuard+lifeOrb+resistBerry: 110 → 54",
+            "最終ダメージ（乱数100）: 54"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 37,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sand/none",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sand/electric",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sand/grassy",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sand/misty",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field sand/psychic",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field snow/none",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field snow/electric",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field snow/grassy",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field snow/misty",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "field snow/psychic",
+      "reason": "Friend Guard, Life Orb and resist Berry share one final modifier chain",
+      "originalExpectedSha256": "71e21f10b9960e42e0ba27f411531cf98ce95cc7e4fc4281c4f28f76f2fefd4e",
+      "referenceGeneration": 9,
+      "expected": {
+        "output": {
+          "rolls": [
+            94,
+            95,
+            97,
+            97,
+            98,
+            99,
+            100,
+            100,
+            102,
+            103,
+            105,
+            105,
+            106,
+            108,
+            109,
+            111
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "power/helpingHand: 80 → 120",
+            "preRandom/spread: 68 → 51",
+            "preRandom/critical: 51 → 76",
+            "postRandom/stab: 76 → 114",
+            "postRandom/type: 114 → 228",
+            "final/friendGuard+lifeOrb+resistBerry: 228 → 111",
+            "最終ダメージ（乱数100）: 111"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 76,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 2
+        }
+      }
+    },
+    {
+      "name": "Shell Side Arm physical",
+      "reason": "Category is chosen from stat ratios; trace wording corrected",
+      "originalExpectedSha256": "126aebbd94dad8cbd532e9e101aca5bfc6e904bcfb5e78740023baa727ec1f67",
+      "referenceGeneration": null,
+      "expected": {
+        "output": {
+          "rolls": [
+            142,
+            144,
+            145,
+            147,
+            148,
+            150,
+            151,
+            154,
+            156,
+            157,
+            159,
+            160,
+            162,
+            163,
+            165,
+            168
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "シェルアームズ: 物理・特殊の能力比を比較し、物理方式を採用（同値は特殊）。",
+            "postRandom/stab: 112 → 168",
+            "postRandom/type: 168 → 168",
+            "最終ダメージ（乱数100）: 168"
+          ],
+          "attack": 250,
+          "defense": 80,
+          "base": 112,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    },
+    {
+      "name": "Shell Side Arm special",
+      "reason": "Category is chosen from stat ratios; trace wording corrected",
+      "originalExpectedSha256": "ab83e6ffe20b755be316724c691a7527dc14367e81e4f665743764abbc43f430",
+      "referenceGeneration": null,
+      "expected": {
+        "output": {
+          "rolls": [
+            142,
+            144,
+            145,
+            147,
+            148,
+            150,
+            151,
+            154,
+            156,
+            157,
+            159,
+            160,
+            162,
+            163,
+            165,
+            168
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "シェルアームズ: 物理・特殊の能力比を比較し、特殊方式を採用（同値は特殊）。",
+            "postRandom/stab: 112 → 168",
+            "postRandom/type: 168 → 168",
+            "最終ダメージ（乱数100）: 168"
+          ],
+          "attack": 250,
+          "defense": 80,
+          "base": 112,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    },
+    {
+      "name": "Shell Side Arm tie",
+      "reason": "Category is chosen from stat ratios; trace wording corrected",
+      "originalExpectedSha256": "142e7d57db8eee8e1929c5fdba13dab8c8fbb30c7ddd17955a82bd614cd1f8ca",
+      "referenceGeneration": null,
+      "expected": {
+        "output": {
+          "rolls": [
+            58,
+            58,
+            60,
+            60,
+            60,
+            61,
+            61,
+            63,
+            63,
+            64,
+            64,
+            66,
+            66,
+            67,
+            67,
+            69
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "シェルアームズ: 物理・特殊の能力比を比較し、特殊方式を採用（同値は特殊）。",
+            "postRandom/stab: 46 → 69",
+            "postRandom/type: 69 → 69",
+            "最終ダメージ（乱数100）: 69"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 46,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    }
+  ]
+}

@@ -53,6 +53,7 @@ jobs:
             const manifest = JSON.parse(fs.readFileSync('release.json', 'utf8'));
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'GitHub Pages live smoke'];
             if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
+            if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
             let verified;
             for (let attempt = 0; attempt < 40; attempt++) {
               const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});

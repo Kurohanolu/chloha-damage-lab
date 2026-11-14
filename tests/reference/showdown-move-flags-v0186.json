@@ -1,0 +1,3420 @@
+{
+  "sourceCommit": "7e743761cd13cdb361fc0f58eb5a866284894f5b",
+  "baseSource": "smogon/pokemon-showdown/data/moves.ts",
+  "championsSource": "smogon/pokemon-showdown/data/mods/champions/moves.ts",
+  "moves": {
+    "earthquake": {
+      "showdownId": "earthquake",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "dragonClaw": {
+      "showdownId": "dragonclaw",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ]
+    },
+    "outrage": {
+      "showdownId": "outrage",
+      "baseFlags": [
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "rockSlide": {
+      "showdownId": "rockslide",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "crunch": {
+      "showdownId": "crunch",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "flamethrower": {
+      "showdownId": "flamethrower",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "fireBlast": {
+      "showdownId": "fireblast",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "airSlash": {
+      "showdownId": "airslash",
+      "baseFlags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "solarBeam": {
+      "showdownId": "solarbeam",
+      "baseFlags": [
+        "charge",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "sludgeBomb": {
+      "showdownId": "sludgebomb",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "leafStorm": {
+      "showdownId": "leafstorm",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "hydroPump": {
+      "showdownId": "hydropump",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "iceBeam": {
+      "showdownId": "icebeam",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "thunderbolt": {
+      "showdownId": "thunderbolt",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "protect": {
+      "showdownId": "protect",
+      "baseFlags": [
+        "failcopycat",
+        "noassist"
+      ],
+      "championsFlags": null
+    },
+    "highHorsepower": {
+      "showdownId": "highhorsepower",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "heatWave": {
+      "showdownId": "heatwave",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "icyWind": {
+      "showdownId": "icywind",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "makeItRain": {
+      "showdownId": "makeitrain",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "darkPulse": {
+      "showdownId": "darkpulse",
+      "baseFlags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "pulse"
+      ],
+      "championsFlags": null
+    },
+    "psychic": {
+      "showdownId": "psychic",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "psyshock": {
+      "showdownId": "psyshock",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "clearSmog": {
+      "showdownId": "clearsmog",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "frostBreath": {
+      "showdownId": "frostbreath",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "ancientPower": {
+      "showdownId": "ancientpower",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "ddLariat": {
+      "showdownId": "darkestlariat",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gravApple": {
+      "showdownId": "gravapple",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "hyperVoice": {
+      "showdownId": "hypervoice",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "closeCombat": {
+      "showdownId": "closecombat",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "shadowBall": {
+      "showdownId": "shadowball",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "moonblast": {
+      "showdownId": "moonblast",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "dazzlingGleam": {
+      "showdownId": "dazzlinggleam",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "waterfall": {
+      "showdownId": "waterfall",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "flareBlitz": {
+      "showdownId": "flareblitz",
+      "baseFlags": [
+        "contact",
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "woodHammer": {
+      "showdownId": "woodhammer",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "ironHead": {
+      "showdownId": "ironhead",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "energyBall": {
+      "showdownId": "energyball",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "dracoMeteor": {
+      "showdownId": "dracometeor",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "braveBird": {
+      "showdownId": "bravebird",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "suckerPunch": {
+      "showdownId": "suckerpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "earthPower": {
+      "showdownId": "earthpower",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "flashCannon": {
+      "showdownId": "flashcannon",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "playRough": {
+      "showdownId": "playrough",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "surf": {
+      "showdownId": "surf",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "sludgeWave": {
+      "showdownId": "sludgewave",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "auraSphere": {
+      "showdownId": "aurasphere",
+      "baseFlags": [
+        "bullet",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "pulse"
+      ],
+      "championsFlags": null
+    },
+    "bodyPress": {
+      "showdownId": "bodypress",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "electroBall": {
+      "showdownId": "electroball",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "eruption": {
+      "showdownId": "eruption",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "waterSpout": {
+      "showdownId": "waterspout",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "thunder": {
+      "showdownId": "thunder",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "blizzard": {
+      "showdownId": "blizzard",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "discharge": {
+      "showdownId": "discharge",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "muddyWater": {
+      "showdownId": "muddywater",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "bugBuzz": {
+      "showdownId": "bugbuzz",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "stoneEdge": {
+      "showdownId": "stoneedge",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "liquidation": {
+      "showdownId": "liquidation",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "poisonJab": {
+      "showdownId": "poisonjab",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "xScissor": {
+      "showdownId": "xscissor",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "wildCharge": {
+      "showdownId": "wildcharge",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_61": {
+      "showdownId": "acidspray",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_62": {
+      "showdownId": "armorcannon",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_63": {
+      "showdownId": "aircutter",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "v095_64": {
+      "showdownId": "electroweb",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_65": {
+      "showdownId": "chargebeam",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_66": {
+      "showdownId": "scorchingsands",
+      "baseFlags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_67": {
+      "showdownId": "voltswitch",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_68": {
+      "showdownId": "mysticalfire",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_69": {
+      "showdownId": "mudshot",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_70": {
+      "showdownId": "strugglebug",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_71": {
+      "showdownId": "meteorbeam",
+      "baseFlags": [
+        "charge",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v095_72": {
+      "showdownId": "fierydance",
+      "baseFlags": [
+        "dance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_073": {
+      "showdownId": "irontail",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_074": {
+      "showdownId": "steelroller",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_075": {
+      "showdownId": "icespinner",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_076": {
+      "showdownId": "aquacutter",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "v096_077": {
+      "showdownId": "aquajet",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_078": {
+      "showdownId": "aquatail",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_079": {
+      "showdownId": "accelerock",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_080": {
+      "showdownId": "acrobatics",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_081": {
+      "showdownId": "hammerarm",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "v096_082": {
+      "showdownId": "foulplay",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_083": {
+      "showdownId": "shadowsneak",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_084": {
+      "showdownId": "leechlife",
+      "baseFlags": [
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_085": {
+      "showdownId": "psychicfangs",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_086": {
+      "showdownId": "razorshell",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "v096_087": {
+      "showdownId": "zenheadbutt",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_088": {
+      "showdownId": "shadowclaw",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ]
+    },
+    "v096_089": {
+      "showdownId": "extremespeed",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_090": {
+      "showdownId": "doubleedge",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_091": {
+      "showdownId": "smartstrike",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_092": {
+      "showdownId": "seedbomb",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_093": {
+      "showdownId": "dualwingbeat",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_094": {
+      "showdownId": "flowertrick",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_095": {
+      "showdownId": "fakeout",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_096": {
+      "showdownId": "bulletpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "v096_097": {
+      "showdownId": "powerwhip",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "v096_098": {
+      "showdownId": "breakingswipe",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p001": {
+      "showdownId": "triplearrows",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p002": {
+      "showdownId": "icehammer",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p003": {
+      "showdownId": "aquastep",
+      "baseFlags": [
+        "contact",
+        "dance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p004": {
+      "showdownId": "dig",
+      "baseFlags": [
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nonsky",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p005": {
+      "showdownId": "thrash",
+      "baseFlags": [
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p006": {
+      "showdownId": "superfang",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p007": {
+      "showdownId": "wavecrash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p008": {
+      "showdownId": "smackdown",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p009": {
+      "showdownId": "hornleech",
+      "baseFlags": [
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p010": {
+      "showdownId": "lashout",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p011": {
+      "showdownId": "lastrespects",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p012": {
+      "showdownId": "aurawheel",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p013": {
+      "showdownId": "counter",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p014": {
+      "showdownId": "pyroball",
+      "baseFlags": [
+        "bullet",
+        "defrost",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p015": {
+      "showdownId": "axekick",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p016": {
+      "showdownId": "spiritshackle",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p017": {
+      "showdownId": "bite",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p018": {
+      "showdownId": "thunderfang",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p019": {
+      "showdownId": "thunderpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p020": {
+      "showdownId": "endeavor",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p021": {
+      "showdownId": "facade",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p022": {
+      "showdownId": "brickbreak",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p023": {
+      "showdownId": "stoneaxe",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p024": {
+      "showdownId": "rocktomb",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p025": {
+      "showdownId": "rockwrecker",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p026": {
+      "showdownId": "focuspunch",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "noassist",
+        "nosleeptalk",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p027": {
+      "showdownId": "gigaimpact",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p028": {
+      "showdownId": "reversal",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p029": {
+      "showdownId": "glaiverush",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p030": {
+      "showdownId": "mortalspin",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p031": {
+      "showdownId": "slash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p032": {
+      "showdownId": "flipturn",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p033": {
+      "showdownId": "trailblaze",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p034": {
+      "showdownId": "beakblast",
+      "baseFlags": [
+        "bullet",
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p035": {
+      "showdownId": "jawlock",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p036": {
+      "showdownId": "grassyglide",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p037": {
+      "showdownId": "crabhammer",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p038": {
+      "showdownId": "crosschop",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p039": {
+      "showdownId": "crosspoison",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p040": {
+      "showdownId": "lowkick",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p041": {
+      "showdownId": "skyattack",
+      "baseFlags": [
+        "charge",
+        "distance",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p042": {
+      "showdownId": "meteormash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p043": {
+      "showdownId": "phantomforce",
+      "baseFlags": [
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p044": {
+      "showdownId": "psychocut",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p045": {
+      "showdownId": "supercellslam",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p046": {
+      "showdownId": "selfdestruct",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p047": {
+      "showdownId": "bind",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p048": {
+      "showdownId": "gyroball",
+      "baseFlags": [
+        "bullet",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p049": {
+      "showdownId": "shadowpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p050": {
+      "showdownId": "fissure",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p051": {
+      "showdownId": "tailslap",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p052": {
+      "showdownId": "scaleshot",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p053": {
+      "showdownId": "fly",
+      "baseFlags": [
+        "charge",
+        "contact",
+        "distance",
+        "failinstruct",
+        "gravity",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p054": {
+      "showdownId": "solarblade",
+      "baseFlags": [
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p055": {
+      "showdownId": "explosion",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p056": {
+      "showdownId": "dive",
+      "baseFlags": [
+        "allyanim",
+        "charge",
+        "contact",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nonsky",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p057": {
+      "showdownId": "ragingfury",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p058": {
+      "showdownId": "gunkshot",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p059": {
+      "showdownId": "bulletseed",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p060": {
+      "showdownId": "doublehit",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p061": {
+      "showdownId": "aerialace",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p062": {
+      "showdownId": "iciclecrash",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p063": {
+      "showdownId": "iciclespear",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p064": {
+      "showdownId": "firstimpression",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p065": {
+      "showdownId": "gigatonhammer",
+      "baseFlags": [
+        "cantusetwice",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p066": {
+      "showdownId": "lastresort",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p067": {
+      "showdownId": "fellstinger",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p068": {
+      "showdownId": "lunge",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p069": {
+      "showdownId": "pounce",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p070": {
+      "showdownId": "quickattack",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p071": {
+      "showdownId": "doubleshock",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": [
+        "contact",
+        "mirror",
+        "protect",
+        "punch"
+      ]
+    },
+    "gw0169_p072": {
+      "showdownId": "uturn",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p073": {
+      "showdownId": "poisonfang",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p074": {
+      "showdownId": "barbbarrage",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p075": {
+      "showdownId": "kowtowcleave",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p076": {
+      "showdownId": "fling",
+      "baseFlags": [
+        "allyanim",
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p077": {
+      "showdownId": "dragondarts",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p078": {
+      "showdownId": "dragonrush",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_p079": {
+      "showdownId": "dragontail",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "metronome",
+        "mirror",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s001": {
+      "showdownId": "storedpower",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s003": {
+      "showdownId": "finalgambit",
+      "baseFlags": [
+        "metronome",
+        "noparentalbond",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s004": {
+      "showdownId": "snore",
+      "baseFlags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s005": {
+      "showdownId": "weatherball",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s006": {
+      "showdownId": "whirlpool",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s007": {
+      "showdownId": "sparklingaria",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s008": {
+      "showdownId": "bittermalice",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s009": {
+      "showdownId": "electroshot",
+      "baseFlags": [
+        "charge",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s010": {
+      "showdownId": "overdrive",
+      "baseFlags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s011": {
+      "showdownId": "overheat",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s012": {
+      "showdownId": "pollenpuff",
+      "baseFlags": [
+        "allyanim",
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s013": {
+      "showdownId": "focusblast",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s014": {
+      "showdownId": "gigadrain",
+      "baseFlags": [
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s015": {
+      "showdownId": "ficklebeam",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s016": {
+      "showdownId": "grassknot",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s017": {
+      "showdownId": "belch",
+      "baseFlags": [
+        "failcopycat",
+        "failinstruct",
+        "failmefirst",
+        "failmimic",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s018": {
+      "showdownId": "psychicnoise",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s019": {
+      "showdownId": "uproar",
+      "baseFlags": [
+        "bypasssub",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "nosleeptalk",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s020": {
+      "showdownId": "shellsidearm",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s021": {
+      "showdownId": "burningjealousy",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s022": {
+      "showdownId": "matchagotcha",
+      "baseFlags": [
+        "defrost",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s023": {
+      "showdownId": "vacuumwave",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s024": {
+      "showdownId": "extrasensory",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s025": {
+      "showdownId": "clangingscales",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s026": {
+      "showdownId": "sheercold",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s027": {
+      "showdownId": "terrainpulse",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "pulse"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s028": {
+      "showdownId": "hex",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s029": {
+      "showdownId": "twinbeam",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s030": {
+      "showdownId": "steelbeam",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s031": {
+      "showdownId": "triattack",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s032": {
+      "showdownId": "zapcannon",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s033": {
+      "showdownId": "nightdaze",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s034": {
+      "showdownId": "nightshade",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s035": {
+      "showdownId": "drainingkiss",
+      "baseFlags": [
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s036": {
+      "showdownId": "scald",
+      "baseFlags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s037": {
+      "showdownId": "snipeshot",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s038": {
+      "showdownId": "hydrocannon",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s039": {
+      "showdownId": "hyperbeam",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s040": {
+      "showdownId": "spitup",
+      "baseFlags": [
+        "metronome",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s041": {
+      "showdownId": "boomburst",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s042": {
+      "showdownId": "petaldance",
+      "baseFlags": [
+        "contact",
+        "dance",
+        "failinstruct",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s043": {
+      "showdownId": "lightofruin",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s044": {
+      "showdownId": "paraboliccharge",
+      "baseFlags": [
+        "heal",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s045": {
+      "showdownId": "powergem",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s046": {
+      "showdownId": "snarl",
+      "baseFlags": [
+        "bypasssub",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s047": {
+      "showdownId": "frenzyplant",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s048": {
+      "showdownId": "infernalparade",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s049": {
+      "showdownId": "chillingwater",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s050": {
+      "showdownId": "eeriespell",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s051": {
+      "showdownId": "blastburn",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s052": {
+      "showdownId": "freezedry",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s053": {
+      "showdownId": "torchsong",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s054": {
+      "showdownId": "lavaplume",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s055": {
+      "showdownId": "infestation",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s056": {
+      "showdownId": "syrupbomb",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s057": {
+      "showdownId": "watershuriken",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s058": {
+      "showdownId": "mistyexplosion",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s059": {
+      "showdownId": "waterpulse",
+      "baseFlags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "pulse"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s060": {
+      "showdownId": "futuresight",
+      "baseFlags": [
+        "allyanim",
+        "futuremove",
+        "metronome"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s061": {
+      "showdownId": "mirrorcoat",
+      "baseFlags": [
+        "failmefirst",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s062": {
+      "showdownId": "alluringvoice",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s063": {
+      "showdownId": "burnup",
+      "baseFlags": [
+        "defrost",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s064": {
+      "showdownId": "risingvoltage",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s065": {
+      "showdownId": "dragonpulse",
+      "baseFlags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "pulse"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s066": {
+      "showdownId": "appleacid",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s067": {
+      "showdownId": "round",
+      "baseFlags": [
+        "bypasssub",
+        "metronome",
+        "mirror",
+        "protect",
+        "sound"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s068": {
+      "showdownId": "luminacrash",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0169_s069": {
+      "showdownId": "inferno",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s001": {
+      "showdownId": "drumbeating",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s002": {
+      "showdownId": "drillpeck",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s003": {
+      "showdownId": "drillrun",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s004": {
+      "showdownId": "drainpunch",
+      "baseFlags": [
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s005": {
+      "showdownId": "thief",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "mirror",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s006": {
+      "showdownId": "flamecharge",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s007": {
+      "showdownId": "bodyslam",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u008": {
+      "showdownId": "populationbomb",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s009": {
+      "showdownId": "skittersmack",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s010": {
+      "showdownId": "superpower",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s011": {
+      "showdownId": "steelwing",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s012": {
+      "showdownId": "dynamicpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u013": {
+      "showdownId": "guillotine",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u014": {
+      "showdownId": "knockoff",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s015": {
+      "showdownId": "pound",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s016": {
+      "showdownId": "petalblizzard",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u017": {
+      "showdownId": "upperhand",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s018": {
+      "showdownId": "psyshieldbash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u019": {
+      "showdownId": "hardpress",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s020": {
+      "showdownId": "ceaselessedge",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s021": {
+      "showdownId": "mountaingale",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s022": {
+      "showdownId": "zingzap",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u023": {
+      "showdownId": "heatcrash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s024": {
+      "showdownId": "direclaw",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ]
+    },
+    "gw0170_s025": {
+      "showdownId": "feint",
+      "baseFlags": [
+        "failcopycat",
+        "mirror",
+        "noassist"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u026": {
+      "showdownId": "beatup",
+      "baseFlags": [
+        "allyanim",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s027": {
+      "showdownId": "headlongrush",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u028": {
+      "showdownId": "flyingpress",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "gravity",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s029": {
+      "showdownId": "crushclaw",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ]
+    },
+    "gw0170_s030": {
+      "showdownId": "blazekick",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u031": {
+      "showdownId": "ragefist",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s032": {
+      "showdownId": "brutalswing",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u033": {
+      "showdownId": "heavyslam",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "minimize",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u034": {
+      "showdownId": "comeuppance",
+      "baseFlags": [
+        "contact",
+        "failmefirst",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s035": {
+      "showdownId": "covet",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "failmefirst",
+        "mirror",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s036": {
+      "showdownId": "nuzzle",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s037": {
+      "showdownId": "firefang",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s038": {
+      "showdownId": "firepunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s039": {
+      "showdownId": "firelash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u040": {
+      "showdownId": "poltergeist",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s041": {
+      "showdownId": "volttackle",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u042": {
+      "showdownId": "bonerush",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s043": {
+      "showdownId": "wrap",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s044": {
+      "showdownId": "machpunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u045": {
+      "showdownId": "pinmissile",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s046": {
+      "showdownId": "bugbite",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s047": {
+      "showdownId": "bitterblade",
+      "baseFlags": [
+        "contact",
+        "heal",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s048": {
+      "showdownId": "megakick",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s049": {
+      "showdownId": "megahorn",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u050": {
+      "showdownId": "metalburst",
+      "baseFlags": [
+        "failmefirst",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s051": {
+      "showdownId": "headsmash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u052": {
+      "showdownId": "temperflare",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u053": {
+      "showdownId": "stormthrow",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u054": {
+      "showdownId": "avalanche",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s055": {
+      "showdownId": "leafblade",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u056": {
+      "showdownId": "ragingbull",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s057": {
+      "showdownId": "icepunch",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u058": {
+      "showdownId": "rockblast",
+      "baseFlags": [
+        "bullet",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_s059": {
+      "showdownId": "lowsweep",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170_u060": {
+      "showdownId": "expandingforce",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_001": {
+      "showdownId": "rapidspin",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_002": {
+      "showdownId": "icefang",
+      "baseFlags": [
+        "bite",
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_003": {
+      "showdownId": "iceshard",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_004": {
+      "showdownId": "jetpunch",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect",
+        "punch"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_005": {
+      "showdownId": "saltcure",
+      "baseFlags": [
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_006": {
+      "showdownId": "throatchop",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_007": {
+      "showdownId": "flail",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_008": {
+      "showdownId": "stompingtantrum",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_009": {
+      "showdownId": "payback",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_010": {
+      "showdownId": "bulldoze",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_011": {
+      "showdownId": "meteorassault",
+      "baseFlags": [
+        "failinstruct",
+        "mirror",
+        "protect",
+        "recharge"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_012": {
+      "showdownId": "sandtomb",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_013": {
+      "showdownId": "sacredsword",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_014": {
+      "showdownId": "spiritbreak",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_015": {
+      "showdownId": "assurance",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_016": {
+      "showdownId": "seismictoss",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "nonsky",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_017": {
+      "showdownId": "pluck",
+      "baseFlags": [
+        "contact",
+        "distance",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_018": {
+      "showdownId": "powertrip",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_019": {
+      "showdownId": "nightslash",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect",
+        "slicing"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_020": {
+      "showdownId": "horndrill",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_021": {
+      "showdownId": "bounce",
+      "baseFlags": [
+        "charge",
+        "contact",
+        "distance",
+        "failinstruct",
+        "gravity",
+        "metronome",
+        "mirror",
+        "noassist",
+        "nosleeptalk",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_022": {
+      "showdownId": "highjumpkick",
+      "baseFlags": [
+        "contact",
+        "gravity",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_023": {
+      "showdownId": "circlethrow",
+      "baseFlags": [
+        "contact",
+        "failcopycat",
+        "metronome",
+        "mirror",
+        "noassist",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_024": {
+      "showdownId": "snaptrap",
+      "baseFlags": [
+        "contact",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_025": {
+      "showdownId": "tripleaxel",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170b_026": {
+      "showdownId": "tropkick",
+      "baseFlags": [
+        "contact",
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170c_001": {
+      "showdownId": "mudslap",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170c_002": {
+      "showdownId": "venoshock",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    },
+    "gw0170c_003": {
+      "showdownId": "hurricane",
+      "baseFlags": [
+        "distance",
+        "metronome",
+        "mirror",
+        "protect",
+        "wind"
+      ],
+      "championsFlags": null
+    },
+    "gw0170c_004": {
+      "showdownId": "firespin",
+      "baseFlags": [
+        "metronome",
+        "mirror",
+        "protect"
+      ],
+      "championsFlags": null
+    }
+  }
+}

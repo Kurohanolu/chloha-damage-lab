@@ -13,6 +13,10 @@ const source=process.env.PAGES_BASELINE_REF
 const expected=(source.match(/<title>([^<]+)<\/title>/)||[])[1];
 const runtimeAssets=[...source.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)].map(match=>({src:match[1],file:match[1].split(/[?#]/)[0]}));
 const readAsset=file=>process.env.PAGES_BASELINE_REF?execFileSync('git',['show',process.env.PAGES_BASELINE_REF+':'+file]):fs.readFileSync(file);
+const existsSource=file=>process.env.PAGES_BASELINE_REF
+ ? execFileSync('git',['ls-tree','--name-only',process.env.PAGES_BASELINE_REF,'--',file],{encoding:'utf8'}).trim()===file
+ : fs.existsSync(file);
+const baseline=require('./helpers/public-release-contract.cjs').loadPublicContracts({readFile:readAsset,exists:existsSource});
 const assetHashes=new Map(runtimeAssets.map(({src,file})=>[src,crypto.createHash('sha256').update(readAsset(file)).digest('hex')]));
 const expectedHash=crypto.createHash('sha256').update(source).digest('hex');
 if(!expected)throw Error('Cannot determine expected title from checked-out index.html');
@@ -52,7 +56,6 @@ const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   assert.equal(actualHash,expectedHash,'GitHub Pages HTML must match current main, not a stale release');
   assert.ok(assetsReady,'GitHub Pages runtime assets must match the release: '+lastError);
   await page.locator('#app').waitFor({timeout:15000});
-  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/v0184-public-baseline.json','utf8'));
   const probe=baseline.cases.find(item=>item.name==='neutral');
   const rolls=await page.evaluate(input=>window.ChlohaDamageEngine.calculate(input).rolls,probe.input);
   assert.deepEqual(rolls,probe.expected.output.rolls,'Published core must preserve the public neutral vector');
