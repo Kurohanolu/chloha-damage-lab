@@ -1,3 +1,12 @@
+## 2026-11-14: v0.186 Accuracy & Mechanics Audit — confirmed owner scope
+
+- Baseline/public release: v0.185 Pre-Release 31, `2fc88af6390f286fa7d1a531203f99c35dfa6767`; PR #59 / Issue #58 completed. Actual private intake, owner moderation, approved Issue export and duplicate prevention were verified; production remains intact.
+- Issue #61; branch `audit/v0186-accuracy-mechanics`. Audit all registered data and existing calculation paths; reproduce and fix existing defects with independently justified expectations.
+- No new Pokémon, moves, abilities, items, rules, major UI changes, rename, repository/URL changes or Cloudflare production changes. Main merge and publication require a new final owner approval for v0.186.
+- Required evidence: `v0186-mechanics-coverage.md`, `v0186-champions-parity.md`, `v0186-hardware-test-plan.md`, deterministic seeded differential tests, nine-language numeric/feedback regressions and dedicated CI alongside all six existing mandatory workflows.
+- Verified/Unverified/Incorrect/Partial/Unsupported/Not Applicable describe defined automated coverage. Hardware evidence is a separate column; imported data and passing regressions are not hardware certification.
+- v0.187 prepares the agreed Singularity direction: independent calculator under Chloha Labs, candidate free `/singularity/` URL, Orbital S, black/white/neon pink and legacy-user migration. Validate and obtain formal adoption approval then; implement none of it in v0.186.
+
 ## 2026-11-14: v0.183 full-select audit follow-up (latest green baseline)
 
 - Verified main commit `830a86d9baddba2b5a353fdcfa53e3b4fec8787d`, Damage Lab CI https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628658 **success**; UI & damage regression https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43492628713 **success**.
