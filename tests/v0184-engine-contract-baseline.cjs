@@ -38,6 +38,7 @@ const fixtures=[
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(__dirname,'../index.html'),{waitUntil:'load'});
   await page.waitForFunction(()=>typeof window.ChlohaDamageEngine?.calculate==='function');
+  const observed=new Map();
   for(const [name,overrides] of fixtures){
    const args={...base,...overrides};
    const result=await page.evaluate(a=>{
@@ -52,8 +53,18 @@ const fixtures=[
    assert.equal(result.first.rolls.length,16,name+': sixteen rolls');
    assert.ok(result.first.rolls.every(x=>Number.isInteger(x)&&x>=0),name+': nonnegative integer damage');
    assert.ok(result.first.rolls.every((x,i,a)=>i===0||x>=a[i-1]),name+': sorted rolls');
+   observed.set(name,result.first.rolls);
    console.log('PASS ENGINE BASELINE '+name+' '+result.first.rolls.join(','));
   }
+  const mean=name=>observed.get(name).reduce((a,b)=>a+b,0)/16;
+  assert.ok(observed.get('immune').every(x=>x===0),'type immunity must yield zero damage');
+  assert.ok(mean('super-effective')>mean('neutral'),'super effective must exceed neutral');
+  assert.ok(mean('resisted')<mean('neutral'),'resisted must be below neutral');
+  assert.ok(mean('physical stage')>mean('neutral'),'attack boost must increase damage');
+  assert.ok(mean('burn')<mean('neutral'),'burn must reduce physical damage');
+  assert.ok(mean('life orb')>mean('neutral'),'life orb must increase damage');
+  assert.ok(mean('reflect')<mean('neutral'),'reflect must reduce physical damage');
+  assert.ok(mean('friend guard doubles')<mean('neutral'),'friend guard must reduce damage');
   assert.deepEqual(errors,[],'browser errors');
   console.log('PASS v0.184 engine contract baseline '+fixtures.length+' cases');
  }finally{await browser.close();}
