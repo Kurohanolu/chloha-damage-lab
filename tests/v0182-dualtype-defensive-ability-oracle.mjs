@@ -34,14 +34,13 @@ try{
  for(const c of cases){
   const immune=c.factor===0||(c.defAbility==='levitate'&&c.moveType==='じめん')||(c.defAbility==='waterAbsorb'&&c.moveType==='みず')||(c.defAbility==='flashFire'&&c.moveType==='ほのお');
   let attack=170;
-  if(c.defAbility==='thickFat'&&['ほのお','こおり'].includes(c.moveType))attack=round(attack,2048);
+  if((c.defAbility==='thickFat'&&['ほのお','こおり'].includes(c.moveType))||(c.defAbility==='heatproof'&&c.moveType==='ほのお'))attack=round(attack,2048);
   const expectedBase=Math.floor(Math.floor(Math.floor(22*c.power*attack/125)/50)+2);
   assert.equal(c.base,expectedBase,'base '+JSON.stringify(c));
   const expected=Array.from({length:16},(_,i)=>{
    if(immune)return 0;
    let d=Math.floor(expectedBase*(85+i)/100);
    d=Math.floor(d*c.factor);
-   if(c.defAbility==='heatproof'&&c.moveType==='ほのお')d=round(d,2048);
    if(['filter','solidRock'].includes(c.defAbility)&&c.factor>1)d=round(d,3072);
    return Math.max(1,d);
   });

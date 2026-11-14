@@ -2,9 +2,9 @@
 
 Status: **proposed sequence**, subject to owner approval and CI/manual release gates. This supersedes the *future version numbering* in the older `v0183-internationalization-plan.md`, but does not erase its i18n requirements.
 
-## Current position: v0.184 publication
+## Current position: v0.185 released; v0.186 audit authorized
 
-The owner authorized completion and publication of the engine-extraction iteration as v0.184 Pre-Release 30. Entry-point inventory, isolated modules, compatibility bindings, DOM-independent move orchestration, and 300 frozen public-baseline cases are implemented. Exact-commit PR/main CI and deployed-content checks gate publication. See `docs/v0184-release-readiness.md`.
+v0.185 Pre-Release 31 is published at `2fc88af6390f286fa7d1a531203f99c35dfa6767` (PR #59). All required CI, real private feedback delivery, signed-owner moderation, approved Issue export, duplicate prevention and the release archive were verified. Its existing production infrastructure is outside v0.186's mutation scope.
 
 ## Historical v0.183 closure
 - Finish nine-language localization, official-name and native-select audits; classify same-spelling official labels as valid rather than automatically calling them missing translations.
@@ -32,25 +32,30 @@ The owner authorized completion and publication of the engine-extraction iterati
 - Profile performance and startup size; fix regressions, not speculative optimizations.
 - Require manual hardware comparison for claims of Pokémon Champions accuracy.
 
-## v0.186 — Not assigned
-The proposed feedback milestone moved into v0.185 by explicit owner instruction. Choose the next milestone after the feedback candidate and production connection are reviewed.
+## v0.186 — Accuracy & Mechanics Audit (confirmed, 2026-11-14)
 
-## v0.187+ — v1.0 readiness (provisional, not committed)
-- Clear remaining critical correctness defects, accessibility/mobile issues, documentation and provenance.
-- Publish a transparent support/verification matrix. Separate tested Showdown parity from Pokémon Champions hardware validation.
-- Final release requires green CI, owner manual acceptance, rollback plan and documented known limitations.
+- Inventory all existing roster/forms, moves, ability roles, items, types, field/stage/critical/screen/immunity/multi-hit/rounding/conditional paths. Publish explicit denominators and per-item evidence.
+- Separate implementation coverage, independent automated verification and Champions hardware evidence. Use Verified / Unverified / Incorrect / Partial / Unsupported / Not Applicable.
+- Extend independent Showdown sixteen-roll and fixed-seed combination checks; investigate every discrepancy before changing behavior. Preserve Champions exceptions until their actual provenance is established.
+- Reproduce existing bugs with failing regressions, apply minimal evidence-based fixes, and account explicitly for any intentionally corrected old baseline behavior.
+- Regress all nine languages, reload/state/search/warnings/numeric parity and the existing feedback system. Add dedicated audit CI while preserving the six existing mandatory workflows.
+- No feature expansion until the owner decides the usable Pokémon pool has expanded. No new Pokémon/moves/abilities/items/rules, major redesign, rename or URL changes.
+- Issue #61; branch `audit/v0186-accuracy-mechanics`; keep the PR draft. A final owner approval is required for merge/publication, production settings, unsupported-feature additions or insufficiently grounded specification changes.
 
-## Singularity — potential v1.0 branding (not approved)
+## v0.187 — Singularity brand/URL migration preparation
 
-- **Working name:** Singularity. This is a proposed future public name for Damage Lab, **not a confirmed rename**.
-- **Timing:** consider the name before the v1.0 public release; do not rename v0.183, v0.184, or the repository/site automatically.
-- **Decision gate:** owner approval after checking brand fit, naming conflicts, domain/URL implications, search discoverability, and user migration.
-- **Migration checklist if approved:** visible title, site navigation, metadata, favicons/logos, docs, GitHub README, screenshots, release notes, feedback form, and legacy-name redirects. Preserve existing bookmarks and calculation functionality.
-- **Versioning:** rebranding is independent of engine version; do not claim an engine upgrade solely because of a name change.
-- **Open:** whether the final product name should be just `Singularity` or include a qualifier, and whether the Chloha Labs umbrella remains in the header.
+Agreed direction, pending formal validation/adoption approval:
+
+- Product: **Singularity**, an independent damage calculator developed by **Chloha Labs**.
+- First free-URL candidate: `https://kurohanolu.github.io/singularity/`.
+- Logo direction: **Orbital S**; design: black, white and neon pink.
+- Preserve a migration route for old URLs/bookmarks and calculation users.
+- Verify name/URL/design/hosting implications, then obtain owner approval before adoption. No implementation in v0.186.
+
+## v1.0 readiness
+
+Clear critical correctness defects, expose transparent support/verification limits, finish required hardware/manual acceptance and retain rollback/provenance. Passing CI does not certify all Champions mechanics.
 
 ## Sequencing and precedence
-The latest explicit owner brief assigns v0.185 to private anonymous feedback, superseding the earlier proposed v0.185 audit / v0.186 feedback numbering. Existing integration audits remain required CI. Development completion is separate from owner-approved production connection and publication.
 
-## Next iteration
-Connect the private production service, pass its readiness/live acceptance checks, and rerun required CI for v0.185 Pre-Release 31. Publication authorization is already recorded; main stays at the verified v0.184 Pre-Release 30 until those connection prerequisites pass.
+The latest owner brief fixes v0.186 as an existing-feature quality audit and v0.187 as migration preparation. This supersedes older provisional numbering and expansion plans. v0.185 publication approval does not authorize v0.186 publication.

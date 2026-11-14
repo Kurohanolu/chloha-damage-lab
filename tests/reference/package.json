@@ -1,0 +1,7 @@
+{
+  "name": "chloha-v0186-independent-reference",
+  "private": true,
+  "version": "0.186.0",
+  "description": "Audit-only pinned Champions and Gen 9 reference; never loaded by the public application",
+  "dependencies": {"@smogon/calc": "0.12.0"}
+}

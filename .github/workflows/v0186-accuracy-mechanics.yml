@@ -1,0 +1,82 @@
+name: v0.186 Accuracy & Mechanics Audit
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  WRANGLER_SEND_METRICS: 'false'
+jobs:
+  mechanics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned audit-only reference
+        run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
+      - name: Validate registered data, stats, type chart, items and rounding
+        run: node tests/v0186-data-and-arithmetic.cjs
+      - name: Recheck all 300 baseline contracts and independent errata
+        run: |
+          node tests/v0184-public-baseline.cjs
+          node tests/v0186-baseline-reference.cjs
+      - name: Confirm existing-defect regressions
+        run: |
+          node tests/v0186-confirmed-regressions.cjs
+          node tests/v0186-runtime-contract.cjs
+          node tests/v0186-registered-data-regressions.cjs
+          node tests/v0186-shell-side-arm.cjs
+      - name: Check attack and defense ability witnesses
+        run: node tests/v0186-ability-differential.cjs
+      - name: Compare registered moves and stat-source interactions
+        run: node tests/v0186-move-differential.cjs
+      - name: Audit all move-flag memberships and damage effects
+        run: node tests/v0186-move-flag-audit.cjs
+      - name: Compare hit distributions, consumable effects and KO probabilities
+        run: node tests/v0186-multihit-differential.cjs
+      - name: Compare weight boundaries and all existing form weights
+        run: node tests/v0186-weight-differential.cjs
+      - name: Compare fixed-seed combinations against Champions and Gen9
+        run: node tests/v0186-seeded-differential.cjs
+      - name: Verify exhaustive inventory and reproducible coverage counts
+        run: node scripts/v0186-mechanics-coverage.cjs --check
+      - name: Require the audit workflow before any release publication
+        run: node tests/v0186-release-gate.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v0186-mechanics-evidence
+          path: reports/v0186/
+          if-no-files-found: error
+  locale-and-feedback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-package-lock --no-audit --no-fund
+      - run: npm ci --prefix services/feedback --no-audit --no-fund
+      - run: npx playwright install chromium
+      - name: Nine-language numeric rotations from every starting locale
+        run: node tests/v0183-nine-locale-roundtrip.cjs
+      - name: Nine-language corrected mechanics, UI paths and reloads
+        run: node tests/v0186-nine-locale-mechanics.cjs
+      - name: Existing private-feedback API and administrator security contracts
+        run: npm test --prefix services/feedback
+      - name: Nine-language feedback and administrator browser regressions
+        run: node tests/v0185-feedback-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v0186-locale-feedback-evidence
+          path: |
+            reports/v0185-feedback/
+            reports/v0186/
+          if-no-files-found: ignore

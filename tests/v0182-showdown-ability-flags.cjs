@@ -14,6 +14,7 @@ function moveSet(name){
 const slicing=moveSet('SHARPNESS_MOVES');
 const pulse=moveSet('MEGA_LAUNCHER_MOVES');
 const expectedSlicing={
+ 'gw0170_s024':'フェイタルクロー','gw0170_s029':'ブレイククロー',
  'airSlash':'エアスラッシュ','gw0170b_019':'つじぎり','gw0170_s055':'リーフブレード',
  'gw0169_p044':'サイコカッター','gw0170b_013':'せいなるつるぎ',
  'v096_086':'シェルブレード','v096_076':'アクアカッター',
