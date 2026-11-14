@@ -21,7 +21,7 @@ The existing Pages run uses GitHub's built-in `dynamic/pages/pages-build-deploym
 
 Order: verify availability/management capability and exact approved assets; prepare both destinations and rollback; deploy/verify the approved new artifact; retain old calculator and add the old-site notice only once the new site is accepted; run actual public HTML/asset/locale/feedback checks; then permit immutable prerelease publication. If any target/security check fails, retain the working v0.186 old site and do not switch links or disable protections. No paid domain or existing repository rename/deletion is needed by this design.
 
-The preliminary option comparison below is retained as decision history. Localhost `/singularity/` tests establish relative-path and integration behavior, not live publication or full Turnstile/Access acceptance on the new target.
+The concrete proposed publishing sources and step order are in the [post-approval cutover runbook](v0187-cutover-runbook.md): isolate the old site on a generated `pages-legacy` branch before main merge, serve new generated files from the approved new project, and retain the built-in Pages build where possible. Repository creation and Pages-management capabilities remain to be provided/verified after approval. The preliminary option comparison below is retained as decision history. Localhost `/singularity/` tests establish relative-path and integration behavior, not live publication or full Turnstile/Access acceptance on the new target.
 
 Public URL recheck on 2026-11-15: `/singularity/` returned404; `/chloha-damage-lab/` returned200 with title v0.186 Pre-Release32 and HTML exactly matching the released source. No target repository/URL was created or reserved. Preview artifacts record the actual checked-out commit; GitHub PR builds may use a synthetic merge ref, so their checkout SHA is distinct from the PR head even when the public source tree is identical.
 
@@ -83,9 +83,9 @@ The same-host observation is a code/config inference, not a claim that no future
 
 - [x] Read-only feasibility and code dependency survey; reuse the existing v0.186/v0.185 work.
 - [ ] Verify exact repository/URL availability and available GitHub Pages administration capability without creating resources.
-- [ ] Branch-only branded preview and exact logo selection for owner review.
-- [ ] Source-of-truth/sync plan, old-URL migration behavior and Issue destination agreed.
-- [ ] All calculation, nine-language, accessibility and feedback regression checks on the actual preview head.
+- [x] Branch-only branded preview, logo candidates and [actual browser evidence](v0187-design-preview.md) prepared for owner review; final adoption remains open.
+- [x] Source-of-truth/sync plan, old-URL notice, rollback and unchanged Issue destination specified for the proposed rollout; owner cutover approval remains open.
+- [x] All mandatory/supplementary CI passed on UI/runtime checkpoint `4410036663748cdc04e5feb7a59066af75200c01`; nine-language/numeric/feedback/mobile regressions and header touch/overlap checks completed. Latest exact-head results are recorded separately in Draft PR #64.
 - [ ] Formal owner approval of product/design/URL and the concrete rollout changes.
 - [ ] Approved repository/Pages work, actual target-site and existing-backend acceptance.
 - [ ] Approved old-URL notice/cutover; post-release verification and rollback evidence.

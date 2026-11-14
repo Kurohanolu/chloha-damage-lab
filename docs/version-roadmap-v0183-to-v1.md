@@ -50,6 +50,8 @@ Agreed direction, pending formal validation/adoption approval:
 
 Issue #63 / Draft PR #64 / branch `prep/v0187-singularity-migration`. The 2026-11-15 execution brief now authorizes branch-only branding, logo/theme implementation and dedicated migration tests. See [the implementation and deployment plan](v0187-singularity-migration-preparation.md). The candidate includes a new-path artifact and an old calculator with a non-forcing migration notice, while preserving numerical behavior and private feedback. Actual name/logo adoption, Pages administration, repository creation/rename, URL cutover, production changes and main merge remain subject to final approval.
 
+UI/runtime checkpoint `4410036663748cdc04e5feb7a59066af75200c01` passed all ten workflows. See [development/publication readiness](v0187-release-readiness.md) and [actual browser design previews](v0187-design-preview.md). This is a tested development candidate; production remains v0.186 and the proposed new URL is not live.
+
 - Product: **Singularity**, an independent damage calculator developed by **Chloha Labs**.
 - First free-URL candidate: `https://kurohanolu.github.io/singularity/`.
 - Logo direction: **Orbital S**; design: black, white and neon pink.

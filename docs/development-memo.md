@@ -1,3 +1,11 @@
+## 2026-11-15: v0.187 development candidate and review evidence
+
+- Continuation rechecked GitHub main, the immutable v0.186 release and all ten successful workflows at `4410036`; existing production feedback passed ten read-only checks again and the live old HTML still matched v0.186 while the new path returned404. Added a concrete post-approval cutover/rollback runbook and exact SHA256 preservation of the supplied logo. No production change was performed.
+- UI/runtime checkpoint `4410036663748cdc04e5feb7a59066af75200c01` completed / success in all ten directly retrieved workflows: seven existing gates, dedicated migration, Pages PR-base smoke and publisher PR validation. Publication itself is skipped. Later documentation heads require their own exact-head results in Draft PR #64.
+- Browser evidence covers all nine locales, 3,000 full numeric contracts across new/legacy paths, reload/search/state, local private-feedback delivery and retry/duplicate prevention, anonymous admin denial, 320px/mobile/desktop layout, 44px language touch targets and no header overlap. Actual screenshots are committed in [design review](v0187-design-preview.md).
+- The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
+- [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
+
 ## 2026-11-15: v0.187 branch-only migration implementation
 
 - Reuse Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`; the recommended feature branch is not duplicated. Production main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, v0.186 Pre-Release32.

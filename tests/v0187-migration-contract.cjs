@@ -16,7 +16,7 @@ assert.deepEqual(ids(html),ids(frozen),'existing input/control IDs must be prese
 const release=JSON.parse(fs.readFileSync('release.json'));
 const initialPresentationBytes=['brand-v0187.js','singularity-v0187.css',release.branding.header,release.branding.favicon,release.branding.appleTouch].reduce((sum,file)=>sum+fs.statSync(file).size,0);
 assert.ok(initialPresentationBytes<80*1024,'new required presentation assets must remain under80KiB');
-assert.equal(fs.statSync(release.branding.reference).size,979837,'preserve the supplied full logo reference');
+assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','preserve the exact supplied full logo reference bytes');
 assert.throws(()=>verifyPublication(release),/final owner/);
 const pendingDesign=structuredClone(release);pendingDesign.migration.status='approved';assert.throws(()=>verifyPublication(pendingDesign),/logo\/design/);
 pendingDesign.migration.designApproval='approved';assert.throws(()=>verifyPublication(pendingDesign),/actual new public URL/);
