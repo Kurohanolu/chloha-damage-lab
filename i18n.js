@@ -453,7 +453,7 @@ function translateRuntime(base){
  if(base.startsWith('最大HPに対する割合：'))return base.replace('最大HPに対する割合：','Of max HP: ');
  if(base.startsWith('バージョンについて：画面の「')){
   const release=base.match(/画面の「([^」]+)」/);
-  const core=base.match(/計算コアの「([^」]+)」/);
+  const core=base.match(/計算コア(?:の内部API識別子は|の)「([^」]+)」/);
   const regression=base.match(/(v[\d.]+)の自動回帰監査/);
   const cases=base.match(/Showdown比較(\d+)ケース/);
   return 'About versions: The on-screen “'+(release?.[1]||'current release')+
@@ -1096,7 +1096,7 @@ function localizedUi(base){
   const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
   const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
   const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
-  const v=version?.[1]||'v0.183',c=core?.[1]||'v0.162',reg=regression?.[1]||'v0.183',count=cases?.[1]||'54';
+  const v=version?.[1]||'v0.184',c=core?.[1]||'v0.184',reg=regression?.[1]||'v0.184',count=cases?.[1]||'54';
   const translations={
    fr:'À propos des versions : « '+v+' » est la version publique de l’interface. Le cœur de calcul « '+c+' » désigne la base de l’API interne et ne signifie pas que la vérification est terminée. Les tests de régression '+reg+' et '+count+' comparaisons Showdown ont réussi. Seules certaines conditions ont été comparées sur Pokémon Champions ; une correspondance parfaite n’est pas garantie.',
    de:'Versionshinweis: „'+v+'“ ist die öffentliche UI-Version. Der Rechenkern „'+c+'“ bezeichnet die interne API-Grundlage und bedeutet keine vollständige Verifizierung. Die Regressionstests für '+reg+' und '+count+' Showdown-Vergleichsfälle wurden bestanden. Nur einige Bedingungen wurden auf Pokémon Champions-Hardware geprüft; identische Ergebnisse sind nicht garantiert.',

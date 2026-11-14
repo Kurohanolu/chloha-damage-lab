@@ -1,6 +1,7 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const path = require('node:path');
+const release = require('../release.json');
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
@@ -208,7 +209,7 @@ const path = require('node:path');
    assert.equal(await page.locator('#swapSides').count(),1);
    assert.equal(await page.locator('#attPokemonHeader').count(),1);
    assert.equal(await page.locator('#defPokemonHeader').count(),1);
-   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v0.183')),true);
+   assert.equal(await page.locator('.version').innerText().then(x=>x.includes('v'+release.version)),true);
    assert.equal(errors.length,0,'uncaught page errors: '+errors.join(' | '));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2);
    assert.equal(overflow,false,'horizontal overflow at '+width);

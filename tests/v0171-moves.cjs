@@ -1,7 +1,8 @@
 // v0.171 conditional-move source regression checks (Node.js, no dependencies).
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
-const source = fs.readFileSync(require('node:path').join(__dirname, '..', 'index.html'), 'utf8');
+const root = require('node:path').join(__dirname, '..');
+const source = fs.readFileSync(require('node:path').join(root, 'index.html'), 'utf8') + '\n' + fs.readFileSync(require('node:path').join(root, 'damage-engine-v0184.js'), 'utf8');
 const cases = [
   ['はたきおとす', 'gw0170_u014', 'knockOff', "a.conditionalPower?Math.floor(a.power*1.5)"],
   ['ワイドフォース', 'gw0170_u060', 'expandingForce', "a.terrain==='psychic'&&isGrounded(a,'att')?Math.floor(a.power*1.5)"],

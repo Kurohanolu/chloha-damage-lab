@@ -1,0 +1,88 @@
+'use strict';
+// Ability labels, validation IDs, bypass sets, and field mappings; preserve existing values.
+(()=>{
+const ABILITY_CATALOG=Object.freeze({
+ moldBreaker:{ja:'かたやぶり',en:'Mold Breaker',coverage:'supported'},
+ teravolt:{ja:'テラボルテージ',en:'Teravolt',coverage:'supported'},
+ turboblaze:{ja:'ターボブレイズ',en:'Turboblaze',coverage:'supported'},
+ skillLink:{ja:'スキルリンク',en:'Skill Link',coverage:'supported'},
+ technician:{ja:'テクニシャン',en:'Technician',coverage:'supported'},
+ sheerForce:{ja:'ちからずく',en:'Sheer Force',coverage:'partial'},
+ megaLauncher:{ja:'メガランチャー',en:'Mega Launcher',coverage:'partial'},
+ sharpness:{ja:'きれあじ',en:'Sharpness',coverage:'partial'},
+ hugePower:{ja:'ちからもち',en:'Huge Power',coverage:'supported'},
+ purePower:{ja:'ヨガパワー',en:'Pure Power',coverage:'supported'},
+ hustle:{ja:'はりきり',en:'Hustle',coverage:'partial'},
+ solarPower:{ja:'サンパワー',en:'Solar Power',coverage:'supported'},
+ flareBoost:{ja:'ねつぼうそう',en:'Flare Boost',coverage:'supported'},
+ toxicBoost:{ja:'どくぼうそう',en:'Toxic Boost',coverage:'supported'},
+ fireMane:{ja:'ほのおのたてがみ',en:'Fire Mane',coverage:'supported'},
+ flashFire:{ja:'もらいび',en:'Flash Fire',coverage:'partial'},
+ defeatist:{ja:'よわき',en:'Defeatist',coverage:'supported'},
+ orichalcumPulse:{ja:'ひひいろのこどう',en:'Orichalcum Pulse',coverage:'partial'},
+ hadronEngine:{ja:'ハドロンエンジン',en:'Hadron Engine',coverage:'partial'},
+ waterBubble:{ja:'すいほう',en:'Water Bubble',coverage:'partial'},
+ fairyAura:{ja:'フェアリーオーラ',en:'Fairy Aura',coverage:'partial'},
+ darkAura:{ja:'ダークオーラ',en:'Dark Aura',coverage:'partial'},
+ auraBreak:{ja:'オーラブレイク',en:'Aura Break',coverage:'partial'},
+ ironFist:{ja:'てつのこぶし',en:'Iron Fist',coverage:'partial'},
+ strongJaw:{ja:'がんじょうあご',en:'Strong Jaw',coverage:'partial'},
+ transistor:{ja:'トランジスタ',en:'Transistor',coverage:'supported'},
+ dragonsMaw:{ja:'りゅうのあぎと',en:"Dragon's Maw",coverage:'supported'},
+ analytic:{ja:'アナライズ',en:'Analytic',coverage:'partial'},
+ reckless:{ja:'すてみ',en:'Reckless',coverage:'partial'},
+ toughClaws:{ja:'かたいツメ',en:'Tough Claws',coverage:'supported'},
+ steelworker:{ja:'はがねつかい',en:'Steelworker',coverage:'supported'},
+ steelSpirit:{ja:'はがねのせいしん',en:'Steely Spirit',coverage:'partial'},
+ infiltrator:{ja:'すりぬけ',en:'Infiltrator',coverage:'partial'},
+ scrappy:{ja:'きもったま',en:'Scrappy',coverage:'supported'},
+ thermalExchange:{ja:'ねつこうかん',en:'Thermal Exchange',coverage:'partial'},
+ angerPoint:{ja:'いかりのつぼ',en:'Anger Point',coverage:'partial'},
+ rattled:{ja:'びびり',en:'Rattled',coverage:'partial'},
+ drizzle:{ja:'あめふらし',en:'Drizzle',coverage:'partial'},
+ drought:{ja:'ひでり',en:'Drought',coverage:'partial'},
+ sandStream:{ja:'すなおこし',en:'Sand Stream',coverage:'partial'},
+ snowWarning:{ja:'ゆきふらし',en:'Snow Warning',coverage:'partial'},
+ electricSurge:{ja:'エレキメイカー',en:'Electric Surge',coverage:'partial'},
+ grassySurge:{ja:'グラスメイカー',en:'Grassy Surge',coverage:'partial'},
+ mistySurge:{ja:'ミストメイカー',en:'Misty Surge',coverage:'partial'},
+ psychicSurge:{ja:'サイコメイカー',en:'Psychic Surge',coverage:'partial'},
+ sniper:{ja:'スナイパー',en:'Sniper',coverage:'supported'},
+ neuroforce:{ja:'ブレインフォース',en:'Neuroforce',coverage:'supported'},
+ stakeout:{ja:'はりこみ',en:'Stakeout',coverage:'partial'},
+ supremeOverlord:{ja:'そうだいしょう',en:'Supreme Overlord',coverage:'supported'},
+ battery:{ja:'バッテリー',en:'Battery',coverage:'partial'},
+ powerSpot:{ja:'パワースポット',en:'Power Spot',coverage:'partial'},
+ plus:{ja:'プラス',en:'Plus',coverage:'partial'},
+ minus:{ja:'マイナス',en:'Minus',coverage:'partial'},
+ rockyPayload:{ja:'いわはこび',en:'Rocky Payload',coverage:'supported'},
+ sandForce:{ja:'すなのちから',en:'Sand Force',coverage:'supported'},
+ punkRock:{ja:'パンクロック',en:'Punk Rock',coverage:'partial'},
+ pixilate:{ja:'フェアリースキン',en:'Pixilate',coverage:'supported'},
+ aerilate:{ja:'スカイスキン',en:'Aerilate',coverage:'supported'},
+ refrigerate:{ja:'フリーズスキン',en:'Refrigerate',coverage:'supported'},
+ galvanize:{ja:'エレキスキン',en:'Galvanize',coverage:'supported'},
+ dragonize:{ja:'ドラゴンスキン',en:'Dragonize',coverage:'supported'},
+ normalize:{ja:'ノーマルスキン',en:'Normalize',coverage:'supported'},
+ overgrow:{ja:'しんりょく',en:'Overgrow',coverage:'supported'},
+ blaze:{ja:'もうか',en:'Blaze',coverage:'supported'},
+ torrent:{ja:'げきりゅう',en:'Torrent',coverage:'supported'},
+ swarm:{ja:'むしのしらせ',en:'Swarm',coverage:'supported'},
+ guts:{ja:'こんじょう',en:'Guts',coverage:'supported'},
+ adaptability:{ja:'てきおうりょく',en:'Adaptability',coverage:'supported'},
+ tintedLens:{ja:'いろめがね',en:'Tinted Lens',coverage:'supported'},
+ levitate:{ja:'ふゆう',en:'Levitate',coverage:'supported'}
+});
+const ABILITY_ID_BY_JA=Object.freeze(Object.fromEntries(Object.entries(ABILITY_CATALOG).map(([id,data])=>[data.ja,id])));
+
+const MOLD_BREAKER_ABILITIES=new Set(['moldBreaker','teravolt','turboblaze']);
+const MOLD_BREAKER_IGNORED_DEFENSE=new Set(['multiscale','furCoat','iceScales','punkRock','fluffy','auraGuard','bulletproof','soundproof','unaware','purifyingSalt','shellArmor','battleArmor','grassPelt','marvelScale','wonderGuard','drySkin','heatproof','waterBubble','thickFat','levitate','waterAbsorb','stormDrain','sapSipper','lightningRod','motorDrive','earthEater','wellBakedBody','voltAbsorb','flashFire','filter','solidRock']);
+
+const TERRAIN_BY_ABILITY=Object.freeze({electricSurge:'electric',grassySurge:'grassy',mistySurge:'misty',psychicSurge:'psychic'});
+const WEATHER_BY_ABILITY=Object.freeze({drizzle:'rain',drought:'sun',sandStream:'sand',snowWarning:'snow'});
+
+const ATTACKER_ABILITY_IDS=Object.freeze(['none','moldBreaker','teravolt','turboblaze','skillLink','technician','sheerForce','megaLauncher','sharpness','hugePower','purePower','hustle','solarPower','flareBoost','toxicBoost','fireMane','flashFire','defeatist','orichalcumPulse','hadronEngine','waterBubble','fairyAura','darkAura','auraBreak','ironFist','strongJaw','transistor','dragonsMaw','analytic','reckless','toughClaws','steelworker','steelSpirit','plus','minus','infiltrator','scrappy','thermalExchange','angerPoint','rattled','drizzle','drought','sandStream','snowWarning','electricSurge','grassySurge','mistySurge','psychicSurge','sniper','neuroforce','stakeout','supremeOverlord','rockyPayload','sandForce','punkRock','pixilate','aerilate','refrigerate','galvanize','dragonize','normalize','overgrow','blaze','torrent','swarm','guts','adaptability','tintedLens','levitate','unaware','clearBody']);
+const DEFENDER_ABILITY_IDS=Object.freeze(['none','thickFat','multiscale','furCoat','iceScales','punkRock','fluffy','auraGuard','bulletproof','soundproof','overcoat','unaware','clearBody','intimidate','purifyingSalt','shellArmor','battleArmor','grassPelt','marvelScale','wonderGuard','drySkin','heatproof','waterBubble','prismArmor','shadowShield','levitate','waterAbsorb','voltAbsorb','lightningRod','motorDrive','sapSipper','stormDrain','earthEater','wellBakedBody','flashFire','filter','solidRock','fairyAura','darkAura','auraBreak']);
+
+window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE,TERRAIN_BY_ABILITY,WEATHER_BY_ABILITY,ATTACKER_ABILITY_IDS,DEFENDER_ABILITY_IDS});
+})();

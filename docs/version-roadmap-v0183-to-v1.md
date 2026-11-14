@@ -2,7 +2,11 @@
 
 Status: **proposed sequence**, subject to owner approval and CI/manual release gates. This supersedes the *future version numbering* in the older `v0183-internationalization-plan.md`, but does not erase its i18n requirements.
 
-## Current position: v0.183 (closure)
+## Current position: v0.184 publication
+
+The owner authorized completion and publication of the engine-extraction iteration as v0.184 Pre-Release 29. Entry-point inventory, isolated modules, compatibility bindings, DOM-independent move orchestration, and 300 frozen public-baseline cases are implemented. Exact-commit PR/main CI and deployed-content checks gate publication. See `docs/v0184-release-readiness.md`.
+
+## Historical v0.183 closure
 - Finish nine-language localization, official-name and native-select audits; classify same-spelling official labels as valid rather than automatically calling them missing translations.
 - Fix browser E2E regressions and rerun CI. Check reload persistence, dynamic notices, localized names, and no damage change on locale switching.
 - Owner's deployed Chloha Labs mobile/manual sign-off remains required. CI green alone is not release approval.
@@ -44,8 +48,5 @@ Status: **proposed sequence**, subject to owner approval and CI/manual release g
 ## Sequencing and precedence
 The old i18n memo assigned v0.184 to translation expansion and v0.185 to browser audit. Translation expansion and initial browser audit have already been implemented within v0.183, although closure is still pending. Therefore this consolidated proposal reserves v0.184 for the engine and v0.185 for post-refactor integration verification. Do not silently treat this roadmap as a released version or an owner-approved milestone.
 
-## Immediate action list
-1. Repair failing v0.183 screenshot-label browser E2E and obtain a green UI workflow.
-2. Recheck unresolved full-select candidate findings (distinguish valid same-spelling official labels from actual leaks).
-3. Complete deployed manual acceptance.
-4. Inventory engine boundaries and establish baseline before any v0.184 extraction.
+## Next iteration
+After the verified v0.184 publication, proceed to the v0.185 integration audit. Keep new gameplay features and rebranding outside this engine-preservation release.

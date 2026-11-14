@@ -1,0 +1,83 @@
+name: Publish verified prerelease
+on:
+  pull_request:
+    paths:
+      - release.json
+      - docs/releases/**
+      - scripts/verify-release.cjs
+      - .github/workflows/publish-release.yml
+  push:
+    branches: [main]
+    paths:
+      - release.json
+      - .github/workflows/publish-release.yml
+permissions:
+  contents: read
+  actions: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/verify-release.cjs
+      - run: node tests/v0184-engine-initialization.cjs
+      - run: node tests/v0184-public-baseline.cjs
+  publish:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: [validate]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package the exact release commit
+        run: git archive --format=zip --prefix=chloha-damage-lab/ -o release.zip HEAD
+      - name: Require all five exact-commit checks and publish
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const manifest = JSON.parse(fs.readFileSync('release.json', 'utf8'));
+            const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression'];
+            let verified;
+            for (let attempt = 0; attempt < 40; attempt++) {
+              const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});
+              const latest = new Map();
+              for (const run of response.data.workflow_runs) {
+                if (!required.includes(run.name) || run.head_sha !== context.sha) continue;
+                if (!latest.has(run.name) || latest.get(run.name).id < run.id) latest.set(run.name, run);
+              }
+              const failed = [...latest.values()].find(run => run.status === 'completed' && run.conclusion !== 'success');
+              if (failed) throw new Error(`${failed.name}: ${failed.conclusion}; release was not published`);
+              if (required.every(name => latest.get(name)?.status === 'completed' && latest.get(name)?.conclusion === 'success')) {
+                verified = required.map(name => latest.get(name));
+                break;
+              }
+              core.info(`Waiting for exact-commit CI (${latest.size}/5 workflows found), attempt ${attempt + 1}/40`);
+              await new Promise(resolve => setTimeout(resolve, 15000));
+            }
+            if (!verified) throw new Error('Exact-commit CI did not complete successfully; release was not published');
+            const body = fs.readFileSync(manifest.notes, 'utf8') + `\n\nCommit: \`${context.sha}\`\n\n` + verified.map(run => `- [${run.name}](${run.html_url}): completed / success`).join('\n');
+            let release;
+            try {
+              release = (await github.rest.repos.getReleaseByTag({...context.repo, tag: manifest.tag})).data;
+              if (release.target_commitish !== context.sha) throw new Error('Existing release targets a different commit; preserve the immutable tag');
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              release = (await github.rest.repos.createRelease({...context.repo, tag_name: manifest.tag, target_commitish: context.sha, name: manifest.name, body, prerelease: true, draft: false})).data;
+            }
+            const archive = fs.readFileSync('release.zip');
+            const digest = crypto.createHash('sha256').update(archive).digest('hex');
+            const name = manifest.tag + '.zip';
+            const existing = (await github.rest.repos.listReleaseAssets({...context.repo, release_id: release.id})).data;
+            const previous = existing.find(asset => asset.name === name);
+            if (previous && (previous.size !== archive.length || (previous.digest && previous.digest !== 'sha256:' + digest))) throw new Error('Existing archive does not match this commit; preserve the published asset');
+            if (!existing.some(asset => asset.name === name)) await github.rest.repos.uploadReleaseAsset({...context.repo, release_id: release.id, name, headers: {'content-type': 'application/zip', 'content-length': archive.length}, data: archive});
+            if (!existing.some(asset => asset.name === name + '.sha256')) await github.rest.repos.uploadReleaseAsset({...context.repo, release_id: release.id, name: name + '.sha256', headers: {'content-type': 'text/plain'}, data: Buffer.from(digest + '  ' + name + '\n')});
+            core.notice(`Published ${release.html_url} at ${context.sha}; SHA256 ${digest}`);

@@ -13,7 +13,7 @@ assert.equal(candidates.length,38,'38 runtime-policy moves under audit (includin
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
- await page.goto('about:blank');await page.setContent(html,{waitUntil:'load'});
+ await page.goto(new URL('../index.html',import.meta.url).href,{waitUntil:'load'});
  await page.waitForFunction(()=>!!window.ChlohaDamageEngine?.calculate);
  const results=[];
  for(const m of candidates){

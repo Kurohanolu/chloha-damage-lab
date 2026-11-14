@@ -1,0 +1,12 @@
+'use strict';
+(()=>{
+// v0.184 static battle data; maintain original values and preserve runtime references.
+const GameData=Object.freeze({species:new Map(),moves:new Map(),abilities:new Map(),items:new Map()});
+const TYPE_PLATES=Object.freeze({flamePlate:'ほのお',splashPlate:'みず',zapPlate:'でんき',meadowPlate:'くさ',iciclePlate:'こおり',fistPlate:'かくとう',toxicPlate:'どく',earthPlate:'じめん',skyPlate:'ひこう',mindPlate:'エスパー',insectPlate:'むし',stonePlate:'いわ',spookyPlate:'ゴースト',dracoPlate:'ドラゴン',dreadPlate:'あく',ironPlate:'はがね',pixiePlate:'フェアリー'});
+const RESIST_BERRIES=Object.freeze({chilanBerry:'ノーマル',occaBerry:'ほのお',passhoBerry:'みず',wacanBerry:'でんき',rindoBerry:'くさ',yacheBerry:'こおり',chopleBerry:'かくとう',kebiaBerry:'どく',shucaBerry:'じめん',cobaBerry:'ひこう',payapaBerry:'エスパー',tangaBerry:'むし',chartiBerry:'いわ',kasibBerry:'ゴースト',habanBerry:'ドラゴン',colburBerry:'あく',babiriBerry:'はがね',roseliBerry:'フェアリー'});
+const TYPES=['ノーマル','ほのお','みず','でんき','くさ','こおり','かくとう','どく','じめん','ひこう','エスパー','むし','いわ','ゴースト','ドラゴン','あく','はがね','フェアリー'];
+const EFFECT={ノーマル:{いわ:.5,ゴースト:0,はがね:.5},ほのお:{ほのお:.5,みず:.5,くさ:2,こおり:2,むし:2,いわ:.5,ドラゴン:.5,はがね:2},みず:{ほのお:2,みず:.5,くさ:.5,じめん:2,いわ:2,ドラゴン:.5},でんき:{みず:2,でんき:.5,くさ:.5,じめん:0,ひこう:2,ドラゴン:.5},くさ:{ほのお:.5,みず:2,くさ:.5,どく:.5,じめん:2,ひこう:.5,むし:.5,いわ:2,ドラゴン:.5,はがね:.5},こおり:{ほのお:.5,みず:.5,くさ:2,こおり:.5,じめん:2,ひこう:2,ドラゴン:2,はがね:.5},かくとう:{ノーマル:2,こおり:2,どく:.5,ひこう:.5,エスパー:.5,むし:.5,いわ:2,ゴースト:0,あく:2,はがね:2,フェアリー:.5},どく:{くさ:2,どく:.5,じめん:.5,いわ:.5,ゴースト:.5,はがね:0,フェアリー:2},じめん:{ほのお:2,でんき:2,くさ:.5,どく:2,ひこう:0,むし:.5,いわ:2,はがね:2},ひこう:{でんき:.5,くさ:2,かくとう:2,むし:2,いわ:.5,はがね:.5},エスパー:{かくとう:2,どく:2,エスパー:.5,あく:0,はがね:.5},むし:{ほのお:.5,くさ:2,かくとう:.5,どく:.5,ひこう:.5,エスパー:2,ゴースト:.5,あく:2,はがね:.5,フェアリー:.5},いわ:{ほのお:2,こおり:2,かくとう:.5,じめん:.5,ひこう:2,むし:2,はがね:.5},ゴースト:{ノーマル:0,エスパー:2,ゴースト:2,あく:.5},ドラゴン:{ドラゴン:2,はがね:.5,フェアリー:0},あく:{かくとう:.5,エスパー:2,ゴースト:2,あく:.5,フェアリー:.5},はがね:{ほのお:.5,みず:.5,でんき:.5,こおり:2,いわ:2,はがね:.5,フェアリー:2},フェアリー:{ほのお:.5,かくとう:2,どく:.5,ドラゴン:2,あく:2,はがね:.5}};
+const ATTACKER_ITEM_IDS=Object.freeze(['none','loadedDice','lifeOrb','choiceBand','choiceSpecs','expertBelt',...Object.keys(TYPE_PLATES)]);
+const DEFENDER_ITEM_IDS=Object.freeze(['none','assaultVest','autoResistBerry',...Object.keys(RESIST_BERRIES)]);
+window.ChlohaBattleData=Object.freeze({GameData,TYPE_PLATES,RESIST_BERRIES,TYPES,EFFECT,ATTACKER_ITEM_IDS,DEFENDER_ITEM_IDS});
+})();

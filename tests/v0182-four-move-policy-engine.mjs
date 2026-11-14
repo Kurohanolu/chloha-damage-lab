@@ -16,7 +16,7 @@ const cases=[
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage();
- await page.goto('about:blank');await page.setContent(html,{waitUntil:'load'});
+ await page.goto(new URL('../index.html',import.meta.url).href,{waitUntil:'load'});
  await page.waitForFunction(()=>!!window.ChlohaDamageEngine?.calculate);
  for(const c of cases){
   const move=moves.find(m=>m.id===c.id);
