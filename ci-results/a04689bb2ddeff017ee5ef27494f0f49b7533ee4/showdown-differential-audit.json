@@ -1,0 +1,26 @@
+{
+  "head_sha": "a04689bb2ddeff017ee5ef27494f0f49b7533ee4",
+  "workflow": "Showdown differential audit",
+  "run_id": 43542908799,
+  "run_number": 1016,
+  "conclusion": "failure",
+  "status": "completed",
+  "completed_at": "2026-11-14T01:50:54Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43542908799",
+  "jobs": [
+    {
+      "name": "showdown-differential",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43542908799/job/132287331865",
+      "failed_steps": [
+        {
+          "name": "Compare sixteen rolls with Showdown",
+          "number": 5,
+          "conclusion": "failure"
+        }
+      ],
+      "error_excerpt": "2026-11-14T01:50:18.3920947Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 110.9 MiB\n2026-11-14T01:50:18.4327824Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 110.9 MiB\n2026-11-14T01:50:20.5133411Z Chrome Headless Shell 145.0.7632.6 (playwright chromium-headless-shell v1208) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1208\n2026-11-14T01:50:20.5420248Z ##[group]Run node tests/showdown-differential.mjs\n2026-11-14T01:50:20.5420743Z \u001b[36;1mnode tests/showdown-differential.mjs\u001b[0m\n2026-11-14T01:50:20.5436607Z shell: /usr/bin/bash -e {0}\n2026-11-14T01:50:20.5437034Z ##[endgroup]\n2026-11-14T01:50:51.6098526Z node:internal/modules/run_main:123\n2026-11-14T01:50:51.6100135Z     triggerUncaughtException(\n2026-11-14T01:50:51.6100981Z     ^\n2026-11-14T01:50:51.6101919Z \n2026-11-14T01:50:51.6103178Z page.waitForFunction: Timeout 30000ms exceeded.\n2026-11-14T01:50:51.6104210Z     at /home/runner/work/chloha-damage-lab/chloha-damage-lab/tests/showdown-differential.mjs:14:13 {\n2026-11-14T01:50:51.6105125Z   name: 'TimeoutError'\n2026-11-14T01:50:51.6105605Z }\n2026-11-14T01:50:51.6105793Z \n2026-11-14T01:50:51.6106148Z Node.js v22.23.4\n2026-11-14T01:50:51.6206234Z ##[error]Process completed with exit code 1.\n2026-11-14T01:50:51.6356758Z Post job cleanup.\n2026-11-14T01:50:51.7264903Z [command]/usr/bin/git version\n2026-11-14T01:50:51.7308968Z git version 2.56.1\n2026-11-14T01:50:51.7351377Z Temporarily overriding HOME='/home/runner/work/_temp/6110c715-aa15-4a5c-b3e3-4126fd9f0b9e' before making global git config changes\n2026-11-14T01:50:51.7352594Z Adding repository directory to the temporary git global config as a safe directory\n2026-11-14T01:50:51.7357811Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab\n2026-11-14T01:50:51.7399579Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-11-14T01:50:51.7436710Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-11-14T01:50:51.7657517Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-11-14T01:50:51.7693002Z http.https://github.com/.extraheader\n2026-11-14T01:50:51.7702645Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-11-14T01:50:51.7775607Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-11-14T01:50:51.8013182Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-11-14T01:50:51.8051130Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-11-14T01:50:51.8424811Z Cleaning up orphan processes\n2026-11-14T01:50:51.8785362Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+      "log_lines": 218
+    }
+  ]
+}
