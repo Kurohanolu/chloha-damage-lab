@@ -14,7 +14,7 @@ assert.match(html,/計算コアの「v0\.162」は内部APIの基盤識別子/);
 assert.match(engine,/version:'0\.162'/);
 
 // Regression coverage: Technician is selectable and modifies per-hit effective move power.
-assert.match(html, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
+assert.match(engine, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
 const technicianLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
 assert.ok(technicianLine,'Technician power-layer registration exists');
 const vm=require('node:vm');
@@ -29,7 +29,7 @@ assert.equal(technician.applies({a:{attAbility:'none',power:25}}),false);
 assert.equal(technician.run({a:{attAbility:'technician',power:25}},25),37);
 assert.equal(technician.run({a:{attAbility:'technician',power:60}},60),90);
 assert.equal(technician.run({a:{attAbility:'technician',power:65}},65),65);
-assert.match(html, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
+assert.match(engine, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
 const sheerForceLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
 assert.ok(sheerForceLine,'Sheer Force power modifier exists');
 let sheerForce;
