@@ -13,7 +13,7 @@
     "INTAKE_ENABLED": "false",
     "ALLOWED_ORIGINS": "https://kurohanolu.github.io",
     "TURNSTILE_HOSTNAMES": "kurohanolu.github.io",
-    "TURNSTILE_SITE_KEY": "",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAGAh8_mA5oJtA6fs",
     "ACCESS_ISSUER": "",
     "ACCESS_AUDIENCE": "",
     "GITHUB_REPOSITORY": "Kurohanolu/chloha-damage-lab"
@@ -21,7 +21,7 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "chloha-private-feedback",
-    "database_id": "00000000-0000-0000-0000-000000000000",
+    "database_id": "17330885-dc0f-4dfd-a703-89cd34547e6c",
     "migrations_dir": "migrations"
   }]
 }

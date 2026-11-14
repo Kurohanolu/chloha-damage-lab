@@ -1,10 +1,26 @@
 # v0.185 feedback — production resources for owner review
 
-Status on 2026-11-14: **Wrangler authenticated; production resources not created.** The owner already approved publication and the Wrangler account/user-read, Workers-script, D1 and Turnstile scopes. Successful CLI completion and an authenticated `whoami` response establish access to one account. Never request the same scope approval again.
+Status on 2026-11-14: **dedicated D1, Worker and Turnstile created; intake and public routes disabled; owner-only setup pending.** The owner explicitly approved the concrete resources, APAC placement hint and proceeding through v0.185 publication under a zero-incremental-cost/Free-plan condition. Wrangler scope and publication approvals also remain valid. Never request the same approvals again.
 
-The execution approval review separately rejected creation of the dedicated D1 database because the specific production resource and its APAC placement had not received explicit approval. Do not retry the creation through a different client. Obtain one approval covering the concrete plan below before starting production mutations.
+The earlier execution-review rejection was resolved by that explicit resource approval. The subsequent creation succeeded through the normal Wrangler/API clients. Do not recreate the resources below or treat the historical rejection as a current blocker.
 
-## Proposed resources
+## Verified provisioned resources
+
+| Resource | Verified state |
+| --- | --- |
+| D1 | `chloha-private-feedback`, ID `17330885-dc0f-4dfd-a703-89cd34547e6c`, created in APAC; `0001_feedback.sql` applied successfully |
+| Database contents | Required tables/indexes present; `reports` count is zero |
+| Account namespace | `kurohanolu-labs` |
+| Worker | `chloha-private-feedback`, deployed with the dedicated DB and admin assets; `INTAKE_ENABLED=false` |
+| Public routing | Workers API confirms `enabled=false` and `previews_enabled=false` |
+| Turnstile | Managed widget, public site key `0x4AAAAAAGAh8_mA5oJtA6fs`, hostname `kurohanolu.github.io` only |
+| Secrets | Provider confirms `TURNSTILE_SECRET`, `RATE_LIMIT_SECRET`, `ADMIN_EMAILS` as `secret_text`; values have not been committed or printed |
+| Cron | Provider confirms `17 3 * * *` |
+| Remaining owner setup | Zero Trust Free onboarding and owner-only Access application; repository-restricted `GITHUB_TOKEN` directly registered in the Worker |
+
+No paid-plan or subscription change was made. The detailed Japanese owner steps are in `v0185-feedback-owner-setup.md`. The intended API hostname is `chloha-private-feedback.kurohanolu-labs.workers.dev`; it is not yet an enabled public intake.
+
+## Approved resource configuration
 
 | Resource | Proposed configuration | Exposure / cost boundary |
 | --- | --- | --- |
@@ -32,10 +48,10 @@ Cloudflare's current Zero Trust onboarding requires choosing a team name and a s
 
 Official Zero Trust onboarding: https://developers.cloudflare.com/cloudflare-one/setup/.
 
-## Verified starting state and rollout
+## Starting state and remaining rollout
 
-The authenticated inspection found no Worker scripts, D1 databases or Turnstile widgets. The account had no `workers.dev` subdomain, and the Access API reported that Access was not enabled. No production report has been accepted. The frontend API origin is still empty and the production readiness check must continue to fail until the actual service is connected.
+The initial authenticated inspection found no Worker scripts, D1 databases or Turnstile widgets. The account had no `workers.dev` subdomain, and Access was not enabled. The dedicated resources listed above have since been created. No production report has been accepted. The frontend API origin is still empty and the production readiness check must continue to fail until the actual service is connected.
 
-After approval, create the dedicated resources sequentially, verify each result and save only non-secret IDs in the repository. Reuse a resource only after checking its ownership/configuration; do not repeat an ambiguous creation blindly. Verify migrations on the dedicated empty database before binding it. Register the provider secrets securely, complete owner-only setup, then run the real-service acceptance and release gates in `v0185-feedback-operations.md` and `v0185-release-readiness.md`.
+Continue from the verified resources, complete owner-only setup and register the remaining GitHub secret. Check ownership/configuration before changing a resource and do not repeat ambiguous creation requests blindly. Keep intake and public routing disabled until the actual Access configuration is selected and verified. Then run the real-service acceptance and release gates in `v0185-feedback-operations.md` and `v0185-release-readiness.md`.
 
 Reports expire at 90 days and are purged daily. D1 Free Time Travel can retain a recoverable copy for a further seven days; confirm the selected plan and operational privacy notice. Creating infrastructure is not equivalent to testing actual anonymous receipt, administrator login or GitHub Issue export.

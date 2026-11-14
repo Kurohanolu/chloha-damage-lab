@@ -38,7 +38,7 @@ Earlier background attempts stopped with execution-environment network-policy de
 
 A subsequent official device flow was kept active in a foreground terminal while the owner approved it. It completed with `Successfully logged in`; authenticated `whoami --json` then verified one account, and the private credential file had mode `0600`. The precise cause of the earlier execution-policy failures remains unconfirmed. Do not disable TLS, change proxies or relay requests to work around a future policy denial.
 
-The current blocker is **explicit production-resource approval and owner-only setup**, not missing Wrangler authentication. Review `v0185-feedback-provisioning.md` before mutations. The execution approval review rejected the proposed D1 creation pending specific approval of the database and APAC placement. No production resource has been created or connected.
+The owner has now approved the concrete production resources and APAC placement under a zero-incremental-cost/Free-plan condition. Creation of the dedicated D1, Worker, namespace and Turnstile succeeded; the migration and three Worker secrets are registered. Provider reads confirm intake off, workers.dev and previews off, and no reports. The remaining blocker is **owner-only Access Free onboarding/application setup and direct registration of the repository-restricted GitHub secret**. Follow `v0185-feedback-owner-setup.md`; `v0185-feedback-provisioning.md` records the verified resources. Do not repeat resource or publication approval questions.
 
 If authentication is needed again, use the installed, locked Wrangler version and the already-approved scope set. Deliver the short user code immediately and keep the command active while awaiting actual completion:
 
