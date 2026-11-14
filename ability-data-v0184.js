@@ -1,5 +1,5 @@
 'use strict';
-// Ability labels, coverage metadata, and bypass sets; preserve existing values verbatim.
+// Ability labels, coverage metadata, bypass sets, and field mappings; preserve existing values.
 (()=>{
 const ABILITY_CATALOG=Object.freeze({
  moldBreaker:{ja:'かたやぶり',en:'Mold Breaker',coverage:'supported'},
@@ -78,5 +78,8 @@ const ABILITY_ID_BY_JA=Object.freeze(Object.fromEntries(Object.entries(ABILITY_C
 const MOLD_BREAKER_ABILITIES=new Set(['moldBreaker','teravolt','turboblaze']);
 const MOLD_BREAKER_IGNORED_DEFENSE=new Set(['multiscale','furCoat','iceScales','punkRock','fluffy','auraGuard','bulletproof','soundproof','unaware','purifyingSalt','shellArmor','battleArmor','grassPelt','marvelScale','wonderGuard','drySkin','heatproof','waterBubble','thickFat','levitate','waterAbsorb','stormDrain','sapSipper','lightningRod','motorDrive','earthEater','wellBakedBody','voltAbsorb','flashFire','filter','solidRock']);
 
-window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE});
+const TERRAIN_BY_ABILITY=Object.freeze({electricSurge:'electric',grassySurge:'grassy',mistySurge:'misty',psychicSurge:'psychic'});
+const WEATHER_BY_ABILITY=Object.freeze({drizzle:'rain',drought:'sun',sandStream:'sand',snowWarning:'snow'});
+
+window.ChlohaAbilityData=Object.freeze({ABILITY_CATALOG,ABILITY_ID_BY_JA,MOLD_BREAKER_ABILITIES,MOLD_BREAKER_IGNORED_DEFENSE,TERRAIN_BY_ABILITY,WEATHER_BY_ABILITY});
 })();
