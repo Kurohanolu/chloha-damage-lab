@@ -3,6 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8');
 const engine=fs.readFileSync(path.resolve(__dirname,'../damage-engine-v0184.js'),'utf8');
+const abilities=fs.readFileSync(path.resolve(__dirname,'../ability-data-v0184.js'),'utf8');
 const titleMatch=html.match(/<title>Chloha Damage Lab (v0\.\d+) (Pre-Release \d+)<\/title>/);
 assert.ok(titleMatch,'public title must contain version and pre-release');
 const [,publicVersion,preRelease]=titleMatch;
@@ -14,7 +15,7 @@ assert.match(html,/計算コアの内部API識別子は「v0\.184」/);
 assert.match(engine,/version:'0\.184'/);
 
 // Regression coverage: Technician is selectable and modifies per-hit effective move power.
-assert.match(engine, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
+assert.match(abilities, /technician:\{ja:'テクニシャン',en:'Technician',coverage:'supported'\}/);
 const technicianLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','technician',"));
 assert.ok(technicianLine,'Technician power-layer registration exists');
 const vm=require('node:vm');
@@ -29,7 +30,7 @@ assert.equal(technician.applies({a:{attAbility:'none',power:25}}),false);
 assert.equal(technician.run({a:{attAbility:'technician',power:25}},25),37);
 assert.equal(technician.run({a:{attAbility:'technician',power:60}},60),90);
 assert.equal(technician.run({a:{attAbility:'technician',power:65}},65),65);
-assert.match(engine, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
+assert.match(abilities, /sheerForce:\{ja:'ちからずく',en:'Sheer Force',coverage:'partial'\}/);
 const sheerForceLine=engine.split('\n').find(line=>line.startsWith("registerModifier('power','sheerForce',"));
 assert.ok(sheerForceLine,'Sheer Force power modifier exists');
 let sheerForce;

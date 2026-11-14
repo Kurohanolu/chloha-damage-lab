@@ -23,7 +23,7 @@ for(const line of lines){
 }
 for(const event of ['push','pull_request']){
  const filters=sections[event]||[];
- for(const required of ['index.html','i18n.js','names-*.js','weight-power.js','variable-power.js','multi-hit.js','tests/**','data/**','.github/workflows/ui-smoke.yml'])
+ for(const required of ['index.html','damage-engine-v0184.js','battle-data-v0184.js','move-mechanics-data-v0184.js','ability-data-v0184.js','i18n.js','names-*.js','weight-power.js','variable-power.js','multi-hit.js','tests/**','data/**','.github/workflows/ui-smoke.yml'])
   assert.ok(filters.includes(required),event+' missing CI trigger: '+required);
 }
 const suites={
