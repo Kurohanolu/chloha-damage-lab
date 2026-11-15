@@ -1,0 +1,6766 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "startedAt": "2026-11-15T07:47:16.437Z",
+  "candidate": {
+    "commit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+    "tree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+    "workingTreeChanges": []
+  },
+  "baseline": {
+    "commit": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
+    "tree": "cf7af9334261b0cfbbde45929da9d217445fe526"
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "kernel": "7.0.0-1014-aws",
+    "cpus": 4,
+    "cpuModel": "Intel(R) Xeon(R) 6975P-C",
+    "playwright": "1.58.2",
+    "browserVersion": "145.0.7632.6",
+    "chromium": {
+      "protocolVersion": "1.3",
+      "product": "HeadlessChrome/145.0.7632.6",
+      "revision": "@47e20adcc15fc15f01825aa17e570c8f5492ac0f",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+      "jsVersion": "14.5.201.2"
+    }
+  },
+  "protocol": {
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "cpu": 1,
+        "mobile": false
+      },
+      {
+        "name": "mobile-emulation",
+        "width": 390,
+        "height": 844,
+        "cpu": 4,
+        "mobile": true
+      }
+    ],
+    "samplesPerVersionProfile": 3,
+    "warmupRounds": 2,
+    "measuredRounds": 6,
+    "reloads": 3,
+    "locales": [
+      "ja",
+      "en",
+      "fr",
+      "de",
+      "es",
+      "it",
+      "ko",
+      "zh-Hans",
+      "zh-Hant"
+    ],
+    "domProbeCapPerRound": 128,
+    "gc": "Two HeapProfiler.collectGarbage calls with task boundaries after pending persistence/two animation frames; prune cleared weak probes; one cleanup GC before heap/counter capture",
+    "controls": "Strongly held object/node survive; released object/node weak references clear",
+    "operations": "Allocation input; locale switch with exact numerical parity; local feedback open/input/close; canonical English/20 allocation endpoint",
+    "network": "Only local snapshot GET/HEAD; local feedback configuration disabled; no submission",
+    "retentionRule": "A retired sampled object surviving at least two further complete rounds and their full GC checkpoints requires investigation; this is not proof of an unbounded leak",
+    "interpretation": "Heap, document, node and listener trends require independent review; no percentage or slope threshold establishes a leak or leak-free status"
+  },
+  "contexts": [
+    {
+      "version": "baseline",
+      "profile": "desktop",
+      "sample": 0,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 3578,
+          "heap": {
+            "usedSize": 4706088,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5881848,
+            "backingStorageSize": 1681054
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 4935,
+          "heap": {
+            "usedSize": 4735352,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5916432,
+            "backingStorageSize": 1682229
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 6284,
+          "heap": {
+            "usedSize": 4732116,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5925584,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 7620,
+          "heap": {
+            "usedSize": 4736784,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5911176,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 8966,
+          "heap": {
+            "usedSize": 4752348,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5885280,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 10333,
+          "heap": {
+            "usedSize": 4800884,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5963376,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 11681,
+          "heap": {
+            "usedSize": 4800920,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5939000,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 13036,
+          "heap": {
+            "usedSize": 4809056,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5983880,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 13392,
+          "heap": {
+            "usedSize": 4652708,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 6514728,
+            "backingStorageSize": 1787162
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 13741,
+          "heap": {
+            "usedSize": 4660236,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5998504,
+            "backingStorageSize": 1869651
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 14086,
+          "heap": {
+            "usedSize": 4673056,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5959616,
+            "backingStorageSize": 1952140
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4732116,
+            "last": 4809056,
+            "delta": 76940,
+            "min": 4732116,
+            "max": 4809056,
+            "median": 4776616,
+            "slopePerRound": 17875.542857142857
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "desktop",
+      "sample": 0,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 15885,
+          "heap": {
+            "usedSize": 4657692,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5844576,
+            "backingStorageSize": 1685853
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 17250,
+          "heap": {
+            "usedSize": 4721308,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5900696,
+            "backingStorageSize": 1687028
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 18614,
+          "heap": {
+            "usedSize": 4720420,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5857128,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 19960,
+          "heap": {
+            "usedSize": 4721392,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5859208,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 21298,
+          "heap": {
+            "usedSize": 4746792,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5882616,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 22642,
+          "heap": {
+            "usedSize": 4749672,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5929848,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 23984,
+          "heap": {
+            "usedSize": 4750016,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5945048,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 25342,
+          "heap": {
+            "usedSize": 4752164,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5949248,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 25689,
+          "heap": {
+            "usedSize": 4643384,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5820560,
+            "backingStorageSize": 1791947
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 26003,
+          "heap": {
+            "usedSize": 4656984,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5793640,
+            "backingStorageSize": 1874436
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 26319,
+          "heap": {
+            "usedSize": 4670304,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5818992,
+            "backingStorageSize": 1956925
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4720420,
+            "last": 4752164,
+            "delta": 31744,
+            "min": 4720420,
+            "max": 4752164,
+            "median": 4748232,
+            "slopePerRound": 7070.628571428571
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "desktop",
+      "sample": 1,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 28101,
+          "heap": {
+            "usedSize": 4669468,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5916384,
+            "backingStorageSize": 1685853
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 29481,
+          "heap": {
+            "usedSize": 4720952,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5828872,
+            "backingStorageSize": 1687028
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 30828,
+          "heap": {
+            "usedSize": 4720088,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5892480,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 32175,
+          "heap": {
+            "usedSize": 4720688,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5932032,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 33527,
+          "heap": {
+            "usedSize": 4746256,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5917608,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 34859,
+          "heap": {
+            "usedSize": 4749056,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5959104,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 36213,
+          "heap": {
+            "usedSize": 4749352,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5973944,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 37542,
+          "heap": {
+            "usedSize": 4751416,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 6011592,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 37870,
+          "heap": {
+            "usedSize": 4642700,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5839280,
+            "backingStorageSize": 1791947
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 38169,
+          "heap": {
+            "usedSize": 4656040,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5802432,
+            "backingStorageSize": 1874436
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 38469,
+          "heap": {
+            "usedSize": 4669256,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5720984,
+            "backingStorageSize": 1956925
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4720088,
+            "last": 4751416,
+            "delta": 31328,
+            "min": 4720088,
+            "max": 4751416,
+            "median": 4747656,
+            "slopePerRound": 7012.342857142857
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "baseline",
+      "profile": "desktop",
+      "sample": 1,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 40274,
+          "heap": {
+            "usedSize": 4704524,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5865056,
+            "backingStorageSize": 1681054
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 41616,
+          "heap": {
+            "usedSize": 4734136,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5891024,
+            "backingStorageSize": 1682229
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 42945,
+          "heap": {
+            "usedSize": 4730572,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5899440,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 44296,
+          "heap": {
+            "usedSize": 4735072,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5900352,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 45626,
+          "heap": {
+            "usedSize": 4750972,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5914216,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 46981,
+          "heap": {
+            "usedSize": 4799288,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5953472,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 48328,
+          "heap": {
+            "usedSize": 4799324,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 5972152,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 49664,
+          "heap": {
+            "usedSize": 4807460,
+            "totalSize": 5812224,
+            "embedderHeapUsedSize": 6004872,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 50022,
+          "heap": {
+            "usedSize": 4647924,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5828352,
+            "backingStorageSize": 1787162
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 50353,
+          "heap": {
+            "usedSize": 4660240,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5769448,
+            "backingStorageSize": 1869651
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 50690,
+          "heap": {
+            "usedSize": 4673044,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 6007216,
+            "backingStorageSize": 1952140
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4730572,
+            "last": 4807460,
+            "delta": 76888,
+            "min": 4730572,
+            "max": 4807460,
+            "median": 4775130,
+            "slopePerRound": 17871.77142857143
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "baseline",
+      "profile": "desktop",
+      "sample": 2,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 52451,
+          "heap": {
+            "usedSize": 4698444,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5851680,
+            "backingStorageSize": 1681054
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 53830,
+          "heap": {
+            "usedSize": 4739428,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5935304,
+            "backingStorageSize": 1682229
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 55178,
+          "heap": {
+            "usedSize": 4736540,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5841360,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 56526,
+          "heap": {
+            "usedSize": 4741412,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5886832,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 57860,
+          "heap": {
+            "usedSize": 4756484,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5937800,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 59216,
+          "heap": {
+            "usedSize": 4804808,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5884648,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 60561,
+          "heap": {
+            "usedSize": 4804880,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5870152,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 61909,
+          "heap": {
+            "usedSize": 4814420,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5959480,
+            "backingStorageSize": 1682187
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 62236,
+          "heap": {
+            "usedSize": 4648352,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5723448,
+            "backingStorageSize": 1787162
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 62550,
+          "heap": {
+            "usedSize": 4660632,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 6028744,
+            "backingStorageSize": 1869651
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 62868,
+          "heap": {
+            "usedSize": 4673492,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5787752,
+            "backingStorageSize": 1952140
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4736540,
+            "last": 4814420,
+            "delta": 77880,
+            "min": 4736540,
+            "max": 4814420,
+            "median": 4780646,
+            "slopePerRound": 17946.514285714286
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "desktop",
+      "sample": 2,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 64580,
+          "heap": {
+            "usedSize": 4657676,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5890928,
+            "backingStorageSize": 1685853
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 65945,
+          "heap": {
+            "usedSize": 4721304,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5819440,
+            "backingStorageSize": 1687028
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 67277,
+          "heap": {
+            "usedSize": 4732780,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5912048,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 68625,
+          "heap": {
+            "usedSize": 4721440,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5887976,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 69960,
+          "heap": {
+            "usedSize": 4746612,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5944584,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 71310,
+          "heap": {
+            "usedSize": 4749364,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5862144,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 72657,
+          "heap": {
+            "usedSize": 4749708,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5970920,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 73991,
+          "heap": {
+            "usedSize": 4751868,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5980664,
+            "backingStorageSize": 1686986
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 74334,
+          "heap": {
+            "usedSize": 4643360,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5771808,
+            "backingStorageSize": 1791947
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 74638,
+          "heap": {
+            "usedSize": 4662220,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 6360464,
+            "backingStorageSize": 1874436
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 74950,
+          "heap": {
+            "usedSize": 4669832,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5746680,
+            "backingStorageSize": 1956925
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4732780,
+            "last": 4751868,
+            "delta": 19088,
+            "min": 4721440,
+            "max": 4751868,
+            "median": 4747988,
+            "slopePerRound": 5228.457142857143
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "baseline",
+      "profile": "mobile-emulation",
+      "sample": 0,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 80088,
+          "heap": {
+            "usedSize": 4719524,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5313544,
+            "backingStorageSize": 1681045
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 84087,
+          "heap": {
+            "usedSize": 4759520,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5293968,
+            "backingStorageSize": 1682220
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 88068,
+          "heap": {
+            "usedSize": 4755652,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5345448,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 92065,
+          "heap": {
+            "usedSize": 4761896,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5300160,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 96001,
+          "heap": {
+            "usedSize": 4821796,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5302392,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 100042,
+          "heap": {
+            "usedSize": 4827372,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5347672,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 104112,
+          "heap": {
+            "usedSize": 4833340,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5476160,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 108192,
+          "heap": {
+            "usedSize": 4842456,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5475480,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 109253,
+          "heap": {
+            "usedSize": 4703564,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5424880,
+            "backingStorageSize": 1787153
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 110337,
+          "heap": {
+            "usedSize": 4705928,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5218816,
+            "backingStorageSize": 1869642
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 111326,
+          "heap": {
+            "usedSize": 4719284,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5275480,
+            "backingStorageSize": 1952131
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4755652,
+            "last": 4842456,
+            "delta": 86804,
+            "min": 4755652,
+            "max": 4842456,
+            "median": 4824584,
+            "slopePerRound": 18683.657142857144
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "mobile-emulation",
+      "sample": 0,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 116340,
+          "heap": {
+            "usedSize": 4697932,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5347008,
+            "backingStorageSize": 1685844
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 120129,
+          "heap": {
+            "usedSize": 4761316,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5246496,
+            "backingStorageSize": 1687019
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 123839,
+          "heap": {
+            "usedSize": 4759304,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5236640,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 127450,
+          "heap": {
+            "usedSize": 4761416,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5323304,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 131080,
+          "heap": {
+            "usedSize": 4785980,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5345768,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 134743,
+          "heap": {
+            "usedSize": 4789016,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5410552,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 138411,
+          "heap": {
+            "usedSize": 4789024,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5316208,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 142035,
+          "heap": {
+            "usedSize": 4791088,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5372416,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 143065,
+          "heap": {
+            "usedSize": 4697956,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5234960,
+            "backingStorageSize": 1791938
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 144046,
+          "heap": {
+            "usedSize": 4701704,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5252160,
+            "backingStorageSize": 1874427
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 145014,
+          "heap": {
+            "usedSize": 4714820,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5251624,
+            "backingStorageSize": 1956916
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10958,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4759304,
+            "last": 4791088,
+            "delta": 31784,
+            "min": 4759304,
+            "max": 4791088,
+            "median": 4787498,
+            "slopePerRound": 6993.714285714285
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "mobile-emulation",
+      "sample": 1,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 149980,
+          "heap": {
+            "usedSize": 4698228,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5323680,
+            "backingStorageSize": 1685844
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 153728,
+          "heap": {
+            "usedSize": 4759476,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5279592,
+            "backingStorageSize": 1687019
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 157464,
+          "heap": {
+            "usedSize": 4757656,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5203296,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 161151,
+          "heap": {
+            "usedSize": 4759804,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5252208,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 164992,
+          "heap": {
+            "usedSize": 4784596,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5313224,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 168668,
+          "heap": {
+            "usedSize": 4789224,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5379960,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 172506,
+          "heap": {
+            "usedSize": 4789232,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5339752,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 176368,
+          "heap": {
+            "usedSize": 4791296,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5473520,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 177403,
+          "heap": {
+            "usedSize": 4697932,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5283888,
+            "backingStorageSize": 1791938
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10964,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 178408,
+          "heap": {
+            "usedSize": 4707500,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5861608,
+            "backingStorageSize": 1874427
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 179406,
+          "heap": {
+            "usedSize": 4714784,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5275824,
+            "backingStorageSize": 1956916
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4757656,
+            "last": 4791296,
+            "delta": 33640,
+            "min": 4757656,
+            "max": 4791296,
+            "median": 4786910,
+            "slopePerRound": 7460.342857142857
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "baseline",
+      "profile": "mobile-emulation",
+      "sample": 1,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 184768,
+          "heap": {
+            "usedSize": 4738252,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5331776,
+            "backingStorageSize": 1681045
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 188736,
+          "heap": {
+            "usedSize": 4785760,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5341464,
+            "backingStorageSize": 1682220
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 192659,
+          "heap": {
+            "usedSize": 4781316,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5326576,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 196613,
+          "heap": {
+            "usedSize": 4787288,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5278384,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 200620,
+          "heap": {
+            "usedSize": 4846780,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5332624,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 204632,
+          "heap": {
+            "usedSize": 4850368,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5333480,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 208520,
+          "heap": {
+            "usedSize": 4850368,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5404008,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 212499,
+          "heap": {
+            "usedSize": 4858368,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5452288,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 213619,
+          "heap": {
+            "usedSize": 4707960,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5853464,
+            "backingStorageSize": 1787153
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 214677,
+          "heap": {
+            "usedSize": 4710092,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5876576,
+            "backingStorageSize": 1869642
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 215739,
+          "heap": {
+            "usedSize": 4723152,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5859640,
+            "backingStorageSize": 1952131
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4781316,
+            "last": 4858368,
+            "delta": 77052,
+            "min": 4781316,
+            "max": 4858368,
+            "median": 4848574,
+            "slopePerRound": 16516.8
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "baseline",
+      "profile": "mobile-emulation",
+      "sample": 2,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 220993,
+          "heap": {
+            "usedSize": 4738076,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5329904,
+            "backingStorageSize": 1681045
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 225128,
+          "heap": {
+            "usedSize": 4764648,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5202968,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 229266,
+          "heap": {
+            "usedSize": 4775140,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5292944,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 233302,
+          "heap": {
+            "usedSize": 4781112,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5298200,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 237309,
+          "heap": {
+            "usedSize": 4846344,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5379888,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 241303,
+          "heap": {
+            "usedSize": 4849848,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5363224,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 245278,
+          "heap": {
+            "usedSize": 4849848,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5441856,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 249296,
+          "heap": {
+            "usedSize": 4857812,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5514088,
+            "backingStorageSize": 1682178
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 262
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 320,
+            "sampledElements": 128,
+            "skippedElements": 192,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 250355,
+          "heap": {
+            "usedSize": 4707960,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5959952,
+            "backingStorageSize": 1787153
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 251394,
+          "heap": {
+            "usedSize": 4710732,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5942760,
+            "backingStorageSize": 1869642
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 252431,
+          "heap": {
+            "usedSize": 4723248,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5888088,
+            "backingStorageSize": 1952131
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12992,
+            "jsEventListeners": 275
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4775140,
+            "last": 4857812,
+            "delta": 82672,
+            "min": 4775140,
+            "max": 4857812,
+            "median": 4848096,
+            "slopePerRound": 17802.057142857142
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "min": 262,
+            "max": 262,
+            "median": 262,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      }
+    },
+    {
+      "version": "candidate",
+      "profile": "mobile-emulation",
+      "sample": 2,
+      "checkpoints": [
+        {
+          "round": -2,
+          "elapsedMs": 257413,
+          "heap": {
+            "usedSize": 4678360,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5265040,
+            "backingStorageSize": 1685844
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 138,
+          "collectedProbes": 138,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": -1,
+          "elapsedMs": 261220,
+          "heap": {
+            "usedSize": 4739952,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5280960,
+            "backingStorageSize": 1687019
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 276,
+          "collectedProbes": 276,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 0,
+          "elapsedMs": 265030,
+          "heap": {
+            "usedSize": 4736540,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5281360,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 414,
+          "collectedProbes": 414,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 1,
+          "elapsedMs": 268742,
+          "heap": {
+            "usedSize": 4740436,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5230448,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 552,
+          "collectedProbes": 552,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 2,
+          "elapsedMs": 272426,
+          "heap": {
+            "usedSize": 4765012,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5370080,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 690,
+          "collectedProbes": 690,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 3,
+          "elapsedMs": 275996,
+          "heap": {
+            "usedSize": 4769592,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5390288,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 828,
+          "collectedProbes": 828,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 4,
+          "elapsedMs": 279554,
+          "heap": {
+            "usedSize": 4769936,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5401976,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 966,
+          "collectedProbes": 966,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "round": 5,
+          "elapsedMs": 283048,
+          "heap": {
+            "usedSize": 4772000,
+            "totalSize": 5550080,
+            "embedderHeapUsedSize": 5439368,
+            "backingStorageSize": 1686977
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10947,
+            "jsEventListeners": 263
+          },
+          "totalProbes": 1104,
+          "collectedProbes": 1104,
+          "collectedThisCheckpoint": 138,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "rounds": [
+        {
+          "round": -2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": -1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": -1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 0,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 0,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 1,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 1,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 2,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 2,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 3,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 3,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 4,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 4,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        },
+        {
+          "round": 5,
+          "localeSwitches": 10,
+          "allocationInputs": 10,
+          "feedbackInputs": 10,
+          "feedbackOpenClose": 9,
+          "coverage": {
+            "round": 5,
+            "removedElements": 160,
+            "sampledElements": 128,
+            "skippedElements": 32,
+            "replacedResults": 10
+          }
+        }
+      ],
+      "reloads": [
+        {
+          "reload": 0,
+          "round": 0,
+          "elapsedMs": 284080,
+          "heap": {
+            "usedSize": 4686440,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5317936,
+            "backingStorageSize": 1791938
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 1,
+          "round": 1,
+          "elapsedMs": 285106,
+          "heap": {
+            "usedSize": 4701924,
+            "totalSize": 5595136,
+            "embedderHeapUsedSize": 5222608,
+            "backingStorageSize": 1874427
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        },
+        {
+          "reload": 2,
+          "round": 2,
+          "elapsedMs": 286125,
+          "heap": {
+            "usedSize": 4714784,
+            "totalSize": 5332992,
+            "embedderHeapUsedSize": 5263368,
+            "backingStorageSize": 1956916
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 10952,
+            "jsEventListeners": 276
+          },
+          "totalProbes": 0,
+          "collectedProbes": 0,
+          "collectedThisCheckpoint": 0,
+          "retainedProbeEntries": 0,
+          "survivorsByKindAndAge": {},
+          "survivors": [],
+          "connectedElements": 2260,
+          "locale": "en",
+          "pendingSave": false
+        }
+      ],
+      "pageErrors": [],
+      "mutatingRequests": [],
+      "blockedExternalRequests": 0,
+      "status": "COMPLETE",
+      "calibration": {
+        "held": {
+          "node": true,
+          "object": true
+        },
+        "released": {
+          "node": false,
+          "object": false
+        }
+      },
+      "detachedDom": {
+        "status": "AVAILABLE",
+        "trees": [
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          },
+          {
+            "nodeName": "OPTION",
+            "treeSize": 2,
+            "retainedNodeCount": 1
+          }
+        ]
+      },
+      "summary": {
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "first": 4736540,
+            "last": 4772000,
+            "delta": 35460,
+            "min": 4736540,
+            "max": 4772000,
+            "median": 4767302,
+            "slopePerRound": 7725.142857142857
+          },
+          "documents": {
+            "n": 6,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "min": 1,
+            "max": 1,
+            "median": 1,
+            "slopePerRound": 0
+          },
+          "nodes": {
+            "n": 6,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "min": 10947,
+            "max": 10947,
+            "median": 10947,
+            "slopePerRound": 0
+          },
+          "listeners": {
+            "n": 6,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "min": 263,
+            "max": 263,
+            "median": 263,
+            "slopePerRound": 0
+          },
+          "connectedElements": {
+            "n": 6,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "min": 2260,
+            "max": 2260,
+            "median": 2260,
+            "slopePerRound": 0
+          }
+        },
+        "agedRetainedProbes": 0,
+        "latestSurvivors": [],
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    }
+  ],
+  "issues": [],
+  "summary": {
+    "profiles": {
+      "desktop": {
+        "versions": {
+          "baseline": {
+            "contexts": 3,
+            "heapMedianOfContextMedians": 4776616,
+            "heapDeltaMedian": 76940,
+            "heapSlopeMedian": 17875.542857142857,
+            "listenerDeltaMedian": 0,
+            "nodeDeltaMedian": 0,
+            "agedRetainedProbeObservations": 0
+          },
+          "candidate": {
+            "contexts": 3,
+            "heapMedianOfContextMedians": 4747988,
+            "heapDeltaMedian": 31328,
+            "heapSlopeMedian": 7012.342857142857,
+            "listenerDeltaMedian": 0,
+            "nodeDeltaMedian": 0,
+            "agedRetainedProbeObservations": 0
+          }
+        },
+        "matchedPairs": [
+          {
+            "sample": 0,
+            "baselineMedianHeapBytes": 4776616,
+            "candidateMedianHeapBytes": 4748232,
+            "differenceBytes": -28384,
+            "percentage": -0.5942282151213327
+          },
+          {
+            "sample": 1,
+            "baselineMedianHeapBytes": 4775130,
+            "candidateMedianHeapBytes": 4747656,
+            "differenceBytes": -27474,
+            "percentage": -0.575356063604551
+          },
+          {
+            "sample": 2,
+            "baselineMedianHeapBytes": 4780646,
+            "candidateMedianHeapBytes": 4747988,
+            "differenceBytes": -32658,
+            "percentage": -0.6831294348086012
+          }
+        ]
+      },
+      "mobile-emulation": {
+        "versions": {
+          "baseline": {
+            "contexts": 3,
+            "heapMedianOfContextMedians": 4848096,
+            "heapDeltaMedian": 82672,
+            "heapSlopeMedian": 17802.057142857142,
+            "listenerDeltaMedian": 0,
+            "nodeDeltaMedian": 0,
+            "agedRetainedProbeObservations": 0
+          },
+          "candidate": {
+            "contexts": 3,
+            "heapMedianOfContextMedians": 4786910,
+            "heapDeltaMedian": 33640,
+            "heapSlopeMedian": 7460.342857142857,
+            "listenerDeltaMedian": 0,
+            "nodeDeltaMedian": 0,
+            "agedRetainedProbeObservations": 0
+          }
+        },
+        "matchedPairs": [
+          {
+            "sample": 0,
+            "baselineMedianHeapBytes": 4824584,
+            "candidateMedianHeapBytes": 4787498,
+            "differenceBytes": -37086,
+            "percentage": -0.7686880361083982
+          },
+          {
+            "sample": 1,
+            "baselineMedianHeapBytes": 4848574,
+            "candidateMedianHeapBytes": 4786910,
+            "differenceBytes": -61664,
+            "percentage": -1.2717966148397446
+          },
+          {
+            "sample": 2,
+            "baselineMedianHeapBytes": 4848096,
+            "candidateMedianHeapBytes": 4767302,
+            "differenceBytes": -80794,
+            "percentage": -1.6665099040943083
+          }
+        ]
+      }
+    },
+    "interpretation": "Review raw trends; no automatic leak/plateau conclusion from heap deltas or slopes",
+    "sampledRetention": "NO_AGED_RETENTION_DETECTED_IN_SAMPLED_OBJECTS"
+  },
+  "limitations": [
+    "Bounded eight rounds per context, not hours of use",
+    "Weak probes cover selected retired calculator objects, not every allocation",
+    "No physical mobile device or native screen reader",
+    "No GPU/process memory claim",
+    "Local snapshots without external sprites, production feedback API or Turnstile"
+  ],
+  "elapsedMs": 286147
+}

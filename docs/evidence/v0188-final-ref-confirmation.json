@@ -1,0 +1,70 @@
+{
+  "observedAt": "2026-11-15T07:59:42.877Z",
+  "pullRequest": {
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/pull/67",
+    "number": 67,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "headSha": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+    "baseSha": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
+    "mergeCommitSha": "3bb9c9a300fe20b98338bfb6d58ae2409062617f"
+  },
+  "refs": [
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/ref/heads/main",
+      "ref": "refs/heads/main",
+      "sha": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
+      "type": "commit"
+    },
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/ref/tags/v0.188-pre.1",
+      "ref": "refs/tags/v0.188-pre.1",
+      "sha": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
+      "type": "commit"
+    },
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/singularity/git/ref/heads/main",
+      "ref": "refs/heads/main",
+      "sha": "b30c0f1863f3262574cf5365721be87c42ffa3e9",
+      "type": "commit"
+    }
+  ],
+  "releases": [
+    {
+      "tag": "v0.188-pre.1",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.188-pre.1",
+      "draft": false,
+      "prerelease": true,
+      "createdAt": "2026-11-15T05:29:25Z"
+    },
+    {
+      "tag": "v0.187-pre.33",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.187-pre.33",
+      "draft": false,
+      "prerelease": true,
+      "createdAt": "2026-11-15T01:37:49Z"
+    },
+    {
+      "tag": "v0.186-pre.32",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.186-pre.32",
+      "draft": false,
+      "prerelease": true,
+      "createdAt": "2026-11-14T14:13:51Z"
+    },
+    {
+      "tag": "v0.185-pre.31",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.185-pre.31",
+      "draft": false,
+      "prerelease": true,
+      "createdAt": "2026-11-14T11:14:21Z"
+    },
+    {
+      "tag": "v0.184-pre.30",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v0.184-pre.30",
+      "draft": false,
+      "prerelease": true,
+      "createdAt": "2026-11-14T04:16:32Z"
+    }
+  ]
+}

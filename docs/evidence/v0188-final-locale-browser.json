@@ -1,0 +1,190 @@
+{
+  "candidateCommit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+  "mode": "local Chromium browser automation",
+  "realDevice": false,
+  "productionMutations": 0,
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant"
+  ],
+  "widths": [
+    390,
+    1440
+  ],
+  "cases": [
+    {
+      "locale": "ja",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "fr",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "de",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "it",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "ko",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 390,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "ja",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "fr",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "de",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "it",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "ko",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 1440,
+      "status": "passed",
+      "keyboardComboboxes": 3,
+      "canonicalWarnings": 3,
+      "variableSummaryAndOption": true,
+      "numericReloadParity": true
+    }
+  ],
+  "limits": [
+    "No physical hardware or native screen reader",
+    "Reuse of existing translated copy; not full native-language review"
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUTC": "2026-11-15",
+  "reviewMethod": "Assistant visual inspection of all three final CI screenshots and inspection of the raw JSON; no earlier candidate PASS reused",
+  "sourceCommit": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "checkoutMergeCommit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+  "sourceTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+  "mergeTreeEqualsSourceTree": true,
+  "workflowRunId": 43691428060,
+  "jobId": 132742711195,
+  "artifactId": 14152748139,
+  "artifactSha256": "585d95c201f4146118d307ae47dd86e040054f4faabdcfe996afc45718c71186",
+  "artifactBytes": 3299280,
+  "artifactUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43691428060/artifacts/14152748139",
+  "automatedResult": "PASS within declared finite coverage",
+  "visualResult": "PASS for the three inspected states; no new release blocker observed",
+  "counts": {
+    "locales": 9,
+    "comboboxCompositionCases": 27,
+    "composingKeyEvents": 162,
+    "feedbackNameFocusCycles": 9,
+    "namedControlSnapshots": 90,
+    "versionNoticeStates": 27,
+    "reviewedScreenshots": 3
+  },
+  "finalL01": "Korean footer prefix rendered in Korean, with no retained The on-screen fragment",
+  "finalL02": "All nine raw notices include the canonical factual scope and disclaimers; no fabricated count 54 or prior affirmative hardware-comparison claim",
+  "visualObservations": [
+    "Japanese 320px and Korean 390px layouts stack controls/results within width; Traditional Chinese 1440px uses two columns.",
+    "Korean and Traditional Chinese final footer corrections are visible and wrap within their containers; Japanese footer remains unchanged.",
+    "The Japanese 320px damage caption wraps onto two lines and remains readable.",
+    "CJK glyphs, primary controls, calculated result and feedback trigger render in all three screenshots.",
+    "The fixed mobile result strip appears at the initial viewport bottom in full-page screenshots; this is not proof of every scrolling/occlusion state."
+  ],
+  "limits": [
+    "No physical device or OS IME verification",
+    "No native screen-reader verification",
+    "Accessible names checked for presence/label association, not native-language accuracy",
+    "Not a complete contrast audit",
+    "Static screenshots do not establish all scroll states or touch behavior",
+    "Three representative screenshot states do not replace all nine-by-six responsive scenarios"
+  ],
+  "productionMutations": 0,
+  "reportPosts": 0,
+  "files": {
+    "accessibility.json": {
+      "sha256": "8b3e28084b6b5fa13ca3db51337d95d1a97bc639f40f2c7ca89f600b00271fbf",
+      "bytes": 14475
+    },
+    "ui-ja-320.png": {
+      "sha256": "8aaa0541971c3607eb74d51b694e85235a16cd4f3c169ed84fce30c3f99f6667",
+      "bytes": 319802,
+      "dimensions": [
+        320,
+        3620
+      ]
+    },
+    "ui-ko-390.png": {
+      "sha256": "dbf9a76eef2567d1e519c599459ac213eae66c3ae0ff6c22952a86d5a8c2b86a",
+      "bytes": 281809,
+      "dimensions": [
+        390,
+        3491
+      ]
+    },
+    "ui-zh-Hant-1440.png": {
+      "sha256": "f0aa0d64e76b15ca8c14ae1435483fcc5688dcf85c43331d5ec8d9a747bd5bf5",
+      "bytes": 457238,
+      "dimensions": [
+        1440,
+        3167
+      ]
+    }
+  }
+}

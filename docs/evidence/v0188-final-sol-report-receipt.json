@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-11-15T08:02:31.377984+00:00",
+  "reviewer": "Independent 6.1 Sol",
+  "candidateCommit": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "candidateTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+  "verdict": "CONDITIONAL READY",
+  "report": "docs/v0188-final-sol-review.md",
+  "sha256": "5e5351047cd2e045cca464f8c6c0f7de5655e9c8b679a300df720d394d0740ee",
+  "bytes": 18473,
+  "preservedByteForByte": true,
+  "ownerApproval": false,
+  "publicCutoverPerformed": false
+}

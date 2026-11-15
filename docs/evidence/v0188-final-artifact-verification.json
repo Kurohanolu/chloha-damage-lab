@@ -1,0 +1,652 @@
+{
+  "observedAt": "2026-11-15T07:59:17.733846+00:00",
+  "candidateCommit": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "candidateTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+  "ciMergeCommit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+  "ciMergeTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+  "zipSha256": "585d95c201f4146118d307ae47dd86e040054f4faabdcfe996afc45718c71186",
+  "zipBytes": 3299280,
+  "manifestPathsVerified": 75,
+  "currentSiteSourcePathsVerified": 42,
+  "rollbackPathsVerified": 31,
+  "fixedRollbackCommit": "4b2cde61f92610c5bb970618d34147a2c16a8d7b",
+  "qualityTestsPassed": 34,
+  "productionMutations": 0,
+  "files": [
+    {
+      "path": "singularity/index.html",
+      "sha256": "d0856d4d81873e6baca8ed373d94a55778b6802821f1bb67237a4845bce296a4",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/release.json",
+      "sha256": "9d36b279be059db415ab33534c36b0a60326ef3d29f4ecc71c19cf6c039cd9a1",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/assets/singularity/favicon.png",
+      "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/assets/singularity/apple-touch-icon.png",
+      "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/singularity-v0187.css",
+      "sha256": "0c4940d15b9e1a6e242f4e86620d5b1454b1b07d429476d9c8cb0a49d9c073f4",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/battle-data-v0184.js",
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/move-mechanics-data-v0184.js",
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/ability-data-v0184.js",
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/damage-engine-v0184.js",
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/damage-calculator-v0184.js",
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/damage-ui-adapter-v0184.js",
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/pokemon-weights-v0181.js",
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/weight-power.js",
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/multi-hit.js",
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/variable-power.js",
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/assets/singularity/header.webp",
+      "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-v0179.js",
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-ja-en.js",
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-catalog-v0179.js",
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-forms-v0179.js",
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-registry.js",
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-catalog.js",
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/i18n.js",
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-name-search.js",
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-names-pokeapi-v0183.js",
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-form-species-v0183.js",
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-names-v0183.js",
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-ui-v0179.js",
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/names-ui-v0183.js",
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/feedback-contract-v0185.js",
+      "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/feedback-locales-v0185.js",
+      "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/feedback-config-v0185.js",
+      "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/feedback-snapshot-v0185.js",
+      "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/feedback-ui-v0185.js",
+      "sha256": "24ab67b45b8a61c1352682d608188ccfdb073204a94ff949d820adf8d3833ec5",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/brand-v0187.js",
+      "sha256": "d0094875c654c406b5a440286d74955ce3bbd03ca41228ebe81db92dd1243c25",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/portrait-alt-v0188.js",
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/persistence-v0188.js",
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/locale-quality-v0188.js",
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/assets/singularity/orbital-s-reference.png",
+      "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/assets/singularity/orbital-s-icon.webp",
+      "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/brand-preview.html",
+      "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "singularity/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "manifestMatch": true,
+      "candidateSourceMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/index.html",
+      "sha256": "16088457d9e9ce1089980312fb6a98bbfa2b97b8bf1334b6ccfa93ec7cb4b454",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/release.json",
+      "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/battle-data-v0184.js",
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/move-mechanics-data-v0184.js",
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/ability-data-v0184.js",
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/damage-engine-v0184.js",
+      "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/damage-calculator-v0184.js",
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/damage-ui-adapter-v0184.js",
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/pokemon-weights-v0181.js",
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/weight-power.js",
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/multi-hit.js",
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/variable-power.js",
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-v0179.js",
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-ja-en.js",
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-catalog-v0179.js",
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-forms-v0179.js",
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-registry.js",
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-catalog.js",
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/i18n.js",
+      "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-name-search.js",
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-names-pokeapi-v0183.js",
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-form-species-v0183.js",
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/locale-names-v0183.js",
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-ui-v0179.js",
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/names-ui-v0183.js",
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/feedback-contract-v0185.js",
+      "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/feedback-locales-v0185.js",
+      "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/feedback-config-v0185.js",
+      "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/feedback-snapshot-v0185.js",
+      "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/feedback-ui-v0185.js",
+      "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/legacy-notice-v0187.css",
+      "sha256": "8d5b89b5375e29e4d8b77db744c7ffc0cfce716c7f3540d74f56eda4b24da822",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/legacy-notice-v0187.js",
+      "sha256": "b5e0d033119117f574a5ad064f71422b5f4f4d6000ddae5f64d39048a3a6d5cd",
+      "manifestMatch": true
+    },
+    {
+      "path": "chloha-damage-lab/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "manifestMatch": true
+    }
+  ],
+  "rollbackFiles": [
+    {
+      "path": "index.html",
+      "sha256": "44f7408b200a6611da6ad3f3208ffc0a77b0da9c8cb783c22b00aaf9815ca3ef",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "release.json",
+      "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "battle-data-v0184.js",
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "move-mechanics-data-v0184.js",
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "ability-data-v0184.js",
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "damage-engine-v0184.js",
+      "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "damage-calculator-v0184.js",
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "damage-ui-adapter-v0184.js",
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "pokemon-weights-v0181.js",
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "weight-power.js",
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "multi-hit.js",
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "variable-power.js",
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-v0179.js",
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-ja-en.js",
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-catalog-v0179.js",
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-forms-v0179.js",
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-registry.js",
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-catalog.js",
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "i18n.js",
+      "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-name-search.js",
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-names-pokeapi-v0183.js",
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-form-species-v0183.js",
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "locale-names-v0183.js",
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-ui-v0179.js",
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "names-ui-v0183.js",
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "feedback-contract-v0185.js",
+      "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "feedback-locales-v0185.js",
+      "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "feedback-config-v0185.js",
+      "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "feedback-snapshot-v0185.js",
+      "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": "feedback-ui-v0185.js",
+      "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9",
+      "frozenSourceMatch": true
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frozenSourceMatch": true
+    }
+  ],
+  "feedbackPerformanceRecomputed": [
+    {
+      "profile": {
+        "name": "desktop",
+        "width": 1440,
+        "cpuRate": 1
+      },
+      "variants": {
+        "before": {
+          "n": 100,
+          "contexts": 5,
+          "medianMs": 17.70000000001164,
+          "iqrMs": 1.4499999999825377,
+          "minMs": 16.600000000034925,
+          "maxMs": 26.20000000001164,
+          "calculatorDOMMutations": 400
+        },
+        "after": {
+          "n": 100,
+          "contexts": 5,
+          "medianMs": 16.70000000001164,
+          "iqrMs": 0.14999999999417923,
+          "minMs": 16.29999999998836,
+          "maxMs": 17.20000000001164,
+          "calculatorDOMMutations": 0
+        }
+      }
+    },
+    {
+      "profile": {
+        "name": "mobile-390",
+        "width": 390,
+        "cpuRate": 4
+      },
+      "variants": {
+        "before": {
+          "n": 100,
+          "contexts": 5,
+          "medianMs": 75.7500000000291,
+          "iqrMs": 8.10000000000582,
+          "minMs": 67.09999999997672,
+          "maxMs": 117.5,
+          "calculatorDOMMutations": 400
+        },
+        "after": {
+          "n": 100,
+          "contexts": 5,
+          "medianMs": 25.60000000000582,
+          "iqrMs": 2.3999999999359716,
+          "minMs": 22.900000000023283,
+          "maxMs": 43.70000000001164,
+          "calculatorDOMMutations": 0
+        }
+      }
+    }
+  ],
+  "status": "PASS",
+  "limits": [
+    "Artifacts are unpublished candidates; no live candidate cutover",
+    "Feedback timing is controlled guard reversal, not the full previous product"
+  ]
+}

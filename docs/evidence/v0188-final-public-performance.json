@@ -1,0 +1,4130 @@
+{
+  "observedAt": "2026-11-15T07:49:56.981Z",
+  "target": "https://kurohanolu.github.io/singularity/",
+  "observedPublicRelease": {
+    "version": "0.188",
+    "preRelease": 1,
+    "tag": "v0.188-pre.1",
+    "name": "Singularity v0.188 Pre-Release 1",
+    "product": "Singularity",
+    "developer": "Chloha Labs",
+    "publicUrl": "https://kurohanolu.github.io/singularity/"
+  },
+  "mode": "existing approved public release GET-only browser observation",
+  "realDevice": false,
+  "productionMutations": 0,
+  "feedbackFormsOpened": 0,
+  "samplesPerProfile": 3,
+  "operationsPerSample": 12,
+  "conditions": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cache": "fresh isolated context then reload; no forced cache clearing between cold and warm",
+    "network": "actual CI-to-public-CDN route; mobile adds40ms latency,1.6Mbit/s down,750kbit/s up and4xCPU",
+    "guard": "CDP Fetch request interception permits only GET/HEAD to the named Pages subtree or PokeAPI sprite paths; interception may affect caching",
+    "timingCaveats": [
+      "zero transfer for cross-origin resources can mean missing Timing-Allow-Origin or caching",
+      "data-URL images are already counted inside HTML",
+      "heap is sampled without forced garbage collection",
+      "operation latency includes next animation frame",
+      "publicCDN values must not be directly compared to loopback candidate measurements",
+      "release.json validation requests are excluded from resource-transfer summaries"
+    ]
+  },
+  "profiles": [
+    {
+      "profile": {
+        "name": "desktop",
+        "width": 1440,
+        "mobile": false
+      },
+      "samples": [
+        {
+          "sample": 0,
+          "cold": {
+            "firstPaintMs": 252,
+            "FCPMs": 428,
+            "domContentLoadedMs": 468.1000000000058,
+            "loadMs": 480.19999999998254,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 76,
+            "FCPMs": 120,
+            "domContentLoadedMs": 165.30000000001746,
+            "loadMs": 173.80000000001746,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15206,
+            "JSHeapUsedSize": 6013544,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 46465,
+            "JSHeapUsedSize": 7865852,
+            "JSHeapTotalSize": 17870848
+          },
+          "calculationToFrameMs": [
+            7.7000000000116415,
+            32.89999999999418,
+            36.89999999999418,
+            23.60000000000582,
+            35.79999999998836,
+            20.10000000000582,
+            27.79999999998836,
+            20.199999999982538,
+            27.10000000000582,
+            20,
+            27.10000000000582,
+            19.20000000001164
+          ],
+          "localeToFrameMs": [
+            77.39999999999418,
+            85.20000000001164,
+            56.60000000000582,
+            70.39999999999418,
+            59.10000000000582,
+            65.10000000000582,
+            48,
+            62.5,
+            61.10000000000582,
+            69.5,
+            50.19999999998254,
+            61.89999999999418
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "firstPaintMs": 104,
+            "FCPMs": 236,
+            "domContentLoadedMs": 270.9000000000233,
+            "loadMs": 282.4000000000233,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 72,
+            "FCPMs": 116,
+            "domContentLoadedMs": 163.5,
+            "loadMs": 172.20000000001164,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15206,
+            "JSHeapUsedSize": 6007540,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 46464,
+            "JSHeapUsedSize": 7725820,
+            "JSHeapTotalSize": 18132992
+          },
+          "calculationToFrameMs": [
+            12.200000000011642,
+            30.300000000017462,
+            39.89999999999418,
+            22.89999999999418,
+            31,
+            20.599999999976717,
+            27.39999999999418,
+            20.39999999999418,
+            27.5,
+            19.39999999999418,
+            32,
+            21.20000000001164
+          ],
+          "localeToFrameMs": [
+            82.60000000000582,
+            85.79999999998836,
+            54.80000000001746,
+            69.59999999997672,
+            60.30000000001746,
+            63.10000000000582,
+            48.80000000001746,
+            62.89999999999418,
+            59.39999999999418,
+            61.70000000001164,
+            44.39999999999418,
+            61.89999999999418
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "firstPaintMs": 104,
+            "FCPMs": 228,
+            "domContentLoadedMs": 270.6000000000058,
+            "loadMs": 281.5,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 72,
+            "FCPMs": 112,
+            "domContentLoadedMs": 157.30000000001746,
+            "loadMs": 165.80000000001746,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15206,
+            "JSHeapUsedSize": 5906592,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 46455,
+            "JSHeapUsedSize": 7965700,
+            "JSHeapTotalSize": 17608704
+          },
+          "calculationToFrameMs": [
+            7.900000000023283,
+            35.5,
+            36.29999999998836,
+            23.20000000001164,
+            36.70000000001164,
+            20.800000000017462,
+            26.199999999982538,
+            20.800000000017462,
+            27.39999999999418,
+            20.89999999999418,
+            32.89999999999418,
+            22.29999999998836
+          ],
+          "localeToFrameMs": [
+            72.89999999999418,
+            85.39999999999418,
+            56.70000000001164,
+            68.69999999998254,
+            69.29999999998836,
+            63.39999999999418,
+            51.5,
+            65.39999999999418,
+            63.70000000001164,
+            63.5,
+            46.80000000001746,
+            62.70000000001164
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        }
+      ],
+      "summary": {
+        "coldFCPMedianMs": 236,
+        "warmFCPMedianMs": 116,
+        "calculationToFrameMedianMs": 26.199999999982538,
+        "localeToFrameMedianMs": 62.89999999999418,
+        "heapUsedAfterMedianBytes": 7865852,
+        "cold": {
+          "document": {
+            "transferBytesMedian": 94776,
+            "decodedBytesMedian": 867325
+          },
+          "javascript": {
+            "transferBytesMedian": 348261,
+            "decodedBytesMedian": 1081598
+          },
+          "css": {
+            "transferBytesMedian": 3249,
+            "decodedBytesMedian": 10368
+          },
+          "images": {
+            "transferBytesMedian": 31044,
+            "decodedBytesMedian": 30744
+          },
+          "allResources": {
+            "transferBytesMedian": 382554,
+            "decodedBytesMedian": 1122710
+          }
+        },
+        "warm": {
+          "document": {
+            "transferBytesMedian": 300,
+            "decodedBytesMedian": 867325
+          },
+          "javascript": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 1081598
+          },
+          "css": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 10368
+          },
+          "images": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 30744
+          },
+          "allResources": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 1122710
+          }
+        }
+      }
+    },
+    {
+      "profile": {
+        "name": "mobile-390",
+        "width": 390,
+        "mobile": true
+      },
+      "samples": [
+        {
+          "sample": 0,
+          "cold": {
+            "firstPaintMs": 220,
+            "FCPMs": 1204,
+            "domContentLoadedMs": 2849.7999999999884,
+            "loadMs": 2870.7999999999884,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 176,
+            "FCPMs": 404,
+            "domContentLoadedMs": 675.5,
+            "loadMs": 684.9000000000233,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15217,
+            "JSHeapUsedSize": 5886208,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 55973,
+            "JSHeapUsedSize": 10648108,
+            "JSHeapTotalSize": 18132992
+          },
+          "calculationToFrameMs": [
+            33.5,
+            98.20000000001164,
+            142.30000000001746,
+            95,
+            146.10000000000582,
+            121.10000000000582,
+            126.90000000002328,
+            114.19999999998254,
+            123.89999999999418,
+            92.20000000001164,
+            124.79999999998836,
+            89.70000000001164
+          ],
+          "localeToFrameMs": [
+            313.5999999999767,
+            420.79999999998836,
+            233.69999999998254,
+            290.6000000000058,
+            241,
+            292.5999999999767,
+            228.70000000001164,
+            302.6000000000058,
+            223.10000000000582,
+            294.0999999999767,
+            209.60000000000582,
+            289.69999999998254
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "firstPaintMs": 224,
+            "FCPMs": 1308,
+            "domContentLoadedMs": 2855.7000000000116,
+            "loadMs": 2876.899999999994,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 168,
+            "FCPMs": 388,
+            "domContentLoadedMs": 652.1000000000058,
+            "loadMs": 662,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15217,
+            "JSHeapUsedSize": 5759100,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 65060,
+            "JSHeapUsedSize": 7762364,
+            "JSHeapTotalSize": 18657280
+          },
+          "calculationToFrameMs": [
+            34.80000000001746,
+            106.10000000000582,
+            140.60000000000582,
+            87.39999999999418,
+            138.39999999999418,
+            83.60000000000582,
+            125.79999999998836,
+            85.10000000000582,
+            113.89999999999418,
+            106.80000000001746,
+            124.60000000000582,
+            89.29999999998836
+          ],
+          "localeToFrameMs": [
+            314.19999999998254,
+            422.3999999999942,
+            227.89999999999418,
+            296.1000000000058,
+            239.20000000001164,
+            284.20000000001164,
+            216.20000000001164,
+            296.19999999998254,
+            221,
+            291.79999999998836,
+            200,
+            267
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "firstPaintMs": 220,
+            "FCPMs": 1204,
+            "domContentLoadedMs": 2858.0999999999767,
+            "loadMs": 2878.7999999999884,
+            "document": {
+              "transferBytes": 94776,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 348261,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 3249,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 382554,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "firstPaintMs": 164,
+            "FCPMs": 396,
+            "domContentLoadedMs": 648.1000000000058,
+            "loadMs": 654.8999999999942,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 94476,
+              "decodedBytes": 867325
+            },
+            "javascript": {
+              "count": 32,
+              "transferBytes": 0,
+              "encodedBytes": 338661,
+              "decodedBytes": 1081598,
+              "zeroTransferEntries": 32
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 2949,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 34,
+              "transferBytes": 0,
+              "encodedBytes": 372354,
+              "decodedBytes": 1122710,
+              "zeroTransferEntries": 34
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15217,
+            "JSHeapUsedSize": 5720636,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 60237,
+            "JSHeapUsedSize": 10515756,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            33.59999999997672,
+            97.79999999998836,
+            142,
+            88.20000000001164,
+            157.59999999997672,
+            81.39999999999418,
+            116.20000000001164,
+            82.59999999997672,
+            117,
+            83.19999999998254,
+            121.29999999998836,
+            95.5
+          ],
+          "localeToFrameMs": [
+            309.4000000000233,
+            409.20000000001164,
+            214.19999999998254,
+            291.5,
+            221.10000000000582,
+            270.4000000000233,
+            213,
+            283.80000000001746,
+            208.60000000000582,
+            307.4000000000233,
+            194,
+            267.6000000000058
+          ],
+          "network": {
+            "allowed": 38,
+            "blocked": [],
+            "methods": {
+              "GET": 38
+            },
+            "responses": [
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/singularity-v0187.css"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/battle-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/move-mechanics-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/ability-data-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-engine-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-calculator-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/damage-ui-adapter-v0184.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/pokemon-weights-v0181.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/weight-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/multi-hit.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/variable-power.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ja-en.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-catalog-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-forms-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-registry.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-catalog.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/i18n.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-name-search.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-pokeapi-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-form-species-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-names-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0179.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/names-ui-v0183.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-contract-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-locales-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-config-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-snapshot-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/feedback-ui-v0185.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/brand-v0187.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/portrait-alt-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/persistence-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/locale-quality-v0188.js"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/assets/singularity/header.webp"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "null",
+                "path": "[embedded data URL]"
+              },
+              {
+                "status": 200,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "origin": "https://kurohanolu.github.io",
+                "path": "/singularity/release.json"
+              }
+            ]
+          }
+        }
+      ],
+      "summary": {
+        "coldFCPMedianMs": 1204,
+        "warmFCPMedianMs": 396,
+        "calculationToFrameMedianMs": 106.80000000001746,
+        "localeToFrameMedianMs": 283.80000000001746,
+        "heapUsedAfterMedianBytes": 10515756,
+        "cold": {
+          "document": {
+            "transferBytesMedian": 94776,
+            "decodedBytesMedian": 867325
+          },
+          "javascript": {
+            "transferBytesMedian": 348261,
+            "decodedBytesMedian": 1081598
+          },
+          "css": {
+            "transferBytesMedian": 3249,
+            "decodedBytesMedian": 10368
+          },
+          "images": {
+            "transferBytesMedian": 31044,
+            "decodedBytesMedian": 30744
+          },
+          "allResources": {
+            "transferBytesMedian": 382554,
+            "decodedBytesMedian": 1122710
+          }
+        },
+        "warm": {
+          "document": {
+            "transferBytesMedian": 300,
+            "decodedBytesMedian": 867325
+          },
+          "javascript": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 1081598
+          },
+          "css": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 10368
+          },
+          "images": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 30744
+          },
+          "allResources": {
+            "transferBytesMedian": 0,
+            "decodedBytesMedian": 1122710
+          }
+        }
+      }
+    }
+  ],
+  "browser": "145.0.7632.6"
+}

@@ -1,0 +1,192 @@
+{
+  "candidateCommit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+  "mode": "Chromium browser automation; synthetic composition events; local feedback fixture",
+  "realDevice": false,
+  "productionMutations": 0,
+  "reportPosts": 0,
+  "cases": [
+    {
+      "locale": "ja",
+      "width": 320,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"技名を検索\" [expanded]: Dragon",
+        "attSearch": "- combobox \"ポケモンを探す\" [expanded]: Charizard",
+        "defSearch": "- combobox \"ポケモンを探す\" [expanded]: Charizard",
+        "feedbackButton": "- button \"フィードバック\"",
+        "feedbackCategory": "- combobox \"報告カテゴリ（必須）\":",
+        "feedbackDescription": "- textbox \"詳細説明（必須）\"",
+        "feedbackEmail": "- textbox \"連絡先メールアドレス（任意）\"",
+        "feedbackAttach": "- checkbox \"現在の計算条件を添付する（任意）\"",
+        "feedbackClose": "- button \"閉じる\"",
+        "feedbackSubmit": "- button \"送信する\""
+      },
+      "versionNotice": "バージョンについて：画面の「v0.188 Pre-Release 2」は公開UI版です。計算コアの内部API識別子は「v0.184」です。公開UI版とは別管理であり、実機精度の検証完了を意味しません。v0.184の自動回帰監査、体重依存技4種類と連続技のブラウザ検証およびShowdown差分テストは合格済みです。連続技のマルチスケイル処理など一部条件は未対応です。Showdownを計算仕様の検証基準とし、Pokémon Champions固有の仕様差異が確認された場合は個別に対応します。",
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"Search moves\" [expanded]: Dragon",
+        "attSearch": "- combobox \"Search Pokémon\" [expanded]: Charizard",
+        "defSearch": "- combobox \"Search Pokémon\" [expanded]: Charizard",
+        "feedbackButton": "- button \"Feedback\"",
+        "feedbackCategory": "- combobox \"Report category (required)\":",
+        "feedbackDescription": "- textbox \"Description (required)\"",
+        "feedbackEmail": "- textbox \"Contact email (optional)\"",
+        "feedbackAttach": "- checkbox \"Attach the current calculation (optional)\"",
+        "feedbackClose": "- button \"Close\"",
+        "feedbackSubmit": "- button \"Send\""
+      },
+      "versionNotice": "About versions: The on-screen “v0.188 Pre-Release 2” is the public UI version. The calculation core “v0.184” identifies the internal API foundation. It is managed separately from the public UI version and does not mean that verification of accuracy on Pokémon Champions hardware is complete. Automated regression checks for v0.184, browser checks for four weight-dependent moves and multi-hit moves, and Showdown differential tests have passed. Some conditions, including Multiscale handling for multi-hit moves, are unsupported. Showdown is the calculation-specification reference; confirmed Pokémon Champions-specific differences will be handled separately.",
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"Rechercher une capacité\" [expanded]: Dragon",
+        "attSearch": "- combobox \"Rechercher un Pokémon\" [expanded]: Charizard",
+        "defSearch": "- combobox \"Rechercher un Pokémon\" [expanded]: Charizard",
+        "feedbackButton": "- button \"Commentaires\"",
+        "feedbackCategory": "- combobox \"Catégorie du signalement (obligatoire)\":",
+        "feedbackDescription": "- textbox \"Description (obligatoire)\"",
+        "feedbackEmail": "- textbox \"Adresse e-mail de contact (facultative)\"",
+        "feedbackAttach": "- checkbox \"Joindre le calcul actuel (facultatif)\"",
+        "feedbackClose": "- button \"Fermer\"",
+        "feedbackSubmit": "- button \"Envoyer\""
+      },
+      "versionNotice": "À propos des versions : « v0.188 Pre-Release 2 » est la version publique de l’interface. L’identifiant de l’API interne du moteur de calcul est « v0.184 ». Il est géré séparément de la version publique de l’interface et ne signifie pas que la vérification de la précision sur console est terminée. Les tests automatiques de régression pour v0.184, les tests dans le navigateur de quatre capacités dépendant du poids et des capacités à coups multiples, ainsi que les tests différentiels avec Showdown ont réussi. Certaines conditions, notamment la gestion de Multiécaille pour les capacités à coups multiples, ne sont pas prises en charge. Showdown sert de référence pour les règles de calcul ; les différences propres à Pokémon Champions seront traitées séparément lorsqu’elles seront confirmées.",
+      "passed": true
+    },
+    {
+      "locale": "de",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"Attacke suchen\" [expanded]: Dragon",
+        "attSearch": "- combobox \"Pokémon suchen\" [expanded]: Charizard",
+        "defSearch": "- combobox \"Pokémon suchen\" [expanded]: Charizard",
+        "feedbackButton": "- button \"Rückmeldung\"",
+        "feedbackCategory": "- combobox \"Meldekategorie (Pflichtfeld)\":",
+        "feedbackDescription": "- textbox \"Beschreibung (Pflichtfeld)\"",
+        "feedbackEmail": "- textbox \"Kontakt-E-Mail-Adresse (optional)\"",
+        "feedbackAttach": "- checkbox \"Aktuelle Berechnung anhängen (optional)\"",
+        "feedbackClose": "- button \"Schließen\"",
+        "feedbackSubmit": "- button \"Senden\""
+      },
+      "versionNotice": "Versionshinweis: „v0.188 Pre-Release 2“ ist die öffentliche Version der Benutzeroberfläche. Die interne API-Kennung des Rechenkerns lautet „v0.184“. Sie wird getrennt von der öffentlichen Version verwaltet und bedeutet nicht, dass die Genauigkeitsprüfung auf echter Hardware abgeschlossen ist. Die automatischen Regressionstests für v0.184, die Browser-Tests für vier gewichtsabhängige Attacken und Mehrfachtreffer-Attacken sowie die Showdown-Differenztests wurden bestanden. Einige Bedingungen, darunter die Behandlung von Multischuppe bei Mehrfachtreffer-Attacken, werden nicht unterstützt. Showdown dient als Referenz für die Berechnungsregeln; bestätigte Besonderheiten von Pokémon Champions werden gesondert behandelt.",
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"Buscar movimientos\" [expanded]: Dragon",
+        "attSearch": "- combobox \"Buscar Pokémon\" [expanded]: Charizard",
+        "defSearch": "- combobox \"Buscar Pokémon\" [expanded]: Charizard",
+        "feedbackButton": "- button \"Comentarios\"",
+        "feedbackCategory": "- combobox \"Categoría del informe (obligatoria)\":",
+        "feedbackDescription": "- textbox \"Descripción (obligatoria)\"",
+        "feedbackEmail": "- textbox \"Correo de contacto (opcional)\"",
+        "feedbackAttach": "- checkbox \"Adjuntar el cálculo actual (opcional)\"",
+        "feedbackClose": "- button \"Cerrar\"",
+        "feedbackSubmit": "- button \"Enviar\""
+      },
+      "versionNotice": "Sobre las versiones: «v0.188 Pre-Release 2» es la versión pública de la interfaz. El identificador de la API interna del motor de cálculo es «v0.184». Se gestiona por separado de la versión pública y no significa que se haya completado la verificación de precisión en consola. Se superaron las pruebas automáticas de regresión de v0.184, las pruebas en navegador de cuatro movimientos dependientes del peso y de movimientos de varios golpes, y las pruebas diferenciales con Showdown. Algunas condiciones, incluido el tratamiento de Multiescamas en movimientos de varios golpes, no están implementadas. Showdown es la referencia para las reglas de cálculo; las diferencias específicas de Pokémon Champions se tratarán por separado cuando se confirmen.",
+      "passed": true
+    },
+    {
+      "locale": "it",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"Cerca mosse\" [expanded]: Dragon",
+        "attSearch": "- combobox \"Cerca Pokémon\" [expanded]: Charizard",
+        "defSearch": "- combobox \"Cerca Pokémon\" [expanded]: Charizard",
+        "feedbackButton": "- button \"Commenti\"",
+        "feedbackCategory": "- combobox \"Categoria della segnalazione (obbligatoria)\":",
+        "feedbackDescription": "- textbox \"Descrizione (obbligatoria)\"",
+        "feedbackEmail": "- textbox \"E-mail di contatto (facoltativa)\"",
+        "feedbackAttach": "- checkbox \"Allega il calcolo attuale (facoltativo)\"",
+        "feedbackClose": "- button \"Chiudi\"",
+        "feedbackSubmit": "- button \"Invia\""
+      },
+      "versionNotice": "Informazioni sulle versioni: «v0.188 Pre-Release 2» è la versione pubblica dell’interfaccia. L’identificatore dell’API interna del motore di calcolo è «v0.184». È gestito separatamente dalla versione pubblica e non significa che la verifica della precisione su console sia completa. Sono stati superati i test automatici di regressione per v0.184, i test nel browser di quattro mosse dipendenti dal peso e delle mosse multicolpo, e i test differenziali con Showdown. Alcune condizioni, inclusa la gestione di Multisquame nelle mosse multicolpo, non sono supportate. Showdown è il riferimento per le regole di calcolo; le differenze specifiche di Pokémon Champions verranno gestite separatamente quando saranno confermate.",
+      "passed": true
+    },
+    {
+      "locale": "ko",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"기술 검색\" [expanded]: Dragon",
+        "attSearch": "- combobox \"포켓몬 검색\" [expanded]: Charizard",
+        "defSearch": "- combobox \"포켓몬 검색\" [expanded]: Charizard",
+        "feedbackButton": "- button \"의견 보내기\"",
+        "feedbackCategory": "- combobox \"신고 유형 (필수)\":",
+        "feedbackDescription": "- textbox \"상세 설명 (필수)\"",
+        "feedbackEmail": "- textbox \"연락용 이메일 (선택)\"",
+        "feedbackAttach": "- checkbox \"현재 계산 조건 첨부 (선택)\"",
+        "feedbackClose": "- button \"닫기\"",
+        "feedbackSubmit": "- button \"보내기\""
+      },
+      "versionNotice": "버전 안내: 화면에 표시되는 “v0.188 Pre-Release 2”는 공개 UI 버전입니다. 계산 코어의 내부 API 식별자는 “v0.184”입니다. 공개 UI 버전과 별도로 관리되며, 실기기 기준 정확도 검증이 완료되었다는 뜻이 아닙니다. v0.184 자동 회귀 검사, 체중에 따라 달라지는 기술 4종과 연속 공격 기술의 브라우저 검사 및 Showdown 차등 테스트는 통과했습니다. 연속 공격 기술의 멀티스케일 처리 등 일부 조건은 지원하지 않습니다. Showdown을 계산 규칙 검증의 기준으로 사용하며, Pokémon Champions 고유의 사양 차이가 확인되면 개별적으로 대응합니다.",
+      "passed": true
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 390,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"搜索招式\" [expanded]: Dragon",
+        "attSearch": "- combobox \"搜索宝可梦\" [expanded]: Charizard",
+        "defSearch": "- combobox \"搜索宝可梦\" [expanded]: Charizard",
+        "feedbackButton": "- button \"反馈\"",
+        "feedbackCategory": "- combobox \"报告类别（必填）\":",
+        "feedbackDescription": "- textbox \"详细说明（必填）\"",
+        "feedbackEmail": "- textbox \"联系邮箱（选填）\"",
+        "feedbackAttach": "- checkbox \"附上当前计算条件（可选）\"",
+        "feedbackClose": "- button \"关闭\"",
+        "feedbackSubmit": "- button \"发送\""
+      },
+      "versionNotice": "版本说明：画面显示的“v0.188 Pre-Release 2”是公开UI版本。计算核心的内部API标识为“v0.184”。它与公开UI版本分开管理，不代表已完成实机精度验证。v0.184的自动回归测试、4种依赖体重的招式及多段招式的浏览器测试，以及Showdown差分测试均已通过。多段招式的多重鳞片处理等部分条件尚不支持。以Showdown作为计算规则验证的基准；确认Pokémon Champions特有的机制差异后，将另行处理。",
+      "passed": true
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 1440,
+      "comboboxCompositionCases": 3,
+      "names": {
+        "moveSearch": "- combobox \"搜尋招式\" [expanded]: Dragon",
+        "attSearch": "- combobox \"搜尋寶可夢\" [expanded]: Charizard",
+        "defSearch": "- combobox \"搜尋寶可夢\" [expanded]: Charizard",
+        "feedbackButton": "- button \"意見回饋\"",
+        "feedbackCategory": "- combobox \"回報類別（必填）\":",
+        "feedbackDescription": "- textbox \"詳細說明（必填）\"",
+        "feedbackEmail": "- textbox \"聯絡電子郵件（選填）\"",
+        "feedbackAttach": "- checkbox \"附上目前計算條件（選填）\"",
+        "feedbackClose": "- button \"關閉\"",
+        "feedbackSubmit": "- button \"傳送\""
+      },
+      "versionNotice": "版本說明：畫面顯示的「v0.188 Pre-Release 2」是公開UI版本。計算核心的內部API識別碼為「v0.184」。它與公開UI版本分開管理，不代表已完成實機精度驗證。v0.184的自動回歸測試、4種依賴體重的招式及多段招式的瀏覽器測試，以及Showdown差分測試均已通過。多段招式的多重鱗片處理等部分條件尚不支援。以Showdown作為計算規則驗證的基準；確認Pokémon Champions特有的機制差異後，將另行處理。",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "reports/v0188-final/ui-ja-320.png",
+    "reports/v0188-final/ui-ko-390.png",
+    "reports/v0188-final/ui-zh-Hant-1440.png"
+  ],
+  "limits": [
+    "No physical device or OS IME verification",
+    "No native screen-reader verification",
+    "Accessible names checked for presence/label association, not native-language accuracy",
+    "Not a complete contrast audit"
+  ],
+  "passed": true
+}

@@ -1,0 +1,214 @@
+{
+  "method": "Conventional median, average of middle pair for even n; IQR is upper-half median minus lower-half median. Pooled operations are clustered in5contexts, not independent devices.",
+  "candidate": {
+    "commit": "3bb9c9a300fe20b98338bfb6d58ae2409062617f",
+    "tree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+    "dirty": false
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCPUs": 4,
+    "samplesPerVersionPerProfile": 5,
+    "operationSamplesPerNavigation": 12,
+    "cachePolicy": "same local server max-age=600 and ETag",
+    "network": "loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown",
+    "thirdParty": "HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted",
+    "order": "alternating baseline/candidate between rounds"
+  },
+  "browser": "145.0.7632.6",
+  "profiles": [
+    {
+      "profile": {
+        "name": "desktop",
+        "width": 1440,
+        "mobile": false
+      },
+      "baseline": {
+        "calculationToFrameMs": {
+          "n": 60,
+          "median": 24.150000000001455,
+          "iqr": 10.900000000001455,
+          "min": 13.69999999999709,
+          "max": 43.89999999999418
+        },
+        "localeToFrameMs": {
+          "n": 60,
+          "median": 61.650000000001455,
+          "iqr": 9.099999999998545,
+          "min": 44.099999999998545,
+          "max": 86.09999999999854
+        },
+        "cold_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 164,
+          "iqr": 30.0,
+          "min": 156,
+          "max": 196
+        },
+        "cold_loadEventMs": {
+          "n": 5,
+          "median": 239.3000000000029,
+          "iqr": 62.400000000001455,
+          "min": 207,
+          "max": 291.09999999999854
+        },
+        "warm_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 104,
+          "iqr": 6.0,
+          "min": 100,
+          "max": 112
+        },
+        "warm_loadEventMs": {
+          "n": 5,
+          "median": 149.5,
+          "iqr": 8.049999999995634,
+          "min": 145.3000000000029,
+          "max": 155.79999999999563
+        }
+      },
+      "candidate": {
+        "calculationToFrameMs": {
+          "n": 60,
+          "median": 24.499999999996362,
+          "iqr": 10.89999999999418,
+          "min": 13.5,
+          "max": 38.5
+        },
+        "localeToFrameMs": {
+          "n": 60,
+          "median": 63.400000000001455,
+          "iqr": 8.249999999996362,
+          "min": 46.599999999998545,
+          "max": 88.69999999999709
+        },
+        "cold_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 160,
+          "iqr": 38.0,
+          "min": 156,
+          "max": 224
+        },
+        "cold_loadEventMs": {
+          "n": 5,
+          "median": 205.8000000000029,
+          "iqr": 6.299999999999272,
+          "min": 204.8000000000029,
+          "max": 212.90000000000146
+        },
+        "warm_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 104,
+          "iqr": 2.0,
+          "min": 100,
+          "max": 104
+        },
+        "warm_loadEventMs": {
+          "n": 5,
+          "median": 143.8000000000029,
+          "iqr": 5.499999999996362,
+          "min": 142.29999999999563,
+          "max": 149.6999999999971
+        }
+      }
+    },
+    {
+      "profile": {
+        "name": "mobile-390",
+        "width": 390,
+        "mobile": true
+      },
+      "baseline": {
+        "calculationToFrameMs": {
+          "n": 60,
+          "median": 101.09999999999127,
+          "iqr": 35.89999999999418,
+          "min": 32.19999999999709,
+          "max": 168.59999999999127
+        },
+        "localeToFrameMs": {
+          "n": 60,
+          "median": 271.79999999999563,
+          "iqr": 77.05000000000291,
+          "min": 190,
+          "max": 390.5999999999767
+        },
+        "cold_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 5092,
+          "iqr": 32.0,
+          "min": 5080,
+          "max": 5132
+        },
+        "cold_loadEventMs": {
+          "n": 5,
+          "median": 10575,
+          "iqr": 69.40000000000146,
+          "min": 10567.899999999994,
+          "max": 10674.5
+        },
+        "warm_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 384,
+          "iqr": 32.0,
+          "min": 376,
+          "max": 416
+        },
+        "warm_loadEventMs": {
+          "n": 5,
+          "median": 668.6000000000058,
+          "iqr": 33.84999999999127,
+          "min": 647,
+          "max": 687.3999999999942
+        }
+      },
+      "candidate": {
+        "calculationToFrameMs": {
+          "n": 60,
+          "median": 102.75,
+          "iqr": 37.55000000000291,
+          "min": 34.5,
+          "max": 173
+        },
+        "localeToFrameMs": {
+          "n": 60,
+          "median": 281.6499999999796,
+          "iqr": 57.750000000007276,
+          "min": 199.09999999999127,
+          "max": 423.79999999998836
+        },
+        "cold_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 5108,
+          "iqr": 28.0,
+          "min": 5096,
+          "max": 5132
+        },
+        "cold_loadEventMs": {
+          "n": 5,
+          "median": 10631.400000000023,
+          "iqr": 29.499999999992724,
+          "min": 10612.699999999997,
+          "max": 10656
+        },
+        "warm_firstContentfulPaintMs": {
+          "n": 5,
+          "median": 380,
+          "iqr": 16.0,
+          "min": 364,
+          "max": 392
+        },
+        "warm_loadEventMs": {
+          "n": 5,
+          "median": 664,
+          "iqr": 46.94999999998254,
+          "min": 617.8000000000029,
+          "max": 684.3999999999942
+        }
+      }
+    }
+  ]
+}
