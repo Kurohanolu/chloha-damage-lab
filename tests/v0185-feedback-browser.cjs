@@ -18,7 +18,11 @@ async function newPage(browser,app,locale='en',options={}){
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(app.origin+'/',{waitUntil:'domcontentloaded'});await page.locator('#feedbackButton').waitFor();
  return {page,context,errors};
 }
-const key=(page,name)=>page.evaluate(name=>window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),name),name);
+const key=(page,name)=>page.evaluate(name=>{
+ const text=window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),name);
+ const release=window.ChlohaFeedbackRelease.identify(document.title);
+ return ['descriptionHelp','tooLong'].includes(name)?text.replace(/5000/g,String(5000-release.prefix.length)):text;
+},name);
 async function textEquals(page,id,name){assert.equal(await page.locator(id).textContent(),await key(page,name));}
 const calculation=page=>page.evaluate(()=>JSON.stringify(window.ChlohaLastCalculation));
 async function open(page){await page.locator('#feedbackButton').click();await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled);}
@@ -36,7 +40,11 @@ async function fill(page){await page.selectOption('#feedbackCategory','bug');awa
      const background=luminance(getComputedStyle(document.getElementById('feedbackPanel')).backgroundColor);
      return ['feedbackTitle','feedbackDescriptionHelp','feedbackPrivacy','feedbackCategory','feedbackPreview'].map(id=>{const style=getComputedStyle(document.getElementById(id)),foreground=luminance(style.color);let bg=background;if(style.backgroundColor!=='rgba(0, 0, 0, 0)')bg=luminance(style.backgroundColor);return {id,ratio:(Math.max(foreground,bg)+0.05)/(Math.min(foreground,bg)+0.05)};});
     });assert.ok(contrasts.every(c=>c.ratio>=4.5),JSON.stringify(contrasts));
-    const mismatches=await page.evaluate(()=>[...document.querySelectorAll('#feedbackPanel [data-fb]')].filter(n=>n.id!=='feedbackSubmit').map(n=>({key:n.dataset.fb,actual:n.textContent,expected:window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),n.dataset.fb)})).filter(x=>x.actual!==x.expected));assert.deepEqual(mismatches,[],locale);
+    const reportRelease=await page.evaluate(()=>window.ChlohaFeedbackRelease.identify(document.title));
+    assert.equal(reportRelease.descriptionLimit,5000-reportRelease.prefix.length);
+    assert.equal(await page.locator('#feedbackDescription').getAttribute('maxlength'),String(reportRelease.descriptionLimit));
+    const translated=await page.evaluate(()=>[...document.querySelectorAll('#feedbackPanel [data-fb]')].filter(n=>n.id!=='feedbackSubmit').map(n=>({key:n.dataset.fb,actual:n.textContent,expected:window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),n.dataset.fb)})));
+    const mismatches=translated.map(entry=>({...entry,expected:['descriptionHelp','tooLong'].includes(entry.key)?entry.expected.replace(/5000/g,String(reportRelease.descriptionLimit)):entry.expected})).filter(entry=>entry.actual!==entry.expected);assert.deepEqual(mismatches,[],locale);
     await page.click('#feedbackSubmit');await textEquals(page,'#feedbackErrors','requiredCategory');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.click('#feedbackSubmit');await textEquals(page,'#feedbackErrors','requiredDescription');
     await page.fill('#feedbackDescription','Synthetic calculation report '+locale);await page.fill('#feedbackEmail','invalid');await page.click('#feedbackSubmit');await textEquals(page,'#feedbackErrors','emailError');await page.fill('#feedbackEmail','');
@@ -60,6 +68,8 @@ async function fill(page){await page.selectOption('#feedbackCategory','bug');awa
     // Language changes also preserve a pending draft and localize the eventual success.
     await page.selectOption('#chloha-locale',other);await page.waitForFunction(()=>document.getElementById('feedbackStatus').textContent.includes(window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),'success')));
     assert.equal(posts,1);assert.equal(app.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,1);assert.equal(payload.email,'');assert.deepEqual(payload.snapshot,JSON.parse(preview));assert.equal(await calculation(page),stableCalculation);
+    assert.equal(payload.appVersion,reportRelease.wireVersion);assert.equal(payload.description,reportRelease.prefix+description.trim());
+    const stored=app.db.sqlite.prepare('SELECT app_version,description FROM reports').get();assert.equal(stored.app_version,reportRelease.wireVersion);assert.equal(stored.description,payload.description);
     await page.selectOption('#chloha-locale',locale);assert.ok((await page.locator('#feedbackStatus').textContent()).startsWith(await key(page,'success')));assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No mobile horizontal overflow');
     if(['ja','en'].includes(locale))await page.locator('#feedbackPanel').screenshot({path:'test-results/feedback-'+locale+'.png'});

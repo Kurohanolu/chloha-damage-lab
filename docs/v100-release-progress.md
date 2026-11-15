@@ -24,3 +24,9 @@ Independent preliminary review SOL-V100-01 found a Medium publication timing iss
 Fix this candidate's commit/tree, run all exact-SHA workflows and inspect every important step/artifact. Obtain the actual6.1Sol report. Follow the [promotion/recovery runbook](v100-promotion-runbook.md): reviewed R → approved A → actual deployment/acceptance → receipt-bound B → final main/source, public acceptance and immutable stable tag/Release. After each stage, record exact source/tree, CI URLs, target deployment run and outstanding work in GitHub. Never reuse an earlier SHA's PASS as later-source evidence.
 
 Known limitations remain explicit: current Cloudflare management/D1 linkage, physical devices/game hardware, native screen reader/OS IME, exhaustive linguistic review, finite memory observation and declared unsupported/partial Champions mechanics. The final report will distinguish each scope and preserve the owner-authorized conditional disposition.
+
+## First fixed candidate and CI correction
+
+Candidate `45cbeb5ccb06b68c1f358616422111e5dc620a93` (tree `bf9ad1dcefa4eae6cd56de10dd384402601bc866`) started all eleven required workflows. The new stable suite passed, but the existing v0.185 feedback browser test still expected the pre-adapter 5000-character help text. The actual stable UI correctly subtracts the31-character exact-version prefix, leaving4969 user characters. The same old browser test blocked v0.185 and v0.186 workflows; this candidate is not a release PASS.
+
+The correction retains all dictionary/locale and original browser-flow assertions, derives the exact release-specific budget and additionally checks the transmitted and stored full-version prefix, original description and wire version. No runtime or calculation code changes. All workflows and the independent review must use the new corrected candidate; earlier greens are diagnostic only.
