@@ -8,6 +8,14 @@ async function set(page,id,value){await page.evaluate(({id,value})=>{const el=do
 const numeric=page=>page.evaluate(()=>JSON.stringify({a:window.ChlohaLastCalculation.a,r:window.ChlohaLastCalculation.r}));
 const fbText=(page,key)=>page.evaluate(key=>window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),key),key);
 async function expectError(page,key){await page.waitForFunction(()=>!document.getElementById('feedbackErrors').hidden);assert.equal(await page.locator('#feedbackErrors').textContent(),await fbText(page,key));}
+async function heartbeat(page){
+ let timer;
+ try{await Promise.race([(async()=>{
+  await page.evaluate(()=>{window.__v0188Heartbeat=false;setTimeout(()=>{window.__v0188Heartbeat=true;},0);});
+  await page.waitForFunction(()=>window.__v0188Heartbeat===true,null,{timeout:2000});
+ })(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Browser main thread starved after locale/species interaction')),5000);})]);}
+ finally{clearTimeout(timer);}
+}
 (async()=>{
  const {startLocalApp}=await import('../services/feedback/test/harness.mjs');
  const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
@@ -21,6 +29,22 @@ async function expectError(page,key){await page.waitForFunction(()=>!document.ge
    try{
     await page.goto(app.origin+'/');await ready(page);
     if(locale==='en'){
+     const expectedBySpecies=new Map();
+     for(const language of locales){
+      await page.selectOption('#chloha-locale',language);
+      for(const record of reference.cases.filter(r=>r.category==='pokemon')){
+       await page.fill('#attSearch',record.names[language]);
+       await page.locator('#attSuggestions [role=option][aria-label='+JSON.stringify(record.names[language])+']').first().click();
+       assert.equal(await page.locator('#dbAttPokemon').inputValue(),record.uiValue);
+       await page.waitForFunction(()=>document.getElementById('dbStatus').hasAttribute('data-no-translate'));
+       const value=await numeric(page);
+       if(expectedBySpecies.has(record.key))assert.equal(value,expectedBySpecies.get(record.key),'locale/species stress preserves numbers: '+language+'/'+record.key);else expectedBySpecies.set(record.key,value);
+       // A timer must run after the real user interaction; competing mutation
+       // observers must not monopolize the browser's microtask queue.
+       await heartbeat(page);
+      }
+     }
+     await page.selectOption('#chloha-locale','en');
      await page.fill('#attSearch','Charizard');await page.locator('#attSuggestions [role=option][aria-label="Charizard"]').first().click();
      await page.fill('#moveSearch','Earthquake');await page.locator('#moveSuggestions [role=option]').filter({hasText:'Earthquake'}).first().click();
      const charizard=await numeric(page);
@@ -71,6 +95,8 @@ async function expectError(page,key){await page.waitForFunction(()=>!document.ge
     await page.reload();await ready(page);assert.equal(await page.locator('#chloha-locale').inputValue(),locale);assert.equal(await numeric(page),before,'nine-language restored calculation: '+locale);
     await set(page,'att-attack-points',33);
     await page.waitForFunction(()=>document.getElementById('error').textContent===window.ChlohaLocaleQuality.errorText(window.ChlohaLocale.get(),'invalidStats'));
+    assert.equal(await page.locator('#error').getAttribute('data-no-translate'),'');
+    assert.equal(await page.locator('#dbStatus').getAttribute('data-no-translate'),'');
     assert.equal(await page.locator('#output').isVisible(),false,'invalid points must not display stale damage');evidence.allocationErrorLocales++;
     await set(page,'att-attack-points',20);await ready(page);assert.equal(await numeric(page),before);
     const spitName=await page.evaluate(()=>window.ChlohaLocalizedNames?.moves?.['はきだす']?.[window.ChlohaLocale.get()]||window.ChlohaPokeAPILocalizedNames?.moves?.['はきだす']?.[window.ChlohaLocale.get()]);

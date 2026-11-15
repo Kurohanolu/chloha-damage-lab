@@ -39,6 +39,18 @@
  globalThis.ChlohaLocaleQuality=api;
  if(typeof module!=='undefined'&&module.exports)module.exports=api;
  if(!globalThis.document)return;
+ const owned=new WeakSet();
+ function own(node){
+  if(!node.hasAttribute('data-no-translate')){node.setAttribute('data-no-translate','');owned.add(node);}
+ }
+ function delegate(node){
+  if(!owned.has(node))return;
+  owned.delete(node);node.removeAttribute('data-no-translate');
+  // A previous owned state can suppress the legacy observer's first pass after
+  // the calculator replaces its text. Delegate the new raw message explicitly.
+  const next=globalThis.ChlohaLocale?.text?.(node.textContent);
+  if(typeof next==='string'&&next!==node.textContent)node.textContent=next;
+ }
  function render(){
   const locale=language(globalThis.ChlohaLocale?.get?.()),panel=document.getElementById('spitUpPanel');
   if(panel){
@@ -50,7 +62,8 @@
    set(panel.querySelector('#spitUpPowerNote'),copy.power);
   }
   for(const id of ['error','dbStatus']){
-   const node=document.getElementById(id);if(!node)continue;const kind=errorKind(node.textContent);if(!kind)continue;
+   const node=document.getElementById(id);if(!node)continue;const kind=errorKind(node.textContent);if(!kind){if(id==='error')delegate(node);continue;}
+   own(node);
    const next=(id==='dbStatus'?words[locale].error:'')+words[locale][kind];if(node.textContent!==next)node.textContent=next;
   }
   const status=document.getElementById('dbStatus');
@@ -61,8 +74,8 @@
    const canonical=moves.find(move=>move.id===selected('dbMove'))?.name;
    const names={attacker:species('dbAttPokemon','attPortrait'),defender:species('dbDefPokemon','defPortrait'),move:locale==='ja'?canonical:canonical?moveName(canonical,locale):null};
    const next=summary(status.textContent,names,locale);
-   if(next!==null&&status.textContent!==next)status.textContent=next;
-  }
+   if(next!==null){own(status);if(status.textContent!==next)status.textContent=next;}else if(!errorKind(status.textContent))delegate(status);
+  }else if(status&&!errorKind(status.textContent))delegate(status);
  }
  let queued=false;
  const schedule=()=>{if(!queued){queued=true;queueMicrotask(()=>{queued=false;render();});}};

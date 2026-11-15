@@ -18,6 +18,8 @@ async function restoreEqual(page,label){await saved(page);const before=await sna
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await context.route('**/*',r=>new URL(r.request().url()).origin===origin?r.continue():r.abort());
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(origin+'/singularity/');await ready(page);
   const defaults=await page.evaluate(()=>window.ChlohaPersistence.capture());
+  const unchangedWrites=await page.evaluate(async()=>{let mutations=0;const observer=new MutationObserver(records=>mutations+=records.length);observer.observe(document.getElementById('calculatorStorage'),{childList:true,subtree:true,characterData:true});for(let i=0;i<3;i++)window.ChlohaPersistence.save();await Promise.resolve();observer.disconnect();return mutations;});
+  assert.equal(unchangedWrites,0,'saving unchanged state must not rerender storage UI or trigger translation work');
   for(const locale of LOCALES){
    await page.locator('#chloha-locale').selectOption(locale);
    for(const [id,value] of Object.entries({'att-attack-points':20,'att-specialDefense-points':12,'att-hp-points':6,'def-defense-points':17,'def-specialDefense-points':13,'def-speed-points':2,weather:'rain',terrain:'grassy',screen:'reflect',critical:true,attackStage:2,attItem:'lifeOrb',currentHp:50,attCurrentHp:70}))await set(page,id,value);

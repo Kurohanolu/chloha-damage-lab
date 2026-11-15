@@ -31,6 +31,14 @@ const {chromium}=require('playwright');
   assert.equal(await page.locator('#attPortrait').getAttribute('alt'),'Bild von Despotar');
   const missing=await page.evaluate(()=>{const saved=window.ChlohaLocalePokemonName;window.ChlohaLocalePokemonName=()=>null;window.SingularityPortraitAlt.refresh();const alt=document.getElementById('attPortrait').alt;window.ChlohaLocalePokemonName=saved;window.SingularityPortraitAlt.refresh();return alt;});
   assert.equal(missing,'Pokémon-Bild (Name in der ausgewählten Sprache nicht verfügbar)');
+  const mutations=await page.evaluate(async()=>{
+   const img=document.getElementById('attPortrait');let count=0;
+   const observer=new MutationObserver(records=>count+=records.length);
+   observer.observe(img,{attributes:true,attributeFilter:['alt','data-pokemon','data-pokemon-ja']});
+   for(let i=0;i<20;i++)window.SingularityPortraitAlt.update(img,{id:'tyranitar',name:'バンギラス'});
+   await Promise.resolve();observer.disconnect();return count;
+  });
+  assert.equal(mutations,0,'unchanged calculation refreshes do not enqueue portrait mutations');
   assert.deepEqual(errors,[],'no browser errors');
   console.log('PASS v0.188 portrait alt browser: nine languages, accessible image name, same-species switching, reload and unavailable translations');
  }finally{await browser.close();}

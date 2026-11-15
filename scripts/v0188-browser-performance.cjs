@@ -1,6 +1,7 @@
 'use strict';
 // Same-machine synthetic comparison, not a measurement of the production CDN or real phones.
 const fs=require('node:fs'),os=require('node:os'),assert=require('node:assert/strict');
+const {execFileSync}=require('node:child_process');
 const {startLab,launchBrowser,ready,blockExternal}=require('../tests/helpers/v0188-browser-lab.cjs');
 const samples=Number(process.env.V0188_PERF_SAMPLES||5);
 assert.ok(Number.isInteger(samples)&&samples>=3&&samples<=20,'use 3 to20 independent samples');
@@ -27,7 +28,7 @@ async function operations(page){
 }
 async function heap(cdp){const m=await cdp.send('Performance.getMetrics');return Object.fromEntries(m.metrics.filter(x=>['JSHeapUsedSize','JSHeapTotalSize','Nodes','Documents','LayoutCount','RecalcStyleCount'].includes(x.name)).map(x=>[x.name,x.value]));}
 (async()=>{
- const lab=await startLab({compare:true}),evidence={measuredAt:new Date().toISOString(),mode:'loopback Chromium emulation',baselineCommit:lab.baseline,candidateCommit:'working tree at invocation',realDevice:false,productionRequests:0,conditions:{node:process.version,platform:process.platform,arch:process.arch,cpu:os.cpus()[0]?.model,logicalCPUs:os.cpus().length,samplesPerVersionPerProfile:samples,operationSamplesPerNavigation:12,cachePolicy:'same local server max-age=600 and ETag',network:'loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown',thirdParty:'HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted',order:'alternating baseline/candidate between rounds'},profiles:[]};let browser;
+ const lab=await startLab({compare:true}),evidence={measuredAt:new Date().toISOString(),mode:'loopback Chromium emulation',baselineCommit:lab.baseline,candidateRevision:{commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),dirty:!!execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim()},realDevice:false,productionRequests:0,conditions:{node:process.version,platform:process.platform,arch:process.arch,cpu:os.cpus()[0]?.model,logicalCPUs:os.cpus().length,samplesPerVersionPerProfile:samples,operationSamplesPerNavigation:12,cachePolicy:'same local server max-age=600 and ETag',network:'loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown',thirdParty:'HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted',order:'alternating baseline/candidate between rounds'},profiles:[]};let browser;
  fs.mkdirSync('reports/v0188',{recursive:true});
  try{
   browser=await launchBrowser();evidence.browser=browser.version();
@@ -50,7 +51,7 @@ async function heap(cdp){const m=await cdp.send('Performance.getMetrics');return
    }
    evidence.profiles.push({profile,...runs,summary});
   }
-  console.log(JSON.stringify({mode:evidence.mode,profiles:evidence.profiles.map(x=>({profile:x.profile,summary:x.summary})),evidence:'reports/v0188/browser-performance.json'},null,2));
+  console.log(JSON.stringify({mode:evidence.mode,browser:evidence.browser,baselineCommit:evidence.baselineCommit,candidateRevision:evidence.candidateRevision,conditions:evidence.conditions,profiles:evidence.profiles.map(x=>({profile:x.profile,summary:x.summary})),evidence:'reports/v0188/browser-performance.json'},null,2));
  }catch(error){evidence.failure=error.message;throw error;}
  finally{fs.writeFileSync('reports/v0188/browser-performance.json',JSON.stringify(evidence,null,2)+'\n');await browser?.close();await lab.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

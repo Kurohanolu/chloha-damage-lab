@@ -8,6 +8,7 @@ permissions:
   contents: read
 env:
   WRANGLER_SEND_METRICS: 'false'
+  PYTHONDONTWRITEBYTECODE: '1'
 jobs:
   quality-candidate:
     runs-on: ubuntu-24.04
@@ -49,7 +50,9 @@ jobs:
         run: node scripts/v0188-public-performance.cjs
       - name: Build candidate assets without deployment
         if: ${{ !cancelled() }}
-        run: node scripts/v0187-build-sites.cjs --output dist/v0188
+        run: |
+          node -e "if(require('child_process').execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim())throw Error('Candidate source must be clean before artifact generation')"
+          node scripts/v0187-build-sites.cjs --output dist/v0188
       - uses: actions/upload-artifact@v4
         if: always()
         with:

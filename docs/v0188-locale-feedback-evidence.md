@@ -42,6 +42,8 @@ The first candidate CI also exposed a latent summary-translation gap after persi
 
 The first added browser-test run failed because its native-ability setup asked Tyranitar to expose Intimidate/Levitate. The setup now selects the appropriate species through localized defender search (Gyarados/Hydreigon) before checking those options. The requested value is explicitly asserted rather than silently becoming an empty selection. Spit Up is selected through its actual localized search result and canonical value is asserted.
 
+A later browser trial exposed timeouts after locale/species updates, consistent with the new summary observer and legacy translator competing over the same node. Recognized canonical summaries and allocation errors now have a single UI writer through scoped translation exclusion. Only exclusions installed by this module are removed when an unrecognized message is delegated back to the legacy translator. A nine-language, two-species real-search/click stress sequence checks numeric parity and a post-interaction timer; a host-side five-second deadline bounds the heartbeat probe, in addition to Playwright's bounded action timeouts. Pending CI, this is a corrective implementation, not a claimed successful browser result.
+
 ## Real-service boundary
 
 Read-only readiness verified public configuration, production-enabled intake without known Turnstile test keys, retention=90, exact frontend CORS origin, no-store, denial of anonymous access to three administrator endpoints, and absence of a public reports listing.

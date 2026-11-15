@@ -30,9 +30,13 @@
   return typeof name==='string'&&name.trim()?descriptions[code](name):unavailable[code];
  }
  function update(img,pokemon){
-  if(pokemon){img.dataset.pokemon=pokemon.id;img.dataset.pokemonJa=pokemon.name;}
+  if(pokemon){
+   if(img.dataset.pokemon!==pokemon.id)img.dataset.pokemon=pokemon.id;
+   if(img.dataset.pokemonJa!==pokemon.name)img.dataset.pokemonJa=pokemon.name;
+  }
   const locale=root.ChlohaLocale?.get?.()||'ja';
-  img.alt=describe(img.dataset.pokemon,img.dataset.pokemonJa,locale,root.ChlohaLocalePokemonName);
+  const description=describe(img.dataset.pokemon,img.dataset.pokemonJa,locale,root.ChlohaLocalePokemonName);
+  if(img.alt!==description)img.alt=description;
  }
  function refresh(){
   for(const img of root.document?.querySelectorAll('#attPortrait,#defPortrait')||[])update(img);

@@ -53,7 +53,7 @@ async function operations(page){
    for(const cache of ['cold','warm'])summary[cache]=Object.fromEntries(['document','javascript','css','images','allResources'].map(kind=>[kind,{transferBytesMedian:median(samples.map(x=>x[cache][kind].transferBytes)),decodedBytesMedian:median(samples.map(x=>x[cache][kind].decodedBytes))}]));
    evidence.profiles.push({profile,samples,summary});
   }
-  console.log(JSON.stringify({mode:evidence.mode,target,realDevice:false,productionMutations:0,samplesPerProfile:3,profiles:evidence.profiles.map(x=>({profile:x.profile,summary:x.summary})),conditions:evidence.conditions,evidence:'reports/v0188/public-performance.json'},null,2));
+  console.log(JSON.stringify({mode:evidence.mode,browser:evidence.browser,target,realDevice:false,productionMutations:0,samplesPerProfile:3,profiles:evidence.profiles.map(x=>({profile:x.profile,summary:x.summary})),conditions:evidence.conditions,evidence:'reports/v0188/public-performance.json'},null,2));
  }catch(error){evidence.failure=error.message;throw error;}
  finally{fs.writeFileSync('reports/v0188/public-performance.json',JSON.stringify(evidence,null,2)+'\n');await browser?.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

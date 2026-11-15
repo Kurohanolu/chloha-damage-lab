@@ -27,4 +27,15 @@ assert.equal(portraits[0].alt,'Bild von Despotar','species change uses canonical
 // Reinitializing under an already-restored locale also updates initial portraits.
 locale='fr';vm.runInNewContext(read('portrait-alt-v0188.js'),{window:root,MutationObserver:class{observe(){}}});
 assert.equal(portraits[0].alt,'Image de Tyranocif');
+// Repeated calculations with the same portraits must not enqueue attribute observers.
+let writes=0,alt='';
+const stableImage={dataset:new Proxy({},{set(target,key,value){writes++;target[key]=value;return true;}}),get alt(){return alt;},set alt(value){writes++;alt=value;}};
+root.SingularityPortraitAlt.update(stableImage,{id:'garchomp',name:'ガブリアス'});
+assert.equal(writes,3,'initial canonical metadata and translated alt');
+writes=0;
+for(let i=0;i<20;i++)root.SingularityPortraitAlt.update(stableImage,{id:'garchomp',name:'ガブリアス'});
+assert.equal(writes,0,'unchanged calculations do not rewrite portrait attributes');
+locale='de';root.SingularityPortraitAlt.update(stableImage,{id:'garchomp',name:'ガブリアス'});
+assert.equal(writes,1,'language change writes only the translated alt');
+assert.equal(stableImage.alt,'Bild von Knakrack');
 console.log('PASS v0.188 portrait alt: canonical nine-language names, locale events, species switch, restored locale and explicit missing names');

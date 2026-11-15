@@ -70,7 +70,8 @@
   const message=doc.createElement('small');message.id='calculatorStorageStatus';message.setAttribute('role','status');
   button.setAttribute('aria-describedby',description.id);box.append(button,description,message);el('resetBoard').closest('.board-quick').after(box);
   const copy=()=>COPY[root.ChlohaLocale?.get?.()||'ja']||COPY.en;
-  function localize(){const c=copy();button.textContent=c[0];description.textContent=c[1];message.textContent=failed?c[3]:lastMessage==='reset'?c[2]:'';}
+  const putText=(node,value)=>{if(node.textContent!==value)node.textContent=value;};
+  function localize(){const c=copy();putText(button,c[0]);putText(description,c[1]);putText(message,failed?c[3]:lastMessage==='reset'?c[2]:'');}
   function storageError(){failed=true;localize();}
   const capture=()=>({controls:Object.fromEntries(IDS.map(id=>[id,el(id).type==='checkbox'?el(id).checked:el(id).value])),...ui.persistenceState()});
   const defaults=capture();
