@@ -10,7 +10,7 @@ The acceptance suite now requires twelve files, adding `v110-owner-capture-contr
 
 Regional browser coverage adds Electrocañón, Fuerza Psíquica and Esquirla Helada, including uppercase/accent-stripped queries, for 29 catalog queries and 20 planned browser cases. The immutable ES dictionary is the source of the Spain-name expectations. The existing 110 rotating transitions, reload/state checks, ten-language numeric and feedback checks, original-nine regressions and local Worker checks remain active.
 
-**Exact-head CI: pending the source-data candidate run.** No prior PASS is carried forward. The current source commit and workflow conclusions will be bound after GitHub Actions completes; production changes remain prohibited. The [capture audit](v110-es-la-capture-audit.md) records the final coverage changes and privacy limits.
+**Source-data candidate CI: PASS for `9560399385349d0f62cba57a96c146bc08b7663b`.** All 13 workflows completed successfully. The [ES-LA acceptance run](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43736481172) passed all twelve candidate acceptance files, existing nine-language transitions/state/mobile checks, local Worker validation and unpublished packaging. The [API receipt](evidence/v110-owner-captures/ci-receipt.json) binds the workflow and step conclusions to that exact source commit. Local source, owner-capture, ten-locale, dynamic UI and 4,520-comparison numeric checks were also rerun successfully. The subsequent receipt/review documentation commit is not itself represented as this tested source commit; production changes remain prohibited. The [capture audit](v110-es-la-capture-audit.md) records the final coverage changes and privacy limits.
 
 ## Historical implementation acceptance
 

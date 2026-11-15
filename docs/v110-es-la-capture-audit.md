@@ -8,7 +8,7 @@ The owner identifies the captures as ES-LA; their regional vocabulary is consist
 
 The original images remain private. No image, image derivative, Library identifier, access token, private download link or player name is copied into this repository. The public evidence consists of readable terminology, canonical identity anchors, original filename, SHA-256 and this audit trail. Source URLs pointing here identify the public attestation document, not a publicly accessible original image.
 
-Primary evidence is the official game's displayed text, supplied by the owner and independently inspected by the implementation and Sol reviewers. `official` / `officialChampions` apply only to terms with a secure canonical identity. This verifies names, not calculation support, damage values, game availability for the entire roster, or the correctness of all application UI copy.
+Primary evidence is the official game's displayed text, supplied by the owner. The implementation review and the earlier [Sol visual transcription](evidence/v110-owner-captures/independent-transcription.md) record inspection of the originals. The subsequent [Sol code/data review](evidence/v110/sol-owner-capture-review.md) did not have the originals and does not constitute another image inspection. `official` / `officialChampions` apply only to terms with a secure canonical identity. This verifies names, not calculation support, damage values, game availability for the entire roster, or the correctness of all application UI copy.
 
 ## Decisions from direct inspection
 
