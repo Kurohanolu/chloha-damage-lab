@@ -30,3 +30,12 @@ Known limitations remain explicit: current Cloudflare management/D1 linkage, phy
 Candidate `45cbeb5ccb06b68c1f358616422111e5dc620a93` (tree `bf9ad1dcefa4eae6cd56de10dd384402601bc866`) started all eleven required workflows. The new stable suite passed, but the existing v0.185 feedback browser test still expected the pre-adapter 5000-character help text. The actual stable UI correctly subtracts the31-character exact-version prefix, leaving4969 user characters. The same old browser test blocked v0.185 and v0.186 workflows; this candidate is not a release PASS.
 
 The correction retains all dictionary/locale and original browser-flow assertions, derives the exact release-specific budget and additionally checks the transmitted and stored full-version prefix, original description and wire version. No runtime or calculation code changes. All workflows and the independent review must use the new corrected candidate; earlier greens are diagnostic only.
+
+
+## Approved pre-acceptance stage A prepared
+
+R2 `b5ea506af27487a05cc7fbdc11371ac47778b06a`, tree `1e4d0d54c2013b22db3e15db144f8998cab1adfd`, now has all eleven latest required workflows successful. The immutable Sol report and independently retrieved CI/artifact proofs are included; the owner publication delegation is bound in `docs/v100-owner-approval.json` and explained in `docs/v100-owner-decision.md`. Only release.json and documentation differ from R2. Live acceptance remains false.
+
+Prepared target workflow branch `audit/v100-publication`, commit `a63d2bd05a076da5b7a88316b83840269baeb1be`, is byte-identical to the reviewed source template; target main remains `b30c0f1863f3262574cf5365721be87c42ffa3e9`. Source Pages Settings directly confirms pages-legacy/root; Cloudflare management is unavailable behind the normal sign-in wall. No deployment, new tag or Release has occurred.
+
+Resume: retrieve this A commit from PR #67, verify fresh A CI, adopt the reviewed target workflow, dispatch exact A, record actual complete public acceptance, create B acceptance metadata, run B CI and actual v1 live browser acceptance, then merge and publish under the immutable publisher gates.
