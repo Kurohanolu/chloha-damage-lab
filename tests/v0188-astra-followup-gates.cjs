@@ -8,7 +8,8 @@ const {publishedCommit,publishedTree,publishedRelease,verifyFollowupDraft}=requi
 const current=require('../release.json'),published=publishedRelease();
 assert.equal(publishedCommit,'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7');
 assert.equal(publishedTree,'cf7af9334261b0cfbbde45929da9d217445fe526');
-assert.equal(current.tag,published.tag,'The existing immutable release identity must not be reassigned');
+assert.equal(current.tag,'v0.188-pre.2','The unpublished candidate must have a distinct identity');
+assert.equal(published.tag,'v0.188-pre.1','The historical release identity remains unchanged');
 assert.deepEqual(verifyFollowupDraft(current),published);
 assert.equal(require('./helpers/v0188-browser-lab.cjs').baseline,publishedCommit,'Same-run follow-up performance must compare the already published v0.188 source');
 for(const verify of [verifyCutoverApproval,verifyQualityApproval,verifyPublication]){
@@ -28,10 +29,10 @@ for(const mutate of [
  r=>{r.followupAudit.auditStatus='passed';},
  r=>{r.followupAudit.ownerApproval='approved';},
  r=>{r.followupAudit.extra='unexpected';},
- r=>{r.qualityReview.ownerApproval='pending';},
+ r=>{r.qualityReview.ownerApproval='approved';},
  r=>{r.qualityReview.reviewedSourceCommit='0'.repeat(40);},
  r=>{r.migration.liveTargetVerified=true;},
- r=>{r.preRelease=2;},
+ r=>{r.preRelease=1;},
  r=>{r.extra='unexpected';}
 ]){
  const bad=structuredClone(current);mutate(bad);

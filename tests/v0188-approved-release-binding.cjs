@@ -3,9 +3,10 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require(
 const {dependencies}=require('../scripts/v0187-build-sites.cjs');
 const {verifyCutoverApproval,verifyPublication}=require('../scripts/verify-publication-approval.cjs');
 const current=JSON.parse(fs.readFileSync('release.json'));
-const {publishedCommit,hasFollowup,verifyFollowupDraft}=require('../scripts/helpers/v0188-followup-review.cjs');
-const followup=hasFollowup(current),r=followup?verifyFollowupDraft(current):current;
-const read=file=>followup?execFileSync('git',['show',publishedCommit+':'+file],{maxBuffer:16*1024*1024}):fs.readFileSync(file);
+const {publishedCommit,hasFollowup,publishedRelease,verifyFollowupDraft}=require('../scripts/helpers/v0188-followup-review.cjs');
+const followup=hasFollowup(current),historical=followup||current.tag==='v0.188-pre.2',r=historical?publishedRelease():current;
+if(followup)verifyFollowupDraft(current);
+const read=file=>historical?execFileSync('git',['show',publishedCommit+':'+file],{maxBuffer:16*1024*1024}):fs.readFileSync(file);
 const q=r.qualityReview,hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 assert.equal(q.auditOutcome,'conditional-pass');
 assert.equal(q.conditionsDisposition,'accepted-by-owner');
@@ -34,4 +35,11 @@ if(followup){
  assert.equal(hash(fs.readFileSync(r.qualityReview.evidence)),r.qualityReview.auditReportSha256,'Historical independent evidence stays unchanged in the follow-up source');
  assert.equal(fs.readFileSync(r.qualityReview.ownerEvidence,'utf8'),read(r.qualityReview.ownerEvidence).toString(),'Historical owner decision stays unchanged');
  console.log('PASS follow-up draft is blocked from deployment/publication; historical 42-file approval remains independently bound');
+}
+
+// Historical approval remains checked above; actual pre.2 approval is checked
+// by the same file/Git binding helper used by target deployment and publication.
+if(!followup&&current.tag==='v0.188-pre.2'){
+ verifyCutoverApproval(current);
+ console.log('PASS pre.2 actual Sol report, structured owner receipt and all protected source bindings');
 }

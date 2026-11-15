@@ -1,9 +1,9 @@
 {
   "version": "0.188",
-  "preRelease": 1,
-  "tag": "v0.188-pre.1",
-  "name": "Singularity v0.188 Pre-Release 1",
-  "notes": "docs/releases/v0.188-pre.1.md",
+  "preRelease": 2,
+  "tag": "v0.188-pre.2",
+  "name": "Singularity v0.188 Pre-Release 2",
+  "notes": "docs/releases/v0.188-pre.2.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -15,37 +15,33 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "approved",
+    "status": "awaiting-owner-approval",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": false,
-    "liveAcceptanceSourceCommit": "aaba89a4d45191e45df351adbbd2227fa36ce30a",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43679976219",
-    "liveAcceptanceEvidence": "docs/v0188-live-acceptance.md",
-    "liveAcceptanceObservedAtJST": "2026-11-15T14:14:00.377520+09:00"
+    "liveTargetVerified": false
   },
   "qualityReview": {
-    "releaseTag": "v0.188-pre.1",
-    "auditor": "6.1 Terra",
-    "auditStatus": "passed",
-    "ownerApproval": "approved",
-    "evidence": "docs/v0188-independent-reaudit.md",
-    "auditOutcome": "conditional-pass",
-    "conditionsDisposition": "accepted-by-owner",
-    "reviewedSourceCommit": "64adc9eea8927fc72dbcb8cc1d5402b4917dff78",
-    "reviewedTree": "543fd64c78e775352a858939534419dacdc4180b",
-    "auditReportSha256": "8de7f3f01b3a17c8f73646476a1283ef13c20811f3f11e9e5042612b1ab4251d",
-    "ownerEvidence": "docs/v0188-owner-approval.md",
-    "ownerRecordedAtJST": "2026-11-15T13:58:51.800817+09:00"
+    "releaseTag": "v0.188-pre.2",
+    "auditor": "6.1 Sol",
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "evidence": "",
+    "auditOutcome": "pending",
+    "conditionsDisposition": "pending",
+    "reviewedSourceCommit": null,
+    "reviewedTree": null,
+    "auditReportSha256": null,
+    "ownerEvidence": "",
+    "ownerRecordedAtJST": null
   },
   "followupAudit": {
     "status": "draft",
     "baseCommit": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
     "baseTree": "cf7af9334261b0cfbbde45929da9d217445fe526",
-    "auditor": "6.1 Terra",
+    "auditor": "6.1 Sol",
     "auditStatus": "pending",
     "ownerApproval": "pending"
   }
