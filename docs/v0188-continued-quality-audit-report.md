@@ -1,52 +1,129 @@
 # Singularity v0.188 Continued Quality Audit Report
 
-Status: INCOMPLETE — candidate corrections implemented; final CI, same-run performance and independent Sol conclusion pending. This is a development assessment, not owner approval or a publication decision.
+監査日：2026年11月15日（JST）。開発監査と修正、独立検証、公開判断を分離する。
 
-## Exact baseline and continuation
+## 判定
 
-Published v0.188 Pre-Release1: `4f068544e670a85a6a4d34dd2c26e2be66bd9cb7`, tree `cf7af9334261b0cfbbde45929da9d217445fe526`. Existing draft PR67 input: `8b37bddbb236fa1b7fbd13a7b2cebd1518995437`, tree `e2ca5d4c2ce0cbbfae36b58f1d27b0fb4f0c3b3d`. Current remote baseline snapshot: `a866b98068443bf27198071a82e2737633b3aec7`, branch `audit/v0188-continued-baseline`. New corrections reuse PR67. Start-state evidence records actual main Actions, release metadata/digest and publisher main.
+**開発担当の総合暫定評価：INCOMPLETE。** Cloudflare管理設定、実機、ネイティブ読み上げなどの未検証事項が残るため、製品・本番環境全体の認証は完了としていない。
 
-Prior M-01/L-01 and PR67 A-S01/UI-01/CF-01 changes were read and retained. Existing Terra reviews remain immutable historical evidence. This round specifically appoints6.1Sol for independent review.
+**Solの独立判定：最終候補の修正・実証された回帰動作・成果物整合性・公開阻止はPASS。** レビュー範囲に未解消の確定したソース不具合は残っていない。Solが独立に発見したSOL-01／SOL-02も修正後の最終成果物まで確認した。[独立レビュー全文](v0188-continued-sol-review.md)。これはオーナーによるmainマージ、正式リリース、計画的な公開切替の承認を意味しない。
 
-## New findings
+## 監査基準とコミット
 
-| ID | Priority | Reproduction and resulting correction |
-|---|---|---|
-| C-E01 | High | Brick Break/Psychic Fangs against Reflect received reduction. Stable move IDs now bypass screens for the hit; all other modifiers retained. |
-| C-S01 | Medium | Foul Play defender raw budget98/effective66 was valid live but rejected from storage. Contextual schema validation now follows the effective allocation and actual automatic/manual budget applicability. |
-| C-S02 | High | Manual Speed-table edits left attSpeed/defSpeed unchanged and speed-dependent damage stale. Canonical per-side Speed routing and HP/Speed display corrected. |
-| SOL-01 | Medium | An inactive point producing total67 cleared the result without changing input bridge; feedback consent remained. Numeric/null result now participates in attachment freshness, including submit-time validation. |
-| C-U01 | Medium | Initial ArrowUp skipped last autocomplete result and rerenders left dangling active-descendant. All three comboboxes now clear and select consistently. |
-| C-L01 | Low | Variable power text leaked English in five locales. Existing localized terms reused for summary/native option. |
-| C-L02 | Low | Selected move verification warning disappeared in non-Japanese summaries. Status now derives from canonical move metadata before localization. |
-| C-P01 | Low | Feedback typing unnecessarily rebuilt calculator controls. The adapter now excludes feedback-only inputs while preserving calculator events. |
+| 対象 | 固定値 |
+|---|---|
+| 公開main／タグ `v0.188-pre.1` | `4f068544e670a85a6a4d34dd2c26e2be66bd9cb7` |
+| 公開Git tree | `cf7af9334261b0cfbbde45929da9d217445fe526` |
+| 引き継いだPR #67候補 | `8b37bddbb236fa1b7fbd13a7b2cebd1518995437` |
+| 修正前の継続監査スナップショット | `a866b98068443bf27198071a82e2737633b3aec7`／`audit/v0188-continued-baseline` |
+| 第1修正候補 | `2824c6ede8f01dc85ccd35b54b147d100d4d1167` |
+| 最終修正候補 | `5f88e471d5a8a3374181ce0d37deb211c1dd9f26` |
+| 最終候補Git tree | `695db47cc2fe7d727de246702cdafc16cff40893` |
+| 既存PR | https://github.com/Kurohanolu/chloha-damage-lab/pull/67 |
 
-Full before/after reproductions, scope and commands: [engine](v0188-continued-engine.md), [state](v0188-continued-state.md), [locale/UI](v0188-continued-locale.md), [feedback](v0188-continued-feedback.md). All correction witnesses were observed failing before product changes. No fixed300 fixture has been rewritten. Exact reversible source contracts admit only documented changes; unrelated engine changes still fail.
+開始時にmain、既存PR、ブランチ、Release、Actions、公開リポジトリを再確認した。PR #66はマージ済み。既存のPR #67を再利用し、旧PR #38・#46は変更していない。M-01／L-01と、PR #67に存在したA-S01／UI-01／CF-01は読み直し、既存修正を維持した。Terraの過去の報告とオーナー承認記録は変更していない。
 
-## Verification recorded so far
+最終証跡は`audit/v0188-continued-report`に保存する。これは検証後の報告書専用ブランチであり、検証対象の候補コードSHAを動かさず、実行結果を記録するためのもの。開始時の証跡は[evidence/v0188-continued-start.json](evidence/v0188-continued-start.json)。
 
-- Engine:216 independent BigInt vectors;456 locked Champions/Gen9 comparisons;20 unaffected/ID witnesses;6 immunity witnesses. All16rolls compared. Existing300,657move and4000seeded comparisons retained. No physical-game agreement claimed.
-- State:52 independent contextual-budget and canonical-control assertions; legacy35schema and event-lifecycle checks. Nine-language browser state+reload+ElectroBall numerical tests added.
-- Locale:59 actual-source function assertions; required18locale/viewport browser combinations added while retaining existing90transitions and54six-width checks. Semantic corrections reuse existing terminology; no exhaustive native-language certification.
-- Feedback: invalid-result handler test failed before correction and passes after; nine-language browser case requires zero report POSTs. Worker source/configuration unchanged.
-- CI: mandatory v0.188 runner auto-discovers new tests; locked external calculator is installed and continued audit reports included in artifact. Final exact-head results will replace pending status.
+## 発見した問題と修正
 
-## Production and release boundaries
+| ID | 優先度 | 再現条件／変更前 | 修正と影響範囲 |
+|---|---|---|---|
+| C-E01 | High | かわらわり・サイコファングにリフレクター軽減が残る。Lv50、攻撃153、防御117、ダブル、無補正・ノーマル防御で各51–60／28–33。 | 安定した技IDで当該攻撃の壁補正を除外。正しい範囲は76–90／42–50。フレンドガードなど他の補正、選択中の壁、他の技は維持。 |
+| C-S01 | Medium | イカサマで内部配分98・実効66の有効な状態を保存できない。さらに自動→手入力にすると保存が止まる境界をSolが確認（SOL-02）。 | 自動時は使用される実効配分、手入力時は使用されない配分を区別。型、個別上限、能力ランク、数値入力、未知フィールドの拒否は維持。 |
+| C-S02 | High | 手動の素早さ実数値を変えてもattSpeed／defSpeedが変わらず、エレキボール等の計算に反映されない。専用HP／素早さ欄と表の表示も不一致になる。 | 攻撃側・防御側の正規入力へ接続し、HP／素早さ表示も同じ値を参照。計算式は変更しない。 |
+| SOL-01 | Medium | 参照していない能力の編集で合計67になると結果が消えるが、前の入力値が残り、添付スナップショットの同意が失効しない。 | 数値結果またはnullも添付の鮮度比較へ含める。送信直前にも確認し、再確認なしの送信を拒否。言語だけの変更は許容。 |
+| C-U01 | Medium | 検索欄の最初の↑で最後から2番目が選ばれ、候補を再生成すると削除済み要素へのaria-activedescendantが残る。 | ポケモン2欄・技1欄で初回↑を最後の候補へ修正し、再生成時に古い選択を解除。IMEやEscapeを維持。 |
+| C-L01 | Low | 威力可変の選択技・ネイティブ候補に、独・伊・韓・簡体・繁体で英語Variableが残る。 | 既存の各言語用語を共通辞書から参照。仏・西のVariableは同じ綴りで正しいことを区別。 |
+| C-L02 | Low | 翻訳後の技候補から日本語の括弧を抽出していたため、選択技の未対応／未検証表示が消える。 | 正規の対応状況・検証属性から警告を決め、その後翻訳する。技の対応範囲は拡大しない。 |
+| C-P01 | Low | フィードバック本文などの入力ごとに計算機のタイプ・能力表示を再構築する。 | フィードバック欄を計算機の入力処理から除外。計算入力の処理・入力保持・アクセシビリティは維持。 |
 
-The followupAudit marker continues to block publication unconditionally. Existing pre.1 tag must not be overwritten; a later owner-approved release needs its own identity. New/old public calculators remain published at the historical source. No main merge, release, deployment, production report/Issue, D1 write or authentication change is performed.
+詳細な変更前の再現と試験：[計算エンジン](v0188-continued-engine.md)、[状態保存・性能](v0188-continued-state.md)、[翻訳・検索UI](v0188-continued-locale.md)、[添付同意](v0188-continued-feedback.md)。修正前に失敗する検証を実行してから修正した。SOL-02では最初のテストの「手入力でも合計を拒否する」という期待値自体が実際のUI仕様と違っていたため、独立した実動作との比較で訂正した。過去の合格結果を正しさの根拠にはしていない。
 
-Current public Worker readiness10/10 and CORS4/4 passed. Access public JWKS responded normally. Wrangler reports loggedIn=false and the dashboard redirects to sign-in. Current Worker version/bindings, D1, Access policies and Turnstile management are therefore unverified. Historical administrative snapshots do not substitute for current management reads. No credential values or private reports were obtained.
+## 計算精度と状態保存
 
-## Performance and remaining risk
+- 新しい壁破壊技の検証：独立したBigInt算術216件、固定`@smogon/calc@0.12.0`のChampions／Gen9参照456件、無関係な技・ID20件、無効相性6件。全16乱数を比較した。
+- 元の300件の固定フィクスチャは不変。既存v0.186の明示的な31件の訂正契約を維持。既存の技657比較、固定シード4,000比較、特性321比較、過去版との3,600比較も維持。
+- エンジン変更は2技の壁補正だけ。完全な変更前後の文字列を記録し、取り消すと公開エンジンとバイト一致する。これ以外のエンジン変更は検査で拒否する。
+- 保存検証は52件の追加条件と既存35件のスキーマ条件。9言語でイカサマ、自動→手入力、技変更、無効な自動モードへの復帰、HP／素早さ、保存・再読込、全16乱数を比較する。
+- 破損・期限・アクセス拒否・容量超過・複数タブ・初期化の既存検証を維持。匿名本文、連絡先、認証情報、非公開スナップショットを保存対象へ追加していない。
 
-Final same-run baseline/candidate measurements pending CI. A separate exact-guard A/B browser experiment measures feedback input latency and DOM mutations with five alternating contexts ×20inputs per variant/profile, while checking state and text preservation. Source-handler work counts decrease60→0 calculator refreshes for60feedback inputs; calculator inputs remain60→60. Counts are not elapsed-time claims. Existing4xCPUmobile73.5→89.6ms observation remains historical owner-accepted evidence; it is not copied as this candidate result. Current browser launch is blocked locally by socket EPERM, so browser validation requires actual CI artifacts.
+新しい実機測定は行っておらず、実機一致とは宣言しない。レイジングブルの壁破壊は既存方針で明示的に対象外であり、今回の2技の修正には含めていない。
 
-Physical phones, full native screen-reader use, complete language semantics, every gradient/image contrast state, current Cloudflare administrative state, real Turnstile and authenticated production replay remain unverified. Raging Bull screen breaking is explicitly unsupported and unchanged. Existing broad comparisons are finite witnesses, not proof of every game interaction.
+## 9言語とUI
 
-## Independent mode-transition correction
+日本語、英語、フランス語、ドイツ語、スペイン語、イタリア語、韓国語、中国語簡体字・繁体字が対象。既存の90回言語切替と、320／360／390／430／768／1440pxの54組を維持した。追加の18組（9言語×390／1440px）で3検索欄、警告3種類、可変威力表記、状態と数値の再読み込み一致を検証する。既存の名称・画像alt・エラー・フィードバックの検査も必須のまま。
 
-Sol independently confirmed an additional C-S01 boundary (SOL-02): after valid automatic Foul Play raw98/effective66, switching to manual mode produced a valid calculation but stopped saving. The first new test incorrectly required rejecting this inactive aggregate. The corrected policy matches live validation: automatic mode enforces relevant aggregate budgets; manual mode preserves unused allocations while every individual shape/type/range and control bound remains strict. New tests failed3/52before the change and pass52/52after. Real nine-language mode-transition/reload tests are mandatory in the revised candidate.
+翻訳の存在・状態遷移と、言語としての正確性を分ける。今回の用語修正は既存アプリ内の訳語を統一したもので、全データのネイティブ話者監修ではない。ローカルChromiumはソケット制限で起動できず、実ブラウザ検証は実際のGitHub Actions成果物を根拠とする。実機やネイティブのスクリーンリーダーによる検証とは区別する。
 
-## Resume point
+## CIと性能
 
-Run final exact-candidate CI, inspect job steps/artifacts, repair any genuine failures without weakening expectations, record performance distributions, recheck PR/source identity, and obtain independent Sol final assessment. Publish/merge decisions remain with the owner.
+最終候補`5f88e471`の必須CI **10/10成功**、追加リリース検証も成功。31/31の品質検査ファイル、既存90回言語切替、ローカルWorker15/15が成功した。9言語のイカサマ保存・手入力への移行・手入力中の技変更・無効な自動モードへの復帰・素早さ保存は、それぞれ9/9。追加検索UI18/18、既存の6幅54/54も成功。
+
+全11ワークフローについてジョブとステップを取得し、13ジョブ・254ステップの成功を確認した。公開publishジョブ、CI台帳reportジョブ、UIの結果投稿ステップはPR実行条件によるskip。必須検査のskipを合格として数えていない。リリース検証の緑表示は公開完了の証拠ではない。[完全なCI証跡](evidence/v0188-continued-final-ci.json)。
+
+| ワークフロー | 結果 |
+|---|---|
+| [Damage Lab CI and status ledger](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630743) | success |
+| [GitHub Pages live smoke](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630715) | success |
+| [Showdown differential audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630732) | success |
+| [Showdown differential tests](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630710) | success |
+| [UI & damage regression](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630702) | success |
+| [v0.184 engine baseline](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630785) | success |
+| [v0.185 anonymous feedback](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630738) | success |
+| [v0.186 Accuracy & Mechanics Audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630703) | success |
+| [v0.187 Singularity Migration](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630733) | success |
+| [v0.188 Quality Remediation](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43686630714) | success |
+
+品質ZIP SHA-256：`222654fcfc32edbda638e46c19858d716967a325f573c63d00fa73f9e645a074`。実取得ZIPのdigest一致、生成物75ファイルのハッシュ、候補42ファイルのソース一致を確認。[成果物照合記録](evidence/v0188-continued-final-artifact-receipt.json)、[31件の実行記録](evidence/v0188-continued-final-test-run.json)。
+
+CIは合成マージ`398c61545e34e4d7b4d9127d8a5d92dabcf75054`を実行した。Gitで取得したtreeは候補の`695db47cc2fe7d727de246702cdafc16cff40893`と一致し、性能記録も同じtree・クリーン状態を示す。第1候補2824の検査も成功したが、最終判定の根拠は5f88の実行結果に限定する。
+
+
+
+性能成果物SHA-256：`5860ab3303d0e0c25ea936d60345c6eded8fe652ee266d34ce03d921b4caa57e`。実際のZIPを取得し、GitHubのdigestと一致を確認。[全生データ](evidence/v0188-continued-final-performance.json)と[分布の再集計](evidence/v0188-continued-final-performance-summary.json)を保存した。
+
+同一CI実行内で公開v0.188と最終候補を交互に計測。Chromium145.0.7632.6、Linux／Node22.23.4、AMD EPYC 9V45、論理4CPU。各版・各プロファイル5コンテキスト×12操作＝60測定。モバイルは390px、CPU4倍制限、40ms RTT、下り1.6Mbit/s・上り750kbit/s。外部HTTPS資産を遮断し、ループバック配信の条件をそろえた。
+
+| 操作 | 環境 | 中央値：公開→候補 | IQR：公開→候補 |
+|---|---|---:|---:|
+| 計算→次フレーム | Desktop | 19.45→19.10ms | 5.80→6.55ms |
+| 計算→次フレーム | Mobile390／4×CPU | 77.65→73.75ms | 31.95→31.00ms |
+| 言語切替→次フレーム | Desktop | 46.55→48.30ms | 8.85→8.20ms |
+| 言語切替→次フレーム | Mobile390／4×CPU | 195.10→191.20ms | 46.70→45.55ms |
+
+中央値は偶数時に中央2値を平均し、IQRは上下半分の中央値の差を採用。従来CIの要約欄は上側の中央値を選ぶため、ここでは保存された生データから統一して再集計した。各コンテキスト内の連続測定は独立した試行ではなく、小さな差を有意な高速化と断定しない。
+
+FCP中央値はDesktopのcold124→136ms／warm108→76ms、Mobileのcold5044→5048ms／warm300→296ms。測定後ヒープ中央値はDesktop7,310,760→9,561,356バイト（約30.8%増）、Mobile7,768,068→9,656,040バイト（約24.3%増）。GCを制御したリーク検査ではなく、リークの有無は判定できない。以前のv0.187→v0.188の73.5→89.6msは異なる実行の履歴であり、今回の結果と直結して比較しない。
+
+実公開URLの性能観測も[別証跡](evidence/v0188-continued-final-public-performance.json)に保存した。ネットワーク条件が異なるため、上記の同条件比較と混ぜない。フィードバック入力のA/B測定では、修正した1つの入力除外条件だけを元へ戻した版と最終候補を比較した。各条件5コンテキスト×20入力＝100測定、前後の実行順を交互に変更、390px側はCPU4倍制限、キャッシュ・ネットワーク条件を統一した。本文、保存データ、計算入力と全16乱数が保持されることも確認。
+
+| 環境 | 入力→次フレーム中央値：修正前→後 | IQR：前→後 | 計算機DOM更新：前→後 |
+|---|---:|---:|---:|
+| Desktop | 18.05→16.80ms | 2.05→0.10ms | 400→0 |
+| Mobile390／4×CPU | 83.15→27.40ms | 7.85→3.75ms | 400→0 |
+
+これはフィードバック本文の入力処理の比較であり、計算操作全体の改善率ではない。画面更新の削減を確認できたが、絶対時間は実機を保証しない。[全測定値と環境](evidence/v0188-continued-final-feedback-performance.json)。
+
+## 公開環境・Cloudflare
+
+[運用報告](v0188-continued-operations.md)と[取得証跡](evidence/v0188-continued-operations.json)を参照。
+
+- 新旧公開サイトの73静的ファイル、212回の通常／キャッシュ回避／バージョン付きGETが公開ソース由来のSHA-256と全件一致。
+- 外部スプライト371 URLはすべてHTTP200、埋め込み2件。外部画像は可変の上流URLなので、観測したハッシュをソース固定の保証とは扱わない。
+- Release ZIPは2,530,855バイト・319ファイル。公開コミットのUTC git archiveとバイト一致し、チェックサムも一致。SHA-256：`60ec01af456a251eec006833ade16bddf5b5ef8e209c939d518879ebb2f4d500`。
+- 公開用リポジトリmain`b30c0f1863f3262574cf5365721be87c42ffa3e9`はデプロイワークフローとREADMEのみで、独立した計算エンジンはない。
+- 公開Workerのreadiness10/10、CORS4/4、公開JWKSの応答を確認。許可しないOriginを拒否し、管理画面・報告一覧の保護は維持されている。
+- Wranglerは`loggedIn=false`。ブラウザもCloudflareのサインイン画面へ遷移し、既存の認証済み管理接続は利用できなかった。現行Workerバージョン／bindings、D1、Access全ポリシー、Turnstile管理設定は未検証。過去の管理設定の記録を現在の証拠には置き換えていない。
+
+Cloudflare変更履歴：**本番変更0、デプロイ0、D1書込み0、新規報告0、新規Issue0、非公開報告の読取り0、認証変更0**。公開側の不具合修正を必要とする根拠はなく、バックエンドは変更していない。フロントエンドの復旧基準は公開コミット4f068544。将来バックエンドを変更する場合は、管理接続を復旧して現行のデプロイと復旧先を読み取り、変更前に記録する必要がある。
+
+## 残存リスクと次の推奨事項
+
+1. 認証済みCloudflare管理接続が利用可能になったら、現行設定・D1・Access・Turnstileを読み取り専用で確認する。認証保護を弱めて接続を得ない。
+2. 実際のAndroid／iOS、ネイティブ読み上げ、キーボード、全グラデーション／画像上のコントラスト、各言語の内容を追加確認する。
+3. レイジングブルの壁破壊を対応範囲へ広げる場合は、説明・方針・参照値を一緒に更新する。外部画像の上流リビジョン固定も別途検討する。
+4. GCを制御した反復操作の検査で、言語切替後の保持メモリとDOM参照を調べる。今回のヒープ観測だけではリークも改善も認定しない。
+5. 公開する場合は、既存pre.1タグを上書きせず、独立したリリース識別子を準備し、最終候補のレビューとオーナー判断を記録する。
+
+followupAuditによる公開阻止は維持されている。mainマージ、正式リリース、Singularityの公開切替は実行していない。未検証項目が残るため、有限のテスト成功を製品全体の完全な保証とは扱わない。

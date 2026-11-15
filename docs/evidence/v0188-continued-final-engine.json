@@ -1,0 +1,11 @@
+{
+  "audit": "v0188-continued-engine",
+  "priorHead": "8b37bddbb236fa1b7fbd13a7b2cebd1518995437",
+  "arithmeticCases": 216,
+  "referenceCases": 456,
+  "unaffectedCases": 20,
+  "immunityCases": 6,
+  "oldFailingWitnesses": 2,
+  "physicalGameVerified": false,
+  "ragingBullScreenBreaking": "documented unsupported; unchanged"
+}

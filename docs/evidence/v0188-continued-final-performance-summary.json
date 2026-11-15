@@ -1,0 +1,118 @@
+{
+  "candidateHead": "5f88e471d5a8a3374181ce0d37deb211c1dd9f26",
+  "ciCommit": "398c61545e34e4d7b4d9127d8a5d92dabcf75054",
+  "tree": "695db47cc2fe7d727de246702cdafc16cff40893",
+  "source": "v0188-continued-final-performance.json",
+  "method": "Median of pooled operation values; for even counts, average middle two. Quartiles are medians of lower and upper halves. Descriptive, not independent-trial significance. CI legacy summary uses upper middle order statistic; raw samples retained.",
+  "conditions": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V45 96-Core Processor",
+    "logicalCPUs": 4,
+    "samplesPerVersionPerProfile": 5,
+    "operationSamplesPerNavigation": 12,
+    "cachePolicy": "same local server max-age=600 and ETag",
+    "network": "loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown",
+    "thirdParty": "HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted",
+    "order": "alternating baseline/candidate between rounds"
+  },
+  "rows": [
+    {
+      "profile": "desktop",
+      "metric": "calculationToFrameMs",
+      "version": "baseline",
+      "n": 60,
+      "medianMs": 19.450000000000728,
+      "q1Ms": 16.0,
+      "q3Ms": 21.799999999999272,
+      "iqrMs": 5.799999999999272,
+      "minMs": 14.099999999998545,
+      "maxMs": 33.799999999995634
+    },
+    {
+      "profile": "desktop",
+      "metric": "calculationToFrameMs",
+      "version": "candidate",
+      "n": 60,
+      "medianMs": 19.100000000002183,
+      "q1Ms": 15.900000000001455,
+      "q3Ms": 22.450000000000728,
+      "iqrMs": 6.549999999999272,
+      "minMs": 14,
+      "maxMs": 34.099999999998545
+    },
+    {
+      "profile": "desktop",
+      "metric": "localeToFrameMs",
+      "version": "baseline",
+      "n": 60,
+      "medianMs": 46.54999999999927,
+      "q1Ms": 42.75,
+      "q3Ms": 51.599999999998545,
+      "iqrMs": 8.849999999998545,
+      "minMs": 33.69999999999709,
+      "maxMs": 66.20000000000437
+    },
+    {
+      "profile": "desktop",
+      "metric": "localeToFrameMs",
+      "version": "candidate",
+      "n": 60,
+      "medianMs": 48.29999999999927,
+      "q1Ms": 44.75000000000364,
+      "q3Ms": 52.95000000000073,
+      "iqrMs": 8.19999999999709,
+      "minMs": 35.30000000000291,
+      "maxMs": 77.30000000000291
+    },
+    {
+      "profile": "mobile-390",
+      "metric": "calculationToFrameMs",
+      "version": "baseline",
+      "n": 60,
+      "medianMs": 77.65000000000146,
+      "q1Ms": 63.250000000007276,
+      "q3Ms": 95.19999999999709,
+      "iqrMs": 31.949999999989814,
+      "minMs": 23.5,
+      "maxMs": 130.39999999999418
+    },
+    {
+      "profile": "mobile-390",
+      "metric": "calculationToFrameMs",
+      "version": "candidate",
+      "n": 60,
+      "medianMs": 73.74999999998545,
+      "q1Ms": 61.44999999999709,
+      "q3Ms": 92.44999999998981,
+      "iqrMs": 30.999999999992724,
+      "minMs": 25.59999999999127,
+      "maxMs": 118.30000000000291
+    },
+    {
+      "profile": "mobile-390",
+      "metric": "localeToFrameMs",
+      "version": "baseline",
+      "n": 60,
+      "medianMs": 195.10000000000582,
+      "q1Ms": 171.34999999999854,
+      "q3Ms": 218.0500000000029,
+      "iqrMs": 46.700000000004366,
+      "minMs": 130.39999999999418,
+      "maxMs": 343.4000000000233
+    },
+    {
+      "profile": "mobile-390",
+      "metric": "localeToFrameMs",
+      "version": "candidate",
+      "n": 60,
+      "medianMs": 191.20000000000437,
+      "q1Ms": 168.8000000000029,
+      "q3Ms": 214.35000000000582,
+      "iqrMs": 45.55000000000291,
+      "minMs": 134.30000000001746,
+      "maxMs": 290.6000000000058
+    }
+  ]
+}

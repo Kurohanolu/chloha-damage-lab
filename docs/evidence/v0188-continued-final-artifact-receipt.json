@@ -1,0 +1,192 @@
+{
+  "head": "5f88e471d5a8a3374181ce0d37deb211c1dd9f26",
+  "tree": "695db47cc2fe7d727de246702cdafc16cff40893",
+  "archives": [
+    {
+      "name": "continued-final-quality.zip",
+      "bytes": 2277118,
+      "sha256": "222654fcfc32edbda638e46c19858d716967a325f573c63d00fa73f9e645a074",
+      "matchesGitHubDigest": true
+    },
+    {
+      "name": "continued-final-performance.zip",
+      "bytes": 10906,
+      "sha256": "5860ab3303d0e0c25ea936d60345c6eded8fe652ee266d34ce03d921b4caa57e",
+      "matchesGitHubDigest": true
+    }
+  ],
+  "candidateFiles": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ability-data-v0184.js",
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+    },
+    {
+      "path": "assets/singularity/apple-touch-icon.png",
+      "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+    },
+    {
+      "path": "assets/singularity/favicon.png",
+      "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+    },
+    {
+      "path": "assets/singularity/header.webp",
+      "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+    },
+    {
+      "path": "assets/singularity/orbital-s-icon.webp",
+      "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599"
+    },
+    {
+      "path": "assets/singularity/orbital-s-reference.png",
+      "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c"
+    },
+    {
+      "path": "battle-data-v0184.js",
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "path": "brand-preview.html",
+      "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47"
+    },
+    {
+      "path": "brand-v0187.js",
+      "sha256": "d0094875c654c406b5a440286d74955ce3bbd03ca41228ebe81db92dd1243c25"
+    },
+    {
+      "path": "damage-calculator-v0184.js",
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "path": "damage-engine-v0184.js",
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "path": "damage-ui-adapter-v0184.js",
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "path": "feedback-config-v0185.js",
+      "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+    },
+    {
+      "path": "feedback-contract-v0185.js",
+      "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+    },
+    {
+      "path": "feedback-locales-v0185.js",
+      "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+    },
+    {
+      "path": "feedback-snapshot-v0185.js",
+      "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122"
+    },
+    {
+      "path": "feedback-ui-v0185.js",
+      "sha256": "24ab67b45b8a61c1352682d608188ccfdb073204a94ff949d820adf8d3833ec5"
+    },
+    {
+      "path": "i18n.js",
+      "sha256": "6ba79a4f23a05bf9a6b82b48c986a798f4c1f40c41d28a3c28f597ef277987e0"
+    },
+    {
+      "path": "index.html",
+      "sha256": "fa86ff988a9ab0a329e0cec24ee3b918b8a4ad87834e4f87d5fd9e0e71f3c627"
+    },
+    {
+      "path": "locale-catalog.js",
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+    },
+    {
+      "path": "locale-form-species-v0183.js",
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "path": "locale-name-search.js",
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+    },
+    {
+      "path": "locale-names-pokeapi-v0183.js",
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "path": "locale-names-v0183.js",
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "path": "locale-quality-v0188.js",
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+    },
+    {
+      "path": "locale-registry.js",
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+    },
+    {
+      "path": "move-mechanics-data-v0184.js",
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "path": "multi-hit.js",
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "path": "names-catalog-v0179.js",
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "path": "names-forms-v0179.js",
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "path": "names-ja-en.js",
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "path": "names-ui-v0179.js",
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "path": "names-ui-v0183.js",
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+    },
+    {
+      "path": "names-v0179.js",
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "path": "persistence-v0188.js",
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+    },
+    {
+      "path": "pokemon-weights-v0181.js",
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "path": "portrait-alt-v0188.js",
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+    },
+    {
+      "path": "release.json",
+      "sha256": "7be7f720ab618a23a4338078a89fa40adbbbcfd759a1148765712bdff08ee563"
+    },
+    {
+      "path": "singularity-v0187.css",
+      "sha256": "0c4940d15b9e1a6e242f4e86620d5b1454b1b07d429476d9c8cb0a49d9c073f4"
+    },
+    {
+      "path": "variable-power.js",
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "path": "weight-power.js",
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    }
+  ],
+  "manifestFileHashesVerified": 75,
+  "candidateFilesComparedToExactSource": 42,
+  "ciCommit": "398c61545e34e4d7b4d9127d8a5d92dabcf75054",
+  "frozenLegacyRollbackFilesVerified": 31
+}

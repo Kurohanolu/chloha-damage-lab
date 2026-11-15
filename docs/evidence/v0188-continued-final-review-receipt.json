@@ -1,0 +1,10 @@
+{
+  "candidateHead": "5f88e471d5a8a3374181ce0d37deb211c1dd9f26",
+  "independentReviewer": "6.1 Sol",
+  "reviewReportSha256": "b5963f9e088cef264344d8efb7da5463c7da5bee15c8db40661f176b0a6b9b6b",
+  "developmentOverallVerdict": "INCOMPLETE",
+  "independentScopedCandidateVerdict": "PASS",
+  "independentProductionCertification": "INCOMPLETE",
+  "ownerMergeReleasePublicationAuthorization": false,
+  "productionMutations": 0
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "398c61545e34e4d7b4d9127d8a5d92dabcf75054",
+  "startedAt": "2026-11-15T06:42:37.100Z",
+  "productionMutations": 0,
+  "tests": [
+    {
+      "file": "tests/v0188-approved-release-binding.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 345
+    },
+    {
+      "file": "tests/v0188-astra-cache.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 70
+    },
+    {
+      "file": "tests/v0188-astra-engine.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 965
+    },
+    {
+      "file": "tests/v0188-astra-feedback-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 120729
+    },
+    {
+      "file": "tests/v0188-astra-feedback-state.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 45
+    },
+    {
+      "file": "tests/v0188-astra-followup-gates.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1186
+    },
+    {
+      "file": "tests/v0188-astra-runtime-contract.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 86
+    },
+    {
+      "file": "tests/v0188-astra-state-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7380
+    },
+    {
+      "file": "tests/v0188-astra-state.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 41
+    },
+    {
+      "file": "tests/v0188-astra-ui-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 12659
+    },
+    {
+      "file": "tests/v0188-astra-ui-locale.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 116
+    },
+    {
+      "file": "tests/v0188-astra-worker-security.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 287
+    },
+    {
+      "file": "tests/v0188-continued-engine.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 422
+    },
+    {
+      "file": "tests/v0188-continued-locale-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 31129
+    },
+    {
+      "file": "tests/v0188-continued-locale.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 75
+    },
+    {
+      "file": "tests/v0188-continued-state-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 50701
+    },
+    {
+      "file": "tests/v0188-continued-state-performance.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 44661
+    },
+    {
+      "file": "tests/v0188-continued-state.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 90
+    },
+    {
+      "file": "tests/v0188-contract-and-approval.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 135
+    },
+    {
+      "file": "tests/v0188-locale-feedback-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 79443
+    },
+    {
+      "file": "tests/v0188-locale-quality.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 85
+    },
+    {
+      "file": "tests/v0188-locale-reference.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 201
+    },
+    {
+      "file": "tests/v0188-pages-baseline.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 317
+    },
+    {
+      "file": "tests/v0188-persistence-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 30880
+    },
+    {
+      "file": "tests/v0188-persistence-schema.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 37
+    },
+    {
+      "file": "tests/v0188-portrait-alt-browser.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6384
+    },
+    {
+      "file": "tests/v0188-portrait-alt.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 55
+    },
+    {
+      "file": "tests/v0188-public-release-observation.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 46
+    },
+    {
+      "file": "tests/v0188-runner-contract.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 274
+    },
+    {
+      "file": "tests/v0188-ui-mobile.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 106159
+    },
+    {
+      "file": "tests/v0188-asset-audit-test.py",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 90
+    }
+  ],
+  "completedAt": "2026-11-15T06:50:52.205Z",
+  "failed": 0
+}
