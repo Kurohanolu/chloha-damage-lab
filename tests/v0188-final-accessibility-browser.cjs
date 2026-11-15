@@ -12,7 +12,7 @@ const noticeBindings={version:canonicalNotice.match(/画面の「([^」]+)」/)[
 // Independently specified factual fragments, not equality to generated production copy.
 const noticeFacts={
  ja:['実機精度の検証完了を意味しません','体重依存技4種類と連続技のブラウザ検証','Showdown差分テストは合格済み','連続技のマルチスケイル処理など一部条件は未対応','Showdownを計算仕様の検証基準','仕様差異が確認された場合は個別に対応'],
- en:['does not mean that verification of accuracy on hardware is complete','four weight-dependent moves and multi-hit moves','Showdown differential tests have passed','Multiscale handling for multi-hit moves, are unsupported','Showdown is the calculation-specification reference','confirmed Pokémon Champions-specific differences will be handled separately'],
+ en:['does not mean that verification of accuracy on Pokémon Champions hardware is complete','four weight-dependent moves and multi-hit moves','Showdown differential tests have passed','Multiscale handling for multi-hit moves, are unsupported','Showdown is the calculation-specification reference','confirmed Pokémon Champions-specific differences will be handled separately'],
  fr:['ne signifie pas que la vérification de la précision sur console est terminée','quatre capacités dépendant du poids et des capacités à coups multiples','tests différentiels avec Showdown ont réussi','Multiécaille pour les capacités à coups multiples, ne sont pas prises en charge','Showdown sert de référence pour les règles de calcul','lorsqu’elles seront confirmées'],
  de:['bedeutet nicht, dass die Genauigkeitsprüfung auf echter Hardware abgeschlossen ist','vier gewichtsabhängige Attacken und Mehrfachtreffer-Attacken','Showdown-Differenztests wurden bestanden','Multischuppe bei Mehrfachtreffer-Attacken, werden nicht unterstützt','Showdown dient als Referenz für die Berechnungsregeln','bestätigte Besonderheiten von Pokémon Champions werden gesondert behandelt'],
  es:['no significa que se haya completado la verificación de precisión en consola','cuatro movimientos dependientes del peso y de movimientos de varios golpes','pruebas diferenciales con Showdown','Multiescamas en movimientos de varios golpes, no están implementadas','Showdown es la referencia para las reglas de cálculo','se tratarán por separado cuando se confirmen'],
@@ -27,6 +27,11 @@ function checkNotice(text,locale,bindings=noticeBindings){
  for(const fact of noticeFacts[locale])assert.ok(text.includes(fact),'FINAL-L02 canonical factual scope: '+locale+'/'+fact);
  assert.doesNotMatch(text,/\b54\b/,'no fabricated comparison count');
  assert.doesNotMatch(text,obsoleteHardwareClaims,'no ungrounded partial hardware comparison claim');
+ if(locale==='en'){
+  assert.match(text,/About versions:.*public UI version.*internal API foundation/,'existing version provenance translation contract');
+  assert.ok(text.includes('calculation core “'+bindings.core+'”'),'existing internal API identifier contract');
+  assert.match(text,/Pokémon Champions hardware/,'existing hardware verification caveat contract');
+ }
  if(locale==='ko'){
   assert.ok(text.startsWith('버전 안내: 화면에 표시되는 “'+bindings.version+'”는 공개 UI 버전입니다.'),'FINAL-L01 complete Korean prefix');
   assert.doesNotMatch(text,/The on-screen|About versions:/);
