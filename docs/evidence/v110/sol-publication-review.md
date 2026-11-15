@@ -1,8 +1,10 @@
 # 6.1 Sol publication review — v1.1.0-pre.1
 
 Reviewer: 6.1 Sol. Outcome: **conditional-pass**.
-Reviewed source commit: `3a39482a149809b8a827017b06ca8d980b343081`.
-Reviewed tree: `6fbe427aa6402d08db3f6beb4f116e6ae226cbfc`.
+Current reviewed source commit: `209a6e09af743b8f6981c8bfa7e8209a0bc790a5`.
+Original reviewed source commit: `3a39482a149809b8a827017b06ca8d980b343081`.
+Current reviewed tree: `824ad4e379a887a312a9891fde2a741d1ab7201f`.
+Original reviewed tree: `6fbe427aa6402d08db3f6beb4f116e6ae226cbfc`.
 Release tag: `v1.1.0-pre.1` (public prerelease, not Stable).
 ES-LA source-record SHA-256: `d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427`.
 
@@ -34,3 +36,23 @@ The new feedback-pause browser test was attempted but Chromium headless-shell re
 ## Evidence limits
 
 Original owner screenshots are absent in this review. Earlier independent visual transcription remains attributed to its recorded inspection; this review checks its repository consistency and canonical/provenance contracts, not the original pixels. Owner-attested ES-LA locale is not an observed settings screen. Name evidence does not validate physical-device mechanics or complete translation coverage. Prior review findings on canonical IDs, deduplication, off-runtime exclusions, nickname-capable species and provisional UI remain applicable.
+
+## Supplemental review — corrected gate fixtures
+
+Reviewer: **6.1 Sol**. Release tag: `v1.1.0-pre.1`. Outcome remains **conditional-pass**, with the publication conditions and limitations above unchanged.
+
+Updated reviewed source commit: `bd5c9fc1fd4b1c183a82f8b9d32cafb88982c8c6`.
+Updated reviewed tree: `a6d70bd0f0bd3512db694c054559ad15e39dc17c`.
+ES-LA source-record SHA-256 remains `d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427`.
+
+The source coordinator supplied the remote commit above; the independently inspected local candidate `3b20d6e8fa33f3bb6360eb2e62536cb8b41e60da` has exactly the reviewed tree above. Compared with the original reviewed source, only two protected lines change: the synthetic workflow lists in `tests/v0186-release-gate.cjs` and `tests/v0187-deployment-gate.cjs` now include the required ES-LA workflow for this tag. These changes make complete mock CI fixtures reflect the already-reviewed production gates; they do not weaken the gates, change runtime behavior or modify deployment workflows. Additional differences are review/owner-decision documentation; the release manifest remains pending and cannot publish without fresh approval bound to this updated source and report digest. Earlier approval evidence remains historical.
+
+Independently reran both corrected gate tests and `tests/v110-release-identity.cjs`: all passed. Missing/failed/stale workflow fixtures remain rejected, and complete exact-head fixtures reach their intended publication boundary without real mutations. No new blocking finding. This supplement does not claim a new local browser run or successful remote CI/deployment.
+
+## Supplemental review — fieldset browser assertion
+
+Reviewer: **6.1 Sol**. Tag: `v1.1.0-pre.1`. Current source: `209a6e09af743b8f6981c8bfa7e8209a0bc790a5`. Current tree: `824ad4e379a887a312a9891fde2a741d1ab7201f`. Outcome remains **conditional-pass** under the same conditions above.
+
+Independently resolved the remote commit's Git tree and confirmed it matches the inspected local candidate `7a2c0cf1e6753fdb5ecdf42c208c6b6bdd750db3`. The only change since the previous reviewed candidate is in `tests/v110-feedback-pause-browser.cjs`: it checks the native fieldset `disabled` property, checks a descendant textarea through Playwright `isDisabled()`, and checks the native fieldset property becomes false after restoring an enabled language. This checks both the control state and its practical descendant effect. It preserves visible-notice, submit guard, zero-POST, locale restoration and retained-draft assertions. No runtime, backend, publication policy or workflow changes are present. No new blocking finding.
+
+Locally passed syntax validation plus the release gate, deployment gate and release-identity checks. The corrected browser test has not passed locally; exact-source CI/browser success remains an explicit publication condition. Prior CI failure described by the coordinator is not treated as a passing result, and this supplement does not attest an unobserved CI outcome. Previous approval records must not authorize this changed tree; fresh approval must bind the current source/tree and updated report digest.

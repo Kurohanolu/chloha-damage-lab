@@ -25,3 +25,7 @@ Then run `node scripts/feedback-production-check.cjs` at repository root and req
 ## Current publication plan
 
 The v1.1.0-pre.1 release policy binds the independent Sol-reviewed source and Git tree, report SHA-256, owner delegation and explicit feedback scope. Protected code/workflows/tests must remain byte-identical after review. Public deployment requires the ten-language CI gate in addition to existing regressions. Live acceptance and final Release publication retain complete public-file and exact browser-cache URL checks and deployment-run proof. No gate is satisfied by manually renaming old approval evidence. The prerelease label and incomplete terminology/native-device verification remain disclosed.
+
+## Additional confirmed publication blocker
+
+Updating `Kurohanolu/singularity/.github/workflows/deploy.yml` through the connected GitHub app returned HTTP 403 `Resource not accessible by integration`. The reviewed update adds mandatory ES-LA exact-source CI and is retained as `deployment/singularity-pages.yml`. The public workflow was not changed and no deployment was triggered. Owner publication authorization is present; the missing capability is the integration permission to write the public deployment workflow. No authentication or CI gate was weakened in response.
