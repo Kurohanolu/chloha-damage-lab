@@ -39,3 +39,14 @@ R2 `b5ea506af27487a05cc7fbdc11371ac47778b06a`, tree `1e4d0d54c2013b22db3e15db144
 Prepared target workflow branch `audit/v100-publication`, commit `a63d2bd05a076da5b7a88316b83840269baeb1be`, is byte-identical to the reviewed source template; target main remains `b30c0f1863f3262574cf5365721be87c42ffa3e9`. Source Pages Settings directly confirms pages-legacy/root; Cloudflare management is unavailable behind the normal sign-in wall. No deployment, new tag or Release has occurred.
 
 Resume: retrieve this A commit from PR #67, verify fresh A CI, adopt the reviewed target workflow, dispatch exact A, record actual complete public acceptance, create B acceptance metadata, run B CI and actual v1 live browser acceptance, then merge and publish under the immutable publisher gates.
+
+
+## Accepted metadata stage B prepared from real A deployment
+
+A `de5ec8342d974a07e2d155f0293851c69087ff94`, tree `c99f29d54673bb5abf97a2da3d771fef6485a34b`, passed all eleven fresh mandatory CI workflows; Sol independently checked their jobs/steps and actual stable/quality/performance/memory artifacts. Target PR #1 merged to `cede7831cc010fe5ad46e8c30a67e39a509474f0` after A CI completed. Workflow bytes are the reviewed 5479-byte template; no permissions were relaxed.
+
+Actual deployment https://github.com/Kurohanolu/singularity/actions/runs/43699852774 completed success, attempt1, exact A dispatch title, all build/deploy steps successful. Root official GET-only acceptance and independent Sol acceptance both passed all76 public files /219HTTP+SHA-256 checks, including old URL, empty .nojekyll, brand-preview and exact browser cache URLs. The actual receipt is `docs/v100-live-acceptance-a.json`; raw individual requests, source provenance and independent reviews are committed alongside it.
+
+B changes only the five permitted acceptance fields in release.json plus documentation. It does not change the reviewed engine/frontend/backend/tests/workflows. The owner's additional instruction 「リリースまで頼むぞ」 reconfirms the existing publication delegation; the original structured receipt remains bound to the real R2 review.
+
+Resume: retrieve B's actual SHA/tree from PR #67 and verify fresh B CI. The Pages check may correctly fail before B metadata is deployed; deploy exact B after all ten source regression gates pass, then rerun Pages for real v1 nine-language/state/feedback acceptance. Do not merge source main or issue the stable Release until those gates and Sol's B review pass. Thereafter verify exact main push CI, current public bytes and immutable v1.0.0 tag/ZIP/Release. Current public runtime is A/v1.0.0; the v1.0.0 tag/Release is still absent. The legacy branch and immutable pre.1 recovery reference are unchanged.

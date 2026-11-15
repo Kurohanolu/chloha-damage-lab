@@ -21,7 +21,11 @@
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": false
+    "liveTargetVerified": true,
+    "liveAcceptanceSourceCommit": "de5ec8342d974a07e2d155f0293851c69087ff94",
+    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43699852774",
+    "liveAcceptanceEvidence": "docs/v100-live-acceptance-a.json",
+    "liveAcceptanceObservedAtJST": "2026-11-15T18:37:27+09:00"
   },
   "qualityReview": {
     "releaseTag": "v1.0.0",
