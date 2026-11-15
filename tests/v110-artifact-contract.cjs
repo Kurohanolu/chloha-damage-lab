@@ -36,7 +36,7 @@ for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"w
 assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
 assert.equal(release.tag,'v1.1.0-pre.1');assert.equal(release.channel,'prerelease');
-assert.equal(release.qualityReview.ownerApproval,'pending');assert.throws(()=>verifyPublication(release),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
+const draft=structuredClone(release);draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){
  const url=new URL(reference,'https://preview.invalid/'),file=url.pathname.slice(1);

@@ -207,7 +207,7 @@ export function createWorker({externalFetch=globalThis.fetch,now=()=>Date.now(),
      cors=url.pathname==='/v1/config'&&request.method==='GET'&&!request.headers.has('origin')?{}:corsOrigin(request,env);
      if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{...headers,...cors,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'600'}});
      let response;
-     if(url.pathname==='/v1/config'&&request.method==='GET')response=publicReady(env)?json({enabled:true,siteKey:env.TURNSTILE_SITE_KEY,retentionDays:C.limits.retentionDays,supportedLocales:[...C.locales],mode:env.ENVIRONMENT==='local'?'local-demo':'production'}):json({error:'unavailable'},503);
+     if(url.pathname==='/v1/config'&&request.method==='GET')response=publicReady(env)?json({enabled:true,siteKey:env.TURNSTILE_SITE_KEY,retentionDays:C.limits.retentionDays,mode:env.ENVIRONMENT==='local'?'local-demo':'production'}):json({error:'unavailable'},503);
      else if(url.pathname==='/v1/reports'&&request.method==='POST')response=await accept(request,env);else fail(405,'method');
      for(const [key,value] of Object.entries(cors))response.headers.set(key,value);return response;
     }

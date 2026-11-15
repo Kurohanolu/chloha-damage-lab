@@ -1,6 +1,6 @@
 # v1.1.0 publication execution — 2026-11-16 JST
 
-The owner instructed **「公開作業まで進めてくれ」**. Publication work is authorized; no second approval is needed for the disclosed release scope. The release remains unpublished because production backend access is unavailable, not because owner permission is missing.
+The owner instructed **「公開作業まで進めてくれ」**. Publication work is authorized; no second approval is needed for the disclosed release scope. The owner subsequently selected **ES-LAの送信だけ停止して公開** after Cloudflare login returned 403. Publication now proceeds as `v1.1.0-pre.1` with ES-LA reporting paused and the original nine report locales preserved. No Cloudflare login retry is requested.
 
 ## Completed preparation
 
@@ -14,10 +14,14 @@ The owner instructed **「公開作業まで進めてくれ」**. Publication wo
 
 Locked Wrangler reports `loggedIn:false`. No Cloudflare credential was supplied. A read-only GET of the production `/v1/config` returned HTTP 200, enabled production intake, and no `supportedLocales` declaration. This does not prove the exact deployed validator; it means ten-locale production support cannot currently be certified.
 
-Do not publish the ES-LA frontend until the backend is deployed and the production preflight passes. Existing v1.0.0 stays public. No Worker deployment, D1 migration, production report, tag, GitHub Release or frontend cutover was performed in this execution.
+The earlier full-ten-language feedback gate is superseded by the explicit owner-selected pause: the production frontend blocks ES-LA submission with a visible notice and permits the original nine locales. The production Worker source is restored unchanged. The public preflight retains all existing authentication/CORS/retention checks; declaring ES-LA support remains required if the pause is ever removed. Existing v1.0.0 stays public. No Worker deployment, D1 migration, production report, tag, GitHub Release or frontend cutover was performed in this execution.
 
-## Resume with authenticated Cloudflare management
+## Future restoration of ES-LA reporting
 
 From the exact reviewed PR checkout, run `npm ci --prefix services/feedback --no-audit --no-fund`. Authenticate Wrangler to the account owning `chloha-private-feedback`, inspect its current version/bindings/secrets and record the rollback version before deployment. Deploy with `cd services/feedback && npx wrangler deploy`, preserving existing secrets and D1 data; no schema migration is required. Do not paste tokens into chat or commit them.
 
 Then run `node scripts/feedback-production-check.cjs` at repository root and require all checks to pass. Finish the explicit v1.1.0 release identity, source/tree/report/owner-delegation binding, independent release review, exact-source CI, public-artifact deployment, current live-byte/browser checks and immutable tag/Release creation. The existing publication policy still correctly rejects the development manifest; no authorization flags were forged to bypass it.
+
+## Current publication plan
+
+The v1.1.0-pre.1 release policy binds the independent Sol-reviewed source and Git tree, report SHA-256, owner delegation and explicit feedback scope. Protected code/workflows/tests must remain byte-identical after review. Public deployment requires the ten-language CI gate in addition to existing regressions. Live acceptance and final Release publication retain complete public-file and exact browser-cache URL checks and deployment-run proof. No gate is satisfied by manually renaming old approval evidence. The prerelease label and incomplete terminology/native-device verification remain disclosed.

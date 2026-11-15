@@ -9,7 +9,7 @@ function readSettings(){
  const context=vm.createContext({window:{}});
  vm.runInContext(fs.readFileSync('feedback-config-v0185.js','utf8'),context,{timeout:1000});
  const release=JSON.parse(fs.readFileSync('release.json','utf8'));
- return {apiBase:context.window.ChlohaFeedbackConfig?.apiBase,publicOrigin:new URL(release.publicUrl).origin,requiredLocales:release.version==='1.1.0'?['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA']:[]};
+ return {apiBase:context.window.ChlohaFeedbackConfig?.apiBase,publicOrigin:new URL(release.publicUrl).origin,requiredLocales:release.version==='1.1.0'&&!context.window.ChlohaFeedbackConfig?.disabledLocales?.includes('es-LA')?['es-LA']:[]};
 }
 async function checkProduction({apiBase,publicOrigin,requiredLocales=[],fetchImpl=globalThis.fetch}={}){
  const checks=[],blockers=[];

@@ -9,7 +9,7 @@ function stableManifest(){return JSON.parse(require('node:child_process').execFi
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.1'){
+ if(localRelease.tag==='v1.1.0-pre.1'&&localRelease.qualityReview?.ownerApproval==='pending'){
   // Development observes the immutable Stable deployment, never the unpublished
   // candidate. This grants no cutover approval and rejects any changed manifest.
   assert.equal(localRelease.qualityReview?.ownerApproval,'pending');
@@ -18,6 +18,10 @@ function verifyObservation(localRelease,publicRelease,title,previous=null){
   // those historical bytes to today's development working tree.
   const published=stableManifest();verifyQualityApproval(published);
   assert.deepEqual(publicRelease,published,'ES-LA development must observe the complete pinned v1.0.0 manifest');
+ }else if(localRelease.tag==='v1.1.0-pre.1'){
+  verifyCutoverApproval(localRelease);
+  if(actual.tag==='v1.0.0'){assert.equal(localRelease.migration.liveTargetVerified,false);assert.deepEqual(publicRelease,stableManifest());}
+  else {verifyCutoverApproval(publicRelease);assert.deepEqual(actual,identity(localRelease));}
  }else if(hasFollowup(localRelease)){
   const published=verifyFollowupDraft(localRelease);
   verifyCutoverApproval(published);

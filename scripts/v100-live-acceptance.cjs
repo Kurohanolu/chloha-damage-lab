@@ -8,7 +8,7 @@ const {publishedCommit}=require('./helpers/v0188-followup-review.cjs');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.fetch}={}){
  const manifest=JSON.parse(fs.readFileSync(path.join(directory,'migration-artifacts.json'))),release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));
- assert.equal(release.tag,'v1.0.0');assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
+ assert.ok(['v1.0.0','v1.1.0-pre.1'].includes(release.tag));assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
  const bases={singularity:release.publicUrl,'chloha-damage-lab':release.migration.legacyUrl};
  assert.equal(bases.singularity,'https://kurohanolu.github.io/singularity/');assert.equal(bases['chloha-damage-lab'],'https://kurohanolu.github.io/chloha-damage-lab/');
  const exact=new Map();
@@ -29,7 +29,7 @@ async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.f
 module.exports={checkStableAssets};
 if(require.main===module)(async()=>{
  const args=process.argv.slice(2);assert.ok(args.length===1&&['--record-preacceptance','--publication'].includes(args[0]),'Explicit stable acceptance mode required');
- const release=JSON.parse(fs.readFileSync('release.json'));assert.equal(release.tag,'v1.0.0');
+ const release=JSON.parse(fs.readFileSync('release.json'));assert.ok(['v1.0.0','v1.1.0-pre.1'].includes(release.tag));
  if(args[0]==='--publication')verifyPublication(release);else{verifyCutoverApproval(release);assert.equal(release.migration.liveTargetVerified,false);}
  assert.equal(execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim(),'','Clean exact source required');
  const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceTree=execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim();
@@ -40,7 +40,7 @@ if(require.main===module)(async()=>{
   if(args[0]==='--record-preacceptance'){
    const deploymentRun=process.env.SINGULARITY_DEPLOYMENT_RUN;assert.match(deploymentRun||'',/^https:\/\/github\.com\/Kurohanolu\/singularity\/actions\/runs\/[1-9]\d*$/);
    const observedAtJST=new Date().toLocaleString('sv-SE',{timeZone:'Asia/Tokyo'}).replace(' ','T')+'+09:00';
-   const receipt={schemaVersion:1,releaseTag:release.tag,sourceCommit,sourceTree,deploymentRun,observedAtJST,result:'passed',currentUrl:release.publicUrl,legacyUrl:release.migration.legacyUrl,files:expected,rollbackSourceCommit:publishedCommit};
+   const receipt={schemaVersion:1,releaseTag:release.tag,sourceCommit,sourceTree,deploymentRun,observedAtJST,result:'passed',currentUrl:release.publicUrl,legacyUrl:release.migration.legacyUrl,files:expected,rollbackSourceCommit:release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit};
    fs.writeFileSync('reports/v100/live-acceptance-receipt.json',JSON.stringify(receipt,null,2)+'\n');
   }
   console.log(JSON.stringify({sourceCommit,sourceTree,status:evidence.status,files:evidence.files,requests:evidence.requests,productionMutations:0}));
