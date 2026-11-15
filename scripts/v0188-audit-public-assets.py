@@ -127,6 +127,7 @@ def main():
             report['sprites']['availabilitySummary'] = {'observed': len(observations), 'http200': sum(x.get('status') == 200 for x in observations), 'allHTTP200': all(x.get('status') == 200 for x in observations), 'sourceMatchEstablished': False}
         else:
             report['unverified'].append('External mutable PokeAPI sprites inventoried but not downloaded; no application-source digest exists for them.')
+        report['unverified'].append('External sprites use mutable master URLs; observed hashes cannot establish equivalence to application-source bytes.')
         release = json.loads((source / 'release.json').read_text())
         tag = release['tag']
         release_base = 'https://github.com/Kurohanolu/chloha-damage-lab/releases/download/' + tag + '/' + tag + '.zip'

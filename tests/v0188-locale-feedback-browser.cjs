@@ -4,7 +4,7 @@ const reference=require('./v0188-locale-reference.json');
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const widget=`(()=>{let n=0;const widgets=new Map();window.turnstile={render(node,options){const id='v188-'+(++n);widgets.set(id,options);queueMicrotask(()=>options.callback('valid-'+crypto.randomUUID()));return id;},reset(id){const o=widgets.get(id);if(o)queueMicrotask(()=>o.callback('valid-'+crypto.randomUUID()));},remove(id){widgets.delete(id);}};})();`;
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocaleQuality);
-async function set(page,id,value){await page.evaluate(({id,value})=>{const el=document.getElementById(id);if(typeof value==='boolean')el.checked=value;else el.value=String(value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));},{id,value});}
+async function set(page,id,value){await page.evaluate(({id,value})=>{const el=document.getElementById(id);if(typeof value==='boolean')el.checked=value;else {el.value=String(value);if(el.value!==String(value))throw Error('Unavailable control value: '+id+'='+value);}el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));},{id,value});}
 const numeric=page=>page.evaluate(()=>JSON.stringify({a:window.ChlohaLastCalculation.a,r:window.ChlohaLastCalculation.r}));
 const fbText=(page,key)=>page.evaluate(key=>window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),key),key);
 async function expectError(page,key){await page.waitForFunction(()=>!document.getElementById('feedbackErrors').hidden);assert.equal(await page.locator('#feedbackErrors').textContent(),await fbText(page,key));}
@@ -20,6 +20,19 @@ async function expectError(page,key){await page.waitForFunction(()=>!document.ge
    const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    try{
     await page.goto(app.origin+'/');await ready(page);
+    if(locale==='en'){
+     await page.fill('#attSearch','Charizard');await page.locator('#attSuggestions [role=option][aria-label="Charizard"]').first().click();
+     await page.fill('#moveSearch','Earthquake');await page.locator('#moveSuggestions [role=option]').filter({hasText:'Earthquake'}).first().click();
+     const charizard=await numeric(page);
+     const expected=/^Charizard Earthquake \(\d+\) → Tyranitar \(\d+ \/ HP \d+\)$/;
+     await page.waitForFunction(()=>/^Charizard Earthquake \(\d+\) → Tyranitar \(\d+ \/ HP \d+\)$/.test(document.getElementById('dbStatus').textContent));
+     assert.match(await page.locator('#dbStatus').textContent(),expected,'canonical summary before reload');
+     await page.reload();await ready(page);await page.waitForFunction(()=>document.getElementById('dbStatus').textContent.startsWith('Charizard Earthquake ('));
+     assert.equal(await numeric(page),charizard,'Charizard reload preserves all numeric values');assert.match(await page.locator('#dbStatus').textContent(),expected,'canonical summary after reload');
+     await page.selectOption('#chloha-locale','ja');await page.waitForFunction(()=>document.getElementById('dbStatus').textContent.startsWith('リザードン じしん'));
+     await page.selectOption('#chloha-locale','en');await page.waitForFunction(()=>document.getElementById('dbStatus').textContent.startsWith('Charizard Earthquake ('));
+     assert.equal(await numeric(page),charizard,'summary locale changes preserve numeric values');assert.match(await page.locator('#dbStatus').textContent(),expected,'canonical summary after locale round trip');
+    }
     for(const record of reference.cases.filter(r=>r.category==='pokemon')){
      await page.fill('#attSearch',record.names[locale]);
      const option=page.locator('#attSuggestions [role=option][aria-label='+JSON.stringify(record.names[locale])+']');
@@ -38,11 +51,19 @@ async function expectError(page,key){await page.waitForFunction(()=>!document.ge
      assert.ok(await options.count(),'localized move query: '+locale+'/'+record.key);await options.first().click();assert.equal(await page.locator('#dbMove').inputValue(),record.uiValue);evidence.uiSearchChecks++;evidence.externalNameChecks++;
     }
     for(const record of reference.cases.filter(r=>['abilities','items'].includes(r.category))){
+     if(record.category==='abilities'){
+      const species=record.uiValue==='intimidate'?'candidate093_07':'hydreigon';
+      const name=await page.evaluate(({species,locale})=>window.ChlohaLocalePokemonName(species,locale),{species,locale});
+      assert.ok(name,'localized prerequisite species for '+record.uiValue);
+      await page.fill('#defSearch',name);
+      await page.locator('#defSuggestions [role=option][aria-label='+JSON.stringify(name)+']').first().click();
+      assert.equal(await page.locator('#dbDefPokemon').inputValue(),species,'defender ability must be selectable on its actual species');
+     }
      const id=record.category==='abilities'?'defAbility':'attItem',option=page.locator('#'+id+' option[value='+JSON.stringify(record.uiValue)+']');
      assert.ok((await option.textContent()).includes(record.names[locale]),'localized native option: '+locale+'/'+record.key);
      await set(page,id,record.uiValue);assert.equal(await page.locator('#'+id).inputValue(),record.uiValue);evidence.nativeAbilityItemChecks++;evidence.externalNameChecks++;
     }
-    await set(page,'defAbility','none');await set(page,'attItem','none');await set(page,'dbMove','earthquake');await set(page,'att-attack-points',20);
+    await set(page,'dbDefPokemon','tyranitar');await set(page,'defAbility','none');await set(page,'attItem','none');await set(page,'dbMove','earthquake');await set(page,'att-attack-points',20);
     const warning=await page.evaluate(()=>window.ChlohaLocale.text('選択技「じしん」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。'));
     assert.ok(warning.includes(reference.cases.find(r=>r.key==='じしん').names[locale]),'warning localized entity: '+locale);
     if(locale!=='ja')assert.ok(!/[ぁ-ゖァ-ヺ]/u.test(warning),'Japanese warning copy: '+locale);
@@ -52,7 +73,10 @@ async function expectError(page,key){await page.waitForFunction(()=>!document.ge
     await page.waitForFunction(()=>document.getElementById('error').textContent===window.ChlohaLocaleQuality.errorText(window.ChlohaLocale.get(),'invalidStats'));
     assert.equal(await page.locator('#output').isVisible(),false,'invalid points must not display stale damage');evidence.allocationErrorLocales++;
     await set(page,'att-attack-points',20);await ready(page);assert.equal(await numeric(page),before);
-    await set(page,'dbMove','gw0169_s040');await page.locator('#spitUpPanel').waitFor({state:'visible'});
+    const spitName=await page.evaluate(()=>window.ChlohaLocalizedNames?.moves?.['はきだす']?.[window.ChlohaLocale.get()]||window.ChlohaPokeAPILocalizedNames?.moves?.['はきだす']?.[window.ChlohaLocale.get()]);
+    assert.ok(spitName,'canonical localized Spit Up name is present, including Japanese');
+    await page.fill('#moveSearch',spitName);await page.locator('#moveSuggestions [role=option]').filter({hasText:spitName}).first().click();
+    assert.equal(await page.locator('#dbMove').inputValue(),'gw0169_s040');await page.locator('#spitUpPanel').waitFor({state:'visible'});
     for(const count of [1,2,3]){
      await page.locator('[data-stockpile="'+count+'"]').click();
      await page.waitForFunction(count=>document.getElementById('spitUpPowerNote').textContent===window.ChlohaLocaleQuality.stockpile(window.ChlohaLocale.get(),count).power,count);

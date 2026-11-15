@@ -26,7 +26,16 @@
   if(text.includes('能力ポイント合計は66以内'))return 'budget';
   return null;
  }
- const api=Object.freeze({locales:Object.freeze(locales),stockpile,errorKind,errorText:(locale,kind)=>words[language(locale)][kind]});
+ // The legacy renderer can omit the space before a fullwidth numeric bracket.
+ // Resolve entities from canonical selections instead of parsing their words:
+ // localized species/move names can themselves contain spaces and brackets.
+ function summary(value,names,locale){
+  const match=String(value||'').match(/^(.+?)[（(](\d+)[）)]\s*→\s*(.+?)[（(](\d+)\s*\/\s*HP\s*(\d+)[）)](.*)$/u);
+  if(!match||!names.attacker||!names.move||!names.defender)return null;
+  const open=locale==='ja'?'（':' (',close=locale==='ja'?'）':')';
+  return names.attacker+' '+names.move+open+match[2]+close+' → '+names.defender+open+match[4]+' / HP '+match[5]+close+match[6];
+ }
+ const api=Object.freeze({locales:Object.freeze(locales),stockpile,errorKind,summary,errorText:(locale,kind)=>words[language(locale)][kind]});
  globalThis.ChlohaLocaleQuality=api;
  if(typeof module!=='undefined'&&module.exports)module.exports=api;
  if(!globalThis.document)return;
@@ -43,6 +52,16 @@
   for(const id of ['error','dbStatus']){
    const node=document.getElementById(id);if(!node)continue;const kind=errorKind(node.textContent);if(!kind)continue;
    const next=(id==='dbStatus'?words[locale].error:'')+words[locale][kind];if(node.textContent!==next)node.textContent=next;
+  }
+  const status=document.getElementById('dbStatus');
+  if(status&&globalThis.ChlohaLastCalculation){
+   const selected=id=>document.getElementById(id)?.value;
+   const species=(id,portrait)=>locale==='ja'?document.getElementById(portrait)?.dataset.pokemonJa:globalThis.ChlohaLocalePokemonName?.(selected(id),locale);
+   const moves=typeof ChlohaMovesDB!=='undefined'?ChlohaMovesDB.moves:[];
+   const canonical=moves.find(move=>move.id===selected('dbMove'))?.name;
+   const names={attacker:species('dbAttPokemon','attPortrait'),defender:species('dbDefPokemon','defPortrait'),move:locale==='ja'?canonical:canonical?moveName(canonical,locale):null};
+   const next=summary(status.textContent,names,locale);
+   if(next!==null&&status.textContent!==next)status.textContent=next;
   }
  }
  let queued=false;

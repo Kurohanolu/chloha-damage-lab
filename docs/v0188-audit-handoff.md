@@ -10,7 +10,7 @@ M-01 adds versioned calculator-operation storage, including inactive six-stat mo
 
 ## Calculator storage policy
 
-The only new storage key is `singularity.calculator.v1`. Schema version 1 validates an exact allowlist of control values and model fields, stable IDs, supported options, numeric ranges, allocation budgets, and timestamps. Records expire 30 days after successful save. Malformed, expired, unknown-schema, unknown-field and invalid-value records are discarded; the calculator starts with defaults. A storage exception leaves calculation available and displays a localized storage status.
+The only new storage key is `singularity.calculator.v1`. Schema version 1 validates an exact allowlist of control values and model fields, stable IDs, supported options, numeric ranges, allocation budgets, and timestamps. Saved state is valid for restoration for 30 days after the last successful save. Expiry is checked lazily on the next page load: an expired record is rejected and removed then, not by an automatic background purge. If the user never returns, the physical browser record can remain until the browser or user clears it. Reset immediately removes the record when storage is accessible. Malformed, expired, unknown-schema, unknown-field and invalid-value records are discarded; the calculator starts with defaults. A storage exception leaves calculation available and displays a localized storage status.
 
 Only calculator operation state is eligible. No feedback body, contact address, feedback snapshot envelope, authentication material, battle log or arbitrary storage content is read or saved. Language remains under its existing independent preference key. Level 50 and IV31 are fixed in this product; no new level/IV editing is introduced.
 

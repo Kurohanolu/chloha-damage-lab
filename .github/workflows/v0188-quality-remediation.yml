@@ -35,19 +35,20 @@ jobs:
           node tests/v0187-deployment-gate.cjs
           node tests/v0186-release-gate.cjs
       - name: Exercise every v0.188 state, accessibility, locale and mobile regression
-        run: |
-          set -e
-          for test in tests/v0188-*.cjs; do node "$test"; done
-          python3 tests/v0188-asset-audit-test.py
+        if: ${{ !cancelled() }}
+        run: node scripts/v0188-run-tests.cjs
       - name: Preserve ninety-transition language regression
         run: node tests/v0183-nine-locale-roundtrip.cjs
       - name: Recheck private feedback state machine without production writes
         run: npm test --prefix services/feedback
       - name: Measure baseline and candidate under identical emulation conditions
+        if: ${{ !cancelled() }}
         run: node scripts/v0188-browser-performance.cjs
       - name: Observe current public v0.187 without submissions or state changes
+        if: ${{ !cancelled() }}
         run: node scripts/v0188-public-performance.cjs
       - name: Build candidate assets without deployment
+        if: ${{ !cancelled() }}
         run: node scripts/v0187-build-sites.cjs --output dist/v0188
       - uses: actions/upload-artifact@v4
         if: always()

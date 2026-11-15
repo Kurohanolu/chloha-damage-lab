@@ -19,6 +19,11 @@ for(const locale of api.locales){
 assert.equal(api.errorKind('Input error: 能力ポイントは0〜32の整数で入力してください'),'invalidStats');
 assert.equal(api.errorKind('攻撃側の能力ポイント合計は66以内'),'budgetAtt');
 assert.equal(api.errorKind('unrelated error'),null);
+const statusNames={attacker:'Charizard',move:'Earthquake',defender:'Tyranitar'};
+assert.equal(api.summary('リザードン Earthquake（114） → Tyranitar（130 / HP 175）',statusNames,'en'),'Charizard Earthquake (114) → Tyranitar (130 / HP 175)');
+assert.equal(api.summary('Charizard Earthquake (114) → Tyranitar (130 / HP 175)',{attacker:'リザードン',move:'じしん',defender:'バンギラス'},'ja'),'リザードン じしん（114） → バンギラス（130 / HP 175）');
+assert.equal(api.summary('unsupported status',statusNames,'en'),null);
+assert.equal(api.summary('A B（1） → C（2 / HP 3） / suffix',statusNames,'en'),'Charizard Earthquake (1) → Tyranitar (2 / HP 3) / suffix');
 delete context.ChlohaPokeAPILocalizedNames;
 delete context.ChlohaLocalizedNames;
 for(const locale of api.locales)assert.ok(api.stockpile(locale,1).title,'explicit localized missing-name description');

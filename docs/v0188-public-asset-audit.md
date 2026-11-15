@@ -33,3 +33,23 @@ Runtime portrait/search images not embedded in the HTML use PokeAPI's mutable `m
 The application does not declare a web app manifest in its audited HTML. The generated migration artifact manifest is a local build inventory, not a deployed application manifest. Cache checks here compare exact asset URLs and fresh requests; they do not establish behavior of every browser's already-cached copy.
 
 The v0.188 candidate's generated artifact inventory is supplied by its build/CI evidence; a production comparison of v0.188 is intentionally deferred until independent audit and owner approval authorize publication.
+
+## Recorded production result (2026-11-15)
+
+Audit interval: 02:18:28–02:25:39 UTC. Source commit `7210be99c39d75b49ea8200aad91d75801eb300a`, tree `01da22c6302e3a0c539ac2ca9e6a396f871acc1d`.
+
+| Scope | Result |
+| --- | --- |
+| New-site public package | 38 files |
+| Preserved legacy public package | 32 files |
+| Bare, cache-busting, exact HTML-reference GET requests | 203/203 HTTP 200 and expected SHA-256 |
+| Embedded PNG sprites | 2 decoded and SHA-256 recorded; bundled HTML matched |
+| External PokeAPI sprite URLs | 371/371 HTTP 200; time-of-audit hashes recorded, application-source equivalence not established |
+| Release ZIP actual download | 2,399,992 bytes |
+| Release ZIP SHA-256 | `b65e39af8fa774d1ad98d74304ef6f9c4cf00097a6f3bcd0712b361ad94f2ebd` |
+| Exact `TZ=UTC git archive` comparison | All bytes equal |
+| ZIP non-directory entry path/content comparison | 280/280 equal |
+| ZIP source commit comment | Exact audited commit |
+| Published `.sha256` file | Downloaded actual content matches ZIP |
+
+No static integrity mismatch or asset HTTP failure was found in this scope. This result protects the existing v0.187 production state; it is not a v0.188 deployment result or approval. Full per-request observations are preserved in [the committed JSON evidence](evidence/v0188-public-assets-v0187.json). The raw run output is also in `reports/v0188/public-assets-v0187.json`.
