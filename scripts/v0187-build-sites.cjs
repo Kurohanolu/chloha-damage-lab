@@ -21,7 +21,8 @@ function buildSites(output){
  const inventory={};
  const write=(site,file,body)=>{localPath(file);const dest=path.join(out,site,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,body);inventory[site+'/'+file]=digest(Buffer.from(body));};
  const read=file=>fs.readFileSync(path.join(root,localPath(file)));
- const old=file=>execFileSync('git',['show',legacyCommit+':'+localPath(file)],{cwd:root,maxBuffer:16*1024*1024});
+ const oldFiles=new Map();
+ const old=file=>{file=localPath(file);if(!oldFiles.has(file))oldFiles.set(file,execFileSync('git',['show',legacyCommit+':'+file],{cwd:root,maxBuffer:16*1024*1024}));return oldFiles.get(file);};
  const html=read('index.html').toString(),release=JSON.parse(read('release.json'));
  write('singularity','index.html',html);write('singularity','release.json',read('release.json'));
  for(const file of new Set([...dependencies(html),...Object.values(release.branding)]))write('singularity',file,read(file));
@@ -34,8 +35,14 @@ function buildSites(output){
  for(const file of dependencies(original))write('chloha-damage-lab',file,old(file));
  write('chloha-damage-lab','legacy-notice-v0187.css',notice.css);
  write('chloha-damage-lab','legacy-notice-v0187.js',notice.js);write('chloha-damage-lab','.nojekyll','');
+ // Keep a complete notice-free legacy tree outside both publishable sites.
+ const rollback={legacyCommit,artifactPath:'rollback/chloha-damage-lab',files:{}};
+ for(const file of new Set(['index.html','release.json',...dependencies(original),'.nojekyll'])){
+  const body=file==='.nojekyll'?Buffer.alloc(0):old(file),dest=path.join(out,rollback.artifactPath,file);
+  fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,body);rollback.files[file]=digest(body);
+ }
  const dirty=Boolean(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim());
- const manifest={schemaVersion:1,mode:'approval-required-preview',sourceCommit:dirty?null:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),uncommittedPreview:dirty,legacyCommit,publicCutoverPerformed:false,files:inventory};
+ const manifest={schemaVersion:1,mode:'approval-required-preview',sourceCommit:dirty?null:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),uncommittedPreview:dirty,legacyCommit,publicCutoverPerformed:false,files:inventory,rollback};
  fs.writeFileSync(path.join(out,'migration-artifacts.json'),JSON.stringify(manifest,null,2)+'\n');
  return {out,manifest};
 }

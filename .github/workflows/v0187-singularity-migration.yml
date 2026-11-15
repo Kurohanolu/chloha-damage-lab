@@ -35,6 +35,7 @@ jobs:
           node tests/v0187-migration-contract.cjs
           node tests/v0187-live-readiness.cjs
           node tests/v0187-deployment-gate.cjs
+          node tests/v0187-rollback.cjs
           node tests/v0186-release-gate.cjs
       - name: Prepare both static sites without deployment
         run: node scripts/v0187-build-sites.cjs --output dist/v0187

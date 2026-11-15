@@ -25,6 +25,7 @@ node tests/v0184-public-baseline.cjs
 node tests/v0187-migration-contract.cjs
 node tests/v0187-live-readiness.cjs
 node tests/v0187-deployment-gate.cjs
+node tests/v0187-rollback.cjs
 node scripts/verify-release.cjs
 ```
 
@@ -36,6 +37,14 @@ node scripts/v0187-preview-server.cjs dist/v0187
 ```
 
 The loopback server exposes `/singularity/` and `/chloha-damage-lab/`. This is a static preview, not a deployment or a false-success feedback demo. Real production intake intentionally rejects unapproved local origins; reproducible browser tests use the local Worker/SQLite harness and mocked challenge/GitHub services. No credential is needed for those tests.
+
+The same artifact also retains a notice-free v0.186 backup under `rollback/chloha-damage-lab/`, outside both publishable sites. Prepare a fresh local rollback candidate from it without network access, deployment or overwriting any existing output:
+
+```sh
+node scripts/v0187-prepare-rollback.cjs --artifacts dist/v0187 --output dist/v0187-rollback-candidate
+```
+
+All31 files must match the independent frozen release hashes before the first destination write. Missing, corrupt, rewritten, incomplete and symlinked evidence is rejected. Remaining protected administrator acceptance uses [one existing synthetic report](docs/v0187-admin-acceptance.md); no credentials need to be shared.
 
 After recorded owner cutover/design approval, `node scripts/v0187-live-migration-check.cjs --accept-new-target` performs read-only new-site hash acceptance before the verified flag or old-site notice exists. It checks the exact versioned asset URLs in the HTML as well as fresh cache-busting probes; stale browser URLs cannot be hidden by a fresh probe. It cannot publish or record its own approval. The default command remains the strict final check of both sites. Legacy notice assets use their own content hashes for cache keys while the audited v0.186 calculator stays frozen. See the cutover runbook for actual feedback acceptance and final-metadata redeployment; the approved manifest enables initial acceptance while the unverified target still blocks final publication.
 

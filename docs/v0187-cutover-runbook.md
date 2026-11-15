@@ -24,6 +24,7 @@ Pages設定には管理権限が必要です。既存リポジトリのソース
    node scripts/verify-release.cjs
    node tests/v0187-migration-contract.cjs
    node tests/v0187-live-readiness.cjs
+   node tests/v0187-rollback.cjs
    node scripts/v0187-build-sites.cjs --output dist/v0187
    ```
 
@@ -56,9 +57,18 @@ Pages設定には管理権限が必要です。既存リポジトリのソース
 
 ## 切り戻しと継続運用
 
+- 各生成物は `rollback/chloha-damage-lab/` に案内追加前のv0.186を別保管します。これは公開対象の2サイトとは分離され、公開用ファイル一覧にも入りません。保持した信頼できるCI成果物から、次のコマンドで空の新規出力先へ切り戻し候補を準備します。外部通信・配信・既存ファイルの上書きは行いません。
+
+  ```sh
+  node scripts/v0187-prepare-rollback.cjs --artifacts dist/v0187 --output dist/v0187-rollback-candidate
+  ```
+
+  `.nojekyll` を含む31ファイル全てを、v0.186固定コミットに対応する独立したハッシュ一覧と照合します。全ファイルの検証が終わるまで出力先へ書き込みません。欠落・破損・一覧とファイルの同時改変・不正パス・シンボリックリンクは失敗にします。ネイティブCIは壊れた移行用ツリーからの復元を再現し、v0.186への完全一致を検査します。
 - 新URLが未受入なら、v0.186の旧配信をそのまま維持し、案内/外部リンクを切り替えない。
 - 案内追加後に問題が出たら、`pages-legacy`へv0.186の完全な静的ツリーを通常の新しいコミットとして再配置する。履歴は書き換えず、案内だけ取り除いた状態を検証する。mainへ古いソースを直接戻して自動配信に頼らない。
 - 新サイトは記録した直前の完全な静的ツリーへ戻す。認証を緩めたり、D1を初期化/複製/削除したりしない。障害時の問題URL/コミット/版番号を記録する。
 - 以後の製品変更も正本のPR/CIで検証し、承認された同一ソースから新サイトの生成物を更新する。旧版の更新は移行案内の必要な修正に限定し、計算ロジックを二重保守しない。
+
+残る管理者の実サービス受入は[合成レポート1件の操作手順](v0187-admin-acceptance.md)に整理しています。公開承認を再取得するための手順ではありません。
 
 GitHub公式資料確認日：2026-11-15。[配信元ブランチと設定権限、GITHUB_TOKEN制約](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)、[公開プロジェクトの無料PagesとURL構造](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)。

@@ -1,6 +1,15 @@
-# v0.187 actual-site acceptance checkpoint — 2026-11-15 JST
+# v0.187 actual-site acceptance checkpoints — 2026-11-15 JST
 
 **New URL is live for acceptance. Formal release/main merge and the old-site notice are not complete.** The owner has already authorized the rollout; the remaining blocker is completion of the protected administrator sign-in and real moderated Issue round trip, not missing publication permission.
+
+## Latest verified UI publication
+
+- Source `999acc96d380938e9d8e38d357f5e4deeaeb1b1f` removed the independent CHLOHA LABS paragraph and compacted the title spacing while retaining the footer credit. All ten exact-head workflows passed.
+- [Deployment43657571334](https://github.com/Kurohanolu/singularity/actions/runs/43657571334) built and deployed that exact clean source. All37 required public files and33 exact browser-reference URLs matched after deployment.
+- Actual public browser switches passed all nine locales: product title, localized description/footer, absent developer heading,20px desktop leading space, damage108–128 and Attack165 preservation. The [read-only DOM receipt](v0187-preview/header-cleanup-live-checks.json) contains only synthetic/default calculator values and public UI text.
+- CI [migration run43657154860](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43657154860) verified27 layouts across320/390/1280px,3,000 numeric contracts and local anonymous-feedback regression with zero production requests. Its PR merge tree is identical to the deployed source tree. The artifact retains current desktop/phone screenshots.
+
+## Initial deployment and real intake checkpoint
 
 | Evidence | Actual result |
 |---|---|
@@ -19,16 +28,18 @@
 
 The uniquely labeled synthetic test is `migration-v0187-d33776b-20261115`. Its receipt text is synthetic technical data, not a real user's feedback. No existing private descriptions, emails, credential values or signed authentication URLs are copied into this report. The synthetic record is retained for audit and normal expiry; no production data deletion is performed.
 
-## Actual public screen
+## Historical initial public screen
 
 ![Actual new-site calculator](v0187-preview/live-singularity-ja.jpg)
 
-This is a screenshot of the actual HTTPS site, not a generated mockup. Review-time mobile/browser regression evidence remains in [design previews](v0187-design-preview.md).
+This is the actual initial HTTPS deployment, before the separately verified header cleanup above; its old developer heading is historical evidence, not the current public UI. Current desktop/phone screenshots are retained in the linked migration CI artifact and the completed work result. Earlier review-time evidence remains in [design previews](v0187-design-preview.md).
 
 ## Authentication diagnosis and remaining work
 
 The protected administrator URL redirects to the existing Access application, which offers Cloudflare sign-in. The current dashboard login page reports403 from its login API. Stop repeated browser sign-in attempts. Existing Wrangler OAuth authentication, Worker secret-binding metadata and the read-only synthetic D1 query all succeed; all ten current source workflows and public read-only readiness checks pass. Development/API verification can continue without a new token or dashboard login. See [the bounded authentication diagnosis](v0187-cloudflare-auth-diagnostics.md).
 
 The protected administrator round trip remains incomplete because management OAuth/API authentication does not supply the existing application's administrator identity. When valid administrator Access authentication is available, inspect only the labeled synthetic record; verify Accept/status handling, preview and explicitly approve a technical-only synthetic Issue, then confirm its Issue link and duplicate-prevention state. Do not copy the private description/email/snapshot to a public Issue. Do not create an Issue through a different route and claim that it proves the Worker's integration. No authentication change or credential handoff is required for continued API/CI development.
+
+The exact target ID, safe public payload and minimal owner administration actions are in [the one-report acceptance packet](v0187-admin-acceptance.md). No new report or credential sharing is needed.
 
 Only after those real-service checks pass, record full acceptance, set `liveTargetVerified=true`, rerun exact final-head CI and dispatch the approved final source SHA to the new target. After final PR-base CI, deploy the old-site notice, verify both exact public trees, merge the approved PR and verify exact-main CI/immutable publication. Until then main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, the old calculator works without a forced redirect, and the actual-target flag remains false. Follow the [cutover/rollback runbook](v0187-cutover-runbook.md).

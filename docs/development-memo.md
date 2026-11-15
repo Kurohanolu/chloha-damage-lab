@@ -20,6 +20,13 @@
 - The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
 - [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
 
+## 2026-11-15: offline rollback rehearsal and concrete administrator acceptance packet
+
+- Finish remaining preparation while keeping Cloudflare login/API work deferred. Each two-site build retains an independent31-file, notice-free v0.186 backup outside the public sites. A local-only preparation command validates the complete backup against frozen release hashes before writing any new candidate file.
+- Native regression restores the exact old calculator after damage to the current migration tree, rejects missing/corrupt/rehashed/truncated/unsafe/symlink evidence with zero destination writes, and preserves existing output. No live deployment, history rewrite, database or authentication operation is involved.
+- Record the already-published header-cleanup source999acc96, deployment43657571334,37-file/33-URL acceptance and public nine-locale DOM receipt as current evidence; label the initial screenshot historical. The public calculator payload is unchanged in this checkpoint.
+- Prepare one concrete operator procedure for the already-stored synthetic report: accept, review its exact technical-only payload and create one Issue, then retain/reload the same link. Only the public Issue URL needs to return; no Work-session transfer or credential sharing is required. Actual acceptance remains pending until the real Worker/GitHub/D1 evidence is checked. Final-head CI belongs in PR #64.
+
 ## 2026-11-15: owner-requested removal of standalone CHLOHA LABS heading
 
 - Reproduced the actual new site's independent pink developer heading above Singularity. Remove that paragraph from the shared presentation template, reduce leading desktop/phone spacing and top-align the intro. Retain the separate localized footer credit and existing result-section labels.
