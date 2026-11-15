@@ -37,6 +37,14 @@ jobs:
       - name: Run all new candidate acceptance (no test discovery exclusions)
         if: ${{ !cancelled() }}
         run: node scripts/v110-run-tests.cjs
+      - name: Preserve immediate candidate diagnostics while legacy checks continue
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: v110-acceptance-early-evidence
+          path: reports/v110/
+          if-no-files-found: error
+          retention-days: 30
       - name: Preserve existing nine-language 90-transition candidate regression
         if: ${{ !cancelled() }}
         run: node tests/v0183-nine-locale-roundtrip.cjs

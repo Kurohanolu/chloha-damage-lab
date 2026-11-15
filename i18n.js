@@ -1165,7 +1165,11 @@ function localizedUiTemplate(base,target,entityTarget=target){
 // The selected language remains es-LA in storage/events; only general UI templates share Spanish.
 function localizedUi(base){
  if(locale==='es-LA'){
-  const dynamic=globalThis.ChlohaEsLaUi?.dynamic?.(base,localizedTypeNames);
+  // Reliability embeds the native option's display label. Resolve its identity
+  // from the selected canonical ID before any mixed-text English substitution.
+  const selectedMoveId=base.startsWith('選択技「')?document.getElementById?.('dbMove')?.value:null;
+  const selectedMove=selectedMoveId?globalThis.ChlohaGameData?.moves?.find(move=>move.id===selectedMoveId):null;
+  const dynamic=globalThis.ChlohaEsLaUi?.dynamic?.(base,localizedTypeNames,selectedMove);
   if(dynamic!==null&&dynamic!==undefined)return dynamic;
  }
  return regionalUi(localizedUiTemplate(base,localeUiCode(locale),locale),base,locale);

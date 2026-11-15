@@ -22,14 +22,18 @@ async function numericLocales(page,label,evidence){
 }
 // Sample actual rendered paths, including DOM mutation/reload. This is not an
 // exhaustive index.html template parser or a claim about all battle combinations.
-async function esLaDom(page,label,expected,evidence){
+async function esLaDom(page,label,expected,evidence,canonicalMove){
  assert.equal(await page.evaluate(()=>ChlohaLocale.get()),'es-LA');
  const selectors=Object.keys(expected);
  await page.evaluate(selectors=>{for(const selector of selectors){const node=document.querySelector(selector);if(!node)throw Error('Missing rendered witness: '+selector);for(let p=node.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;}},selectors);
  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
  const texts={};
  for(const selector of selectors){const node=page.locator(selector);assert.equal(await node.isVisible(),true,label+' visible '+selector);texts[selector]=(await node.textContent()).trim();}
- evidence.dynamicDomCases.push({label,texts});
+ if(canonicalMove){
+  const selected=await page.evaluate(()=>{const id=document.getElementById('dbMove').value;const move=ChlohaGameData.moves.find(m=>m.id===id);return{id,sourceName:move?.name};});
+  assert.deepEqual(selected,{id:canonicalMove.id,sourceName:canonicalMove.sourceName},label+' canonical move selection');
+ }
+ evidence.dynamicDomCases.push({label,texts,...(canonicalMove?{canonicalMove}:{})});
  for(const [selector,pattern] of Object.entries(expected)){
   const text=texts[selector];
   const checks=[['Spanish witness',()=>assert.match(text,pattern)],['Japanese/CJK residue',()=>assert.doesNotMatch(text,/[\u3040-\u30ff\u3400-\u9fff]/u)],['Known English fallback',()=>assert.doesNotMatch(text,/\b(?:Base damage|Before random|Current HP|Selected move|Unsupported|Basic damage only|Estimated;|Turn \d|confirmed\.|total damage|Damage estimate|Critical hit|not hardware-verified)\b|^(?:power|stat|base|preRandom|postRandom|final)\/[A-Za-z]/im)]];
@@ -37,22 +41,29 @@ async function esLaDom(page,label,expected,evidence){
   // Structural, visibility, numeric and state assertions still fail immediately.
   for(const [check,run] of checks)try{run();}catch(error){evidence.dynamicDomFailures.push({label,selector,check,error:error.message,actual:text});}
  }
+ if(canonicalMove){
+  const selector='#reliabilityDetails',text=texts[selector];
+  // Independent literal names are bound to the actual canonical selection. A
+  // different Spanish move name must fail even if no English/CJK remains.
+  try{const quoted=text.match(/Movimiento seleccionado “([^”]+)”/u)?.[1];assert.ok(quoted,'Quoted selected move must be present');assert.equal(quoted.split(/\s*[（(]/u)[0],canonicalMove.regionalName,'Quoted move name must match the selected canonical ID');}
+  catch(error){evidence.dynamicDomFailures.push({label,selector,check:'Canonical selected move name',error:error.message,actual:text,expected:canonicalMove});}
+ }
 }
 async function dynamicDomWitnesses(page,evidence){
  await locale(page,'es-LA');await page.locator('#resetCalculation').click();await ready(page);
  const main={'#trace':/Estadística ofensiva: \d+/,'#koVerdictDetail':/PS/,'#damage':/de daño/,'#moveSelected':/Terremoto/,'#reliabilityDetails':/verifica|consola/i};
  await set(page,'attItem','lifeOrb');await esLaDom(page,'ordinary trace, KO and provisional disclosure',main,evidence);
  const ordinary=await snapshot(page);await locale(page,'ja');await locale(page,'es-LA');assert.deepEqual(dataOnly(await snapshot(page)),dataOnly(ordinary));await esLaDom(page,'ordinary after Japanese → ES-LA',main,evidence);
- await persist(page,'es-LA',ordinary);evidence.reloads++;await esLaDom(page,'ordinary after persisted initialization',main,evidence);
+ await persist(page,'es-LA',ordinary);evidence.reloads++;await esLaDom(page,'ordinary after persisted initialization',main,evidence,{id:'earthquake',sourceName:'じしん',regionalName:'Terremoto'});
  const moveId=async name=>{const id=await page.evaluate(name=>ChlohaGameData.moves.find(m=>m.name===name)?.id,name);assert.ok(id,'Existing canonical witness '+name);return id;};
  await set(page,'dbMove',await moveId('からげんき'));await set(page,'conditionalPower',false);const base=await snapshot(page);await set(page,'conditionalPower',true);const boosted=await snapshot(page);
  assert.ok(Math.max(...boosted.calculation.r.rolls)>Math.max(...base.calculation.r.rolls),'Conditional-power witness must actually change damage');
  await esLaDom(page,'conditional Facade enabled',{'#trace':/Estadística ofensiva/,'#reliabilityDetails':/Auditoría del movimiento P1/,'#moveSelected':/Fachada/,'#koVerdictDetail':/PS/},evidence);
  await locale(page,'en');await locale(page,'es-LA');assert.deepEqual(dataOnly(await snapshot(page)),dataOnly(boosted));await esLaDom(page,'conditional after English → ES-LA',{'#trace':/Estadística ofensiva/,'#reliabilityDetails':/Auditoría del movimiento P1/},evidence);
- await set(page,'dbMove',await moveId('ドラゴンアロー'));await set(page,'dragonDartsHits','2');await ready(page);assert.ok((await snapshot(page)).calculation.r.multiHitDistribution);
+ const dartsId=await moveId('ドラゴンアロー');await set(page,'dbMove',dartsId);await set(page,'dragonDartsHits','2');await ready(page);assert.ok((await snapshot(page)).calculation.r.multiHitDistribution);
  const multi={'#trace':/Estadística ofensiva/,'#ko':/Probabilidad de K\.O\. con todos los golpes/,'#rollsLabel':/golpes/,'#reliabilityDetails':/2 golpes al objetivo seleccionado/};
  await esLaDom(page,'Dragon Darts complete distribution and two-target warning',multi,evidence);
- const multiBefore=await snapshot(page);await persist(page,'es-LA',multiBefore);evidence.reloads++;await esLaDom(page,'multi-hit after persisted initialization',multi,evidence);
+ const multiBefore=await snapshot(page);await persist(page,'es-LA',multiBefore);evidence.reloads++;await esLaDom(page,'multi-hit after persisted initialization',multi,evidence,{id:dartsId,sourceName:'ドラゴンアロー',regionalName:'Dracoflechas'});
  await set(page,'dbMove','electroBall');await set(page,'screen','none');await ready(page);assert.ok((await snapshot(page)).calculation.r.rolls.every(n=>n>0));
  await esLaDom(page,'speed-dependent power and estimated warning',{'#trace':/Velocidad .*potencia/,'#moveSelected':/Estimación sin verificar en consola/,'#reliabilityDetails':/Auditoría del movimiento P1/},evidence);
  await page.locator('#battleCommit').evaluate(node=>{for(let p=node.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;});
@@ -60,7 +71,7 @@ async function dynamicDomWitnesses(page,evidence){
  const history={'#battleHistory':/Turno 1:.*Estim(?:ación|ado).*sin verificar.*No coincide con la predicción/s,'#battleStatus':/confirmado\. PS del objetivo.*No coincide con la predicción/s};
  await esLaDom(page,'confirmed history contains estimated move and mismatch warning',history,evidence);
  const historyState=await snapshot(page);await locale(page,'en');await locale(page,'es-LA');assert.deepEqual(dataOnly(await snapshot(page)),dataOnly(historyState));await esLaDom(page,'history after English → ES-LA',history,evidence);
- await persist(page,'es-LA',historyState);evidence.reloads++;assert.equal(await page.locator('#battleHistory li').count(),0,'History is not automatically persisted');await esLaDom(page,'speed-dependent trace after reload',{'#trace':/Velocidad .*potencia/,'#moveSelected':/Estimación sin verificar en consola/},evidence);
+ await persist(page,'es-LA',historyState);evidence.reloads++;assert.equal(await page.locator('#battleHistory li').count(),0,'History is not automatically persisted');await esLaDom(page,'speed-dependent trace after reload',{'#trace':/Velocidad .*potencia/,'#moveSelected':/Estimación sin verificar en consola/,'#reliabilityDetails':/Auditoría del movimiento P1/},evidence,{id:'electroBall',sourceName:'エレキボール',regionalName:'Electrobola'});
 }
 (async()=>{
  const lab=await startLab();let browser,context;

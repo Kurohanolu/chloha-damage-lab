@@ -218,6 +218,16 @@
   const suffix=m[4]?' ['+(annotations[m[4]]||m[4])+']':'';
   return move(m[1].trim())+' ('+name('types',m[2].trim())+' / '+(/^\d+$/.test(m[3])?m[3]:'Variable')+')'+suffix;
  }
+ function selectedMoveLabel(value,selectedMove){
+  const label=value.match(/^(.+?)[（(]([^()（）]+?)\s*\/\s*(\d+|可変|Variable|Variabel|Variabile|가변|可变|可變)[）)](?:\s*[［[]([^\]］]+)[］\]])?$/);
+  // A live selected record is authoritative. DOM-free canonical fixtures may
+  // use their exact Japanese source key; localized display names are not IDs.
+  const key=selectedMove?.name||(label?label[1].trim():value);
+  if(!selectedMove&&!Object.hasOwn(root.ChlohaLocalizedNames?.moves||{},key)&&!Object.hasOwn(root.ChlohaPokeAPILocalizedNames?.moves||{},key))return null;
+  if(!label)return move(key);
+  const type=selectedMove?.type||label[2].trim();
+  return moveLabel(key+'（'+type+' / '+label[3]+'）'+(label[4]?'［'+label[4]+'］':''));
+ }
  const reasons=Object.freeze({
   'undefined':'No se especificó una explicación para este movimiento',
   'パルデアケンタロスのフォルムに応じて技タイプを変更。壁破壊効果は計算対象外':'El tipo del movimiento cambia según la forma de Tauros de Paldea. No se calcula la eliminación de pantallas',
@@ -325,6 +335,7 @@
  const traceItems=Object.freeze({expertBelt:'たつじんのおび',lifeOrb:'いのちのたま',assaultVest:'とつげきチョッキ',choiceBand:'こだわりハチマキ',choiceSpecs:'こだわりメガネ'});
  function traceName(id){return traceNames[id]||(traceAbilities[id]?ability(traceAbilities[id]):traceItems[id]?name('items',traceItems[id]):id==='helpingHand'?move('てだすけ'):null);}
  const dynamicTemplates=Object.freeze([
+  ['selected-move-warning',/^選択技「(.+)」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。$/,(m,selectedMove)=>{const label=selectedMoveLabel(m[1],selectedMove);return label===null?null:'Movimiento seleccionado “'+label+'”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.';}],
   ['dragon-darts',/^ドラゴンアローは選択した相手への(\d+)回分のダメージを表示します。相手(\d+)体のまもる・無効・対象判定は手動指定です。$/,m=>`${move('ドラゴンアロー')} muestra el daño de ${m[1]} golpes al objetivo seleccionado. Indica manualmente ${move('まもる')}, las inmunidades y la selección de objetivos entre los ${m[2]} rivales.`],
   ['misty-explosion',/^ミストバースト: (ミストフィールド＋使用者接地（威力1\.5倍）|通常威力)。使用後の自身のひんしは自動反映しません$/,m=>`${move('ミストバースト')}: ${m[1]==='通常威力'?'potencia normal':'Campo de Niebla y usuario en contacto con el suelo (potencia ×1.5)'}. El debilitamiento del usuario tras usarlo no se aplica automáticamente`],
   ['rising-voltage',/^ライジングボルト: (エレキフィールド＋対象接地（威力2倍）|通常威力)$/,m=>`${move('ライジングボルト')}: ${m[1]==='通常威力'?'potencia normal':'Campo Eléctrico y objetivo en contacto con el suelo (potencia ×2)'}`],
@@ -353,7 +364,7 @@
   ['battle-history',/^(\d+)手目：(.+?) \/ (\d+)ダメージ( \/ HP \d+→\d+)?( \/ フィールド解除)?( \/ 予測と不一致・要照合)?$/,m=>`Turno ${m[1]}: ${moveLabel(m[2])} / ${m[3]} de daño${m[4]?m[4].replace('HP','PS'):''}${m[5]?' / Campo eliminado':''}${m[6]?' / No coincide con la predicción; verificar':''}`],
   ['battle-confirmation',/^(.+?)を確定。相手HP (\d+\s*(?:→|\/)\s*\d+)、フィールド：([^。]+)(。予測と不一致です。条件・実測値を記録して照合してください。|。)?$/,m=>`${moveLabel(m[1])} confirmado. PS del objetivo ${m[2]}, campo: ${terrainNames[m[3]]||move(m[3])}${m[4]?.length>1?'. No coincide con la predicción. Registra y verifica las condiciones y el daño observado.':'.'}`]
  ]);
- function dynamic(base,knownTypes){
+ function dynamic(base,knownTypes,selectedMove){
   if(knownTypes)typeNames=knownTypes;
   let result=null;
   if(Object.hasOwn(reasons,base))result=reason(base);
@@ -364,7 +375,7 @@
    const value=base.slice(4),label=value.match(/^(.+?) (.+[（(].+[）)](?:[［[].+[］\]])?)$/);
    if(label)result='Seleccionado: '+name('pokemon',label[1])+' '+moveLabel(label[2]);
   } else if(base.startsWith('入力エラー: ')){const body=error(base.slice('入力エラー: '.length));if(body)result='Error de entrada: '+body;}
-  if(result===null){for(const [,pattern,render]of dynamicTemplates){const match=base.match(pattern);if(match){result=render(match);break;}}}
+  if(result===null){for(const [,pattern,render]of dynamicTemplates){const match=base.match(pattern);if(match){result=render(match,selectedMove);break;}}}
   return result===null?null:remember(result,base);
  }
  root.ChlohaEsLaUi=Object.freeze({phrases,records,reasons,errors,dynamicTemplates:Object.freeze(dynamicTemplates.map(([id,pattern])=>Object.freeze({id,pattern:pattern.source,status:'provisional',origin:'authored-ui',officialGameNameEvidence:false}))),text,dynamic,source:value=>dynamicReverse.get(value)||reverse.get(value)||value});

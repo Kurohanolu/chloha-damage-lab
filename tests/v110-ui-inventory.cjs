@@ -44,6 +44,20 @@ for(const [property,group]of [['reasons','authored-reasons'],['errors','authored
 assert.deepEqual(actual.policyReasonInventory.unmappedPolicyReasons,[],'Every current app policy reason needs an authored UI entry');
 assert.equal(actual.dynamicRendererRegistry.length,runtime.ChlohaEsLaUi.dynamicTemplates.length,'Every declared dynamic template is tracked');
 assert.ok(actual.dynamicRendererRegistry.every(template=>template.coveredByWitness),'Every declared dynamic template needs an executable witness');
+const selectedMoveWarnings=[
+ ['selected-move-warning-full-earthquake','Terremoto (Tierra / 100) [Estimación; sin verificar en consola]'],
+ ['selected-move-warning-full-dragon-darts','Dracoflechas (Dragón / 50) [Estimación; sin verificar en consola]'],
+ ['selected-move-warning-full-variable','Electrobola (Eléctrico / Variable) [Solo daño básico; sin verificar en consola]']
+];
+const warningTemplate=actual.dynamicRendererRegistry.find(template=>template.id==='selected-move-warning');
+assert.ok(warningTemplate,'Selected-move warnings require their own full-template renderer');
+for(const [id,label]of selectedMoveWarnings){
+ const record=byId.get('i18n.js:dynamic-template:'+id);
+ assert.equal(record.status,'provisional');assert.equal(record.warningOrError,true);
+ assert.ok(record.text.includes('Movimiento seleccionado “'+label+'”'),'Reload warning must translate its entire quoted name/type/power/status: '+id);
+ assert.ok(!/[\u3040-\u30ff\u3400-\u9fff]|Earthquake|Dragon Darts|Electro Ball|Ground|Electric|Estimated; not hardware-verified|Basic damage only; unverified/.test(record.text),'Partial English or Japanese remains in quoted warning: '+id);
+ assert.ok(warningTemplate.witnesses.some(witness=>witness.caseId===id),'Declared warning renderer must execute the full-label witness: '+id);
+}
 assert.equal(byId.get('i18n.js:canonical-selectLabels:選択した相手に2回命中').text,'2 golpes al objetivo seleccionado');
 assert.equal(byId.get('i18n.js:canonical-selectLabels:選択した相手に2回命中').renderPath,'translateOptions');
 assert.equal(byId.get('i18n.js:dynamic-template:damage-range').text,'123–145 de daño');

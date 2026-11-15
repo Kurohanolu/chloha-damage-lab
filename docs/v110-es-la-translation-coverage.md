@@ -16,10 +16,10 @@ Names are tied to existing canonical IDs. `official` means the exact spelling is
 | forms | 134 | 20 | 0 | 0 | 114 | 14.93% | 14.93% | 13 (9.7%) |
 | natures | 11 | 4 | 1 | 0 | 6 | 45.45% | 36.36% | 4 (36.36%) |
 | stats | 6 | 6 | 0 | 0 | 0 | 100% | 100% | 6 (100%) |
-| ui | 1008 | 0 | 0 | 1008 | 0 | 0% | 0% | 0 (0%) |
-| warnings | 166 | 0 | 0 | 166 | 0 | 0% | 0% | 0 (0%) |
+| ui | 1011 | 0 | 0 | 1011 | 0 | 0% | 0% | 0 (0%) |
+| warnings | 169 | 0 | 0 | 169 | 0 | 0% | 0% | 0 (0%) |
 
-The UI denominator is 1008 source-key/template sites, including 76 sampled dynamic renderer branches; the warning/error denominator is its 166 flagged sites. 1008 UI sites contain provisional authored/reused copy and 0 remain unverified. Executed English or Japanese fallbacks are recorded in the inventory's remainingGaps and are not counted as completed ES-LA UI. Game-name verification remains separate. UI and warning counts overlap, and aliases/source sites are not deduplicated semantic-key totals. Rebuild the UI inventory first with `node scripts/v110-es-la-ui-inventory.cjs`; its source hashes and actual renderer witnesses are checked by `tests/v110-ui-inventory.cjs`. The inventory explicitly retains limits for unparsed index.html DOM-template literals, arbitrary dynamic combinations and new unnamed tables.
+The UI denominator is 1011 source-key/template sites, including 79 sampled dynamic renderer branches; the warning/error denominator is its 169 flagged sites. 1011 UI sites contain provisional authored/reused copy and 0 remain unverified. Executed English or Japanese fallbacks are recorded in the inventory's remainingGaps and are not counted as completed ES-LA UI. Game-name verification remains separate. UI and warning counts overlap, and aliases/source sites are not deduplicated semantic-key totals. Rebuild the UI inventory first with `node scripts/v110-es-la-ui-inventory.cjs`; its source hashes and actual renderer witnesses are checked by `tests/v110-ui-inventory.cjs`. The inventory explicitly retains limits for unparsed index.html DOM-template literals, arbitrary dynamic combinations and new unnamed tables.
 
 Every inventoried name has a display fallback. That display availability is **not** ES-LA translation completion. The form category overlaps Pokémon records. Items count actual supported identities, not thousands of unrelated entries in the upstream name cache. Generic no-item/automatic-berry controls belong to UI.
 

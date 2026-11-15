@@ -3,7 +3,7 @@
 // the immutable release and exercise concrete variable values/source recovery.
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process');
-const {DYNAMIC_CASES}=require('../scripts/v110-es-la-ui-inventory.cjs');
+const {DYNAMIC_CASES,literalAfter}=require('../scripts/v110-es-la-ui-inventory.cjs');
 const root=path.resolve(__dirname,'..'),baseline='0b270c1452505268364659edd402209b00b28673';
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const previous=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
@@ -67,6 +67,29 @@ for(const [id,input]of cases){
   regionalCases++;
  }
 }
+// Reproduce persisted initialization: the native option text can already be
+// translated or partially translated, while its selected value stays canonical.
+const moves=JSON.parse(literalAfter(read('index.html'),'const ChlohaMovesDB = ').expression).moves;
+now.ChlohaGameData={moves};let selectedId=null;
+now.document.getElementById=id=>id==='dbMove'?{value:selectedId}:null;
+const warning=label=>'選択技「'+label+'」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。';
+const warningIdentityCases=[
+ ['earthquake','Earthquake（Ground / 100）［Estimated; not hardware-verified］','Terremoto (Tierra / 100)'],
+ ['gw0169_p077','Dragonアロー（Dragon / 50）［基本ダメージのみ・実機未照合］','Dracoflechas (Dragón / 50)'],
+ ['electroBall','Electro Ball (Electric / Variable) [Estimated; not hardware-verified]','Electrobola (Eléctrico / Variable)'],
+ ['gw0169_p062','Carámbano (Hielo / 85) [Solo daño básico; sin verificar]','Carámbano (Hielo / 85)'],
+ ['gw0169_p063','Carámbano (Hielo / 25) [Solo daño básico; sin verificar]','Lanza de Hielo (Hielo / 25)']
+];
+for(const [id,label,expected]of warningIdentityCases){
+ selectedId=id;now.__ui.set('es-LA');const input=warning(label),output=now.__ui.text(input);
+ assert.ok(output.includes('“'+expected+' ['),id+': canonical selected ID must determine the quoted move');
+ assert.ok(!kana.test(output)&&!output.includes('not hardware-verified'),id+': mixed warning label remains');
+ assert.deepEqual(numbers(output),numbers(input),id+': selected label numeric values changed');
+ assert.equal(now.ChlohaEsLaUi.source(output),input,id+': original warning source recovery');
+ assert.equal(selectedId,id,'Rendering must not mutate the selected canonical control');
+ for(const locale of previous){now.__ui.set(locale);old.__ui.set(locale);assert.equal(now.__ui.text(input),old.__ui.text(input),'Legacy selected warning output changed: '+locale+'/'+id);}
+}
+selectedId=null;
 // Canonical IDs and false-positive guards: never translate arbitrary mentions.
 for(const unknown of ['Dragon Darts in user notes','Earthquake Ltd.','stat/userSuppliedAbility: 12 → 20','HP is a company name','選択中：未知の文字列'])assert.equal(now.ChlohaEsLaUi.dynamic(unknown),null,unknown);
 now.__ui.set('es-LA');assert.match(now.__ui.text('アクロバット: 持ち物 なし（威力2倍）'),/^Acrobacia:/);assert.match(now.__ui.text('エレキボール: 素早さ 123 \/ 62 → 威力 80'),/^Electrobola:/);
@@ -82,6 +105,6 @@ const sourceKeys=new Set(cases.map(([,input])=>input));
 for(const table of now.__ui.tables)for(const [key,entry]of Object.entries(table)){sourceKeys.add(key);for(const value of typeof entry==='string'?[entry]:Object.values(entry))if(typeof value==='string')sourceKeys.add(value);}
 let legacyComparisons=0;
 for(const locale of previous){now.__ui.set(locale);old.__ui.set(locale);for(const input of sourceKeys){assert.equal(now.__ui.text(input),old.__ui.text(input),'Stable output changed: '+locale+'/'+input);legacyComparisons++;}}
-const result={passed:true,baseline,dynamicAndStaticWitnesses:cases.length,regionalCases,roundtrips,legacyComparisons,cacheLimit:512,numericTokensPreserved:true,canonicalNamesOnly:true};
+const result={passed:true,baseline,dynamicAndStaticWitnesses:cases.length,regionalCases,roundtrips,legacyComparisons,canonicalSelectedWarningCases:warningIdentityCases.length,cacheLimit:512,numericTokensPreserved:true,canonicalNamesOnly:true};
 fs.mkdirSync(path.join(root,'reports/v110'),{recursive:true});fs.writeFileSync(path.join(root,'reports/v110/dynamic-ui.json'),JSON.stringify(result,null,2)+'\n');
 console.log('PASS v1.1.0 dynamic ES-LA UI '+JSON.stringify(result));
