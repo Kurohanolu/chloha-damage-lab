@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-11-15T10:16:29.400Z",
+  "postreleaseCommit": {
+    "sha": "1e3fc5390de5332a0470298835973a9f470ccaea",
+    "node_id": "C_kwDOVpfxW9oAKDFlM2ZjNTM5MGRlNTMzMmEwNDcwMjk4ODM1OTczYTlmNDcwY2NhZWE",
+    "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/commits/1e3fc5390de5332a0470298835973a9f470ccaea",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/commit/1e3fc5390de5332a0470298835973a9f470ccaea",
+    "author": {
+      "name": "Kurohanolu",
+      "email": "yuta0721legend@gmail.com",
+      "date": "2026-11-15T10:12:50Z"
+    },
+    "committer": {
+      "name": "Kurohanolu",
+      "email": "yuta0721legend@gmail.com",
+      "date": "2026-11-15T10:12:50Z"
+    },
+    "tree": {
+      "sha": "44d20dcb7d2a5c60e03bad3fc9a4ce6184fbcd49",
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/trees/44d20dcb7d2a5c60e03bad3fc9a4ce6184fbcd49"
+    },
+    "message": "docs: record post-v1 Singularity Mode and ES-LA concepts",
+    "parents": [
+      {
+        "sha": "0b270c1452505268364659edd402209b00b28673",
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/commits/0b270c1452505268364659edd402209b00b28673",
+        "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/commit/0b270c1452505268364659edd402209b00b28673"
+      }
+    ],
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "results": [
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/ref/heads/main",
+      "data": {
+        "ref": "refs/heads/main",
+        "node_id": "REF_kwDOVpfxW69yZWZzL2hlYWRzL21haW4",
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/refs/heads/main",
+        "object": {
+          "sha": "1e3fc5390de5332a0470298835973a9f470ccaea",
+          "type": "commit",
+          "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/commits/1e3fc5390de5332a0470298835973a9f470ccaea"
+        }
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/ref/tags/v1.0.0",
+      "data": {
+        "ref": "refs/tags/v1.0.0",
+        "node_id": "REF_kwDOVpfxW7ByZWZzL3RhZ3MvdjEuMC4w",
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/refs/tags/v1.0.0",
+        "object": {
+          "sha": "0b270c1452505268364659edd402209b00b28673",
+          "type": "commit",
+          "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/commits/0b270c1452505268364659edd402209b00b28673"
+        }
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/releases/tags/v1.0.0",
+      "data": {
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/releases/445961829",
+        "assets_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/releases/445961829/assets",
+        "upload_url": "https://uploads.github.com/repos/Kurohanolu/chloha-damage-lab/releases/445961829/assets{?name,label}",
+        "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v1.0.0",
+        "id": 445961829,
+        "author": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "node_id": "RE_kwDOVpfxW84alNZl",
+        "tag_name": "v1.0.0",
+        "target_commitish": "0b270c1452505268364659edd402209b00b28673",
+        "name": "Singularity v1.0.0",
+        "draft": false,
+        "immutable": false,
+        "prerelease": false,
+        "created_at": "2026-11-15T09:56:18Z",
+        "updated_at": "2026-11-15T10:06:21Z",
+        "published_at": "2026-11-15T10:06:21Z",
+        "assets": [
+          {
+            "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/releases/assets/750576179",
+            "id": 750576179,
+            "node_id": "RA_kwDOVpfxW84svOIz",
+            "name": "v1.0.0.zip",
+            "label": "",
+            "uploader": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "node_id": "MDM6Qm90NDE4OTgyODI=",
+              "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+              "html_url": "https://github.com/apps/github-actions",
+              "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+              "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+              "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+              "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+              "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+              "type": "Bot",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "application/zip",
+            "state": "uploaded",
+            "size": 2879887,
+            "digest": "sha256:dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6",
+            "download_count": 0,
+            "created_at": "2026-11-15T10:06:19Z",
+            "updated_at": "2026-11-15T10:06:19Z",
+            "browser_download_url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/download/v1.0.0/v1.0.0.zip"
+          },
+          {
+            "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/releases/assets/750576228",
+            "id": 750576228,
+            "node_id": "RA_kwDOVpfxW84svOJk",
+            "name": "v1.0.0.zip.sha256",
+            "label": "",
+            "uploader": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "node_id": "MDM6Qm90NDE4OTgyODI=",
+              "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+              "html_url": "https://github.com/apps/github-actions",
+              "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+              "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+              "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+              "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+              "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+              "type": "Bot",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "text/plain",
+            "state": "uploaded",
+            "size": 77,
+            "digest": "sha256:1bde49d06b8c7b4d27bb9716a4271a2f0669a21890c8fc093f16c6e0fda9d593",
+            "download_count": 0,
+            "created_at": "2026-11-15T10:06:20Z",
+            "updated_at": "2026-11-15T10:06:20Z",
+            "browser_download_url": "https://github.com/Kurohanolu/chloha-damage-lab/releases/download/v1.0.0/v1.0.0.zip.sha256"
+          }
+        ],
+        "tarball_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/tarball/v1.0.0",
+        "zipball_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/zipball/v1.0.0",
+        "body": "# Singularity v1.0.0\n\nSingularityは、宣言した対応範囲と既知の制限を明示した、ブラウザで利用できるポケモンのダメージ計算機です。v1.0.0は初の正式安定版です。開発元は **Chloha Labs** です。\n\n- バージョン: **1.0.0 / Stable**\n- 公開日: **2026-11-15（JST）**\n- 公開URL: https://kurohanolu.github.io/singularity/\n- 旧URL: https://kurohanolu.github.io/chloha-damage-lab/ （従来の計算機能と移行案内を維持）\n\n## 利用環境と9言語\n\nインストール不要のWebアプリです。スマートフォン、タブレット、デスクトップ向けの画面を用意しています。検証はChromiumのブラウザ自動化と320・360・390・430・768・1440pxの画面幅を中心に行います。Android/iOSの全物理端末や、すべてのブラウザ・OSでの動作を保証するものではありません。\n\n日本語、英語、フランス語、ドイツ語、スペイン語、イタリア語、韓国語、中国語簡体字、中国語繁体字に対応します。翻訳名検索、言語切替、再読み込み時の言語・入力復元を提供します。全文章の専門家による校閲完了を意味しません。\n\n## 計算と入力保存\n\n対応している技・特性・持ち物、タイプ相性、能力値とランク、急所、天候・フィールド、壁・軽減などの条件から、16段階の乱数を含むダメージを計算します。対応する威力変動技、体重依存技、連続技にも計算方式を設けています。技ごとの未対応・部分対応・未検証表示を確認してください。\n\n計算条件を端末のブラウザへ保存し、再読み込み時に復元します。有効期間は30日です。初期化できます。保存拒否や容量制限がある環境では保存できない場合があります。フィードバック本文・連絡先・認証情報・非公開スナップショットは、この計算条件の自動保存対象に含みません。\n\n## 匿名フィードバック\n\n画面内のフィードバックから、不具合、計算結果、翻訳、機能要望を報告できます。連絡先は任意です。計算条件の添付は任意で、送信前に内容を確認・同意します。計算条件または数値結果が変わると、以前の添付同意は失効します。\n\n報告は非公開で受け付け、管理者認証とTurnstileを維持します。GitHub Issueへの転記は、承認された技術情報だけに限定します。送信前に個人情報・認証情報を本文へ含めていないか確認してください。\n\n既存APIとの互換性のため、この正式版だけは通信上の版番号を`v1.0`へ明示的に対応付け、完全な`v1.0.0`を送信前の表示と報告本文の固定メタデータに保持します。データベースの版番号欄だけではパッチ版を識別せず、完全な版番号は報告本文にも記録します。将来のパッチ版へ自動的に流用する対応ではありません。\n\n## v0.188公開版からの主な品質改善\n\n- かわらわり・サイコファングの壁に対する処理を修正しました。\n- 手動の素早さ・HPと実際の計算・表示・保存復元の整合を改善しました。\n- イカサマ、自動配分から手動への切替、技変更後の保存復元を修正しました。\n- 計算結果の変更・消失時の添付スナップショット確認と同意失効を修正しました。\n- 検索候補の上下キー、初回↑、フォーカス・aria-activedescendantを改善しました。\n- 可変威力や未対応警告、検証範囲の説明にある翻訳誤記を修正しました。\n- フィードバック入力時の不要な計算画面更新を除去しました。\n- 正式版の識別子、承認されたソース・検査結果・公開資産を照合するリリース手順を整備しました。\n\n監査済み候補からの正式版移行を理由に、計算エンジンを再実装していません。独立算術、固定基準、Showdown比較、境界条件、入力復元と多言語での数値一致を検証対象に含めます。結果と対象コミットは最終報告書で確認できます。\n\n## 既知の制限\n\n- 全ポケモン・全技・全特性への完全対応ではありません。レイジングブルの壁破壊、一部の連続技とマルチスケイル等、未対応・部分対応条件を残します。\n- Pokémon Championsの全実機仕様との完全一致を保証しません。確認済みの差異と未検証仕様を区別し、Showdownとの一致を実機一致とは扱いません。\n- 一部の種族値・技・特性の参照データに未検証項目があります。対象外のルールや今後の採用時には再検証が必要です。\n- Cloudflareの公開側の保護は検証しますが、最新の認証済み管理設定・D1の内部状態・完全な本番コード同定・バックエンド復旧実行は未検証の範囲を残します。\n- 物理端末、ネイティブスクリーンリーダー、OS IME、全配色・全翻訳の網羅的な検証は完了していません。\n- 有限時間のGC・反復操作検査は、長時間の全メモリ動作や、将来の不具合が存在しないことを保証しません。\n- 外部スプライトは外部提供元の稼働に依存します。\n\n不具合は画面内のフィードバックから報告してください。競技に重要な境界条件や未検証項目では、表示される対応範囲と条件を確認してください。正式版であっても、これらの制限は継続して開示・改善します。\n\n\nCommit: `0b270c1452505268364659edd402209b00b28673`\n\n- [Showdown differential tests](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633835): completed / success\n- [Showdown differential audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633934): completed / success\n- [v0.184 engine baseline](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633794): completed / success\n- [Damage Lab CI and status ledger](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633811): completed / success\n- [UI & damage regression](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633783): completed / success\n- [GitHub Pages live smoke](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633760): completed / success\n- [v0.185 anonymous feedback](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633745): completed / success\n- [v0.186 Accuracy & Mechanics Audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633859): completed / success\n- [v0.187 Singularity Migration](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633879): completed / success\n- [v0.188 Quality Remediation](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633753): completed / success\n- [v1.0.0 Stable Promotion](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633773): completed / success"
+      }
+    }
+  ]
+}

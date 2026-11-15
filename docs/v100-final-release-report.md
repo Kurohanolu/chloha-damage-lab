@@ -9,8 +9,9 @@ Final evidence closure: completed. Independent 6.1 Sol verdict: **publication in
 | Item | Verified value |
 | --- | --- |
 | Product / developer | Singularity — Pokémon Damage Calculator / Chloha Labs |
-| Source main and tag commit | `0b270c1452505268364659edd402209b00b28673` (M) |
-| Git tree | `239c4cbd37aa6389f16dc81e7f9a861c09a723f2` |
+| Released source / tag commit | `0b270c1452505268364659edd402209b00b28673` (M) |
+| Released Git tree | `239c4cbd37aa6389f16dc81e7f9a861c09a723f2` |
+| Current main after a separate documentation update | `1e3fc5390de5332a0470298835973a9f470ccaea`; tree `44d20dcb7d2a5c60e03bad3fc9a4ce6184fbcd49`; released code/assets unchanged |
 | Source PR | [#67, merged](https://github.com/Kurohanolu/chloha-damage-lab/pull/67) |
 | Stable tag | [`v1.0.0`](https://github.com/Kurohanolu/chloha-damage-lab/tree/v1.0.0), resolves directly to M |
 | GitHub Release | [Singularity v1.0.0](https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v1.0.0), ID 445961829, draft=false, prerelease=false, Latest |
@@ -21,7 +22,7 @@ Final evidence closure: completed. Independent 6.1 Sol verdict: **publication in
 | Distribution ZIP | `v1.0.0.zip`, 2,879,887 bytes, 413 files |
 | ZIP SHA-256 | `dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6` |
 
-Root and 6.1 Sol separately downloaded the published ZIP and checksum, verified API digests and CRC, checked the commit comment and every source path/byte, and regenerated the UTC Git archive byte for byte. The release body agrees with the committed Japanese release notes, M and its eleven successful main-push workflows. Existing tags were not overwritten. The final audit is stored on a separate evidence branch so the released main/tag/archive remain immutable.
+Root and 6.1 Sol separately downloaded the published ZIP and checksum, verified API digests and CRC, checked the commit comment and every source path/byte, and regenerated the UTC Git archive byte for byte. The release body agrees with the committed Japanese release notes, M and its eleven successful main-push workflows. Existing tags were not overwritten. The final audit is stored on a separate evidence branch so the released source/tag/archive remain immutable.
 
 ## 2. Source chain and owner authorization
 
@@ -32,11 +33,13 @@ Root and 6.1 Sol separately downloaded the published ZIP and checksum, verified 
 | Independently reviewed stable R2 | `b5ea506af27487a05cc7fbdc11371ac47778b06a` | `1e4d0d54c2013b22db3e15db144f8998cab1adfd` |
 | Approved A | `de5ec8342d974a07e2d155f0293851c69087ff94` | `c99f29d54673bb5abf97a2da3d771fef6485a34b`; approval/docs only |
 | Actual acceptance B | `56633de643e8a13d5e0f26c1aa2b5b2bcc278232` | `239c4cbd37aa6389f16dc81e7f9a861c09a723f2`; actual A receipt plus docs |
-| Final main M | `0b270c1452505268364659edd402209b00b28673` | Exactly B's tree; parents previous main and B |
+| Release merge M | `0b270c1452505268364659edd402209b00b28673` | Exactly B's tree; parents previous main and B |
 
 The [prior v0.188 final gate report](https://github.com/Kurohanolu/chloha-damage-lab/blob/be01f25ae9597b16551a5fa963e093b2247eff9f/docs/v0188-final-release-gate-report.md) is preserved on its original evidence branch. It does not substitute for fresh v1.0.0 CI.
 
 The owner explicitly instructed 「公開まで進めてくれ」 and 「リリースまで頼むぞ」 after specifying the known limitations and conditional release framework. [Owner decision](v100-owner-decision.md) and [structured approval](v100-owner-approval.json) record delegated publication, not a claim that the owner manually typed a future SHA. The immutable original Sol review SHA-256 remains `57e0d95c594797b150af33e129cb0c756de9ae1d8648656dfddf6bfa8d1feb82`.
+
+A subsequent, separate operation added 18 idea-backlog lines only to `docs/development-memo.md` on main, commit `1e3fc5390de5332a0470298835973a9f470ccaea`, directly parented by M. This release task did not create it. Root and Sol independently verified this as a post-release documentation update; no new mechanic, language or roadmap commitment is inferred from its contents. The complete 76-file public build map remains identical. The released tag/Release/ZIP deliberately stay at reviewed M; no tag is moved to the later documentation commit. See the [reference-drift evidence](evidence/v100/post-release-main-docs-proof.json) and [independent addendum](evidence/v100/v1-sol-postrelease-docs-addendum.md). All other 412 tracked blobs are identical. M CI is not claimed as a run on N.
 
 All 307 protected files are byte-identical from R2 through A/B/M. B changes only five permitted acceptance fields plus docs relative to A. The main merge used an expected-head lease. No unexplained engine change or unreviewed source substitution occurred.
 
@@ -160,4 +163,4 @@ Follow-up priorities are authenticated read-only Cloudflare configuration/proven
 
 Final release disposition remains **CONDITIONAL READY — published under the owner's recorded authorization and accepted declared limitations**. Actual publication integrity can pass while management settings, physical hardware and long-session behavior remain unverified. The release is neither an incomplete publication nor an unconditional claim that every product/environmental property is certified.
 
-Resume point: main M and v1.0.0/Release are final; target deployment 43702512270 is successful; old URL and pre.1 recovery remain intact. Do not recreate PR #67, tag, Release or deployment on reconnect. Re-read their current states before any future operation. Report-branch documents add evidence only and do not change the released runtime.
+Resume point: released source M and v1.0.0/Release are final; current main is the later documentation-only commit `1e3fc5390de5332a0470298835973a9f470ccaea`; target deployment 43702512270 is successful; old URL and pre.1 recovery remain intact. Do not recreate PR #67, tag, Release or deployment on reconnect. Re-read their current states before any future operation. Report-branch documents add evidence only and do not change the released runtime.

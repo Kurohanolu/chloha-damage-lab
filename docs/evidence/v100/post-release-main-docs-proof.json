@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-11-15T10:16:07.233Z",
+  "sourceReleaseCommit": "0b270c1452505268364659edd402209b00b28673",
+  "currentMain": "1e3fc5390de5332a0470298835973a9f470ccaea",
+  "tree": "44d20dcb7d2a5c60e03bad3fc9a4ce6184fbcd49",
+  "parents": [
+    "0b270c1452505268364659edd402209b00b28673"
+  ],
+  "message": "docs: record post-v1 Singularity Mode and ES-LA concepts",
+  "files": [
+    {
+      "path": "docs/development-memo.md",
+      "status": "modified",
+      "additions": 18,
+      "deletions": 0
+    }
+  ],
+  "createdByThisReleaseTask": false,
+  "publicFileMapsEqual": true,
+  "publicFiles": 76,
+  "tagAndReleaseRemainAtReviewedM": true
+}
