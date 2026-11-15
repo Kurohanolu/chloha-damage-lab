@@ -53,6 +53,7 @@ jobs:
           name: v0188-quality-audit-evidence
           path: |
             reports/v0188/
+            reports/v0188-astra/
             dist/v0188/
           if-no-files-found: error
           include-hidden-files: true

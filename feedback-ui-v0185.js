@@ -64,13 +64,23 @@
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();close();}});
   $('Form').addEventListener('input',dirty);$('Form').addEventListener('change',dirty);
   $('Attach').addEventListener('change',attachment);$('Refresh').addEventListener('click',()=>{dirty();attachment();});
-  for(const event of ['input','change'])document.addEventListener(event,e=>{
-   if(panel.contains(e.target)||e.target.id==='chloha-locale'||!C.controlIds.includes(e.target.id))return;
-   if(snapshot){stale=true;$('Stale').hidden=false;$('Confirm').checked=false;dirty();}
+  // Consent refers to the displayed calculation, including programmatic presets,
+  // side swaps, resets and six-stat editors. Locale alone is not a calculation change.
+  const calculationIdentity=value=>JSON.stringify([value.appVersion,value.engineVersion,value.selection,value.controls,value.engineInput]);
+  function checkAttachmentFreshness(){
+   if(!snapshot||busy||stale)return;
+   let changed=true;
+   try{changed=calculationIdentity(snapshot)!==calculationIdentity(window.ChlohaFeedbackSnapshot.capture());}catch{}
+   if(changed){stale=true;$('Stale').hidden=false;$('Confirm').checked=false;dirty();}
+  }
+  for(const event of ['input','change','click'])document.addEventListener(event,e=>{
+   if(panel.contains(e.target)||e.target.id==='chloha-locale')return;
+   checkAttachmentFreshness();
   });
   function invalid(key,id){errorKey=key;messages();if(id){$(id).setAttribute('aria-invalid','true');$(id).focus();}}
   $('Form').addEventListener('submit',async event=>{
    event.preventDefault();if(busy||delivered)return;
+   checkAttachmentFreshness();
    for(const id of ['Category','Description','Email'])$(id).removeAttribute('aria-invalid');
    if(!C.categories.includes($('Category').value))return invalid('requiredCategory','Category');
    if(!$('Description').value.trim())return invalid('requiredDescription','Description');

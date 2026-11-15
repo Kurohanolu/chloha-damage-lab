@@ -18,6 +18,8 @@ for(const match of html.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][
  const asset=new URL(match[1],'https://release.invalid/');
  assert.ok(!match[1].includes('://')&&fs.existsSync(asset.pathname.slice(1)),'published runtime asset must exist: '+match[1]);
  assert.equal(asset.searchParams.get('v'),release.tag.slice(1),'every runtime URL must carry the current release cache key');
+ if(asset.searchParams.has('h'))assert.equal(asset.searchParams.get('h'),crypto.createHash('sha256').update(fs.readFileSync(asset.pathname.slice(1))).digest('hex').slice(0,16),'runtime content cache key must match current bytes');
+ if(release.followupAudit&&['/i18n.js','/feedback-ui-v0185.js'].includes(asset.pathname))assert.ok(asset.searchParams.has('h'),'changed follow-up assets require content cache keys');
 }
 if(release.product==='Singularity'){
  assert.equal(release.developer,'Chloha Labs');

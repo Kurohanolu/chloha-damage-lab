@@ -2,6 +2,7 @@
 // A draft manifest is valid for development, but cannot publish a migration.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 function verifyCutoverApproval(release){
+ assert.ok(!Object.prototype.hasOwnProperty.call(release,'followupAudit'),'Follow-up audit drafts cannot deploy or republish an immutable release; a new release decision is required');
  if(!release.migration){verifyQualityApproval(release);return;}
  assert.equal(release.migration.status,'approved','Singularity publication requires final owner cutover approval');
  assert.equal(release.migration.designApproval,'approved','The exact logo/design must be approved');
@@ -12,6 +13,7 @@ function verifyCutoverApproval(release){
  verifyQualityApproval(release);
 }
 function verifyQualityApproval(release){
+ assert.ok(!Object.prototype.hasOwnProperty.call(release,'followupAudit'),'Follow-up audit drafts cannot deploy or republish an immutable release; a new release decision is required');
  // Migration approval belongs to v0.187; it cannot authorize a later quality release.
  assert.equal(typeof release.version,'string','An explicit release version is required');
  const version=/^(\d+)\.(\d+)$/.exec(release.version);

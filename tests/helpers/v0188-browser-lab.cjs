@@ -4,7 +4,10 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const {execFileSync}=require('node:child_process');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'../..');
-const baseline='7210be99c39d75b49ea8200aad91d75801eb300a';
+// Follow-up measurements compare to the already published v0.188, not to an
+// older migration baseline. Keep the original v0.188 comparison reproducible.
+const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
+const baseline=release.followupAudit?'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7':'7210be99c39d75b49ea8200aad91d75801eb300a';
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webp':'image/webp','.json':'application/json'};
 function frontend(ref){
  const read=file=>ref?execFileSync('git',['show',ref+':'+file],{cwd:root,maxBuffer:16*1024*1024}):fs.readFileSync(path.join(root,file));

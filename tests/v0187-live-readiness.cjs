@@ -11,6 +11,7 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
   const originalRelease=JSON.parse(fs.readFileSync(releasePath)),originalManifest=JSON.parse(fs.readFileSync(manifestPath));
   function fixture(migration){
    const release=structuredClone(originalRelease);Object.assign(release.migration,migration);
+   delete release.followupAudit; // Synthetic historical migration fixtures, not the current candidate's authorization.
    // These fixtures exercise historical migration lifecycle states, with an explicitly authorized synthetic quality review.
    if(Number(release.version)>=0.188)release.qualityReview={releaseTag:release.tag,auditor:'6.1 Terra',auditStatus:'passed',ownerApproval:'approved',evidence:'synthetic lifecycle fixture; not a real approval'};
    fs.writeFileSync(releasePath,JSON.stringify(release));

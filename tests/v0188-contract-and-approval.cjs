@@ -11,7 +11,7 @@ for(const altered of [
  html.replace('window.SingularityPortraitAlt?.update(img,p);','window.SingularityPortraitAlt?.update(img,p);render();'),
  html.replace('function render(){','function render(){window.unauthorizedControlChange=true;')
 ]){assert.notEqual(altered,html);assert.throws(()=>verifyInline(altered,base),'numeric/control/bridge tampering must fail');}
-const current=JSON.parse(fs.readFileSync('release.json','utf8'));
+const current=require('../scripts/helpers/v0188-followup-review.cjs').publishedRelease();
 assert.equal(current.tag,'v0.188-pre.1');
 const pending=structuredClone(current);Object.assign(pending.qualityReview,{auditStatus:'pending',ownerApproval:'pending',evidence:''});
 for(const verify of [verifyCutoverApproval,verifyPublication])assert.throws(()=>verify(pending),/Terra quality audit/,'v0.187 migration approval cannot authorize v0.188');
