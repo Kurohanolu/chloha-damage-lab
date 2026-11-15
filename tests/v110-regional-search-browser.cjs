@@ -29,6 +29,7 @@ const numeric=page=>page.evaluate(()=>JSON.stringify({a:ChlohaLastCalculation.a,
     await page.selectOption('#chloha-locale','es-LA');
     if(w.speciesId){
      assert.equal(await page.evaluate(({id,ability})=>ChlohaGameData.pokemon.find(p=>p.id===id)?.abilities.includes(ability),{id:w.speciesId,ability:w.key}),true,'Ability witness requires a species that actually has it');
+     await page.locator('#'+w.speciesControl).evaluate(node=>{for(let p=node.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;});
      await page.selectOption('#'+w.speciesControl,w.speciesId);await ready(page);
      assert.equal(await page.locator('#'+w.control+' option[value="'+w.id+'"]').count(),1,'Species-specific ability option exists before typeahead');
     }

@@ -31,9 +31,11 @@ async function esLaDom(page,label,expected,evidence){
  for(const selector of selectors){const node=page.locator(selector);assert.equal(await node.isVisible(),true,label+' visible '+selector);texts[selector]=(await node.textContent()).trim();}
  evidence.dynamicDomCases.push({label,texts});
  for(const [selector,pattern] of Object.entries(expected)){
-  const text=texts[selector];assert.match(text,pattern,label+' Spanish witness '+selector);
-  assert.doesNotMatch(text,/[\u3040-\u30ff\u3400-\u9fff]/u,label+' no Japanese/previous CJK locale text '+selector);
-  assert.doesNotMatch(text,/\b(?:Base damage|Before random|Current HP|Selected move|Unsupported|Basic damage only|Estimated;|Turn \d|confirmed\.|total damage|Damage estimate|Critical hit|not hardware-verified)\b|\b(?:power|stat|base|preRandom|postRandom|final)\/[A-Za-z]/i,label+' no known English fallback '+selector);
+  const text=texts[selector];
+  const checks=[['Spanish witness',()=>assert.match(text,pattern)],['Japanese/CJK residue',()=>assert.doesNotMatch(text,/[\u3040-\u30ff\u3400-\u9fff]/u)],['Known English fallback',()=>assert.doesNotMatch(text,/\b(?:Base damage|Before random|Current HP|Selected move|Unsupported|Basic damage only|Estimated;|Turn \d|confirmed\.|total damage|Damage estimate|Critical hit|not hardware-verified)\b|^(?:power|stat|base|preRandom|postRandom|final)\/[A-Za-z]/im)]];
+  // Collect text failures so one untranslated label cannot hide later witnesses.
+  // Structural, visibility, numeric and state assertions still fail immediately.
+  for(const [check,run] of checks)try{run();}catch(error){evidence.dynamicDomFailures.push({label,selector,check,error:error.message,actual:text});}
  }
 }
 async function dynamicDomWitnesses(page,evidence){
@@ -62,7 +64,7 @@ async function dynamicDomWitnesses(page,evidence){
 }
 (async()=>{
  const lab=await startLab();let browser,context;
- const evidence={locales,mode:'local Chromium emulation',realDevice:false,productionRequests:0,productionMutations:0,rotationTransitions:0,explicitTransitions:[],numericalCases:[],dynamicDomCases:[],reloads:0,unverified:['physical Android/iOS','native screen reader and OS IME','professional Spanish review','Champions hardware mechanics','Exhaustive index.html DOM-template enumeration and all dynamic condition combinations']};
+ const evidence={locales,mode:'local Chromium emulation',realDevice:false,productionRequests:0,productionMutations:0,rotationTransitions:0,explicitTransitions:[],numericalCases:[],dynamicDomCases:[],dynamicDomFailures:[],reloads:0,unverified:['physical Android/iOS','native screen reader and OS IME','professional Spanish review','Champions hardware mechanics','Exhaustive index.html DOM-template enumeration and all dynamic condition combinations']};
  try{
   browser=await launchBrowser();context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockFeedback(context,lab.origin);const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(lab.origin+'/candidate/');await ready(page);
@@ -102,6 +104,7 @@ async function dynamicDomWitnesses(page,evidence){
   }
   assert.match(await page.locator('#moveSelected').textContent(),/Variable/);
   await dynamicDomWitnesses(page,evidence);
+  assert.deepEqual(evidence.dynamicDomFailures,[],'Every sampled ES-LA DOM text assertion must pass');
   assert.deepEqual(errors,[]);evidence.passed=true;
   console.log('PASS v1.1.0 ten locales: 110 rotating transitions, explicit regional routes, '+evidence.numericalCases.length+' complete output comparisons, '+evidence.reloads+' reloads and ES-LA canonical warnings/errors');
  }catch(error){evidence.error=error.message;throw error;}
