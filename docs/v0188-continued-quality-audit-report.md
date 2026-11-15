@@ -13,7 +13,7 @@ Prior M-01/L-01 and PR67 A-S01/UI-01/CF-01 changes were read and retained. Exist
 | ID | Priority | Reproduction and resulting correction |
 |---|---|---|
 | C-E01 | High | Brick Break/Psychic Fangs against Reflect received reduction. Stable move IDs now bypass screens for the hit; all other modifiers retained. |
-| C-S01 | Medium | Foul Play defender raw budget98/effective66 was valid live but rejected from storage. Contextual schema validation now follows the effective allocation. |
+| C-S01 | Medium | Foul Play defender raw budget98/effective66 was valid live but rejected from storage. Contextual schema validation now follows the effective allocation and actual automatic/manual budget applicability. |
 | C-S02 | High | Manual Speed-table edits left attSpeed/defSpeed unchanged and speed-dependent damage stale. Canonical per-side Speed routing and HP/Speed display corrected. |
 | SOL-01 | Medium | An inactive point producing total67 cleared the result without changing input bridge; feedback consent remained. Numeric/null result now participates in attachment freshness, including submit-time validation. |
 | C-U01 | Medium | Initial ArrowUp skipped last autocomplete result and rerenders left dangling active-descendant. All three comboboxes now clear and select consistently. |
@@ -26,7 +26,7 @@ Full before/after reproductions, scope and commands: [engine](v0188-continued-en
 ## Verification recorded so far
 
 - Engine:216 independent BigInt vectors;456 locked Champions/Gen9 comparisons;20 unaffected/ID witnesses;6 immunity witnesses. All16rolls compared. Existing300,657move and4000seeded comparisons retained. No physical-game agreement claimed.
-- State:44 independent contextual-budget and canonical-control assertions; legacy35schema and event-lifecycle checks. Nine-language browser state+reload+ElectroBall numerical tests added.
+- State:52 independent contextual-budget and canonical-control assertions; legacy35schema and event-lifecycle checks. Nine-language browser state+reload+ElectroBall numerical tests added.
 - Locale:59 actual-source function assertions; required18locale/viewport browser combinations added while retaining existing90transitions and54six-width checks. Semantic corrections reuse existing terminology; no exhaustive native-language certification.
 - Feedback: invalid-result handler test failed before correction and passes after; nine-language browser case requires zero report POSTs. Worker source/configuration unchanged.
 - CI: mandatory v0.188 runner auto-discovers new tests; locked external calculator is installed and continued audit reports included in artifact. Final exact-head results will replace pending status.
@@ -42,6 +42,10 @@ Current public Worker readiness10/10 and CORS4/4 passed. Access public JWKS resp
 Final same-run baseline/candidate measurements pending CI. A separate exact-guard A/B browser experiment measures feedback input latency and DOM mutations with five alternating contexts ×20inputs per variant/profile, while checking state and text preservation. Source-handler work counts decrease60→0 calculator refreshes for60feedback inputs; calculator inputs remain60→60. Counts are not elapsed-time claims. Existing4xCPUmobile73.5→89.6ms observation remains historical owner-accepted evidence; it is not copied as this candidate result. Current browser launch is blocked locally by socket EPERM, so browser validation requires actual CI artifacts.
 
 Physical phones, full native screen-reader use, complete language semantics, every gradient/image contrast state, current Cloudflare administrative state, real Turnstile and authenticated production replay remain unverified. Raging Bull screen breaking is explicitly unsupported and unchanged. Existing broad comparisons are finite witnesses, not proof of every game interaction.
+
+## Independent mode-transition correction
+
+Sol independently confirmed an additional C-S01 boundary (SOL-02): after valid automatic Foul Play raw98/effective66, switching to manual mode produced a valid calculation but stopped saving. The first new test incorrectly required rejecting this inactive aggregate. The corrected policy matches live validation: automatic mode enforces relevant aggregate budgets; manual mode preserves unused allocations while every individual shape/type/range and control bound remains strict. New tests failed3/52before the change and pass52/52after. Real nine-language mode-transition/reload tests are mandatory in the revised candidate.
 
 ## Resume point
 

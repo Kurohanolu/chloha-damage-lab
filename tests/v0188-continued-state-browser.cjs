@@ -10,7 +10,7 @@ const waitSaved=page=>page.waitForFunction(key=>{const raw=localStorage.getItem(
 // neither reads production rolls nor calls an engine rounding helper.
 const expectedRolls=power=>{const base=Math.floor(Math.floor(22*power*150/100)/50)+2;return Array.from({length:16},(_,i)=>Math.floor(base*(85+i)/100));};
 (async()=>{
- const lab=await startLab();let browser;const evidence={realDevice:false,viewport:390,locales,foulPlayReloads:0,speedReloads:0,numericalCases:[]};
+ const lab=await startLab();let browser;const evidence={realDevice:false,viewport:390,locales,foulPlayReloads:0,manualFoulReloads:0,manualMoveChangeReloads:0,automaticBudgetRejections:0,speedReloads:0,numericalCases:[]};
  try{
   browser=await launchBrowser();const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   const page=await context.newPage();await blockExternal(context,page);const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -23,6 +23,18 @@ const expectedRolls=power=>{const base=Math.floor(Math.floor(22*power*150/100)/5
    assert.equal(Object.values(foul.state.models.def.points).reduce((a,b)=>a+b,0),98);
    assert.equal(foul.rolls.length,16);await page.reload();await ready(page);await page.waitForFunction(()=>!!window.ChlohaPersistence);
    assert.deepEqual(await snapshot(page),foul,locale+' valid effective66 Foul Play state and all rolls restored');evidence.foulPlayReloads++;
+   await set(page,'dbAuto',false);await set(page,'attack',177);await waitSaved(page);const manualFoul=await snapshot(page);
+   assert.equal(manualFoul.input.attack,177);assert.equal(Object.values(manualFoul.state.models.def.points).reduce((a,b)=>a+b,0),98);
+   await page.reload();await ready(page);await page.waitForFunction(()=>!!window.ChlohaPersistence);
+   assert.deepEqual(await snapshot(page),manualFoul,locale+' automatic Foul Play to manual edit restores inactive allocation and all rolls');evidence.manualFoulReloads++;
+   const ordinaryId=await page.evaluate(()=>ChlohaGameData.moves.find(m=>m.name==='じしん').id);await set(page,'dbMove',ordinaryId);await waitSaved(page);const manualOrdinary=await snapshot(page);
+   await page.reload();await ready(page);await page.waitForFunction(()=>!!window.ChlohaPersistence);
+   assert.deepEqual(await snapshot(page),manualOrdinary,locale+' changing selected move in manual mode preserves saved inactive allocations');evidence.manualMoveChangeReloads++;
+   const savedManual=await page.evaluate(key=>localStorage.getItem(key),key);await set(page,'dbAuto',true);await page.waitForFunction(()=>!ChlohaPersistence.status().pending);
+   assert.equal(await page.evaluate(()=>ChlohaLastCalculation),null,locale+' automatic ordinary move rejects raw98 aggregate');
+   assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),savedManual,locale+' invalid automatic aggregate preserves last valid manual state');evidence.automaticBudgetRejections++;
+   // Returning to Foul Play makes this same allocation valid in automatic mode.
+   await set(page,'dbMove',foulId);await waitSaved(page);assert.ok(await page.evaluate(()=>!!ChlohaLastCalculation));
    const stored=await page.evaluate(key=>localStorage.getItem(key),key);await set(page,'def-speed-points',3);
    await page.waitForFunction(()=>!ChlohaPersistence.status().pending);
    assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),stored,locale+' invalid effective67 preserves last valid saved state');

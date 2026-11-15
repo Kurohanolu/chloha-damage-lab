@@ -24,7 +24,11 @@ for(const oldAttack of [0,1,16,32])for(const replacedAttack of [0,1,16,32]){
 }
 check('ordinary defender budget remains strict',()=>{const s=state();s.controls.dbMove='ordinary';Object.assign(s.models.def.points,{hp:32,attack:32,specialDefense:32});assert.equal(decode(s),null);});
 check('attacker budget remains strict during Foul Play',()=>{const s=state();Object.assign(s.models.att.points,{hp:32,attack:32,speed:3});assert.equal(decode(s),null);});
-check('manual mode does not activate automatic Foul Play exception',()=>{const s=state();s.controls.dbAuto=false;Object.assign(s.models.def.points,{hp:32,attack:32,specialDefense:32});assert.equal(decode(s),null);});
+for(const move of ['foulPlay','ordinary'])check('manual mode preserves inactive allocations for '+move,()=>{const s=state();s.controls.dbAuto=false;s.controls.dbMove=move;Object.assign(s.models.def.points,{hp:32,attack:32,specialDefense:32,speed:2});assert.doesNotThrow(()=>liveValid(s));assert.ok(decode(s),'manual calculator does not enforce inactive aggregate budgets');});
+check('manual mode preserves both inactive point totals at individual maxima',()=>{const s=state();s.controls.dbAuto=false;for(const side of ['att','def'])for(const stat of api.STATS)s.models[side].points[stat]=32;assert.doesNotThrow(()=>liveValid(s));assert.ok(decode(s));s.controls.dbAuto=true;assert.throws(()=>liveValid(s));assert.equal(decode(s),null,'automatic mode still rejects aggregate excess');});
+for(const [name,edit] of [
+ ['point bounds',s=>s.models.def.points.attack=33],['fractional points',s=>s.models.att.points.hp=1.5],['rank bounds',s=>s.models.att.rank.speed=7],['manual stat bounds',s=>s.models.att.manual.speed=0],['unexpected model field',s=>s.models.def.privateToken='secret'],['numeric control bounds',s=>s.controls.attSpeed='10000']
+])check('manual mode retains '+name,()=>{const s=state();s.controls.dbAuto=false;edit(s);assert.equal(decode(s),null);});
 const handler=html.match(/for\(const kind of \['points','range','nature','actual'\]\)[\s\S]*?addEventListener\('input',\(\)=>\{([\s\S]*?)\n   \}\);\n   el\(`/)?.[1];assert.ok(handler,'extract real stat handler');
 for(const side of ['att','def'])check(side+' manual Speed routing',()=>{
  const controls={dbAuto:{checked:false},[side+'-speed-actual']:{value:'200'},attSpeed:{value:'122'},defSpeed:{value:'81'},attack:{value:'150'},defense:{value:'100'}};
