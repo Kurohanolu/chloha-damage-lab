@@ -4,6 +4,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const workflow=fs.readFileSync('deployment/singularity-pages.yml','utf8');
 const script=workflow.split('// SOURCE_CI_GATE_BEGIN\n')[1]?.split('// SOURCE_CI_GATE_END')[0];assert.ok(script);
 const required=['Showdown differential tests','Showdown differential audit','v0.184 engine baseline','Damage Lab CI and status ledger','UI & damage regression','v0.185 anonymous feedback','v0.186 Accuracy & Mechanics Audit','v0.187 Singularity Migration'];
+if(Number(require('../release.json').version.split('.')[0])>0||Number(require('../release.json').version.split('.')[1])>=188)required.push('v0.188 Quality Remediation');
 const sha='a'.repeat(40);
 async function probe(mode){
  let reads=0;
@@ -15,7 +16,7 @@ async function probe(mode){
  if(mode==='newer-pending')runs.push({...runs.at(-1),id:99,status:'in_progress',conclusion:null});
  if(mode==='newer-failure')runs.push({...runs.at(-1),id:99,conclusion:'failure'});
  const github={rest:{actions:{listWorkflowRunsForRepo:async args=>{reads++;assert.equal(args.owner,'Kurohanolu');assert.equal(args.repo,'chloha-damage-lab');assert.equal(args.head_sha,sha);return {data:{workflow_runs:runs}};}}}};
- const execute=()=>vm.runInNewContext('(async()=>{'+script+'})()',{process:{env:{SOURCE_SHA:mode==='invalid-sha'?'main':sha}},github,core:{info(){}}});
+ const execute=()=>vm.runInNewContext('(async()=>{'+script+'})()',{require:name=>name==='./release.json'?require('../release.json'):require(name),process:{env:{SOURCE_SHA:mode==='invalid-sha'?'main':sha}},github,core:{info(){}}});
  if(mode==='complete')await execute();else await assert.rejects(execute(),mode==='invalid-sha'?/Full source SHA/:/Source CI not successful/);
  assert.equal(reads,mode==='invalid-sha'?0:1);
 }
@@ -23,5 +24,5 @@ async function probe(mode){
  for(const mode of ['complete','missing','failed','wrong-head','wrong-event','newer-pending','newer-failure','invalid-sha'])await probe(mode);
  assert.ok(!/contents:\s*write/.test(workflow),'target workflow never pushes source or stores a deployment credential');
  assert.match(workflow,/persist-credentials: false/);assert.match(workflow,/verifyCutoverApproval/);assert.match(workflow,/path: dist\/deploy\/singularity/);
- console.log('PASS target deployment gate: eight exact-source workflows; wrong/stale/missing/failed metadata blocked; public/release checks follow deployment; read-only mocks, no deployment');
+ console.log('PASS target deployment gate: all exact-source workflows; wrong/stale/missing/failed metadata blocked; public/release checks follow deployment; read-only mocks, no deployment');
 })().catch(error=>{console.error(error);process.exitCode=1;});

@@ -1,0 +1,20 @@
+{
+  "baselineCommit": "7210be99c39d75b49ea8200aad91d75801eb300a",
+  "patches": [
+    {
+      "purpose": "L-01: expose canonical portrait identifier for localized alt",
+      "before": "    img.dataset.pokemon=p.id;img.hidden=!key;fallback.hidden=!!key;img.alt=p.name+'の画像';",
+      "after": "    img.dataset.pokemon=p.id;img.dataset.pokemonJa=p.name;img.hidden=!key;fallback.hidden=!!key;"
+    },
+    {
+      "purpose": "L-01: refresh localized alt without changing image or numeric state",
+      "before": "   for(const k of rows[side]){\n    el(`${side}-${k}-row`).hidden=false;",
+      "after": "   window.SingularityPortraitAlt?.update(img,p);\n   for(const k of rows[side]){\n    el(`${side}-${k}-row`).hidden=false;"
+    },
+    {
+      "purpose": "M-01: UI-only export/restore bridge to closure state",
+      "before": " window.ChlohaUI=Object.freeze({version:'0.171',refresh:refreshUI,models:()=>structuredClone(models)});",
+      "after": " // v0.188 persistence bridges only UI state; the calculation engine stays untouched.\n const persistenceState=()=>({models:structuredClone(models),spitUpCount,conditionalPowerOverride});\n const persistenceRules=()=>({\n  abilities:[...new Set(['none',...Object.values(supportedAbilities),...Object.values(defensiveAbilities),...ChlohaPokemonDB.pokemon.flatMap(p=>(p.abilities||[]).map(name=>'unsupported:'+name))])],\n  items:[...new Set([...el('attItem').options,...el('defItem').options,...plateOptions.values()].map(o=>o.value))]\n });\n const persistencePrepare=()=>{refreshCandidateMoves();refreshAbilities();refreshDefenseAbilities();};\n const persistenceRestore=snapshot=>{\n  models=structuredClone(snapshot.models);spitUpCount=snapshot.spitUpCount;conditionalPowerOverride=snapshot.conditionalPowerOverride;\n  window.ChlohaMoveMechanic=ChlohaMovePolicy[el('dbMove').value]?.mechanic||'none';\n  if(el('dbAuto').checked)el('category').value=movesById.get(el('dbMove').value).category;\n  window.ChlohaPreviousMoveId=el('dbMove').value;\n  window.ChlohaCurrentAttMaxHp=Number(el('attMaxHp').value);\n  ChlohaBattleHistory.length=0;refreshBattleHistory();\n  syncBridge();syncCriticalToggle();syncLowHpAbilityControl();syncPlateChoice();syncSpitUpButtons();\n  try{validateModels();applyDb();dbInputError=null;adapterError=false;render();}catch(error){showInputError(error);}\n  refreshUI();\n };\n window.ChlohaUI=Object.freeze({version:'0.171',refresh:refreshUI,models:()=>structuredClone(models),persistenceState,persistenceRules,persistencePrepare,persistenceRestore});"
+    }
+  ]
+}

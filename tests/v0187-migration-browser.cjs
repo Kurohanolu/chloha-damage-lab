@@ -4,6 +4,7 @@ const {chromium}=require('playwright');
 const {buildSites}=require('../scripts/v0187-build-sites.cjs');
 const {startPreview}=require('../scripts/v0187-preview-server.cjs');
 const {loadPublicContracts}=require('./helpers/public-release-contract.cjs');
+const release=JSON.parse(fs.readFileSync('release.json','utf8'));
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];
 const legacyLabels=[
@@ -57,7 +58,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
    page.on('pageerror',error=>errors.push(error.message));page.on('requestfailed',request=>{const url=new URL(request.url());if(url.origin===preview.origin&&/\.(js|css|png|webp)$/.test(url.pathname))failedAssets.push(url.pathname);});
    try{
     await page.goto(preview.origin+'/singularity/',{waitUntil:'domcontentloaded'});await ready(page);
-    assert.equal(await page.title(),'Singularity v0.187 Pre-Release 33');
+    assert.equal(await page.title(),release.name);
     assert.equal(await page.locator('.product-description').textContent(),descriptions[index]);
     assert.ok((await page.locator('[data-singularity=credit]').textContent()).includes('Chloha Labs'));
     for(const width of [320,390,1280]){
@@ -96,7 +97,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     await page.click('#feedbackSubmit');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.fill('#feedbackDescription','Synthetic migration feedback '+locale);await page.check('#feedbackAttach');
     if(locale==='ja')await page.screenshot({path:'reports/v0187/feedback-ja.png'});
-    const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,'v0.187 Pre-Release 33');assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
+    const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,'v'+release.version+' Pre-Release '+release.preRelease);assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
     await page.selectOption('#chloha-locale',other);assert.equal(await page.inputValue('#feedbackDescription'),'Synthetic migration feedback '+locale);assert.equal(await page.isChecked('#feedbackConfirm'),true);await page.selectOption('#chloha-locale',locale);
     let requests=0,releasePost;const waiting=new Promise(resolve=>{releasePost=resolve;});
     await page.route('**/v1/reports',async route=>{if(route.request().method()==='POST'){requests++;await waiting;}return route.continue();});

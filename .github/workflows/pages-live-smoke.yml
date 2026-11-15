@@ -2,6 +2,12 @@ name: GitHub Pages live smoke
 on:
   pull_request:
     paths:
+      - release.json
+      - index.html
+      - '*.js'
+      - scripts/v0188-*.cjs
+      - scripts/helpers/v0188-*.cjs
+      - tests/v0188-*.cjs
       - docs/v0187-*.md
       - docs/v0187-preview/**
       - brand-preview.html
@@ -19,6 +25,9 @@ on:
   push:
     branches: [main]
     paths:
+      - scripts/v0188-*.cjs
+      - scripts/helpers/v0188-*.cjs
+      - tests/v0188-*.cjs
       - docs/v0187-*.md
       - docs/v0187-preview/**
       - brand-preview.html
@@ -46,15 +55,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm install --no-save playwright@1.58.2
       - run: npx playwright install chromium
+      - name: Select one exact expected source for this publication phase
+        id: expected-source
+        run: node scripts/v0188-select-pages-baseline.cjs
+        env:
+          PAGES_EVENT_NAME: ${{ github.event_name }}
+          PAGES_PR_BASE_REF: ${{ github.event.pull_request.base.sha || '' }}
       - run: node tests/pages-live-smoke.cjs
         env:
-          PAGES_BASELINE_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || '' }}
+          PAGES_BASELINE_REF: ${{ steps.expected-source.outputs.baseline_ref }}
       - if: always()
         uses: actions/upload-artifact@v4
         with:

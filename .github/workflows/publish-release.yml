@@ -2,6 +2,13 @@ name: Publish verified prerelease
 on:
   pull_request:
     paths:
+      - docs/v0188-*.md
+      - tests/v0188-*.cjs
+      - scripts/v0188-*.cjs
+      - persistence-v0188.js
+      - portrait-alt-v0188.js
+      - locale-quality-v0188.js
+      - .github/workflows/v0188-quality-remediation.yml
       - docs/v0187-*.md
       - docs/v0187-preview/**
       - assets/singularity/**
@@ -71,6 +78,7 @@ jobs:
             if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
             if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
             if (fs.existsSync('.github/workflows/v0187-singularity-migration.yml')) required.push('v0.187 Singularity Migration');
+            if (fs.existsSync('.github/workflows/v0188-quality-remediation.yml')) required.push('v0.188 Quality Remediation');
             let verified;
             for (let attempt = 0; attempt < 40; attempt++) {
               const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});

@@ -1,0 +1,33 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const box={module:{exports:{}}};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../persistence-v0188.js'),'utf8'),box);
+const api=box.module.exports,now=1794708000000;
+const specs=Object.fromEntries(api.IDS.map(id=>[id,{kind:'number',min:0,max:9999,integer:true}]));
+specs.dbAuto={kind:'boolean'};specs.weather={kind:'select',values:['none','rain']};
+specs.dbMove={kind:'select',values:['test'],moves:{test:{category:'physical',mechanic:'foulPlay'}}};specs.category={kind:'select',values:['physical','special']};
+const model=()=>({points:Object.fromEntries(api.STATS.map(k=>[k,0])),nature:Object.fromEntries(api.STATS.map(k=>[k,'neutral'])),rank:Object.fromEntries(api.STATS.map(k=>[k,0])),manual:{}});
+const state={controls:Object.fromEntries(api.IDS.map(id=>[id,id==='dbAuto'?true:id==='weather'?'none':'1'])),models:{att:model(),def:model()},spitUpCount:1,conditionalPowerOverride:false};
+state.controls.beatUpStats='100';
+state.controls.dbMove='test';state.controls.category='physical';
+const envelope={schemaVersion:api.VERSION,savedAt:now,state};
+const valid=value=>api.decode(JSON.stringify(value),specs,now);
+assert.ok(valid(envelope));let checks=1;
+function reject(name,edit){const value=structuredClone(envelope);edit(value);assert.equal(valid(value),null,name);checks++;}
+reject('future schema',v=>v.schemaVersion=2);reject('old schema',v=>v.schemaVersion=0);
+reject('expired data',v=>v.savedAt=now-api.MAX_AGE-1);reject('future timestamp',v=>v.savedAt=now+60001);
+reject('unrecognized secret field',v=>v.state.controls.feedbackBody='private');
+reject('extra root object',v=>v.contact='private@example.com');reject('missing control',v=>delete v.state.controls.weather);
+reject('wrong checkbox type',v=>v.state.controls.dbAuto='true');reject('unknown select',v=>v.state.controls.weather='injected');
+reject('NaN serialized null',v=>v.state.controls.attack=null);reject('numeric NaN',v=>v.state.controls.attack='NaN');
+reject('fractional stat',v=>v.state.controls.attack='1.5');reject('out-of-range stat',v=>v.state.controls.attack='10000');
+reject('blank number',v=>v.state.controls.attack='');reject('model over budget',v=>v.state.models.att.points={hp:32,attack:32,defense:3,specialAttack:0,specialDefense:0,speed:0});
+reject('model unknown field',v=>v.state.models.att.manual.token='secret');reject('model impossible rank',v=>v.state.models.att.rank.speed=7);
+reject('model invalid nature',v=>v.state.models.def.nature.defense='adamant');reject('model invalid point',v=>v.state.models.def.points.hp=33);
+reject('model fractional manual stat',v=>v.state.models.def.manual.hp=1.5);reject('invalid stockpile',v=>v.state.spitUpCount=4);
+reject('wrong conditional type',v=>v.state.conditionalPowerOverride=1);reject('defender HP above max',v=>v.state.controls.currentHp='2');
+reject('attacker HP above max',v=>v.state.controls.attCurrentHp='2');reject('invalid beatup stat',v=>v.state.controls.beatUpStats='256');
+reject('too many beatup participants',v=>v.state.controls.beatUpStats='1,2,3,4,5,6,7');
+reject('automatic category inconsistent with canonical move',v=>v.state.controls.category='special');
+reject('foul play replacement exceeds defender budget',v=>{v.state.models.def.points.hp=32;v.state.models.def.points.defense=32;v.state.controls.dbFoulAttackEv='3';});
+for(const raw of ['{bad',null,'null','[]','"string"','x'.repeat(32769)]){assert.equal(api.decode(raw,specs,now),null);checks++;}
+console.log('PASS: '+checks+' persistence schema, corruption, expiry, privacy allowlist and invalid-state assertions');

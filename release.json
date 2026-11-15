@@ -1,9 +1,9 @@
 {
-  "version": "0.187",
-  "preRelease": 33,
-  "tag": "v0.187-pre.33",
-  "name": "Singularity v0.187 Pre-Release 33",
-  "notes": "docs/releases/v0.187-pre.33.md",
+  "version": "0.188",
+  "preRelease": 1,
+  "tag": "v0.188-pre.1",
+  "name": "Singularity v0.188 Pre-Release 1",
+  "notes": "docs/releases/v0.188-pre.1.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -21,6 +21,24 @@
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true
+    "liveTargetVerified": true,
+    "liveAcceptanceSourceCommit": "aaba89a4d45191e45df351adbbd2227fa36ce30a",
+    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43679976219",
+    "liveAcceptanceEvidence": "docs/v0188-live-acceptance.md",
+    "liveAcceptanceObservedAtJST": "2026-11-15T14:14:00.377520+09:00"
+  },
+  "qualityReview": {
+    "releaseTag": "v0.188-pre.1",
+    "auditor": "6.1 Terra",
+    "auditStatus": "passed",
+    "ownerApproval": "approved",
+    "evidence": "docs/v0188-independent-reaudit.md",
+    "auditOutcome": "conditional-pass",
+    "conditionsDisposition": "accepted-by-owner",
+    "reviewedSourceCommit": "64adc9eea8927fc72dbcb8cc1d5402b4917dff78",
+    "reviewedTree": "543fd64c78e775352a858939534419dacdc4180b",
+    "auditReportSha256": "8de7f3f01b3a17c8f73646476a1283ef13c20811f3f11e9e5042612b1ab4251d",
+    "ownerEvidence": "docs/v0188-owner-approval.md",
+    "ownerRecordedAtJST": "2026-11-15T13:58:51.800817+09:00"
   }
 }
