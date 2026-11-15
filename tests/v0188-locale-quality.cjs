@@ -27,5 +27,23 @@ assert.equal(api.summary('A B（1） → C（2 / HP 3） / suffix',statusNames,'
 delete context.ChlohaPokeAPILocalizedNames;
 delete context.ChlohaLocalizedNames;
 for(const locale of api.locales)assert.ok(api.stockpile(locale,1).title,'explicit localized missing-name description');
+// DOM ownership contract: known errors switch languages under a single writer;
+// unknown content is returned to the legacy translator, including on a switch.
+{
+ const node=text=>({textContent:text,attrs:new Set(),hasAttribute(key){return this.attrs.has(key);},setAttribute(key){this.attrs.add(key);},removeAttribute(key){this.attrs.delete(key);}});
+ const nodes={error:node('能力ポイントは0〜32の整数で入力してください'),dbStatus:node('入力エラー: 能力ポイントは0〜32の整数で入力してください')};
+ let lang='en',changed;const events={},pending=[];
+ const dom={ChlohaLocale:{get:()=>lang,text:text=>'legacy:'+lang+':'+text},ChlohaLastCalculation:null,queueMicrotask:fn=>pending.push(fn),document:{readyState:'complete',getElementById:id=>nodes[id]||null,addEventListener:(name,fn)=>{events[name]=fn;}},MutationObserver:class{constructor(fn){changed=fn;}observe(){}}};
+ vm.runInNewContext(fs.readFileSync(require.resolve('../locale-quality-v0188.js'),'utf8'),dom);
+ const flush=()=>{while(pending.length)pending.shift()();};
+ for(const n of Object.values(nodes))assert.ok(n.hasAttribute('data-no-translate'),'known error has one owner');
+ lang='fr';events['chloha:localechange']();flush();assert.equal(nodes.error.textContent,dom.ChlohaLocaleQuality.errorText('fr','invalidStats'));
+ for(const n of Object.values(nodes))n.textContent='unrecognized message';
+ changed();flush();
+ for(const n of Object.values(nodes)){assert.equal(n.hasAttribute('data-no-translate'),false);assert.equal(n.textContent,'legacy:fr:unrecognized message');}
+ lang='de';events['chloha:localechange']();flush();
+ for(const n of Object.values(nodes))assert.equal(n.hasAttribute('data-no-translate'),false,'unknown text stays delegated after locale change');
+ nodes.error.setAttribute('data-no-translate');nodes.error.textContent='pre-existing external exclusion';changed();flush();assert.equal(nodes.error.hasAttribute('data-no-translate'),true,'never remove another component’s marker');
+}
 console.log('PASS v0.188 stockpile and allocation-error nine-language copy, names reuse and locale recognition');
 
