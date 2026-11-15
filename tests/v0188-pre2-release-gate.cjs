@@ -2,8 +2,9 @@
 // Synthetic lifecycle fixtures only: no approval recording, network or publication.
 const assert=require('node:assert/strict');
 const {verifyCutoverApproval,verifyQualityApproval,verifyPublication}=require('../scripts/verify-publication-approval.cjs');
-const {publishedRelease,pendingRelease,verifyFollowupDraft}=require('../scripts/helpers/v0188-followup-review.cjs');
-const current=require('../release.json'),historical=publishedRelease();
+const {publishedRelease,pendingRelease,hasFollowup,verifyFollowupDraft}=require('../scripts/helpers/v0188-followup-review.cjs');
+const actual=require('../release.json'),current=pendingRelease(),historical=publishedRelease();
+if(hasFollowup(actual))verifyFollowupDraft(actual);else verifyCutoverApproval(actual);
 assert.deepEqual(current,pendingRelease());assert.deepEqual(verifyFollowupDraft(current),historical);
 assert.equal(current.tag,'v0.188-pre.2');assert.equal(historical.tag,'v0.188-pre.1');
 assert.equal(current.migration.status,'awaiting-owner-approval');
