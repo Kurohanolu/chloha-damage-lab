@@ -439,6 +439,24 @@ function translateBattleMoveLabel(value){
  const statuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
+function localizedVersionProvenance(base,target){
+ if(!base.startsWith('バージョンについて：画面の「'))return null;
+ const version=base.match(/画面の「([^」]+)」/),core=base.match(/計算コア(?:の内部API識別子は|の)「([^」]+)」/),regression=base.match(/(v[\d.]+)の自動回帰監査/);
+ if(!version||!core||!regression)return base;
+ const v=version[1],c=core[1],r=regression[1];
+ // Translate the current canonical notice, without inferring case counts or hardware evidence.
+ const notices={
+  en:`About versions: The on-screen “${v}” is the public UI version. The calculation core “${c}” identifies the internal API foundation. It is managed separately from the public UI version and does not mean that verification of accuracy on hardware is complete. Automated regression checks for ${r}, browser checks for four weight-dependent moves and multi-hit moves, and Showdown differential tests have passed. Some conditions, including Multiscale handling for multi-hit moves, are unsupported. Showdown is the calculation-specification reference; confirmed Pokémon Champions-specific differences will be handled separately.`,
+  fr:`À propos des versions : « ${v} » est la version publique de l’interface. L’identifiant de l’API interne du moteur de calcul est « ${c} ». Il est géré séparément de la version publique de l’interface et ne signifie pas que la vérification de la précision sur console est terminée. Les tests automatiques de régression pour ${r}, les tests dans le navigateur de quatre capacités dépendant du poids et des capacités à coups multiples, ainsi que les tests différentiels avec Showdown ont réussi. Certaines conditions, notamment la gestion de Multiécaille pour les capacités à coups multiples, ne sont pas prises en charge. Showdown sert de référence pour les règles de calcul ; les différences propres à Pokémon Champions seront traitées séparément lorsqu’elles seront confirmées.`,
+  de:`Versionshinweis: „${v}“ ist die öffentliche Version der Benutzeroberfläche. Die interne API-Kennung des Rechenkerns lautet „${c}“. Sie wird getrennt von der öffentlichen Version verwaltet und bedeutet nicht, dass die Genauigkeitsprüfung auf echter Hardware abgeschlossen ist. Die automatischen Regressionstests für ${r}, die Browser-Tests für vier gewichtsabhängige Attacken und Mehrfachtreffer-Attacken sowie die Showdown-Differenztests wurden bestanden. Einige Bedingungen, darunter die Behandlung von Multischuppe bei Mehrfachtreffer-Attacken, werden nicht unterstützt. Showdown dient als Referenz für die Berechnungsregeln; bestätigte Besonderheiten von Pokémon Champions werden gesondert behandelt.`,
+  es:`Sobre las versiones: «${v}» es la versión pública de la interfaz. El identificador de la API interna del motor de cálculo es «${c}». Se gestiona por separado de la versión pública y no significa que se haya completado la verificación de precisión en consola. Se superaron las pruebas automáticas de regresión de ${r}, las pruebas en navegador de cuatro movimientos dependientes del peso y de movimientos de varios golpes, y las pruebas diferenciales con Showdown. Algunas condiciones, incluido el tratamiento de Multiescamas en movimientos de varios golpes, no están implementadas. Showdown es la referencia para las reglas de cálculo; las diferencias específicas de Pokémon Champions se tratarán por separado cuando se confirmen.`,
+  it:`Informazioni sulle versioni: «${v}» è la versione pubblica dell’interfaccia. L’identificatore dell’API interna del motore di calcolo è «${c}». È gestito separatamente dalla versione pubblica e non significa che la verifica della precisione su console sia completa. Sono stati superati i test automatici di regressione per ${r}, i test nel browser di quattro mosse dipendenti dal peso e delle mosse multicolpo, e i test differenziali con Showdown. Alcune condizioni, inclusa la gestione di Multisquame nelle mosse multicolpo, non sono supportate. Showdown è il riferimento per le regole di calcolo; le differenze specifiche di Pokémon Champions verranno gestite separatamente quando saranno confermate.`,
+  ko:`버전 안내: 화면에 표시되는 “${v}”는 공개 UI 버전입니다. 계산 코어의 내부 API 식별자는 “${c}”입니다. 공개 UI 버전과 별도로 관리되며, 실기기 기준 정확도 검증이 완료되었다는 뜻이 아닙니다. ${r} 자동 회귀 검사, 체중에 따라 달라지는 기술 4종과 연속 공격 기술의 브라우저 검사 및 Showdown 차등 테스트는 통과했습니다. 연속 공격 기술의 멀티스케일 처리 등 일부 조건은 지원하지 않습니다. Showdown을 계산 규칙 검증의 기준으로 사용하며, Pokémon Champions 고유의 사양 차이가 확인되면 개별적으로 대응합니다.`,
+  'zh-Hans':`版本说明：画面显示的“${v}”是公开UI版本。计算核心的内部API标识为“${c}”。它与公开UI版本分开管理，不代表已完成实机精度验证。${r}的自动回归测试、4种依赖体重的招式及多段招式的浏览器测试，以及Showdown差分测试均已通过。多段招式的多重鳞片处理等部分条件尚不支持。以Showdown作为计算规则验证的基准；确认Pokémon Champions特有的机制差异后，将另行处理。`,
+  'zh-Hant':`版本說明：畫面顯示的「${v}」是公開UI版本。計算核心的內部API識別碼為「${c}」。它與公開UI版本分開管理，不代表已完成實機精度驗證。${r}的自動回歸測試、4種依賴體重的招式及多段招式的瀏覽器測試，以及Showdown差分測試均已通過。多段招式的多重鱗片處理等部分條件尚不支援。以Showdown作為計算規則驗證的基準；確認Pokémon Champions特有的機制差異後，將另行處理。`
+ };
+ return notices[target]||base;
+}
 function translateRuntime(base){
  if(base==='パンクロック：音技の威力1.3倍に対応しています。音技の被ダメージ半減は防御側特性として未対応です。')return 'Punk Rock: Boosts sound-based move power by 1.3x. Halving incoming sound damage is not yet supported as a defending ability.';
  if(base==='かたいツメ：登録済み335技の接触判定をShowdownデータで照合し、接触技に威力1.3倍を適用します。')return 'Tough Claws: Applies a 1.3x power boost to contact moves, based on Showdown contact flags checked across all 335 catalog moves.';
@@ -451,17 +469,8 @@ function translateRuntime(base){
   return base.replace(/^現在の盤面：天候\s+(.+?)\s*／\s*フィールド\s+(.+?)\s*／\s*壁\s+(.+)$/,(_,w,t,sc)=>'Current battlefield: Weather '+(options[w]||w)+' / Terrain '+(options[t]||t)+' / Screen '+(options[sc]||sc));
  }
  if(base.startsWith('最大HPに対する割合：'))return base.replace('最大HPに対する割合：','Of max HP: ');
- if(base.startsWith('バージョンについて：画面の「')){
-  const release=base.match(/画面の「([^」]+)」/);
-  const core=base.match(/計算コア(?:の内部API識別子は|の)「([^」]+)」/);
-  const regression=base.match(/(v[\d.]+)の自動回帰監査/);
-  const cases=base.match(/Showdown比較(\d+)ケース/);
-  return 'About versions: The on-screen “'+(release?.[1]||'current release')+
-   '” is the public UI version. The calculation core “'+(core?.[1]||'internal core')+
-   '” identifies the internal API foundation; it does not indicate the current public version or that verification is complete. Automated regression checks for '+
-   (regression?.[1]||'the public release')+' and '+(cases?.[1]||'54')+
-   ' Showdown comparison cases have passed. Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.';
- }
+ const versionNotice=localizedVersionProvenance(base,'en');
+ if(versionNotice)return versionNotice;
  if(attributeLabels[base])return attributeLabels[base];
  if(dictionary[base])return dictionary[base];
  if(uiTerms[base])return uiTerms[base];
@@ -1062,6 +1071,8 @@ function localizedBattleSummary(base,target){
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
+ const versionNotice=localizedVersionProvenance(base,locale);
+ if(versionNotice)return versionNotice;
  const battleSummary=localizedBattleSummary(base,locale);
  if(battleSummary)return battleSummary;
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
@@ -1103,38 +1114,6 @@ function localizedUi(base){
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
- if(['fr','de','es','it'].includes(locale)&&screenshotText.startsWith('About versions:')){
-  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
-  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
-  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
-  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
-  const v=version?.[1]||'v0.184',c=core?.[1]||'v0.184',reg=regression?.[1]||'v0.184',count=cases?.[1]||'54';
-  const translations={
-   fr:'À propos des versions : « '+v+' » est la version publique de l’interface. Le cœur de calcul « '+c+' » désigne la base de l’API interne et ne signifie pas que la vérification est terminée. Les tests de régression '+reg+' et '+count+' comparaisons Showdown ont réussi. Seules certaines conditions ont été comparées sur Pokémon Champions ; une correspondance parfaite n’est pas garantie.',
-   de:'Versionshinweis: „'+v+'“ ist die öffentliche UI-Version. Der Rechenkern „'+c+'“ bezeichnet die interne API-Grundlage und bedeutet keine vollständige Verifizierung. Die Regressionstests für '+reg+' und '+count+' Showdown-Vergleichsfälle wurden bestanden. Nur einige Bedingungen wurden auf Pokémon Champions-Hardware geprüft; identische Ergebnisse sind nicht garantiert.',
-   es:'Sobre las versiones: «'+v+'» es la versión pública de la interfaz. El núcleo de cálculo «'+c+'» identifica la base de la API interna y no implica que la verificación esté completa. Se superaron las pruebas de regresión de '+reg+' y '+count+' comparaciones con Showdown. Solo se han contrastado algunas condiciones en Pokémon Champions; no se garantizan resultados idénticos en todos los casos.',
-   it:'Informazioni sulle versioni: «'+v+'» è la versione pubblica dell’interfaccia. Il motore di calcolo «'+c+'» indica la base dell’API interna e non implica una verifica completa. Sono stati superati i test di regressione per '+reg+' e '+count+' confronti con Showdown. Solo alcune condizioni sono state confrontate su Pokémon Champions; non si garantiscono risultati identici in ogni situazione.'
-  };
-  return translations[locale];
- }
- if((locale==='zh-Hans'||locale==='zh-Hant')&&screenshotText.startsWith('About versions:')){
-  const traditional=locale==='zh-Hant';
-  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
-  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
-  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
-  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
-  return traditional
-   ?'版本說明：畫面顯示的「'+(version?.[1]||'目前版本')+'」是公開UI版本。計算核心「'+(core?.[1]||'內部版本')+'」表示內部API基礎版本，不代表目前公開版本，也不表示驗證已完成。'+(regression?.[1]||'目前版本')+'的自動回歸測試及'+(cases?.[1]||'54')+'個Showdown比較案例已通過。僅部分條件與Pokémon Champions實機比較過，無法保證所有條件下的結果完全一致。'
-   :'版本说明：画面显示的“'+(version?.[1]||'当前版本')+'”是公开UI版本。计算核心“'+(core?.[1]||'内部版本')+'”表示内部API基础版本，不代表当前公开版本，也不表示验证已完成。'+(regression?.[1]||'当前版本')+'的自动回归测试及'+(cases?.[1]||'54')+'个Showdown比较案例已通过。仅部分条件与Pokémon Champions实机比较过，无法保证所有条件下的结果完全一致。';
- }
- if(locale==='ko'&&screenshotText.startsWith('About versions:'))return screenshotText
-  .replace(/^About versions:/,'버전 안내:')
-  .replace(' is the public UI version. The calculation core ','는 공개 UI 버전입니다. 계산 코어 ')
-  .replace(' identifies the internal API foundation; it does not indicate the current public version or that verification is complete.','는 내부 API 기반 버전으로, 현재 공개 버전이나 검증 완료를 뜻하지 않습니다.')
-  .replace('Automated regression checks for ','자동 회귀 검사 ')
-  .replace(' and ',' 및 ')
-  .replace(' Showdown comparison cases have passed.','건의 Showdown 비교 테스트를 통과했습니다.')
-  .replace('Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.','일부 조건만 Pokémon Champions 실기기와 비교했으며, 모든 조건에서 동일한 결과를 보장하지 않습니다.');
  const reviewedEntry=reviewed[translateRuntime(base)]||reviewed[base];
  if(reviewedEntry){
   const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(locale);
