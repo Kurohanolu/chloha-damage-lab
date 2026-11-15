@@ -1,9 +1,9 @@
 {
-  "version": "0.187",
-  "preRelease": 33,
-  "tag": "v0.187-pre.33",
-  "name": "Singularity v0.187 Pre-Release 33",
-  "notes": "docs/releases/v0.187-pre.33.md",
+  "version": "0.188",
+  "preRelease": 1,
+  "tag": "v0.188-pre.1",
+  "name": "Singularity v0.188 Pre-Release 1",
+  "notes": "docs/releases/v0.188-pre.1.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -21,6 +21,13 @@
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true
+    "liveTargetVerified": false
+  },
+  "qualityReview": {
+    "releaseTag": "v0.188-pre.1",
+    "auditor": "6.1 Terra",
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "evidence": ""
   }
 }

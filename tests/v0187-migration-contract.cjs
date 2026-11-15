@@ -10,7 +10,8 @@ const html=fs.readFileSync('index.html','utf8'),frozen=old('index.html').toStrin
 for(const file of dependencies(frozen).filter(file=>file.endsWith('.js')))assert.equal(hash(fs.readFileSync(file)),hash(old(file)),'unchanged v0.186 runtime: '+file);
 for(const file of ['tests/fixtures/v0184-public-baseline.json','tests/fixtures/v0186-baseline-corrections.json','services/feedback/src/worker.js'])assert.equal(hash(fs.readFileSync(file)),hash(old(file)),file);
 const inline=source=>[...source.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1].replace(/app\.innerHTML=`[\s\S]*?<\/aside>`;/,'/* presentation template */'));
-assert.deepEqual(inline(html),inline(frozen),'inline mechanics/data/control logic must remain byte-identical outside the presentation template');
+if(Number(JSON.parse(fs.readFileSync('release.json')).version)>=0.188)require('./helpers/v0188-inline-contract.cjs').verifyInline(html,frozen);
+else assert.deepEqual(inline(html),inline(frozen),'inline mechanics/data/control logic must remain byte-identical outside the presentation template');
 const ids=source=>[...new Set([...source.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]))].sort();
 assert.deepEqual(ids(html),ids(frozen),'existing input/control IDs must be preserved');
 const release=JSON.parse(fs.readFileSync('release.json'));
@@ -18,7 +19,8 @@ const initialPresentationBytes=['brand-v0187.js','singularity-v0187.css',release
 assert.ok(initialPresentationBytes<80*1024,'new required presentation assets must remain under80KiB');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','preserve the exact supplied full logo reference bytes');
 // Exercise every lifecycle state regardless of the repository's current state.
-const pending=structuredClone(release);Object.assign(pending.migration,{status:'awaiting-owner-approval',designApproval:'pending',liveTargetVerified:false});
+const lifecycleRelease=JSON.parse(execFileSync('git',['show','7210be99c39d75b49ea8200aad91d75801eb300a:release.json'],{encoding:'utf8'}));
+const pending=structuredClone(lifecycleRelease);Object.assign(pending.migration,{status:'awaiting-owner-approval',designApproval:'pending',liveTargetVerified:false});
 assert.throws(()=>verifyPublication(pending),/final owner/);
 const pendingDesign=structuredClone(pending);pendingDesign.migration.status='approved';assert.throws(()=>verifyPublication(pendingDesign),/logo\/design/);
 pendingDesign.migration.designApproval='approved';assert.throws(()=>verifyPublication(pendingDesign),/actual new public URL/);

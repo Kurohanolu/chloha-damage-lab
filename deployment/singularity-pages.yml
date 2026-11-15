@@ -39,7 +39,7 @@ jobs:
           node tests/v0184-public-baseline.cjs
           node tests/v0187-migration-contract.cjs
           node tests/v0187-live-readiness.cjs
-      - name: Require eight exact-source regression workflows
+      - name: Require exact-source regression workflows
         uses: actions/github-script@v7
         with:
           script: |
@@ -47,6 +47,8 @@ jobs:
             const sha = process.env.SOURCE_SHA;
             if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error('Full source SHA required');
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];
+            const release = require('./release.json');
+            if (Number(release.version.split('.')[0]) > 0 || Number(release.version.split('.')[1]) >= 188) required.push('v0.188 Quality Remediation');
             const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});
             const latest = new Map();
             for (const run of data.workflow_runs) {
@@ -57,7 +59,7 @@ jobs:
               const run = latest.get(name);
               if (!run || run.status !== 'completed' || run.conclusion !== 'success') throw new Error('Source CI not successful: '+name);
             }
-            core.info('Verified all eight regression gates for source '+sha+'; public-content and release checks follow deployment');
+            core.info('Verified all required regression gates for source '+sha+'; public-content and release checks follow deployment');
             // SOURCE_CI_GATE_END
       - name: Generate isolated public artifact and provenance
         run: |
