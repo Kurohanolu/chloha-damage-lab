@@ -13,6 +13,12 @@ function releaseIdentity(release){
   assert.equal(release.preRelease,null,'Stable release must explicitly clear the prerelease number');
   assert.equal(release.tag,'v'+release.version,'Stable tag must exactly match its version');
   displayVersion='v'+release.version;packageVersion=release.version;
+ }else if(release.channel==='prerelease'){
+  assert.equal(product,'Singularity','Semver prerelease must retain the product');
+  assert.match(release.version,/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/,'Prerelease requires an exact three-part version');
+  assert.ok(Number.isInteger(release.preRelease)&&release.preRelease>0,'Explicit positive prerelease number required');
+  assert.equal(release.tag,'v'+release.version+'-pre.'+release.preRelease);
+  displayVersion='v'+release.version+' Pre-Release '+release.preRelease;packageVersion=release.version+'-pre.'+release.preRelease;
  }else{
   assert.ok(!Object.hasOwn(release,'channel'),'Unknown or ambiguous release channel');
   assert.match(release.version,/^\d+\.\d+$/,'Historical prerelease requires its two-part series');

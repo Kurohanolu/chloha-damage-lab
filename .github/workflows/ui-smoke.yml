@@ -69,6 +69,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -114,14 +116,15 @@ jobs:
       - run: node tests/v0177-move-policy-consistency.cjs
       - run: node tests/v0177-conditional-power-clarity.cjs
       - run: node tests/v0177-version-provenance.cjs
-      - run: node tests/v0183-locale-registry.cjs
+      - name: Immutable v1.0.0 exact-nine contracts (historical evidence)
+        run: node scripts/v110-historical-contracts.cjs --suite nine-ui
+      - name: Candidate ten-locale registry, names and privacy contracts
+        run: node tests/v110-locale-contract.cjs
       - run: node tests/v0183-locale-catalog.cjs
-      - run: node tests/v0183-locale-name-search.cjs
       - run: node tests/v0183-bulk-name-adapter.cjs
       - run: node tests/v0183-locale-name-audit.cjs
       - run: node tests/v0183-name-ui-roundtrip.cjs
       - run: node tests/v0183-multilingual-autocomplete.cjs
-      - run: node tests/v0183-nine-locale-browser.cjs
       - run: node tests/v0183-screenshot-locale-e2e.cjs
       - run: node tests/v0183-battle-summary-name-e2e.cjs
       - run: node tests/v0183-all-move-summary-locale-e2e.cjs

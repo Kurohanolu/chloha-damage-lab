@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
-  "preRelease": null,
-  "tag": "v1.0.0",
-  "name": "Singularity v1.0.0",
-  "notes": "docs/releases/v1.0.0.md",
+  "version": "1.1.0",
+  "preRelease": 1,
+  "tag": "v1.1.0-pre.1",
+  "name": "Singularity v1.1.0 Pre-Release 1",
+  "notes": "docs/releases/v1.1.0-pre.1.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -15,31 +15,20 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "approved",
+    "status": "awaiting-owner-approval",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true,
-    "liveAcceptanceSourceCommit": "de5ec8342d974a07e2d155f0293851c69087ff94",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43699852774",
-    "liveAcceptanceEvidence": "docs/v100-live-acceptance-a.json",
-    "liveAcceptanceObservedAtJST": "2026-11-15T18:37:27+09:00"
+    "liveTargetVerified": false
   },
   "qualityReview": {
-    "releaseTag": "v1.0.0",
+    "releaseTag": "v1.1.0-pre.1",
     "auditor": "6.1 Sol",
-    "auditStatus": "passed",
-    "ownerApproval": "approved",
-    "evidence": "docs/v100-sol-review.md",
-    "auditOutcome": "conditional-pass",
-    "conditionsDisposition": "accepted-by-owner",
-    "reviewedSourceCommit": "b5ea506af27487a05cc7fbdc11371ac47778b06a",
-    "reviewedTree": "1e4d0d54c2013b22db3e15db144f8998cab1adfd",
-    "auditReportSha256": "57e0d95c594797b150af33e129cb0c756de9ae1d8648656dfddf6bfa8d1feb82",
-    "ownerEvidence": "docs/v100-owner-approval.json",
-    "ownerRecordedAtJST": "2026-11-15T18:16:42+09:00"
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "evidence": "docs/v110-es-la-test-report.md"
   },
-  "channel": "stable"
+  "channel": "prerelease"
 }

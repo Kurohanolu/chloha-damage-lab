@@ -14,6 +14,7 @@ function category(select){
 function translated(category,key,locale){
  const bulk=window.ChlohaPokeAPILocalizedNames?.[category]||{};
  const curated=window.ChlohaLocalizedNames?.[category]||{};
+ if(locale==='es-LA')return globalThis.ChlohaEsLa?.entity(category,key,curated[key]?.es||bulk[key]?.es||null)||null;
  return curated[key]?.[locale]||bulk[key]?.[locale]||null;
 }
 function render(){

@@ -10,10 +10,12 @@ const ChlohaLocales=(()=>{
   Object.freeze({code:'it',label:'Italiano',fallback:'en'}),
   Object.freeze({code:'ko',label:'한국어',fallback:'en'}),
   Object.freeze({code:'zh-Hans',label:'简体中文',fallback:'en'}),
-  Object.freeze({code:'zh-Hant',label:'繁體中文',fallback:'en'})
+  Object.freeze({code:'zh-Hant',label:'繁體中文',fallback:'en'}),
+  Object.freeze({code:'es-LA',label:'Español (Latinoamérica)',fallback:'es',browserLocale:'es-419'})
  ]);
  const byCode=new Map(entries.map(entry=>[entry.code,entry]));
  function normalize(code){return byCode.has(code)?code:'ja';}
+ function browserLocale(code){const entry=byCode.get(normalize(code));return entry.browserLocale||entry.code;}
  function chain(code){
   const result=[],seen=new Set();
   let current=normalize(code);
@@ -35,7 +37,7 @@ const ChlohaLocales=(()=>{
   const own=catalogs?.[normalize(code)]||{};
   return keys.filter(key=>typeof own[key]!=='string'||!own[key].trim());
  }
- return Object.freeze({entries,normalize,chain,lookup,missing});
+ return Object.freeze({entries,normalize,browserLocale,chain,lookup,missing});
 })();
-if(typeof module!=='undefined'&&module.exports)module.exports={entries:ChlohaLocales.entries,normalize:ChlohaLocales.normalize,chain:ChlohaLocales.chain,lookup:ChlohaLocales.lookup,missing:ChlohaLocales.missing};
+if(typeof module!=='undefined'&&module.exports)module.exports={entries:ChlohaLocales.entries,normalize:ChlohaLocales.normalize,browserLocale:ChlohaLocales.browserLocale,chain:ChlohaLocales.chain,lookup:ChlohaLocales.lookup,missing:ChlohaLocales.missing};
 if(typeof globalThis!=='undefined')globalThis.ChlohaLocales=ChlohaLocales;

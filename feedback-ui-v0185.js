@@ -33,10 +33,10 @@
   function renderLocale(){
    button.textContent=t('button');for(const node of panel.querySelectorAll('[data-fb]')){const text=t(node.dataset.fb);node.textContent=text;if(node.tagName==='OPTION')node.label=text;}
    $('Description').maxLength=reportRelease?.descriptionLimit||C.limits.description;
-   $('Release').textContent=reportRelease?R.text(locale(),'label')+': '+reportRelease.fullVersion:(R?.text(locale(),'unsupported')||t('unavailable'));
-   $('ReleaseHelp').hidden=!reportRelease?.compatibility;$('ReleaseHelp').textContent=reportRelease?.compatibility?R.text(locale(),'header'):'';
+   $('Release').textContent=reportRelease?R.text(locale(),'label',document.title)+': '+reportRelease.fullVersion:(R?.text(locale(),'unsupported',document.title)||t('unavailable'));
+   $('ReleaseHelp').hidden=!reportRelease?.compatibility;$('ReleaseHelp').textContent=reportRelease?.compatibility?R.text(locale(),'header',document.title):'';
    $('ReleaseHeader').hidden=!reportRelease?.compatibility;$('ReleaseHeader').textContent=reportRelease?.prefix.trim()||'';
-   $('VersionCompatibility').hidden=!reportRelease?.compatibility;$('VersionCompatibility').textContent=reportRelease?.compatibility?R.text(locale(),'compatibility'):'';
+   $('VersionCompatibility').hidden=!reportRelease?.compatibility;$('VersionCompatibility').textContent=reportRelease?.compatibility?R.text(locale(),'compatibility',document.title):'';
    messages();if(ready&&!busy)renderWidget();
   }
   function dirty(){if(busy)return;submission=null;delivered=false;receipt='';errorKey='';statusKey=ready?'':preparing?'preparing':'unavailable';messages();}
@@ -45,7 +45,7 @@
    if($('Attach').checked){try{snapshot=window.ChlohaFeedbackSnapshot.capture();$('Preview').textContent=JSON.stringify(snapshot,null,2);}catch{$('Preview').textContent='';errorKey='attachmentUnavailable';}}
    messages();
   }
-  const langMap={'zh-Hans':'zh-cn','zh-Hant':'zh-tw'};
+  const langMap={'es-LA':'es','zh-Hans':'zh-cn','zh-Hant':'zh-tw'};
   function renderWidget(){
    if(!window.turnstile||!ready)return;
    token='';if(widget!==null)window.turnstile.remove(widget);
