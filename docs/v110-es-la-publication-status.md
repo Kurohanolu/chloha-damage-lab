@@ -29,3 +29,7 @@ The v1.1.0-pre.1 release policy binds the independent Sol-reviewed source and Gi
 ## Additional confirmed publication blocker
 
 Updating `Kurohanolu/singularity/.github/workflows/deploy.yml` through the connected GitHub app returned HTTP 403 `Resource not accessible by integration`. The reviewed update adds mandatory ES-LA exact-source CI and is retained as `deployment/singularity-pages.yml`. The public workflow was not changed and no deployment was triggered. Owner publication authorization is present; the missing capability is the integration permission to write the public deployment workflow. No authentication or CI gate was weakened in response.
+
+## Permission recovery
+
+Owner updated GitHub access. The public repository workflow write succeeded. The deployment route now uses the same version-specific historical/current migration checks as source CI; the refreshed independent review and owner receipt bind this correction. Publication execution continues under existing authorization.

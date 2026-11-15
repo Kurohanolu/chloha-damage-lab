@@ -11,3 +11,5 @@ Remaining translation terminology/UI, physical-device/accessibility/IME and mech
 ## Rebinding after test-fixture corrections
 
 The same explicit owner delegation is now bound to independently re-reviewed source `209a6e09af743b8f6981c8bfa7e8209a0bc790a5`, tree `824ad4e379a887a312a9891fde2a741d1ab7201f`, report SHA-256 `215bcbda4393cc29c33e9cf41daa08c55319fe6f566f2f2a6ea1f925adcea7f3`, recorded 2026-11-16T08:35:44+09:00. The two CI gate fixtures now include required ES-LA CI, and the browser pause test checks the native fieldset disabled property plus the disabled descendant input. Runtime source remains unchanged from the original review. The JSON receipt is the current binding.
+
+Deployment routing correction independently reviewed; current delegation bound to `4760cd59503b2ff46a502e83420cf2111412ada3`, tree `8122cda5bda8ddaf3bdf991bab766aefb8f6d05b`, report `a7333885e37b1530eca1d16b1e7dd7b9874e6501e067c6d7f65f0151ab528f83`, recorded 2026-11-16T08:48:32+09:00. No scope expansion or runtime change.

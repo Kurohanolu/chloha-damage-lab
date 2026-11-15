@@ -1,9 +1,9 @@
 # 6.1 Sol publication review — v1.1.0-pre.1
 
 Reviewer: 6.1 Sol. Outcome: **conditional-pass**.
-Current reviewed source commit: `209a6e09af743b8f6981c8bfa7e8209a0bc790a5`.
+Current reviewed source commit: `4760cd59503b2ff46a502e83420cf2111412ada3`.
 Original reviewed source commit: `3a39482a149809b8a827017b06ca8d980b343081`.
-Current reviewed tree: `824ad4e379a887a312a9891fde2a741d1ab7201f`.
+Current reviewed tree: `8122cda5bda8ddaf3bdf991bab766aefb8f6d05b`.
 Original reviewed tree: `6fbe427aa6402d08db3f6beb4f116e6ae226cbfc`.
 Release tag: `v1.1.0-pre.1` (public prerelease, not Stable).
 ES-LA source-record SHA-256: `d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427`.
@@ -56,3 +56,11 @@ Reviewer: **6.1 Sol**. Tag: `v1.1.0-pre.1`. Current source: `209a6e09af743b8f698
 Independently resolved the remote commit's Git tree and confirmed it matches the inspected local candidate `7a2c0cf1e6753fdb5ecdf42c208c6b6bdd750db3`. The only change since the previous reviewed candidate is in `tests/v110-feedback-pause-browser.cjs`: it checks the native fieldset `disabled` property, checks a descendant textarea through Playwright `isDisabled()`, and checks the native fieldset property becomes false after restoring an enabled language. This checks both the control state and its practical descendant effect. It preserves visible-notice, submit guard, zero-POST, locale restoration and retained-draft assertions. No runtime, backend, publication policy or workflow changes are present. No new blocking finding.
 
 Locally passed syntax validation plus the release gate, deployment gate and release-identity checks. The corrected browser test has not passed locally; exact-source CI/browser success remains an explicit publication condition. Prior CI failure described by the coordinator is not treated as a passing result, and this supplement does not attest an unobserved CI outcome. Previous approval records must not authorize this changed tree; fresh approval must bind the current source/tree and updated report digest.
+
+## Supplemental review — deployment migration contract routing
+
+Reviewer: **6.1 Sol**. Tag: `v1.1.0-pre.1`. Current reviewed source: `4760cd59503b2ff46a502e83420cf2111412ada3`. Current reviewed tree: `8122cda5bda8ddaf3bdf991bab766aefb8f6d05b`. Outcome remains **conditional-pass**, with all publication conditions above retained.
+
+Independently resolved the remote source tree and confirmed it matches the inspected local candidate `541a2d2a715b53234d7219783e148ba1501f0e47`. The sole protected source difference since the previous reviewed candidate changes the migration-contract step in `deployment/singularity-pages.yml`. For the exact `v1.1.0-pre.1` tag, it now runs the pinned historical migration contract plus the current v1.1.0 artifact contract, matching the source CI's existing division. Other tags retain the original migration contract. The historical helper pins both the immutable v1.0.0 commit and tree, labels its evidence historical, and rejects failed historical tests. The current artifact contract separately verifies the candidate. Approval, exact-source CI, live-readiness and artifact-generation checks remain in place. No runtime, feedback policy or backend change is present. No blocking finding.
+
+Independently ran the historical migration suite, current v1.1.0 artifact contract, target deployment gate and release gate: all four passed. Earlier successful CI/browser results on a prior head are historical context, not proof that this changed workflow has passed exact-source deployment. The current source must still satisfy exact-source CI, fresh digest-bound owner approval, production checks, real deployment provenance and final live acceptance before final Release publication. No deployment or browser success is newly attested by this supplement.
