@@ -1,3 +1,5 @@
+> Deployment update: the approved public Singularity repository/URL is now live and verified. Pending-deployment statements below are historical; the bounded naming/trademark limitations remain unchanged.
+
 # v0.187 name and URL check — 2026-11-14
 
 This is a bounded preliminary search for the owner's proposed product name, not a trademark clearance or an assertion of exclusive rights. The prototype can be reviewed while the final naming/adoption decision remains open.
