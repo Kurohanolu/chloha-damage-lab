@@ -74,5 +74,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pages-live-screenshots
-          path: pages-live-*.png
+          path: |
+            pages-live-*.png
+            pages-live-v100.json
           if-no-files-found: ignore

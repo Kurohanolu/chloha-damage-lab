@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
 const {baseline,verifyObservation}=require('../scripts/helpers/v0188-public-release-observation.cjs');
-const current=require('../release.json');
+const current=require('../scripts/helpers/v0188-followup-review.cjs').publishedRelease();
 const old=JSON.parse(execFileSync('git',['show','7210be99c39d75b49ea8200aad91d75801eb300a:release.json'],{encoding:'utf8'}));
 assert.deepEqual(verifyObservation(current,old,baseline.name),baseline,'Unpublished candidate observes the pinned existing release');
 const approved=structuredClone(current);Object.assign(approved.qualityReview,{auditStatus:'passed',ownerApproval:'approved',evidence:'synthetic observation fixture only'});

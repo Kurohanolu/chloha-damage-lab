@@ -2,8 +2,15 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
 const {verifyCutoverApproval}=require('./verify-publication-approval.cjs');
 const {dependencies}=require('./v0187-build-sites.cjs');
+const {hasFollowup,verifyFollowupDraft,publishedCommit}=require('./helpers/v0188-followup-review.cjs');
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(hasFollowup(release)){
+  verifyFollowupDraft(release);
+  assert.equal(event,'pull_request','Follow-up drafts can only observe the published PR base');
+  assert.equal(baseRef,publishedCommit,'Follow-up Pages baseline must be the immutable published main');
+  return {ref:publishedCommit,mode:'published-followup-base'};
+ }
  if(event!=='pull_request')return {ref:'',mode:'exact-current-source'};
  assert.match(baseRef||'',/^[a-f0-9]{40}$/,'PR base must be an immutable full SHA');
  const [major,minor]=release.version.split('.').map(Number),qualityRelease=major>0||minor>=188;
@@ -17,15 +24,17 @@ function selectBaseline(release,event,baseRef){
  if(release.qualityReview.auditOutcome==='conditional-pass')assert.equal(release.qualityReview.conditionsDisposition,'accepted-by-owner','Conditional audit limits require explicit owner acceptance');
  return {ref:'',mode:'approved-live-candidate'};
 }
-function verifyBoundRuntime(release){
+function verifyBoundRuntime(release,sourceRef=''){
+ if(sourceRef)assert.match(sourceRef,/^[a-f0-9]{40}$/,'Historical source must be an immutable full SHA');
+ const read=file=>sourceRef?execFileSync('git',['show',sourceRef+':'+file],{maxBuffer:16*1024*1024}):fs.readFileSync(file);
  const review=release.qualityReview;
  const tree=execFileSync('git',['rev-parse',review.reviewedSourceCommit+'^{tree}'],{encoding:'utf8'}).trim();
  assert.equal(tree,review.reviewedTree,'Reviewed commit must identify the recorded tree');
- const html=fs.readFileSync('index.html','utf8'),files=new Set(['index.html',...dependencies(html),...Object.values(release.branding||{})]);
+ const html=read('index.html').toString(),files=new Set(['index.html',...dependencies(html),...Object.values(release.branding||{})]);
  for(const file of files){
   const approved=execFileSync('git',['show',review.reviewedSourceCommit+':'+file],{maxBuffer:16*1024*1024});
   const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
-  assert.equal(hash(fs.readFileSync(file)),hash(approved),'Approved public runtime must remain byte-identical to reviewed source: '+file);
+  assert.equal(hash(read(file)),hash(approved),'Approved public runtime must remain byte-identical to reviewed source: '+file);
  }
  return files.size;
 }

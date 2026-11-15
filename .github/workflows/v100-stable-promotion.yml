@@ -1,0 +1,54 @@
+name: v1.0.0 Stable Promotion
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  WRANGLER_SEND_METRICS: 'false'
+  PYTHONDONTWRITEBYTECODE: '1'
+jobs:
+  stable-candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-package-lock --no-audit --no-fund
+      - run: npm ci --prefix services/feedback --no-audit --no-fund
+      - run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Install nine-language fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify stable metadata and preserved public baseline
+        run: |
+          node scripts/verify-release.cjs
+          node tests/v0184-public-baseline.cjs
+      - name: Run every stable promotion, transport, numerical and publication regression
+        if: ${{ !cancelled() }}
+        run: node scripts/v100-run-tests.cjs
+      - name: Package the clean unpublished candidate and rollback inventory
+        if: ${{ !cancelled() }}
+        run: |
+          node -e "if(require('child_process').execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim())throw Error('Stable candidate must be clean')"
+          node scripts/v0187-build-sites.cjs --output dist/v100
+          TZ=UTC git archive --format=zip --prefix=chloha-damage-lab/ -o dist/v100/source-candidate.zip HEAD
+          sha256sum dist/v100/source-candidate.zip > dist/v100/source-candidate.zip.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v100-stable-candidate-evidence
+          path: |
+            reports/v100/
+            dist/v100/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30

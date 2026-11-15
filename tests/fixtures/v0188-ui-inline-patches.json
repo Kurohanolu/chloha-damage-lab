@@ -2,6 +2,21 @@
   "baselineCommit": "7210be99c39d75b49ea8200aad91d75801eb300a",
   "patches": [
     {
+      "purpose": "C-P01: feedback input does not rebuild the calculator UI",
+      "before": "  const id=e.target.id;if(!id||busy||id.endsWith('Search')||id==='battleObservedDamage'||e.target.closest('.stat-table'))return;",
+      "after": "  const id=e.target.id;if(!id||busy||id.endsWith('Search')||id==='battleObservedDamage'||e.target.closest('.stat-table')||e.target.closest('#feedbackPanel'))return;"
+    },
+    {
+      "purpose": "Read manual HP and Speed displays from canonical per-side controls",
+      "before": "function statValue(side,k){\n  if(!el('dbAuto').checked){\n   if(side==='def'&&k==='hp')return Number(el('hp').value);\n   if(activeStat(side)===k)return Number(el(side==='att'?'attack':'defense').value);\n   if(models[side].manual[k]!==undefined)return models[side].manual[k];\n  }\n  const point=models[side].points[k];\n  if(!Number.isInteger(point)||point<0||point>32)return '';\n  return calcStat(species(side),k,point,models[side].nature[k]);\n }",
+      "after": "function statValue(side,k){\n  if(!el('dbAuto').checked){\n   if(k==='hp')return Number(el(side==='att'?'attMaxHp':'hp').value);\n   if(k==='speed')return Number(el(side+'Speed').value);\n   if(activeStat(side)===k)return Number(el(side==='att'?'attack':'defense').value);\n   if(models[side].manual[k]!==undefined)return models[side].manual[k];\n  }\n  const point=models[side].points[k];\n  if(!Number.isInteger(point)||point<0||point>32)return '';\n  return calcStat(species(side),k,point,models[side].nature[k]);\n }"
+    },
+    {
+      "purpose": "Route manual Speed edits to canonical calculation controls",
+      "before": "for(const kind of ['points','range','nature','actual'])el(`${side}-${k}-${kind}`).addEventListener('input',()=>{\n    const input=el(`${side}-${k}-${kind}`),m=models[side];\n    if(kind==='nature')m.nature[k]=input.value;\n    else if(kind==='actual'){\n     const val=Number(input.value);\n     if(!el('dbAuto').checked){m.manual[k]=val;const target=k==='hp'?(side==='att'?'attMaxHp':'hp'):side==='att'?'attack':'defense';if(k==='hp'||activeStat(side)===k)el(target).value=input.value;render();refreshUI();return;}\n     const point=Array.from({length:33},(_,i)=>i).find(i=>calcStat(species(side),k,i,m.nature[k])===val);\n     if(point===undefined){notify('この実数値は現在の性格・ポイント0〜32では設定できません。「入力モード」で自動反映をオフにすると手入力できます。');return;}\n     m.points[k]=point;\n    }else m.points[k]=Number(input.value||0);\n    notify('');recalculate();\n   });",
+      "after": "for(const kind of ['points','range','nature','actual'])el(`${side}-${k}-${kind}`).addEventListener('input',()=>{\n    const input=el(`${side}-${k}-${kind}`),m=models[side];\n    if(kind==='nature')m.nature[k]=input.value;\n    else if(kind==='actual'){\n     const val=Number(input.value);\n     if(!el('dbAuto').checked){m.manual[k]=val;const target=k==='hp'?(side==='att'?'attMaxHp':'hp'):k==='speed'?side+'Speed':side==='att'?'attack':'defense';if(k==='hp'||k==='speed'||activeStat(side)===k)el(target).value=input.value;render();refreshUI();return;}\n     const point=Array.from({length:33},(_,i)=>i).find(i=>calcStat(species(side),k,i,m.nature[k])===val);\n     if(point===undefined){notify('この実数値は現在の性格・ポイント0〜32では設定できません。「入力モード」で自動反映をオフにすると手入力できます。');return;}\n     m.points[k]=point;\n    }else m.points[k]=Number(input.value||0);\n    notify('');recalculate();\n   });"
+    },
+    {
       "purpose": "L-01: expose canonical portrait identifier for localized alt",
       "before": "    img.dataset.pokemon=p.id;img.hidden=!key;fallback.hidden=!!key;img.alt=p.name+'の画像';",
       "after": "    img.dataset.pokemon=p.id;img.dataset.pokemonJa=p.name;img.hidden=!key;fallback.hidden=!!key;"
@@ -15,6 +30,41 @@
       "purpose": "M-01: UI-only export/restore bridge to closure state",
       "before": " window.ChlohaUI=Object.freeze({version:'0.171',refresh:refreshUI,models:()=>structuredClone(models)});",
       "after": " // v0.188 persistence bridges only UI state; the calculation engine stays untouched.\n const persistenceState=()=>({models:structuredClone(models),spitUpCount,conditionalPowerOverride});\n const persistenceRules=()=>({\n  abilities:[...new Set(['none',...Object.values(supportedAbilities),...Object.values(defensiveAbilities),...ChlohaPokemonDB.pokemon.flatMap(p=>(p.abilities||[]).map(name=>'unsupported:'+name))])],\n  items:[...new Set([...el('attItem').options,...el('defItem').options,...plateOptions.values()].map(o=>o.value))]\n });\n const persistencePrepare=()=>{refreshCandidateMoves();refreshAbilities();refreshDefenseAbilities();};\n const persistenceRestore=snapshot=>{\n  models=structuredClone(snapshot.models);spitUpCount=snapshot.spitUpCount;conditionalPowerOverride=snapshot.conditionalPowerOverride;\n  window.ChlohaMoveMechanic=ChlohaMovePolicy[el('dbMove').value]?.mechanic||'none';\n  if(el('dbAuto').checked)el('category').value=movesById.get(el('dbMove').value).category;\n  window.ChlohaPreviousMoveId=el('dbMove').value;\n  window.ChlohaCurrentAttMaxHp=Number(el('attMaxHp').value);\n  ChlohaBattleHistory.length=0;refreshBattleHistory();\n  syncBridge();syncCriticalToggle();syncLowHpAbilityControl();syncPlateChoice();syncSpitUpButtons();\n  try{validateModels();applyDb();dbInputError=null;adapterError=false;render();}catch(error){showInputError(error);}\n  refreshUI();\n };\n window.ChlohaUI=Object.freeze({version:'0.171',refresh:refreshUI,models:()=>structuredClone(models),persistenceState,persistenceRules,persistencePrepare,persistenceRestore});"
+    },
+    {
+      "purpose": "A-S01: manual attacker HP targets attacker maximum HP, keeping defender HP independent",
+      "before": "     if(!el('dbAuto').checked){m.manual[k]=val;const target=k==='hp'?'hp':side==='att'?'attack':'defense';if(k==='hp'||activeStat(side)===k)el(target).value=input.value;render();refreshUI();return;}",
+      "after": "     if(!el('dbAuto').checked){m.manual[k]=val;const target=k==='hp'?(side==='att'?'attMaxHp':'hp'):side==='att'?'attack':'defense';if(k==='hp'||activeStat(side)===k)el(target).value=input.value;render();refreshUI();return;}"
+    },
+    {
+      "purpose": "C-L01/C-L02: selected move summary uses canonical verification status and localized variable power",
+      "before": "  const current=movesById.get(moveSelect.value),selected=moveSelect.selectedOptions?.[0]?.textContent||'';\n  const lang=window.ChlohaLocale?.get()||'ja';\n  const translate=window.ChlohaLocale?.text||((value)=>value);\n  const typeName=window.ChlohaLocale?.typeName||((value)=>value);\n  const moveName=lang==='ja'?current?.name:(localizedName('moves',current?.name,lang)||moveEnglishAliases[current?.name]||window.ChlohaNames?.moves?.[current?.name]||current?.name);\n  const status=selected.match(/［[^］]+］/)?.[0]||'';",
+      "after": "  const current=movesById.get(moveSelect.value);\n  const lang=window.ChlohaLocale?.get()||'ja';\n  const translate=window.ChlohaLocale?.text||((value)=>value);\n  const typeName=window.ChlohaLocale?.typeName||((value)=>value);\n  const moveName=lang==='ja'?current?.name:(localizedName('moves',current?.name,lang)||moveEnglishAliases[current?.name]||window.ChlohaNames?.moves?.[current?.name]||current?.name);\n  const status=!current?'':!moveCalculationReady(current)?'［計算未対応］':current.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'［基本ダメージのみ・実機未照合］':'［計算試算・実機未照合］';"
+    },
+    {
+      "purpose": "C-L01: selected variable power shares the locale catalog",
+      "before": "  const power=current?.power||(lang==='ja'?'可変':'Variable');",
+      "after": "  const power=current?.power||(lang==='ja'?'可変':translate('Variable'));"
+    },
+    {
+      "purpose": "C-U01: rebuilt move suggestions clear stale active descendant",
+      "before": "  const query=normalizeMove(moveInput.value.trim());moveList.replaceChildren();moveActive=-1;moveHits=[];",
+      "after": "  const query=normalizeMove(moveInput.value.trim());moveList.replaceChildren();moveInput.removeAttribute('aria-activedescendant');moveActive=-1;moveHits=[];"
+    },
+    {
+      "purpose": "C-U01: initial upward move navigation selects final result",
+      "before": "   e.preventDefault();setMoveActive(e.key==='ArrowDown'?(moveActive+1)%moveHits.length:(moveActive-1+moveHits.length)%moveHits.length);",
+      "after": "   e.preventDefault();setMoveActive(e.key==='ArrowDown'?(moveActive+1)%moveHits.length:moveActive<0?moveHits.length-1:(moveActive-1+moveHits.length)%moveHits.length);"
+    },
+    {
+      "purpose": "C-U01: rebuilt species suggestions clear stale active descendant",
+      "before": "   const q=normalize(input.value.trim());list.replaceChildren();active=-1;matches=[];",
+      "after": "   const q=normalize(input.value.trim());list.replaceChildren();input.removeAttribute('aria-activedescendant');active=-1;matches=[];"
+    },
+    {
+      "purpose": "C-U01: initial upward species navigation selects final result",
+      "before": "    e.preventDefault();setActive(e.key==='ArrowDown'?(active+1)%matches.length:(active-1+matches.length)%matches.length);",
+      "after": "    e.preventDefault();setActive(e.key==='ArrowDown'?(active+1)%matches.length:active<0?matches.length-1:(active-1+matches.length)%matches.length);"
     }
   ]
 }

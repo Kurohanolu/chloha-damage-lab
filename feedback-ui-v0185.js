@@ -2,17 +2,22 @@
  'use strict';
  function initialize(){
   const app=document.getElementById('app');if(!app||document.getElementById('feedbackPanel'))return;
-  const C=window.ChlohaFeedbackContract,L=window.ChlohaFeedbackLocales;
-  const locale=()=>window.ChlohaLocale?.get?.()||'ja',t=key=>L.text(locale(),key);
+  const C=window.ChlohaFeedbackContract,L=window.ChlohaFeedbackLocales,R=window.ChlohaFeedbackRelease;
+  let reportRelease=null;try{reportRelease=R.identify(document.title);}catch{}
+  const locale=()=>window.ChlohaLocale?.get?.()||'ja',t=key=>{
+   const value=L.text(locale(),key);
+   return reportRelease&&['descriptionHelp','tooLong'].includes(key)?value.replace(/5000/g,String(reportRelease.descriptionLimit)):value;
+  };
   const button=document.createElement('button');button.id='feedbackButton';button.type='button';button.dataset.noTranslate='';button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls','feedbackPanel');
   const panel=document.createElement('section');panel.id='feedbackPanel';panel.hidden=true;panel.dataset.noTranslate='';panel.className='panel';panel.setAttribute('role','region');panel.setAttribute('aria-labelledby','feedbackTitle');
   // All markup is constant. Report text, server data and previews use value/textContent only.
   panel.innerHTML=`<div class="feedback-heading"><h2 id="feedbackTitle" data-fb="title"></h2><button id="feedbackClose" type="button" data-fb="close"></button></div><p data-fb="intro"></p>
+<p id="feedbackRelease" aria-live="polite"></p><p id="feedbackReleaseHelp"></p><pre id="feedbackReleaseHeader" tabindex="0" hidden></pre>
 <form id="feedbackForm" novalidate><fieldset id="feedbackFields"><label for="feedbackCategory" data-fb="category"></label><select id="feedbackCategory" required><option value="" data-fb="choose"></option><option value="bug" data-fb="bug"></option><option value="calculation" data-fb="calculation"></option><option value="translation" data-fb="translation"></option><option value="feature" data-fb="feature"></option></select>
 <label for="feedbackDescription" data-fb="description"></label><p id="feedbackDescriptionHelp" data-fb="descriptionHelp"></p><textarea id="feedbackDescription" rows="6" maxlength="5000" required aria-describedby="feedbackDescriptionHelp"></textarea>
 <label for="feedbackEmail" data-fb="email"></label><p id="feedbackEmailHelp" data-fb="emailHelp"></p><input id="feedbackEmail" type="email" maxlength="254" autocomplete="email" aria-describedby="feedbackEmailHelp">
 <label class="feedback-check"><input id="feedbackAttach" type="checkbox" aria-describedby="feedbackAttachHelp"><span data-fb="attach"></span></label><p id="feedbackAttachHelp" data-fb="attachHelp"></p>
-<div id="feedbackAttachment" hidden><h3 data-fb="preview"></h3><p id="feedbackStale" data-fb="stale" hidden></p><pre id="feedbackPreview" tabindex="0"></pre><button id="feedbackRefresh" type="button" data-fb="refresh"></button><label class="feedback-check"><input id="feedbackConfirm" type="checkbox"><span data-fb="confirm"></span></label></div>
+<div id="feedbackAttachment" hidden><h3 data-fb="preview"></h3><p id="feedbackVersionCompatibility"></p><p id="feedbackStale" data-fb="stale" hidden></p><pre id="feedbackPreview" tabindex="0"></pre><button id="feedbackRefresh" type="button" data-fb="refresh"></button><label class="feedback-check"><input id="feedbackConfirm" type="checkbox"><span data-fb="confirm"></span></label></div>
 </fieldset><div class="feedback-trap" aria-hidden="true"><label>Website<input id="feedbackWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
 <p id="feedbackPrivacy" data-fb="privacy"></p><a id="feedbackProviderPrivacy" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" data-fb="providerPrivacy"></a>
 <p id="feedbackMode" data-fb="localNotice" hidden></p><div id="feedbackChallenge"></div><p id="feedbackErrors" role="alert" hidden></p><p id="feedbackStatus" role="status" aria-live="polite"></p><button id="feedbackSubmit" type="submit" data-fb="submit"></button></form>`;
@@ -20,12 +25,20 @@
   document.head.append(style);const footer=app.querySelector('.lab-footer');if(footer){footer.before(panel);footer.append(button);}else app.append(panel,button);
   const $=id=>document.getElementById('feedback'+id);
   let ready=false,preparing=false,busy=false,delivered=false,mode='',siteKey='',token='',widget=null,scriptPromise=null,base='',snapshot=null,stale=false,submission=null,statusKey='unavailable',errorKey='',receipt='';
-  const controls=()=>{$('Fields').disabled=busy;$('Submit').disabled=busy||!ready||delivered;$('Submit').textContent=t(busy?'sending':'submit');};
+  const controls=()=>{$('Fields').disabled=busy;$('Submit').disabled=busy||!ready||delivered||!reportRelease;$('Submit').textContent=t(busy?'sending':'submit');};
   function messages(){
    $('Status').textContent=(statusKey?t(statusKey):'')+(receipt?'\n'+t('reference')+': '+receipt:'');
    $('Errors').hidden=!errorKey;$('Errors').textContent=errorKey?t(errorKey):'';controls();
   }
-  function renderLocale(){button.textContent=t('button');for(const node of panel.querySelectorAll('[data-fb]')){const text=t(node.dataset.fb);node.textContent=text;if(node.tagName==='OPTION')node.label=text;}messages();if(ready&&!busy)renderWidget();}
+  function renderLocale(){
+   button.textContent=t('button');for(const node of panel.querySelectorAll('[data-fb]')){const text=t(node.dataset.fb);node.textContent=text;if(node.tagName==='OPTION')node.label=text;}
+   $('Description').maxLength=reportRelease?.descriptionLimit||C.limits.description;
+   $('Release').textContent=reportRelease?R.text(locale(),'label')+': '+reportRelease.fullVersion:(R?.text(locale(),'unsupported')||t('unavailable'));
+   $('ReleaseHelp').hidden=!reportRelease?.compatibility;$('ReleaseHelp').textContent=reportRelease?.compatibility?R.text(locale(),'header'):'';
+   $('ReleaseHeader').hidden=!reportRelease?.compatibility;$('ReleaseHeader').textContent=reportRelease?.prefix.trim()||'';
+   $('VersionCompatibility').hidden=!reportRelease?.compatibility;$('VersionCompatibility').textContent=reportRelease?.compatibility?R.text(locale(),'compatibility'):'';
+   messages();if(ready&&!busy)renderWidget();
+  }
   function dirty(){if(busy)return;submission=null;delivered=false;receipt='';errorKey='';statusKey=ready?'':preparing?'preparing':'unavailable';messages();}
   function attachment(){
    $('Attachment').hidden=!$('Attach').checked;snapshot=null;stale=false;$('Stale').hidden=true;$('Confirm').checked=false;
@@ -64,21 +77,32 @@
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();close();}});
   $('Form').addEventListener('input',dirty);$('Form').addEventListener('change',dirty);
   $('Attach').addEventListener('change',attachment);$('Refresh').addEventListener('click',()=>{dirty();attachment();});
-  for(const event of ['input','change'])document.addEventListener(event,e=>{
-   if(panel.contains(e.target)||e.target.id==='chloha-locale'||!C.controlIds.includes(e.target.id))return;
-   if(snapshot){stale=true;$('Stale').hidden=false;$('Confirm').checked=false;dirty();}
+  // Consent refers to the displayed calculation, including programmatic presets,
+  // side swaps, resets and six-stat editors. Locale alone is not a calculation change.
+  const calculationIdentity=value=>JSON.stringify([value.appVersion,value.engineVersion,value.selection,value.controls,value.engineInput,value.result]);
+  function checkAttachmentFreshness(){
+   if(!snapshot||busy||stale)return;
+   let changed=true;
+   try{changed=calculationIdentity(snapshot)!==calculationIdentity(window.ChlohaFeedbackSnapshot.capture());}catch{}
+   if(changed){stale=true;$('Stale').hidden=false;$('Confirm').checked=false;dirty();}
+  }
+  for(const event of ['input','change','click'])document.addEventListener(event,e=>{
+   if(panel.contains(e.target)||e.target.id==='chloha-locale')return;
+   checkAttachmentFreshness();
   });
   function invalid(key,id){errorKey=key;messages();if(id){$(id).setAttribute('aria-invalid','true');$(id).focus();}}
   $('Form').addEventListener('submit',async event=>{
    event.preventDefault();if(busy||delivered)return;
+   checkAttachmentFreshness();
    for(const id of ['Category','Description','Email'])$(id).removeAttribute('aria-invalid');
    if(!C.categories.includes($('Category').value))return invalid('requiredCategory','Category');
    if(!$('Description').value.trim())return invalid('requiredDescription','Description');
-   if($('Description').value.length>C.limits.description)return invalid('tooLong','Description');
+   let currentRelease;try{currentRelease=R.identify(document.title);if(currentRelease.fullVersion!==reportRelease?.fullVersion)throw Error('changed');}catch{return invalid('unavailable');}
+   if($('Description').value.length>currentRelease.descriptionLimit)return invalid('tooLong','Description');
    const email=$('Email').value.trim();if(email&&(email.length>C.limits.email||!/^[^\s@<>]{1,64}@[^\s@<>.]+(?:\.[^\s@<>.]+)+$/.test(email)))return invalid('emailError','Email');
    if($('Attach').checked&&(!snapshot||stale||!$('Confirm').checked))return invalid('attachmentError','Confirm');
    if(!ready)return invalid('unavailable');if(!token)return invalid('challengeRequired');
-   if(!submission)submission={requestId:crypto.randomUUID(),category:$('Category').value,description:$('Description').value.trim(),email,locale:locale(),appVersion:document.title.match(/v\d+\.\d+(?: Pre-Release \d+)?/)?.[0]||'',snapshot:$('Attach').checked?structuredClone(snapshot):null,website:$('Website').value};
+   if(!submission)submission={requestId:crypto.randomUUID(),category:$('Category').value,description:R.description(document.title,$('Description').value),email,locale:locale(),appVersion:currentRelease.wireVersion,snapshot:$('Attach').checked?structuredClone(snapshot):null,website:$('Website').value};
    const payload={...submission,turnstileToken:token};busy=true;errorKey='';statusKey='sending';messages();
    try{
     const response=await fetch(base+'/v1/reports',{method:'POST',credentials:'omit',referrerPolicy:'no-referrer',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(15000)});

@@ -1,5 +1,9 @@
 name: Deploy verified Singularity
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Deploy Singularity {0}', inputs.source_sha) || format('Deploy Singularity request {0}', github.sha) }}
 on:
+  push:
+    branches: [main]
+    paths: [deployment-request.json]
   workflow_dispatch:
     inputs:
       source_sha:
@@ -12,25 +16,47 @@ permissions:
 concurrency:
   group: singularity-pages
   cancel-in-progress: false
-env:
-  SOURCE_SHA: ${{ inputs.source_sha }}
 jobs:
   build:
-    if: github.repository == 'Kurohanolu/singularity'
+    if: github.repository == 'Kurohanolu/singularity' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - name: Validate exact source selection
-        run: '[[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]'
-      - uses: actions/checkout@v4
+      - name: Read immutable deployment request
+        uses: actions/checkout@v4
         with:
-          repository: Kurohanolu/chloha-damage-lab
-          ref: ${{ inputs.source_sha }}
-          fetch-depth: 0
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate exact source selection
+        id: source
+        env:
+          DEPLOY_EVENT: ${{ github.event_name }}
+          INPUT_SOURCE_SHA: ${{ inputs.source_sha || '' }}
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          let sha;
+          if(process.env.DEPLOY_EVENT==='workflow_dispatch')sha=process.env.INPUT_SOURCE_SHA;
+          else {
+            assert.equal(process.env.DEPLOY_EVENT,'push');
+            const request=JSON.parse(fs.readFileSync('deployment-request.json','utf8'));
+            assert.ok(request&&typeof request==='object'&&!Array.isArray(request));
+            assert.deepEqual(Object.keys(request),['source_sha']);
+            sha=request.source_sha;
+          }
+          assert.equal(typeof sha,'string');assert.match(sha,/^[a-f0-9]{40}$/);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'source_sha='+sha+'\n');
+          fs.appendFileSync(process.env.GITHUB_ENV,'SOURCE_SHA='+sha+'\n');
+          NODE
+      - uses: actions/checkout@v4
+        with:
+          repository: Kurohanolu/chloha-damage-lab
+          ref: ${{ steps.source.outputs.source_sha }}
+          fetch-depth: 0
+          persist-credentials: false
       - name: Require owner adoption and exact source contracts
         run: |
           test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
@@ -49,6 +75,7 @@ jobs:
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];
             const release = require('./release.json');
             if (Number(release.version.split('.')[0]) > 0 || Number(release.version.split('.')[1]) >= 188) required.push('v0.188 Quality Remediation');
+            if (release.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
             const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});
             const latest = new Map();
             for (const run of data.workflow_runs) {

@@ -6,11 +6,16 @@ const {verifyPublication}=require('../scripts/verify-publication-approval.cjs');
 const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 const old=file=>execFileSync('git',['show',legacyCommit+':'+file],{maxBuffer:16*1024*1024});
 const html=fs.readFileSync('index.html','utf8'),frozen=old('index.html').toString();
-// Every existing runtime module remains byte-identical, including feedback.
-for(const file of dependencies(frozen).filter(file=>file.endsWith('.js')))assert.equal(hash(fs.readFileSync(file)),hash(old(file)),'unchanged v0.186 runtime: '+file);
+// Retain every original byte assertion after reversing only exact, recorded
+// UI/consent fixes and independently witnessed screen-breaking correction.
+// All other calculation bytes and every Worker byte stay frozen.
+const {normalizeRuntime}=require('./helpers/v0188-astra-runtime-contract.cjs');
+for(const file of dependencies(frozen).filter(file=>file.endsWith('.js')))assert.equal(hash(normalizeRuntime(file,fs.readFileSync(file,'utf8'))),hash(old(file)),'unchanged v0.186 runtime outside exact UI fixes: '+file);
 for(const file of ['tests/fixtures/v0184-public-baseline.json','tests/fixtures/v0186-baseline-corrections.json','services/feedback/src/worker.js'])assert.equal(hash(fs.readFileSync(file)),hash(old(file)),file);
 const inline=source=>[...source.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1].replace(/app\.innerHTML=`[\s\S]*?<\/aside>`;/,'/* presentation template */'));
-if(Number(JSON.parse(fs.readFileSync('release.json')).version)>=0.188)require('./helpers/v0188-inline-contract.cjs').verifyInline(html,frozen);
+const currentRelease=JSON.parse(fs.readFileSync('release.json'));
+const {stable}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(currentRelease);
+if(stable||Number(currentRelease.version)>=0.188)require('./helpers/v0188-inline-contract.cjs').verifyInline(html,frozen);
 else assert.deepEqual(inline(html),inline(frozen),'inline mechanics/data/control logic must remain byte-identical outside the presentation template');
 const ids=source=>[...new Set([...source.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]))].sort();
 assert.deepEqual(ids(html),ids(frozen),'existing input/control IDs must be preserved');

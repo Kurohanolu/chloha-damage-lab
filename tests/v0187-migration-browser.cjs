@@ -5,6 +5,7 @@ const {buildSites}=require('../scripts/v0187-build-sites.cjs');
 const {startPreview}=require('../scripts/v0187-preview-server.cjs');
 const {loadPublicContracts}=require('./helpers/public-release-contract.cjs');
 const release=JSON.parse(fs.readFileSync('release.json','utf8'));
+const {stable,displayVersion}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];
 const legacyLabels=[
@@ -81,6 +82,8 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     assert.equal((await page.request.get(preview.origin+'/singularity/assets/singularity/favicon.png')).status(),200);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no horizontal overflow: '+locale);
     const visible=await page.locator('#app').innerText();assert.ok(!/Chloha Damage Lab|CHLOHA TOOLS|DAMAGE LAB/.test(visible),'no unintended previous product name: '+locale);
+    assert.equal((await page.locator('.version').innerText()).replace(/\s+/g,' ').trim(),displayVersion,'exact visible release identity: '+locale);
+    if(stable)assert.doesNotMatch(visible,/Pre-Release|Experimental build|実機未照合の検証版です/,'stable app must retain limitations without obsolete prerelease branding: '+locale);
     const color=await page.locator('body').evaluate(node=>getComputedStyle(node).backgroundColor);assert.equal(color,'rgb(8, 8, 13)');
     if(['ja','en','de'].includes(locale)){
      const name=locale==='en'?'desktop-en':locale==='de'?'mobile-de-320':'mobile-ja';
@@ -97,14 +100,15 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     await page.click('#feedbackSubmit');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.fill('#feedbackDescription','Synthetic migration feedback '+locale);await page.check('#feedbackAttach');
     if(locale==='ja')await page.screenshot({path:'reports/v0187/feedback-ja.png'});
-    const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,'v'+release.version+' Pre-Release '+release.preRelease);assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
+    if(stable){assert.ok((await page.locator('#feedbackRelease').innerText()).includes(displayVersion));assert.equal(await page.locator('#feedbackReleaseHeader').innerText(),'[Singularity release: v1.0.0]');assert.ok((await page.locator('#feedbackVersionCompatibility').innerText()).includes(displayVersion));}
+    const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,stable?'v1.0':displayVersion);assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
     await page.selectOption('#chloha-locale',other);assert.equal(await page.inputValue('#feedbackDescription'),'Synthetic migration feedback '+locale);assert.equal(await page.isChecked('#feedbackConfirm'),true);await page.selectOption('#chloha-locale',locale);
     let requests=0,releasePost;const waiting=new Promise(resolve=>{releasePost=resolve;});
     await page.route('**/v1/reports',async route=>{if(route.request().method()==='POST'){requests++;await waiting;}return route.continue();});
     await page.click('#feedbackSubmit');await page.waitForFunction(()=>document.getElementById('feedbackSubmit').disabled);
     await page.evaluate(()=>{document.getElementById('feedbackForm').requestSubmit();document.getElementById('feedbackForm').requestSubmit();});
     releasePost();await page.waitForFunction(()=>document.getElementById('feedbackStatus').textContent.includes(window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),'localSuccess')));
-    assert.equal(requests,1,'single submission while pending');assert.equal(api.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,1);evidence.successfulLocalReports++;
+    assert.equal(requests,1,'single submission while pending');assert.equal(api.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,1);if(stable){const stored=api.db.sqlite.prepare('SELECT app_version,description,snapshot_json FROM reports').get();assert.equal(stored.app_version,'v1.0');assert.ok(stored.description.startsWith('[Singularity release: v1.0.0]\n\n'));assert.equal(JSON.parse(stored.snapshot_json).appVersion,'v1.0');}evidence.successfulLocalReports++;
     assert.ok([401,403].includes((await page.request.get(api.origin+'/v1/admin/reports')).status()),'anonymous admin access remains denied');
     assert.deepEqual(errors,[]);assert.deepEqual(failedAssets,[]);
    }catch(error){await page.screenshot({path:'reports/v0187/failure-'+locale+'.png',fullPage:true}).catch(()=>{});throw error;}

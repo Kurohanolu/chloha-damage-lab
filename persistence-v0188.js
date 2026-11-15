@@ -18,15 +18,16 @@
  const object=x=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
  const exact=(x,keys)=>object(x)&&Object.keys(x).length===keys.length&&keys.every(k=>Object.hasOwn(x,k));
  const integer=(x,min,max)=>Number.isSafeInteger(x)&&x>=min&&x<=max;
- function validModels(models){
+ function validModels(models,defenderAttackOverride,enforceBudget=true){
+  if(defenderAttackOverride!==undefined&&!integer(defenderAttackOverride,0,32))return false;
   return exact(models,['att','def'])&&['att','def'].every(side=>{
    const m=models[side];return exact(m,['points','nature','rank','manual'])&&exact(m.points,STATS)&&exact(m.nature,STATS)&&exact(m.rank,STATS)&&
     STATS.every(k=>integer(m.points[k],0,32)&&['plus','neutral','minus'].includes(m.nature[k])&&integer(m.rank[k],-6,6))&&
-    Object.values(m.points).reduce((a,b)=>a+b,0)<=66&&object(m.manual)&&Object.keys(m.manual).every(k=>STATS.includes(k)&&integer(m.manual[k],1,9999));
+    (!enforceBudget||Object.values(m.points).reduce((a,b)=>a+b,0)+(side==='def'&&defenderAttackOverride!==undefined?defenderAttackOverride-m.points.attack:0)<=66)&&object(m.manual)&&Object.keys(m.manual).every(k=>STATS.includes(k)&&integer(m.manual[k],1,9999));
   });
  }
  function validState(state,specs){
-  if(!exact(state,['controls','models','spitUpCount','conditionalPowerOverride'])||!exact(state.controls,IDS)||!validModels(state.models)||!integer(state.spitUpCount,1,3)||typeof state.conditionalPowerOverride!=='boolean')return false;
+  if(!exact(state,['controls','models','spitUpCount','conditionalPowerOverride'])||!exact(state.controls,IDS)||!integer(state.spitUpCount,1,3)||typeof state.conditionalPowerOverride!=='boolean')return false;
   for(const id of IDS){
    const value=state.controls[id],spec=specs[id];if(!spec)return false;
    if(spec.kind==='boolean'){if(typeof value!=='boolean')return false;continue;}
@@ -39,9 +40,12 @@
   const c=state.controls;
   if(Number(c.currentHp)>Number(c.hp)||Number(c.attCurrentHp)>Number(c.attMaxHp))return false;
   const move=specs.dbMove?.moves?.[c.dbMove];
+  // Match the live UI budget: automatic Foul Play replaces the defender's
+  // inactive Attack allocation with its dedicated target-Attack input. Manual
+  // calculations retain inactive allocations without enforcing aggregate sums.
+  if(!validModels(state.models,c.dbAuto&&move?.mechanic==='foulPlay'?Number(c.dbFoulAttackEv):undefined,c.dbAuto))return false;
   if(c.dbAuto&&move){
    if(c.category!==move.category)return false;
-   if(move.mechanic==='foulPlay'&&Object.values(state.models.def.points).reduce((a,b)=>a+b,0)-state.models.def.points.attack+Number(c.dbFoulAttackEv)>66)return false;
   }
   return true;
  }

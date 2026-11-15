@@ -2,22 +2,18 @@
 const fs=require('node:fs'),crypto=require('node:crypto');
 const assert=require('node:assert/strict');
 const release=JSON.parse(fs.readFileSync('release.json','utf8'));
-assert.match(release.version,/^\d+\.\d+$/);
-assert.ok(Number.isInteger(release.preRelease)&&release.preRelease>0);
-assert.equal(release.tag,'v'+release.version+'-pre.'+release.preRelease);
-const product=release.product||'Chloha Damage Lab';
-assert.ok(['Chloha Damage Lab','Singularity'].includes(product),'explicit supported product identity');
-assert.equal(release.name,product+' v'+release.version+' Pre-Release '+release.preRelease);
-assert.match(release.notes,/^docs\/releases\/v[\d.]+-pre\.\d+\.md$/);
+const {stable,displayVersion,packageVersion}=require('./helpers/release-identity.cjs').releaseIdentity(release);
 assert.ok(fs.existsSync(release.notes),'release notes must exist');
 const html=fs.readFileSync('index.html','utf8');
 assert.equal(html.match(/<title>([^<]+)<\/title>/)?.[1],release.name,'public title must match release metadata');
-assert.ok(html.includes('Pages publish: v'+release.version+' Pre-Release '+release.preRelease),'publish marker must match');
-assert.equal(JSON.parse(fs.readFileSync('package.json','utf8')).version,release.version+'.0','verification package metadata');
+assert.ok(html.includes('Pages publish: '+displayVersion),'publish marker must match');
+assert.equal(JSON.parse(fs.readFileSync('package.json','utf8')).version,packageVersion,'verification package metadata');
 for(const match of html.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)){
  const asset=new URL(match[1],'https://release.invalid/');
  assert.ok(!match[1].includes('://')&&fs.existsSync(asset.pathname.slice(1)),'published runtime asset must exist: '+match[1]);
  assert.equal(asset.searchParams.get('v'),release.tag.slice(1),'every runtime URL must carry the current release cache key');
+ if(asset.searchParams.has('h'))assert.equal(asset.searchParams.get('h'),crypto.createHash('sha256').update(fs.readFileSync(asset.pathname.slice(1))).digest('hex').slice(0,16),'runtime content cache key must match current bytes');
+ if((release.followupAudit||['v0.188-pre.2','v1.0.0'].includes(release.tag))&&['/i18n.js','/feedback-ui-v0185.js','/damage-engine-v0184.js','/persistence-v0188.js'].includes(asset.pathname))assert.ok(asset.searchParams.has('h'),'changed follow-up assets require content cache keys');
 }
 if(release.product==='Singularity'){
  assert.equal(release.developer,'Chloha Labs');

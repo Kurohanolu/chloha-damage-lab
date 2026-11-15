@@ -3,6 +3,7 @@ on:
   push:
     branches: [main]
     paths:
+      - release.json
       - docs/v0187-*.md
       - docs/v0187-preview/**
       - assets/singularity/**
@@ -31,6 +32,7 @@ on:
       - .github/workflows/publish-ci-status.yml
   pull_request:
     paths:
+      - release.json
       - docs/v0187-*.md
       - docs/v0187-preview/**
       - assets/singularity/**
