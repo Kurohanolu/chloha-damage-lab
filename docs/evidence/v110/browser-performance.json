@@ -1,0 +1,2790 @@
+{
+  "measuredAt": "2026-11-15T15:04:46.124Z",
+  "mode": "loopback Chromium emulation",
+  "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
+  "candidateRevision": {
+    "commit": "7fbfd7d904d27629bfa8a5df28cb61a40b4b54d7",
+    "tree": "fa77eab91c520fc4e40f9d146b63c909f47d8c4f",
+    "dirty": false
+  },
+  "realDevice": false,
+  "productionRequests": 0,
+  "conditions": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "Intel(R) Xeon(R) 6975P-C",
+    "logicalCPUs": 4,
+    "samplesPerVersionPerProfile": 5,
+    "operationSamplesPerNavigation": 12,
+    "cachePolicy": "same local server max-age=600 and ETag",
+    "network": "loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown",
+    "thirdParty": "HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted",
+    "order": "alternating baseline/candidate between rounds"
+  },
+  "profiles": [
+    {
+      "profile": {
+        "name": "desktop",
+        "width": 1440,
+        "mobile": false
+      },
+      "baseline": [
+        {
+          "sample": 0,
+          "cold": {
+            "domContentLoadedMs": 228.3000000000029,
+            "loadEventMs": 239.09999999999127,
+            "firstPaintMs": 60,
+            "firstContentfulPaintMs": 192,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 124.19999999999709,
+            "loadEventMs": 132.39999999999418,
+            "firstPaintMs": 44,
+            "firstContentfulPaintMs": 88,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15213,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 5,
+            "JSHeapUsedSize": 5819132,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 48354,
+            "LayoutCount": 29,
+            "RecalcStyleCount": 32,
+            "JSHeapUsedSize": 10047196,
+            "JSHeapTotalSize": 18919424
+          },
+          "calculationToFrameMs": [
+            13.69999999999709,
+            38.5,
+            23.70000000001164,
+            17.69999999999709,
+            23.79999999998836,
+            18.70000000001164,
+            23.69999999999709,
+            17.19999999999709,
+            22.80000000000291,
+            24.69999999999709,
+            27.30000000000291,
+            14.69999999999709
+          ],
+          "localeToFrameMs": [
+            71.70000000001164,
+            70.29999999998836,
+            48.89999999999418,
+            57.80000000000291,
+            49.5,
+            56.19999999999709,
+            45.19999999999709,
+            55,
+            53.5,
+            56.90000000000873,
+            45.40000000000873,
+            52.59999999999127
+          ]
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "domContentLoadedMs": 205.5,
+            "loadEventMs": 215.6999999999971,
+            "firstPaintMs": 68,
+            "firstContentfulPaintMs": 172,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 106.10000000000582,
+            "loadEventMs": 129.6999999999971,
+            "firstPaintMs": 52,
+            "firstContentfulPaintMs": 136,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15213,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 5,
+            "JSHeapUsedSize": 5840300,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 52463,
+            "LayoutCount": 28,
+            "RecalcStyleCount": 30,
+            "JSHeapUsedSize": 8430492,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            14.39999999999418,
+            23.5,
+            34.69999999999709,
+            19.89999999999418,
+            36,
+            22.90000000000873,
+            22.89999999999418,
+            16.29999999998836,
+            23.30000000000291,
+            16.89999999999418,
+            25.30000000000291,
+            22.70000000001164
+          ],
+          "localeToFrameMs": [
+            78.90000000000873,
+            77.90000000000873,
+            69.70000000001164,
+            67.39999999999418,
+            50.5,
+            63,
+            45.90000000000873,
+            75,
+            44.10000000000582,
+            59.69999999999709,
+            44.59999999999127,
+            58
+          ]
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "domContentLoadedMs": 208.3000000000029,
+            "loadEventMs": 219.5,
+            "firstPaintMs": 92,
+            "firstContentfulPaintMs": 176,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 108.5,
+            "loadEventMs": 129.5,
+            "firstPaintMs": 52,
+            "firstContentfulPaintMs": 140,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15214,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 3,
+            "JSHeapUsedSize": 5854704,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 48744,
+            "LayoutCount": 28,
+            "RecalcStyleCount": 28,
+            "JSHeapUsedSize": 8758860,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            14,
+            29.5,
+            32.89999999999418,
+            20.80000000000291,
+            31.89999999999418,
+            18.30000000000291,
+            22.89999999999418,
+            18.10000000000582,
+            29.60000000000582,
+            16.30000000000291,
+            27.90000000000873,
+            18.69999999999709
+          ],
+          "localeToFrameMs": [
+            98.60000000000582,
+            76.19999999999709,
+            71.30000000000291,
+            64.19999999999709,
+            56.30000000000291,
+            55.5,
+            46,
+            68.80000000000291,
+            45.09999999999127,
+            53.69999999999709,
+            42,
+            54.80000000000291
+          ]
+        },
+        {
+          "sample": 3,
+          "cold": {
+            "domContentLoadedMs": 174.90000000000873,
+            "loadEventMs": 185.5,
+            "firstPaintMs": 32,
+            "firstContentfulPaintMs": 140,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 127.5,
+            "loadEventMs": 135.6999999999971,
+            "firstPaintMs": 44,
+            "firstContentfulPaintMs": 88,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15213,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 4,
+            "JSHeapUsedSize": 5810580,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 47167,
+            "LayoutCount": 29,
+            "RecalcStyleCount": 31,
+            "JSHeapUsedSize": 8458904,
+            "JSHeapTotalSize": 17346560
+          },
+          "calculationToFrameMs": [
+            14.099999999991269,
+            34.69999999999709,
+            24.39999999999418,
+            18,
+            24.59999999999127,
+            18.39999999999418,
+            23,
+            17.10000000000582,
+            23.10000000000582,
+            17.80000000000291,
+            25,
+            16
+          ],
+          "localeToFrameMs": [
+            67.60000000000582,
+            78.5,
+            47.5,
+            57.60000000000582,
+            49.60000000000582,
+            55.60000000000582,
+            45.09999999999127,
+            56.89999999999418,
+            55.10000000000582,
+            61.19999999999709,
+            42.30000000000291,
+            53.79999999998836
+          ]
+        },
+        {
+          "sample": 4,
+          "cold": {
+            "domContentLoadedMs": 181.40000000000873,
+            "loadEventMs": 191.60000000000582,
+            "firstPaintMs": 40,
+            "firstContentfulPaintMs": 148,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 130.8000000000029,
+            "loadEventMs": 138.3000000000029,
+            "firstPaintMs": 44,
+            "firstContentfulPaintMs": 88,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15213,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 4,
+            "JSHeapUsedSize": 5872660,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 48520,
+            "LayoutCount": 29,
+            "RecalcStyleCount": 31,
+            "JSHeapUsedSize": 7539036,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            13.599999999991269,
+            27.80000000000291,
+            33.80000000000291,
+            18.09999999999127,
+            24.39999999999418,
+            19.80000000000291,
+            22.60000000000582,
+            17.90000000000873,
+            32.79999999998836,
+            16.69999999999709,
+            26.89999999999418,
+            16.30000000000291
+          ],
+          "localeToFrameMs": [
+            69.40000000000873,
+            78.89999999999418,
+            47.90000000000873,
+            62.20000000001164,
+            51,
+            56.59999999999127,
+            45.19999999999709,
+            55.40000000000873,
+            45.30000000000291,
+            53.40000000000873,
+            41.69999999999709,
+            52.69999999999709
+          ]
+        }
+      ],
+      "candidate": [
+        {
+          "sample": 0,
+          "cold": {
+            "domContentLoadedMs": 185.5,
+            "loadEventMs": 195.5,
+            "firstPaintMs": 32,
+            "firstContentfulPaintMs": 144,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 133.6999999999971,
+            "loadEventMs": 141.8000000000029,
+            "firstPaintMs": 44,
+            "firstContentfulPaintMs": 88,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15222,
+            "LayoutCount": 4,
+            "RecalcStyleCount": 5,
+            "JSHeapUsedSize": 6888148,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 1,
+            "Nodes": 32824,
+            "LayoutCount": 30,
+            "RecalcStyleCount": 32,
+            "JSHeapUsedSize": 8801284,
+            "JSHeapTotalSize": 17346560
+          },
+          "calculationToFrameMs": [
+            14.30000000000291,
+            20.69999999999709,
+            31.69999999999709,
+            20.59999999999127,
+            26.10000000000582,
+            22.39999999999418,
+            21.60000000000582,
+            17.19999999999709,
+            22.19999999999709,
+            16.69999999999709,
+            22.69999999999709,
+            17.39999999999418
+          ],
+          "localeToFrameMs": [
+            63.19999999999709,
+            75.70000000001164,
+            49.80000000000291,
+            63.69999999999709,
+            56.30000000000291,
+            61.80000000000291,
+            45.09999999999127,
+            54.30000000000291,
+            43.10000000000582,
+            55.30000000000291,
+            45.30000000000291,
+            65.70000000001164
+          ]
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "domContentLoadedMs": 189.39999999999418,
+            "loadEventMs": 199.39999999999418,
+            "firstPaintMs": 92,
+            "firstContentfulPaintMs": 152,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 139.8000000000029,
+            "loadEventMs": 147.1999999999971,
+            "firstPaintMs": 52,
+            "firstContentfulPaintMs": 108,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15223,
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "JSHeapUsedSize": 6833872,
+            "JSHeapTotalSize": 10792960
+          },
+          "heapAfter": {
+            "Documents": 1,
+            "Nodes": 37677,
+            "LayoutCount": 30,
+            "RecalcStyleCount": 30,
+            "JSHeapUsedSize": 7284492,
+            "JSHeapTotalSize": 17346560
+          },
+          "calculationToFrameMs": [
+            13.599999999991269,
+            21.60000000000582,
+            30.10000000000582,
+            20,
+            29.59999999999127,
+            27.19999999999709,
+            29,
+            17.69999999999709,
+            24.90000000000873,
+            17.89999999999418,
+            24.30000000000291,
+            21.59999999999127
+          ],
+          "localeToFrameMs": [
+            69.20000000001164,
+            79.89999999999418,
+            59.89999999999418,
+            60.10000000000582,
+            79.60000000000582,
+            57.60000000000582,
+            42,
+            55.5,
+            46,
+            63.30000000000291,
+            50.69999999999709,
+            56.5
+          ]
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "domContentLoadedMs": 184.79999999998836,
+            "loadEventMs": 195,
+            "firstPaintMs": 80,
+            "firstContentfulPaintMs": 148,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 141.8000000000029,
+            "loadEventMs": 149.8000000000029,
+            "firstPaintMs": 48,
+            "firstContentfulPaintMs": 92,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15223,
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "JSHeapUsedSize": 6854772,
+            "JSHeapTotalSize": 10792960
+          },
+          "heapAfter": {
+            "Documents": 1,
+            "Nodes": 37686,
+            "LayoutCount": 30,
+            "RecalcStyleCount": 31,
+            "JSHeapUsedSize": 8985744,
+            "JSHeapTotalSize": 17608704
+          },
+          "calculationToFrameMs": [
+            14.30000000000291,
+            22.19999999999709,
+            31.5,
+            19.5,
+            25,
+            33.29999999998836,
+            23.19999999999709,
+            16.39999999999418,
+            23.30000000000291,
+            17.30000000000291,
+            23.59999999999127,
+            25.09999999999127
+          ],
+          "localeToFrameMs": [
+            68.39999999999418,
+            96.90000000000873,
+            63.39999999999418,
+            65.5,
+            55,
+            54.60000000000582,
+            45.80000000000291,
+            56.19999999999709,
+            45.19999999999709,
+            56.10000000000582,
+            48.10000000000582,
+            63.70000000001164
+          ]
+        },
+        {
+          "sample": 3,
+          "cold": {
+            "domContentLoadedMs": 179.10000000000582,
+            "loadEventMs": 191,
+            "firstPaintMs": 32,
+            "firstContentfulPaintMs": 148,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 135.8000000000029,
+            "loadEventMs": 143.8000000000029,
+            "firstPaintMs": 48,
+            "firstContentfulPaintMs": 88,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15222,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 5,
+            "JSHeapUsedSize": 6873344,
+            "JSHeapTotalSize": 10792960
+          },
+          "heapAfter": {
+            "Documents": 1,
+            "Nodes": 30622,
+            "LayoutCount": 29,
+            "RecalcStyleCount": 32,
+            "JSHeapUsedSize": 13049056,
+            "JSHeapTotalSize": 26521600
+          },
+          "calculationToFrameMs": [
+            13.69999999999709,
+            21.40000000000873,
+            26.69999999999709,
+            19.39999999999418,
+            26.19999999999709,
+            23.80000000000291,
+            27.70000000001164,
+            16,
+            22.40000000000873,
+            16.79999999998836,
+            23.39999999999418,
+            26.30000000000291
+          ],
+          "localeToFrameMs": [
+            67.89999999999418,
+            74,
+            50.10000000000582,
+            64.5,
+            56.69999999999709,
+            58.69999999999709,
+            41.39999999999418,
+            54.19999999999709,
+            41.89999999999418,
+            55.60000000000582,
+            45.39999999999418,
+            58.30000000000291
+          ]
+        },
+        {
+          "sample": 4,
+          "cold": {
+            "domContentLoadedMs": 188.70000000001164,
+            "loadEventMs": 200.5,
+            "firstPaintMs": 76,
+            "firstContentfulPaintMs": 152,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 133.29999999998836,
+            "loadEventMs": 140.89999999999418,
+            "firstPaintMs": 48,
+            "firstContentfulPaintMs": 92,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15223,
+            "LayoutCount": 3,
+            "RecalcStyleCount": 4,
+            "JSHeapUsedSize": 6821832,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 1,
+            "Nodes": 36056,
+            "LayoutCount": 29,
+            "RecalcStyleCount": 31,
+            "JSHeapUsedSize": 8537604,
+            "JSHeapTotalSize": 17870848
+          },
+          "calculationToFrameMs": [
+            14.30000000000291,
+            21.70000000001164,
+            25.90000000000873,
+            20,
+            24.59999999999127,
+            32.5,
+            23.10000000000582,
+            17.30000000000291,
+            22,
+            16.89999999999418,
+            23.30000000000291,
+            22.39999999999418
+          ],
+          "localeToFrameMs": [
+            62.59999999999127,
+            86.29999999998836,
+            49.09999999999127,
+            57.30000000000291,
+            54.30000000000291,
+            54.69999999999709,
+            42.5,
+            56.80000000000291,
+            44.19999999999709,
+            55.30000000000291,
+            49.69999999999709,
+            58.90000000000873
+          ]
+        }
+      ],
+      "summary": {
+        "baseline": {
+          "coldFCPMedianMs": 172,
+          "warmFCPMedianMs": 88,
+          "calculationToFrameMedianMs": 22.89999999999418,
+          "localeToFrameMedianMs": 55.5,
+          "heapUsedAfterMedianBytes": 8458904,
+          "cold": {
+            "document": {
+              "transferBytesMedian": 868094,
+              "decodedBytesMedian": 867794
+            },
+            "javascript": {
+              "transferBytesMedian": 1103773,
+              "decodedBytesMedian": 1093873,
+              "zeroTransferEntriesMedian": 0
+            },
+            "css": {
+              "transferBytesMedian": 10668,
+              "decodedBytesMedian": 10368,
+              "zeroTransferEntriesMedian": 0
+            },
+            "images": {
+              "transferBytesMedian": 31044,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 0
+            },
+            "allResources": {
+              "transferBytesMedian": 1145485,
+              "decodedBytesMedian": 1134985,
+              "zeroTransferEntriesMedian": 0
+            }
+          },
+          "warm": {
+            "document": {
+              "transferBytesMedian": 300,
+              "decodedBytesMedian": 867794
+            },
+            "javascript": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1093873,
+              "zeroTransferEntriesMedian": 33
+            },
+            "css": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 10368,
+              "zeroTransferEntriesMedian": 1
+            },
+            "images": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 1
+            },
+            "allResources": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1134985,
+              "zeroTransferEntriesMedian": 35
+            }
+          }
+        },
+        "candidate": {
+          "coldFCPMedianMs": 148,
+          "warmFCPMedianMs": 92,
+          "calculationToFrameMedianMs": 22.39999999999418,
+          "localeToFrameMedianMs": 56.30000000000291,
+          "heapUsedAfterMedianBytes": 8801284,
+          "cold": {
+            "document": {
+              "transferBytesMedian": 869610,
+              "decodedBytesMedian": 869310
+            },
+            "javascript": {
+              "transferBytesMedian": 1437323,
+              "decodedBytesMedian": 1426523,
+              "zeroTransferEntriesMedian": 0
+            },
+            "css": {
+              "transferBytesMedian": 11332,
+              "decodedBytesMedian": 11032,
+              "zeroTransferEntriesMedian": 0
+            },
+            "images": {
+              "transferBytesMedian": 31044,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 0
+            },
+            "allResources": {
+              "transferBytesMedian": 1479699,
+              "decodedBytesMedian": 1468299,
+              "zeroTransferEntriesMedian": 0
+            }
+          },
+          "warm": {
+            "document": {
+              "transferBytesMedian": 300,
+              "decodedBytesMedian": 869310
+            },
+            "javascript": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1426523,
+              "zeroTransferEntriesMedian": 36
+            },
+            "css": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 11032,
+              "zeroTransferEntriesMedian": 1
+            },
+            "images": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 1
+            },
+            "allResources": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1468299,
+              "zeroTransferEntriesMedian": 38
+            }
+          }
+        }
+      }
+    },
+    {
+      "profile": {
+        "name": "mobile-390",
+        "width": 390,
+        "mobile": true
+      },
+      "baseline": [
+        {
+          "sample": 0,
+          "cold": {
+            "domContentLoadedMs": 10598,
+            "loadEventMs": 10609.600000000006,
+            "firstPaintMs": 344,
+            "firstContentfulPaintMs": 5100,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 581.5,
+            "loadEventMs": 589.1999999999971,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 360,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15702,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 16,
+            "JSHeapUsedSize": 6834288,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 56583,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 47,
+            "JSHeapUsedSize": 8404780,
+            "JSHeapTotalSize": 19443712
+          },
+          "calculationToFrameMs": [
+            28.09999999999127,
+            85,
+            130,
+            74.5,
+            112.10000000000582,
+            74.60000000000582,
+            103.69999999999709,
+            74.5,
+            109.10000000000582,
+            77.5,
+            109.19999999999709,
+            77.30000000000291
+          ],
+          "localeToFrameMs": [
+            259.8000000000029,
+            348.6000000000058,
+            207.29999999998836,
+            253.5,
+            191.29999999998836,
+            250.3000000000029,
+            195.90000000000873,
+            289,
+            182,
+            235.5,
+            175.89999999999418,
+            246.5
+          ]
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "domContentLoadedMs": 10603,
+            "loadEventMs": 10616.299999999988,
+            "firstPaintMs": 352,
+            "firstContentfulPaintMs": 5100,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 591.6000000000058,
+            "loadEventMs": 597.8000000000175,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 364,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15703,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 16,
+            "JSHeapUsedSize": 6859136,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 62108,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 47,
+            "JSHeapUsedSize": 9800696,
+            "JSHeapTotalSize": 18919424
+          },
+          "calculationToFrameMs": [
+            31.300000000017462,
+            113.40000000002328,
+            115.09999999997672,
+            78.5,
+            118.60000000000582,
+            73,
+            103.60000000000582,
+            74.89999999999418,
+            103.30000000001746,
+            82.10000000000582,
+            118.90000000002328,
+            77.20000000001164
+          ],
+          "localeToFrameMs": [
+            272.9000000000233,
+            338.5,
+            194.10000000000582,
+            252.39999999999418,
+            207.60000000000582,
+            256,
+            185.10000000000582,
+            250.39999999999418,
+            251.69999999998254,
+            269.8999999999942,
+            186.10000000000582,
+            240.5
+          ]
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "domContentLoadedMs": 10589,
+            "loadEventMs": 10600.800000000017,
+            "firstPaintMs": 340,
+            "firstContentfulPaintMs": 5096,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 584.0999999999767,
+            "loadEventMs": 591.8999999999942,
+            "firstPaintMs": 144,
+            "firstContentfulPaintMs": 356,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15701,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 16,
+            "JSHeapUsedSize": 6870216,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 65331,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 47,
+            "JSHeapUsedSize": 9385772,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            32.70000000001164,
+            109.19999999998254,
+            143.40000000002328,
+            83.5,
+            127.39999999999418,
+            71.5,
+            98,
+            74.29999999998836,
+            102.5,
+            74.89999999999418,
+            104.70000000001164,
+            73.90000000002328
+          ],
+          "localeToFrameMs": [
+            269.79999999998836,
+            346.5,
+            194.09999999997672,
+            257.30000000001746,
+            193.89999999999418,
+            238.80000000001746,
+            190.89999999999418,
+            246.89999999999418,
+            234,
+            257.5,
+            188.79999999998836,
+            243.89999999999418
+          ]
+        },
+        {
+          "sample": 3,
+          "cold": {
+            "domContentLoadedMs": 10563.299999999988,
+            "loadEventMs": 10573.699999999983,
+            "firstPaintMs": 340,
+            "firstContentfulPaintMs": 5072,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 576.6000000000058,
+            "loadEventMs": 584.1000000000058,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 352,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15701,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 16,
+            "JSHeapUsedSize": 6938484,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 66987,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 47,
+            "JSHeapUsedSize": 9430856,
+            "JSHeapTotalSize": 18657280
+          },
+          "calculationToFrameMs": [
+            32.19999999998254,
+            103.89999999999418,
+            113.09999999997672,
+            74.39999999999418,
+            135.10000000000582,
+            72,
+            95.39999999999418,
+            70.60000000000582,
+            98.19999999998254,
+            71.89999999999418,
+            93,
+            68.89999999999418
+          ],
+          "localeToFrameMs": [
+            276.4000000000233,
+            339.6000000000058,
+            191.10000000000582,
+            237.5,
+            197.5,
+            237.30000000001746,
+            187.5,
+            236.39999999999418,
+            214.10000000000582,
+            252,
+            181.39999999999418,
+            221.5
+          ]
+        },
+        {
+          "sample": 4,
+          "cold": {
+            "domContentLoadedMs": 10579.699999999983,
+            "loadEventMs": 10591.5,
+            "firstPaintMs": 340,
+            "firstContentfulPaintMs": 5084,
+            "document": {
+              "transferBytes": 868094,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 1103773,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 10668,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 1145485,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 577.3999999999942,
+            "loadEventMs": 584.3999999999942,
+            "firstPaintMs": 144,
+            "firstContentfulPaintMs": 352,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 867794,
+              "decodedBytes": 867794
+            },
+            "javascript": {
+              "count": 33,
+              "transferBytes": 0,
+              "encodedBytes": 1093873,
+              "decodedBytes": 1093873,
+              "zeroTransferEntries": 33
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 10368,
+              "decodedBytes": 10368,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 35,
+              "transferBytes": 0,
+              "encodedBytes": 1134985,
+              "decodedBytes": 1134985,
+              "zeroTransferEntries": 35
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15703,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 16,
+            "JSHeapUsedSize": 6869792,
+            "JSHeapTotalSize": 10268672
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 62173,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 47,
+            "JSHeapUsedSize": 9466164,
+            "JSHeapTotalSize": 18132992
+          },
+          "calculationToFrameMs": [
+            31.39999999999418,
+            116,
+            115.79999999998836,
+            86.10000000000582,
+            129.60000000000582,
+            67.60000000000582,
+            101,
+            69.10000000000582,
+            97.39999999999418,
+            77.90000000002328,
+            106.70000000001164,
+            74.10000000000582
+          ],
+          "localeToFrameMs": [
+            263.20000000001164,
+            351.8999999999942,
+            193.39999999999418,
+            260.6000000000058,
+            197.29999999998836,
+            238.79999999998836,
+            183.60000000000582,
+            235.10000000000582,
+            209.69999999998254,
+            240.19999999998254,
+            180.19999999998254,
+            226.60000000000582
+          ]
+        }
+      ],
+      "candidate": [
+        {
+          "sample": 0,
+          "cold": {
+            "domContentLoadedMs": 12304.000000000015,
+            "loadEventMs": 12325.400000000009,
+            "firstPaintMs": 340,
+            "firstContentfulPaintMs": 5108,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 619.6999999999825,
+            "loadEventMs": 629,
+            "firstPaintMs": 144,
+            "firstContentfulPaintMs": 360,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15712,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 18,
+            "JSHeapUsedSize": 6855904,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 72861,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 50,
+            "JSHeapUsedSize": 8262192,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            30,
+            95.39999999999418,
+            117.89999999999418,
+            77,
+            110.79999999998836,
+            79,
+            103.5,
+            71.89999999999418,
+            113.30000000001746,
+            81.5,
+            110.10000000000582,
+            76.89999999999418
+          ],
+          "localeToFrameMs": [
+            281,
+            342.79999999998836,
+            216.29999999998836,
+            268.69999999998254,
+            200.19999999998254,
+            256.5,
+            199.20000000001164,
+            282.8999999999942,
+            197.09999999997672,
+            251.10000000000582,
+            194.29999999998836,
+            260
+          ]
+        },
+        {
+          "sample": 1,
+          "cold": {
+            "domContentLoadedMs": 12314.900000000023,
+            "loadEventMs": 12337.5,
+            "firstPaintMs": 344,
+            "firstContentfulPaintMs": 5112,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 618.8999999999942,
+            "loadEventMs": 628.1000000000058,
+            "firstPaintMs": 144,
+            "firstContentfulPaintMs": 356,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15714,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 18,
+            "JSHeapUsedSize": 6854484,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 72868,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 51,
+            "JSHeapUsedSize": 9564940,
+            "JSHeapTotalSize": 19181568
+          },
+          "calculationToFrameMs": [
+            27.89999999999418,
+            89.5,
+            121.70000000001164,
+            77.5,
+            112.80000000001746,
+            76.29999999998836,
+            104.10000000000582,
+            73.89999999999418,
+            112.89999999999418,
+            85,
+            111.29999999998836,
+            79.80000000001746
+          ],
+          "localeToFrameMs": [
+            280.19999999998254,
+            347.8999999999942,
+            224.29999999998836,
+            259.3999999999942,
+            196.39999999999418,
+            253.60000000000582,
+            201.70000000001164,
+            293.70000000001164,
+            195.20000000001164,
+            251.39999999999418,
+            190.79999999998836,
+            247.10000000000582
+          ]
+        },
+        {
+          "sample": 2,
+          "cold": {
+            "domContentLoadedMs": 12289.300000000017,
+            "loadEventMs": 12303,
+            "firstPaintMs": 344,
+            "firstContentfulPaintMs": 5092,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 618.5999999999767,
+            "loadEventMs": 626.2999999999884,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 360,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15715,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 18,
+            "JSHeapUsedSize": 6873888,
+            "JSHeapTotalSize": 10792960
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 72855,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 50,
+            "JSHeapUsedSize": 8176644,
+            "JSHeapTotalSize": 18657280
+          },
+          "calculationToFrameMs": [
+            28.400000000023283,
+            93.5,
+            114.19999999998254,
+            76.69999999998254,
+            142.09999999997672,
+            77.5,
+            102.30000000001746,
+            75.89999999999418,
+            111.29999999998836,
+            70.20000000001164,
+            100.39999999999418,
+            79.5
+          ],
+          "localeToFrameMs": [
+            278.0999999999767,
+            382.4000000000233,
+            215.20000000001164,
+            260.9000000000233,
+            200.5,
+            258.6000000000058,
+            198.39999999999418,
+            291.3999999999942,
+            191.10000000000582,
+            248.79999999998836,
+            189.19999999998254,
+            235.10000000000582
+          ]
+        },
+        {
+          "sample": 3,
+          "cold": {
+            "domContentLoadedMs": 12278.799999999988,
+            "loadEventMs": 12292.699999999983,
+            "firstPaintMs": 340,
+            "firstContentfulPaintMs": 5080,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 615.8999999999942,
+            "loadEventMs": 624.1999999999825,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 352,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15715,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 18,
+            "JSHeapUsedSize": 6914868,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 52704,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 51,
+            "JSHeapUsedSize": 8188976,
+            "JSHeapTotalSize": 18395136
+          },
+          "calculationToFrameMs": [
+            27.70000000001164,
+            95.30000000001746,
+            117.80000000001746,
+            78.90000000002328,
+            110.70000000001164,
+            74,
+            102.79999999998836,
+            74.60000000000582,
+            105.80000000001746,
+            80.5,
+            107.79999999998836,
+            80.60000000000582
+          ],
+          "localeToFrameMs": [
+            269.1000000000058,
+            323.79999999998836,
+            220.09999999997672,
+            259.69999999998254,
+            194.89999999999418,
+            253.90000000002328,
+            197,
+            296.3999999999942,
+            200,
+            244.80000000001746,
+            191,
+            246.5
+          ]
+        },
+        {
+          "sample": 4,
+          "cold": {
+            "domContentLoadedMs": 12284.799999999988,
+            "loadEventMs": 12304.899999999965,
+            "firstPaintMs": 344,
+            "firstContentfulPaintMs": 5088,
+            "document": {
+              "transferBytes": 869610,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 1437323,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 0
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 11332,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 0
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 31044,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 0
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 1479699,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 0
+            }
+          },
+          "warm": {
+            "domContentLoadedMs": 620.2000000000116,
+            "loadEventMs": 630.0999999999767,
+            "firstPaintMs": 148,
+            "firstContentfulPaintMs": 368,
+            "document": {
+              "transferBytes": 300,
+              "encodedBytes": 869310,
+              "decodedBytes": 869310
+            },
+            "javascript": {
+              "count": 36,
+              "transferBytes": 0,
+              "encodedBytes": 1426523,
+              "decodedBytes": 1426523,
+              "zeroTransferEntries": 36
+            },
+            "css": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 11032,
+              "decodedBytes": 11032,
+              "zeroTransferEntries": 1
+            },
+            "images": {
+              "count": 1,
+              "transferBytes": 0,
+              "encodedBytes": 30744,
+              "decodedBytes": 30744,
+              "zeroTransferEntries": 1
+            },
+            "allResources": {
+              "count": 38,
+              "transferBytes": 0,
+              "encodedBytes": 1468299,
+              "decodedBytes": 1468299,
+              "zeroTransferEntries": 38
+            }
+          },
+          "heapBefore": {
+            "Documents": 3,
+            "Nodes": 15713,
+            "LayoutCount": 5,
+            "RecalcStyleCount": 18,
+            "JSHeapUsedSize": 6864188,
+            "JSHeapTotalSize": 10530816
+          },
+          "heapAfter": {
+            "Documents": 2,
+            "Nodes": 72858,
+            "LayoutCount": 32,
+            "RecalcStyleCount": 50,
+            "JSHeapUsedSize": 11997344,
+            "JSHeapTotalSize": 19181568
+          },
+          "calculationToFrameMs": [
+            29,
+            86.59999999997672,
+            121,
+            80,
+            109.90000000002328,
+            78,
+            103.5,
+            74.89999999996508,
+            114.39999999996508,
+            80.90000000002328,
+            109.70000000001164,
+            80.5
+          ],
+          "localeToFrameMs": [
+            283.9000000000233,
+            324.20000000001164,
+            217.59999999997672,
+            274.5,
+            200.79999999998836,
+            254.60000000003492,
+            196.70000000001164,
+            304.4000000000233,
+            188.90000000002328,
+            244.59999999997672,
+            196.79999999998836,
+            244.40000000002328
+          ]
+        }
+      ],
+      "summary": {
+        "baseline": {
+          "coldFCPMedianMs": 5096,
+          "warmFCPMedianMs": 356,
+          "calculationToFrameMedianMs": 86.10000000000582,
+          "localeToFrameMedianMs": 237.5,
+          "heapUsedAfterMedianBytes": 9430856,
+          "cold": {
+            "document": {
+              "transferBytesMedian": 868094,
+              "decodedBytesMedian": 867794
+            },
+            "javascript": {
+              "transferBytesMedian": 1103773,
+              "decodedBytesMedian": 1093873,
+              "zeroTransferEntriesMedian": 0
+            },
+            "css": {
+              "transferBytesMedian": 10668,
+              "decodedBytesMedian": 10368,
+              "zeroTransferEntriesMedian": 0
+            },
+            "images": {
+              "transferBytesMedian": 31044,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 0
+            },
+            "allResources": {
+              "transferBytesMedian": 1145485,
+              "decodedBytesMedian": 1134985,
+              "zeroTransferEntriesMedian": 0
+            }
+          },
+          "warm": {
+            "document": {
+              "transferBytesMedian": 300,
+              "decodedBytesMedian": 867794
+            },
+            "javascript": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1093873,
+              "zeroTransferEntriesMedian": 33
+            },
+            "css": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 10368,
+              "zeroTransferEntriesMedian": 1
+            },
+            "images": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 1
+            },
+            "allResources": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1134985,
+              "zeroTransferEntriesMedian": 35
+            }
+          }
+        },
+        "candidate": {
+          "coldFCPMedianMs": 5092,
+          "warmFCPMedianMs": 360,
+          "calculationToFrameMedianMs": 86.59999999997672,
+          "localeToFrameMedianMs": 247.10000000000582,
+          "heapUsedAfterMedianBytes": 8262192,
+          "cold": {
+            "document": {
+              "transferBytesMedian": 869610,
+              "decodedBytesMedian": 869310
+            },
+            "javascript": {
+              "transferBytesMedian": 1437323,
+              "decodedBytesMedian": 1426523,
+              "zeroTransferEntriesMedian": 0
+            },
+            "css": {
+              "transferBytesMedian": 11332,
+              "decodedBytesMedian": 11032,
+              "zeroTransferEntriesMedian": 0
+            },
+            "images": {
+              "transferBytesMedian": 31044,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 0
+            },
+            "allResources": {
+              "transferBytesMedian": 1479699,
+              "decodedBytesMedian": 1468299,
+              "zeroTransferEntriesMedian": 0
+            }
+          },
+          "warm": {
+            "document": {
+              "transferBytesMedian": 300,
+              "decodedBytesMedian": 869310
+            },
+            "javascript": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1426523,
+              "zeroTransferEntriesMedian": 36
+            },
+            "css": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 11032,
+              "zeroTransferEntriesMedian": 1
+            },
+            "images": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 30744,
+              "zeroTransferEntriesMedian": 1
+            },
+            "allResources": {
+              "transferBytesMedian": 0,
+              "decodedBytesMedian": 1468299,
+              "zeroTransferEntriesMedian": 38
+            }
+          }
+        }
+      }
+    }
+  ],
+  "browser": "145.0.7632.6"
+}

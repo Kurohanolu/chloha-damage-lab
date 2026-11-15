@@ -1,6 +1,8 @@
 # Singularity v1.1.0 — ES-LA implementation report
 
-Status: development in progress; not a release authorization. Reviewable draft: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
+Status: implementation and technical acceptance complete for the disclosed development scope; terminology coverage and owner release approval remain open. Reviewable draft: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
+
+Accepted implementation commit: `215e5a1a8af9e20591d077e6acfcabb234a53b7a`, tree `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`. The following documentation/evidence commit does not change runtime behavior. Exact test results are retained in the [test report](v110-es-la-test-report.md).
 
 ## Fixed starting point
 
@@ -28,7 +30,7 @@ The shared feedback validation contract adds the internal `es-LA` locale without
 
 The initial source compilation maps 1,074 attestation records from 40 sources to the registered runtime inventory. All 18 types have individual attestations; 133/335 moves and 55/245 abilities are attested. Per-game official scope, unresolved fallbacks and overlapping form/UI-warning counts remain explicit in the coverage report.
 
-Results and exact candidate SHA bindings will be recorded in `v110-es-la-test-report.md` after CI. Historical exact-nine identity assertions remain attributable to the immutable Stable commit; existing functional nine-language regressions continue on the candidate, with new ten-language tests in addition. No test failure is accepted as a release pass.
+All thirteen candidate CI workflows passed, including eleven new ES-LA tests, ten-language browser acceptance, 4,520 numerical comparisons and the existing functional nine-language regressions. Thirteen protected files (ten runtime engine/data files, two fixtures and one reference lock) remain byte-identical to Stable. Historical exact-nine identity assertions remain attributable to the immutable Stable commit; new ten-language tests run in addition. No test failure is accepted as a release pass. The [test report](v110-es-la-test-report.md) records exact source/tree bindings, reports, screenshots and verification limits.
 
 ## Continued integration audit
 
@@ -40,4 +42,8 @@ An expanded UI inventory audit found English fallback in dynamic condition, mult
 
 Independent review additionally found a Spanish alias collision (Carámbano), an estimated-move history annotation left in Japanese and a hardcoded Spain-Spanish type name. Canonical name binding and explicit history annotations address these cases; regression witnesses preserve the distinction between Icicle Crash and Icicle Spear. Translation text is never used as a calculation identifier.
 
-ES-LA mobile styling makes the full regional locale label readable, gives advanced settings a dark surface with measurable text contrast, and temporarily hides the fixed result bar while feedback is open. The final browser acceptance must verify all three changes and restore the result bar on close.
+ES-LA mobile styling makes the full regional locale label readable, gives advanced settings a dark surface with measurable text contrast, and temporarily hides the fixed result bar while feedback is open. Final browser acceptance verified all three changes and restoration of the result bar on close. All 60 locale/viewport cases passed; six screenshots were visually reviewed.
+
+The final reload audit exposed two mixed-language selected-move reliability quotes. The ES-LA UI renderer now receives the actual selected canonical move record and translates the complete quote before generic text substitution. Ambiguous display aliases cannot choose an identity. Tests explicitly bind Terremoto, Dracoflechas and Electrobola to their selected move IDs after reload, and cover colliding Spanish aliases. All eleven DOM scenarios pass on the accepted implementation.
+
+The declared UI inventory contains 1,011 source/template sites, 169 overlapping warning/error sites, 79 sampled dynamic branches and 33 bounded DOM labels. Scoped English/Japanese UI fallback gaps are zero; all general software copy remains provisional. This does not upgrade unverified game-name fallbacks to official translations or certify arbitrary dynamic combinations. Production feedback deployment, physical-device review and formal publication are outside the completed development scope; see the [handoff](v110-es-la-handoff.md).

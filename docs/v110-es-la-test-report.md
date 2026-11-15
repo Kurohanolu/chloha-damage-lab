@@ -1,66 +1,90 @@
 # Singularity v1.1.0 — ES-LA test report
 
-Status: INCOMPLETE — corrected candidate and final independent browser acceptance pending. No production publication authorized.
+Status: technical development-candidate acceptance PASS. All thirteen workflows, including all eleven ES-LA acceptance tests, passed for the implementation commit below. This is an unpublished development candidate, not release authorization.
 
-## Fixed references
+## Exact candidate and evidence
 
-- Stable baseline: `0b270c1452505268364659edd402209b00b28673`, tree `239c4cbd37aa6389f16dc81e7f9a861c09a723f2`.
-- First PR head: `1536a29783f98652dc92b40273c94cd0ff075362`, tree `6f4c2839ad8ca9a2d9f39654f83475ef4ef75e96`.
-- Initial CI synthetic merge: `f3332e2cc7bdf712c0cef9eede42e0a6062cf8b5`, same tree as the PR head. Results below apply to that checkpoint only.
-- Review: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
+- Source candidate: `215e5a1a8af9e20591d077e6acfcabb234a53b7a`.
+- Source tree: `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`.
+- CI synthetic merge: `7fbfd7d904d27629bfa8a5df28cb61a40b4b54d7`, with the same tree.
+- Immutable Stable baseline: `0b270c1452505268364659edd402209b00b28673`, tree `239c4cbd37aa6389f16dc81e7f9a861c09a723f2`.
+- Review: [Draft PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
 
-## Initial observed results
+The final ES-LA artifact is [14166918126](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755993/artifacts/14166918126), ZIP SHA-256 `24644102d55c6fbf7e5620672cebaa7c9286ea1aba13482982d92dfaf2a77a10`. The embedded source ZIP has SHA-256 `6b98743884d6fa3b687d5bc03b24c787ebc1b753d0c40e7e850f21da8721d718`; all 442 Git blobs match the candidate. The early diagnostic ZIP (`6b4b8d9297e3334543f7b937122e5faaafe0438f47b8d12fba3393842e2f91e2`) contains the same eleven report JSONs and six PNGs byte-for-byte.
 
-The new [ES-LA run](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43720887105) executed all nine initial tests: seven passed and two failed. Its artifact SHA-256 is `f74ccfdd632e1166d019451fa3475f2d836732282676fb3acce8311e8fcf2763`; the downloaded bytes and checkout tree were verified.
+Core [reports and screenshots](evidence/v110/retained-files.json) are retained in Git, with per-file hashes, so the evidence does not depend solely on expiring Actions artifacts. They contain synthetic test inputs, not real feedback submissions or credentials.
 
-Passed scopes included 4,520 complete numerical comparisons, 13 unchanged numerical/data files, source/provenance contracts, independent locale catalogs, unpublished packaging and publication rejection, ten-language local Worker/SQLite feedback and 60 viewport-language cases. The transition test completed 110 rotating changes, explicit ES/ES-LA routes and 12 reloads before its multi-hit fixture assertion failed. This partial result is not represented as a full test pass.
+Independent GPT-6.1 Sol review accepted this implementation's technical development scope after checking the final source/package bytes, raw browser reports and all thirteen CI workflows. No unresolved critical, high or medium issue was confirmed. The [independent review](evidence/v110/sol-independent-review.md) and [browser acceptance review](evidence/v110/browser-acceptance-review.md) retain the observations and limits. This is not owner release approval or complete official Champions terminology verification.
 
-The existing nine-language UI workflow, engine baseline, Showdown comparisons, mechanics audit, feedback workflow and live Stable smoke all passed on the initial head. Local Worker API tests passed 17/17 without production submissions.
+## Observed results
 
-## Initial failures and corrections
+| Scope | Result |
+|---|---|
+| New v1.1.0 acceptance | All 11 tests PASS; no test discovery exclusions |
+| Locale switching and persistence | 110 rotating transitions, 6 explicit transitions over two ES/ES-LA routes, 15 reloads |
+| Numerical equivalence | 4,520 complete comparisons against Stable; 13 protected files (10 runtime engine/data, 2 fixtures, 1 reference lock) byte-identical |
+| Ten-language browser numbers | 70 complete input/result comparisons, including 16-roll single-hit results and full multi-hit distributions |
+| Regional search | 20 canonical alias queries; 14 browser cases across 390/1440 px, including Pokémon/forms, moves and native ability/item typeahead |
+| Dynamic browser text | All 11 sampled DOM scenarios PASS; zero collected text failures |
+| Reload-specific quoted names | Terremoto, Dracoflechas and Electrobola match the actual selected canonical move IDs |
+| Authored dynamic UI | 456 witnesses; 1,680 source roundtrips; 19,440 original-nine output comparisons; 5 identity-sensitive warning cases |
+| Smartphone/desktop emulation | 10 locales × 6 widths = 60 cases PASS; no document overflow in tested states |
+| Feedback | 10 locales against local Worker/SQLite; private-snapshot consent, stale consent and duplicate handling; Worker API tests 17/17 |
+| Packaging | Unpublished dual-site artifacts, cache hashes, preserved legacy recovery assets and pending publication guard PASS |
 
-| Failure | Cause | Correction |
-|---|---|---|
-| Regional native ability search | Water Absorb was requested while the selected species did not offer that ability | Select a matching registered species and verify availability before testing native typeahead |
-| Dragon Darts numerical test | The test incorrectly required an aggregated multi-hit distribution to contain at least 16 distinct totals | Preserve strict single-hit 16-roll checks; validate full multi-hit distribution, probabilities and per-hit rolls |
-| Migration browser feedback | Expected display version in a compatibility wire field | Independently check exact wire version, full visible version and stored description prefix |
-| Historical Stable packaging | A node_modules directory symlink appeared as an untracked file | Use ignored real dependency directories with internal links; retain strict clean-tree check |
-| Controlled memory startup | Old v0.188 fixed baseline conflicted with the new Stable comparison | Preserve the old release-line baseline; explicitly select immutable v1.0.0 for this candidate |
-| Public performance observation | An unpublished candidate was incorrectly subjected to current-release cutover approval | Permit GET-only observation of the full immutable Stable manifest; reject changed manifests and any candidate cutover claim |
+The ES-LA selector shows the full regional language name at 320–430 px. All 18 measured advanced-setting headings/labels pass their contrast thresholds (ratios 8.87–15.84). The fixed result bar is hidden while feedback is open and returns on close; email and submit center hit targets are unobstructed, and submit is exercised by a click. Six screenshots were visually reviewed. Gradient/image text contrast and every possible UI surface are not claimed as certified.
 
-Expanded UI inventory and screenshot review also found actual ES-LA untranslated dynamic messages, an ambiguous truncated language selector, image-failure Japanese text and insufficient detail-panel contrast. These are tracked as product defects and require corrected-candidate verification, separate from the test-fixture fixes.
+The current reproducible UI inventory covers 1,011 source/template sites, 79 sampled dynamic branches, 33 bounded result DOM labels and 169 overlapping warning/error sites. Executed English/Japanese UI fallback gaps are zero within this declared inventory. All this software copy remains `provisional`; these counts are neither official game-term confirmation nor exhaustive enumeration of arbitrary DOM combinations.
 
-## Verification limits
+## Workflow results
 
-Local browser execution is unavailable because the installed Chromium fails to create a platform socket. Browser results are from actual Chromium in GitHub Actions. Viewports emulate phones; no physical Android/iOS, native screen reader or OS IME certification is claimed. Feedback uses local Worker/SQLite and a mocked Turnstile provider; the production Worker has not been deployed. No real feedback report or public Issue was created.
+All thirteen workflows completed successfully. The [CI receipt](evidence/v110/ci-acceptance.json) preserves run, job and step results for this exact implementation commit.
 
-Final acceptance must bind all successful workflow and job/step results, generated inventory, screenshot review and Sol's independent review to the corrected candidate. Prior passes cannot authorize a changed runtime.
+| Workflow | Conclusion |
+|---|---|
+| [UI & damage regression](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755837) | PASS |
+| [v0.188 Quality Remediation](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755870) | PASS |
+| [Showdown differential audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755843) | PASS |
+| [Publish verified release](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755945) | PASS |
+| [GitHub Pages live smoke](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755852) | PASS |
+| [v0.184 engine baseline](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755846) | PASS |
+| [Showdown differential tests](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755896) | PASS |
+| [v1.0.0 Stable Promotion](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755918) | PASS |
+| [v0.185 anonymous feedback](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755920) | PASS |
+| [v0.186 Accuracy & Mechanics Audit](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727756103) | PASS |
+| [Damage Lab CI and status ledger](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727756077) | PASS |
+| [v0.187 Singularity Migration](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755924) | PASS |
+| [v1.1.0 ES-LA Localization](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43727755993) | PASS |
 
-## Corrected runtime checkpoint
+The publication job, CI-ledger write job and UI verdict publication step are intentionally skipped on this PR; validation runs. In the historical Stable workflow, immutable v1.0.0 tests and packaging run in the explicit historical step. Its two current-Stable-only steps are skipped for this development identity. Current candidate acceptance and packaging run separately in the ES-LA workflow. No failed required test is reclassified as a pass.
 
-Runtime checkpoint `cc5a7576e1e4043b3e94ccf865c4517f65331451`, tree `157f266eec35a896309847c9438e35a4e722aef9`, ran as synthetic merge `76d20a575287c0d7a04961dd3c283c0d8693088d` with the same tree. Twelve of thirteen workflows succeeded. The ES-LA suite executed all eleven tests: nine succeeded, while regional search and the new DOM text audit exposed two remaining test defects. A closed species-selection panel prevented Playwright from selecting the registered species; a raw-engine-ID detector incorrectly matched the Spanish phrase `Daño final/Vidaesfera`. The next test-only commit opens the existing panel and matches raw modifier identifiers only at the start of a trace line. Text failures are collected across all DOM witnesses and still cause a mandatory final failure.
+## Latest performance and bounded memory evidence
 
-The checkpoint's ES-LA artifact ZIP SHA-256 is `c9d169b045b03e423efee833b2f14b89eaba46740251a81eef223855138da559`. Passing scopes include 4,520 numerical comparisons, 19,413 legacy-renderer output comparisons, 453 dynamic/static witnesses, 1,664 source roundtrips, ten-language local feedback and all 60 viewport cases. Six ES-LA PNGs were visually reviewed. The mobile locale selector shows the complete regional name; 18 advanced-setting text measurements have contrast ratios 8.87–15.84; the feedback panel hides the fixed result bar and restores it after closing. These observations do not certify every UI contrast surface or a physical device.
+The performance artifact `14167276920` has ZIP SHA-256 `fb3e7bfa41f44f23cadc205aa4b47abc2d3527060130428b3e01c259f82e9ca9`; controlled-memory artifact `14166999366` has SHA-256 `c5bc857faddf6dcf4bafc43522f1bea15ce97e7e906ed908ff7cc7ba90dc36c9`. Independent Sol review checked metadata, downloaded bytes, candidate/tree binding and raw samples.
 
-The reproducible inventory contains 1,008 source/template sites, 76 dynamic witnesses, 33 selected result DOM labels and 166 warning/error sites. All inventoried UI wording is provisional authored/reused copy; it is not official terminology. Executed English/Japanese UI fallback gaps in this declared inventory are zero. Full DOM enumeration and arbitrary dynamic combinations remain outside this count.
-
-## Performance and bounded memory observation
-
-The subsequent test-only candidate `e7453c1eee5642c257499e03fad76906669a3487` completed twelve successful workflows and 10/11 new acceptance tests. Regional search passed 20 catalog queries and 14 browser cases. All eleven DOM samples ran, exposing two real reload-only warning defects: the selected-move quote retained an English label or mixed Japanese/English text. Its 110 rotating transitions, six explicit transitions, 70 numerical comparisons, 15 reloads and 60 viewport cases completed; the text failures correctly kept the candidate unaccepted. Artifact SHA-256: `a3e270876a2a8f6565c1ad46300c3ec61fecaca32a127886d6d7f6e324fdeb7d`.
-
-The correction resolves the selected native control's canonical move ID through the existing game-data registry before rendering the ES-LA warning. It does not infer identity from a translated label or change calculation logic. Three reload witnesses now also require the correct independent ES-LA name for the actual selected ID. New static cases cover the English/mixed reload labels, variable power and the two different canonical moves sharing `Carámbano` across Spanish regions. Updated local checks pass 456 witnesses, 1,680 source roundtrips, 19,440 old-nine output comparisons and five explicit canonical warning cases; the current inventory is 1,011 provisional UI sites and 169 warning/error sites. Corrected browser/CI execution remains required.
-
-The [checkpoint quality workflow](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43722836346) completed all three jobs. Independent review checked the downloaded performance artifact (`185e937b1ae89d10d8918ce1ef89cb6aff3c18e71627aef770e134022ab58673`) and controlled-memory artifact (`2bfb66dd0b469310a684bd2c5ea67142b839b5f58725525c2443fbf5c74f00b0`) against the exact candidate tree and immutable Stable baseline.
-
-| Measured median | Stable | Candidate |
+| Within-run median | Stable | Candidate |
 |---|---:|---:|
-| Desktop calculation to frame | 32.7 ms | 33.4 ms |
-| Desktop locale change to frame | 80.6 ms | 82.2 ms |
-| Emulated mobile calculation to frame | 136.2 ms | 137.1 ms |
-| Emulated mobile locale change to frame | 355.9 ms | 367.5 ms |
+| Desktop calculation to frame | 22.9 ms | 22.4 ms |
+| Desktop locale change to frame | 55.5 ms | 56.3 ms |
+| Emulated mobile calculation to frame | 86.1 ms | 86.6 ms |
+| Emulated mobile locale change to frame | 237.5 ms | 247.1 ms |
 
-The candidate adds 330,952 decoded JavaScript bytes (about 30.3%). These measurements use controlled emulation and principally English/French switching; they do not establish ES-LA-specific performance or real mobile network behavior.
+The candidate adds 332,650 decoded JavaScript bytes. These controlled measurements primarily switch English/French; they do not establish ES-LA worst-case performance or real mobile network behavior. Public observation was GET/HEAD-only against Stable v1.0.0, with no production mutation.
 
-The memory protocol completed 12 isolated contexts, 96 nine-language rounds and 36 exact reloads with calibrated garbage collection. Measured DOM/listener counts remained constant within each context and aged sampled-object retention was zero. Candidate steady-state heap was about 309–328 KB above Stable. Both versions showed increasing retained backing storage across reloads; this evidence does not justify a leak-free claim. Long-duration and ES-LA-specific memory behavior remain unverified. Separately, the ES-LA source-recovery cache is tested with 6,000 variable inputs and is capped at 512 entries.
+The memory protocol completed 12 isolated contexts, 96 nine-language rounds and 36 exact reloads with calibrated garbage collection. Measured DOM/listener/backing counts remained constant within each measured context, and aged sampled-object retention was zero. Candidate paired steady-state heap was about 311–315 KB above Stable. Both versions retained additional backing storage across reloads and had occasional node-count spikes. No new blocking retention regression was established; this does not justify a leak-free or long-duration guarantee. ES-LA-specific long-duration memory is unverified. Separately, the ES-LA source-recovery cache is tested with 6,000 variable inputs and capped at 512 entries.
 
-Public performance observation was GET-only against v1.0.0 Stable. No production feedback submission, configuration change or deployment occurred.
+## Resolved failures and preserved checkpoints
+
+- `1536a297…`: initial ES-LA tests passed 7/9. Fixes corrected invalid species/multi-hit test assumptions, historical dependency-directory cleanliness, the explicit Stable memory baseline and unpublished-candidate public observation. Its artifact hash is `f74ccfdd632e1166d019451fa3475f2d836732282676fb3acce8311e8fcf2763`.
+- `cc5a7576…`: 12/13 workflows and 9/11 ES-LA tests passed. A collapsed species selector and a detector falsely matching Spanish `Daño final` were corrected without weakening required behavior. Artifact hash: `c9d169b045b03e423efee833b2f14b89eaba46740251a81eef223855138da559`.
+- `e7453c1e…`: 12/13 workflows and 10/11 ES-LA tests passed. All eleven DOM scenarios ran and exposed two actual reload-only mixed-language reliability quotes. Artifact hash: `a3e270876a2a8f6565c1ad46300c3ec61fecaca32a127886d6d7f6e324fdeb7d`. The correction resolves the native selection's canonical ID before rendering its quote. It preserves power/status and rejects ambiguous translated-label identity inference.
+
+Earlier dynamic warnings/history gaps, a Carámbano cross-region collision, missing estimated-history annotations and ES-LA mobile readability problems were also fixed and given concrete regression witnesses. Prior checkpoint successes are not substituted for the current runtime's results.
+
+## Verification and publication limits
+
+Browser results come from actual Chromium in GitHub Actions; local Chromium could not create a platform socket. Phone viewports are emulation. Physical Android/iOS, native screen readers/OS IME, exhaustive native-language review, all dynamic combinations and Champions hardware mechanics are not certified.
+
+Official Champions, official Z-A, secondary attestations and unverified name fallbacks remain separate in the [coverage report](v110-es-la-translation-coverage.md). The unregistered Stockpile reference retains an English fallback rather than an invented official translation.
+
+Production remains v1.0.0. No main merge, deployment, tag, Release, real feedback report or public Issue was created. Owner judgment on the disclosed translation scope is pending. A later authorized release requires the production feedback validator's `es-LA` compatibility and explicit v1.1 review/evidence publication policy; current publication is fail-closed. See the [handoff](v110-es-la-handoff.md).

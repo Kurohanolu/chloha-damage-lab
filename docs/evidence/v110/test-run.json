@@ -1,0 +1,77 @@
+{
+  "scope": "v1.1.0 candidate acceptance",
+  "commit": "7fbfd7d904d27629bfa8a5df28cb61a40b4b54d7",
+  "tree": "fa77eab91c520fc4e40f9d146b63c909f47d8c4f",
+  "uncommittedPreview": false,
+  "tests": [
+    {
+      "file": "v110-artifact-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 606
+    },
+    {
+      "file": "v110-dynamic-ui.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1119
+    },
+    {
+      "file": "v110-engine-equivalence.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 974
+    },
+    {
+      "file": "v110-feedback-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 64437
+    },
+    {
+      "file": "v110-locale-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 71
+    },
+    {
+      "file": "v110-regional-search-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 12892
+    },
+    {
+      "file": "v110-release-identity.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 345
+    },
+    {
+      "file": "v110-source-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 53
+    },
+    {
+      "file": "v110-ten-locale-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 29626
+    },
+    {
+      "file": "v110-ui-inventory.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 796
+    },
+    {
+      "file": "v110-ui-mobile.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 98538
+    }
+  ],
+  "startedAt": "2026-11-15T15:04:33.676Z",
+  "passed": true,
+  "finishedAt": "2026-11-15T15:08:03.134Z"
+}

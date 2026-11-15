@@ -1,0 +1,937 @@
+{
+  "mode": "local-browser-emulation; client-only feedback fixture",
+  "realDevice": false,
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    1440
+  ],
+  "cases": [
+    {
+      "locale": "ja",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "ja",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "ja",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "ja",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "ja",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "ja",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "fr",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "de",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "it",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "ko",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "zh-Hant",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 320,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 360,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 768,
+      "status": "passed"
+    },
+    {
+      "locale": "es-LA",
+      "width": 1440,
+      "status": "passed"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".product-description",
+      "ratio": 10.189461889034494,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        8,
+        8,
+        13
+      ],
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#attSearch",
+      "ratio": 17.63626363514823,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        13,
+        13,
+        19
+      ],
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#chloha-locale",
+      "ratio": 17.63626363514823,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        13,
+        13,
+        19
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#attStatsToggle",
+      "ratio": 14.836612766555424,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        36,
+        29,
+        45
+      ],
+      "fontSize": "11px",
+      "fontWeight": "650"
+    },
+    {
+      "selector": "#feedbackButton",
+      "ratio": 14.605113917822225,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        42,
+        29,
+        43
+      ],
+      "fontSize": "10px",
+      "fontWeight": "650"
+    },
+    {
+      "selector": ".type-pill",
+      "ratio": 12.584539182876696,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        237,
+        255
+      ],
+      "background": [
+        48,
+        38,
+        60
+      ],
+      "fontSize": "10px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group h3",
+      "index": 0,
+      "ratio": 15.837079898377262,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "700"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group h3",
+      "index": 1,
+      "ratio": 15.837079898377262,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "700"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group h3",
+      "index": 2,
+      "ratio": 15.837079898377262,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "700"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 0,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 1,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 2,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 3,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 4,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 5,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 6,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 7,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 8,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 9,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 10,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 11,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 12,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 13,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "locale": "es-LA",
+      "width": 390,
+      "selector": "#attDetails .setting-group label",
+      "index": 14,
+      "ratio": 8.86961667900374,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        26,
+        25,
+        35
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": ".product-description",
+      "ratio": 10.189461889034494,
+      "minimum": 4.5,
+      "foreground": [
+        189,
+        182,
+        202
+      ],
+      "background": [
+        8,
+        8,
+        13
+      ],
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#attSearch",
+      "ratio": 17.63626363514823,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        13,
+        13,
+        19
+      ],
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#chloha-locale",
+      "ratio": 17.63626363514823,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        13,
+        13,
+        19
+      ],
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    {
+      "selector": "#attStatsToggle",
+      "ratio": 14.836612766555424,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        36,
+        29,
+        45
+      ],
+      "fontSize": "11px",
+      "fontWeight": "650"
+    },
+    {
+      "selector": "#feedbackButton",
+      "ratio": 14.605113917822225,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        243,
+        250
+      ],
+      "background": [
+        42,
+        29,
+        43
+      ],
+      "fontSize": "10px",
+      "fontWeight": "650"
+    },
+    {
+      "selector": ".type-pill",
+      "ratio": 12.584539182876696,
+      "minimum": 4.5,
+      "foreground": [
+        246,
+        237,
+        255
+      ],
+      "background": [
+        48,
+        38,
+        60
+      ],
+      "fontSize": "10px",
+      "fontWeight": "400"
+    }
+  ],
+  "localeLabelWidths": [
+    {
+      "width": 320,
+      "label": "Español (Latinoamérica)",
+      "textWidth": 145.93359375,
+      "padding": 16,
+      "arrowAllowance": 24,
+      "requiredWidth": 186,
+      "clientWidth": 300
+    },
+    {
+      "width": 360,
+      "label": "Español (Latinoamérica)",
+      "textWidth": 145.93359375,
+      "padding": 16,
+      "arrowAllowance": 24,
+      "requiredWidth": 186,
+      "clientWidth": 340
+    },
+    {
+      "width": 390,
+      "label": "Español (Latinoamérica)",
+      "textWidth": 145.93359375,
+      "padding": 16,
+      "arrowAllowance": 24,
+      "requiredWidth": 186,
+      "clientWidth": 364
+    },
+    {
+      "width": 430,
+      "label": "Español (Latinoamérica)",
+      "textWidth": 145.93359375,
+      "padding": 16,
+      "arrowAllowance": 24,
+      "requiredWidth": 186,
+      "clientWidth": 404
+    }
+  ],
+  "unverified": [
+    "real smartphone hardware",
+    "full screen-reader experience",
+    "all UI text contrast including gradients/images"
+  ]
+}

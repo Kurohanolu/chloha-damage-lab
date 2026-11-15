@@ -1,0 +1,570 @@
+{
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "mode": "local Chromium emulation",
+  "realDevice": false,
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "rotationTransitions": 110,
+  "explicitTransitions": [
+    "es",
+    "es-LA",
+    "ja",
+    "es-LA",
+    "en",
+    "es"
+  ],
+  "numericalCases": [
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "weather/terrain/screen/item/ability conditions",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual electroBall",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "manual gyroBall",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "イカサマ",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "かわらわり",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "ja",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "en",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "fr",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "de",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "es",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "it",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "ko",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "zh-Hans",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "zh-Hant",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "サイコファング",
+      "locale": "es-LA",
+      "rolls": 16,
+      "distributionOutcomes": 0
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "ja",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "en",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "fr",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "de",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "es",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "it",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "ko",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "zh-Hans",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "zh-Hant",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    },
+    {
+      "label": "ドラゴンアロー",
+      "locale": "es-LA",
+      "rolls": 13,
+      "distributionOutcomes": 13
+    }
+  ],
+  "dynamicDomCases": [
+    {
+      "label": "ordinary trace, KO and provisional disclosure",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 43\nAntes del factor aleatorio/Varios objetivos: 57 → 43\nDespués del factor aleatorio/Bonificación por mismo tipo: 43 → 64\nDespués del factor aleatorio/Efectividad de tipos: 64 → 128\nDaño final/Vidaesfera: 128 → 166\nDaño final (factor aleatorio 100): 166",
+        "#koVerdictDetail": "PS actuales 175 / Probabilidad de KO 0.00%",
+        "#damage": "140–166 de daño",
+        "#moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      }
+    },
+    {
+      "label": "ordinary after Japanese → ES-LA",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 43\nAntes del factor aleatorio/Varios objetivos: 57 → 43\nDespués del factor aleatorio/Bonificación por mismo tipo: 43 → 64\nDespués del factor aleatorio/Efectividad de tipos: 64 → 128\nDaño final/Vidaesfera: 128 → 166\nDaño final (factor aleatorio 100): 166",
+        "#koVerdictDetail": "PS actuales 175 / Probabilidad de KO 0.00%",
+        "#damage": "140–166 de daño",
+        "#moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      }
+    },
+    {
+      "label": "ordinary after persisted initialization",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 43\nAntes del factor aleatorio/Varios objetivos: 57 → 43\nDespués del factor aleatorio/Bonificación por mismo tipo: 43 → 64\nDespués del factor aleatorio/Efectividad de tipos: 64 → 128\nDaño final/Vidaesfera: 128 → 166\nDaño final (factor aleatorio 100): 166",
+        "#koVerdictDetail": "PS actuales 175 / Probabilidad de KO 0.00%",
+        "#damage": "140–166 de daño",
+        "#moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      },
+      "canonicalMove": {
+        "id": "earthquake",
+        "sourceName": "じしん",
+        "regionalName": "Terremoto"
+      }
+    },
+    {
+      "label": "conditional Facade enabled",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 80\nDespués del factor aleatorio/Efectividad de tipos: 80 → 40\nDaño final/Vidaesfera: 40 → 52\nDaño final (factor aleatorio 100): 52",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Fachada (Normal / 70) [Solo daño básico; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Movimiento con cálculo especial: Potencia ×2 si el usuario está envenenado, gravemente envenenado, paralizado o quemado. La quemadura no reduce el daño físico a la mitad. Indícalo manualmente con la casilla (sin integración con el estado ingresado). El campo de nivel de Ataque representa el nivel de la estadística utilizada.Auditoría del movimiento P1: Potencia ×2 si el usuario está envenenado, gravemente envenenado, paralizado o quemado. La quemadura no reduce el daño físico a la mitad. Indícalo manualmente con la casilla (sin integración con el estado ingresado)Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.",
+        "#moveSelected": "Seleccionado: Fachada (Normal / 70) [Solo daño básico; sin verificar]",
+        "#koVerdictDetail": "PS actuales 175 / Probabilidad de KO 0.00%"
+      }
+    },
+    {
+      "label": "conditional after English → ES-LA",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 80\nDespués del factor aleatorio/Efectividad de tipos: 80 → 40\nDaño final/Vidaesfera: 40 → 52\nDaño final (factor aleatorio 100): 52",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Fachada (Normal / 70) [Solo daño básico; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Movimiento con cálculo especial: Potencia ×2 si el usuario está envenenado, gravemente envenenado, paralizado o quemado. La quemadura no reduce el daño físico a la mitad. Indícalo manualmente con la casilla (sin integración con el estado ingresado). El campo de nivel de Ataque representa el nivel de la estadística utilizada.Auditoría del movimiento P1: Potencia ×2 si el usuario está envenenado, gravemente envenenado, paralizado o quemado. La quemadura no reduce el daño físico a la mitad. Indícalo manualmente con la casilla (sin integración con el estado ingresado)Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad."
+      }
+    },
+    {
+      "label": "Dragon Darts complete distribution and two-target warning",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 29\nDespués del factor aleatorio/Bonificación por mismo tipo: 29 → 43\nDespués del factor aleatorio/Efectividad de tipos: 43 → 43\nDaño final/Vidaesfera: 43 → 56\nDaño final (factor aleatorio 100): 56",
+        "#ko": "Probabilidad de K.O. con todos los golpes frente a los PS actuales: 0.00%",
+        "#rollsLabel": "Daño total de movimientos de varios golpes (probabilidad de cada valor)",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Dracoflechas (Dragón / 50) [Solo daño básico; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Dracoflechas muestra el daño de 2 golpes al objetivo seleccionado. Indica manualmente Protección, las inmunidades y la selección de objetivos entre los 2 rivales."
+      }
+    },
+    {
+      "label": "multi-hit after persisted initialization",
+      "texts": {
+        "#trace": "Estadística ofensiva: 165\nEstadística defensiva: 130\nAntes del factor aleatorio: 29\nDespués del factor aleatorio/Bonificación por mismo tipo: 29 → 43\nDespués del factor aleatorio/Efectividad de tipos: 43 → 43\nDaño final/Vidaesfera: 43 → 56\nDaño final (factor aleatorio 100): 56",
+        "#ko": "Probabilidad de K.O. con todos los golpes frente a los PS actuales: 0.00%",
+        "#rollsLabel": "Daño total de movimientos de varios golpes (probabilidad de cada valor)",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Dracoflechas (Dragón / 50) [Solo daño básico; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Dracoflechas muestra el daño de 2 golpes al objetivo seleccionado. Indica manualmente Protección, las inmunidades y la selección de objetivos entre los 2 rivales."
+      },
+      "canonicalMove": {
+        "id": "gw0169_p077",
+        "sourceName": "ドラゴンアロー",
+        "regionalName": "Dracoflechas"
+      }
+    },
+    {
+      "label": "speed-dependent power and estimated warning",
+      "texts": {
+        "#trace": "Estadística ofensiva: 110\nEstadística defensiva: 120\nAntes del factor aleatorio: 26\nElectrobola: Velocidad 122 / 81 → potencia 60\nDespués del factor aleatorio/Efectividad de tipos: 26 → 26\nDaño final/Vidaesfera: 26 → 34\nDaño final (factor aleatorio 100): 34",
+        "#moveSelected": "Seleccionado: Electrobola (Eléctrico / Variable) [Estimación sin verificar en consola]",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.La potencia de Electrobola cambia según la proporción de Velocidad (40/60/80/120/150). No se admiten otros modificadores de Velocidad aparte de parálisis, Viento Afín y niveles de estadísticas.Movimiento con cálculo especial: La potencia depende de la relación entre las velocidades efectivas del atacante y el defensor. Ajusta manualmente los modificadores de Velocidad no compatibles. El campo de nivel de Ataque representa el nivel de la estadística utilizada.Auditoría del movimiento P1: La potencia depende de la relación entre las velocidades efectivas del atacante y el defensor. Ajusta manualmente los modificadores de Velocidad no compatiblesElegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad."
+      }
+    },
+    {
+      "label": "confirmed history contains estimated move and mismatch warning",
+      "texts": {
+        "#battleHistory": "Turno 1: Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola] / 0 de daño / PS 175→175 / No coincide con la predicción; verificar",
+        "#battleStatus": "Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola] confirmado. PS del objetivo 175 / 175, campo: Ninguno. No coincide con la predicción. Registra y verifica las condiciones y el daño observado."
+      }
+    },
+    {
+      "label": "history after English → ES-LA",
+      "texts": {
+        "#battleHistory": "Turno 1: Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola] / 0 de daño / PS 175→175 / No coincide con la predicción; verificar",
+        "#battleStatus": "Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola] confirmado. PS del objetivo 175 / 175, campo: Ninguno. No coincide con la predicción. Registra y verifica las condiciones y el daño observado."
+      }
+    },
+    {
+      "label": "speed-dependent trace after reload",
+      "texts": {
+        "#trace": "Estadística ofensiva: 110\nEstadística defensiva: 120\nAntes del factor aleatorio: 26\nElectrobola: Velocidad 122 / 81 → potencia 60\nDespués del factor aleatorio/Efectividad de tipos: 26 → 26\nDaño final/Vidaesfera: 26 → 34\nDaño final (factor aleatorio 100): 34",
+        "#moveSelected": "Seleccionado: Electrobola (Eléctrico / Variable) [Estimación sin verificar en consola]",
+        "#reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Electrobola (Eléctrico / Variable) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.La potencia de Electrobola cambia según la proporción de Velocidad (40/60/80/120/150). No se admiten otros modificadores de Velocidad aparte de parálisis, Viento Afín y niveles de estadísticas.Movimiento con cálculo especial: La potencia depende de la relación entre las velocidades efectivas del atacante y el defensor. Ajusta manualmente los modificadores de Velocidad no compatibles. El campo de nivel de Ataque representa el nivel de la estadística utilizada.Auditoría del movimiento P1: La potencia depende de la relación entre las velocidades efectivas del atacante y el defensor. Ajusta manualmente los modificadores de Velocidad no compatiblesElegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad."
+      },
+      "canonicalMove": {
+        "id": "electroBall",
+        "sourceName": "エレキボール",
+        "regionalName": "Electrobola"
+      }
+    }
+  ],
+  "dynamicDomFailures": [],
+  "reloads": 15,
+  "unverified": [
+    "physical Android/iOS",
+    "native screen reader and OS IME",
+    "professional Spanish review",
+    "Champions hardware mechanics",
+    "Exhaustive index.html DOM-template enumeration and all dynamic condition combinations"
+  ],
+  "passed": true
+}
