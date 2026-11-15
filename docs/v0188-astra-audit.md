@@ -40,3 +40,9 @@ Astra's engine audit added 1,627 independent arithmetic/mechanic witnesses plus 
 Follow-up performance compares published v0.188 (4f068544...) to the candidate on the same CI runner, with original sample counts/profiles intact. Current public measurements remain separate.
 
 Candidate CI and independent Terra outcome will be linked in PR #67 after exact-commit results are available. Do not infer completion from this progress checkpoint.
+
+## Published source/assets rechecked
+
+The current published 4f068544 commit was rebuilt in an isolated checkout. All 73 static public files matched across212raw/fresh/versioned GET requests; both sites remain consistent. All371configured external sprite URLs returned200 and their observed SHA-256 hashes were recorded; two embedded sprites were decoded. External images use mutable upstream master URLs, so availability and observed hashes do not prove equivalence to application-source bytes. The downloaded release ZIP matches the exact source archive byte for byte (319files), and the actual checksum matches. Full GET-only evidence is in docs/evidence/v0188-astra-public-assets.json. This is production pre.1 evidence, not a claim that the follow-up candidate is deployed.
+
+First candidate CI1256b94: 23/25quality entries passed. Two new browser test-harness failures were observed (hidden stats input and the accessible-label selector/count); tests are corrected without relaxing their intended assertions, then rerun. Performance job passed; independent review will use the final exact candidate results.

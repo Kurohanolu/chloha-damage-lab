@@ -19,6 +19,7 @@ const widget='window.turnstile={render(n,o){queueMicrotask(()=>o.callback("valid
    await approve();await page.locator('#attPresets button').first().click();await stale(locale+' preset');
    await approve();await page.click('#swapSides');await stale(locale+' swap');
    await approve();await page.click('#resetCalculation');await stale(locale+' reset');
+   if(!await page.locator('#att-attack-points').isVisible())await page.locator('#attStatsToggle').click();
    await approve();await page.fill('#att-attack-points','17');await stale(locale+' six-stat input');
    await approve();const other=locale==='en'?'ja':'en';await page.selectOption('#chloha-locale',other);await page.evaluate(()=>new Promise(requestAnimationFrame));assert.equal(await page.locator('#feedbackConfirm').isChecked(),true,'locale-only change preserves approved technical snapshot');
    // Even a programmatic input change with no DOM event is caught at submit.

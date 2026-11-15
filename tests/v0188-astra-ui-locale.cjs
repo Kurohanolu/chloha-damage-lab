@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const samples=[
  '攻撃側 攻撃能力ポイント','防御側 特防能力ポイント','HPの性格補正','特攻能力ポイントのスライダー',
- '攻撃側の6能力値','防御側の6能力値','攻撃側 攻撃 20ポイント。編集する',
+ '攻撃側の6能力ポイント','防御側の6能力ポイント','攻撃側 攻撃 20ポイント。編集する',
  '攻撃側 H32/A32/S2','防御側 全て0','計算機の操作','攻撃側と防御側を入れ替える','天候・フィールド・壁をなしに戻す','計算結果の要約'
 ];
 const source=process.argv.includes('--baseline')
@@ -78,8 +78,25 @@ async function browserAudit(){
    await page.locator('#att-attack-points').fill('20');const baseline=await result();
    for(const locale of locales){
     await page.selectOption('#chloha-locale',locale);
-    const labels=await page.locator('#attStats [aria-label], #defStats [aria-label], #attStatOverview [aria-label], #defStatOverview [aria-label], #attPresets [aria-label], #defPresets [aria-label], .quick-nav[aria-label], #swapSides, #resetBoard').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')).filter(Boolean));
-    assert.ok(labels.length>=30,'actual controls are inspected');
+    // Detailed stat controls are named by native wrapping <label> elements,
+    // not aria-label attributes. Assert each real family separately so deleting
+    // a label/control cannot silently reduce the inspected population.
+    const groups=await page.evaluate(()=>{
+     const aria=selector=>Array.from(document.querySelectorAll(selector),node=>node.getAttribute('aria-label'));
+     const stats=[];
+     for(const side of ['att','def'])for(const stat of ['hp','attack','defense','specialAttack','specialDefense','speed'])for(const kind of ['points','range','nature','actual']){
+      const id=side+'-'+stat+'-'+kind,node=document.getElementById(id);
+      stats.push({id,exists:!!node,label:node?.labels?.[0]?.querySelector('.sr-only')?.textContent});
+     }
+     return {stats,previews:aria('#attStatOverview > button, #defStatOverview > button'),presets:aria('#attPresets > button, #defPresets > button'),overviews:aria('#attStatOverview, #defStatOverview'),navigation:aria('.quick-nav, #swapSides, #resetBoard, .mobile-result')};
+    });
+    assert.equal(groups.stats.length,48,'two sides × six stats × four native labels');
+    for(const row of groups.stats){assert.ok(row.exists,'stat control exists: '+row.id);assert.ok(row.label?.trim(),'native accessible label exists: '+row.id);}
+    for(const [kind,count] of Object.entries({previews:12,presets:10,overviews:2,navigation:4})){
+     assert.equal(groups[kind].length,count,'expected accessible '+kind+' controls');
+     for(const label of groups[kind])assert.ok(label?.trim(),'nonempty '+kind+' accessible name');
+    }
+    const labels=[...groups.stats.map(row=>row.label),...groups.previews,...groups.presets,...groups.overviews,...groups.navigation];
     if(!['ja','en'].includes(locale))for(const label of labels)assert.doesNotMatch(label,forbidden,locale+'/'+width+'/'+label);
     if(!['ja','en'].includes(locale))assert.doesNotMatch(await page.locator('#attBudget').textContent(),forbidden);
     assert.equal(await result(),baseline,'a11y changes preserve 16 rolls and inputs');
