@@ -15,8 +15,8 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .brand-logo{display:block;width:240px;height:80px;object-fit:contain;background:#000;border-radius:8px}
 .singularity .version{color:var(--sg-text);font-variant-numeric:tabular-nums}
 .singularity .version span{color:var(--sg-pink-soft);border-color:#77365e;background:#2b1124}
-.singularity .lab-intro{padding:28px 0 20px;align-items:center;gap:24px}
-.singularity .lab-intro h1{font-size:clamp(30px,5vw,44px);font-weight:800;font-style:italic;letter-spacing:-.025em;line-height:1.18}
+.singularity .lab-intro{padding:20px 0 20px;align-items:flex-start;gap:24px}
+.singularity .lab-intro h1{margin:0;font-size:clamp(30px,5vw,44px);font-weight:800;font-style:italic;letter-spacing:-.025em;line-height:1.18}
 .singularity .eyebrow{color:var(--sg-pink-soft);font-size:10px;letter-spacing:.18em}
 .singularity .product-description{font-size:14px;margin:8px 0 0;color:var(--sg-muted)}
 .singularity .release-note{border-color:var(--sg-purple);color:var(--sg-muted);max-width:340px}
@@ -99,7 +99,7 @@ body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{co
  .singularity .version{grid-column:3;grid-row:1;margin:0;font-size:11px;text-align:right}
  .singularity #chloha-locale-control{grid-column:2;grid-row:1;justify-self:stretch;max-width:100%;font-size:10px!important}
  .singularity #chloha-locale{font-size:12px;width:100%!important;max-width:100%}
- .singularity .lab-intro{padding:22px 0 12px;display:block}
+ .singularity .lab-intro{padding:14px 0 12px;display:block}
  .singularity .lab-intro h1{font-size:34px}
  .singularity .release-note{font-size:11px;margin-top:12px;max-width:none}
  .singularity .quick-nav{flex-wrap:wrap}

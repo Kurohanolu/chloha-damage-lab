@@ -1,5 +1,5 @@
 'use strict';
-const fs=require('node:fs');
+const fs=require('node:fs'),crypto=require('node:crypto');
 const assert=require('node:assert/strict');
 const release=JSON.parse(fs.readFileSync('release.json','utf8'));
 assert.match(release.version,/^\d+\.\d+$/);
@@ -28,6 +28,7 @@ if(release.product==='Singularity'){
  for(const match of html.matchAll(/<(?:link|img)\b[^>]*(?:href|src)=["']\.\/((?:assets\/singularity\/|singularity-v0187\.css)[^"']+)["']/g)){
   const asset=new URL(match[1],'https://release.invalid/');assert.ok(fs.existsSync(asset.pathname.slice(1)));
   assert.equal(asset.searchParams.get('v'),release.tag.slice(1),'brand cache key: '+match[1]);
+  if(asset.pathname==='/singularity-v0187.css')assert.equal(asset.searchParams.get('h'),crypto.createHash('sha256').update(fs.readFileSync(asset.pathname.slice(1))).digest('hex').slice(0,16),'presentation cache key must follow the current stylesheet content');
  }
 }
 console.log('PASS release manifest, public metadata, notes, and runtime assets: '+release.tag);

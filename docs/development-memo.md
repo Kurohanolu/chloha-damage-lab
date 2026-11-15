@@ -20,6 +20,12 @@
 - The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
 - [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
 
+## 2026-11-15: owner-requested removal of standalone CHLOHA LABS heading
+
+- Reproduced the actual new site's independent pink developer heading above Singularity. Remove that paragraph from the shared presentation template, reduce leading desktop/phone spacing and top-align the intro. Retain the separate localized footer credit and existing result-section labels.
+- Add a content hash to the changed stylesheet URL without changing the v0.187 release or calculation API identifiers. Release verification rejects a stale stylesheet hash.
+- Extend the existing nine-language migration browser suite to320/390/1280px title/spacing/overflow/footer-credit checks (27 layouts), preserving its3000 numeric contracts and local anonymous-feedback regression. Exact-head CI and the approved new-site deployment/actual-screen proof are recorded in PR #64. Main, old-site notice and real protected-service acceptance remain separate from this UI update; no Cloudflare operation is involved.
+
 ## 2026-11-15: static migration cache and legacy-phone regression follow-up
 
 - Continue the owner's requested work outside Cloudflare. Reproduce two failing native checks before fixing them: notice assets incorrectly reused the frozen v0.186 cache key, and fresh cache-busting URLs could conceal stale bytes at the browser's normal versioned URL.

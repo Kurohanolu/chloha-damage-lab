@@ -49,7 +49,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
  const preview=await startPreview(temp);let browser;
  try{browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});}
  catch(error){await preview.close();fs.rmSync(temp,{recursive:true,force:true});throw error;}
- const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,legacyNoticeLocales:0,legacyViewportWidth:320,legacyURLDataTransferred:false,productionRequests:0,productionMutations:0};
+ const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,introLayoutChecks:0,legacyNoticeLocales:0,legacyViewportWidth:320,legacyURLDataTransferred:false,productionRequests:0,productionMutations:0};
  fs.mkdirSync('reports/v0187',{recursive:true});
  try{
   for(let index=0;index<locales.length;index++){
@@ -60,6 +60,19 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     assert.equal(await page.title(),'Singularity v0.187 Pre-Release 33');
     assert.equal(await page.locator('.product-description').textContent(),descriptions[index]);
     assert.ok((await page.locator('[data-singularity=credit]').textContent()).includes('Chloha Labs'));
+    for(const width of [320,390,1280]){
+     await page.setViewportSize({width,height:900});
+     assert.equal(await page.locator('.lab-intro .eyebrow').count(),0,'remove the independent developer heading from the DOM: '+locale);
+     assert.equal(await page.locator('.lab-intro h1').textContent(),'Singularity');
+     assert.equal(await page.locator('.lab-intro > div').evaluate(node=>node.firstElementChild.tagName),'H1','no empty developer-heading placeholder before the product name');
+     assert.ok(!/CHLOHA LABS/i.test(await page.locator('.lab-intro').innerText()),'no standalone developer heading in any locale');
+     const leadingSpace=await page.locator('.lab-intro').evaluate(node=>node.querySelector('h1').getBoundingClientRect().top-node.getBoundingClientRect().top);
+     assert.ok(leadingSpace>=0&&leadingSpace<=20,'compact title spacing at '+width+'px: '+leadingSpace);
+     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no horizontal overflow: '+locale+'/'+width);
+     assert.ok((await page.locator('.lab-footer [data-singularity=credit]').textContent()).includes('Chloha Labs'),'retain localized footer developer credit');
+     evidence.introLayoutChecks++;
+    }
+    await page.setViewportSize({width:locale==='en'?1280:locale==='de'?320:390,height:900});
     assert.equal(await page.locator('.brand-logo').evaluate(img=>img.decode().then(()=>img.naturalWidth>0)),true);
     const header=await page.evaluate(()=>{const rect=selector=>{const r=document.querySelector(selector).getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,height:r.height};};return {logo:rect('.brand-logo'),locale:rect('#chloha-locale-control'),control:rect('#chloha-locale'),version:rect('.version')};});
     const overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top);
