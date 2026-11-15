@@ -8,9 +8,10 @@ const USER_AGENT='ChlohaDamageLab-ReleaseCheck/0.185 (+https://github.com/Kuroha
 function readSettings(){
  const context=vm.createContext({window:{}});
  vm.runInContext(fs.readFileSync('feedback-config-v0185.js','utf8'),context,{timeout:1000});
- return {apiBase:context.window.ChlohaFeedbackConfig?.apiBase,publicOrigin:new URL(JSON.parse(fs.readFileSync('release.json','utf8')).publicUrl).origin};
+ const release=JSON.parse(fs.readFileSync('release.json','utf8'));
+ return {apiBase:context.window.ChlohaFeedbackConfig?.apiBase,publicOrigin:new URL(release.publicUrl).origin,requiredLocales:release.version==='1.1.0'?['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA']:[]};
 }
-async function checkProduction({apiBase,publicOrigin,fetchImpl=globalThis.fetch}={}){
+async function checkProduction({apiBase,publicOrigin,requiredLocales=[],fetchImpl=globalThis.fetch}={}){
  const checks=[],blockers=[];
  const check=(name,ok)=>{checks.push({name,passed:Boolean(ok)});if(!ok)blockers.push(name);return Boolean(ok);};
  let api;
@@ -26,6 +27,7 @@ async function checkProduction({apiBase,publicOrigin,fetchImpl=globalThis.fetch}
   const config=await response.json();
   check('Production intake is enabled without a known Turnstile test key',config.enabled===true&&config.mode==='production'&&typeof config.siteKey==='string'&&config.siteKey.length>=10&&!/^[123]x0{10,}/.test(config.siteKey));
   check('Published retention policy matches the API',config.retentionDays===90);
+  if(requiredLocales.length)check('Production API declares every required report locale',Array.isArray(config.supportedLocales)&&requiredLocales.every(locale=>config.supportedLocales.includes(locale)));
   check('Public API permits the exact frontend origin',response.headers.get('access-control-allow-origin')===publicOrigin);
   check('Public configuration is not cached',/\bno-store\b/i.test(response.headers.get('cache-control')||''));
  }catch{check('Public intake configuration can be verified',false);return {ready:false,checks,blockers};}

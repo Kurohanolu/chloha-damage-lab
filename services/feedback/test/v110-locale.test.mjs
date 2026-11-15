@@ -26,3 +26,15 @@ test('ES-LA does not permit arbitrary locale aliases, privacy fields or mismatch
   const h=await createHarness();try{const body=reportBody({locale:'es-LA',appVersion:'v1.1 Pre-Release 1'});mutate(body);assert.equal((await h.request('/v1/reports',{method:'POST',body})).status,400);assert.equal(h.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);}finally{h.close();}
  }
 });
+
+// The release preflight uses this read-only capability instead of creating a report.
+test('public configuration declares the same locales enforced by intake',async()=>{
+ const h=await createHarness();
+ try{
+  const response=await h.request('/v1/config');assert.equal(response.status,200);
+  const config=await response.json();
+  assert.deepEqual(config.supportedLocales,[...globalThis.ChlohaFeedbackContract.locales]);
+  assert.ok(config.supportedLocales.includes('es-LA'));
+  assert.ok(!config.supportedLocales.includes('es-419'));
+ }finally{h.close();}
+});
