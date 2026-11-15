@@ -6,6 +6,9 @@ const {startLab,launchBrowser,ready,blockExternal}=require('./helpers/v0188-brow
 const witnesses=[
  {category:'moves',key:'のしかかり',id:'gw0170_s007',es:'Golpe Cuerpo',regional:'Golpe de Cuerpo'},
  {category:'moves',key:'フレアドライブ',id:'flareBlitz',es:'Envite Ígneo',regional:'Erupción'},
+ {category:'moves',key:'でんじほう',id:'gw0169_s032',es:'Electrocañón',regional:'Electrocañón',ownerCapture:'32690'},
+ {category:'moves',key:'サイコキネシス',id:'psychic',es:'Psíquico',regional:'Fuerza Psíquica',ownerCapture:'32692'},
+ {category:'moves',key:'こおりのつぶて',id:'gw0170b_003',es:'Esquirla Helada',regional:'Esquirla Helada',ownerCapture:'32696'},
  {category:'abilities',key:'ちょすい',id:'waterAbsorb',control:'defAbility',speciesControl:'dbDefPokemon',speciesId:'candidate093_09',es:'Absorbe Agua',regional:'Absorbeagua'},
  {category:'abilities',key:'もうか',id:'blaze',control:'attAbility',speciesControl:'dbAttPokemon',speciesId:'charizard',es:'Mar Llamas',regional:'Mar de Llamas'},
  {category:'items',key:'いのちのたま',id:'lifeOrb',control:'attItem',es:'Vidasfera',regional:'Vidaesfera'},
@@ -33,7 +36,7 @@ const numeric=page=>page.evaluate(()=>JSON.stringify({a:ChlohaLastCalculation.a,
      await page.selectOption('#'+w.speciesControl,w.speciesId);await ready(page);
      assert.equal(await page.locator('#'+w.control+' option[value="'+w.id+'"]').count(),1,'Species-specific ability option exists before typeahead');
     }
-    for(const query of new Set([w.es,w.regional])){
+    for(const query of new Set([w.es,w.regional,...(w.ownerCapture?[w.regional.toUpperCase(),w.regional.normalize('NFD').replace(/[\u0300-\u036f]/g,'')]:[])])){
      if(w.category==='moves'){
       await page.locator('#moveSearch').fill(query);const option=page.locator('#moveSuggestions [role=option]').filter({has:page.locator('span').filter({hasText:new RegExp('^'+w.regional.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$')})});
       assert.equal(await option.count(),1,'Visible unique regional result for canonical move: '+query);assert.equal(await option.getAttribute('aria-label'),w.regional,'Accessible move name matches visible ES-LA label');assert.ok(!/Unsupported|Estimated|Basic damage only/.test(await option.innerText()),'Suggestion status is Spanish');await option.click();assert.equal(await page.locator('#dbMove').inputValue(),w.id);assert.ok((await page.locator('#moveSelected').textContent()).includes(w.regional));

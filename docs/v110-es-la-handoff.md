@@ -12,6 +12,10 @@
 - Scope: ES-LA data/provenance, locale integration, search, UI/state/feedback compatibility, ten-language verification.
 - Current public environment remains v1.0.0. No Cloudflare configuration/deployment or production feedback submissions performed.
 
+## Owner-capture update — 2026-11-16 JST
+
+The [capture audit](v110-es-la-capture-audit.md) adds official Champions name evidence without changing displayed strings or calculation support. The prior accepted implementation above remains a historical checkpoint. Fresh capture provenance and regression results are bound to the subsequent PR head; consult the [test report](v110-es-la-test-report.md) and PR checks rather than applying an older PASS to new source data. No additional owner screenshot request is pending.
+
 ## Resume procedure
 
 Fetch source main and PR #68 before changing files. Reuse this branch/PR; do not duplicate. Read source audit, coverage, implementation and test reports. Bind subsequent results to the exact new head/tree; never reuse a prior candidate PASS after code changes.
@@ -22,9 +26,9 @@ Remaining decisions concern release readiness, not an unexecuted test queue: red
 
 ## Translation scope for the owner decision
 
-All inventoried names can be displayed, but fallback availability is not verified ES-LA translation. The [coverage report](v110-es-la-translation-coverage.md) and its machine-readable inventory list each canonical ID, Japanese/ES-ES name, candidate, evidence and unresolved reason. Current unverified registered counts are 342/373 Pokémon, 202/335 moves, 190/245 abilities, 21/41 items and 6/11 natures. The 114/134 unverified form records overlap Pokémon and must not be added again. All 18 types are individually attested, with official Champions confirmation for 12. Official Z-A and secondary evidence remain distinct from official Champions confirmation.
+All inventoried names can be displayed, but fallback availability is not verified ES-LA translation. The [coverage report](v110-es-la-translation-coverage.md) and its machine-readable inventory list each canonical ID, Japanese/ES-ES name, candidate, evidence and unresolved reason. Current unverified registered counts after the owner-capture follow-up are 342/373 Pokémon, 194/335 moves, 184/245 abilities, 13/41 items and 6/11 natures. The 114/134 unverified form records overlap Pokémon and must not be added again. All 18 types are individually attested, with official Champions confirmation for 17. Official Z-A and secondary evidence remain distinct from official Champions confirmation.
 
-The general UI inventory has 1,011 provisional authored/reused sites, including 169 overlapping warnings, with zero detected English/Japanese UI gaps in its bounded executed scope. This is not professional native-language certification. The source audit records 1,074 attestations from 40 sources; nothing is promoted to official merely because it matches the existing Spanish dictionary. Future owner game captures can be added with their exact canonical ID, capture provenance/date and Champions screen location. No request to translate the full unresolved inventory is required for this handoff.
+The general UI inventory has 1,011 provisional authored/reused sites, including 169 overlapping warnings, with zero detected English/Japanese UI gaps in its bounded executed scope. This is not professional native-language certification. The source audit now records 1,139 attestations from 50 sources; nothing is promoted to official merely because it matches the existing Spanish dictionary. Ten owner game captures were added with exact canonical anchors, original-file hashes, provided/reviewed dates and screen locations. They verify 65 system terms, of which 41 are registered identities; no screenshot was published. Further evidence can use the same method. No request to translate the full unresolved inventory is required for this handoff.
 
 ## Publication boundary
 

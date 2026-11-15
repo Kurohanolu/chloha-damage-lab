@@ -1,5 +1,19 @@
 # Singularity v1.1.0 — ES-LA test report
 
+## Owner-capture follow-up — 2026-11-16 JST
+
+Baseline for the evidence update: `a70b45674c66dcfd7b87321c9f012dd36637c3f2`. Source record SHA-256: `d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427`. Capture manifest SHA-256: `fad28b34817effafb6096fb5c3c35f430b4ad70015e517ca7da5adcb4d6ecd8e`. This is a new source-data candidate; the older accepted checkpoint below is retained as history.
+
+Local preflight PASS: generated source/coverage/UI inventory, exact cache hashes, provenance, owner-capture canonical mapping and deduplication, ten-language contract, 4,520 full numerical comparisons, 13 protected files, 456 dynamic/static witnesses, 19,440 original-nine output comparisons and prerelease approval guards. These local tests ran against an uncommitted preview and are not labeled an exact committed CI pass.
+
+The acceptance suite now requires twelve files, adding `v110-owner-capture-contract.cjs`. The new gate binds ten private image hashes and 71 observations to 65 deduplicated system records, 41 registered identities and 24 off-runtime references; it checks nine independently transcribed critical anchors, 22 name-search queries, six nickname-capable species exclusions and the clipped-row exclusion. It verifies all names, alias sets, IDs and inventory sizes are unchanged. A separate regression distinguishes valid older evidence superseded by a higher-priority source from a genuine missing canonical identity.
+
+Regional browser coverage adds Electrocañón, Fuerza Psíquica and Esquirla Helada, including uppercase/accent-stripped queries, for 29 catalog queries and 20 planned browser cases. The immutable ES dictionary is the source of the Spain-name expectations. The existing 110 rotating transitions, reload/state checks, ten-language numeric and feedback checks, original-nine regressions and local Worker checks remain active.
+
+**Exact-head CI: pending the source-data candidate run.** No prior PASS is carried forward. The current source commit and workflow conclusions will be bound after GitHub Actions completes; production changes remain prohibited. The [capture audit](v110-es-la-capture-audit.md) records the final coverage changes and privacy limits.
+
+## Historical implementation acceptance
+
 Status: technical development-candidate acceptance PASS. All thirteen workflows, including all eleven ES-LA acceptance tests, passed for the implementation commit below. This is an unpublished development candidate, not release authorization.
 
 ## Exact candidate and evidence

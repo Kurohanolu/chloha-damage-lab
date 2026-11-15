@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "localeId": "es-LA",
   "htmlLocale": "es-419",
-  "checkedAt": "2026-11-15",
+  "checkedAt": "2026-11-16",
   "baselineCommit": "5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03",
   "scope": "Factual attested terms, including off-inventory reference records. Not a blanket claim of Champions localization completeness.",
   "sources": [
@@ -452,6 +452,286 @@
       "evidenceMethod": "Explicit MX and EN labels inspected on entity detail page; web retrieval or locally retrieved public HTML.",
       "limitations": [
         "Secondary source, not official verification."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32678",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32678",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32678 — held-item-selection",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32678.jpg",
+      "rawSha256": "96218d638601b75eded57b257aff97c95b4bec65750a13438591c49ac848ae37",
+      "byteLength": 119651,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32680",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32680",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32680 — held-item-selection",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32680.jpg",
+      "rawSha256": "210166f846d62d3582b53fb3c31b6d757738c8ceaf1ae4e178fba7c2a285c8d4",
+      "byteLength": 118134,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32682",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32682",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32682 — held-item-selection",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32682.jpg",
+      "rawSha256": "30df61c23bad36b8a13033502477156fce973e9d1aba6248ae6208808cccdeb7",
+      "byteLength": 117465,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32684",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32684",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32684 — held-item-selection",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32684.jpg",
+      "rawSha256": "1d21245a766ac212f7941d0e1432bbaf176efa37f2bf0072304a68c6c504861a",
+      "byteLength": 117367,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32686",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32686",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32686 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32686.jpg",
+      "rawSha256": "2b576788790872570ab40ce547d4e61aba96b3ba71289ea30bc11207ef937a30",
+      "byteLength": 227098,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32688",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32688",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32688 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32688.jpg",
+      "rawSha256": "2e92005752cb8a14841849d000ca7283641034f1f04d86d9fbb627ddbf4ade89",
+      "byteLength": 227042,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32690",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32690",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32690 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32690.jpg",
+      "rawSha256": "5bc870da195d8069f7c3ff7de0444d4a6f574eab2f7cef28d86334d68f376115",
+      "byteLength": 225324,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32692",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32692",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32692 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32692.jpg",
+      "rawSha256": "04b634f176254d36caefb2ce719f5672a5719ee416265aa9412f367044103381",
+      "byteLength": 227980,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32694",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32694",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32694 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32694.jpg",
+      "rawSha256": "1df3113c76d427a78f8dbc803360c6bf052766f671bfcf75839bb77e3567f396",
+      "byteLength": 229267,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32696",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/docs/v110-es-la-capture-audit.md#capture-32696",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32696 — battle-party-details",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32696.jpg",
+      "rawSha256": "55f512b00ccee84f967c90627e4d3776e7bf5395d8d6b5d2380ce07ebb034de8",
+      "byteLength": 227479,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
       ]
     }
   ],
@@ -22979,6 +23259,1813 @@
           "matchMethod": "casefolded-exact-en-name"
         }
       ]
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-white-herb",
+      "category": "items",
+      "canonicalEnglish": "White Herb",
+      "sourceEs": "Hierba Blanca",
+      "esLA": "Hierba Blanca",
+      "rawObservedText": "Hierba Blanca",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678",
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "しろいハーブ",
+          "en": "White Herb",
+          "es": "Hierba Blanca",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-white-herb",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-choice-scarf",
+      "category": "items",
+      "canonicalEnglish": "Choice Scarf",
+      "sourceEs": "Pañuelo Elección",
+      "esLA": "Pañuelo Elección",
+      "rawObservedText": "Pañuelo Elección",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678",
+        "owner-champions-capture-32680"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "こだわりスカーフ",
+          "en": "Choice Scarf",
+          "es": "Pañuelo Elección",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-choice-scarf",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-electric-seed",
+      "category": "items",
+      "canonicalEnglish": "Electric Seed",
+      "sourceEs": "Semilla Electro",
+      "esLA": "Semilla Electro",
+      "rawObservedText": "Semilla Electro",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "エレキシード",
+          "en": "Electric Seed",
+          "es": "Semilla Electro",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-electric-seed",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-psychic-seed",
+      "category": "items",
+      "canonicalEnglish": "Psychic Seed",
+      "sourceEs": "Semilla Psique",
+      "esLA": "Semilla Psique",
+      "rawObservedText": "Semilla Psique",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "サイコシード",
+          "en": "Psychic Seed",
+          "es": "Semilla Psique",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-psychic-seed",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-misty-seed",
+      "category": "items",
+      "canonicalEnglish": "Misty Seed",
+      "sourceEs": "Semilla Bruma",
+      "esLA": "Semilla Bruma",
+      "rawObservedText": "Semilla Bruma",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "ミストシード",
+          "en": "Misty Seed",
+          "es": "Semilla Bruma",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-misty-seed",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-grassy-seed",
+      "category": "items",
+      "canonicalEnglish": "Grassy Seed",
+      "sourceEs": "Semilla Hierba",
+      "esLA": "Semilla Césped",
+      "rawObservedText": "Semilla Césped",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "グラスシード",
+          "en": "Grassy Seed",
+          "es": "Semilla Hierba",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-grassy-seed",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-silk-scarf",
+      "category": "items",
+      "canonicalEnglish": "Silk Scarf",
+      "sourceEs": "Pañuelo de Seda",
+      "esLA": "Pañuelo de Seda",
+      "rawObservedText": "Pañuelo de Seda",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32678",
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "シルクのスカーフ",
+          "en": "Silk Scarf",
+          "es": "Pañuelo de Seda",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-silk-scarf",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-life-orb",
+      "category": "items",
+      "canonicalEnglish": "Life Orb",
+      "sourceEs": "Vidasfera",
+      "esLA": "Vidaesfera",
+      "rawObservedText": "Vidaesfera",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680",
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "いのちのたま",
+          "canonicalIds": [
+            "lifeOrb"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-life-orb",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-sitrus-berry",
+      "category": "items",
+      "canonicalEnglish": "Sitrus Berry",
+      "sourceEs": "Baya Zidra",
+      "esLA": "Baya Citrón",
+      "rawObservedText": "Baya Citrón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680",
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "オボンのみ",
+          "en": "Sitrus Berry",
+          "es": "Baya Zidra",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-sitrus-berry",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-roseli-berry",
+      "category": "items",
+      "canonicalEnglish": "Roseli Berry",
+      "sourceEs": "Baya Hibis",
+      "esLA": "Baya Hibis",
+      "rawObservedText": "Baya Hibis",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ロゼルのみ",
+          "canonicalIds": [
+            "roseliBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-roseli-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charizardite-y",
+      "category": "items",
+      "canonicalEnglish": "Charizardite Y",
+      "sourceEs": "Charizardita Y",
+      "esLA": "Charizardita Y",
+      "rawObservedText": "Charizardita Y",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "リザードナイトＹ",
+          "en": "Charizardite Y",
+          "es": "Charizardita Y",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-charizardite-y",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-aerodactylite",
+      "category": "items",
+      "canonicalEnglish": "Aerodactylite",
+      "sourceEs": "Aerodactylita",
+      "esLA": "Aerodactylita",
+      "rawObservedText": "Aerodactylita",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "プテラナイト",
+          "en": "Aerodactylite",
+          "es": "Aerodactylita",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-aerodactylite",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-light-clay",
+      "category": "items",
+      "canonicalEnglish": "Light Clay",
+      "sourceEs": "Refleluz",
+      "esLA": "Refleluz",
+      "rawObservedText": "Refleluz",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32680"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "ひかりのねんど",
+          "en": "Light Clay",
+          "es": "Refleluz",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-light-clay",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-miracle-seed",
+      "category": "items",
+      "canonicalEnglish": "Miracle Seed",
+      "sourceEs": "Semilla Milagro",
+      "esLA": "Semilla Milagro",
+      "rawObservedText": "Semilla Milagro",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "きせきのタネ",
+          "en": "Miracle Seed",
+          "es": "Semilla Milagro",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-miracle-seed",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charcoal",
+      "category": "items",
+      "canonicalEnglish": "Charcoal",
+      "sourceEs": "Carbón",
+      "esLA": "Carbón",
+      "rawObservedText": "Carbón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "もくたん",
+          "en": "Charcoal",
+          "es": "Carbón",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-charcoal",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-mystic-water",
+      "category": "items",
+      "canonicalEnglish": "Mystic Water",
+      "sourceEs": "Agua Mística",
+      "esLA": "Agua Mística",
+      "rawObservedText": "Agua Mística",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "しんぴのしずく",
+          "en": "Mystic Water",
+          "es": "Agua Mística",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-mystic-water",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-magnet",
+      "category": "items",
+      "canonicalEnglish": "Magnet",
+      "sourceEs": "Imán",
+      "esLA": "Imán",
+      "rawObservedText": "Imán",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "じしゃく",
+          "en": "Magnet",
+          "es": "Imán",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-magnet",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-silver-powder",
+      "category": "items",
+      "canonicalEnglish": "Silver Powder",
+      "sourceEs": "Polvo Plata",
+      "esLA": "Polvo Plata",
+      "rawObservedText": "Polvo Plata",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "ぎんのこな",
+          "en": "Silver Powder",
+          "es": "Polvo Plata",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-silver-powder",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-sharp-beak",
+      "category": "items",
+      "canonicalEnglish": "Sharp Beak",
+      "sourceEs": "Pico Afilado",
+      "esLA": "Pico Afilado",
+      "rawObservedText": "Pico Afilado",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32682"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "するどいくちばし",
+          "en": "Sharp Beak",
+          "es": "Pico Afilado",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-sharp-beak",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charti-berry",
+      "category": "items",
+      "canonicalEnglish": "Charti Berry",
+      "sourceEs": "Baya Alcho",
+      "esLA": "Baya Alcho",
+      "rawObservedText": "Baya Alcho",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ヨロギのみ",
+          "canonicalIds": [
+            "chartiBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-charti-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-kebia-berry",
+      "category": "items",
+      "canonicalEnglish": "Kebia Berry",
+      "sourceEs": "Baya Kebia",
+      "esLA": "Baya Kebia",
+      "rawObservedText": "Baya Kebia",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ビアーのみ",
+          "canonicalIds": [
+            "kebiaBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-kebia-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-shuca-berry",
+      "category": "items",
+      "canonicalEnglish": "Shuca Berry",
+      "sourceEs": "Baya Acardo",
+      "esLA": "Baya Acardo",
+      "rawObservedText": "Baya Acardo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "シュカのみ",
+          "canonicalIds": [
+            "shucaBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-shuca-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-yache-berry",
+      "category": "items",
+      "canonicalEnglish": "Yache Berry",
+      "sourceEs": "Baya Rimoya",
+      "esLA": "Baya Rimoya",
+      "rawObservedText": "Baya Rimoya",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ヤチェのみ",
+          "canonicalIds": [
+            "yacheBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-yache-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-chople-berry",
+      "category": "items",
+      "canonicalEnglish": "Chople Berry",
+      "sourceEs": "Baya Pomaro",
+      "esLA": "Baya Pomaro",
+      "rawObservedText": "Baya Pomaro",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ヨプのみ",
+          "canonicalIds": [
+            "chopleBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-chople-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-payapa-berry",
+      "category": "items",
+      "canonicalEnglish": "Payapa Berry",
+      "sourceEs": "Baya Payapa",
+      "esLA": "Baya Payapa",
+      "rawObservedText": "Baya Payapa",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ウタンのみ",
+          "canonicalIds": [
+            "payapaBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-payapa-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-kasib-berry",
+      "category": "items",
+      "canonicalEnglish": "Kasib Berry",
+      "sourceEs": "Baya Drasi",
+      "esLA": "Baya Drasi",
+      "rawObservedText": "Baya Drasi",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32684"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "カシブのみ",
+          "canonicalIds": [
+            "kasibBerry"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-items-kasib-berry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-hurricane",
+      "category": "moves",
+      "canonicalEnglish": "Hurricane",
+      "sourceEs": "Vendaval",
+      "esLA": "Huracán",
+      "rawObservedText": "Huracán",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ぼうふう",
+          "canonicalIds": [
+            "gw0170c_003"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-hurricane",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-tailwind",
+      "category": "moves",
+      "canonicalEnglish": "Tailwind",
+      "sourceEs": "Viento Afín",
+      "esLA": "Viento Afín",
+      "rawObservedText": "Viento Afín",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-tailwind",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-sleep-powder",
+      "category": "moves",
+      "canonicalEnglish": "Sleep Powder",
+      "sourceEs": "Somnífero",
+      "esLA": "Somnífero",
+      "rawObservedText": "Somnífero",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-sleep-powder",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-protect",
+      "category": "moves",
+      "canonicalEnglish": "Protect",
+      "sourceEs": "Protección",
+      "esLA": "Protección",
+      "rawObservedText": "Protección",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "まもる",
+          "canonicalIds": [
+            "protect"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-protect",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-compound-eyes",
+      "category": "abilities",
+      "canonicalEnglish": "Compound Eyes",
+      "sourceEs": "Ojo Compuesto",
+      "esLA": "Ojo Compuesto",
+      "rawObservedText": "Ojo Compuesto",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ふくがん",
+          "canonicalIds": [
+            "unsupported:ふくがん"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-compound-eyes",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-focus-sash",
+      "category": "items",
+      "canonicalEnglish": "Focus Sash",
+      "sourceEs": "Banda Aguante",
+      "esLA": "Banda Aguante",
+      "rawObservedText": "Banda Aguante",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "きあいのタスキ",
+          "en": "Focus Sash",
+          "es": "Banda Aguante",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-focus-sash",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-bug",
+      "category": "types",
+      "canonicalEnglish": "Bug",
+      "sourceEs": "Bicho",
+      "esLA": "Insecto",
+      "rawObservedText": "INSECTO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "むし",
+          "canonicalIds": [
+            "むし"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-bug",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-flying",
+      "category": "types",
+      "canonicalEnglish": "Flying",
+      "sourceEs": "Volador",
+      "esLA": "Volador",
+      "rawObservedText": "VOLADOR",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "ひこう",
+          "canonicalIds": [
+            "ひこう"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-flying",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-raichunite-y",
+      "category": "items",
+      "canonicalEnglish": "Raichunite Y",
+      "sourceEs": "Raichunita Y",
+      "esLA": "Raichunita Y",
+      "rawObservedText": "Raichunita Y",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "ライチュウナイトＹ",
+          "en": "Raichunite Y",
+          "es": "Raichunita Y",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-raichunite-y",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-never-melt-ice",
+      "category": "items",
+      "canonicalEnglish": "Never-Melt Ice",
+      "sourceEs": "Hielo Perpetuo",
+      "esLA": "Hielo Perpetuo",
+      "rawObservedText": "Hielo Perpetuo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32686",
+        "owner-champions-capture-32688",
+        "owner-champions-capture-32690",
+        "owner-champions-capture-32692",
+        "owner-champions-capture-32694",
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [
+        {
+          "id": "とけないこおり",
+          "en": "Never-Melt Ice",
+          "es": "Hielo Perpetuo",
+          "matchMethod": "existing-name-catalog-english-identity"
+        }
+      ],
+      "captureObservationId": "owner-champions-2026-11-16-items-never-melt-ice",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-dire-claw",
+      "category": "moves",
+      "canonicalEnglish": "Dire Claw",
+      "sourceEs": "Garra Nociva",
+      "esLA": "Garra Nociva",
+      "rawObservedText": "Garra Nociva",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "フェイタルクロー",
+          "canonicalIds": [
+            "gw0170_s024"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-dire-claw",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-close-combat",
+      "category": "moves",
+      "canonicalEnglish": "Close Combat",
+      "sourceEs": "A Bocajarro",
+      "esLA": "Cuerpo a Cuerpo",
+      "rawObservedText": "Cuerpo a Cuerpo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "インファイト",
+          "canonicalIds": [
+            "closeCombat"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-close-combat",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-rock-slide",
+      "category": "moves",
+      "canonicalEnglish": "Rock Slide",
+      "sourceEs": "Avalancha",
+      "esLA": "Avalancha",
+      "rawObservedText": "Avalancha",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "いわなだれ",
+          "canonicalIds": [
+            "rockSlide"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-rock-slide",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-fake-out",
+      "category": "moves",
+      "canonicalEnglish": "Fake Out",
+      "sourceEs": "Sorpresa",
+      "esLA": "Sorpresa",
+      "rawObservedText": "Sorpresa",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ねこだまし",
+          "canonicalIds": [
+            "v096_095"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-fake-out",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-unburden",
+      "category": "abilities",
+      "canonicalEnglish": "Unburden",
+      "sourceEs": "Liviano",
+      "esLA": "Liviano",
+      "rawObservedText": "Liviano",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "かるわざ",
+          "canonicalIds": [
+            "unsupported:かるわざ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-unburden",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-fighting",
+      "category": "types",
+      "canonicalEnglish": "Fighting",
+      "sourceEs": "Lucha",
+      "esLA": "Pelea",
+      "rawObservedText": "PELEA",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "かくとう",
+          "canonicalIds": [
+            "かくとう"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-fighting",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-poison",
+      "category": "types",
+      "canonicalEnglish": "Poison",
+      "sourceEs": "Veneno",
+      "esLA": "Veneno",
+      "rawObservedText": "VENENO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32688"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "どく",
+          "canonicalIds": [
+            "どく"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-poison",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-zap-cannon",
+      "category": "moves",
+      "canonicalEnglish": "Zap Cannon",
+      "sourceEs": "Electrocañón",
+      "esLA": "Electrocañón",
+      "rawObservedText": "Electrocañón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32690"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "でんじほう",
+          "canonicalIds": [
+            "gw0169_s032"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-zap-cannon",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-focus-blast",
+      "category": "moves",
+      "canonicalEnglish": "Focus Blast",
+      "sourceEs": "Onda Certera",
+      "esLA": "Ataque Centrado",
+      "rawObservedText": "Ataque Centrado",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32690"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "きあいだま",
+          "canonicalIds": [
+            "gw0169_s013"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-focus-blast",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-encore",
+      "category": "moves",
+      "canonicalEnglish": "Encore",
+      "sourceEs": "Otra Vez",
+      "esLA": "Otra Vez",
+      "rawObservedText": "Otra Vez",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32690"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-encore",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-lightning-rod",
+      "category": "abilities",
+      "canonicalEnglish": "Lightning Rod",
+      "sourceEs": "Pararrayos",
+      "esLA": "Pararrayos",
+      "rawObservedText": "Pararrayos",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32690"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ひらいしん",
+          "canonicalIds": [
+            "lightningRod"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-lightning-rod",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-electric",
+      "category": "types",
+      "canonicalEnglish": "Electric",
+      "sourceEs": "Eléctrico",
+      "esLA": "Eléctrico",
+      "rawObservedText": "ELÉCTRICO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32690"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "でんき",
+          "canonicalIds": [
+            "でんき"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-electric",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-psychic",
+      "category": "moves",
+      "canonicalEnglish": "Psychic",
+      "sourceEs": "Psíquico",
+      "esLA": "Fuerza Psíquica",
+      "rawObservedText": "Fuerza Psíquica",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "サイコキネシス",
+          "canonicalIds": [
+            "psychic"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-psychic",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-hyper-voice",
+      "category": "moves",
+      "canonicalEnglish": "Hyper Voice",
+      "sourceEs": "Vozarrón",
+      "esLA": "Hipervoz",
+      "rawObservedText": "Hipervoz",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ハイパーボイス",
+          "canonicalIds": [
+            "hyperVoice"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-hyper-voice",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-trick-room",
+      "category": "moves",
+      "canonicalEnglish": "Trick Room",
+      "sourceEs": "Espacio Raro",
+      "esLA": "Espacio Raro",
+      "rawObservedText": "Espacio Raro",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-trick-room",
+      "notes": "Exact visible system wording retained outside the declared runtime inventory. No runtime ID or mechanics support added."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-armor-tail",
+      "category": "abilities",
+      "canonicalEnglish": "Armor Tail",
+      "sourceEs": "Cola Armadura",
+      "esLA": "Cola Armadura",
+      "rawObservedText": "Cola Armadura",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "テイルアーマー",
+          "canonicalIds": [
+            "unsupported:テイルアーマー"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-armor-tail",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-normal",
+      "category": "types",
+      "canonicalEnglish": "Normal",
+      "sourceEs": "Normal",
+      "esLA": "Normal",
+      "rawObservedText": "NORMAL",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "ノーマル",
+          "canonicalIds": [
+            "ノーマル"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-normal",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-psychic",
+      "category": "types",
+      "canonicalEnglish": "Psychic",
+      "sourceEs": "Psíquico",
+      "esLA": "Psíquico",
+      "rawObservedText": "PSÍQUICO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32692"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "エスパー",
+          "canonicalIds": [
+            "エスパー"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-psychic",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-kowtow-cleave",
+      "category": "moves",
+      "canonicalEnglish": "Kowtow Cleave",
+      "sourceEs": "Genufendiente",
+      "esLA": "Genufendiente",
+      "rawObservedText": "Genufendiente",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ドゲザン",
+          "canonicalIds": [
+            "gw0169_p075"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-kowtow-cleave",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-sucker-punch",
+      "category": "moves",
+      "canonicalEnglish": "Sucker Punch",
+      "sourceEs": "Golpe Bajo",
+      "esLA": "Golpe Bajo",
+      "rawObservedText": "Golpe Bajo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ふいうち",
+          "canonicalIds": [
+            "suckerPunch"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-sucker-punch",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-low-kick",
+      "category": "moves",
+      "canonicalEnglish": "Low Kick",
+      "sourceEs": "Patada Baja",
+      "esLA": "Patada Baja",
+      "rawObservedText": "Patada Baja",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "けたぐり",
+          "canonicalIds": [
+            "gw0169_p040"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-low-kick",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-supreme-overlord",
+      "category": "abilities",
+      "canonicalEnglish": "Supreme Overlord",
+      "sourceEs": "General Supremo",
+      "esLA": "General Supremo",
+      "rawObservedText": "General Supremo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "そうだいしょう",
+          "canonicalIds": [
+            "supremeOverlord"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-supreme-overlord",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-dark",
+      "category": "types",
+      "canonicalEnglish": "Dark",
+      "sourceEs": "Siniestro",
+      "esLA": "Siniestro",
+      "rawObservedText": "SINIESTRO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "あく",
+          "canonicalIds": [
+            "あく"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-dark",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-steel",
+      "category": "types",
+      "canonicalEnglish": "Steel",
+      "sourceEs": "Acero",
+      "esLA": "Acero",
+      "rawObservedText": "ACERO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32694"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "はがね",
+          "canonicalIds": [
+            "はがね"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-steel",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-blizzard",
+      "category": "moves",
+      "canonicalEnglish": "Blizzard",
+      "sourceEs": "Ventisca",
+      "esLA": "Ventisca",
+      "rawObservedText": "Ventisca",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ふぶき",
+          "canonicalIds": [
+            "blizzard"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-blizzard",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-freeze-dry",
+      "category": "moves",
+      "canonicalEnglish": "Freeze-Dry",
+      "sourceEs": "Liofilización",
+      "esLA": "Liofilización",
+      "rawObservedText": "Liofilización",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "フリーズドライ",
+          "canonicalIds": [
+            "gw0169_s052"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-freeze-dry",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-ice-shard",
+      "category": "moves",
+      "canonicalEnglish": "Ice Shard",
+      "sourceEs": "Esquirla Helada",
+      "esLA": "Esquirla Helada",
+      "rawObservedText": "Esquirla Helada",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "こおりのつぶて",
+          "canonicalIds": [
+            "gw0170b_003"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-moves-ice-shard",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-snow-warning",
+      "category": "abilities",
+      "canonicalEnglish": "Snow Warning",
+      "sourceEs": "Nevada",
+      "esLA": "Nevada",
+      "rawObservedText": "Nevada",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ゆきふらし",
+          "canonicalIds": [
+            "snowWarning"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-abilities-snow-warning",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-ice",
+      "category": "types",
+      "canonicalEnglish": "Ice",
+      "sourceEs": "Hielo",
+      "esLA": "Hielo",
+      "rawObservedText": "HIELO",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32696"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "こおり",
+          "canonicalIds": [
+            "こおり"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-2026-11-16-types-ice",
+      "notes": "Exact visible system wording; existing canonical runtime ID preserved. Capture evidence verifies a name only, not calculation support or mechanics."
     }
   ],
   "observedConflicts": [

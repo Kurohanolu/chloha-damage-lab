@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "baseline": "a70b45674c66dcfd7b87321c9f012dd36637c3f2",
+  "manifestSha256": "fad28b34817effafb6096fb5c3c35f430b4ad70015e517ca7da5adcb4d6ecd8e",
+  "sourceSha256": "d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427",
+  "privateCaptures": 10,
+  "uniqueNameObservations": 71,
+  "systemTerms": 65,
+  "registeredTerms": 41,
+  "offRuntimeTerms": 24,
+  "speciesContextOnly": 6,
+  "clippedExcluded": 1,
+  "independentAnchors": 9,
+  "aliasQueries": 22,
+  "newlyOfficial": 27,
+  "newlyOfficialChampions": 31,
+  "statusOrGameScopeChanged": 31,
+  "registeredNamesChanged": 0,
+  "registeredAliasSetsChanged": 0,
+  "ownerProvidedTerminologyCapturesVerified": true,
+  "physicalMechanicsVerified": false,
+  "privateImagesPublished": false
+}

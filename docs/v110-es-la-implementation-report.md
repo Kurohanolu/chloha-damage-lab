@@ -4,6 +4,12 @@ Status: implementation and technical acceptance complete for the disclosed devel
 
 Accepted implementation commit: `215e5a1a8af9e20591d077e6acfcabb234a53b7a`, tree `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`. The following documentation/evidence commit does not change runtime behavior. Exact test results are retained in the [test report](v110-es-la-test-report.md).
 
+## Owner-capture evidence update — 2026-11-16 JST
+
+Ten owner-provided screenshots add 65 deduplicated official game-name attestations (41 registered identities, 24 off-runtime references). Existing display strings, alias sets, canonical IDs and inventory sizes are unchanged. Twenty-seven registered identities newly become official, and 31 gain official Champions evidence. Names observed in editable Pokémon party slots remain context only; game UI observations remain separate. Originals are private. The compiler retains the union of selected evidence scopes in the full audit while preserving its existing singular field and compact runtime metadata. Source coverage and content-cache hashes are regenerated.
+
+The source ledger now has 1,139 records from 50 sources. Capture-specific identity, evidence, alias normalization and privacy contracts are added to acceptance; the existing ten-language, numerical, persistence, search and feedback gates remain active. The [capture audit](v110-es-la-capture-audit.md) and [test report](v110-es-la-test-report.md) distinguish this follow-up from the accepted implementation checkpoint below.
+
 ## Fixed starting point
 
 - Source main observed on 2026-11-15: `5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03`.

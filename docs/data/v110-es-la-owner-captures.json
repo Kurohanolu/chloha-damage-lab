@@ -1,0 +1,4708 @@
+{
+  "schemaVersion": 1,
+  "locale": "es-LA",
+  "browserLocale": "es-419",
+  "targetGame": "Pokémon Champions",
+  "providedAt": "2026-11-16",
+  "checkedAt": "2026-11-16",
+  "dateTimezone": "Asia/Tokyo",
+  "baseline": {
+    "commit": "a70b45674c66dcfd7b87321c9f012dd36637c3f2",
+    "sourceRecords": 1074,
+    "sources": 40,
+    "coverage": {
+      "pokemon": {
+        "total": 373,
+        "official": 31,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 342,
+        "officialChampions": 24,
+        "displayAvailable": 373,
+        "individuallyAttested": 31,
+        "individuallyAttestedPercent": 8.31,
+        "officialPercent": 8.31,
+        "officialChampionsPercent": 6.43
+      },
+      "moves": {
+        "total": 335,
+        "official": 23,
+        "verified-secondary": 110,
+        "provisional": 0,
+        "unverified": 202,
+        "officialChampions": 22,
+        "displayAvailable": 335,
+        "individuallyAttested": 133,
+        "individuallyAttestedPercent": 39.7,
+        "officialPercent": 6.87,
+        "officialChampionsPercent": 6.57
+      },
+      "abilities": {
+        "total": 245,
+        "official": 13,
+        "verified-secondary": 42,
+        "provisional": 0,
+        "unverified": 190,
+        "officialChampions": 13,
+        "displayAvailable": 245,
+        "individuallyAttested": 55,
+        "individuallyAttestedPercent": 22.45,
+        "officialPercent": 5.31,
+        "officialChampionsPercent": 5.31
+      },
+      "items": {
+        "total": 41,
+        "official": 0,
+        "verified-secondary": 20,
+        "provisional": 0,
+        "unverified": 21,
+        "officialChampions": 0,
+        "displayAvailable": 41,
+        "individuallyAttested": 20,
+        "individuallyAttestedPercent": 48.78,
+        "officialPercent": 0,
+        "officialChampionsPercent": 0
+      },
+      "types": {
+        "total": 18,
+        "official": 17,
+        "verified-secondary": 1,
+        "provisional": 0,
+        "unverified": 0,
+        "officialChampions": 12,
+        "displayAvailable": 18,
+        "individuallyAttested": 18,
+        "individuallyAttestedPercent": 100,
+        "officialPercent": 94.44,
+        "officialChampionsPercent": 66.67
+      },
+      "forms": {
+        "total": 134,
+        "official": 20,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 114,
+        "officialChampions": 13,
+        "displayAvailable": 134,
+        "individuallyAttested": 20,
+        "individuallyAttestedPercent": 14.93,
+        "officialPercent": 14.93,
+        "officialChampionsPercent": 9.7
+      },
+      "natures": {
+        "total": 11,
+        "official": 4,
+        "verified-secondary": 1,
+        "provisional": 0,
+        "unverified": 6,
+        "officialChampions": 4,
+        "displayAvailable": 11,
+        "individuallyAttested": 5,
+        "individuallyAttestedPercent": 45.45,
+        "officialPercent": 36.36,
+        "officialChampionsPercent": 36.36
+      },
+      "stats": {
+        "total": 6,
+        "official": 6,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 0,
+        "officialChampions": 6,
+        "displayAvailable": 6,
+        "individuallyAttested": 6,
+        "individuallyAttestedPercent": 100,
+        "officialPercent": 100,
+        "officialChampionsPercent": 100
+      },
+      "ui": {
+        "total": 1011,
+        "official": 0,
+        "verified-secondary": 0,
+        "provisional": 1011,
+        "unverified": 0,
+        "officialChampions": 0,
+        "displayAvailable": 1011,
+        "individuallyAttested": 0,
+        "individuallyAttestedPercent": 0,
+        "officialPercent": 0,
+        "officialChampionsPercent": 0
+      },
+      "warnings": {
+        "total": 169,
+        "official": 0,
+        "verified-secondary": 0,
+        "provisional": 169,
+        "unverified": 0,
+        "officialChampions": 0,
+        "displayAvailable": 169,
+        "individuallyAttested": 0,
+        "individuallyAttestedPercent": 0,
+        "officialPercent": 0,
+        "officialChampionsPercent": 0
+      }
+    }
+  },
+  "scope": "Owner-provided private screenshots: exact visible system terminology only. No image publication, species-name promotion from nicknames, software-UI certification, calculation verification or engine expansion.",
+  "captures": [
+    {
+      "id": "32678",
+      "sourceId": "owner-champions-capture-32678",
+      "filename": "32678.jpg",
+      "sha256": "96218d638601b75eded57b257aff97c95b4bec65750a13438591c49ac848ae37",
+      "byteLength": 119651,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "held-item-selection",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32680",
+      "sourceId": "owner-champions-capture-32680",
+      "filename": "32680.jpg",
+      "sha256": "210166f846d62d3582b53fb3c31b6d757738c8ceaf1ae4e178fba7c2a285c8d4",
+      "byteLength": 118134,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "held-item-selection",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32682",
+      "sourceId": "owner-champions-capture-32682",
+      "filename": "32682.jpg",
+      "sha256": "30df61c23bad36b8a13033502477156fce973e9d1aba6248ae6208808cccdeb7",
+      "byteLength": 117465,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "held-item-selection",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32684",
+      "sourceId": "owner-champions-capture-32684",
+      "filename": "32684.jpg",
+      "sha256": "1d21245a766ac212f7941d0e1432bbaf176efa37f2bf0072304a68c6c504861a",
+      "byteLength": 117367,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "held-item-selection",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32686",
+      "sourceId": "owner-champions-capture-32686",
+      "filename": "32686.jpg",
+      "sha256": "2b576788790872570ab40ce547d4e61aba96b3ba71289ea30bc11207ef937a30",
+      "byteLength": 227098,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32688",
+      "sourceId": "owner-champions-capture-32688",
+      "filename": "32688.jpg",
+      "sha256": "2e92005752cb8a14841849d000ca7283641034f1f04d86d9fbb627ddbf4ade89",
+      "byteLength": 227042,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32690",
+      "sourceId": "owner-champions-capture-32690",
+      "filename": "32690.jpg",
+      "sha256": "5bc870da195d8069f7c3ff7de0444d4a6f574eab2f7cef28d86334d68f376115",
+      "byteLength": 225324,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32692",
+      "sourceId": "owner-champions-capture-32692",
+      "filename": "32692.jpg",
+      "sha256": "04b634f176254d36caefb2ce719f5672a5719ee416265aa9412f367044103381",
+      "byteLength": 227980,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32694",
+      "sourceId": "owner-champions-capture-32694",
+      "filename": "32694.jpg",
+      "sha256": "1df3113c76d427a78f8dbc803360c6bf052766f671bfcf75839bb77e3567f396",
+      "byteLength": 229267,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    },
+    {
+      "id": "32696",
+      "sourceId": "owner-champions-capture-32696",
+      "filename": "32696.jpg",
+      "sha256": "55f512b00ccee84f967c90627e4d3776e7bf5395d8d6b5d2380ce07ebb034de8",
+      "byteLength": 227479,
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "screen": "battle-party-details",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "privateImage": true,
+      "imagePublished": false,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "mechanicsVerified": false,
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "The capture date, game build and platform were not independently established.",
+        "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "owner-champions-2026-11-16-items-white-herb",
+      "category": "items",
+      "rawObservedText": "Hierba Blanca",
+      "esLA": "Hierba Blanca",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "White Herb",
+        "sourceEs": "Hierba Blanca",
+        "ja": "しろいハーブ",
+        "catalogKey": "しろいハーブ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-1",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.item-value",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-2.held-item",
+          "rawObservedText": "Hierba Blanca"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-white-herb",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-choice-scarf",
+      "category": "items",
+      "rawObservedText": "Pañuelo Elección",
+      "esLA": "Pañuelo Elección",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Choice Scarf",
+        "sourceEs": "Pañuelo Elección",
+        "ja": "こだわりスカーフ",
+        "catalogKey": "こだわりスカーフ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-2",
+          "rawObservedText": "Pañuelo Elección"
+        },
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-1",
+          "rawObservedText": "Pañuelo Elección"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-choice-scarf",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-electric-seed",
+      "category": "items",
+      "rawObservedText": "Semilla Electro",
+      "esLA": "Semilla Electro",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Electric Seed",
+        "sourceEs": "Semilla Electro",
+        "ja": "エレキシード",
+        "catalogKey": "エレキシード",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-3",
+          "rawObservedText": "Semilla Electro"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-electric-seed",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-psychic-seed",
+      "category": "items",
+      "rawObservedText": "Semilla Psique",
+      "esLA": "Semilla Psique",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Psychic Seed",
+        "sourceEs": "Semilla Psique",
+        "ja": "サイコシード",
+        "catalogKey": "サイコシード",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-4",
+          "rawObservedText": "Semilla Psique"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-psychic-seed",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-misty-seed",
+      "category": "items",
+      "rawObservedText": "Semilla Bruma",
+      "esLA": "Semilla Bruma",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Misty Seed",
+        "sourceEs": "Semilla Bruma",
+        "ja": "ミストシード",
+        "catalogKey": "ミストシード",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-5",
+          "rawObservedText": "Semilla Bruma"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-misty-seed",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-grassy-seed",
+      "category": "items",
+      "rawObservedText": "Semilla Césped",
+      "esLA": "Semilla Césped",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Grassy Seed",
+        "sourceEs": "Semilla Hierba",
+        "ja": "グラスシード",
+        "catalogKey": "グラスシード",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-6",
+          "rawObservedText": "Semilla Césped"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-grassy-seed",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-silk-scarf",
+      "category": "items",
+      "rawObservedText": "Pañuelo de Seda",
+      "esLA": "Pañuelo de Seda",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Silk Scarf",
+        "sourceEs": "Pañuelo de Seda",
+        "ja": "シルクのスカーフ",
+        "catalogKey": "シルクのスカーフ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-list.row-7",
+          "rawObservedText": "Pañuelo de Seda"
+        },
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-1",
+          "rawObservedText": "Pañuelo de Seda"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-silk-scarf",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-life-orb",
+      "category": "items",
+      "rawObservedText": "Vidaesfera",
+      "esLA": "Vidaesfera",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "いのちのたま",
+        "canonicalIds": [
+          "lifeOrb"
+        ],
+        "en": "Life Orb",
+        "sourceEs": "Vidasfera",
+        "ja": "いのちのたま",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Vidaesfera",
+          "status": "verified-secondary",
+          "officialChampions": false,
+          "sourceIds": [
+            "wikidex-champions-items-2026-11-15",
+            "pokexperto-champions-objetos-2026-11-15"
+          ],
+          "aliases": [
+            "Vidasfera",
+            "Vidaesfera"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-2",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.item-value",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-5.held-item",
+          "rawObservedText": "Vidaesfera"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-life-orb",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-sitrus-berry",
+      "category": "items",
+      "rawObservedText": "Baya Citrón",
+      "esLA": "Baya Citrón",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Sitrus Berry",
+        "sourceEs": "Baya Zidra",
+        "ja": "オボンのみ",
+        "catalogKey": "オボンのみ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-3",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.item-value",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-4.held-item",
+          "rawObservedText": "Baya Citrón"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-sitrus-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-roseli-berry",
+      "category": "items",
+      "rawObservedText": "Baya Hibis",
+      "esLA": "Baya Hibis",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ロゼルのみ",
+        "canonicalIds": [
+          "roseliBerry"
+        ],
+        "en": "Roseli Berry",
+        "sourceEs": "Baya Hibis",
+        "ja": "ロゼルのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Hibis",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Hibis"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-4",
+          "rawObservedText": "Baya Hibis"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-roseli-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charizardite-y",
+      "category": "items",
+      "rawObservedText": "Charizardita Y",
+      "esLA": "Charizardita Y",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Charizardite Y",
+        "sourceEs": "Charizardita Y",
+        "ja": "リザードナイトＹ",
+        "catalogKey": "リザードナイトＹ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-5",
+          "rawObservedText": "Charizardita Y"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-charizardite-y",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-aerodactylite",
+      "category": "items",
+      "rawObservedText": "Aerodactylita",
+      "esLA": "Aerodactylita",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Aerodactylite",
+        "sourceEs": "Aerodactylita",
+        "ja": "プテラナイト",
+        "catalogKey": "プテラナイト",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-6",
+          "rawObservedText": "Aerodactylita"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-aerodactylite",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-light-clay",
+      "category": "items",
+      "rawObservedText": "Refleluz",
+      "esLA": "Refleluz",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Light Clay",
+        "sourceEs": "Refleluz",
+        "ja": "ひかりのねんど",
+        "catalogKey": "ひかりのねんど",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32680",
+          "sourceId": "owner-champions-capture-32680",
+          "location": "item-list.row-7",
+          "rawObservedText": "Refleluz"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-light-clay",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-miracle-seed",
+      "category": "items",
+      "rawObservedText": "Semilla Milagro",
+      "esLA": "Semilla Milagro",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Miracle Seed",
+        "sourceEs": "Semilla Milagro",
+        "ja": "きせきのタネ",
+        "catalogKey": "きせきのタネ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-2",
+          "rawObservedText": "Semilla Milagro"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-miracle-seed",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charcoal",
+      "category": "items",
+      "rawObservedText": "Carbón",
+      "esLA": "Carbón",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Charcoal",
+        "sourceEs": "Carbón",
+        "ja": "もくたん",
+        "catalogKey": "もくたん",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-3",
+          "rawObservedText": "Carbón"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-charcoal",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-mystic-water",
+      "category": "items",
+      "rawObservedText": "Agua Mística",
+      "esLA": "Agua Mística",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Mystic Water",
+        "sourceEs": "Agua Mística",
+        "ja": "しんぴのしずく",
+        "catalogKey": "しんぴのしずく",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-4",
+          "rawObservedText": "Agua Mística"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-mystic-water",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-magnet",
+      "category": "items",
+      "rawObservedText": "Imán",
+      "esLA": "Imán",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Magnet",
+        "sourceEs": "Imán",
+        "ja": "じしゃく",
+        "catalogKey": "じしゃく",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-5",
+          "rawObservedText": "Imán"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-magnet",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-silver-powder",
+      "category": "items",
+      "rawObservedText": "Polvo Plata",
+      "esLA": "Polvo Plata",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Silver Powder",
+        "sourceEs": "Polvo Plata",
+        "ja": "ぎんのこな",
+        "catalogKey": "ぎんのこな",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-6",
+          "rawObservedText": "Polvo Plata"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-silver-powder",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-sharp-beak",
+      "category": "items",
+      "rawObservedText": "Pico Afilado",
+      "esLA": "Pico Afilado",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Sharp Beak",
+        "sourceEs": "Pico Afilado",
+        "ja": "するどいくちばし",
+        "catalogKey": "するどいくちばし",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32682",
+          "sourceId": "owner-champions-capture-32682",
+          "location": "item-list.row-7",
+          "rawObservedText": "Pico Afilado"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-sharp-beak",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-charti-berry",
+      "category": "items",
+      "rawObservedText": "Baya Alcho",
+      "esLA": "Baya Alcho",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ヨロギのみ",
+        "canonicalIds": [
+          "chartiBerry"
+        ],
+        "en": "Charti Berry",
+        "sourceEs": "Baya Alcho",
+        "ja": "ヨロギのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Alcho",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Alcho"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-1",
+          "rawObservedText": "Baya Alcho"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-charti-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-kebia-berry",
+      "category": "items",
+      "rawObservedText": "Baya Kebia",
+      "esLA": "Baya Kebia",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ビアーのみ",
+        "canonicalIds": [
+          "kebiaBerry"
+        ],
+        "en": "Kebia Berry",
+        "sourceEs": "Baya Kebia",
+        "ja": "ビアーのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Kebia",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Kebia"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-2",
+          "rawObservedText": "Baya Kebia"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-kebia-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-shuca-berry",
+      "category": "items",
+      "rawObservedText": "Baya Acardo",
+      "esLA": "Baya Acardo",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "シュカのみ",
+        "canonicalIds": [
+          "shucaBerry"
+        ],
+        "en": "Shuca Berry",
+        "sourceEs": "Baya Acardo",
+        "ja": "シュカのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Acardo",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Acardo"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-3",
+          "rawObservedText": "Baya Acardo"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-shuca-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-yache-berry",
+      "category": "items",
+      "rawObservedText": "Baya Rimoya",
+      "esLA": "Baya Rimoya",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ヤチェのみ",
+        "canonicalIds": [
+          "yacheBerry"
+        ],
+        "en": "Yache Berry",
+        "sourceEs": "Baya Rimoya",
+        "ja": "ヤチェのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Rimoya",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Rimoya"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-4",
+          "rawObservedText": "Baya Rimoya"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-yache-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-chople-berry",
+      "category": "items",
+      "rawObservedText": "Baya Pomaro",
+      "esLA": "Baya Pomaro",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ヨプのみ",
+        "canonicalIds": [
+          "chopleBerry"
+        ],
+        "en": "Chople Berry",
+        "sourceEs": "Baya Pomaro",
+        "ja": "ヨプのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Pomaro",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Pomaro"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-5",
+          "rawObservedText": "Baya Pomaro"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-chople-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-payapa-berry",
+      "category": "items",
+      "rawObservedText": "Baya Payapa",
+      "esLA": "Baya Payapa",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "ウタンのみ",
+        "canonicalIds": [
+          "payapaBerry"
+        ],
+        "en": "Payapa Berry",
+        "sourceEs": "Baya Payapa",
+        "ja": "ウタンのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Payapa",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Payapa"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-6",
+          "rawObservedText": "Baya Payapa"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-payapa-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-kasib-berry",
+      "category": "items",
+      "rawObservedText": "Baya Drasi",
+      "esLA": "Baya Drasi",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "items",
+        "key": "カシブのみ",
+        "canonicalIds": [
+          "kasibBerry"
+        ],
+        "en": "Kasib Berry",
+        "sourceEs": "Baya Drasi",
+        "ja": "カシブのみ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Baya Drasi",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Baya Drasi"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-list.row-7",
+          "rawObservedText": "Baya Drasi"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-kasib-berry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-vivillon",
+      "category": "pokemon",
+      "rawObservedText": "Vivillon",
+      "esLA": "Vivillon",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "roster_v0106_040",
+        "canonicalIds": [
+          "roster_v0106_040"
+        ],
+        "en": "Vivillon",
+        "sourceEs": "Vivillon",
+        "ja": "ビビヨン",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Vivillon",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Vivillon"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Vivillon"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-hurricane",
+      "category": "moves",
+      "rawObservedText": "Huracán",
+      "esLA": "Huracán",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ぼうふう",
+        "canonicalIds": [
+          "gw0170c_003"
+        ],
+        "en": "Hurricane",
+        "sourceEs": "Vendaval",
+        "ja": "ぼうふう",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Huracán",
+          "status": "verified-secondary",
+          "officialChampions": false,
+          "sourceIds": [
+            "pokexperto-champions-movimientos-2026-11-15"
+          ],
+          "aliases": [
+            "Vendaval",
+            "Huracán"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.move-1",
+          "rawObservedText": "Huracán"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-hurricane",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-tailwind",
+      "category": "moves",
+      "rawObservedText": "Viento Afín",
+      "esLA": "Viento Afín",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "moves",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Tailwind",
+        "sourceEs": "Viento Afín",
+        "ja": "おいかぜ",
+        "catalogKey": null,
+        "matchMethod": "existing-source-ledger-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.move-2",
+          "rawObservedText": "Viento Afín"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-tailwind",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-sleep-powder",
+      "category": "moves",
+      "rawObservedText": "Somnífero",
+      "esLA": "Somnífero",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "moves",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Sleep Powder",
+        "sourceEs": "Somnífero",
+        "ja": "ねむりごな",
+        "catalogKey": null,
+        "matchMethod": "off-inventory-standard-move-identity-no-runtime-id",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.move-3",
+          "rawObservedText": "Somnífero"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-sleep-powder",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-protect",
+      "category": "moves",
+      "rawObservedText": "Protección",
+      "esLA": "Protección",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "まもる",
+        "canonicalIds": [
+          "protect"
+        ],
+        "en": "Protect",
+        "sourceEs": "Protección",
+        "ja": "まもる",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Protección",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Protección"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.move-4",
+          "rawObservedText": "Protección"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.move-4",
+          "rawObservedText": "Protección"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.move-4",
+          "rawObservedText": "Protección"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.move-4",
+          "rawObservedText": "Protección"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.move-4",
+          "rawObservedText": "Protección"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-protect",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-compound-eyes",
+      "category": "abilities",
+      "rawObservedText": "Ojo Compuesto",
+      "esLA": "Ojo Compuesto",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "ふくがん",
+        "canonicalIds": [
+          "unsupported:ふくがん"
+        ],
+        "en": "Compound Eyes",
+        "sourceEs": "Ojo Compuesto",
+        "ja": "ふくがん",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Ojo Compuesto",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Ojo Compuesto"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.ability-value",
+          "rawObservedText": "Ojo Compuesto"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-compound-eyes",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-focus-sash",
+      "category": "items",
+      "rawObservedText": "Banda Aguante",
+      "esLA": "Banda Aguante",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Focus Sash",
+        "sourceEs": "Banda Aguante",
+        "ja": "きあいのタスキ",
+        "catalogKey": "きあいのタスキ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.item-value",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-1.held-item",
+          "rawObservedText": "Banda Aguante"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-focus-sash",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-bug",
+      "category": "types",
+      "rawObservedText": "INSECTO",
+      "esLA": "Insecto",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "むし",
+        "canonicalIds": [
+          "むし"
+        ],
+        "en": "Bug",
+        "sourceEs": "Bicho",
+        "ja": "むし",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Insecto",
+          "status": "verified-secondary",
+          "officialChampions": false,
+          "sourceIds": [
+            "pokexperto-za-differences-2025-10-15"
+          ],
+          "aliases": [
+            "Bicho",
+            "Insecto"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.type-1",
+          "rawObservedText": "INSECTO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-bug",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-flying",
+      "category": "types",
+      "rawObservedText": "VOLADOR",
+      "esLA": "Volador",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "ひこう",
+        "canonicalIds": [
+          "ひこう"
+        ],
+        "en": "Flying",
+        "sourceEs": "Volador",
+        "ja": "ひこう",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Volador",
+          "status": "official",
+          "officialChampions": false,
+          "sourceIds": [
+            "za-dragonite"
+          ],
+          "aliases": [
+            "Volador"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "details.type-2",
+          "rawObservedText": "VOLADOR"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-flying",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-raichunite-y",
+      "category": "items",
+      "rawObservedText": "Raichunita Y",
+      "esLA": "Raichunita Y",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Raichunite Y",
+        "sourceEs": "Raichunita Y",
+        "ja": "ライチュウナイトＹ",
+        "catalogKey": "ライチュウナイトＹ",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.item-value",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-3.held-item",
+          "rawObservedText": "Raichunita Y"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-raichunite-y",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-items-never-melt-ice",
+      "category": "items",
+      "rawObservedText": "Hielo Perpetuo",
+      "esLA": "Hielo Perpetuo",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "items",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Never-Melt Ice",
+        "sourceEs": "Hielo Perpetuo",
+        "ja": "とけないこおり",
+        "catalogKey": "とけないこおり",
+        "matchMethod": "existing-name-catalog-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.item-value",
+          "rawObservedText": "Hielo Perpetuo"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.row-6.held-item",
+          "rawObservedText": "Hielo Perpetuo"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-items-never-melt-ice",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-sneasler",
+      "category": "pokemon",
+      "rawObservedText": "Sneasler",
+      "esLA": "Sneasler",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "sneasler",
+        "canonicalIds": [
+          "sneasler"
+        ],
+        "en": "Sneasler",
+        "sourceEs": "Sneasler",
+        "ja": "オオニューラ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Sneasler",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Sneasler"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Sneasler"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-dire-claw",
+      "category": "moves",
+      "rawObservedText": "Garra Nociva",
+      "esLA": "Garra Nociva",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "フェイタルクロー",
+        "canonicalIds": [
+          "gw0170_s024"
+        ],
+        "en": "Dire Claw",
+        "sourceEs": "Garra Nociva",
+        "ja": "フェイタルクロー",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Garra Nociva",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Garra Nociva"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.move-1",
+          "rawObservedText": "Garra Nociva"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-dire-claw",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-close-combat",
+      "category": "moves",
+      "rawObservedText": "Cuerpo a Cuerpo",
+      "esLA": "Cuerpo a Cuerpo",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "インファイト",
+        "canonicalIds": [
+          "closeCombat"
+        ],
+        "en": "Close Combat",
+        "sourceEs": "A Bocajarro",
+        "ja": "インファイト",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Cuerpo a Cuerpo",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "A Bocajarro",
+            "Cuerpo a Cuerpo"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.move-2",
+          "rawObservedText": "Cuerpo a Cuerpo"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-close-combat",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-rock-slide",
+      "category": "moves",
+      "rawObservedText": "Avalancha",
+      "esLA": "Avalancha",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "いわなだれ",
+        "canonicalIds": [
+          "rockSlide"
+        ],
+        "en": "Rock Slide",
+        "sourceEs": "Avalancha",
+        "ja": "いわなだれ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Avalancha",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Avalancha"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.move-3",
+          "rawObservedText": "Avalancha"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-rock-slide",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-fake-out",
+      "category": "moves",
+      "rawObservedText": "Sorpresa",
+      "esLA": "Sorpresa",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ねこだまし",
+        "canonicalIds": [
+          "v096_095"
+        ],
+        "en": "Fake Out",
+        "sourceEs": "Sorpresa",
+        "ja": "ねこだまし",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Sorpresa",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Sorpresa"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.move-4",
+          "rawObservedText": "Sorpresa"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-fake-out",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-unburden",
+      "category": "abilities",
+      "rawObservedText": "Liviano",
+      "esLA": "Liviano",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "かるわざ",
+        "canonicalIds": [
+          "unsupported:かるわざ"
+        ],
+        "en": "Unburden",
+        "sourceEs": "Liviano",
+        "ja": "かるわざ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Liviano",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Liviano"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.ability-value",
+          "rawObservedText": "Liviano"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-unburden",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-fighting",
+      "category": "types",
+      "rawObservedText": "PELEA",
+      "esLA": "Pelea",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "かくとう",
+        "canonicalIds": [
+          "かくとう"
+        ],
+        "en": "Fighting",
+        "sourceEs": "Lucha",
+        "ja": "かくとう",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Pelea",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Lucha",
+            "Pelea"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.type-1",
+          "rawObservedText": "PELEA"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-fighting",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-poison",
+      "category": "types",
+      "rawObservedText": "VENENO",
+      "esLA": "Veneno",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "どく",
+        "canonicalIds": [
+          "どく"
+        ],
+        "en": "Poison",
+        "sourceEs": "Veneno",
+        "ja": "どく",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Veneno",
+          "status": "official",
+          "officialChampions": false,
+          "sourceIds": [
+            "za-victreebel"
+          ],
+          "aliases": [
+            "Veneno"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "details.type-2",
+          "rawObservedText": "VENENO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-poison",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-raichu",
+      "category": "pokemon",
+      "rawObservedText": "Raichu",
+      "esLA": "Raichu",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "gw091_08",
+        "canonicalIds": [
+          "gw091_08"
+        ],
+        "en": "Raichu",
+        "sourceEs": "Raichu",
+        "ja": "ライチュウ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Raichu",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-press-june"
+          ],
+          "aliases": [
+            "Raichu"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Raichu"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-zap-cannon",
+      "category": "moves",
+      "rawObservedText": "Electrocañón",
+      "esLA": "Electrocañón",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "でんじほう",
+        "canonicalIds": [
+          "gw0169_s032"
+        ],
+        "en": "Zap Cannon",
+        "sourceEs": "Electrocañón",
+        "ja": "でんじほう",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Electrocañón",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Electrocañón"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.move-1",
+          "rawObservedText": "Electrocañón"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-zap-cannon",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-focus-blast",
+      "category": "moves",
+      "rawObservedText": "Ataque Centrado",
+      "esLA": "Ataque Centrado",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "きあいだま",
+        "canonicalIds": [
+          "gw0169_s013"
+        ],
+        "en": "Focus Blast",
+        "sourceEs": "Onda Certera",
+        "ja": "きあいだま",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Ataque Centrado",
+          "status": "verified-secondary",
+          "officialChampions": false,
+          "sourceIds": [
+            "pokexperto-champions-movimientos-2026-11-15"
+          ],
+          "aliases": [
+            "Onda Certera",
+            "Ataque Centrado"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.move-2",
+          "rawObservedText": "Ataque Centrado"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-focus-blast",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-encore",
+      "category": "moves",
+      "rawObservedText": "Otra Vez",
+      "esLA": "Otra Vez",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "moves",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Encore",
+        "sourceEs": "Otra Vez",
+        "ja": "アンコール",
+        "catalogKey": null,
+        "matchMethod": "off-inventory-standard-move-identity-no-runtime-id",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.move-3",
+          "rawObservedText": "Otra Vez"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-encore",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-lightning-rod",
+      "category": "abilities",
+      "rawObservedText": "Pararrayos",
+      "esLA": "Pararrayos",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "ひらいしん",
+        "canonicalIds": [
+          "lightningRod"
+        ],
+        "en": "Lightning Rod",
+        "sourceEs": "Pararrayos",
+        "ja": "ひらいしん",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Pararrayos",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Pararrayos"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.ability-value",
+          "rawObservedText": "Pararrayos"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-lightning-rod",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-electric",
+      "category": "types",
+      "rawObservedText": "ELÉCTRICO",
+      "esLA": "Eléctrico",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "でんき",
+        "canonicalIds": [
+          "でんき"
+        ],
+        "en": "Electric",
+        "sourceEs": "Eléctrico",
+        "ja": "でんき",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Eléctrico",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-press-june"
+          ],
+          "aliases": [
+            "Eléctrico"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "details.type-1",
+          "rawObservedText": "ELÉCTRICO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-electric",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-farigiraf",
+      "category": "pokemon",
+      "rawObservedText": "Farigiraf",
+      "esLA": "Farigiraf",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "roster_v0107_032",
+        "canonicalIds": [
+          "roster_v0107_032"
+        ],
+        "en": "Farigiraf",
+        "sourceEs": "Farigiraf",
+        "ja": "リキキリン",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Farigiraf",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Farigiraf"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Farigiraf"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-psychic",
+      "category": "moves",
+      "rawObservedText": "Fuerza Psíquica",
+      "esLA": "Fuerza Psíquica",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "サイコキネシス",
+        "canonicalIds": [
+          "psychic"
+        ],
+        "en": "Psychic",
+        "sourceEs": "Psíquico",
+        "ja": "サイコキネシス",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Fuerza Psíquica",
+          "status": "verified-secondary",
+          "officialChampions": false,
+          "sourceIds": [
+            "pokexperto-champions-movimientos-2026-11-15"
+          ],
+          "aliases": [
+            "Psíquico",
+            "Fuerza Psíquica"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.move-1",
+          "rawObservedText": "Fuerza Psíquica"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-psychic",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-hyper-voice",
+      "category": "moves",
+      "rawObservedText": "Hipervoz",
+      "esLA": "Hipervoz",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ハイパーボイス",
+        "canonicalIds": [
+          "hyperVoice"
+        ],
+        "en": "Hyper Voice",
+        "sourceEs": "Vozarrón",
+        "ja": "ハイパーボイス",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Hipervoz",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Vozarrón",
+            "Hipervoz"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.move-2",
+          "rawObservedText": "Hipervoz"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-hyper-voice",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-trick-room",
+      "category": "moves",
+      "rawObservedText": "Espacio Raro",
+      "esLA": "Espacio Raro",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": false,
+        "category": "moves",
+        "key": null,
+        "canonicalIds": [],
+        "en": "Trick Room",
+        "sourceEs": "Espacio Raro",
+        "ja": "トリックルーム",
+        "catalogKey": null,
+        "matchMethod": "existing-source-ledger-english-identity",
+        "runtimeDecision": "Reference evidence only; no selector, inventory or engine expansion."
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.move-3",
+          "rawObservedText": "Espacio Raro"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term retained as off-runtime reference evidence only.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-trick-room",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-armor-tail",
+      "category": "abilities",
+      "rawObservedText": "Cola Armadura",
+      "esLA": "Cola Armadura",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "テイルアーマー",
+        "canonicalIds": [
+          "unsupported:テイルアーマー"
+        ],
+        "en": "Armor Tail",
+        "sourceEs": "Cola Armadura",
+        "ja": "テイルアーマー",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Cola Armadura",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Cola Armadura"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.ability-value",
+          "rawObservedText": "Cola Armadura"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-armor-tail",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-normal",
+      "category": "types",
+      "rawObservedText": "NORMAL",
+      "esLA": "Normal",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "ノーマル",
+        "canonicalIds": [
+          "ノーマル"
+        ],
+        "en": "Normal",
+        "sourceEs": "Normal",
+        "ja": "ノーマル",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Normal",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-press-march"
+          ],
+          "aliases": [
+            "Normal"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.type-1",
+          "rawObservedText": "NORMAL"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-normal",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-psychic",
+      "category": "types",
+      "rawObservedText": "PSÍQUICO",
+      "esLA": "Psíquico",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "エスパー",
+        "canonicalIds": [
+          "エスパー"
+        ],
+        "en": "Psychic",
+        "sourceEs": "Psíquico",
+        "ja": "エスパー",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Psíquico",
+          "status": "official",
+          "officialChampions": false,
+          "sourceIds": [
+            "za-hoopa"
+          ],
+          "aliases": [
+            "Psíquico"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "details.type-2",
+          "rawObservedText": "PSÍQUICO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-psychic",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-kingambit",
+      "category": "pokemon",
+      "rawObservedText": "Kingambit",
+      "esLA": "Kingambit",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "roster_v0105_035",
+        "canonicalIds": [
+          "roster_v0105_035"
+        ],
+        "en": "Kingambit",
+        "sourceEs": "Kingambit",
+        "ja": "ドドゲザン",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Kingambit",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Kingambit"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Kingambit"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-kowtow-cleave",
+      "category": "moves",
+      "rawObservedText": "Genufendiente",
+      "esLA": "Genufendiente",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ドゲザン",
+        "canonicalIds": [
+          "gw0169_p075"
+        ],
+        "en": "Kowtow Cleave",
+        "sourceEs": "Genufendiente",
+        "ja": "ドゲザン",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Genufendiente",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Genufendiente"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.move-1",
+          "rawObservedText": "Genufendiente"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-kowtow-cleave",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-sucker-punch",
+      "category": "moves",
+      "rawObservedText": "Golpe Bajo",
+      "esLA": "Golpe Bajo",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ふいうち",
+        "canonicalIds": [
+          "suckerPunch"
+        ],
+        "en": "Sucker Punch",
+        "sourceEs": "Golpe Bajo",
+        "ja": "ふいうち",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Golpe Bajo",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Golpe Bajo"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.move-2",
+          "rawObservedText": "Golpe Bajo"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-sucker-punch",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-low-kick",
+      "category": "moves",
+      "rawObservedText": "Patada Baja",
+      "esLA": "Patada Baja",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "けたぐり",
+        "canonicalIds": [
+          "gw0169_p040"
+        ],
+        "en": "Low Kick",
+        "sourceEs": "Patada Baja",
+        "ja": "けたぐり",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Patada Baja",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Patada Baja"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.move-3",
+          "rawObservedText": "Patada Baja"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-low-kick",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-supreme-overlord",
+      "category": "abilities",
+      "rawObservedText": "General Supremo",
+      "esLA": "General Supremo",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "そうだいしょう",
+        "canonicalIds": [
+          "supremeOverlord"
+        ],
+        "en": "Supreme Overlord",
+        "sourceEs": "General Supremo",
+        "ja": "そうだいしょう",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "General Supremo",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "General Supremo"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.ability-value",
+          "rawObservedText": "General Supremo"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-supreme-overlord",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-dark",
+      "category": "types",
+      "rawObservedText": "SINIESTRO",
+      "esLA": "Siniestro",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "あく",
+        "canonicalIds": [
+          "あく"
+        ],
+        "en": "Dark",
+        "sourceEs": "Siniestro",
+        "ja": "あく",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Siniestro",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Siniestro"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.type-1",
+          "rawObservedText": "SINIESTRO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-dark",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-steel",
+      "category": "types",
+      "rawObservedText": "ACERO",
+      "esLA": "Acero",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "はがね",
+        "canonicalIds": [
+          "はがね"
+        ],
+        "en": "Steel",
+        "sourceEs": "Acero",
+        "ja": "はがね",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Acero",
+          "status": "official",
+          "officialChampions": false,
+          "sourceIds": [
+            "za-lucario-z"
+          ],
+          "aliases": [
+            "Acero"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "details.type-2",
+          "rawObservedText": "ACERO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-steel",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-pokemon-vanilluxe",
+      "category": "pokemon",
+      "rawObservedText": "Vanilluxe",
+      "esLA": "Vanilluxe",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "pokemon",
+        "key": "roster_v0107_001",
+        "canonicalIds": [
+          "roster_v0107_001"
+        ],
+        "en": "Vanilluxe",
+        "sourceEs": "Vanilluxe",
+        "ja": "バイバニラ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Vanilluxe",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Vanilluxe"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "party.selected-name-and-species-icon",
+          "rawObservedText": "Vanilluxe"
+        }
+      ],
+      "decision": "identity-context-only",
+      "reason": "The party label may be a nickname. Species identity context is retained, but the capture does not attest the official species-name string.",
+      "sourceRecordId": null,
+      "officialChampions": false,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-blizzard",
+      "category": "moves",
+      "rawObservedText": "Ventisca",
+      "esLA": "Ventisca",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "ふぶき",
+        "canonicalIds": [
+          "blizzard"
+        ],
+        "en": "Blizzard",
+        "sourceEs": "Ventisca",
+        "ja": "ふぶき",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Ventisca",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Ventisca"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.move-1",
+          "rawObservedText": "Ventisca"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-blizzard",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-freeze-dry",
+      "category": "moves",
+      "rawObservedText": "Liofilización",
+      "esLA": "Liofilización",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "フリーズドライ",
+        "canonicalIds": [
+          "gw0169_s052"
+        ],
+        "en": "Freeze-Dry",
+        "sourceEs": "Liofilización",
+        "ja": "フリーズドライ",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Liofilización",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Liofilización"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.move-2",
+          "rawObservedText": "Liofilización"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-freeze-dry",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-moves-ice-shard",
+      "category": "moves",
+      "rawObservedText": "Esquirla Helada",
+      "esLA": "Esquirla Helada",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "moves",
+        "key": "こおりのつぶて",
+        "canonicalIds": [
+          "gw0170b_003"
+        ],
+        "en": "Ice Shard",
+        "sourceEs": "Esquirla Helada",
+        "ja": "こおりのつぶて",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Esquirla Helada",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Esquirla Helada"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.move-3",
+          "rawObservedText": "Esquirla Helada"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-moves-ice-shard",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-abilities-snow-warning",
+      "category": "abilities",
+      "rawObservedText": "Nevada",
+      "esLA": "Nevada",
+      "displayNormalization": "none",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "abilities",
+        "key": "ゆきふらし",
+        "canonicalIds": [
+          "snowWarning"
+        ],
+        "en": "Snow Warning",
+        "sourceEs": "Nevada",
+        "ja": "ゆきふらし",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Nevada",
+          "status": "unverified",
+          "officialChampions": false,
+          "sourceIds": [],
+          "aliases": [
+            "Nevada"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.ability-value",
+          "rawObservedText": "Nevada"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-abilities-snow-warning",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    },
+    {
+      "id": "owner-champions-2026-11-16-types-ice",
+      "category": "types",
+      "rawObservedText": "HIELO",
+      "esLA": "Hielo",
+      "displayNormalization": "case-only: observed uppercase type label to existing title case",
+      "canonicalAnchor": {
+        "registered": true,
+        "category": "types",
+        "key": "こおり",
+        "canonicalIds": [
+          "こおり"
+        ],
+        "en": "Ice",
+        "sourceEs": "Hielo",
+        "ja": "こおり",
+        "matchMethod": "existing-runtime-canonical-identity",
+        "baseline": {
+          "name": "Hielo",
+          "status": "official",
+          "officialChampions": true,
+          "sourceIds": [
+            "champions-emboar-el"
+          ],
+          "aliases": [
+            "Hielo"
+          ]
+        }
+      },
+      "observationRefs": [
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "details.type-1",
+          "rawObservedText": "HIELO"
+        }
+      ],
+      "decision": "accepted-system-term",
+      "reason": "Visible system term maps to an existing canonical runtime identity.",
+      "sourceRecordId": "owner-champions-2026-11-16-types-ice",
+      "officialChampions": true,
+      "softwareUiCoverageCredit": false,
+      "mechanicsVerified": false
+    }
+  ],
+  "excludedObservations": [
+    {
+      "captureId": "32684",
+      "sourceId": "owner-champions-capture-32684",
+      "location": "item-list.row-8-clipped-below-Baya-Drasi",
+      "partialText": "Baya Anjiro",
+      "decision": "excluded-clipped-row",
+      "reason": "The next row below the fully visible Baya Drasi is cut by the bottom viewport edge; no name attestation or mapping is adopted."
+    }
+  ],
+  "uiObservations": [
+    {
+      "id": "owner-game-ui-01",
+      "rawObservedText": "Pokémon",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Pokémon"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-02",
+      "rawObservedText": "Todos",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Todos"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-03",
+      "rawObservedText": "Recientes",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Recientes"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-04",
+      "rawObservedText": "Característ. ↑",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Característ. ↑"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-05",
+      "rawObservedText": "Potencia ↑",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Potencia ↑"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-06",
+      "rawObservedText": "Defensa",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Defensa"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-07",
+      "rawObservedText": "Curación",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Curación"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-08",
+      "rawObservedText": "Creación automática",
+      "observationRefs": [
+        {
+          "captureId": "32678",
+          "sourceId": "owner-champions-capture-32678",
+          "location": "item-selection.menu-label",
+          "rawObservedText": "Creación automática"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-09",
+      "rawObservedText": "Prol. efectos",
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-selection.category-tab",
+          "rawObservedText": "Prol. efectos"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-10",
+      "rawObservedText": "Baya",
+      "observationRefs": [
+        {
+          "captureId": "32684",
+          "sourceId": "owner-champions-capture-32684",
+          "location": "item-selection.category-tab",
+          "rawObservedText": "Baya"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-11",
+      "rawObservedText": "Combate Amistoso",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Amistoso"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-12",
+      "rawObservedText": "Combate Doble",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Combate Doble"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-13",
+      "rawObservedText": "Datos varios",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Datos varios"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-14",
+      "rawObservedText": "Características",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Características"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-15",
+      "rawObservedText": "Habilidad",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Habilidad"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-16",
+      "rawObservedText": "Objeto",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Objeto"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-17",
+      "rawObservedText": "¡Todo listo!",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "¡Todo listo!"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    },
+    {
+      "id": "owner-game-ui-18",
+      "rawObservedText": "Ocultar datos",
+      "observationRefs": [
+        {
+          "captureId": "32686",
+          "sourceId": "owner-champions-capture-32686",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        },
+        {
+          "captureId": "32688",
+          "sourceId": "owner-champions-capture-32688",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        },
+        {
+          "captureId": "32690",
+          "sourceId": "owner-champions-capture-32690",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        },
+        {
+          "captureId": "32692",
+          "sourceId": "owner-champions-capture-32692",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        },
+        {
+          "captureId": "32694",
+          "sourceId": "owner-champions-capture-32694",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        },
+        {
+          "captureId": "32696",
+          "sourceId": "owner-champions-capture-32696",
+          "location": "battle-details.menu-label",
+          "rawObservedText": "Ocultar datos"
+        }
+      ],
+      "decision": "game-ui-observation-only",
+      "softwareUiCoverageCredit": false,
+      "reason": "An observed official game label does not verify authored Singularity UI translations."
+    }
+  ],
+  "summary": {
+    "captures": 10,
+    "uniqueNameObservations": 71,
+    "acceptedSystemTerms": 65,
+    "identityContextOnly": 6,
+    "registeredSystemTerms": 41,
+    "offRuntimeSystemTerms": 24,
+    "byCategory": {
+      "pokemon": {
+        "observed": 6,
+        "accepted": 0,
+        "registeredAccepted": 0
+      },
+      "moves": {
+        "observed": 20,
+        "accepted": 20,
+        "registeredAccepted": 16
+      },
+      "abilities": {
+        "observed": 6,
+        "accepted": 6,
+        "registeredAccepted": 6
+      },
+      "items": {
+        "observed": 29,
+        "accepted": 29,
+        "registeredAccepted": 9
+      },
+      "types": {
+        "observed": 10,
+        "accepted": 10,
+        "registeredAccepted": 10
+      }
+    },
+    "uiObservations": 18,
+    "clippedRowsExcluded": 1,
+    "newlyOfficial": 27,
+    "newlyOfficialChampions": 31,
+    "statusOrGameScopeChanged": 31
+  },
+  "nameAliasDelta": {
+    "registeredNamesChanged": [],
+    "registeredAliasSetsChanged": [],
+    "statusChanges": [
+      {
+        "category": "items",
+        "key": "いのちのたま",
+        "canonicalIds": [
+          "lifeOrb"
+        ],
+        "before": {
+          "status": "verified-secondary",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ロゼルのみ",
+        "canonicalIds": [
+          "roseliBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ヨロギのみ",
+        "canonicalIds": [
+          "chartiBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ビアーのみ",
+        "canonicalIds": [
+          "kebiaBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "シュカのみ",
+        "canonicalIds": [
+          "shucaBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ヤチェのみ",
+        "canonicalIds": [
+          "yacheBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ヨプのみ",
+        "canonicalIds": [
+          "chopleBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "ウタンのみ",
+        "canonicalIds": [
+          "payapaBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "items",
+        "key": "カシブのみ",
+        "canonicalIds": [
+          "kasibBerry"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "ぼうふう",
+        "canonicalIds": [
+          "gw0170c_003"
+        ],
+        "before": {
+          "status": "verified-secondary",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "ふくがん",
+        "canonicalIds": [
+          "unsupported:ふくがん"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "types",
+        "key": "むし",
+        "canonicalIds": [
+          "むし"
+        ],
+        "before": {
+          "status": "verified-secondary",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "types",
+        "key": "ひこう",
+        "canonicalIds": [
+          "ひこう"
+        ],
+        "before": {
+          "status": "official",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "フェイタルクロー",
+        "canonicalIds": [
+          "gw0170_s024"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "かるわざ",
+        "canonicalIds": [
+          "unsupported:かるわざ"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "types",
+        "key": "どく",
+        "canonicalIds": [
+          "どく"
+        ],
+        "before": {
+          "status": "official",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "でんじほう",
+        "canonicalIds": [
+          "gw0169_s032"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "きあいだま",
+        "canonicalIds": [
+          "gw0169_s013"
+        ],
+        "before": {
+          "status": "verified-secondary",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "ひらいしん",
+        "canonicalIds": [
+          "lightningRod"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "サイコキネシス",
+        "canonicalIds": [
+          "psychic"
+        ],
+        "before": {
+          "status": "verified-secondary",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "テイルアーマー",
+        "canonicalIds": [
+          "unsupported:テイルアーマー"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "types",
+        "key": "エスパー",
+        "canonicalIds": [
+          "エスパー"
+        ],
+        "before": {
+          "status": "official",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "ドゲザン",
+        "canonicalIds": [
+          "gw0169_p075"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "ふいうち",
+        "canonicalIds": [
+          "suckerPunch"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "けたぐり",
+        "canonicalIds": [
+          "gw0169_p040"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "そうだいしょう",
+        "canonicalIds": [
+          "supremeOverlord"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "types",
+        "key": "はがね",
+        "canonicalIds": [
+          "はがね"
+        ],
+        "before": {
+          "status": "official",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "ふぶき",
+        "canonicalIds": [
+          "blizzard"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "フリーズドライ",
+        "canonicalIds": [
+          "gw0169_s052"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "moves",
+        "key": "こおりのつぶて",
+        "canonicalIds": [
+          "gw0170b_003"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      },
+      {
+        "category": "abilities",
+        "key": "ゆきふらし",
+        "canonicalIds": [
+          "snowWarning"
+        ],
+        "before": {
+          "status": "unverified",
+          "officialChampions": false
+        },
+        "after": {
+          "status": "official",
+          "officialChampions": true
+        }
+      }
+    ]
+  },
+  "afterCoverage": {
+    "pokemon": {
+      "total": 373,
+      "official": 31,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 342,
+      "officialChampions": 24,
+      "displayAvailable": 373,
+      "individuallyAttested": 31,
+      "individuallyAttestedPercent": 8.31,
+      "officialPercent": 8.31,
+      "officialChampionsPercent": 6.43
+    },
+    "moves": {
+      "total": 335,
+      "official": 34,
+      "verified-secondary": 107,
+      "provisional": 0,
+      "unverified": 194,
+      "officialChampions": 33,
+      "displayAvailable": 335,
+      "individuallyAttested": 141,
+      "individuallyAttestedPercent": 42.09,
+      "officialPercent": 10.15,
+      "officialChampionsPercent": 9.85
+    },
+    "abilities": {
+      "total": 245,
+      "official": 19,
+      "verified-secondary": 42,
+      "provisional": 0,
+      "unverified": 184,
+      "officialChampions": 19,
+      "displayAvailable": 245,
+      "individuallyAttested": 61,
+      "individuallyAttestedPercent": 24.9,
+      "officialPercent": 7.76,
+      "officialChampionsPercent": 7.76
+    },
+    "items": {
+      "total": 41,
+      "official": 9,
+      "verified-secondary": 19,
+      "provisional": 0,
+      "unverified": 13,
+      "officialChampions": 9,
+      "displayAvailable": 41,
+      "individuallyAttested": 28,
+      "individuallyAttestedPercent": 68.29,
+      "officialPercent": 21.95,
+      "officialChampionsPercent": 21.95
+    },
+    "types": {
+      "total": 18,
+      "official": 18,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 0,
+      "officialChampions": 17,
+      "displayAvailable": 18,
+      "individuallyAttested": 18,
+      "individuallyAttestedPercent": 100,
+      "officialPercent": 100,
+      "officialChampionsPercent": 94.44
+    },
+    "forms": {
+      "total": 134,
+      "official": 20,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 114,
+      "officialChampions": 13,
+      "displayAvailable": 134,
+      "individuallyAttested": 20,
+      "individuallyAttestedPercent": 14.93,
+      "officialPercent": 14.93,
+      "officialChampionsPercent": 9.7
+    },
+    "natures": {
+      "total": 11,
+      "official": 4,
+      "verified-secondary": 1,
+      "provisional": 0,
+      "unverified": 6,
+      "officialChampions": 4,
+      "displayAvailable": 11,
+      "individuallyAttested": 5,
+      "individuallyAttestedPercent": 45.45,
+      "officialPercent": 36.36,
+      "officialChampionsPercent": 36.36
+    },
+    "stats": {
+      "total": 6,
+      "official": 6,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 0,
+      "officialChampions": 6,
+      "displayAvailable": 6,
+      "individuallyAttested": 6,
+      "individuallyAttestedPercent": 100,
+      "officialPercent": 100,
+      "officialChampionsPercent": 100
+    },
+    "ui": {
+      "total": 1011,
+      "official": 0,
+      "verified-secondary": 0,
+      "provisional": 1011,
+      "unverified": 0,
+      "officialChampions": 0,
+      "displayAvailable": 1011,
+      "individuallyAttested": 0,
+      "individuallyAttestedPercent": 0,
+      "officialPercent": 0,
+      "officialChampionsPercent": 0
+    },
+    "warnings": {
+      "total": 169,
+      "official": 0,
+      "verified-secondary": 0,
+      "provisional": 169,
+      "unverified": 0,
+      "officialChampions": 0,
+      "displayAvailable": 169,
+      "individuallyAttested": 0,
+      "individuallyAttestedPercent": 0,
+      "officialPercent": 0,
+      "officialChampionsPercent": 0
+    }
+  },
+  "mappingChecks": [
+    {
+      "captureId": "32688",
+      "field": "details.item-value",
+      "context": "Sneasler",
+      "preliminaryAgentInference": "Baya Citrón",
+      "verifiedObservation": "Hierba Blanca",
+      "decision": "Bind the held item using the central item-value field. The owner supplied a grouped item list; list order does not establish Pokémon-to-item associations."
+    },
+    {
+      "captureId": "32692",
+      "field": "details.item-value",
+      "context": "Farigiraf",
+      "preliminaryAgentInference": "Hierba Blanca",
+      "verifiedObservation": "Baya Citrón",
+      "decision": "Bind the held item using the central item-value field. The owner supplied a grouped item list; list order does not establish Pokémon-to-item associations."
+    },
+    {
+      "captureId": "32684",
+      "field": "item-list.row-7",
+      "preliminaryAgentInference": "Baya Drasi incorrectly excluded as clipped in the preliminary agent count.",
+      "verifiedObservation": "Baya Drasi is fully visible in row 7. The following row is clipped.",
+      "decision": "Include Baya Drasi / Kasib Berry as supplied by the owner and verified visually; exclude only the next row."
+    }
+  ]
+}

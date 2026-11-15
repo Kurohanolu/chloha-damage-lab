@@ -20,10 +20,14 @@ for(const [category,records] of Object.entries(D.entries)){
  }
  assert.equal(count.total,count.official+count['verified-secondary']+count.provisional+count.unverified);
 }
-for(const [category,key,name,status] of [['moves','のしかかり','Golpe de Cuerpo','verified-secondary'],['moves','フレアドライブ','Erupción','official'],['abilities','ちょすい','Absorbeagua','verified-secondary'],['items','いのちのたま','Vidaesfera','verified-secondary'],['pokemon','gw092_05','Emboar','official']]){
+for(const [category,key,name,status] of [['moves','のしかかり','Golpe de Cuerpo','verified-secondary'],['moves','フレアドライブ','Erupción','official'],['abilities','ちょすい','Absorbeagua','verified-secondary'],['items','いのちのたま','Vidaesfera','official'],['pokemon','gw092_05','Emboar','official']]){
  assert.equal(A.entity(category,key,null),name,'Independently transcribed source witness');assert.equal(A.metadata(category,key).status,status);
 }
+assert.equal(A.metadata('items','いのちのたま').officialChampions,true,'Life Orb now has primary Champions name evidence');
+assert.ok(A.metadata('items','いのちのたま').sourceIds.some(id=>id.startsWith('owner-champions-capture-')),'The status change must retain its owner-provided capture provenance');
 const missing='not-a-canonical-entity';assert.equal(A.entity('moves',missing,'Spain fallback'),'Spain fallback');assert.equal(A.metadata('moves',missing),null,'Unknown fallback may not gain an attestation');
 assert.equal(counts.types.total,18,'All 18 type records accounted for');
-fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/source-contract.json',JSON.stringify({checkedAt:D.checkedAt,sourceSha256:D.sourceSha256,counts,physicalGameVerified:false,passed:true},null,2)+'\n');
+// Screenshots attest visible terminology only; they do not validate arithmetic,
+// effect behavior, supported mechanics or a release-ready physical-device UI.
+fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/source-contract.json',JSON.stringify({checkedAt:D.checkedAt,sourceSha256:D.sourceSha256,counts,ownerProvidedTerminologyCapturesVerified:true,physicalMechanicsVerified:false,passed:true},null,2)+'\n');
 console.log('PASS v1.1.0 provenance: exact source hash, canonical IDs, status/source distinctions, fallback exclusions and independently transcribed regional witnesses');

@@ -1,14 +1,18 @@
 # v1.1.0 ES-LA Source Audit
 
-- Verification date: 2026-11-15 (UTC).
+- Web-source verification: 2026-11-15 (UTC); owner-capture follow-up: 2026-11-16 (JST).
 - Audited repository baseline: `5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03`.
 - Stable release reference supplied by the owner: `0b270c1452505268364659edd402209b00b28673`.
 - Product locale: `es-LA`; browser/HTML/Intl locale: `es-419`; existing `es` is retained.
 - This document describes source evidence, not a claim that every registered entity has an independently verified ES-LA name. Runtime coverage is reported separately.
 
+## Owner-capture follow-up
+
+Ten privately retained owner-provided Champions captures add 65 deduplicated system-name attestations, bringing the ledger to **1,139 records from 50 sources**. Forty-one terms intersect the registered inventory; 24 remain reference-only. There are 27 newly official identities and 31 new official Champions confirmations, with no changes to display names, aliases, canonical IDs or support denominators. See the [capture audit](v110-es-la-capture-audit.md) for exact rows, hashes, before/after counts and the language-settings limitation. Six party labels remain identity context because nicknames cannot be excluded. The eighteen observed game UI labels do not upgrade the application UI inventory. Original screenshots are not published.
+
 ## Source priority and evidence rules
 
-1. Official Pokémon Champions material in a confirmed Latin American regional route.
+1. Official Pokémon Champions game wording in reviewed owner-provided ES-LA captures (with locale attestation/settings limitations recorded), or official material in a confirmed Latin American regional route.
 2. Official Pokémon Latin American material, with the actual game/scope recorded.
 3. A reliable third-party comparison with an explicit regional column, attributed to that source and game.
 4. Existing ES-ES names as a visibly classified fallback.
@@ -73,9 +77,9 @@ The interim secondary dataset has 112 move, 283 item and 37 ability records with
 
 Identity disambiguation matters: `Erupción` here refers to Flare Blitz, not to the English move Eruption. The existing ES name for Eruption is `Estallido`. The mappings must follow canonical IDs, rather than an English-looking translation.
 
-## Final source inventory
+## Web source inventory at the accepted baseline
 
-`docs/data/v110-es-la-source-records.json` contains **1,074 attestation records from 40 source records**, not 1,074 distinct supported entities. The same entity can appear in multiple independent or historical attestations. Only the runtime inventory intersection determines product coverage.
+Before the owner-capture follow-up, `docs/data/v110-es-la-source-records.json` contained **1,074 attestation records from 40 source records**, not 1,074 distinct supported entities. The same entity can appear in multiple independent or historical attestations. Only the runtime inventory intersection determines product coverage.
 
 | Evidence group | Records | Interpretation |
 | --- | ---: | --- |
@@ -86,7 +90,7 @@ Identity disambiguation matters: `Erupción` here refers to Flare Blitz, not to 
 | WikiDex Champions paired item names | 11 | Explicit `es-419` name spans, all agreeing with the Z-A comparison. |
 | Total | 1,074 | Attestations, including overlap and off-inventory names. |
 
-The 118 official records comprise 33 moves, 13 abilities, 9 items, 13 Pokémon, 23 forms, 17 types, 4 natures and 6 stat labels. Of these, 101 concern Champions and 17 retain Z-A-only provenance. `officialChampions` is true only for the former. Bug/Insecto has no accepted primary attestation in this pass.
+The 118 official records comprise 33 moves, 13 abilities, 9 items, 13 Pokémon, 23 forms, 17 types, 4 natures and 6 stat labels. Of these, 101 concern Champions and 17 retain Z-A-only provenance. `officialChampions` is true only for the former. Bug/Insecto had no accepted primary attestation in the web-only pass; capture 32686 now supplies game wording.
 
 Primary Champions evidence includes the official Latin American Mega-Emboar team article, `/es-MX/` launch announcements and Nintendo Americas' Champions release notes. The six Nintendo move names were checked against the paired English release notes to identify the entities. Parallel English/Portuguese material is identity evidence, not ES-LA wording evidence. Search-index retrieval was used when an official editorial page returned an anti-bot iframe; that limitation is recorded in the source entry. No authentication or access protection was bypassed.
 
@@ -121,14 +125,14 @@ Bounded detail verification also confirmed the following mappings that the exist
 
 ## Validation and remaining limits
 
-- All 1,074 record IDs are unique; all source references resolve; no replacement characters were introduced.
+- All 1,074 web-baseline record IDs are unique; all source references resolve; no replacement characters were introduced.
 - Every `officialChampions: true` record has `status: official` and `targetGame: Pokémon Champions`.
 - Numeric namespaces were reviewed: item/nature IDs initially supplied under a PokeAPI label were corrected to their actual main-series game namespaces, with no conflation of IDs.
 - Accepted primary type records do not contain the excluded Bicho/Lucha labels.
 - Source data and the audit report are separate from runtime engine files; this research made no calculation-engine change.
 - Exact coverage and unresolved-name lists are generated from the registered runtime inventory in the translation coverage report, not from the source table's size.
 - Names inherited only from the existing ES dictionary require honest fallback classification.
-- No physical Champions screen was inspected in this source audit.
+- No physical Champions screen was inspected in the web-only phase. The follow-up independently inspected ten owner-provided game captures for terminology; no damage-mechanics or physical-device testing of the calculator is claimed.
 - No claim is made that third-party Z-A names are a complete or authoritative Champions terminology list.
 
 ## Continuation audit (2026-11-15)
