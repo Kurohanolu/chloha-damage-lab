@@ -31,6 +31,7 @@ jobs:
       - name: Validate release identity and unchanged 300-case contract
         run: |
           node scripts/verify-release.cjs
+          node scripts/v110-es-la-ui-inventory.cjs --check
           node scripts/v110-es-la-coverage.cjs --check
           node tests/v0184-public-baseline.cjs
       - name: Run all new candidate acceptance (no test discovery exclusions)

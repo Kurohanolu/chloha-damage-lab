@@ -1164,6 +1164,10 @@ function localizedUiTemplate(base,target,entityTarget=target){
 }
 // The selected language remains es-LA in storage/events; only general UI templates share Spanish.
 function localizedUi(base){
+ if(locale==='es-LA'){
+  const dynamic=globalThis.ChlohaEsLaUi?.dynamic?.(base,localizedTypeNames);
+  if(dynamic!==null&&dynamic!==undefined)return dynamic;
+ }
  return regionalUi(localizedUiTemplate(base,localeUiCode(locale),locale),base,locale);
 }
 // Reverse every known UI translation before caching fresh DOM text.

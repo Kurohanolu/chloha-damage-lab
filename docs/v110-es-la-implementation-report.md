@@ -1,6 +1,6 @@
 # Singularity v1.1.0 — ES-LA implementation report
 
-Status: development in progress; not a release authorization.
+Status: development in progress; not a release authorization. Reviewable draft: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
 
 ## Fixed starting point
 
@@ -29,3 +29,15 @@ The shared feedback validation contract adds the internal `es-LA` locale without
 The initial source compilation maps 1,074 attestation records from 40 sources to the registered runtime inventory. All 18 types have individual attestations; 133/335 moves and 55/245 abilities are attested. Per-game official scope, unresolved fallbacks and overlapping form/UI-warning counts remain explicit in the coverage report.
 
 Results and exact candidate SHA bindings will be recorded in `v110-es-la-test-report.md` after CI. Historical exact-nine identity assertions remain attributable to the immutable Stable commit; existing functional nine-language regressions continue on the candidate, with new ten-language tests in addition. No test failure is accepted as a release pass.
+
+## Continued integration audit
+
+The first committed candidate was `1536a29783f98652dc92b40273c94cd0ff075362`, tree `6f4c2839ad8ca9a2d9f39654f83475ef4ef75e96`. Its PR CI checkout was synthetic merge `f3332e2cc7bdf712c0cef9eede42e0a6062cf8b5` with the same tree. It is a checkpoint, not final acceptance.
+
+Independent Sol review caught and closed legacy name-audit fixture scope, catalog ordering and normalizer compatibility failures. Existing nine-language tests remain active on candidate code. CI additionally exposed historical dependency symlinks falsely marking a worktree dirty, a prior-version memory baseline assertion and an obsolete migration feedback wire-version expectation. Corrections preserve the original fixed baselines for their original release lines and explicitly validate the new candidate contract.
+
+An expanded UI inventory audit found English fallback in dynamic condition, multi-hit, KO, trace and battle-history messages. These product defects are corrected by an ES-LA-only renderer operating on canonical source templates. The renderer preserves numeric tokens, resolves names from canonical metadata and bounds source-recovery storage to 512 entries. Its separate regression gate compares existing nine-language output to the immutable Stable renderer. Authored reason/error copy is included in the provisional UI inventory.
+
+Independent review additionally found a Spanish alias collision (Carámbano), an estimated-move history annotation left in Japanese and a hardcoded Spain-Spanish type name. Canonical name binding and explicit history annotations address these cases; regression witnesses preserve the distinction between Icicle Crash and Icicle Spear. Translation text is never used as a calculation identifier.
+
+ES-LA mobile styling makes the full regional locale label readable, gives advanced settings a dark surface with measurable text contrast, and temporarily hides the fixed result bar while feedback is open. The final browser acceptance must verify all three changes and restore the result bar on close.

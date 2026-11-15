@@ -3,6 +3,7 @@
 ## Current checkpoint
 
 - Branch: `feature/v110-es-la-localization`.
+- Review: [Draft PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
 - Starting main: `5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03`.
 - Stable numerical reference: `0b270c1452505268364659edd402209b00b28673`.
 - Candidate: `v1.1.0-pre.1` development metadata, not a published tag.
@@ -11,7 +12,7 @@
 
 ## Resume procedure
 
-Fetch source main and the existing development PR before changing files. Reuse this branch/PR; do not duplicate. Read source audit, coverage, implementation and test reports. Bind subsequent results to the exact new head/tree; never reuse a prior candidate PASS after code changes.
+Fetch source main and PR #68 before changing files. Reuse this branch/PR; do not duplicate. Read source audit, coverage, implementation and test reports. Bind subsequent results to the exact new head/tree; never reuse a prior candidate PASS after code changes.
 
 Remaining work: finish canonical provenance coverage; run all candidate workflows and browser acceptance; resolve failures; request independent Sol review of the committed candidate; complete the five development reports. Owner release approval is still pending.
 

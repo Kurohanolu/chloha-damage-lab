@@ -7,6 +7,10 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
 const widths=[320,360,390,430,768,1440];
 const result=page=>page.evaluate(()=>({input:window.ChlohaLastCalculation.a,result:window.ChlohaLastCalculation.r}));
 async function fits(page,where){assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no document overflow: '+where);}
+async function unobstructed(page,selector){
+ const result=await page.locator(selector).evaluate(async node=>{node.scrollIntoView({block:'center'});await new Promise(requestAnimationFrame);const rect=node.getBoundingClientRect(),x=rect.x+rect.width/2,y=rect.y+rect.height/2,hit=document.elementFromPoint(x,y);return {visible:rect.width>0&&rect.height>0&&x>=0&&x<innerWidth&&y>=0&&y<innerHeight,unobstructed:node===hit||node.contains(hit),hit:hit?{tag:hit.tagName,id:hit.id,className:hit.className}:null};});
+ assert.ok(result.visible&&result.unobstructed,'Feedback control receives pointer input: '+selector+' '+JSON.stringify(result));
+}
 async function changeLocale(page,locale){
  // The language control is in the header, so return to it after editing lower cards.
  const control=page.locator('#chloha-locale');await control.scrollIntoViewIfNeeded();await control.selectOption(locale);
@@ -17,8 +21,8 @@ async function focusVisible(page,selector){
  assert.ok(!['BODY','HTML'].includes(focus.tag),'Tab reaches a control after '+selector);
  assert.ok(focus.width>0&&focus.height>0&&focus.visible&&focus.outline!=='none'&&focus.outlineWidth>=2,'keyboard focus is visibly outlined after '+selector+': '+JSON.stringify(focus));
 }
-async function textContrast(page,selector){
- return page.locator(selector).first().evaluate(node=>{
+async function textContrast(page,selector,index=0){
+ return page.locator(selector).nth(index).evaluate(node=>{
   const rgba=s=>(s.match(/[\d.]+/g)||[]).map(Number),blend=(f,b)=>[0,1,2].map(i=>f[i]*(f[3]??1)+b[i]*(1-(f[3]??1)));
   let bg=[255,255,255],chain=[];for(let p=node;p;p=p.parentElement)chain.push(p);
   for(const p of chain.reverse()){const s=getComputedStyle(p);if(s.backgroundImage!=='none')return {skipped:'gradient/image background requires separate pixel analysis'};bg=blend(rgba(s.backgroundColor),bg);}
@@ -27,7 +31,7 @@ async function textContrast(page,selector){
  });
 }
 (async()=>{
- const lab=await startLab();let browser;const evidence={mode:'local-browser-emulation; client-only feedback fixture',realDevice:false,productionRequests:0,productionMutations:0,locales,widths,cases:[],contrast:[],unverified:['real smartphone hardware','full screen-reader experience','all UI text contrast including gradients/images']};
+ const lab=await startLab();let browser;const evidence={mode:'local-browser-emulation; client-only feedback fixture',realDevice:false,productionRequests:0,productionMutations:0,locales,widths,cases:[],contrast:[],localeLabelWidths:[],unverified:['real smartphone hardware','full screen-reader experience','all UI text contrast including gradients/images']};
  fs.mkdirSync('reports/v110',{recursive:true});
  try{
   browser=await launchBrowser();
@@ -37,6 +41,10 @@ async function textContrast(page,selector){
    await context.addInitScript(value=>localStorage.setItem('chloha.damageLab.locale',value),locale);
    try{
     await page.goto(lab.origin+'/candidate/');await ready(page);await fits(page,locale+'/'+width+'/initial');
+    if(locale==='es-LA'&&width<=700){
+     const labelWidth=await page.locator('#chloha-locale').evaluate(async node=>{await document.fonts.ready;const style=getComputedStyle(node),canvas=document.createElement('canvas'),context=canvas.getContext('2d');context.font=style.font;const label=node.selectedOptions[0].label,textWidth=context.measureText(label).width,padding=parseFloat(style.paddingLeft)+parseFloat(style.paddingRight),arrowAllowance=24;return {label,textWidth,padding,arrowAllowance,requiredWidth:Math.ceil(textWidth+padding+arrowAllowance),clientWidth:node.clientWidth};});
+     assert.equal(labelWidth.label,'Español (Latinoamérica)');assert.ok(labelWidth.clientWidth>=labelWidth.requiredWidth,'Complete regional locale label remains readable at '+width+'px: '+JSON.stringify(labelWidth));evidence.localeLabelWidths.push({width,...labelWidth});
+    }
     if(locale==='es-LA'&&[320,390,1440].includes(width))await page.screenshot({path:'reports/v110/es-la-initial-'+width+'.png',fullPage:true});
     assert.equal(await page.locator('.lab-intro h1').innerText(),'Singularity');assert.equal(await page.locator('.lab-intro .eyebrow').count(),0);
     for(const selector of ['#chloha-locale','#attSearch','#defSearch','#moveSearch','#attStatsToggle','#feedbackButton','#resetCalculation']){
@@ -49,6 +57,12 @@ async function textContrast(page,selector){
     await page.locator('#att-attack-points').fill('20');
     await page.locator('#attDetails > summary').click();
     await fits(page,locale+'/'+width+'/details');
+    if(locale==='es-LA'&&width===390){
+     for(const selector of ['#attDetails .setting-group h3','#attDetails .setting-group label']){
+      const nodes=page.locator(selector);assert.ok(await nodes.count()>0,'Advanced settings text exists: '+selector);
+      for(let index=0;index<await nodes.count();index++){if(!await nodes.nth(index).isVisible())continue;const contrast=await textContrast(page,selector,index);evidence.contrast.push({locale,width,selector,index,...contrast});assert.equal(contrast.skipped,undefined,'Advanced setting plain background can be measured');assert.ok(contrast.ratio>=contrast.minimum,'Advanced setting text contrast '+selector+'['+index+']: '+contrast.ratio);}
+     }
+    }
     if(locale==='es-LA'&&width===390)await page.screenshot({path:'reports/v110/es-la-details-390.png',fullPage:true});
     await page.selectOption('#weather','rain');await page.selectOption('#screen','reflect');
     const previous=await result(page);assert.ok(previous.result.rolls.length>=16);
@@ -56,11 +70,13 @@ async function textContrast(page,selector){
     await changeLocale(page,locale);
     await page.locator('#feedbackButton').click();await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled);
     await fits(page,locale+'/'+width+'/feedback');
-    if(locale==='es-LA'&&width===390)await page.locator('#feedbackPanel').screenshot({path:'reports/v110/es-la-feedback-390.png'});
+    if(locale==='es-LA'&&width===390){await page.screenshot({path:'reports/v110/es-la-feedback-viewport-390.png'});await page.locator('#feedbackPanel').screenshot({path:'reports/v110/es-la-feedback-390.png'});}
+    if(locale==='es-LA'&&width<=700){assert.equal(await page.locator('.mobile-result').isVisible(),false,'Regional feedback form is not covered by the fixed result bar');await unobstructed(page,'#feedbackEmail');await unobstructed(page,'#feedbackSubmit');}
     await page.locator('#feedbackSubmit').click();assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');assert.ok(await page.locator('#feedbackErrors').innerText());
     await page.selectOption('#feedbackCategory','bug');await page.locator('#feedbackDescription').fill('Local emulation failure test.');await page.locator('#feedbackSubmit').click();
     await page.waitForFunction(()=>!document.getElementById('feedbackErrors').hidden&&!document.getElementById('feedbackSubmit').disabled);assert.equal(await page.locator('#feedbackDescription').inputValue(),'Local emulation failure test.');
     assert.deepEqual(await result(page),previous,'feedback error preserves calculation');await page.locator('#feedbackClose').click();
+    if(locale==='es-LA'&&width<=700)assert.equal(await page.locator('.mobile-result').isVisible(),true,'Result bar returns when regional feedback closes');
     assert.equal(await page.evaluate(()=>window.ChlohaPersistence.save()),true,'persist the current operation state');await page.reload();await ready(page);
     assert.deepEqual(await result(page),previous,'all width/locale calculation state survives reload');
     assert.equal(await page.locator('#chloha-locale').inputValue(),locale);assert.equal(await page.locator('#feedbackDescription').inputValue(),'','feedback text is not automatically saved');

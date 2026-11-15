@@ -6,8 +6,8 @@ const {startLab,launchBrowser,ready,blockExternal}=require('./helpers/v0188-brow
 const witnesses=[
  {category:'moves',key:'のしかかり',id:'gw0170_s007',es:'Golpe Cuerpo',regional:'Golpe de Cuerpo'},
  {category:'moves',key:'フレアドライブ',id:'flareBlitz',es:'Envite Ígneo',regional:'Erupción'},
- {category:'abilities',key:'ちょすい',id:'waterAbsorb',control:'defAbility',es:'Absorbe Agua',regional:'Absorbeagua'},
- {category:'abilities',key:'もうか',id:'blaze',control:'attAbility',es:'Mar Llamas',regional:'Mar de Llamas'},
+ {category:'abilities',key:'ちょすい',id:'waterAbsorb',control:'defAbility',speciesControl:'dbDefPokemon',speciesId:'candidate093_09',es:'Absorbe Agua',regional:'Absorbeagua'},
+ {category:'abilities',key:'もうか',id:'blaze',control:'attAbility',speciesControl:'dbAttPokemon',speciesId:'charizard',es:'Mar Llamas',regional:'Mar de Llamas'},
  {category:'items',key:'いのちのたま',id:'lifeOrb',control:'attItem',es:'Vidasfera',regional:'Vidaesfera'},
  {category:'pokemon',key:'gw092_05',id:'gw092_05',es:'Emboar',regional:'Emboar'},
  {category:'pokemon',key:'mega_charizard_y',id:'mega_charizard_y',es:'Mega-Charizard Y',regional:'Mega-Charizard Y'}
@@ -27,6 +27,11 @@ const numeric=page=>page.evaluate(()=>JSON.stringify({a:ChlohaLastCalculation.a,
    context=await browser.newContext({viewport:{width,height:900}});const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await blockExternal(context,page);await page.goto(lab.origin+'/candidate/');await ready(page);
    for(const w of witnesses){
     await page.selectOption('#chloha-locale','es-LA');
+    if(w.speciesId){
+     assert.equal(await page.evaluate(({id,ability})=>ChlohaGameData.pokemon.find(p=>p.id===id)?.abilities.includes(ability),{id:w.speciesId,ability:w.key}),true,'Ability witness requires a species that actually has it');
+     await page.selectOption('#'+w.speciesControl,w.speciesId);await ready(page);
+     assert.equal(await page.locator('#'+w.control+' option[value="'+w.id+'"]').count(),1,'Species-specific ability option exists before typeahead');
+    }
     for(const query of new Set([w.es,w.regional])){
      if(w.category==='moves'){
       await page.locator('#moveSearch').fill(query);const option=page.locator('#moveSuggestions [role=option]').filter({has:page.locator('span').filter({hasText:new RegExp('^'+w.regional.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$')})});

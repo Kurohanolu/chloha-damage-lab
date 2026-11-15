@@ -23,7 +23,13 @@ const report={role:'HISTORICAL ONLY; not v1.1.0 candidate acceptance',suite,base
 try{
  git('worktree','add','--detach',worktree,baseline);
  for(const directory of ['node_modules','services/feedback/node_modules','tests/reference/node_modules']){
-  const source=path.join(root,directory);if(fs.existsSync(source)){fs.mkdirSync(path.dirname(path.join(worktree,directory)),{recursive:true});fs.symlinkSync(source,path.join(worktree,directory),'dir');}
+  const source=path.join(root,directory);
+  if(fs.existsSync(source)){
+   // Keep node_modules an actual ignored directory. A directory symlink is
+   // an untracked file to Git and falsely dirties the immutable historical tree.
+   const target=path.join(worktree,directory);fs.mkdirSync(target,{recursive:true});
+   for(const entry of fs.readdirSync(source))fs.symlinkSync(path.join(source,entry),path.join(target,entry));
+  }
  }
  console.log('HISTORICAL v1.0.0 acceptance at '+baseline+'; candidate is independently covered by v1.1.0 gates.');
  for(const file of selected){

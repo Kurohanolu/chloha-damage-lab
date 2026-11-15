@@ -56,6 +56,7 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .budget,.singularity .detail-hint{color:var(--sg-muted)}
 .singularity details,.singularity .setting-group{border-color:var(--sg-border)}
 .singularity .setting-group h3{color:var(--sg-text)}
+html[lang="es-419"] .singularity .setting-group{background:var(--sg-surface-raised)}
 .singularity .board-quick,.singularity .board-controls,.singularity .board-control,.singularity .utility,.singularity .result-card{background:var(--sg-surface);border-color:var(--sg-border);box-shadow:none}
 .singularity .board-quick{border-top:2px solid var(--sg-purple)}
 .singularity .board-summary,.singularity .board-quick-heading small,.singularity .board-controls label{color:var(--sg-muted)}
@@ -113,4 +114,13 @@ body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{co
  .singularity .mobile-result{padding-bottom:max(10px,env(safe-area-inset-bottom))}
 }
 @media(max-width:360px){.singularity .lab{padding-inline:9px}.singularity .fighter{padding-inline:10px}}
+/* Keep the regional Spanish label readable; the original nine locale layouts
+   retain their existing header geometry. */
+@media(max-width:700px){
+ html[lang="es-419"] .singularity .lab-header{grid-template-columns:minmax(0,1fr) auto}
+ html[lang="es-419"] .singularity .version{grid-column:2}
+ html[lang="es-419"] .singularity #chloha-locale-control{grid-column:1 / -1;grid-row:2;font-size:12px!important}
+ html[lang="es-419"] .singularity #chloha-locale{min-width:0;flex:1}
+ html[lang="es-419"] body.singularity:has(#feedbackPanel:not([hidden])) .mobile-result{display:none}
+}
 @media(prefers-reduced-motion:reduce){.singularity *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
