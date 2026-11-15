@@ -17,7 +17,8 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),{chromium}=requ
   const page=await context.newPage();await page.goto(app.origin);await page.click('#feedbackButton');
   await page.waitForFunction(()=>document.getElementById('feedbackStatus').textContent.includes('temporalmente deshabilitado'));
   assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
-  assert.equal(await page.locator('#feedbackFields').isDisabled(),true);
+  assert.equal(await page.locator('#feedbackFields').evaluate(node=>node.disabled),true);
+  assert.equal(await page.locator('#feedbackDescription').isDisabled(),true);
   await page.evaluate(()=>document.getElementById('feedbackForm').requestSubmit());assert.equal(posts,0);
   await page.selectOption('#chloha-locale','en');await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled);
   await page.fill('#feedbackDescription','Retained draft');
@@ -25,7 +26,7 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),{chromium}=requ
   await page.evaluate(()=>document.getElementById('feedbackForm').requestSubmit());assert.equal(posts,0);
   await page.selectOption('#chloha-locale','ja');await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled);
   assert.equal(await page.inputValue('#feedbackDescription'),'Retained draft');
-  assert.equal(await page.locator('#feedbackFields').isDisabled(),false);assert.equal(posts,0);
+  assert.equal(await page.locator('#feedbackFields').evaluate(node=>node.disabled),false);assert.equal(posts,0);
   assert.equal(app.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);
   fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/feedback-pause.json',JSON.stringify({passed:true,blockedLocale:'es-LA',posts,localeSwitchRestores:true,draftRetained:true})+'\n');
   console.log('PASS ES-LA feedback pause: visible notice, submit guard, language switches, retained draft, zero posts');
