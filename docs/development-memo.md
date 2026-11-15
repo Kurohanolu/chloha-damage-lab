@@ -1,3 +1,21 @@
+## 2026-11-15: post-v1.0 future concepts — Singularity Mode (idea backlog)
+
+> **Status: ideas only / unapproved / not a release commitment.** Keep v1.0.0 Stable and its supported mechanics unchanged. No implementation, roadmap date, or prioritization is authorized by this entry.
+
+- **Design direction:** Add a distinctive, opt-in **Singularity Mode** hub containing multiple advanced analysis tools, with a visually separate dark/futuristic presentation, short optional animations, mobile-friendly layout, and reduced-motion/low-load fallback. Preserve the ordinary damage-calculator workflow.
+- **SP Optimizer (leading candidate):** Search Pokémon Champions ability-point (SP) allocations against the existing validated calculation engine. Current target model: level 50, per-stat 0–32 and total 66 points. Explore minimum investment for a guaranteed survive / KO, speed thresholds, and eventually multiple simultaneous constraints. Clearly state assumptions and unsupported effects; do not modify the damage engine to guess at missing mechanics. "EV Optimizer" was an initial working title; user-facing Champions terminology should be SP / ability points.
+- **Oracle:** Reverse-infer *possible*, not uniquely determined, opponent stat distributions from observed damage/HP loss; show uncertainty and multiple candidates.
+- **Matrix:** Compare one attacker/defender against a roster of up to six hypothetical opponents using the same calculation engine, reporting damage ranges and KO thresholds.
+- **Aegis:** Evaluate defensive survival across multiple physical/special threats.
+- **Nexus:** Compare the impact of supported held items under identical conditions.
+- **Velocity:** Find minimum speed-point thresholds under supported speed modifiers and battle conditions, keeping turn-order claims within verified rules.
+- **Quantum Lab:** Compare what-if conditions (weather, terrain, abilities, screens, etc.) without changing the base calculation logic.
+- **Probability Engine:** Display exact supported damage distributions and KO probabilities; extend multi-hit/accuracy cases only after relevant mechanics are validated.
+- **Turn Simulator:** **Separate future Chloha Labs project, not part of Singularity Mode.** A multi-turn/doubles battle simulator would need its own persistent battle state, action ordering, switching, end-of-turn effects, RNG, and wide coverage of Champions mechanics. Consider sharing an independently tested damage-calculation library later, without destabilizing v1.0.0.
+- **Localization idea:** Latin American Spanish **ES-LA** as a future tenth language. Proposed internal app language key `es-LA` and browser-standard locale mapping `es-419`; use official Pokémon Champions Latin American terminology as highest priority, distinguish confirmed from provisional terms, reuse shared `es-ES` translations only where verified, and request owner in-game confirmation *only* for residual unresolved terms.
+- **Potential order for later evaluation (not approved):** first assess ES-LA/localization and SP Optimizer feasibility after stable release; then Matrix/Oracle and other modes based on user value, verified mechanics, test cost, and maintenance risk.
+- **Quality gates for any future implementation:** ID-based translations; deterministic damage-engine reuse; 9-language baseline regression before 10-language migration; device performance, language switching/reload, accessible low-motion UI, and clear unsupported/partial-coverage labels.
+
 ## 2026-11-15: final actual administrator acceptance and publication preparation
 
 - Owner completed the existing protected Worker administration flow and created synthetic Issue #65. Exact-record D1 SELECT confirms Accepted/created, Issue65 URL and revision4; writes0/database unchanged. All65 repository entries contain exactly one matching Issue marker.
