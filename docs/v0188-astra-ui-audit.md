@@ -24,3 +24,7 @@ Only `i18n.js` is changed in this subtask. Corrected literal-regex escaping, acc
 - `node tests/v0188-astra-ui-locale.cjs --browser` adds 54 real-browser locale/viewport checks of actual control attributes, overflow, identical numeric inputs/results and reload. GitHub Actions must supply its actual result. Local system Chromium fails to launch; the existing 90-transition browser test also cannot start without the matching browser installation. These are not recorded as test passes.
 
 New short accessibility phrases are authored translations; full native-speaker review remains open. Existing localized Pokémon/move/type references were reused and their separate representative reference tests remain passing. The new test does not claim every catalog entity or every UI phrase has been linguistically reviewed.
+
+## Initial CI test correction
+
+The first added browser test failed its aggregate `aria-label` count before reaching locale assertions. Source inspection showed that the 48 detailed stat inputs are named by native wrapping labels, not `aria-label` attributes. The test now checks all 48 controls by explicit ID and requires a nonempty associated `.sr-only` label, plus exact counts and nonempty names for 12 preview buttons, 10 presets, 2 stat overviews and 4 navigation/summary controls. This expands the actual inspected names to 76 rather than lowering the original arbitrary count. No product code was changed for this test correction. The VM fixture also now uses the renderer's exact `の6能力ポイント` phrase. Actual CI rerun is required.
