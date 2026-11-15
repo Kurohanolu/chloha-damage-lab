@@ -69,13 +69,18 @@ log prints comparison summaries. Unsupported paint metrics remain null.
 ## Existing public environment, read-only
 
 Run `node scripts/v0188-public-performance.cjs` to measure the existing public
-v0.187 independently of the loopback candidate comparison. It performs three
+release independently of the loopback candidate comparison. It performs three
 fresh-context cold navigations and warm reloads for each desktop/mobile profile,
 then twelve calculation and twelve language-change interactions in the isolated
 browser context. It opens no feedback form and sends no reports. A CDP request
 guard permits only GET/HEAD to the Singularity Pages subtree or the known
 PokeAPI sprite subtree and blocks everything else before transmission. It stops
-if the public version title is not v0.187 Pre-Release 33.
+unless public metadata identifies the pinned v0.187 release or this exact current
+release with valid independent-review and owner approvals. The displayed title
+must match that metadata, and the observed release identity must remain unchanged
+through every cold/warm sample. The evidence records the actual observed version;
+post-cutover measurements are never labeled as v0.187. Metadata validation GETs
+are excluded from the resource transfer totals.
 
 The output includes paint/resource/heap/interaction observations and actual
 request methods/cache response flags in `reports/v0188/public-performance.json`.
@@ -84,6 +89,16 @@ reflect missing timing permission. The warm run records what Chromium exposes,
 not a claim that every resource was served from cache. Public measurements
 include CI-to-CDN network conditions and must not be compared directly with the
 loopback candidate numbers. No production v0.188 rollout is performed.
+
+## Exact Pages verification during an approved cutover
+
+Before public acceptance, a PR's live smoke test checks its immutable base.
+After owner approval and a truthful `liveTargetVerified=true` record, the PR
+checks its exact current HTML, runtime and presentation bytes instead. This
+phase requires the independent-review commit/tree binding and SHA-256 equality
+of every public runtime file with that reviewed source. Invalid approval claims
+fail immediately; the check never tries both versions to obtain a passing result.
+Main checks continue to require its exact current source and numeric contracts.
 
 ## Local runtime limitation
 

@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const {baseline,verifyObservation}=require('../scripts/helpers/v0188-public-release-observation.cjs');
+const current=require('../release.json');
+const old=JSON.parse(execFileSync('git',['show','7210be99c39d75b49ea8200aad91d75801eb300a:release.json'],{encoding:'utf8'}));
+assert.deepEqual(verifyObservation(current,old,baseline.name),baseline,'Unpublished candidate observes the pinned existing release');
+const approved=structuredClone(current);Object.assign(approved.qualityReview,{auditStatus:'passed',ownerApproval:'approved',evidence:'synthetic observation fixture only'});
+const pending=structuredClone(approved);pending.qualityReview.ownerApproval='pending';
+assert.throws(()=>verifyObservation(pending,approved,approved.name),'Unapproved current source cannot accept candidate public metadata');
+assert.throws(()=>verifyObservation(approved,pending,pending.name),'Unapproved public manifest cannot masquerade as the approved release');
+const actual=verifyObservation(approved,approved,approved.name);assert.equal(actual.tag,current.tag);
+assert.deepEqual(verifyObservation(approved,approved,approved.name,actual),actual,'Stable repeated observation');
+assert.throws(()=>verifyObservation(approved,old,old.name,actual),'Changing back to the old release mid-measurement fails');
+assert.throws(()=>verifyObservation(approved,approved,approved.name,baseline),'Changing to the candidate mid-measurement fails');
+for(const release of [{...old,name:'Other title'},{...old,preRelease:1},{...approved,tag:'v0.189-pre.1'},{...approved,product:'Other product'}])assert.throws(()=>verifyObservation(approved,release,release.name),'Unknown or inconsistent metadata must fail');
+assert.throws(()=>verifyObservation(approved,old,approved.name),'New title cannot be paired with old metadata');
+assert.throws(()=>verifyObservation(approved,approved,old.name),'Old title cannot be paired with candidate metadata');
+console.log('PASS public observer release lifecycle: pinned baseline or exact independently approved current source only; metadata/title pairs and all-sample release identity remain strict; no requests');
