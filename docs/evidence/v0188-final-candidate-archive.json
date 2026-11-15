@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "observedAtUTC": "2026-11-15T07:47:26.195848+00:00",
+  "sourceCommit": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "sourceTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
+  "releaseTag": "v0.188-pre.2",
+  "publicationStatus": "UNPUBLISHED CANDIDATE; owner approval pending",
+  "archive": {
+    "file": "/workspace/scratch/8e0c644c2ae3/release-artifacts/Singularity-v0.188-pre.2-UNPUBLISHED-CANDIDATE.zip",
+    "prefix": "chloha-damage-lab/",
+    "bytes": 2708567,
+    "sha256": "543b35a33ba8fee8d70e774f56aebf8c1dbc248188b06972f88b2fa01347a275",
+    "zipComment": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+    "trackedFiles": 367,
+    "directoryEntries": 24,
+    "totalEntries": 391,
+    "commitTimestampUTC": "2026-11-15T07:46:14+00:00",
+    "archiveTimezone": "UTC",
+    "allEntryTimesMatchCommitDOSPrecision": true,
+    "allFileEntriesMatchExactGitBlobBytes": true,
+    "allTrackedFilesPresent": true,
+    "noUntrackedFilesPackaged": true,
+    "noDuplicateEntries": true,
+    "zipIntegrityCheck": "PASS",
+    "repeatBuildSameEnvironmentSha256Matches": true
+  },
+  "checksumFile": "/workspace/scratch/8e0c644c2ae3/release-artifacts/Singularity-v0.188-pre.2-UNPUBLISHED-CANDIDATE.zip.sha256",
+  "sourceArchiveOnly": true,
+  "archiveFormatMatchesPublicationWorkflow": true,
+  "futureOwnerApprovedReleaseCommitWillHaveDifferentMetadataBytes": true,
+  "pagesArtifactVerification": "Separate CI-generated public-artifact evidence required",
+  "tagCreated": false,
+  "releaseCreated": false,
+  "publicCutoverPerformed": false,
+  "productionMutations": 0,
+  "environment": {
+    "git": "git version 2.52.0",
+    "python": "3.12.14",
+    "timezone": "UTC"
+  },
+  "reproduceCommand": "TZ=UTC git archive --format=zip --prefix=chloha-damage-lab/ -o Singularity-v0.188-pre.2-UNPUBLISHED-CANDIDATE.zip c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "supersedesIntermediateCandidate": {
+    "sourceCommit": "1df8157b88c355ed648431cc26c6bc6c5233cbfa",
+    "sourceTree": "27f58917cb143058dee493dc18cee1b9aa94eccc",
+    "archiveSha256": "a443fe83e826b770a933a5b13a2bfb0cb13611f799cadd76b505b477d88fa575",
+    "reason": "English caveat clarified to explicitly identify Pokémon Champions hardware; historical UI assertion retained"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "audit": "Singularity v0.188 final calculation gate",
-  "observedAt": "2026-11-15T07:13:38.158849+00:00",
-  "candidateHead": "5f88e471d5a8a3374181ce0d37deb211c1dd9f26",
-  "candidateTree": "695db47cc2fe7d727de246702cdafc16cff40893",
+  "observedAt": "2026-11-15T07:47:38.870469+00:00",
+  "candidateHead": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+  "candidateTree": "bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b",
   "node": "v24.22.1",
   "referenceVersion": "0.12.0",
   "sourceHashes": {
@@ -21,112 +21,112 @@
     {
       "command": "node tests/v0184-public-baseline.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.304,
+      "durationSeconds": 0.38,
       "stdout": "PASS 300 baseline contracts: 269 unchanged, 26 independent numeric corrections, 5 trace/metadata corrections; original fixtures retained",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-baseline-reference.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.431,
+      "durationSeconds": 0.487,
       "stdout": "PASS v0.186 baseline errata: all 26 changed numeric vectors independently revalidated",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-data-and-arithmetic.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.792,
+      "durationSeconds": 1.247,
       "stdout": "PASS v0.186 data/arithmetic: {\"moveDataChecks\":335,\"statCases\":221562,\"typeCases\":324,\"roundingCases\":15360,\"itemCases\":82,\"sourceConflicts\":1}",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-confirmed-regressions.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.328,
+      "durationSeconds": 0.379,
       "stdout": "PASS v0.186 confirmed regressions: 17 independent 16-roll witnesses",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-registered-data-regressions.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.32,
+      "durationSeconds": 0.569,
       "stdout": "PASS v0.186 registered-data regression: Mega Staraptor types, Ghost and Rock damage",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-runtime-contract.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.238,
+      "durationSeconds": 0.393,
       "stdout": "PASS v0.186 runtime policy-to-engine contract and Grav Apple execution",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-shell-side-arm.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.223,
+      "durationSeconds": 0.369,
       "stdout": "PASS v0.186 Shell Side Arm: 8 independent category/contact witnesses",
       "stderr": ""
     },
     {
       "command": "node tests/v0188-continued-engine.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.567,
+      "durationSeconds": 0.739,
       "stdout": "PASS {\"audit\":\"v0188-continued-engine\",\"priorHead\":\"8b37bddbb236fa1b7fbd13a7b2cebd1518995437\",\"arithmeticCases\":216,\"referenceCases\":456,\"unaffectedCases\":20,\"immunityCases\":6,\"oldFailingWitnesses\":2,\"physicalGameVerified\":false,\"ragingBullScreenBreaking\":\"documented unsupported; unchanged\"}",
       "stderr": ""
     },
     {
       "command": "node tests/v0188-continued-state.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.145,
+      "durationSeconds": 0.354,
       "stdout": "PASS: 52 independent Foul Play budgets, manual Speed/HP routing/display and feedback-only refresh exclusion checks; feedback refresh work60→0, calculator work60→60",
       "stderr": ""
     },
     {
       "command": "node tests/v0188-astra-engine.cjs",
       "exitCode": 0,
-      "durationSeconds": 1.067,
+      "durationSeconds": 1.589,
       "stdout": "PASS {\"audit\":\"v0188-astra-engine\",\"referencePhysicalGameVerified\":false,\"historicalRefs\":[\"4b2cde61f92610c5bb970618d34147a2c16a8d7b\",\"7210be99c39d75b49ea8200aad91d75801eb300a\"],\"historicalInputs\":1800,\"historicalComparisons\":3600,\"neutralCases\":539,\"rankCases\":1014,\"immunityCases\":48,\"thresholdCases\":26,\"engineSourceChanged\":true}",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-ability-differential.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.539,
+      "durationSeconds": 0.603,
       "stdout": "Ability witnesses: 321 mismatches: 0",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-move-differential.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.722,
+      "durationSeconds": 0.855,
       "stdout": "Move differential: 256 registered moves, 657 comparisons, 0 mismatches",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-move-flag-audit.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.838,
+      "durationSeconds": 1.242,
       "stdout": "Flag membership audit: 2680 checks, 0 differences; Sheer Force remains explicitly Partial\nPASS all registered move-tag effects: 2672 independent 16-roll comparisons",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-multihit-differential.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.426,
+      "durationSeconds": 0.57,
       "stdout": "Multi-hit differential: 126 probability distributions, 0 mismatches",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-weight-differential.cjs",
       "exitCode": 0,
-      "durationSeconds": 0.953,
+      "durationSeconds": 0.933,
       "stdout": "PASS existing weight mechanics: 2068 Champions reference comparisons, every registered form represented",
       "stderr": ""
     },
     {
       "command": "node tests/v0186-seeded-differential.cjs",
       "exitCode": 0,
-      "durationSeconds": 1.738,
+      "durationSeconds": 1.503,
       "stdout": "{\n  \"seed\": 100012,\n  \"cases\": 4000,\n  \"generations\": {\n    \"0\": 494,\n    \"9\": 3506\n  },\n  \"mismatches\": 0,\n  \"failures\": []\n}",
       "stderr": ""
     }
@@ -184,7 +184,98 @@
       69,
       71
     ],
-    "assertions": "Reflect equals independent BigInt (damage*2732+2047)/4096 for every roll, and physical LightScreen equals noScreen. Policy/runtime agreement, not game-complete screen-removal support."
+    "assertions": "Reflect equals independent BigInt (damage*2732+2047)/4096 for every roll, and physical LightScreen equals noScreen. Policy/runtime agreement, not game-complete screen-removal support.",
+    "observedAt": "2026-11-15T07:47:38.870469+00:00",
+    "candidateHead": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+    "lightScreen": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ],
+    "exactInput": {
+      "level": 50,
+      "power": 90,
+      "attack": 153,
+      "defense": 117,
+      "hp": 180,
+      "currentHp": 180,
+      "attackStage": 0,
+      "defenseStage": 0,
+      "attAbility": "none",
+      "defAbility": "none",
+      "attItem": "none",
+      "defItem": "none",
+      "stabMode": "auto",
+      "attMaxHp": 180,
+      "attCurrentHp": 180,
+      "helpingHand": false,
+      "friendGuardCount": 0,
+      "battleFormat": "doubles",
+      "spread": "single",
+      "weather": "none",
+      "terrain": "none",
+      "category": "physical",
+      "screen": "none",
+      "burn": false,
+      "critical": false,
+      "moveMechanic": "ragingBull",
+      "moveId": "gw0170_u056",
+      "attTypes": [
+        "ノーマル"
+      ],
+      "defTypes": [
+        "ノーマル"
+      ],
+      "moveType": "ノーマル",
+      "customMultiplier": 1,
+      "attGrounding": "auto",
+      "defGrounding": "auto",
+      "conditionalPower": false,
+      "bodyPressDefenseStage": 0,
+      "foulPlayTargetStage": 0,
+      "attSpeed": 100,
+      "defSpeed": 150,
+      "attSpeedStage": 0,
+      "defSpeedStage": 0,
+      "attParalyzed": false,
+      "defParalyzed": false,
+      "attTailwind": false,
+      "defTailwind": false,
+      "hitsTaken": 2,
+      "faintedAllies": 2,
+      "storedPowerBoosts": {
+        "atk": 2,
+        "def": 0,
+        "spa": 1,
+        "spd": 0,
+        "spe": 0,
+        "accuracy": 0,
+        "evasion": 0
+      },
+      "ragingBullForm": "combat",
+      "auraWheelForm": "hangry"
+    },
+    "execution": {
+      "command": "node - < recorded inline witness",
+      "source": "'use strict';\nconst assert=require('node:assert/strict');\nconst {moves,policies}=require('./tests/helpers/v0186-catalog.cjs');\nconst {loadCurrent}=require('./tests/helpers/v0184-engine-harness.cjs');\nconst {input:base}=require('./tests/fixtures/v0184-public-baseline.json').cases[0];\nconst move=moves.find(m=>m.id==='gw0170_u056'); assert.ok(move); assert.equal(move.power,90);\nconst policy=policies[move.id];assert.equal(policy.reason,'パルデアケンタロスのフォルムに応じて技タイプを変更。壁破壊効果は計算対象外');\nconst context=loadCurrent();\nconst input={...structuredClone(base),moveId:move.id,moveMechanic:'ragingBull',ragingBullForm:'combat',power:90,moveType:move.type,attTypes:['ノーマル'],defTypes:['ノーマル'],attack:153,defense:117,category:'physical',screen:'none',battleFormat:'doubles'};\nconst noScreen=Array.from(context.ChlohaDamageEngine.calculate(input).rolls);\nconst reflectDoubles=Array.from(context.ChlohaDamageEngine.calculate({...input,screen:'reflect'}).rolls);\nconst lightScreen=Array.from(context.ChlohaDamageEngine.calculate({...input,screen:'lightScreen'}).rolls);\nassert.deepEqual(noScreen,[90,90,92,92,94,94,96,96,98,98,100,100,102,102,104,106]);\nassert.deepEqual(reflectDoubles,[60,60,61,61,63,63,64,64,65,65,67,67,68,68,69,71]);\nassert.deepEqual(reflectDoubles,noScreen.map(d=>Number((BigInt(d)*2732n+2047n)/4096n)));\nassert.deepEqual(lightScreen,noScreen);\nconsole.log(JSON.stringify({result:'PASS',policy,noScreen,reflectDoubles,lightScreen,exactInput:input}));\n",
+      "exitCode": 0,
+      "durationSeconds": 0.284,
+      "stdout": "{\"result\":\"PASS\",\"policy\":{\"priority\":\"P1\",\"standardDamageSupported\":true,\"mechanic\":\"ragingBull\",\"reason\":\"パルデアケンタロスのフォルムに応じて技タイプを変更。壁破壊効果は計算対象外\"},\"noScreen\":[90,90,92,92,94,94,96,96,98,98,100,100,102,102,104,106],\"reflectDoubles\":[60,60,61,61,63,63,64,64,65,65,67,67,68,68,69,71],\"lightScreen\":[90,90,92,92,94,94,96,96,98,98,100,100,102,102,104,106],\"exactInput\":{\"level\":50,\"power\":90,\"attack\":153,\"defense\":117,\"hp\":180,\"currentHp\":180,\"attackStage\":0,\"defenseStage\":0,\"attAbility\":\"none\",\"defAbility\":\"none\",\"attItem\":\"none\",\"defItem\":\"none\",\"stabMode\":\"auto\",\"attMaxHp\":180,\"attCurrentHp\":180,\"helpingHand\":false,\"friendGuardCount\":0,\"battleFormat\":\"doubles\",\"spread\":\"single\",\"weather\":\"none\",\"terrain\":\"none\",\"category\":\"physical\",\"screen\":\"none\",\"burn\":false,\"critical\":false,\"moveMechanic\":\"ragingBull\",\"moveId\":\"gw0170_u056\",\"attTypes\":[\"ノーマル\"],\"defTypes\":[\"ノーマル\"],\"moveType\":\"ノーマル\",\"customMultiplier\":1,\"attGrounding\":\"auto\",\"defGrounding\":\"auto\",\"conditionalPower\":false,\"bodyPressDefenseStage\":0,\"foulPlayTargetStage\":0,\"attSpeed\":100,\"defSpeed\":150,\"attSpeedStage\":0,\"defSpeedStage\":0,\"attParalyzed\":false,\"defParalyzed\":false,\"attTailwind\":false,\"defTailwind\":false,\"hitsTaken\":2,\"faintedAllies\":2,\"storedPowerBoosts\":{\"atk\":2,\"def\":0,\"spa\":1,\"spd\":0,\"spe\":0,\"accuracy\":0,\"evasion\":0},\"ragingBullForm\":\"combat\",\"auraWheelForm\":\"hangry\"}}",
+      "stderr": ""
+    }
   },
   "coverageInventoryCheck": {
     "command": "node scripts/v0186-mechanics-coverage.cjs --check",
@@ -198,12 +289,36 @@
     "total": 1184,
     "sourceConflicts": 1,
     "sheerForceImplementedMoves": 5,
-    "sheerForceReferenceEligibleMoves": 124
+    "sheerForceReferenceEligibleMoves": 124,
+    "candidateHead": "c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095",
+    "observedAt": "2026-11-15T07:47:38.870469+00:00",
+    "execution": {
+      "command": "node scripts/v0186-mechanics-coverage.cjs --check",
+      "exitCode": 0,
+      "durationSeconds": 0.327,
+      "stdout": "{\n  \"total\": 1184,\n  \"statuses\": {\n    \"Verified\": 870,\n    \"Unverified\": 2,\n    \"Incorrect\": 0,\n    \"Partial\": 153,\n    \"Unsupported\": 143,\n    \"Not Applicable\": 16\n  },\n  \"eligible\": 1168,\n  \"implemented\": 1025,\n  \"presenceRate\": \"87.76%\",\n  \"verificationOfImplemented\": \"84.88%\",\n  \"verificationOfEligible\": \"74.49%\",\n  \"pokemon\": 373,\n  \"megaForms\": 82,\n  \"rosterAbilityNames\": 222,\n  \"readyMoves\": 321,\n  \"damagingMoves\": 334,\n  \"historicalStatScreenFlags\": 102,\n  \"sourceConflicts\": 1,\n  \"sheerForce\": {\n    \"implemented\": 5,\n    \"referenceEligible\": 124,\n    \"status\": \"Partial\"\n  }\n}",
+      "stderr": ""
+    }
   },
   "boundaries": [
     "No physical-game measurements",
     "Finite witnesses, not every interaction",
     "Manual Speed browser, nine-language numeric UI and final exact-head CI remain parent integration tasks",
     "Known documented exclusions are not silently promoted to full support"
-  ]
+  ],
+  "previousExecution": {
+    "candidateHead": "1df8157b88c355ed648431cc26c6bc6c5233cbfa",
+    "candidateTree": "27f58917cb143058dee493dc18cee1b9aa94eccc",
+    "allCapturedSourceHashesUnchanged": true,
+    "supersededByFreshExecution": true
+  },
+  "executionIntegrity": {
+    "headCheckedBeforeAndAfter": true,
+    "sourceWorktreeCleanBeforeAndAfter": true,
+    "capturedSourceHashesStableAcrossCommands": true,
+    "commandConcurrency": 4,
+    "durationsAreWallTimeNotPerformanceBenchmarks": true,
+    "sourceWorktree": "/workspace/scratch/8e0c644c2ae3/chloha-damage-lab",
+    "reportWorktree": "/workspace/scratch/8e0c644c2ae3/final-gate-report"
+  }
 }

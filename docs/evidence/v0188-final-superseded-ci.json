@@ -1,0 +1,403 @@
+{
+  "candidate": "c895a8219d90a4b158db251af946c7a1e9715abf",
+  "tree": "50649a502e2dfb2688ce97002ee1eb9b0ae1d58c",
+  "merge": "edac9d7ba1edbaab5499a42b59a4e5d54ecd0f0b",
+  "classification": "SUPERSEDED; not a release approval",
+  "runs": [
+    {
+      "id": 43689633824,
+      "name": "Showdown differential audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 1083,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633824/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633824/logs",
+      "workflow_id": 414870050
+    },
+    {
+      "id": 43689633735,
+      "name": "Showdown differential tests",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 458,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633735/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633735/logs",
+      "workflow_id": 414873246
+    },
+    {
+      "id": 43689633763,
+      "name": "Publish verified prerelease",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 48,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633763/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633763/logs",
+      "workflow_id": 417994524
+    },
+    {
+      "id": 43689633718,
+      "name": "Damage Lab CI and status ledger",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 230,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633718/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633718/logs",
+      "workflow_id": 417125250
+    },
+    {
+      "id": 43689633823,
+      "name": "v0.185 anonymous feedback",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 47,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633823/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633823/logs",
+      "workflow_id": 418035883
+    },
+    {
+      "id": 43689633777,
+      "name": "GitHub Pages live smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 279,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633777/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633777/logs",
+      "workflow_id": 415350000
+    },
+    {
+      "id": 43689633802,
+      "name": "v0.184 engine baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 85,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633802/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633802/logs",
+      "workflow_id": 417900004
+    },
+    {
+      "id": 43689633733,
+      "name": "v0.187 Singularity Migration",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 31,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633733/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633733/logs",
+      "workflow_id": 418393801
+    },
+    {
+      "id": 43689633739,
+      "name": "UI & damage regression",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 1103,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633739/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633739/logs",
+      "workflow_id": 414221936
+    },
+    {
+      "id": 43689633789,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 39,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633789/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633789/logs",
+      "workflow_id": 418283182
+    },
+    {
+      "id": 43689633719,
+      "name": "v0.188 Quality Remediation",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_number": 16,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633719/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43689633719/logs",
+      "workflow_id": 418813329
+    }
+  ],
+  "qualityJobs": [
+    {
+      "id": 132737332354,
+      "name": "quality-candidate",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 43689633719,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --no-package-lock --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Install locked independent calculation reference",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Install fonts for nine-language evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Preserve release metadata, engine bytes and fixed 300 contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Exercise every v0.188 state, accessibility, locale and mobile regression",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 10
+        },
+        {
+          "name": "Preserve ninety-transition language regression",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11
+        },
+        {
+          "name": "Recheck private feedback state machine without production writes",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 12
+        },
+        {
+          "name": "Build candidate assets without deployment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 27
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 28
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 29
+        }
+      ]
+    },
+    {
+      "id": 132737332552,
+      "name": "performance",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43689633719,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --no-package-lock --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install fonts for comparable nine-language rendering",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Measure baseline and candidate under identical emulation conditions",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Observe the pinned baseline or approved current public release without mutations",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 132737332566,
+      "name": "controlled-memory",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43689633719,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --no-package-lock --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Install fonts for matched memory scenarios",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Measure controlled-GC retention and repeated state recovery",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        }
+      ]
+    }
+  ],
+  "identifiedFailure": {
+    "file": "tests/v0188-pre2-actual-approval.cjs",
+    "cause": "Disposable fixture git commit had no changes in a clean checkout",
+    "runnerPassed": 33,
+    "runnerTotal": 34
+  },
+  "limits": "Skipped downstream locale/Worker steps on this failed run are not passes. Final successor needs all new runs."
+}

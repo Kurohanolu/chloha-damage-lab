@@ -1,17 +1,17 @@
 # Singularity v0.188 — final calculation gate evidence
 
-Recorded 2026-11-15 (JST), as the calculation workstream of the final release-gate audit. This is an executed local numerical check, not the independent Sol verdict and not permission to publish.
+Recorded 2026-11-15 (UTC), as the calculation workstream of the final release-gate audit. This is an executed local numerical check, not the independent Sol verdict and not permission to publish.
 
 ## Fixed inspected candidate
 
-- Candidate: `5f88e471d5a8a3374181ce0d37deb211c1dd9f26`.
-- Git tree: `695db47cc2fe7d727de246702cdafc16cff40893`.
+- Candidate: `c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095`.
+- Git tree: `bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b`.
 - Released baseline: `4f068544e670a85a6a4d34dd2c26e2be66bd9cb7`.
 - Locked independent reference: `@smogon/calc@0.12.0`, using Champions and Gen9 separately where specified by each suite.
 - Engine SHA-256: `9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9`.
 - Immutable 300-fixture SHA-256: `ffc88f9684ef16f2d67b319ab427ae1f8fa89e54ebb30b5075de3fe1f8165ebd`.
 
-All 16 captured test commands exited zero. The additional direct policy/runtime witness and the coverage-inventory check also passed. No source, test, expected vector or fixed fixture was changed by this workstream. Complete command output, durations, reference version, source hashes and known limits are in [v0188-final-calculation-local.json](evidence/v0188-final-calculation-local.json).
+All 16 captured test commands were freshly re-executed on candidate `c9c52e1f` after the final English caveat wording adjustment, and exited zero. HEAD and source-worktree cleanliness were checked before and after execution; the recorded source hashes remained stable during the run and match the earlier `1df8157b` calculation sources. Evidence was written only to the separate final-report worktree. The additional direct policy/runtime witness and the coverage-inventory check also passed. No source, test, expected vector or fixed fixture was changed by this workstream. Complete command output, durations, reference version, source hashes and known limits are in [v0188-final-calculation-local.json](evidence/v0188-final-calculation-local.json).
 
 ## Executed coverage
 
@@ -58,6 +58,6 @@ The existing coverage inventory check passes without changing its counts: 1,184 
 
 ## Gate recommendation
 
-**PASS for the executed calculation witnesses and supported paths at exact5f88, with zero newly unexplained numerical differences.** No new calculation defect was found and no correction was required by this workstream.
+**PASS for the executed calculation witnesses and supported paths at exact `c9c52e1f`, with zero newly unexplained numerical differences.** No new calculation defect was found and no correction was required by this workstream.
 
 The known Unverified record and documented partial/unsupported mechanics remain explicit limitations. Overall release classification belongs to the parent audit and independent Sol review. Any later product change requires a new fixed candidate and execution of the mandatory checks at that candidate; this local PASS must not be relabelled as an execution against a later SHA.
