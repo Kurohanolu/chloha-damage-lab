@@ -1,12 +1,10 @@
-# Singularity — v0.187 migration candidate
+# Singularity — Pokémon Damage Calculator
 
-Pokémon Damage Calculator by **Chloha Labs**. This development branch prepares the supplied Orbital S identity, black/pink/purple interface and a new GitHub Pages project. The owner approved name/logo/UI adoption, the new repository/Pages setup, production acceptance/publication and main merge on 2026-11-15 JST; see [approval scope](docs/v0187-owner-approval.md). Actual target/service acceptance remains a separate gate.
+Pokémon Damage Calculator by **Chloha Labs**, available at **https://kurohanolu.github.io/singularity/**. The approved Orbital S identity and mobile black/pink/purple interface retain the existing calculation engine, all nine languages and anonymous private feedback.
 
-The [published calculator](https://kurohanolu.github.io/chloha-damage-lab/) remains **Chloha Damage Lab v0.186 Pre-Release32** at `4b2cde61f92610c5bb970618d34147a2c16a8d7b`. The public `Kurohanolu/singularity` static target has been created; actual new-URL acceptance is in progress. Source/Issues/PR/CI/history and private feedback stay in this repository; the Singularity project serves generated static files.
+Source, Issues, PRs, CI and releases remain in `Kurohanolu/chloha-damage-lab`. The `Kurohanolu/singularity` project deploys generated frontend files through the [exact-source Pages workflow](deployment/singularity-pages.yml), after eight regression gates. The [old URL](https://kurohanolu.github.io/chloha-damage-lab/) retains the audited v0.186 calculator and a non-forcing, separate-tab migration route; inputs and private drafts stay in the original page.
 
-The old site's Pages source is isolated on `pages-legacy`; the new project deploys generated files through the canonical [exact-source Pages workflow](deployment/singularity-pages.yml). The owner supplies a full approved source SHA, and eight exact-source regression gates must pass before deployment. Actual public-content/feedback checks and immutable release publication follow deployment; no deployment secret or second engine source is maintained.
-
-[The new Singularity URL](https://kurohanolu.github.io/singularity/) is now live for acceptance: exact public hashes, nine real-browser locales and actual anonymous report persistence passed. Protected owner moderation/Issue acceptance remains the blocker before final main/release cutover. See [actual-site evidence](docs/v0187-live-acceptance.md); the old calculator remains available.
+Owner adoption/publication approval and actual public UI/anonymous feedback/administrator Issue acceptance are recorded in [approval scope](docs/v0187-owner-approval.md) and [live acceptance](docs/v0187-live-acceptance.md). The synthetic report's D1 state and public Issue #65 match. Final publication requires exact-commit CI and both deployed trees; runtime acceptance and deployment/release completion are recorded separately in PR #64.
 
 - [Design preview and actual browser screenshots](docs/v0187-design-preview.md)
 - [Development/readiness report](docs/v0187-release-readiness.md)

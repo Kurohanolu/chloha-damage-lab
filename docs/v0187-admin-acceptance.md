@@ -1,5 +1,7 @@
 # v0.187 — 残る管理者受入（合成レポート1件）
 
+**2026-11-15受入完了：** 所有者が既存Workerの管理画面から[Issue #65](https://github.com/Kurohanolu/chloha-damage-lab/issues/65)を作成しました。D1の読み取り検証で `Accepted / created / Issue65 / revision4` を確認し、公開全65件中の対象マーカーはこの1件だけでした。同時送信・作成後再送時にも追加POSTを出さない回帰15件もPASS。以下は実施した手順の記録で、再操作や認証情報共有は不要です。本番への重複POSTは実行していません。
+
 公開・名称・デザイン・mainマージの承認は既に記録済みです。追加の承認ではなく、実際の管理者画面から既存WorkerのIssue登録が動作することを確認するための操作です。Cloudflareログインの再試行や認証設定変更は行いません。
 
 管理者画面：`https://chloha-private-feedback.kurohanolu-labs.workers.dev/admin/`

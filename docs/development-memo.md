@@ -1,3 +1,9 @@
+## 2026-11-15: final actual administrator acceptance and publication preparation
+
+- Owner completed the existing protected Worker administration flow and created synthetic Issue #65. Exact-record D1 SELECT confirms Accepted/created, Issue65 URL and revision4; writes0/database unchanged. All65 repository entries contain exactly one matching Issue marker.
+- Fresh public feedback readiness10/10 and local Worker security/idempotency tests15/15 pass, including concurrent creation and repeat suppression. No extra production duplicate POST, private existing report, credential exposure or infrastructure/authentication mutation is involved.
+- Set actual-target verification true and finalize release wording around the delivered migration. Obtain this final head's CI before deploying final metadata/new site and old notice; do not add source commits after old notice and before merge. Exact-main CI, dual-site hashes and immutable release results are recorded in PR #64.
+
 ## 2026-11-15: v0.187 owner-approved rollout begins
 
 - Owner explicitly approved the reviewed name/logo/UI, public target repository and Pages setup, production acceptance/publication and main merge after `d0c00a7` passed all ten workflows. Approval is recorded separately from actual live-target acceptance; `liveTargetVerified` remains false.

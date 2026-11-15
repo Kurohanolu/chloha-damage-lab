@@ -1,6 +1,8 @@
 # v0.187 actual-site acceptance checkpoints — 2026-11-15 JST
 
-**New URL is live for acceptance. Formal release/main merge and the old-site notice are not complete.** The owner has already authorized the rollout; the remaining blocker is completion of the protected administrator sign-in and real moderated Issue round trip, not missing publication permission.
+**Actual new-site and protected feedback acceptance are complete.** The owner created [Issue #65](https://github.com/Kurohanolu/chloha-damage-lab/issues/65) through the existing protected Worker administrator UI. Read-only D1 verification matched the exact report's Accepted/created state, Issue65 URL and revision4. The report marker appears in exactly one Issue across all65 public repository entries. Fresh public security readiness10/10 and unchanged Worker security/idempotency tests15/15 pass. Production duplicate writes were not attempted; concurrency and repeated-POST suppression were exercised locally. Final metadata, dual-site publication, exact-head/main CI and immutable release follow the approved runbook.
+
+The credential-free [final administrator verification receipt](v0187-preview/admin-acceptance-verified.json) records only synthetic metadata and public Issue identifiers. No private existing reports or credentials were inspected or published.
 
 ## Latest verified UI publication
 
@@ -34,12 +36,12 @@ The uniquely labeled synthetic test is `migration-v0187-d33776b-20261115`. Its r
 
 This is the actual initial HTTPS deployment, before the separately verified header cleanup above; its old developer heading is historical evidence, not the current public UI. Current desktop/phone screenshots are retained in the linked migration CI artifact and the completed work result. Earlier review-time evidence remains in [design previews](v0187-design-preview.md).
 
-## Authentication diagnosis and remaining work
+## Historical authentication diagnosis and final publication
 
 The protected administrator URL redirects to the existing Access application, which offers Cloudflare sign-in. The current dashboard login page reports403 from its login API. Stop repeated browser sign-in attempts. Existing Wrangler OAuth authentication, Worker secret-binding metadata and the read-only synthetic D1 query all succeed; all ten current source workflows and public read-only readiness checks pass. Development/API verification can continue without a new token or dashboard login. See [the bounded authentication diagnosis](v0187-cloudflare-auth-diagnostics.md).
 
-The protected administrator round trip remains incomplete because management OAuth/API authentication does not supply the existing application's administrator identity. When valid administrator Access authentication is available, inspect only the labeled synthetic record; verify Accept/status handling, preview and explicitly approve a technical-only synthetic Issue, then confirm its Issue link and duplicate-prevention state. Do not copy the private description/email/snapshot to a public Issue. Do not create an Issue through a different route and claim that it proves the Worker's integration. No authentication change or credential handoff is required for continued API/CI development.
+The owner completed the application identity and real moderation/Issue round trip independently. Existing management OAuth was used only for a SELECT of that exact synthetic report. The Worker, Access policy, existing data and secrets remain unchanged. The dashboard403 diagnosis is historical and is not a remaining publication blocker.
 
 The exact target ID, safe public payload and minimal owner administration actions are in [the one-report acceptance packet](v0187-admin-acceptance.md). No new report or credential sharing is needed.
 
-Only after those real-service checks pass, record full acceptance, set `liveTargetVerified=true`, rerun exact final-head CI and dispatch the approved final source SHA to the new target. After final PR-base CI, deploy the old-site notice, verify both exact public trees, merge the approved PR and verify exact-main CI/immutable publication. Until then main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, the old calculator works without a forced redirect, and the actual-target flag remains false. Follow the [cutover/rollback runbook](v0187-cutover-runbook.md).
+The verified flag is now true based on the recorded real-service evidence. Rerun final-head CI, dispatch the same clean source to the new target, then deploy the generated old-site notice after final PR-base CI. Verify both exact public trees before the approved main merge and verify exact-main CI/immutable publication afterward. Deployment/merge/release results are recorded in PR #64, without adding a new source commit between old-notice deployment and merge. Follow the [cutover/rollback runbook](v0187-cutover-runbook.md).
