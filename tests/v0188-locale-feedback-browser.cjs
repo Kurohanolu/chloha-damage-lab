@@ -94,7 +94,11 @@ async function heartbeat(page){
     const before=await numeric(page);
     await page.reload();await ready(page);assert.equal(await page.locator('#chloha-locale').inputValue(),locale);assert.equal(await numeric(page),before,'nine-language restored calculation: '+locale);
     await set(page,'att-attack-points',33);
-    await page.waitForFunction(()=>document.getElementById('error').textContent===window.ChlohaLocaleQuality.errorText(window.ChlohaLocale.get(),'invalidStats'));
+    try{await page.waitForFunction(()=>document.getElementById('error').textContent===window.ChlohaLocaleQuality.errorText(window.ChlohaLocale.get(),'invalidStats'));}
+    catch(error){
+     console.error('v0188 allocation error diagnostic',await page.evaluate(()=>({locale:window.ChlohaLocale.get(),expected:window.ChlohaLocaleQuality.errorText(window.ChlohaLocale.get(),'invalidStats'),error:document.getElementById('error').textContent,status:document.getElementById('dbStatus').textContent,points:document.getElementById('att-attack-points').value,model:window.ChlohaUI.models().att.points,auto:document.getElementById('dbAuto').checked,errorOwned:document.getElementById('error').hasAttribute('data-no-translate'),statusOwned:document.getElementById('dbStatus').hasAttribute('data-no-translate')})));
+     throw error;
+    }
     assert.equal(await page.locator('#error').getAttribute('data-no-translate'),'');
     assert.equal(await page.locator('#dbStatus').getAttribute('data-no-translate'),'');
     assert.equal(await page.locator('#output').isVisible(),false,'invalid points must not display stale damage');evidence.allocationErrorLocales++;

@@ -27,6 +27,24 @@ assert.equal(api.summary('A B（1） → C（2 / HP 3） / suffix',statusNames,'
 delete context.ChlohaPokeAPILocalizedNames;
 delete context.ChlohaLocalizedNames;
 for(const locale of api.locales)assert.ok(api.stockpile(locale,1).title,'explicit localized missing-name description');
+// Exercise the real unchanged legacy translator in a read-only VM. Its
+// partially translated messages must be recognized regardless of observer order.
+{
+ const legacy={window:{},document:{readyState:'loading',addEventListener(){}},localStorage:{getItem:()=>null}};
+ const source=fs.readFileSync(require.resolve('../i18n.js'),'utf8');
+ assert.ok(source.includes('function initialize(){'));
+ vm.runInNewContext(source.replace('function initialize(){','window.__legacy188={set(code){locale=code},text:localizedUi,normalize:normalizeFreshLocaleText};function initialize(){'),legacy);
+ const translator=legacy.window.__legacy188;context.ChlohaLocale={text:translator.text};
+ for(const locale of api.locales){
+  translator.set(locale);
+  for(const kind of ['invalidStats','budgetAtt','budgetDef','budget']){
+   const original=api.errorText('ja',kind);
+   assert.equal(api.errorKind(translator.text(translator.normalize(original))),kind,'real legacy error alias: '+locale+'/'+kind);
+   assert.equal(api.errorKind(translator.text(translator.normalize('入力エラー: '+original))),kind,'real legacy status alias: '+locale+'/'+kind);
+  }
+ }
+ delete context.ChlohaLocale;
+}
 // DOM ownership contract: known errors switch languages under a single writer;
 // unknown content is returned to the legacy translator, including on a switch.
 {
@@ -38,6 +56,11 @@ for(const locale of api.locales)assert.ok(api.stockpile(locale,1).title,'explici
  const flush=()=>{while(pending.length)pending.shift()();};
  for(const n of Object.values(nodes))assert.ok(n.hasAttribute('data-no-translate'),'known error has one owner');
  lang='fr';events['chloha:localechange']();flush();assert.equal(nodes.error.textContent,dom.ChlohaLocaleQuality.errorText('fr','invalidStats'));
+ dom.ChlohaLocale.text=text=>text.includes('能力ポイントは0〜32')?'older-range-'+lang:'legacy:'+lang+':'+text;
+ nodes.error.textContent='older-range-fr';
+ nodes.dbStatus.textContent='older-range-fr';
+ changed();flush();assert.equal(nodes.error.textContent,dom.ChlohaLocaleQuality.errorText('fr','invalidStats'));
+ assert.equal(dom.ChlohaLocaleQuality.errorKind(nodes.dbStatus.textContent),'invalidStats','already legacy-translated errors retain recognized ownership');
  for(const n of Object.values(nodes))n.textContent='unrecognized message';
  changed();flush();
  for(const n of Object.values(nodes)){assert.equal(n.hasAttribute('data-no-translate'),false);assert.equal(n.textContent,'legacy:fr:unrecognized message');}

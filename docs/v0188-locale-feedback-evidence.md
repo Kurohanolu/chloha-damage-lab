@@ -44,6 +44,10 @@ The first added browser-test run failed because its native-ability setup asked T
 
 A later browser trial exposed timeouts after locale/species updates, consistent with the new summary observer and legacy translator competing over the same node. Recognized canonical summaries and allocation errors now have a single UI writer through scoped translation exclusion. Only exclusions installed by this module are removed when an unrecognized message is delegated back to the legacy translator. A nine-language, two-species real-search/click stress sequence checks numeric parity and a post-interaction timer; a host-side five-second deadline bounds the heartbeat probe, in addition to Playwright's bounded action timeouts. Pending CI, this is a corrective implementation, not a claimed successful browser result.
 
+The next trial passed existing migration/mechanics tests and the 54-case viewport matrix, but the new exact allocation-error assertion timed out. Error recognition now also accepts the existing translator's rendering of each canonical Japanese error at the active locale. These aliases are resolved through the existing locale API, avoiding a duplicated legacy translation table. The exact expected final localized error and invalid-result rejection remain asserted. A timeout now emits only synthetic calculator-state diagnostics to identify any remaining mismatch.
+
+Read-only VM reproduction confirmed that the unchanged legacy translator renders the range message as `stat pointsは0〜32の整数で入力してください` in every non-Japanese locale. The new unit test now runs the actual unchanged translator in a VM for all nine locales and all four error kinds, with and without the status prefix, then asserts recognition by the new alias path.
+
 ## Real-service boundary
 
 Read-only readiness verified public configuration, production-enabled intake without known Turnstile test keys, retention=90, exact frontend CORS origin, no-store, denial of anonymous access to three administrator endpoints, and absence of a public reports listing.

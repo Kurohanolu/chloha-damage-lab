@@ -20,6 +20,15 @@
  function errorKind(value){
   const text=String(value||'');
   for(const kind of errorKinds)for(const locale of locales)if(text===words[locale][kind]||text===words[locale].error+words[locale][kind])return kind;
+  // The legacy observer may translate a newly inserted message before this
+  // observer runs. Reuse its current-locale rendering of the canonical source
+  // as an alias, rather than duplicating a second table of legacy phrases.
+  const translate=globalThis.ChlohaLocale?.text;
+  if(typeof translate==='function')for(const kind of errorKinds){
+   for(const source of [words.ja[kind],words.ja.error+words.ja[kind]]){
+    if(text===translate(source))return kind;
+   }
+  }
   if(text.includes('能力ポイントは0〜32'))return 'invalidStats';
   if(text.includes('攻撃側の能力ポイント合計は66以内'))return 'budgetAtt';
   if(text.includes('防御側の能力ポイント合計は66以内'))return 'budgetDef';
