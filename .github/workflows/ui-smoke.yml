@@ -3,6 +3,15 @@ on:
   push:
     branches: [main]
     paths:
+      - docs/v0187-*.md
+      - docs/v0187-preview/**
+      - assets/singularity/**
+      - singularity-v0187.css
+      - brand-preview.html
+      - brand-v0187.js
+      - migration/**
+      - scripts/v0187-*.cjs
+      - tests/v0187-*.cjs
       - index.html
       - damage-engine-v0184.js
       - damage-calculator-v0184.js
@@ -22,6 +31,15 @@ on:
       - .github/workflows/publish-ci-status.yml
   pull_request:
     paths:
+      - docs/v0187-*.md
+      - docs/v0187-preview/**
+      - assets/singularity/**
+      - singularity-v0187.css
+      - brand-preview.html
+      - brand-v0187.js
+      - migration/**
+      - scripts/v0187-*.cjs
+      - tests/v0187-*.cjs
       - index.html
       - 'feedback-*.js'
       - 'services/feedback/**'

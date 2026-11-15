@@ -1,8 +1,26 @@
 {
-  "version": "0.186",
-  "preRelease": 32,
-  "tag": "v0.186-pre.32",
-  "name": "Chloha Damage Lab v0.186 Pre-Release 32",
-  "notes": "docs/releases/v0.186-pre.32.md",
-  "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/"
+  "version": "0.187",
+  "preRelease": 33,
+  "tag": "v0.187-pre.33",
+  "name": "Singularity v0.187 Pre-Release 33",
+  "notes": "docs/releases/v0.187-pre.33.md",
+  "publicUrl": "https://kurohanolu.github.io/singularity/",
+  "product": "Singularity",
+  "developer": "Chloha Labs",
+  "branding": {
+    "reference": "assets/singularity/orbital-s-reference.png",
+    "icon": "assets/singularity/orbital-s-icon.webp",
+    "header": "assets/singularity/header.webp",
+    "favicon": "assets/singularity/favicon.png",
+    "appleTouch": "assets/singularity/apple-touch-icon.png"
+  },
+  "migration": {
+    "status": "approved",
+    "strategy": "new-project-preserve-history",
+    "sourceRepository": "Kurohanolu/chloha-damage-lab",
+    "targetRepository": "Kurohanolu/singularity",
+    "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
+    "designApproval": "approved",
+    "liveTargetVerified": true
+  }
 }

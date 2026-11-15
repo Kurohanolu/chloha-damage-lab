@@ -2,11 +2,11 @@
 
 Status: **proposed sequence**, subject to owner approval and CI/manual release gates. This supersedes the *future version numbering* in the older `v0183-internationalization-plan.md`, but does not erase its i18n requirements.
 
-## Current position: v0.185 released; v0.186 Pre-Release32 publication prepared
+## Current position: v0.186 Pre-Release32 released; v0.187 preparation
 
 v0.185 Pre-Release 31 is published at `2fc88af6390f286fa7d1a531203f99c35dfa6767` (PR #59). All required CI, real private feedback delivery, signed-owner moderation, approved Issue export, duplicate prevention and the release archive were verified. Its existing production infrastructure is outside v0.186's mutation scope.
 
-v0.186's development candidate passed all seven required workflows plus publisher PR validation at `93cbfbba4d37ac8b62ed5ad1687247cd8a8205f7`. The owner subsequently approved progression conditional on no unresolved critical known defect and successful final checks. Pre-Release32 metadata is now prepared; fresh exact-head PR/main CI and live-content/release verification remain required. See `v0186-release-readiness.md`; preparation is not a completed deployment.
+v0.186 Pre-Release32 is published at `4b2cde61f92610c5bb970618d34147a2c16a8d7b` (merged PR #62, Issue #61) following the owner's conditional progression approval. All seven mandatory workflows, live Pages smoke and release publication completed / success on the exact main SHA. Public HTML/manifest, all 28 runtime assets, the downloaded ZIP/checksum/digest and archive commit identity were verified. No current-scope confirmed P0/P1 remains; existing Unverified/Partial/Unsupported and hardware limits remain documented. See `v0186-release-readiness.md`.
 
 ## Historical v0.183 closure
 - Finish nine-language localization, official-name and native-select audits; classify same-spelling official labels as valid rather than automatically calling them missing translations.
@@ -42,11 +42,15 @@ v0.186's development candidate passed all seven required workflows plus publishe
 - Reproduce existing bugs with failing regressions, apply minimal evidence-based fixes, and account explicitly for any intentionally corrected old baseline behavior.
 - Regress all nine languages, reload/state/search/warnings/numeric parity and the existing feedback system. Add dedicated audit CI while preserving the six existing mandatory workflows.
 - No feature expansion until the owner decides the usable Pokémon pool has expanded. No new Pokémon/moves/abilities/items/rules, major redesign, rename or URL changes.
-- Issue #61 / PR #62; branch `audit/v0186-accuracy-mechanics`. The owner has conditionally approved v0.186 publication after final successful verification. Retain separate approval gates for production settings, unsupported-feature additions or insufficiently grounded specification changes.
+- Issue #61 / merged PR #62; release `v0.186-pre.32` published after final successful verification. Retain separate approval gates for production settings, unsupported-feature additions or insufficiently grounded specification changes.
 
 ## v0.187 — Singularity brand/URL migration preparation
 
 Agreed direction, pending formal validation/adoption approval:
+
+Issue #63 / Draft PR #64 / branch `prep/v0187-singularity-migration`. The 2026-11-15 execution brief now authorizes branch-only branding, logo/theme implementation and dedicated migration tests. See [the implementation and deployment plan](v0187-singularity-migration-preparation.md). The candidate includes a new-path artifact and an old calculator with a non-forcing migration notice, while preserving numerical behavior and private feedback. Actual name/logo adoption, Pages administration, repository creation/rename, URL cutover, production changes and main merge remain subject to final approval.
+
+UI/runtime checkpoint `4410036663748cdc04e5feb7a59066af75200c01` passed all ten workflows. See [development/publication readiness](v0187-release-readiness.md) and [actual browser design previews](v0187-design-preview.md). This is a tested development candidate; production remains v0.186 and the proposed new URL is not live.
 
 - Product: **Singularity**, an independent damage calculator developed by **Chloha Labs**.
 - First free-URL candidate: `https://kurohanolu.github.io/singularity/`.

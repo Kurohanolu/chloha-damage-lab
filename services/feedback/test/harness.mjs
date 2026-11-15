@@ -86,8 +86,8 @@ export async function startLocalApp({adminEdge=false,demoWidget=false}={}){
     response=new Response('window.ChlohaFeedbackConfig=Object.freeze({apiBase:'+JSON.stringify(origin)+'});',{headers:{'Content-Type':'text/javascript'}});
    }else{
     const path=url.pathname==='/'?'index.html':url.pathname.slice(1);
-    if(!/^[a-zA-Z0-9_.-]+\.(html|js|css)$/.test(path)||path.startsWith('.')){res.writeHead(404);res.end();return;}
-    let body=await readFile(resolve(root,path));if(demoWidget&&path==='index.html')body=Buffer.from(body.toString().replace('</head>','<script src="/local-test-widget.js"></script></head>'));response=new Response(body,{headers:{'Content-Type':path.endsWith('.js')?'text/javascript':path.endsWith('.css')?'text/css':'text/html'}});
+    if(!(/^[a-zA-Z0-9_-]+\.(html|js|css)$/.test(path)||/^assets\/singularity\/[a-zA-Z0-9_-]+\.(png|webp)$/.test(path))){res.writeHead(404);res.end();return;}
+    let body=await readFile(resolve(root,path));if(demoWidget&&path==='index.html')body=Buffer.from(body.toString().replace('</head>','<script src="/local-test-widget.js"></script></head>'));response=new Response(body,{headers:{'Content-Type':path.endsWith('.js')?'text/javascript':path.endsWith('.css')?'text/css':path.endsWith('.png')?'image/png':path.endsWith('.webp')?'image/webp':'text/html'}});
    }
    res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));
   }catch{res.writeHead(500);res.end('Local test server error');}

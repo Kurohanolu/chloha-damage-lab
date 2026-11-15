@@ -1,0 +1,86 @@
+name: Deploy verified Singularity
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Approved full commit SHA in Kurohanolu/chloha-damage-lab
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: singularity-pages
+  cancel-in-progress: false
+env:
+  SOURCE_SHA: ${{ inputs.source_sha }}
+jobs:
+  build:
+    if: github.repository == 'Kurohanolu/singularity'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Validate exact source selection
+        run: '[[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          repository: Kurohanolu/chloha-damage-lab
+          ref: ${{ inputs.source_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Require owner adoption and exact source contracts
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          node -e "const r=require('./release.json');require('node:assert/strict').equal(r.product,'Singularity');require('./scripts/verify-publication-approval.cjs').verifyCutoverApproval(r)"
+          node scripts/verify-release.cjs
+          node tests/v0184-public-baseline.cjs
+          node tests/v0187-migration-contract.cjs
+          node tests/v0187-live-readiness.cjs
+      - name: Require eight exact-source regression workflows
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // SOURCE_CI_GATE_BEGIN
+            const sha = process.env.SOURCE_SHA;
+            if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error('Full source SHA required');
+            const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];
+            const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});
+            const latest = new Map();
+            for (const run of data.workflow_runs) {
+              if (run.head_sha !== sha || !['push','pull_request'].includes(run.event) || !required.includes(run.name)) continue;
+              if (!latest.has(run.name) || latest.get(run.name).id < run.id) latest.set(run.name,run);
+            }
+            for (const name of required) {
+              const run = latest.get(name);
+              if (!run || run.status !== 'completed' || run.conclusion !== 'success') throw new Error('Source CI not successful: '+name);
+            }
+            core.info('Verified all eight regression gates for source '+sha+'; public-content and release checks follow deployment');
+            // SOURCE_CI_GATE_END
+      - name: Generate isolated public artifact and provenance
+        run: |
+          node scripts/v0187-build-sites.cjs --output dist/deploy
+          node -e "const m=require('./dist/deploy/migration-artifacts.json');const a=require('node:assert/strict');a.equal(m.sourceCommit,process.env.SOURCE_SHA);a.equal(m.uncommittedPreview,false);console.log('Exact clean source: '+m.sourceCommit)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-provenance
+          path: dist/deploy/migration-artifacts.json
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/deploy/singularity
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy exact generated frontend
+        id: deployment
+        uses: actions/deploy-pages@v4

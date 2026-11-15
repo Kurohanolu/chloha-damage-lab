@@ -1,0 +1,19 @@
+{
+  "dateJST": "2026-11-15",
+  "reportId": "d6fcff21-c0d7-4075-9b87-6e302c2e4d55",
+  "appVersion": "v0.187 Pre-Release 33",
+  "locale": "en",
+  "status": "Accepted",
+  "issueState": "created",
+  "issueNumber": 65,
+  "issueUrl": "https://github.com/Kurohanolu/chloha-damage-lab/issues/65",
+  "revision": 4,
+  "matchingPublicIssues": 1,
+  "publicEntriesInspected": 65,
+  "verificationRowsWritten": 0,
+  "databaseChanged": false,
+  "productionDuplicatePostAttempted": false,
+  "localSecurityTestsPassed": 15,
+  "publicReadinessChecksPassed": 10,
+  "ownerConfirmedProtectedWorkflow": true
+}

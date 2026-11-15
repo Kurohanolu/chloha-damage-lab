@@ -1,4 +1,74 @@
-## 2026-11-14: v0.186 Pre-Release32 — conditional publication approved
+## 2026-11-15: final actual administrator acceptance and publication preparation
+
+- Owner completed the existing protected Worker administration flow and created synthetic Issue #65. Exact-record D1 SELECT confirms Accepted/created, Issue65 URL and revision4; writes0/database unchanged. All65 repository entries contain exactly one matching Issue marker.
+- Fresh public feedback readiness10/10 and local Worker security/idempotency tests15/15 pass, including concurrent creation and repeat suppression. No extra production duplicate POST, private existing report, credential exposure or infrastructure/authentication mutation is involved.
+- Set actual-target verification true and finalize release wording around the delivered migration. Obtain this final head's CI before deploying final metadata/new site and old notice; do not add source commits after old notice and before merge. Exact-main CI, dual-site hashes and immutable release results are recorded in PR #64.
+
+## 2026-11-15: v0.187 owner-approved rollout begins
+
+- Owner explicitly approved the reviewed name/logo/UI, public target repository and Pages setup, production acceptance/publication and main merge after `d0c00a7` passed all ten workflows. Approval is recorded separately from actual live-target acceptance; `liveTargetVerified` remains false.
+- Created the public static deployment target `Kurohanolu/singularity` through the signed-in owner UI, initialized at `5d4369ed730ebc413bada1cb60ba8dc7eb5e4f1e`. Verified source Pages currently uses main/root and that its management controls are available. Existing repository/history/Issue destination and Cloudflare resources are retained.
+- Isolated and deployed the frozen old frontend on `pages-legacy` at `aac68ac8eb7a23a72f91d8045833baadd97ec0c3`; owner Pages source changed successfully and deployment43647174221 passed. Verified all30 public old files against v0.186. Approval checkpoint `d33776b` passed all ten workflows.
+- The connected GitHub App can read the new public repository but cannot write its blobs; ordinary local Git has no push credential. Use the owner UI to install an exact-source Pages deployment workflow, without expanding app permissions or using a new token. Canonical workflow and synthetic source-CI-gate tests are stored in this source repository. The workflow publishes only the isolated generated frontend; main merge, actual service acceptance and release remain separate gates.
+- New-target run43648999989 deployed approved source `d33776b` successfully with the canonical owner-installed workflow. Verified all37 actual public files, all nine real-browser locales, the default108–128 range/input and language reload. Actual anonymous form delivery and one exact synthetic D1 record are confirmed; no database verification mutation occurred. Current implementation `2123237` passed all ten workflows. [Actual-site evidence](v0187-live-acceptance.md) retains the public screenshot and distinguishes incomplete owner Access/moderated-Issue acceptance from received publication permission. Main/old notice/final acceptance flag remain unchanged pending that sign-in.
+
+## 2026-11-15: v0.187 acceptance lifecycle correction
+
+- Found a cutover bootstrap problem: the only actual-URL checker required the verified flag and deployed old notice before it could establish initial new-target acceptance. Added owner/design-authorized read-only new-target verification; final publication retains the verified flag and exact hashes of both sites. Neither mode sets its own approval or publishes.
+- Removed pending-state assumptions from migration contract fixtures so recording real owner approval does not itself fail CI. Current source flags remain pending/false. Empty/truncated/unsafe inventories and changed local bytes are rejected before public reads; missing/redirected/stale public artifacts still fail. Only synthetic fixtures were used for these lifecycle cases.
+- The calculation engine, all gameplay data, nine-language runtime, private-feedback Worker, logo/UI and public sites are unchanged. Exact-head CI evidence is recorded in Draft PR #64 after this follow-up.
+
+## 2026-11-15: v0.187 development candidate and review evidence
+
+- Continuation rechecked GitHub main, the immutable v0.186 release and all ten successful workflows at `4410036`; existing production feedback passed ten read-only checks again and the live old HTML still matched v0.186 while the new path returned404. Added a concrete post-approval cutover/rollback runbook and exact SHA256 preservation of the supplied logo. No production change was performed.
+- UI/runtime checkpoint `4410036663748cdc04e5feb7a59066af75200c01` completed / success in all ten directly retrieved workflows: seven existing gates, dedicated migration, Pages PR-base smoke and publisher PR validation. Publication itself is skipped. Later documentation heads require their own exact-head results in Draft PR #64.
+- Browser evidence covers all nine locales, 3,000 full numeric contracts across new/legacy paths, reload/search/state, local private-feedback delivery and retry/duplicate prevention, anonymous admin denial, 320px/mobile/desktop layout, 44px language touch targets and no header overlap. Actual screenshots are committed in [design review](v0187-design-preview.md).
+- The published old site's HTML still matches v0.186 exactly; the proposed new path returns404. Source/Issue/CI history is retained. No main merge, v0.187 release, repository/Pages mutation, Cloudflare change or production feedback operation occurred.
+- [Readiness](v0187-release-readiness.md) distinguishes code/automatic verification from final name/logo/design adoption, repository availability/Pages setup, real-target acceptance and public cutover. The supplied logo reference is preserved; adaptation limits and existing name collision evidence are explicit.
+
+## 2026-11-15: offline rollback rehearsal and concrete administrator acceptance packet
+
+- Finish remaining preparation while keeping Cloudflare login/API work deferred. Each two-site build retains an independent31-file, notice-free v0.186 backup outside the public sites. A local-only preparation command validates the complete backup against frozen release hashes before writing any new candidate file.
+- Native regression restores the exact old calculator after damage to the current migration tree, rejects missing/corrupt/rehashed/truncated/unsafe/symlink evidence with zero destination writes, and preserves existing output. No live deployment, history rewrite, database or authentication operation is involved.
+- Record the already-published header-cleanup source999acc96, deployment43657571334,37-file/33-URL acceptance and public nine-locale DOM receipt as current evidence; label the initial screenshot historical. The public calculator payload is unchanged in this checkpoint.
+- Prepare one concrete operator procedure for the already-stored synthetic report: accept, review its exact technical-only payload and create one Issue, then retain/reload the same link. Only the public Issue URL needs to return; no Work-session transfer or credential sharing is required. Actual acceptance remains pending until the real Worker/GitHub/D1 evidence is checked. Final-head CI belongs in PR #64.
+
+## 2026-11-15: owner-requested removal of standalone CHLOHA LABS heading
+
+- Reproduced the actual new site's independent pink developer heading above Singularity. Remove that paragraph from the shared presentation template, reduce leading desktop/phone spacing and top-align the intro. Retain the separate localized footer credit and existing result-section labels.
+- Add a content hash to the changed stylesheet URL without changing the v0.187 release or calculation API identifiers. Release verification rejects a stale stylesheet hash.
+- Extend the existing nine-language migration browser suite to320/390/1280px title/spacing/overflow/footer-credit checks (27 layouts), preserving its3000 numeric contracts and local anonymous-feedback regression. Exact-head CI and the approved new-site deployment/actual-screen proof are recorded in PR #64. Main, old-site notice and real protected-service acceptance remain separate from this UI update; no Cloudflare operation is involved.
+
+## 2026-11-15: static migration cache and legacy-phone regression follow-up
+
+- Continue the owner's requested work outside Cloudflare. Reproduce two failing native checks before fixing them: notice assets incorrectly reused the frozen v0.186 cache key, and fresh cache-busting URLs could conceal stale bytes at the browser's normal versioned URL.
+- Generate per-content notice cache keys while preserving the entire audited old calculator. Extend public artifact acceptance to both exact HTML-reference URLs and fresh probes, with negative tests for stale normal URLs on the new site and legacy notice.
+- Strengthen legacy browser acceptance with exact nine-language titles/link names,320px touch geometry, preservation of the original URL/input/draft, and no old query/fragment transfer into the new tab. Add `noreferrer` and verify that neither the navigation Referer nor the new document's referrer exposes the old URL. The original300 contracts and unchanged calculation/runtime checks pass locally; final-head browser and complete CI results belong in PR #64.
+- Actual target verification remains false; the old-site notice is prepared, not deployed. No Cloudflare login, API operation, production security change or protected-acceptance bypass is part of this work.
+
+## 2026-11-15: Cloudflare dashboard403 isolated from working API authentication
+
+- Stop repeated dashboard sign-in attempts. Observed failure is `POST https://dash.cloudflare.com/api/v4/login`403; the specific provider rejection reason is unconfirmed, not inferred from the status alone.
+- Existing locked Wrangler4.162.0 OAuth authentication, four Worker secret-binding metadata checks and an exact synthetic D1 SELECT succeed. The stored acceptance record remains New / no Issue; rows written0 and database unchanged. No credential values, private existing feedback, new resources or security settings are exposed or changed.
+- All ten source workflows at `7e872c4d4f32f8aeb57c7f3ff34f70c128b5264f` and all ten current production read-only checks pass. Frontend Pages uses GitHub identity; feedback CI tests an undeployed bundle. API/CI development can continue without dashboard login or new Cloudflare credentials.
+- Real protected administrator moderation/Issue acceptance remains separate from management OAuth. Keep the actual-target flag false; do not replace protected acceptance with direct database edits or manual Issue creation. Device Login/narrow API tokens are recovery options only if the existing management session actually becomes unusable. See [authentication diagnosis](v0187-cloudflare-auth-diagnostics.md).
+
+## 2026-11-15: v0.187 branch-only migration implementation
+
+- Reuse Issue #63 / Draft PR #64 / `prep/v0187-singularity-migration`; the recommended feature branch is not duplicated. Production main remains `4b2cde61f92610c5bb970618d34147a2c16a8d7b`, v0.186 Pre-Release32.
+- Implement the supplied Orbital S brand reference/adaptations, token-based black/pink/purple theme, nine-language product explanation/attribution, relative-path assets and Pre-Release33 candidate metadata. Existing runtime modules, data/control logic, IDs, frozen300 fixtures/errata and production Worker are verified unchanged.
+- Offline new/legacy artifact build retains the old calculator with a localized separate-tab migration link. New repository/Pages setup, logo adoption, real-target acceptance and final cutover remain approval gates; no production configuration, private-data mutation or repository rename is performed.
+- Native manifest/provenance/baseline/artifact/approval-gate/inventory checks pass. Local Chromium launch is restricted by the managed runtime, so actual browser regression and screenshot capture use GitHub CI. This is not treated as a browser PASS. Fetch final-head CI and any failed job logs directly before reporting completion.
+- Naming research found an Activision game using SINGULARITY with trademark attribution. Record the bounded search and registration/availability limits; do not claim clearance or exclusive rights.
+
+## 2026-11-14: v0.186 Pre-Release32 published; v0.187 preparation started
+
+- Verified public main/tag/archive commit: `4b2cde61f92610c5bb970618d34147a2c16a8d7b` (merged PR #62, Issue #61). All seven mandatory workflows, live Pages smoke and release publication completed / success on that exact SHA; Pages deployment passed too.
+- Public manifest/HTML and all 28 runtime scripts match the release source. The actual site passed nine-language browser smoke. The downloaded release ZIP, checksum asset, GitHub digest and archive commit comment all match; detailed evidence is in [release closure](v0186-release-readiness.md).
+- Existing private feedback readiness and administrator-denial checks passed without posting a report or changing production resources/settings/data. No confirmed current-scope P0/P1 remains; software parity is not full hardware certification and existing support limits remain explicit.
+- Next: Issue #63, `prep/v0187-singularity-migration`, [migration preparation](v0187-singularity-migration-preparation.md). Prepare the agreed Singularity direction and old-URL/private-feedback preservation for formal review. No actual product/repository/URL adoption or expanded gameplay support is authorized by the preparation work.
+
+## 2026-11-14: v0.186 Pre-Release32 — conditional publication approved (preparation history)
 
 - After the completed-candidate/final-approval report, the owner instructed progression if no bug remained evident. Proceed with v0.186 merge/publication only after the final exact-head checks succeed and no unresolved critical known defect is present. This does not authorize actual v0.187 name/URL adoption or production feedback configuration/data changes.
 - Prepare v0.186 Pre-Release32 manifest, visible badge/title/provenance, complete runtime cache keys and release notes. Preserve the v0.184 internal API identifier. Check deployed HTML and every runtime asset against the release source before reporting publication.

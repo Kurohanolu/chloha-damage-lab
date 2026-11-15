@@ -1,0 +1,5 @@
+.singularity-migration-notice{background:#100b15;color:#f6f3fa;border-bottom:2px solid #ff59cb;padding:16px max(14px,calc((100vw - 1032px)/2));font:14px/1.6 system-ui,sans-serif}
+.singularity-migration-notice strong{color:#fff;font-size:16px}
+.singularity-migration-notice p{color:#ddd0e6;max-width:850px;margin:6px 0 12px}
+.singularity-migration-notice a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;background:#79305d;color:#fff;border:1px solid #e294c6;border-radius:8px;text-decoration:none;font-weight:700}
+.singularity-migration-notice a:focus-visible{outline:3px solid #ffb1e0;outline-offset:3px}

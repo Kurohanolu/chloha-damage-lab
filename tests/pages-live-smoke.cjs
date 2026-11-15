@@ -4,7 +4,6 @@ const fs=require('node:fs');
 const {execFileSync}=require('node:child_process');
 const crypto=require('node:crypto');
 const assert=require('node:assert/strict');
-const url=process.env.PAGES_URL||'https://kurohanolu.github.io/chloha-damage-lab/';
 // On PRs, compare the existing public site to the base of the PR merge commit.
 // After merge, compare the live site to the newly published main checkout.
 const source=process.env.PAGES_BASELINE_REF
@@ -13,11 +12,15 @@ const source=process.env.PAGES_BASELINE_REF
 const expected=(source.match(/<title>([^<]+)<\/title>/)||[])[1];
 const runtimeAssets=[...source.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][^>]*>/g)].map(match=>({src:match[1],file:match[1].split(/[?#]/)[0]}));
 const readAsset=file=>process.env.PAGES_BASELINE_REF?execFileSync('git',['show',process.env.PAGES_BASELINE_REF+':'+file]):fs.readFileSync(file);
+const release=JSON.parse(readAsset('release.json'));
+const url=process.env.PAGES_URL||release.publicUrl;
+const presentationAssets=[...source.matchAll(/<(?:link|img)\b[^>]*\b(?:href|src)=["']\.\/([^"']+)["']/g)].map(match=>({src:match[1],file:match[1].split(/[?#]/)[0]}));
+for(const file of Object.values(release.branding||{}))presentationAssets.push({src:file+'?v='+release.tag.slice(1),file});
 const existsSource=file=>process.env.PAGES_BASELINE_REF
  ? execFileSync('git',['ls-tree','--name-only',process.env.PAGES_BASELINE_REF,'--',file],{encoding:'utf8'}).trim()===file
  : fs.existsSync(file);
 const baseline=require('./helpers/public-release-contract.cjs').loadPublicContracts({readFile:readAsset,exists:existsSource});
-const assetHashes=new Map(runtimeAssets.map(({src,file})=>[src,crypto.createHash('sha256').update(readAsset(file)).digest('hex')]));
+const assetHashes=new Map([...runtimeAssets,...presentationAssets].map(({src,file})=>[src,crypto.createHash('sha256').update(readAsset(file)).digest('hex')]));
 const expectedHash=crypto.createHash('sha256').update(source).digest('hex');
 if(!expected)throw Error('Cannot determine expected title from checked-out index.html');
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));

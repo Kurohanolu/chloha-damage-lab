@@ -1,0 +1,123 @@
+{
+  "sourceCommit": "999acc96d380938e9d8e38d357f5e4deeaeb1b1f",
+  "deploymentRun": 43657571334,
+  "checks": [
+    {
+      "attack": "165",
+      "credit": "Developed by Chloha Labs",
+      "damageRange": "108-128",
+      "description": "Pokémon Damage Calculator",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nPokémon Damage Calculator\n\nExperimental build; not fully verified on hardware.\nDamage results, availability and learnsets are not guaranteed.",
+      "leadingSpace": 20,
+      "locale": "en",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "Développé par Chloha Labs",
+      "damageRange": "108-128",
+      "description": "Calculateur de dégâts Pokémon",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nCalculateur de dégâts Pokémon\n\nVersion expérimentale, non entièrement vérifiée sur console.\nLes dégâts, la disponibilité et les capacités apprises ne sont pas garantis.",
+      "leadingSpace": 20,
+      "locale": "fr",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "Entwickelt von Chloha Labs",
+      "damageRange": "108-128",
+      "description": "Pokémon-Schadensrechner",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nPokémon-Schadensrechner\n\nExperimentelle Version; nicht vollständig auf Hardware geprüft.\nSchadenswerte, Verfügbarkeit und erlernbare Attacken sind nicht garantiert.",
+      "leadingSpace": 20,
+      "locale": "de",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "Desarrollado por Chloha Labs",
+      "damageRange": "108-128",
+      "description": "Calculadora de daño Pokémon",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nCalculadora de daño Pokémon\n\nVersión experimental; no verificada completamente en consola.\nNo se garantizan los daños, la disponibilidad ni los movimientos aprendidos.",
+      "leadingSpace": 20,
+      "locale": "es",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "Sviluppato da Chloha Labs",
+      "damageRange": "108-128",
+      "description": "Calcolatore di danni Pokémon",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nCalcolatore di danni Pokémon\n\nVersione sperimentale; non completamente verificata su console.\nDanni, disponibilità e mosse apprendibili non sono garantiti.",
+      "leadingSpace": 20,
+      "locale": "it",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "개발: Chloha Labs",
+      "damageRange": "108-128",
+      "description": "포켓몬 데미지 계산기",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\n포켓몬 데미지 계산기\n\n실험 버전으로 실기 검증이 완료되지 않았습니다.\n피해량, 사용 가능 여부 및 기술 습득 여부는 보장되지 않습니다.",
+      "leadingSpace": 20,
+      "locale": "ko",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "开发：Chloha Labs",
+      "damageRange": "108-128",
+      "description": "宝可梦伤害计算器",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\n宝可梦伤害计算器\n\n实验版本，尚未完成实机验证。\n伤害结果、可用性和可学招式均不保证准确。",
+      "leadingSpace": 20,
+      "locale": "zh-Hans",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "開發：Chloha Labs",
+      "damageRange": "108-128",
+      "description": "寶可夢傷害計算器",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\n寶可夢傷害計算器\n\n實驗版本，尚未完成實機驗證。\n傷害結果、可用性與可學招式均不保證準確。",
+      "leadingSpace": 20,
+      "locale": "zh-Hant",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    },
+    {
+      "attack": "165",
+      "credit": "開発元：Chloha Labs",
+      "damageRange": "108-128",
+      "description": "ポケモン ダメージ計算機",
+      "developerHeadingCount": 0,
+      "introText": "Singularity\n\nポケモン ダメージ計算機\n\n実機未照合の検証版です。\n計算結果・収録・習得技は未保証。",
+      "leadingSpace": 20,
+      "locale": "ja",
+      "noOverflow": true,
+      "stylesheet": "./singularity-v0187.css?v=0.187-pre.33&h=0c4940d15b9e1a6e",
+      "title": "Singularity"
+    }
+  ]
+}
