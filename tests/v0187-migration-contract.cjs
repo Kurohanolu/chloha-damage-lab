@@ -7,7 +7,8 @@ const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 const old=file=>execFileSync('git',['show',legacyCommit+':'+file],{maxBuffer:16*1024*1024});
 const html=fs.readFileSync('index.html','utf8'),frozen=old('index.html').toString();
 // Retain every original byte assertion after reversing only exact, recorded
-// Astra presentation/consent fixes; no calculation or Worker patch is allowed.
+// UI/consent fixes and independently witnessed screen-breaking correction.
+// All other calculation bytes and every Worker byte stay frozen.
 const {normalizeRuntime}=require('./helpers/v0188-astra-runtime-contract.cjs');
 for(const file of dependencies(frozen).filter(file=>file.endsWith('.js')))assert.equal(hash(normalizeRuntime(file,fs.readFileSync(file,'utf8'))),hash(old(file)),'unchanged v0.186 runtime outside exact UI fixes: '+file);
 for(const file of ['tests/fixtures/v0184-public-baseline.json','tests/fixtures/v0186-baseline-corrections.json','services/feedback/src/worker.js'])assert.equal(hash(fs.readFileSync(file)),hash(old(file)),file);

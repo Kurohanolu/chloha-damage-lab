@@ -100,7 +100,10 @@ registerModifier('postRandom','type',20,()=>true,(c,v)=>floor(v*c.a.defTypes.red
 // still subject to independent test vectors; trace exposes each step.
 // The screen and Friend Guard reductions share the final-damage modifier chain.
 // Combine fixed-point modifiers before applying once to avoid intermediate rounding.
-const hasActiveScreen=a=>a.attAbility!=='infiltrator'&&!a.critical&&((a.screen==='reflect'&&a.category==='physical')||(a.screen==='lightScreen'&&a.category==='special'));
+// Brick Break and Psychic Fangs remove screens before this hit's damage.
+// Stable IDs keep this rule independent of translated move names.
+const SCREEN_BREAKING_MOVES=new Set(['gw0169_p022','v096_085']);
+const hasActiveScreen=a=>!SCREEN_BREAKING_MOVES.has(a.moveId)&&a.attAbility!=='infiltrator'&&!a.critical&&((a.screen==='reflect'&&a.category==='physical')||(a.screen==='lightScreen'&&a.category==='special'));
 registerFixedModifier('final','friendGuard',60,c=>c.a.friendGuardCount>0,3072);
 registerModifier('final','burn',0,c=>c.a.burn&&c.a.category==='physical'&&!['guts','waterBubble'].includes(c.a.attAbility)&&c.a.moveMechanic!=='facade',(_,v)=>floor(v/2));
 registerFixedModifier('final','screen',20,c=>hasActiveScreen(c.a),c=>c.a.battleFormat==='singles'?2048:2732);

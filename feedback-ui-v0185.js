@@ -66,7 +66,7 @@
   $('Attach').addEventListener('change',attachment);$('Refresh').addEventListener('click',()=>{dirty();attachment();});
   // Consent refers to the displayed calculation, including programmatic presets,
   // side swaps, resets and six-stat editors. Locale alone is not a calculation change.
-  const calculationIdentity=value=>JSON.stringify([value.appVersion,value.engineVersion,value.selection,value.controls,value.engineInput]);
+  const calculationIdentity=value=>JSON.stringify([value.appVersion,value.engineVersion,value.selection,value.controls,value.engineInput,value.result]);
   function checkAttachmentFreshness(){
    if(!snapshot||busy||stale)return;
    let changed=true;

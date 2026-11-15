@@ -24,6 +24,22 @@ const widget='window.turnstile={render(n,o){queueMicrotask(()=>o.callback("valid
    await approve();const other=locale==='en'?'ja':'en';await page.selectOption('#chloha-locale',other);await page.evaluate(()=>new Promise(requestAnimationFrame));assert.equal(await page.locator('#feedbackConfirm').isChecked(),true,'locale-only change preserves approved technical snapshot');
    // Even a programmatic input change with no DOM event is caught at submit.
    await page.evaluate(()=>{document.getElementById('weather').value='rain';});await page.click('#feedbackSubmit');await stale(locale+' silent change at submit');
+   // SOL-01: a non-active stat can make the model invalid without changing
+   // controls/read(). The approved result must still be invalidated.
+   await page.click('#resetCalculation');
+   if(!await page.locator('#att-attack-points').isVisible())await page.locator('#attStatsToggle').click();
+   await page.fill('#att-hp-points','32');await page.fill('#att-attack-points','32');
+   await page.fill('#att-defense-points','2');
+   await page.fill('#att-specialAttack-points','0');await page.fill('#att-specialDefense-points','0');await page.fill('#att-speed-points','0');
+   await page.waitForFunction(()=>!!window.ChlohaLastCalculation);await approve();
+   const validSnapshot=await page.evaluate(()=>window.ChlohaFeedbackSnapshot.capture());
+   assert.notEqual(validSnapshot.result,null);
+   await page.fill('#att-specialDefense-points','1');
+   const invalidSnapshot=await page.evaluate(()=>window.ChlohaFeedbackSnapshot.capture());
+   assert.equal(invalidSnapshot.result,null,'invalid model clears displayed result');
+   assert.deepEqual(invalidSnapshot.engineInput,validSnapshot.engineInput,'inactive stat leaves bridge unchanged');
+   assert.deepEqual(invalidSnapshot.controls,validSnapshot.controls,'canonical controls remain unchanged');
+   await stale(locale+' invalid result with unchanged engine input');
    await context.close();console.log('PASS '+locale+' attachment consent across preset/swap/reset/model edits and reload-independent submission guard');
   }
   assert.equal(app.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);

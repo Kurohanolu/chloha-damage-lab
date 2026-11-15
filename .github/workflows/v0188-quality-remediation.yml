@@ -22,6 +22,8 @@ jobs:
           node-version: '22'
       - run: npm install --no-package-lock --no-audit --no-fund
       - run: npm ci --prefix services/feedback --no-audit --no-fund
+      - name: Install locked independent calculation reference
+        run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Install fonts for nine-language evidence
         run: |
@@ -54,6 +56,7 @@ jobs:
           path: |
             reports/v0188/
             reports/v0188-astra/
+            reports/v0188-continued/
             dist/v0188/
           if-no-files-found: error
           include-hidden-files: true

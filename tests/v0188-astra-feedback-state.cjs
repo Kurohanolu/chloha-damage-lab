@@ -37,6 +37,17 @@ function harness(){
  {
   const h=harness();await h.attach();h.get('feedbackCategory').value='bug';h.get('feedbackDescription').value='Synthetic local-only test';h.set(s=>{s.controls.attack='201';s.engineInput.attack=201;});await h.fire(h.get('feedbackForm'),'submit');assert.equal(h.get('feedbackErrors').textContent,'attachmentError','submission rechecks current calculation even without a DOM event');assert.equal(h.get('feedbackConfirm').checked,false);
  }
+ // SOL-01: invalid point allocations can clear only the derived result while
+ // the last valid engine bridge values remain identical.
+ for(const viaEvent of [true,false]){
+  const h=harness();await h.attach();h.get('feedbackCategory').value='bug';h.get('feedbackDescription').value='Local invalid-result regression';
+  h.set(s=>{s.result=null;});
+  if(viaEvent)await h.fire(h.get('att-specialDefense-points'),'input');
+  else await h.fire(h.get('feedbackForm'),'submit');
+  assert.equal(h.get('feedbackStale').hidden,false,'invalid result must stale the approved snapshot');
+  assert.equal(h.get('feedbackConfirm').checked,false,'invalid result must revoke attachment consent');
+  await h.fire(h.get('feedbackForm'),'submit');assert.equal(h.get('feedbackErrors').textContent,'attachmentError');
+ }
  {const h=harness();await h.attach();h.unreadable();await h.fire(h.button('syntheticCalculatorAction'),'click');assert.equal(h.get('feedbackConfirm').checked,false,'capture failure must revoke consent');}
  console.log('PASS independent feedback consent: preset/swap/reset, six-stat edits, locale preservation and submit-time freshness');
 })().catch(e=>{console.error(e);process.exitCode=1;});
