@@ -1,0 +1,27 @@
+{
+  "mode": "local-Worker-SQLite-with-mocked-Turnstile-and-GitHub",
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant"
+  ],
+  "externalNameChecks": 63,
+  "uiSearchChecks": 36,
+  "nativeAbilityItemChecks": 27,
+  "feedbackLocales": 9,
+  "allocationErrorLocales": 9,
+  "stockpileLocales": 9,
+  "limitations": [
+    "Representative entity names, not every translation",
+    "Ability/item UI uses native selects; free-text search is tested at the shared catalog layer separately",
+    "No real Turnstile or production submission"
+  ]
+}

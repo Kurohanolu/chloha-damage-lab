@@ -1,0 +1,15 @@
+{
+  "audit": "v0188-astra-engine",
+  "referencePhysicalGameVerified": false,
+  "historicalRefs": [
+    "4b2cde61f92610c5bb970618d34147a2c16a8d7b",
+    "7210be99c39d75b49ea8200aad91d75801eb300a"
+  ],
+  "historicalInputs": 1800,
+  "historicalComparisons": 3600,
+  "neutralCases": 539,
+  "rankCases": 1014,
+  "immunityCases": 48,
+  "thresholdCases": 26,
+  "engineSourceChanged": true
+}

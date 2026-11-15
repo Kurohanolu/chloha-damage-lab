@@ -1,0 +1,394 @@
+﻿2026-11-15T09:56:32.4853828Z Current runner version: '2.338.2'
+2026-11-15T09:56:32.4880006Z ##[group]Runner Image Provisioner
+2026-11-15T09:56:32.4881011Z Hosted Compute Agent
+2026-11-15T09:56:32.4881659Z Version: 20261103.629
+2026-11-15T09:56:32.4882353Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-15T09:56:32.4883160Z Build Date: 2026-11-03T17:26:59Z
+2026-11-15T09:56:32.4883864Z Worker ID: {11bbcdf0-6b6f-4461-a515-7580b055bbc7}
+2026-11-15T09:56:32.4884911Z Region: westus2
+2026-11-15T09:56:32.4885579Z Cloud: Azure
+2026-11-15T09:56:32.4886169Z ##[endgroup]
+2026-11-15T09:56:32.4887752Z ##[group]Operating System
+2026-11-15T09:56:32.4888590Z Ubuntu
+2026-11-15T09:56:32.4889155Z 24.04.5
+2026-11-15T09:56:32.4889743Z LTS
+2026-11-15T09:56:32.4890327Z ##[endgroup]
+2026-11-15T09:56:32.4890921Z ##[group]Runner Image
+2026-11-15T09:56:32.4891570Z Image: ubuntu-24.04
+2026-11-15T09:56:32.4892152Z Version: 20261111.370.1
+2026-11-15T09:56:32.4893492Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-15T09:56:32.4895412Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+2026-11-15T09:56:32.4896427Z ##[endgroup]
+2026-11-15T09:56:32.4897674Z ##[group]GITHUB_TOKEN Permissions
+2026-11-15T09:56:32.4899673Z Actions: read
+2026-11-15T09:56:32.4900322Z Contents: write
+2026-11-15T09:56:32.4901079Z Metadata: read
+2026-11-15T09:56:32.4901718Z ##[endgroup]
+2026-11-15T09:56:32.4903957Z Secret source: Actions
+2026-11-15T09:56:32.4905376Z Cache mode: write
+2026-11-15T09:56:32.4906086Z Prepare workflow directory
+2026-11-15T09:56:32.5257746Z Prepare all required actions
+2026-11-15T09:56:32.5309567Z Getting action download info
+2026-11-15T09:56:32.8723685Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-15T09:56:33.0073624Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-15T09:56:33.0979352Z Download action repository 'actions/github-script@v7' (SHA:f28e40c7f34bde8b3046d885e986cb6290c5673b)
+2026-11-15T09:56:33.4041090Z Complete job name: publish
+2026-11-15T09:56:33.5005767Z ##[group]Run actions/checkout@v4
+2026-11-15T09:56:33.5006663Z with:
+2026-11-15T09:56:33.5007104Z   fetch-depth: 0
+2026-11-15T09:56:33.5007593Z   repository: Kurohanolu/chloha-damage-lab
+2026-11-15T09:56:33.5011391Z   token: ***
+2026-11-15T09:56:33.5011828Z   ssh-strict: true
+2026-11-15T09:56:33.5012267Z   ssh-user: git
+2026-11-15T09:56:33.5012719Z   persist-credentials: true
+2026-11-15T09:56:33.5013208Z   clean: true
+2026-11-15T09:56:33.5013738Z   sparse-checkout-cone-mode: true
+2026-11-15T09:56:33.5014463Z   fetch-tags: false
+2026-11-15T09:56:33.5014914Z   show-progress: true
+2026-11-15T09:56:33.5015365Z   lfs: false
+2026-11-15T09:56:33.5015779Z   submodules: false
+2026-11-15T09:56:33.5016235Z   set-safe-directory: true
+2026-11-15T09:56:33.5016748Z   allow-unsafe-pr-checkout: false
+2026-11-15T09:56:33.5017548Z ##[endgroup]
+2026-11-15T09:56:33.8147917Z Syncing repository: Kurohanolu/chloha-damage-lab
+2026-11-15T09:56:33.8150594Z ##[group]Getting Git version info
+2026-11-15T09:56:33.8151556Z Working directory is '/home/runner/work/chloha-damage-lab/chloha-damage-lab'
+2026-11-15T09:56:33.8152728Z [command]/usr/bin/git version
+2026-11-15T09:56:33.8264517Z git version 2.56.1
+2026-11-15T09:56:33.8287145Z ##[endgroup]
+2026-11-15T09:56:33.8302290Z Temporarily overriding HOME='/home/runner/work/_temp/083a06d6-bfac-4588-993c-6cd06fc0ecfc' before making global git config changes
+2026-11-15T09:56:33.8305071Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-15T09:56:33.8308474Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab
+2026-11-15T09:56:33.8380222Z Deleting the contents of '/home/runner/work/chloha-damage-lab/chloha-damage-lab'
+2026-11-15T09:56:33.8382527Z ##[group]Initializing the repository
+2026-11-15T09:56:33.8388714Z [command]/usr/bin/git init /home/runner/work/chloha-damage-lab/chloha-damage-lab
+2026-11-15T09:56:33.8559646Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-15T09:56:33.8562434Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-15T09:56:33.8565861Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-15T09:56:33.8567434Z hint: call:
+2026-11-15T09:56:33.8568747Z hint:
+2026-11-15T09:56:33.8570243Z hint: 	git config --global init.defaultBranch <name>
+2026-11-15T09:56:33.8571800Z hint:
+2026-11-15T09:56:33.8573183Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-15T09:56:33.8575346Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-15T09:56:33.8577279Z hint:
+2026-11-15T09:56:33.8578386Z hint: 	git branch -m <name>
+2026-11-15T09:56:33.8579280Z hint:
+2026-11-15T09:56:33.8580528Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-15T09:56:33.8582617Z Initialized empty Git repository in /home/runner/work/chloha-damage-lab/chloha-damage-lab/.git/
+2026-11-15T09:56:33.8586498Z [command]/usr/bin/git remote add origin https://github.com/Kurohanolu/chloha-damage-lab
+2026-11-15T09:56:33.8675699Z ##[endgroup]
+2026-11-15T09:56:33.8692866Z ##[group]Disabling automatic garbage collection
+2026-11-15T09:56:33.8702641Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-15T09:56:33.8717557Z ##[endgroup]
+2026-11-15T09:56:33.8719587Z ##[group]Setting up auth
+2026-11-15T09:56:33.8721148Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-15T09:56:33.8775469Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-15T09:56:33.9236261Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-15T09:56:33.9282203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-15T09:56:33.9536988Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-15T09:56:33.9584802Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-15T09:56:33.9833830Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-15T09:56:33.9884562Z ##[endgroup]
+2026-11-15T09:56:33.9885873Z ##[group]Fetching the repository
+2026-11-15T09:56:33.9899480Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-15T09:56:35.2470297Z From https://github.com/Kurohanolu/chloha-damage-lab
+2026-11-15T09:56:35.2473671Z  * [new branch]      audit/v0.177-comprehensive-gate -> origin/audit/v0.177-comprehensive-gate
+2026-11-15T09:56:35.2476656Z  * [new branch]      audit/v0.177-final-release-gate -> origin/audit/v0.177-final-release-gate
+2026-11-15T09:56:35.2478528Z  * [new branch]      audit/v0.177-phase1     -> origin/audit/v0.177-phase1
+2026-11-15T09:56:35.2480520Z  * [new branch]      audit/v0.178-cross-calculator-oracle -> origin/audit/v0.178-cross-calculator-oracle
+2026-11-15T09:56:35.2482934Z  * [new branch]      audit/v0183-night-20261114 -> origin/audit/v0183-night-20261114
+2026-11-15T09:56:35.2486373Z  * [new branch]      audit/v0186-accuracy-mechanics -> origin/audit/v0186-accuracy-mechanics
+2026-11-15T09:56:35.2488790Z  * [new branch]      audit/v0188-astra-quality -> origin/audit/v0188-astra-quality
+2026-11-15T09:56:35.2490713Z  * [new branch]      audit/v0188-continued-baseline -> origin/audit/v0188-continued-baseline
+2026-11-15T09:56:35.2492747Z  * [new branch]      audit/v0188-continued-report -> origin/audit/v0188-continued-report
+2026-11-15T09:56:35.2495399Z  * [new branch]      audit/v0188-final-gate-baseline -> origin/audit/v0188-final-gate-baseline
+2026-11-15T09:56:35.2497813Z  * [new branch]      audit/v0188-final-gate-report -> origin/audit/v0188-final-gate-report
+2026-11-15T09:56:35.2500102Z  * [new branch]      audit/v100-promotion-baseline -> origin/audit/v100-promotion-baseline
+2026-11-15T09:56:35.2502121Z  * [new branch]      ci-status               -> origin/ci-status
+2026-11-15T09:56:35.2504380Z  * [new branch]      codex/v0162-validated-update -> origin/codex/v0162-validated-update
+2026-11-15T09:56:35.2506730Z  * [new branch]      codex/v0163-ui-redesign -> origin/codex/v0163-ui-redesign
+2026-11-15T09:56:35.2509006Z  * [new branch]      codex/v0164-permission-check -> origin/codex/v0164-permission-check
+2026-11-15T09:56:35.2511718Z  * [new branch]      codex/v0165-pokemon-autocomplete -> origin/codex/v0165-pokemon-autocomplete
+2026-11-15T09:56:35.2514647Z  * [new branch]      codex/v0166-search-point-presets -> origin/codex/v0166-search-point-presets
+2026-11-15T09:56:35.2517251Z  * [new branch]      codex/v0166-search-presets -> origin/codex/v0166-search-presets
+2026-11-15T09:56:35.2520186Z  * [new branch]      codex/v0167-stat-visibility-and-ko-summary -> origin/codex/v0167-stat-visibility-and-ko-summary
+2026-11-15T09:56:35.2523814Z  * [new branch]      codex/v0168-move-search-and-board-controls -> origin/codex/v0168-move-search-and-board-controls
+2026-11-15T09:56:35.2527328Z  * [new branch]      codex/v0169-gamewith-move-catalog -> origin/codex/v0169-gamewith-move-catalog
+2026-11-15T09:56:35.2530498Z  * [new branch]      codex/v0170-gamewith-move-catalog-batch2 -> origin/codex/v0170-gamewith-move-catalog-batch2
+2026-11-15T09:56:35.2533914Z  * [new branch]      codex/v0170-gamewith-physical-expansion -> origin/codex/v0170-gamewith-physical-expansion
+2026-11-15T09:56:35.2537305Z  * [new branch]      docs/v0.177-version-provenance -> origin/docs/v0.177-version-provenance
+2026-11-15T09:56:35.2540196Z  * [new branch]      docs/v0166-field-verification-guide -> origin/docs/v0166-field-verification-guide
+2026-11-15T09:56:35.2544465Z  * [new branch]      feat/v0.177-attacker-levitate -> origin/feat/v0.177-attacker-levitate
+2026-11-15T09:56:35.2548865Z  * [new branch]      feat/v0.177-conditional-power-clarity -> origin/feat/v0.177-conditional-power-clarity
+2026-11-15T09:56:35.2552208Z  * [new branch]      feat/v0181-weight-dependent-moves -> origin/feat/v0181-weight-dependent-moves
+2026-11-15T09:56:35.2556483Z  * [new branch]      feat/v0182-multi-hit-moves -> origin/feat/v0182-multi-hit-moves
+2026-11-15T09:56:35.2560520Z  * [new branch]      feat/v0182-pr22-ability-foundation -> origin/feat/v0182-pr22-ability-foundation
+2026-11-15T09:56:35.2564735Z  * [new branch]      feat/v0182-pr23-ability-i18n-ready -> origin/feat/v0182-pr23-ability-i18n-ready
+2026-11-15T09:56:35.2567463Z  * [new branch]      feat/v0183-i18n-foundation -> origin/feat/v0183-i18n-foundation
+2026-11-15T09:56:35.2569822Z  * [new branch]      feature/v0.171-knock-off -> origin/feature/v0.171-knock-off
+2026-11-15T09:56:35.2572439Z  * [new branch]      feature/v0.172-conditional-power -> origin/feature/v0.172-conditional-power
+2026-11-15T09:56:35.2575742Z  * [new branch]      feature/v0.173-conditional-moves -> origin/feature/v0.173-conditional-moves
+2026-11-15T09:56:35.2578212Z  * [new branch]      feature/v0.174-facade   -> origin/feature/v0.174-facade
+2026-11-15T09:56:35.2580790Z  * [new branch]      feature/v0.175-conditional-power-ui -> origin/feature/v0.175-conditional-power-ui
+2026-11-15T09:56:35.2583936Z  * [new branch]      feature/v0.176-conditional-power-state -> origin/feature/v0.176-conditional-power-state
+2026-11-15T09:56:35.2587066Z  * [new branch]      feature/v0.183-i18n-foundation -> origin/feature/v0.183-i18n-foundation
+2026-11-15T09:56:35.2589622Z  * [new branch]      feature/v0179-ja-en-foundation -> origin/feature/v0179-ja-en-foundation
+2026-11-15T09:56:35.2592201Z  * [new branch]      feature/v0185-feedback-system -> origin/feature/v0185-feedback-system
+2026-11-15T09:56:35.2673509Z  * [new branch]      feature/v0188-quality-remediation -> origin/feature/v0188-quality-remediation
+2026-11-15T09:56:35.2677394Z  * [new branch]      fix/v0.177-move-policy-consistency -> origin/fix/v0.177-move-policy-consistency
+2026-11-15T09:56:35.2680301Z  * [new branch]      fix/v0.178-release-label -> origin/fix/v0.178-release-label
+2026-11-15T09:56:35.2683035Z  * [new branch]      fix/v0.178-visible-header -> origin/fix/v0.178-visible-header
+2026-11-15T09:56:35.2685800Z  * [new branch]      fix/v0179-mobile-english-ui -> origin/fix/v0179-mobile-english-ui
+2026-11-15T09:56:35.2688460Z  * [new branch]      fix/v0179-runtime-i18n-roundtrip -> origin/fix/v0179-runtime-i18n-roundtrip
+2026-11-15T09:56:35.2691257Z  * [new branch]      fix/v0180-android-english-leaks -> origin/fix/v0180-android-english-leaks
+2026-11-15T09:56:35.2694455Z  * [new branch]      fix/v0180-ja-roundtrip-dynamic-labels -> origin/fix/v0180-ja-roundtrip-dynamic-labels
+2026-11-15T09:56:35.2699907Z  * [new branch]      fix/v0180-locale-roundtrip -> origin/fix/v0180-locale-roundtrip
+2026-11-15T09:56:35.2703991Z  * [new branch]      fix/v0182-showdown-move-coverage -> origin/fix/v0182-showdown-move-coverage
+2026-11-15T09:56:35.2708319Z  * [new branch]      fix/v0184-release-asset-cache -> origin/fix/v0184-release-asset-cache
+2026-11-15T09:56:35.2711605Z  * [new branch]      main                    -> origin/main
+2026-11-15T09:56:35.2714686Z  * [new branch]      pages-legacy            -> origin/pages-legacy
+2026-11-15T09:56:35.2718427Z  * [new branch]      prep/v0187-singularity-migration -> origin/prep/v0187-singularity-migration
+2026-11-15T09:56:35.2722583Z  * [new branch]      qa/v0166-damage-regression -> origin/qa/v0166-damage-regression
+2026-11-15T09:56:35.2726906Z  * [new branch]      refactor/v0184-engine-baseline -> origin/refactor/v0184-engine-baseline
+2026-11-15T09:56:35.2730493Z  * [new branch]      release/v0.177-pre16    -> origin/release/v0.177-pre16
+2026-11-15T09:56:35.2733038Z  * [new branch]      release/v0182-visible-version -> origin/release/v0182-visible-version
+2026-11-15T09:56:35.2736559Z  * [new branch]      test/v0.177-conditional-power-vectors -> origin/test/v0.177-conditional-power-vectors
+2026-11-15T09:56:35.2740714Z  * [new branch]      test/v0.177-expanding-force-grounding-abilities -> origin/test/v0.177-expanding-force-grounding-abilities
+2026-11-15T09:56:35.2744009Z  * [new branch]      test/v0.177-expanding-force-matrix -> origin/test/v0.177-expanding-force-matrix
+2026-11-15T09:56:35.2747594Z  * [new branch]      test/v0.177-expanding-force-stacked-modifiers -> origin/test/v0.177-expanding-force-stacked-modifiers
+2026-11-15T09:56:35.2751319Z  * [new branch]      test/v0.177-expanding-force-terrain-oracle -> origin/test/v0.177-expanding-force-terrain-oracle
+2026-11-15T09:56:35.2754706Z  * [new branch]      test/v0.177-independent-damage-cases -> origin/test/v0.177-independent-damage-cases
+2026-11-15T09:56:35.2757419Z  * [new branch]      test/v0.177-modifier-vectors -> origin/test/v0.177-modifier-vectors
+2026-11-15T09:56:35.2759937Z  * [new branch]      test/v0176-conditional-power-ui -> origin/test/v0176-conditional-power-ui
+2026-11-15T09:56:35.2762061Z  * [new tag]         v0.184-pre.29           -> v0.184-pre.29
+2026-11-15T09:56:35.2763623Z  * [new tag]         v0.184-pre.30           -> v0.184-pre.30
+2026-11-15T09:56:35.2765448Z  * [new tag]         v0.185-pre.31           -> v0.185-pre.31
+2026-11-15T09:56:35.2767009Z  * [new tag]         v0.186-pre.32           -> v0.186-pre.32
+2026-11-15T09:56:35.2768563Z  * [new tag]         v0.187-pre.33           -> v0.187-pre.33
+2026-11-15T09:56:35.2770119Z  * [new tag]         v0.188-pre.1            -> v0.188-pre.1
+2026-11-15T09:56:35.2773182Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-15T09:56:35.2775079Z   origin/main
+2026-11-15T09:56:35.2777485Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-15T09:56:35.2778976Z 0b270c1452505268364659edd402209b00b28673
+2026-11-15T09:56:35.2781895Z ##[endgroup]
+2026-11-15T09:56:35.2783401Z ##[group]Determining the checkout info
+2026-11-15T09:56:35.2785711Z ##[endgroup]
+2026-11-15T09:56:35.2786711Z [command]/usr/bin/git sparse-checkout disable
+2026-11-15T09:56:35.2789622Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-15T09:56:35.2792995Z ##[group]Checking out the ref
+2026-11-15T09:56:35.2794980Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-15T09:56:35.3239739Z Switched to a new branch 'main'
+2026-11-15T09:56:35.3246186Z branch 'main' set up to track 'origin/main'.
+2026-11-15T09:56:35.3255803Z ##[endgroup]
+2026-11-15T09:56:35.3311356Z [command]/usr/bin/git log -1 --format=%H
+2026-11-15T09:56:35.3348587Z 0b270c1452505268364659edd402209b00b28673
+2026-11-15T09:56:35.3732369Z ##[group]Run actions/setup-node@v4
+2026-11-15T09:56:35.3733463Z with:
+2026-11-15T09:56:35.3734397Z   node-version: 22
+2026-11-15T09:56:35.3735260Z   always-auth: false
+2026-11-15T09:56:35.3736129Z   check-latest: false
+2026-11-15T09:56:35.3745366Z   token: ***
+2026-11-15T09:56:35.3746190Z ##[endgroup]
+2026-11-15T09:56:35.5261408Z Found in cache @ /opt/hostedtoolcache/node/22.23.4/x64
+2026-11-15T09:56:35.5268265Z (node:2829) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-15T09:56:35.5273038Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-15T09:56:35.5277304Z ##[group]Environment details
+2026-11-15T09:56:35.9605349Z node: v22.23.4
+2026-11-15T09:56:35.9606153Z npm: 10.9.9
+2026-11-15T09:56:35.9606672Z yarn: 1.22.22
+2026-11-15T09:56:35.9607908Z ##[endgroup]
+2026-11-15T09:56:35.9779513Z ##[group]Run node scripts/verify-publication-approval.cjs
+2026-11-15T09:56:35.9780291Z [36;1mnode scripts/verify-publication-approval.cjs[0m
+2026-11-15T09:56:35.9814428Z shell: /usr/bin/bash -e {0}
+2026-11-15T09:56:35.9814969Z ##[endgroup]
+2026-11-15T09:56:36.4851378Z PASS publication approval gate
+2026-11-15T09:56:36.5008988Z ##[group]Run node scripts/v0187-live-migration-check.cjs
+2026-11-15T09:56:36.5009531Z [36;1mnode scripts/v0187-live-migration-check.cjs[0m
+2026-11-15T09:56:36.5031012Z shell: /usr/bin/bash -e {0}
+2026-11-15T09:56:36.5031345Z ##[endgroup]
+2026-11-15T09:56:40.1225087Z {
+2026-11-15T09:56:40.1226007Z   "ready": true,
+2026-11-15T09:56:40.1226950Z   "mode": "read-only-public-artifact-verification",
+2026-11-15T09:56:40.1227703Z   "checkedSites": [
+2026-11-15T09:56:40.1228176Z     "singularity",
+2026-11-15T09:56:40.1228642Z     "chloha-damage-lab"
+2026-11-15T09:56:40.1229144Z   ],
+2026-11-15T09:56:40.1229569Z   "checkedPublicFiles": 73,
+2026-11-15T09:56:40.1230223Z   "checkedBrowserAssetUrls": 67,
+2026-11-15T09:56:40.1230818Z   "publicationReady": true,
+2026-11-15T09:56:40.1231227Z   "productionMutations": 0
+2026-11-15T09:56:40.1231539Z }
+2026-11-15T09:56:40.1473995Z ##[group]Run node -e "if(require('./release.json').tag==='v1.0.0')require('node:child_process').execFileSync(process.execPath,['scripts/v100-live-acceptance.cjs','--publication'],{stdio:'inherit'})"
+2026-11-15T09:56:40.1475708Z [36;1mnode -e "if(require('./release.json').tag==='v1.0.0')require('node:child_process').execFileSync(process.execPath,['scripts/v100-live-acceptance.cjs','--publication'],{stdio:'inherit'})"[0m
+2026-11-15T09:56:40.1497965Z shell: /usr/bin/bash -e {0}
+2026-11-15T09:56:40.1498233Z ##[endgroup]
+2026-11-15T09:56:41.8837338Z {"sourceCommit":"0b270c1452505268364659edd402209b00b28673","sourceTree":"239c4cbd37aa6389f16dc81e7f9a861c09a723f2","status":"passed","files":76,"requests":219,"productionMutations":0}
+2026-11-15T09:56:41.9126415Z ##[group]Run node scripts/feedback-production-check.cjs
+2026-11-15T09:56:41.9126891Z [36;1mnode scripts/feedback-production-check.cjs[0m
+2026-11-15T09:56:41.9147892Z shell: /usr/bin/bash -e {0}
+2026-11-15T09:56:41.9148154Z ##[endgroup]
+2026-11-15T09:56:42.2783581Z {
+2026-11-15T09:56:42.2784504Z   "ready": true,
+2026-11-15T09:56:42.2785006Z   "checks": [
+2026-11-15T09:56:42.2785355Z     {
+2026-11-15T09:56:42.2785876Z       "name": "Approved HTTPS feedback API origin is configured",
+2026-11-15T09:56:42.2787130Z       "passed": true
+2026-11-15T09:56:42.2787525Z     },
+2026-11-15T09:56:42.2787886Z     {
+2026-11-15T09:56:42.2788523Z       "name": "Public intake configuration is reachable without login",
+2026-11-15T09:56:42.2789332Z       "passed": true
+2026-11-15T09:56:42.2789746Z     },
+2026-11-15T09:56:42.2790133Z     {
+2026-11-15T09:56:42.2790910Z       "name": "Production intake is enabled without a known Turnstile test key",
+2026-11-15T09:56:42.2791728Z       "passed": true
+2026-11-15T09:56:42.2792203Z     },
+2026-11-15T09:56:42.2792588Z     {
+2026-11-15T09:56:42.2793236Z       "name": "Published retention policy matches the API",
+2026-11-15T09:56:42.2793910Z       "passed": true
+2026-11-15T09:56:42.2794570Z     },
+2026-11-15T09:56:42.2794945Z     {
+2026-11-15T09:56:42.2795541Z       "name": "Public API permits the exact frontend origin",
+2026-11-15T09:56:42.2796228Z       "passed": true
+2026-11-15T09:56:42.2796651Z     },
+2026-11-15T09:56:42.2797011Z     {
+2026-11-15T09:56:42.2797543Z       "name": "Public configuration is not cached",
+2026-11-15T09:56:42.2798090Z       "passed": true
+2026-11-15T09:56:42.2798360Z     },
+2026-11-15T09:56:42.2798598Z     {
+2026-11-15T09:56:42.2799028Z       "name": "Anonymous access is denied: /v1/admin/reports",
+2026-11-15T09:56:42.2799456Z       "passed": true
+2026-11-15T09:56:42.2799735Z     },
+2026-11-15T09:56:42.2799975Z     {
+2026-11-15T09:56:42.2800327Z       "name": "Anonymous access is denied: /admin/",
+2026-11-15T09:56:42.2800717Z       "passed": true
+2026-11-15T09:56:42.2800989Z     },
+2026-11-15T09:56:42.2801237Z     {
+2026-11-15T09:56:42.2801603Z       "name": "Anonymous access is denied: /admin/admin.js",
+2026-11-15T09:56:42.2802020Z       "passed": true
+2026-11-15T09:56:42.2802259Z     },
+2026-11-15T09:56:42.2802457Z     {
+2026-11-15T09:56:42.2802729Z       "name": "Reports have no public listing",
+2026-11-15T09:56:42.2803090Z       "passed": true
+2026-11-15T09:56:42.2803319Z     }
+2026-11-15T09:56:42.2803517Z   ],
+2026-11-15T09:56:42.2803847Z   "blockers": []
+2026-11-15T09:56:42.2804482Z }
+2026-11-15T09:56:42.2917515Z ##[group]Run mkdir -p dist/release
+2026-11-15T09:56:42.2917858Z [36;1mmkdir -p dist/release[0m
+2026-11-15T09:56:42.2918324Z [36;1mTZ=UTC git archive --format=zip --prefix=chloha-damage-lab/ -o dist/release/release.zip HEAD[0m
+2026-11-15T09:56:42.2938934Z shell: /usr/bin/bash -e {0}
+2026-11-15T09:56:42.2939192Z ##[endgroup]
+2026-11-15T09:56:42.5131419Z ##[group]Run actions/github-script@v7
+2026-11-15T09:56:42.5131729Z with:
+2026-11-15T09:56:42.5142999Z   script: const fs = require('fs');
+const manifest = JSON.parse(fs.readFileSync('release.json', 'utf8'));
+const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'GitHub Pages live smoke'];
+if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
+if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
+if (fs.existsSync('.github/workflows/v0187-singularity-migration.yml')) required.push('v0.187 Singularity Migration');
+if (fs.existsSync('.github/workflows/v0188-quality-remediation.yml')) required.push('v0.188 Quality Remediation');
+if (manifest.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
+let verified;
+for (let attempt = 0; attempt < 80; attempt++) {
+  const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});
+  const latest = new Map();
+  for (const run of response.data.workflow_runs) {
+    if (!required.includes(run.name) || run.head_sha !== context.sha) continue;
+    if (!latest.has(run.name) || latest.get(run.name).id < run.id) latest.set(run.name, run);
+  }
+  const failed = [...latest.values()].find(run => run.status === 'completed' && run.conclusion !== 'success');
+  if (failed) throw new Error(`${failed.name}: ${failed.conclusion}; release was not published`);
+  if (required.every(name => latest.get(name)?.status === 'completed' && latest.get(name)?.conclusion === 'success')) {
+    verified = required.map(name => latest.get(name));
+    break;
+  }
+  core.info(`Waiting for exact-commit CI (${latest.size}/${required.length} workflows found), attempt ${attempt + 1}/80`);
+  await new Promise(resolve => setTimeout(resolve, 15000));
+}
+if (!verified) throw new Error('Exact-commit CI did not complete successfully; release was not published');
+const body = fs.readFileSync(manifest.notes, 'utf8') + `\n\nCommit: \`${context.sha}\`\n\n` + verified.map(run => `- [${run.name}](${run.html_url}): completed / success`).join('\n');
+let existingRelease = null;
+try {
+  existingRelease = (await github.rest.repos.getReleaseByTag({...context.repo, tag: manifest.tag})).data;
+} catch (error) {
+  if (error.status !== 404) throw error;
+}
+if (manifest.tag === 'v1.0.0') {
+  const {verifyDeploymentRun} = require('./scripts/helpers/v100-deployment-proof.cjs');
+  await verifyDeploymentRun({github, sourceCommit:manifest.migration.liveAcceptanceSourceCommit, runUrl:manifest.migration.liveAcceptanceDeploymentRun, expectedWorkflow:fs.readFileSync('deployment/singularity-pages.yml')});
+  // CI polling can take minutes. Refresh current public bytes at the
+  // publication boundary instead of relying on the early readiness check.
+  require('node:child_process').execFileSync(process.execPath, ['scripts/v100-live-acceptance.cjs', '--publication'], {stdio:'inherit'});
+}
+const archive = fs.readFileSync('dist/release/release.zip');
+const {publishArchive} = require('./scripts/helpers/github-release-publication.cjs');
+const receipt = await publishArchive({github, repo:context.repo, sha:context.sha, manifest, body, archive, existingRelease});
+core.notice(`Published ${receipt.url} at ${receipt.commit}; stable=${receipt.stable}; SHA256 ${receipt.sha256}`);
+
+2026-11-15T09:56:42.5156918Z   github-token: ***
+2026-11-15T09:56:42.5157143Z   debug: false
+2026-11-15T09:56:42.5157362Z   user-agent: actions/github-script
+2026-11-15T09:56:42.5157641Z   result-encoding: json
+2026-11-15T09:56:42.5157855Z   retries: 0
+2026-11-15T09:56:42.5158083Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-11-15T09:56:42.5158381Z ##[endgroup]
+2026-11-15T09:56:43.0305877Z Waiting for exact-commit CI (11/11 workflows found), attempt 1/80
+2026-11-15T09:56:58.4357407Z Waiting for exact-commit CI (11/11 workflows found), attempt 2/80
+2026-11-15T09:57:13.8702273Z Waiting for exact-commit CI (11/11 workflows found), attempt 3/80
+2026-11-15T09:57:29.2582544Z Waiting for exact-commit CI (11/11 workflows found), attempt 4/80
+2026-11-15T09:57:44.6747663Z Waiting for exact-commit CI (11/11 workflows found), attempt 5/80
+2026-11-15T09:58:00.0702450Z Waiting for exact-commit CI (11/11 workflows found), attempt 6/80
+2026-11-15T09:58:15.4613339Z Waiting for exact-commit CI (11/11 workflows found), attempt 7/80
+2026-11-15T09:58:30.8792933Z Waiting for exact-commit CI (11/11 workflows found), attempt 8/80
+2026-11-15T09:58:46.3037041Z Waiting for exact-commit CI (11/11 workflows found), attempt 9/80
+2026-11-15T09:59:01.7898320Z Waiting for exact-commit CI (11/11 workflows found), attempt 10/80
+2026-11-15T09:59:17.1976871Z Waiting for exact-commit CI (11/11 workflows found), attempt 11/80
+2026-11-15T09:59:32.6167036Z Waiting for exact-commit CI (11/11 workflows found), attempt 12/80
+2026-11-15T09:59:48.0060168Z Waiting for exact-commit CI (11/11 workflows found), attempt 13/80
+2026-11-15T10:00:03.4740215Z Waiting for exact-commit CI (11/11 workflows found), attempt 14/80
+2026-11-15T10:00:19.2817140Z Waiting for exact-commit CI (11/11 workflows found), attempt 15/80
+2026-11-15T10:00:34.7309288Z Waiting for exact-commit CI (11/11 workflows found), attempt 16/80
+2026-11-15T10:00:50.1925583Z Waiting for exact-commit CI (11/11 workflows found), attempt 17/80
+2026-11-15T10:01:05.6344606Z Waiting for exact-commit CI (11/11 workflows found), attempt 18/80
+2026-11-15T10:01:21.0499080Z Waiting for exact-commit CI (11/11 workflows found), attempt 19/80
+2026-11-15T10:01:36.4606619Z Waiting for exact-commit CI (11/11 workflows found), attempt 20/80
+2026-11-15T10:01:51.8641013Z Waiting for exact-commit CI (11/11 workflows found), attempt 21/80
+2026-11-15T10:02:07.3085350Z Waiting for exact-commit CI (11/11 workflows found), attempt 22/80
+2026-11-15T10:02:22.7197919Z Waiting for exact-commit CI (11/11 workflows found), attempt 23/80
+2026-11-15T10:02:38.1807666Z Waiting for exact-commit CI (11/11 workflows found), attempt 24/80
+2026-11-15T10:02:53.6118410Z Waiting for exact-commit CI (11/11 workflows found), attempt 25/80
+2026-11-15T10:03:08.9506094Z Waiting for exact-commit CI (11/11 workflows found), attempt 26/80
+2026-11-15T10:03:24.4493265Z Waiting for exact-commit CI (11/11 workflows found), attempt 27/80
+2026-11-15T10:03:39.9457620Z Waiting for exact-commit CI (11/11 workflows found), attempt 28/80
+2026-11-15T10:03:55.3345299Z Waiting for exact-commit CI (11/11 workflows found), attempt 29/80
+2026-11-15T10:04:10.7044751Z Waiting for exact-commit CI (11/11 workflows found), attempt 30/80
+2026-11-15T10:04:26.1172991Z Waiting for exact-commit CI (11/11 workflows found), attempt 31/80
+2026-11-15T10:04:41.4966313Z Waiting for exact-commit CI (11/11 workflows found), attempt 32/80
+2026-11-15T10:04:56.8631661Z Waiting for exact-commit CI (11/11 workflows found), attempt 33/80
+2026-11-15T10:05:12.2315067Z Waiting for exact-commit CI (11/11 workflows found), attempt 34/80
+2026-11-15T10:05:27.6681895Z Waiting for exact-commit CI (11/11 workflows found), attempt 35/80
+2026-11-15T10:05:43.1565830Z Waiting for exact-commit CI (11/11 workflows found), attempt 36/80
+2026-11-15T10:05:58.6628768Z Waiting for exact-commit CI (11/11 workflows found), attempt 37/80
+2026-11-15T10:06:18.0485919Z {"sourceCommit":"0b270c1452505268364659edd402209b00b28673","sourceTree":"239c4cbd37aa6389f16dc81e7f9a861c09a723f2","status":"passed","files":76,"requests":219,"productionMutations":0}
+2026-11-15T10:06:21.9536085Z ##[notice]Published https://github.com/Kurohanolu/chloha-damage-lab/releases/tag/v1.0.0 at 0b270c1452505268364659edd402209b00b28673; stable=true; SHA256 dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6
+2026-11-15T10:06:21.9718334Z Post job cleanup.
+2026-11-15T10:06:22.1023481Z (node:3855) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-15T10:06:22.1024844Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-15T10:06:22.1217334Z Post job cleanup.
+2026-11-15T10:06:22.2307843Z [command]/usr/bin/git version
+2026-11-15T10:06:22.2345819Z git version 2.56.1
+2026-11-15T10:06:22.2388744Z Temporarily overriding HOME='/home/runner/work/_temp/fa01638b-d9fe-405c-b0bb-9ab0949df86d' before making global git config changes
+2026-11-15T10:06:22.2390835Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-15T10:06:22.2394849Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chloha-damage-lab/chloha-damage-lab
+2026-11-15T10:06:22.2460764Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-15T10:06:22.2518898Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-15T10:06:22.2881231Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-15T10:06:22.2918971Z http.https://github.com/.extraheader
+2026-11-15T10:06:22.2933003Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-15T10:06:22.2982591Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-15T10:06:22.3295758Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-15T10:06:22.3346279Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-15T10:06:22.3771980Z Cleaning up orphan processes
+2026-11-15T10:06:22.4264100Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/github-script@v7, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

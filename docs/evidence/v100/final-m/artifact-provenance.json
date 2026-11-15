@@ -1,0 +1,996 @@
+{
+  "verifiedAt": "2026-11-15T10:06:40.199568+00:00",
+  "run": {
+    "observedAt": "2026-11-15T10:06:38.536Z",
+    "id": 43701633753,
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633753",
+    "head_sha": "0b270c1452505268364659edd402209b00b28673",
+    "head_branch": "main",
+    "event": "push",
+    "path": ".github/workflows/v0188-quality-remediation.yml",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1,
+    "created_at": "2026-11-15T09:56:21Z",
+    "updated_at": "2026-11-15T10:05:59Z",
+    "run_started_at": "2026-11-15T09:56:21Z"
+  },
+  "jobs": {
+    "observedAt": "2026-11-15T10:06:38.536Z",
+    "jobs": [
+      {
+        "id": 132773832958,
+        "name": "quality-candidate",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 43701633753,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --no-package-lock --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Install locked independent calculation reference",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Install fonts for nine-language evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Preserve release metadata, engine bytes and fixed 300 contracts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Exercise every v0.188 state, accessibility, locale and mobile regression",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Preserve ninety-transition language regression",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Recheck private feedback state machine without production writes",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Build candidate assets without deployment",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 27
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 28
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 29
+          }
+        ]
+      },
+      {
+        "id": 132773833183,
+        "name": "performance",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 43701633753,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --no-package-lock --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Install fonts for comparable nine-language rendering",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Measure baseline and candidate under identical emulation conditions",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Observe the pinned baseline or approved current public release without mutations",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 20
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          }
+        ]
+      },
+      {
+        "id": 132773833256,
+        "name": "controlled-memory",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 43701633753,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --no-package-lock --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Install fonts for matched memory scenarios",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Measure controlled-GC retention and repeated state recovery",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 14156802797,
+      "node_id": "MDg6QXJ0aWZhY3QxNDE1NjgwMjc5Nw==",
+      "name": "v0188-controlled-memory-evidence",
+      "size_in_bytes": 9180,
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797",
+      "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797/zip",
+      "expired": false,
+      "digest": "sha256:a3207d24b6dadce951a49049382ba3f727f1296a77aa0dfb9acf7296d85efa2f",
+      "created_at": "2026-11-15T10:03:04Z",
+      "updated_at": "2026-11-15T10:03:04Z",
+      "expires_at": "2026-11-29T10:03:04Z",
+      "workflow_run": {
+        "id": 43701633753,
+        "repository_id": 1452798299,
+        "head_repository_id": 1452798299,
+        "head_branch": "main",
+        "head_sha": "0b270c1452505268364659edd402209b00b28673"
+      },
+      "localPath": "memory.zip",
+      "localSha256": "a3207d24b6dadce951a49049382ba3f727f1296a77aa0dfb9acf7296d85efa2f",
+      "archiveEntriesVerified": 1,
+      "entries": [
+        {
+          "path": "memory/memory.json",
+          "bytes": 181707,
+          "sha256": "6c87067c9b286d9c2eb7ed4cb995e2711c4544c6b03abbcdf1db8443c93d2af2"
+        }
+      ]
+    },
+    {
+      "id": 14156382851,
+      "node_id": "MDg6QXJ0aWZhY3QxNDE1NjM4Mjg1MQ==",
+      "name": "v0188-performance-audit-evidence",
+      "size_in_bytes": 11016,
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851",
+      "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851/zip",
+      "expired": false,
+      "digest": "sha256:236eaf31f4fb4ed26ac0d58a29aa64e04aa4d251fb5dbb3704803dbf03092b3b",
+      "created_at": "2026-11-15T10:00:11Z",
+      "updated_at": "2026-11-15T10:00:11Z",
+      "expires_at": "2026-11-29T10:00:10Z",
+      "workflow_run": {
+        "id": 43701633753,
+        "repository_id": 1452798299,
+        "head_repository_id": 1452798299,
+        "head_branch": "main",
+        "head_sha": "0b270c1452505268364659edd402209b00b28673"
+      },
+      "localPath": "performance.zip",
+      "localSha256": "236eaf31f4fb4ed26ac0d58a29aa64e04aa4d251fb5dbb3704803dbf03092b3b",
+      "archiveEntriesVerified": 2,
+      "entries": [
+        {
+          "path": "performance/browser-performance.json",
+          "bytes": 84534,
+          "sha256": "676fd984285ece4a727a4b2d5ab3c7b0442b3546b52287a469e3f8bfbd562049"
+        },
+        {
+          "path": "performance/public-performance.json",
+          "bytes": 150913,
+          "sha256": "546a84544f9e28de139256e844116e2705c211937f97935093ea902d7ab2f6a5"
+        }
+      ]
+    },
+    {
+      "id": 14156239034,
+      "node_id": "MDg6QXJ0aWZhY3QxNDE1NjIzOTAzNA==",
+      "name": "v0188-quality-audit-evidence",
+      "size_in_bytes": 3302925,
+      "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034",
+      "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034/zip",
+      "expired": false,
+      "digest": "sha256:e4ed87344fa7ec4e17e081f6293d49517a8eb040d11c90845d12b6b27ff3f7f4",
+      "created_at": "2026-11-15T10:05:56Z",
+      "updated_at": "2026-11-15T10:05:56Z",
+      "expires_at": "2026-11-29T10:05:54Z",
+      "workflow_run": {
+        "id": 43701633753,
+        "repository_id": 1452798299,
+        "head_repository_id": 1452798299,
+        "head_branch": "main",
+        "head_sha": "0b270c1452505268364659edd402209b00b28673"
+      },
+      "localPath": "quality.zip",
+      "localSha256": "e4ed87344fa7ec4e17e081f6293d49517a8eb040d11c90845d12b6b27ff3f7f4",
+      "archiveEntriesVerified": 121,
+      "entries": [
+        {
+          "path": "quality/reports/v0188/continued-feedback-performance.json",
+          "bytes": 24257,
+          "sha256": "564314427072840e04d2e48b41041805eeeb83edc9194255589a411298e39263"
+        },
+        {
+          "path": "quality/reports/v0188/continued-state-browser.json",
+          "bytes": 9580,
+          "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f"
+        },
+        {
+          "path": "quality/reports/v0188/continued-locale-browser.json",
+          "bytes": 4422,
+          "sha256": "3325d3dd2d2c0b37cee484a05a828724628520873d814f3f9ed5421f22f718a2"
+        },
+        {
+          "path": "quality/reports/v0188/locales-feedback.json",
+          "bytes": 649,
+          "sha256": "070d0093cad7d6e62ed82883155dfa142dfdc985d7022d97d9aff95256afa70a"
+        },
+        {
+          "path": "quality/reports/v0188/persistence.json",
+          "bytes": 510,
+          "sha256": "0ab2342dacb4c0ee8d8eb9440ecee39626bfe168e98b74fe7e4a8922873fc728"
+        },
+        {
+          "path": "quality/reports/v0188/test-run.json",
+          "bytes": 5629,
+          "sha256": "7b0d34776ed9f243bf3af1bf0920678f4b3f9e83fe9597dfc65b9b94d29a5a5f"
+        },
+        {
+          "path": "quality/reports/v0188/ui-mobile.json",
+          "bytes": 6666,
+          "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc"
+        },
+        {
+          "path": "quality/reports/v0188-astra/engine-independent.json",
+          "bytes": 383,
+          "sha256": "ae697fc7d48c442d9a414b8582384e00dcdd5628675d932b51f243531c95c5ff"
+        },
+        {
+          "path": "quality/reports/v0188-continued/engine.json",
+          "bytes": 325,
+          "sha256": "bc4bc8e857433a9334a1cd8ab346670689d9d5cab2a7f98a52600effb249a376"
+        },
+        {
+          "path": "quality/reports/v0188-final/accessibility.json",
+          "bytes": 14925,
+          "sha256": "ba4cc723609baf89f5bcf162e93c33404013205644bb4bf5a868a532ad5ffa80"
+        },
+        {
+          "path": "quality/reports/v0188-final/ui-ja-320.png",
+          "bytes": 322636,
+          "sha256": "d5c2534a446d8652be9dbf8d3e791ee6f1e9f3b02d0aac5ba5a4359392a8836e"
+        },
+        {
+          "path": "quality/reports/v0188-final/ui-ko-390.png",
+          "bytes": 280695,
+          "sha256": "4b63ca7105e16eb01d9d9d43daabb9abb4ae6fff7dbe66750675452a984463b4"
+        },
+        {
+          "path": "quality/reports/v0188-final/ui-zh-Hant-1440.png",
+          "bytes": 455418,
+          "sha256": "b79ed03e017b460368777ee8da3230831a7fe1a6c6ff5e13c11504b3fc92c5fc"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/.nojekyll",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/battle-data-v0184.js",
+          "bytes": 3439,
+          "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/ability-data-v0184.js",
+          "bytes": 7805,
+          "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/damage-calculator-v0184.js",
+          "bytes": 4445,
+          "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/damage-engine-v0184.js",
+          "bytes": 31363,
+          "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/damage-ui-adapter-v0184.js",
+          "bytes": 304,
+          "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/feedback-config-v0185.js",
+          "bytes": 208,
+          "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/feedback-contract-v0185.js",
+          "bytes": 4932,
+          "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/feedback-locales-v0185.js",
+          "bytes": 25712,
+          "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/feedback-snapshot-v0185.js",
+          "bytes": 1405,
+          "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/feedback-ui-v0185.js",
+          "bytes": 13013,
+          "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/i18n.js",
+          "bytes": 143776,
+          "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/index.html",
+          "bytes": 864930,
+          "sha256": "16088457d9e9ce1089980312fb6a98bbfa2b97b8bf1334b6ccfa93ec7cb4b454"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/legacy-notice-v0187.css",
+          "bytes": 631,
+          "sha256": "8d5b89b5375e29e4d8b77db744c7ffc0cfce716c7f3540d74f56eda4b24da822"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/legacy-notice-v0187.js",
+          "bytes": 2910,
+          "sha256": "b5e0d033119117f574a5ad064f71422b5f4f4d6000ddae5f64d39048a3a6d5cd"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-catalog.js",
+          "bytes": 8916,
+          "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-form-species-v0183.js",
+          "bytes": 43811,
+          "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-name-search.js",
+          "bytes": 1836,
+          "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-names-pokeapi-v0183.js",
+          "bytes": 619472,
+          "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-names-v0183.js",
+          "bytes": 1236,
+          "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/locale-registry.js",
+          "bytes": 1893,
+          "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/move-mechanics-data-v0184.js",
+          "bytes": 5502,
+          "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/multi-hit.js",
+          "bytes": 7358,
+          "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-catalog-v0179.js",
+          "bytes": 103105,
+          "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-ja-en.js",
+          "bytes": 2133,
+          "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-ui-v0179.js",
+          "bytes": 2857,
+          "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-forms-v0179.js",
+          "bytes": 5245,
+          "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-ui-v0183.js",
+          "bytes": 2060,
+          "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/names-v0179.js",
+          "bytes": 1398,
+          "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/pokemon-weights-v0181.js",
+          "bytes": 8134,
+          "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/release.json",
+          "bytes": 235,
+          "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/variable-power.js",
+          "bytes": 1916,
+          "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+        },
+        {
+          "path": "quality/dist/v0188/chloha-damage-lab/weight-power.js",
+          "bytes": 1395,
+          "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+        },
+        {
+          "path": "quality/dist/v0188/migration-artifacts.json",
+          "bytes": 11919,
+          "sha256": "a93b8bfb5b875a21d8111c776e13bd1fe3f2028ff2d99f9e7b522d7339a71e0c"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/.nojekyll",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/ability-data-v0184.js",
+          "bytes": 7805,
+          "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/battle-data-v0184.js",
+          "bytes": 3439,
+          "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-calculator-v0184.js",
+          "bytes": 4445,
+          "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-engine-v0184.js",
+          "bytes": 31363,
+          "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-ui-adapter-v0184.js",
+          "bytes": 304,
+          "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-config-v0185.js",
+          "bytes": 208,
+          "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-contract-v0185.js",
+          "bytes": 4932,
+          "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-locales-v0185.js",
+          "bytes": 25712,
+          "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-snapshot-v0185.js",
+          "bytes": 1405,
+          "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-ui-v0185.js",
+          "bytes": 13013,
+          "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/i18n.js",
+          "bytes": 143776,
+          "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/index.html",
+          "bytes": 864782,
+          "sha256": "44f7408b200a6611da6ad3f3208ffc0a77b0da9c8cb783c22b00aaf9815ca3ef"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-catalog.js",
+          "bytes": 8916,
+          "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-form-species-v0183.js",
+          "bytes": 43811,
+          "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-name-search.js",
+          "bytes": 1836,
+          "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-names-pokeapi-v0183.js",
+          "bytes": 619472,
+          "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-names-v0183.js",
+          "bytes": 1236,
+          "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-registry.js",
+          "bytes": 1893,
+          "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/move-mechanics-data-v0184.js",
+          "bytes": 5502,
+          "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/multi-hit.js",
+          "bytes": 7358,
+          "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-catalog-v0179.js",
+          "bytes": 103105,
+          "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-forms-v0179.js",
+          "bytes": 5245,
+          "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ja-en.js",
+          "bytes": 2133,
+          "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ui-v0179.js",
+          "bytes": 2857,
+          "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ui-v0183.js",
+          "bytes": 2060,
+          "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-v0179.js",
+          "bytes": 1398,
+          "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/pokemon-weights-v0181.js",
+          "bytes": 8134,
+          "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/release.json",
+          "bytes": 235,
+          "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/variable-power.js",
+          "bytes": 1916,
+          "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+        },
+        {
+          "path": "quality/dist/v0188/rollback/chloha-damage-lab/weight-power.js",
+          "bytes": 1395,
+          "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/.nojekyll",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/ability-data-v0184.js",
+          "bytes": 7805,
+          "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/assets/singularity/apple-touch-icon.png",
+          "bytes": 15844,
+          "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/assets/singularity/favicon.png",
+          "bytes": 3405,
+          "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/assets/singularity/header.webp",
+          "bytes": 30744,
+          "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/assets/singularity/orbital-s-reference.png",
+          "bytes": 979837,
+          "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/assets/singularity/orbital-s-icon.webp",
+          "bytes": 99228,
+          "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/battle-data-v0184.js",
+          "bytes": 3439,
+          "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/brand-preview.html",
+          "bytes": 3456,
+          "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/brand-v0187.js",
+          "bytes": 3849,
+          "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/damage-calculator-v0184.js",
+          "bytes": 4445,
+          "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/damage-engine-v0184.js",
+          "bytes": 31607,
+          "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/damage-ui-adapter-v0184.js",
+          "bytes": 304,
+          "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-config-v0185.js",
+          "bytes": 208,
+          "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-contract-v0185.js",
+          "bytes": 4932,
+          "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-locales-v0185.js",
+          "bytes": 25712,
+          "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-release-v100.js",
+          "bytes": 4927,
+          "sha256": "e9c96bc992a88b0b117fa9d24578e77e1474c22be8bdff262852c5cc56b2a7a3"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-snapshot-v0185.js",
+          "bytes": 1407,
+          "sha256": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/feedback-ui-v0185.js",
+          "bytes": 14923,
+          "sha256": "21bd1661a63b21478b38abfd0f227ef0be67dd20871917a09fd3699059d55e24"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/i18n.js",
+          "bytes": 146916,
+          "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/index.html",
+          "bytes": 867794,
+          "sha256": "00d35fe33f4d5cd0318fda56e501c73f11c5db41c108d76e37c11ddf90e2ea3b"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-catalog.js",
+          "bytes": 8916,
+          "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-form-species-v0183.js",
+          "bytes": 43811,
+          "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-name-search.js",
+          "bytes": 1836,
+          "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-names-pokeapi-v0183.js",
+          "bytes": 619472,
+          "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-names-v0183.js",
+          "bytes": 1236,
+          "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-quality-v0188.js",
+          "bytes": 9797,
+          "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/locale-registry.js",
+          "bytes": 1893,
+          "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/move-mechanics-data-v0184.js",
+          "bytes": 5502,
+          "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/multi-hit.js",
+          "bytes": 7358,
+          "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-catalog-v0179.js",
+          "bytes": 103105,
+          "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-forms-v0179.js",
+          "bytes": 5245,
+          "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-ja-en.js",
+          "bytes": 2133,
+          "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-ui-v0179.js",
+          "bytes": 2857,
+          "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-ui-v0183.js",
+          "bytes": 2060,
+          "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/names-v0179.js",
+          "bytes": 1398,
+          "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/pokemon-weights-v0181.js",
+          "bytes": 8134,
+          "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/persistence-v0188.js",
+          "bytes": 12695,
+          "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/portrait-alt-v0188.js",
+          "bytes": 2640,
+          "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/release.json",
+          "bytes": 1832,
+          "sha256": "107772633653bea47bdd21cc4400130df956aa91d82ae474e24c014aaa5c6eb3"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/singularity-v0187.css",
+          "bytes": 10368,
+          "sha256": "0c4940d15b9e1a6e242f4e86620d5b1454b1b07d429476d9c8cb0a49d9c073f4"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/variable-power.js",
+          "bytes": 1916,
+          "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+        },
+        {
+          "path": "quality/dist/v0188/singularity/weight-power.js",
+          "bytes": 1395,
+          "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+        }
+      ]
+    }
+  ]
+}

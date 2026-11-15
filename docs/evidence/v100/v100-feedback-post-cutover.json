@@ -1,0 +1,88 @@
+{
+  "sourceCommit": "56633de643e8a13d5e0f26c1aa2b5b2bcc278232",
+  "checkedAt": "2026-11-15T09:41:35.107Z",
+  "firstAttempt": {
+    "ready": false,
+    "blocker": "Public intake configuration can be verified",
+    "cause": "Original checker suppresses fetch exception; cause not established"
+  },
+  "diagnosticAttempt": {
+    "ready": true,
+    "checks": [
+      {
+        "name": "Approved HTTPS feedback API origin is configured",
+        "passed": true
+      },
+      {
+        "name": "Public intake configuration is reachable without login",
+        "passed": true
+      },
+      {
+        "name": "Production intake is enabled without a known Turnstile test key",
+        "passed": true
+      },
+      {
+        "name": "Published retention policy matches the API",
+        "passed": true
+      },
+      {
+        "name": "Public API permits the exact frontend origin",
+        "passed": true
+      },
+      {
+        "name": "Public configuration is not cached",
+        "passed": true
+      },
+      {
+        "name": "Anonymous access is denied: /v1/admin/reports",
+        "passed": true
+      },
+      {
+        "name": "Anonymous access is denied: /admin/",
+        "passed": true
+      },
+      {
+        "name": "Anonymous access is denied: /admin/admin.js",
+        "passed": true
+      },
+      {
+        "name": "Reports have no public listing",
+        "passed": true
+      }
+    ],
+    "blockers": [],
+    "observations": [
+      {
+        "path": "/v1/config",
+        "status": 200,
+        "allowOrigin": "https://kurohanolu.github.io",
+        "cacheControl": "no-store, private"
+      },
+      {
+        "path": "/v1/admin/reports",
+        "status": 302,
+        "allowOrigin": "https://kurohanolu.github.io",
+        "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+      },
+      {
+        "path": "/admin/",
+        "status": 302,
+        "allowOrigin": "https://kurohanolu.github.io",
+        "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+      },
+      {
+        "path": "/admin/admin.js",
+        "status": 302,
+        "allowOrigin": "https://kurohanolu.github.io",
+        "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+      },
+      {
+        "path": "/v1/reports",
+        "status": 405,
+        "allowOrigin": "https://kurohanolu.github.io",
+        "cacheControl": "no-store, private"
+      }
+    ]
+  },
+  "productionMutations": 0
+}

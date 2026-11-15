@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-11-15T10:09:53.277Z",
+  "sourceCommit": "0b270c1452505268364659edd402209b00b28673",
+  "quality": {
+    "artifacts": [
+      {
+        "id": 14156802797,
+        "name": "v0188-controlled-memory-evidence",
+        "size_in_bytes": 9180,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797/zip",
+        "expired": false,
+        "created_at": "2026-11-15T10:03:04Z",
+        "expires_at": "2026-11-29T10:03:04Z",
+        "updated_at": "2026-11-15T10:03:04Z",
+        "digest": "sha256:a3207d24b6dadce951a49049382ba3f727f1296a77aa0dfb9acf7296d85efa2f",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      },
+      {
+        "id": 14156382851,
+        "name": "v0188-performance-audit-evidence",
+        "size_in_bytes": 11016,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851/zip",
+        "expired": false,
+        "created_at": "2026-11-15T10:00:11Z",
+        "expires_at": "2026-11-29T10:00:10Z",
+        "updated_at": "2026-11-15T10:00:11Z",
+        "digest": "sha256:236eaf31f4fb4ed26ac0d58a29aa64e04aa4d251fb5dbb3704803dbf03092b3b",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      },
+      {
+        "id": 14156239034,
+        "name": "v0188-quality-audit-evidence",
+        "size_in_bytes": 3302925,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034/zip",
+        "expired": false,
+        "created_at": "2026-11-15T10:05:56Z",
+        "expires_at": "2026-11-29T10:05:54Z",
+        "updated_at": "2026-11-15T10:05:56Z",
+        "digest": "sha256:e4ed87344fa7ec4e17e081f6293d49517a8eb040d11c90845d12b6b27ff3f7f4",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      }
+    ]
+  },
+  "stable": {
+    "artifacts": [
+      {
+        "id": 14157355167,
+        "name": "v100-stable-candidate-evidence",
+        "size_in_bytes": 5093771,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14157355167",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14157355167/zip",
+        "expired": false,
+        "created_at": "2026-11-15T09:57:50Z",
+        "expires_at": "2026-12-15T09:57:49Z",
+        "updated_at": "2026-11-15T09:57:50Z",
+        "digest": "sha256:1ee617e0fca4a5d04b8397bed6579d047d0ebdbf8a8df7f7997cf0cf2b17be4d",
+        "workflow_run": {
+          "id": 43701633773,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      }
+    ]
+  },
+  "pages": {
+    "artifacts": [
+      {
+        "id": 14157047897,
+        "name": "pages-live-screenshots",
+        "size_in_bytes": 546699,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14157047897",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14157047897/zip",
+        "expired": false,
+        "created_at": "2026-11-15T10:08:54Z",
+        "expires_at": "2027-02-13T10:08:16Z",
+        "updated_at": "2026-11-15T10:08:54Z",
+        "digest": "sha256:ebed1cda243783120816027dc4deea8965e707155ae3ca421bb4c74f3cae8c91",
+        "workflow_run": {
+          "id": 43701633760,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      },
+      {
+        "id": 14156936494,
+        "name": "pages-live-screenshots",
+        "size_in_bytes": 546699,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156936494",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156936494/zip",
+        "expired": false,
+        "created_at": "2026-11-15T09:57:02Z",
+        "expires_at": "2027-02-13T09:56:21Z",
+        "updated_at": "2026-11-15T09:57:02Z",
+        "digest": "sha256:de194958bbd4fe08c8b9869d056b6aa64a9d99736500a11873a67fab21bb0433",
+        "workflow_run": {
+          "id": 43701633760,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        }
+      }
+    ]
+  }
+}

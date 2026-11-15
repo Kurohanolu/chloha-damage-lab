@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-11-15T09:52:14.302Z",
+  "sourceCommit": "56633de643e8a13d5e0f26c1aa2b5b2bcc278232",
+  "run": {
+    "id": 43701204652,
+    "display_title": "Deploy Singularity 56633de643e8a13d5e0f26c1aa2b5b2bcc278232",
+    "head_sha": "cede7831cc010fe5ad46e8c30a67e39a509474f0",
+    "head_branch": "main",
+    "path": ".github/workflows/deploy.yml",
+    "event": "workflow_dispatch",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1,
+    "html_url": "https://github.com/Kurohanolu/singularity/actions/runs/43701204652"
+  },
+  "lastAttempt": 1,
+  "jobs": [
+    {
+      "id": 132772522850,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43701204652,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Read immutable deployment request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Validate exact source selection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Require owner adoption and exact source contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Require exact-source regression workflows",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Generate isolated public artifact and provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-pages-artifact@v3",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Read immutable deployment request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 132772593046,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43701204652,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Deploy exact generated frontend",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 14156318186,
+      "name": "source-provenance",
+      "size_in_bytes": 3176,
+      "url": "https://api.github.com/repos/Kurohanolu/singularity/actions/artifacts/14156318186",
+      "archive_download_url": "https://api.github.com/repos/Kurohanolu/singularity/actions/artifacts/14156318186/zip",
+      "expired": false,
+      "created_at": "2026-11-15T09:51:07Z",
+      "expires_at": "2027-02-13T09:50:55Z",
+      "updated_at": "2026-11-15T09:51:07Z",
+      "digest": "sha256:176338b6a55a3b1e313901df50c6b2178e3d22b630e54983c0e9b8fc06ad1de4",
+      "workflow_run": {
+        "id": 43701204652,
+        "repository_id": 1458226956,
+        "head_repository_id": 1458226956,
+        "head_branch": "main",
+        "head_sha": "cede7831cc010fe5ad46e8c30a67e39a509474f0"
+      }
+    },
+    {
+      "id": 14156213918,
+      "name": "github-pages",
+      "size_in_bytes": 1415646,
+      "url": "https://api.github.com/repos/Kurohanolu/singularity/actions/artifacts/14156213918",
+      "archive_download_url": "https://api.github.com/repos/Kurohanolu/singularity/actions/artifacts/14156213918/zip",
+      "expired": false,
+      "created_at": "2026-11-15T09:51:09Z",
+      "expires_at": "2026-11-16T09:51:08Z",
+      "updated_at": "2026-11-15T09:51:09Z",
+      "digest": "sha256:31d85e1164f0e96cf787a864a4bdf84cd7b73f84e6059d9e6172eb67ac7d5b71",
+      "workflow_run": {
+        "id": 43701204652,
+        "repository_id": 1458226956,
+        "head_repository_id": 1458226956,
+        "head_branch": "main",
+        "head_sha": "cede7831cc010fe5ad46e8c30a67e39a509474f0"
+      }
+    }
+  ],
+  "workflowContent": "name: Deploy verified Singularity\nrun-name: ${{ github.event_name == 'workflow_dispatch' && format('Deploy Singularity {0}', inputs.source_sha) || format('Deploy Singularity request {0}', github.sha) }}\non:\n  push:\n    branches: [main]\n    paths: [deployment-request.json]\n  workflow_dispatch:\n    inputs:\n      source_sha:\n        description: Approved full commit SHA in Kurohanolu/chloha-damage-lab\n        required: true\n        type: string\npermissions:\n  contents: read\n  actions: read\nconcurrency:\n  group: singularity-pages\n  cancel-in-progress: false\njobs:\n  build:\n    if: github.repository == 'Kurohanolu/singularity' && github.ref == 'refs/heads/main'\n    runs-on: ubuntu-24.04\n    timeout-minutes: 10\n    steps:\n      - name: Read immutable deployment request\n        uses: actions/checkout@v4\n        with:\n          ref: ${{ github.sha }}\n          persist-credentials: false\n      - uses: actions/setup-node@v4\n        with:\n          node-version: '22'\n      - name: Validate exact source selection\n        id: source\n        env:\n          DEPLOY_EVENT: ${{ github.event_name }}\n          INPUT_SOURCE_SHA: ${{ inputs.source_sha || '' }}\n        run: |\n          node <<'NODE'\n          const fs=require('node:fs'),assert=require('node:assert/strict');\n          let sha;\n          if(process.env.DEPLOY_EVENT==='workflow_dispatch')sha=process.env.INPUT_SOURCE_SHA;\n          else {\n            assert.equal(process.env.DEPLOY_EVENT,'push');\n            const request=JSON.parse(fs.readFileSync('deployment-request.json','utf8'));\n            assert.ok(request&&typeof request==='object'&&!Array.isArray(request));\n            assert.deepEqual(Object.keys(request),['source_sha']);\n            sha=request.source_sha;\n          }\n          assert.equal(typeof sha,'string');assert.match(sha,/^[a-f0-9]{40}$/);\n          fs.appendFileSync(process.env.GITHUB_OUTPUT,'source_sha='+sha+'\\n');\n          fs.appendFileSync(process.env.GITHUB_ENV,'SOURCE_SHA='+sha+'\\n');\n          NODE\n      - uses: actions/checkout@v4\n        with:\n          repository: Kurohanolu/chloha-damage-lab\n          ref: ${{ steps.source.outputs.source_sha }}\n          fetch-depth: 0\n          persist-credentials: false\n      - name: Require owner adoption and exact source contracts\n        run: |\n          test \"$(git rev-parse HEAD)\" = \"$SOURCE_SHA\"\n          node -e \"const r=require('./release.json');require('node:assert/strict').equal(r.product,'Singularity');require('./scripts/verify-publication-approval.cjs').verifyCutoverApproval(r)\"\n          node scripts/verify-release.cjs\n          node tests/v0184-public-baseline.cjs\n          node tests/v0187-migration-contract.cjs\n          node tests/v0187-live-readiness.cjs\n      - name: Require exact-source regression workflows\n        uses: actions/github-script@v7\n        with:\n          script: |\n            // SOURCE_CI_GATE_BEGIN\n            const sha = process.env.SOURCE_SHA;\n            if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error('Full source SHA required');\n            const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];\n            const release = require('./release.json');\n            if (Number(release.version.split('.')[0]) > 0 || Number(release.version.split('.')[1]) >= 188) required.push('v0.188 Quality Remediation');\n            if (release.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');\n            const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});\n            const latest = new Map();\n            for (const run of data.workflow_runs) {\n              if (run.head_sha !== sha || !['push','pull_request'].includes(run.event) || !required.includes(run.name)) continue;\n              if (!latest.has(run.name) || latest.get(run.name).id < run.id) latest.set(run.name,run);\n            }\n            for (const name of required) {\n              const run = latest.get(name);\n              if (!run || run.status !== 'completed' || run.conclusion !== 'success') throw new Error('Source CI not successful: '+name);\n            }\n            core.info('Verified all required regression gates for source '+sha+'; public-content and release checks follow deployment');\n            // SOURCE_CI_GATE_END\n      - name: Generate isolated public artifact and provenance\n        run: |\n          node scripts/v0187-build-sites.cjs --output dist/deploy\n          node -e \"const m=require('./dist/deploy/migration-artifacts.json');const a=require('node:assert/strict');a.equal(m.sourceCommit,process.env.SOURCE_SHA);a.equal(m.uncommittedPreview,false);console.log('Exact clean source: '+m.sourceCommit)\"\n      - uses: actions/upload-artifact@v4\n        with:\n          name: source-provenance\n          path: dist/deploy/migration-artifacts.json\n      - uses: actions/upload-pages-artifact@v3\n        with:\n          path: dist/deploy/singularity\n  deploy:\n    needs: build\n    runs-on: ubuntu-24.04\n    timeout-minutes: 10\n    permissions:\n      pages: write\n      id-token: write\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    steps:\n      - name: Deploy exact generated frontend\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+}

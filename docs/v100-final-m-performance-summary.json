@@ -1,0 +1,4113 @@
+{
+  "schemaVersion": 1,
+  "recomputedAt": "2026-11-15T10:06:52.651444+00:00",
+  "sourceCommit": "0b270c1452505268364659edd402209b00b28673",
+  "sourceTree": "239c4cbd37aa6389f16dc81e7f9a861c09a723f2",
+  "baselineCommit": "4f068544e670a85a6a4d34dd2c26e2be66bd9cb7",
+  "runId": 43701633753,
+  "runUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633753",
+  "quantiles": "Median averages the two middle observations for even n. Q1/Q3 are medians of the lower/upper halves, excluding the middle for odd n; IQR=Q3-Q1.",
+  "provenance": {
+    "verifiedAt": "2026-11-15T10:06:40.199568+00:00",
+    "run": {
+      "observedAt": "2026-11-15T10:06:38.536Z",
+      "id": 43701633753,
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43701633753",
+      "head_sha": "0b270c1452505268364659edd402209b00b28673",
+      "head_branch": "main",
+      "event": "push",
+      "path": ".github/workflows/v0188-quality-remediation.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "created_at": "2026-11-15T09:56:21Z",
+      "updated_at": "2026-11-15T10:05:59Z",
+      "run_started_at": "2026-11-15T09:56:21Z"
+    },
+    "jobs": {
+      "observedAt": "2026-11-15T10:06:38.536Z",
+      "jobs": [
+        {
+          "id": 132773832958,
+          "name": "quality-candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 43701633753,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Install locked independent calculation reference",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Install fonts for nine-language evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Preserve release metadata, engine bytes and fixed 300 contracts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Exercise every v0.188 state, accessibility, locale and mobile regression",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Preserve ninety-transition language regression",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Recheck private feedback state machine without production writes",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Build candidate assets without deployment",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 27
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 28
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 29
+            }
+          ]
+        },
+        {
+          "id": 132773833183,
+          "name": "performance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 43701633753,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Install fonts for comparable nine-language rendering",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Measure baseline and candidate under identical emulation conditions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Observe the pinned baseline or approved current public release without mutations",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 19
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21
+            }
+          ]
+        },
+        {
+          "id": 132773833256,
+          "name": "controlled-memory",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 43701633753,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Install fonts for matched memory scenarios",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Measure controlled-GC retention and repeated state recovery",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ]
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "id": 14156802797,
+        "node_id": "MDg6QXJ0aWZhY3QxNDE1NjgwMjc5Nw==",
+        "name": "v0188-controlled-memory-evidence",
+        "size_in_bytes": 9180,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156802797/zip",
+        "expired": false,
+        "digest": "sha256:a3207d24b6dadce951a49049382ba3f727f1296a77aa0dfb9acf7296d85efa2f",
+        "created_at": "2026-11-15T10:03:04Z",
+        "updated_at": "2026-11-15T10:03:04Z",
+        "expires_at": "2026-11-29T10:03:04Z",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        },
+        "localPath": "memory.zip",
+        "localSha256": "a3207d24b6dadce951a49049382ba3f727f1296a77aa0dfb9acf7296d85efa2f",
+        "archiveEntriesVerified": 1,
+        "entries": [
+          {
+            "path": "memory/memory.json",
+            "bytes": 181707,
+            "sha256": "6c87067c9b286d9c2eb7ed4cb995e2711c4544c6b03abbcdf1db8443c93d2af2"
+          }
+        ]
+      },
+      {
+        "id": 14156382851,
+        "node_id": "MDg6QXJ0aWZhY3QxNDE1NjM4Mjg1MQ==",
+        "name": "v0188-performance-audit-evidence",
+        "size_in_bytes": 11016,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156382851/zip",
+        "expired": false,
+        "digest": "sha256:236eaf31f4fb4ed26ac0d58a29aa64e04aa4d251fb5dbb3704803dbf03092b3b",
+        "created_at": "2026-11-15T10:00:11Z",
+        "updated_at": "2026-11-15T10:00:11Z",
+        "expires_at": "2026-11-29T10:00:10Z",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        },
+        "localPath": "performance.zip",
+        "localSha256": "236eaf31f4fb4ed26ac0d58a29aa64e04aa4d251fb5dbb3704803dbf03092b3b",
+        "archiveEntriesVerified": 2,
+        "entries": [
+          {
+            "path": "performance/browser-performance.json",
+            "bytes": 84534,
+            "sha256": "676fd984285ece4a727a4b2d5ab3c7b0442b3546b52287a469e3f8bfbd562049"
+          },
+          {
+            "path": "performance/public-performance.json",
+            "bytes": 150913,
+            "sha256": "546a84544f9e28de139256e844116e2705c211937f97935093ea902d7ab2f6a5"
+          }
+        ]
+      },
+      {
+        "id": 14156239034,
+        "node_id": "MDg6QXJ0aWZhY3QxNDE1NjIzOTAzNA==",
+        "name": "v0188-quality-audit-evidence",
+        "size_in_bytes": 3302925,
+        "url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034",
+        "archive_download_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/artifacts/14156239034/zip",
+        "expired": false,
+        "digest": "sha256:e4ed87344fa7ec4e17e081f6293d49517a8eb040d11c90845d12b6b27ff3f7f4",
+        "created_at": "2026-11-15T10:05:56Z",
+        "updated_at": "2026-11-15T10:05:56Z",
+        "expires_at": "2026-11-29T10:05:54Z",
+        "workflow_run": {
+          "id": 43701633753,
+          "repository_id": 1452798299,
+          "head_repository_id": 1452798299,
+          "head_branch": "main",
+          "head_sha": "0b270c1452505268364659edd402209b00b28673"
+        },
+        "localPath": "quality.zip",
+        "localSha256": "e4ed87344fa7ec4e17e081f6293d49517a8eb040d11c90845d12b6b27ff3f7f4",
+        "archiveEntriesVerified": 121,
+        "entries": [
+          {
+            "path": "quality/reports/v0188/continued-feedback-performance.json",
+            "bytes": 24257,
+            "sha256": "564314427072840e04d2e48b41041805eeeb83edc9194255589a411298e39263"
+          },
+          {
+            "path": "quality/reports/v0188/continued-state-browser.json",
+            "bytes": 9580,
+            "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f"
+          },
+          {
+            "path": "quality/reports/v0188/continued-locale-browser.json",
+            "bytes": 4422,
+            "sha256": "3325d3dd2d2c0b37cee484a05a828724628520873d814f3f9ed5421f22f718a2"
+          },
+          {
+            "path": "quality/reports/v0188/locales-feedback.json",
+            "bytes": 649,
+            "sha256": "070d0093cad7d6e62ed82883155dfa142dfdc985d7022d97d9aff95256afa70a"
+          },
+          {
+            "path": "quality/reports/v0188/persistence.json",
+            "bytes": 510,
+            "sha256": "0ab2342dacb4c0ee8d8eb9440ecee39626bfe168e98b74fe7e4a8922873fc728"
+          },
+          {
+            "path": "quality/reports/v0188/test-run.json",
+            "bytes": 5629,
+            "sha256": "7b0d34776ed9f243bf3af1bf0920678f4b3f9e83fe9597dfc65b9b94d29a5a5f"
+          },
+          {
+            "path": "quality/reports/v0188/ui-mobile.json",
+            "bytes": 6666,
+            "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc"
+          },
+          {
+            "path": "quality/reports/v0188-astra/engine-independent.json",
+            "bytes": 383,
+            "sha256": "ae697fc7d48c442d9a414b8582384e00dcdd5628675d932b51f243531c95c5ff"
+          },
+          {
+            "path": "quality/reports/v0188-continued/engine.json",
+            "bytes": 325,
+            "sha256": "bc4bc8e857433a9334a1cd8ab346670689d9d5cab2a7f98a52600effb249a376"
+          },
+          {
+            "path": "quality/reports/v0188-final/accessibility.json",
+            "bytes": 14925,
+            "sha256": "ba4cc723609baf89f5bcf162e93c33404013205644bb4bf5a868a532ad5ffa80"
+          },
+          {
+            "path": "quality/reports/v0188-final/ui-ja-320.png",
+            "bytes": 322636,
+            "sha256": "d5c2534a446d8652be9dbf8d3e791ee6f1e9f3b02d0aac5ba5a4359392a8836e"
+          },
+          {
+            "path": "quality/reports/v0188-final/ui-ko-390.png",
+            "bytes": 280695,
+            "sha256": "4b63ca7105e16eb01d9d9d43daabb9abb4ae6fff7dbe66750675452a984463b4"
+          },
+          {
+            "path": "quality/reports/v0188-final/ui-zh-Hant-1440.png",
+            "bytes": 455418,
+            "sha256": "b79ed03e017b460368777ee8da3230831a7fe1a6c6ff5e13c11504b3fc92c5fc"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/.nojekyll",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/battle-data-v0184.js",
+            "bytes": 3439,
+            "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/ability-data-v0184.js",
+            "bytes": 7805,
+            "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/damage-calculator-v0184.js",
+            "bytes": 4445,
+            "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/damage-engine-v0184.js",
+            "bytes": 31363,
+            "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/damage-ui-adapter-v0184.js",
+            "bytes": 304,
+            "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/feedback-config-v0185.js",
+            "bytes": 208,
+            "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/feedback-contract-v0185.js",
+            "bytes": 4932,
+            "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/feedback-locales-v0185.js",
+            "bytes": 25712,
+            "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/feedback-snapshot-v0185.js",
+            "bytes": 1405,
+            "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/feedback-ui-v0185.js",
+            "bytes": 13013,
+            "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/i18n.js",
+            "bytes": 143776,
+            "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/index.html",
+            "bytes": 864930,
+            "sha256": "16088457d9e9ce1089980312fb6a98bbfa2b97b8bf1334b6ccfa93ec7cb4b454"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/legacy-notice-v0187.css",
+            "bytes": 631,
+            "sha256": "8d5b89b5375e29e4d8b77db744c7ffc0cfce716c7f3540d74f56eda4b24da822"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/legacy-notice-v0187.js",
+            "bytes": 2910,
+            "sha256": "b5e0d033119117f574a5ad064f71422b5f4f4d6000ddae5f64d39048a3a6d5cd"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-catalog.js",
+            "bytes": 8916,
+            "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-form-species-v0183.js",
+            "bytes": 43811,
+            "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-name-search.js",
+            "bytes": 1836,
+            "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-names-pokeapi-v0183.js",
+            "bytes": 619472,
+            "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-names-v0183.js",
+            "bytes": 1236,
+            "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/locale-registry.js",
+            "bytes": 1893,
+            "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/move-mechanics-data-v0184.js",
+            "bytes": 5502,
+            "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/multi-hit.js",
+            "bytes": 7358,
+            "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-catalog-v0179.js",
+            "bytes": 103105,
+            "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-ja-en.js",
+            "bytes": 2133,
+            "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-ui-v0179.js",
+            "bytes": 2857,
+            "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-forms-v0179.js",
+            "bytes": 5245,
+            "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-ui-v0183.js",
+            "bytes": 2060,
+            "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/names-v0179.js",
+            "bytes": 1398,
+            "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/pokemon-weights-v0181.js",
+            "bytes": 8134,
+            "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/release.json",
+            "bytes": 235,
+            "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/variable-power.js",
+            "bytes": 1916,
+            "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+          },
+          {
+            "path": "quality/dist/v0188/chloha-damage-lab/weight-power.js",
+            "bytes": 1395,
+            "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+          },
+          {
+            "path": "quality/dist/v0188/migration-artifacts.json",
+            "bytes": 11919,
+            "sha256": "a93b8bfb5b875a21d8111c776e13bd1fe3f2028ff2d99f9e7b522d7339a71e0c"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/.nojekyll",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/ability-data-v0184.js",
+            "bytes": 7805,
+            "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/battle-data-v0184.js",
+            "bytes": 3439,
+            "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-calculator-v0184.js",
+            "bytes": 4445,
+            "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-engine-v0184.js",
+            "bytes": 31363,
+            "sha256": "a59c8977ce963c9bbf9723557e34ca43d45d3c5e5f0a7286cdbd70eaf0cc63d9"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/damage-ui-adapter-v0184.js",
+            "bytes": 304,
+            "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-config-v0185.js",
+            "bytes": 208,
+            "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-contract-v0185.js",
+            "bytes": 4932,
+            "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-locales-v0185.js",
+            "bytes": 25712,
+            "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-snapshot-v0185.js",
+            "bytes": 1405,
+            "sha256": "8731aba71562dc4d82d7c16a7661c16622664e0a0e551e9efbad2bb97f71a122"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/feedback-ui-v0185.js",
+            "bytes": 13013,
+            "sha256": "5a228ed6fa903e6defa98b03771696a5a4925384e4bb1ab5bf211eb3752311a9"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/i18n.js",
+            "bytes": 143776,
+            "sha256": "6fa23c2b64e42c1c0536abbec1d201b5f441c7d1fb98b3595d3b95dc1013233f"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/index.html",
+            "bytes": 864782,
+            "sha256": "44f7408b200a6611da6ad3f3208ffc0a77b0da9c8cb783c22b00aaf9815ca3ef"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-catalog.js",
+            "bytes": 8916,
+            "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-form-species-v0183.js",
+            "bytes": 43811,
+            "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-name-search.js",
+            "bytes": 1836,
+            "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-names-pokeapi-v0183.js",
+            "bytes": 619472,
+            "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-names-v0183.js",
+            "bytes": 1236,
+            "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/locale-registry.js",
+            "bytes": 1893,
+            "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/move-mechanics-data-v0184.js",
+            "bytes": 5502,
+            "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/multi-hit.js",
+            "bytes": 7358,
+            "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-catalog-v0179.js",
+            "bytes": 103105,
+            "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-forms-v0179.js",
+            "bytes": 5245,
+            "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ja-en.js",
+            "bytes": 2133,
+            "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ui-v0179.js",
+            "bytes": 2857,
+            "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-ui-v0183.js",
+            "bytes": 2060,
+            "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/names-v0179.js",
+            "bytes": 1398,
+            "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/pokemon-weights-v0181.js",
+            "bytes": 8134,
+            "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/release.json",
+            "bytes": 235,
+            "sha256": "478c742290902f1bdb9f05aea35c307a6f70979af42126dc7e6bb0c923b6e537"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/variable-power.js",
+            "bytes": 1916,
+            "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+          },
+          {
+            "path": "quality/dist/v0188/rollback/chloha-damage-lab/weight-power.js",
+            "bytes": 1395,
+            "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/.nojekyll",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/ability-data-v0184.js",
+            "bytes": 7805,
+            "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/assets/singularity/apple-touch-icon.png",
+            "bytes": 15844,
+            "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/assets/singularity/favicon.png",
+            "bytes": 3405,
+            "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/assets/singularity/header.webp",
+            "bytes": 30744,
+            "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/assets/singularity/orbital-s-reference.png",
+            "bytes": 979837,
+            "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/assets/singularity/orbital-s-icon.webp",
+            "bytes": 99228,
+            "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/battle-data-v0184.js",
+            "bytes": 3439,
+            "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/brand-preview.html",
+            "bytes": 3456,
+            "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/brand-v0187.js",
+            "bytes": 3849,
+            "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/damage-calculator-v0184.js",
+            "bytes": 4445,
+            "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/damage-engine-v0184.js",
+            "bytes": 31607,
+            "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/damage-ui-adapter-v0184.js",
+            "bytes": 304,
+            "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-config-v0185.js",
+            "bytes": 208,
+            "sha256": "5b81e1fb05186f3abfe6db2df6e8258522c764a8862f46acb9ceb0f111f7c5a4"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-contract-v0185.js",
+            "bytes": 4932,
+            "sha256": "c9038dc7115ea5376050df3a1b6ad776dc710c7273baa928c82dd3c681b64dcd"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-locales-v0185.js",
+            "bytes": 25712,
+            "sha256": "d49df5b9449ec175f790f022693e25767c54b46b252fbb16cbcc1a9244e6858a"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-release-v100.js",
+            "bytes": 4927,
+            "sha256": "e9c96bc992a88b0b117fa9d24578e77e1474c22be8bdff262852c5cc56b2a7a3"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-snapshot-v0185.js",
+            "bytes": 1407,
+            "sha256": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/feedback-ui-v0185.js",
+            "bytes": 14923,
+            "sha256": "21bd1661a63b21478b38abfd0f227ef0be67dd20871917a09fd3699059d55e24"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/i18n.js",
+            "bytes": 146916,
+            "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/index.html",
+            "bytes": 867794,
+            "sha256": "00d35fe33f4d5cd0318fda56e501c73f11c5db41c108d76e37c11ddf90e2ea3b"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-catalog.js",
+            "bytes": 8916,
+            "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-form-species-v0183.js",
+            "bytes": 43811,
+            "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-name-search.js",
+            "bytes": 1836,
+            "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-names-pokeapi-v0183.js",
+            "bytes": 619472,
+            "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-names-v0183.js",
+            "bytes": 1236,
+            "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-quality-v0188.js",
+            "bytes": 9797,
+            "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/locale-registry.js",
+            "bytes": 1893,
+            "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/move-mechanics-data-v0184.js",
+            "bytes": 5502,
+            "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/multi-hit.js",
+            "bytes": 7358,
+            "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-catalog-v0179.js",
+            "bytes": 103105,
+            "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-forms-v0179.js",
+            "bytes": 5245,
+            "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-ja-en.js",
+            "bytes": 2133,
+            "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-ui-v0179.js",
+            "bytes": 2857,
+            "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-ui-v0183.js",
+            "bytes": 2060,
+            "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/names-v0179.js",
+            "bytes": 1398,
+            "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/pokemon-weights-v0181.js",
+            "bytes": 8134,
+            "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/persistence-v0188.js",
+            "bytes": 12695,
+            "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/portrait-alt-v0188.js",
+            "bytes": 2640,
+            "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/release.json",
+            "bytes": 1832,
+            "sha256": "107772633653bea47bdd21cc4400130df956aa91d82ae474e24c014aaa5c6eb3"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/singularity-v0187.css",
+            "bytes": 10368,
+            "sha256": "0c4940d15b9e1a6e242f4e86620d5b1454b1b07d429476d9c8cb0a49d9c073f4"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/variable-power.js",
+            "bytes": 1916,
+            "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+          },
+          {
+            "path": "quality/dist/v0188/singularity/weight-power.js",
+            "bytes": 1395,
+            "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+          }
+        ]
+      }
+    ]
+  },
+  "sourceChecks": "All performance/feedback/memory candidate commit and tree fields directly match final main M; quality runner commit matches M; clean checkout; archived ZIP SHA-256 and files verified.",
+  "general": {
+    "measuredAt": "2026-11-15T09:56:53.990Z",
+    "conditions": {
+      "node": "v22.23.4",
+      "platform": "linux",
+      "arch": "x64",
+      "cpu": "AMD EPYC 9V45 96-Core Processor",
+      "logicalCPUs": 4,
+      "samplesPerVersionPerProfile": 5,
+      "operationSamplesPerNavigation": 12,
+      "cachePolicy": "same local server max-age=600 and ETag",
+      "network": "loopback; mobile emulation adds40ms RTT,1.6Mbit/s down,750kbit/s up and4x CPU slowdown",
+      "thirdParty": "HTTPS blocked; embedded data images remain; external sprites/Turnstile omitted",
+      "order": "alternating baseline/candidate between rounds"
+    },
+    "browser": "145.0.7632.6",
+    "profiles": {
+      "desktop": {
+        "profile": {
+          "name": "desktop",
+          "width": 1440,
+          "mobile": false
+        },
+        "versions": {
+          "baseline": {
+            "calculationToFrameMs": {
+              "n": 60,
+              "median": 20.5,
+              "min": 13,
+              "max": 34.60000000000582,
+              "q1": 17.5,
+              "q3": 25.099999999994907,
+              "iqr": 7.599999999994907
+            },
+            "localeToFrameMs": {
+              "n": 60,
+              "median": 50.04999999999927,
+              "min": 35.400000000001455,
+              "max": 77.19999999999709,
+              "q1": 45.900000000001455,
+              "q3": 57.54999999999927,
+              "iqr": 11.649999999997817
+            },
+            "cold.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 132,
+              "min": 124,
+              "max": 160,
+              "q1": 124.0,
+              "q3": 160.0,
+              "iqr": 36.0
+            },
+            "cold.domContentLoadedMs": {
+              "n": 5,
+              "median": 155.90000000000146,
+              "min": 151.40000000000146,
+              "max": 193.5,
+              "q1": 151.8000000000029,
+              "q3": 190.5500000000029,
+              "iqr": 38.75
+            },
+            "cold.loadEventMs": {
+              "n": 5,
+              "median": 165.40000000000146,
+              "min": 160.5,
+              "max": 203.40000000000146,
+              "q1": 161.0,
+              "q3": 200.45000000000073,
+              "iqr": 39.45000000000073
+            },
+            "warm.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 80,
+              "min": 72,
+              "max": 136,
+              "q1": 74.0,
+              "q3": 122.0,
+              "iqr": 48.0
+            },
+            "warm.domContentLoadedMs": {
+              "n": 5,
+              "median": 107.5,
+              "min": 82.60000000000582,
+              "max": 121.09999999999854,
+              "q1": 93.80000000000291,
+              "q3": 115.70000000000073,
+              "iqr": 21.899999999997817
+            },
+            "warm.loadEventMs": {
+              "n": 5,
+              "median": 117.70000000000437,
+              "min": 104.10000000000582,
+              "max": 128.8000000000029,
+              "q1": 109.25000000000364,
+              "q3": 128.60000000000218,
+              "iqr": 19.349999999998545
+            },
+            "heapBefore.JSHeapUsedSize": {
+              "n": 5,
+              "median": 5858884,
+              "min": 5771360,
+              "max": 5972720,
+              "q1": 5804568.0,
+              "q3": 5955954.0,
+              "iqr": 151386.0
+            },
+            "heapAfter.JSHeapUsedSize": {
+              "n": 5,
+              "median": 7253252,
+              "min": 7223204,
+              "max": 7772912,
+              "q1": 7231408.0,
+              "q3": 7569604.0,
+              "iqr": 338196.0
+            }
+          },
+          "candidate": {
+            "calculationToFrameMs": {
+              "n": 60,
+              "median": 21.799999999999272,
+              "min": 13.900000000001455,
+              "max": 47.39999999999418,
+              "q1": 17.899999999997817,
+              "q3": 27.649999999997817,
+              "iqr": 9.75
+            },
+            "localeToFrameMs": {
+              "n": 60,
+              "median": 53.25,
+              "min": 38.5,
+              "max": 77.69999999999709,
+              "q1": 48.150000000001455,
+              "q3": 58.849999999998545,
+              "iqr": 10.69999999999709
+            },
+            "cold.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 132,
+              "min": 132,
+              "max": 160,
+              "q1": 132.0,
+              "q3": 158.0,
+              "iqr": 26.0
+            },
+            "cold.domContentLoadedMs": {
+              "n": 5,
+              "median": 160.40000000000146,
+              "min": 154.40000000000146,
+              "max": 200.6999999999971,
+              "q1": 154.95000000000073,
+              "q3": 195.49999999999636,
+              "iqr": 40.549999999995634
+            },
+            "cold.loadEventMs": {
+              "n": 5,
+              "median": 170.20000000000437,
+              "min": 163.59999999999854,
+              "max": 212.29999999999563,
+              "q1": 164.1999999999971,
+              "q3": 206.39999999999782,
+              "iqr": 42.20000000000073
+            },
+            "warm.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 80,
+              "min": 76,
+              "max": 88,
+              "q1": 78.0,
+              "q3": 86.0,
+              "iqr": 8.0
+            },
+            "warm.domContentLoadedMs": {
+              "n": 5,
+              "median": 113.79999999999563,
+              "min": 108.69999999999709,
+              "max": 128.09999999999854,
+              "q1": 110.25,
+              "q3": 126.40000000000146,
+              "iqr": 16.150000000001455
+            },
+            "warm.loadEventMs": {
+              "n": 5,
+              "median": 121.29999999999563,
+              "min": 116.19999999999709,
+              "max": 136,
+              "q1": 117.64999999999782,
+              "q3": 134.10000000000218,
+              "iqr": 16.450000000004366
+            },
+            "heapBefore.JSHeapUsedSize": {
+              "n": 5,
+              "median": 5881004,
+              "min": 5414016,
+              "max": 5932044,
+              "q1": 5623738.0,
+              "q3": 5927868.0,
+              "iqr": 304130.0
+            },
+            "heapAfter.JSHeapUsedSize": {
+              "n": 5,
+              "median": 7985104,
+              "min": 6200492,
+              "max": 9629936,
+              "q1": 6818394.0,
+              "q3": 9512020.0,
+              "iqr": 2693626.0
+            }
+          }
+        }
+      },
+      "mobile-390": {
+        "profile": {
+          "name": "mobile-390",
+          "width": 390,
+          "mobile": true
+        },
+        "versions": {
+          "baseline": {
+            "calculationToFrameMs": {
+              "n": 60,
+              "median": 76.0,
+              "min": 25.19999999999709,
+              "max": 125.90000000002328,
+              "q1": 65.45000000000437,
+              "q3": 96.94999999998981,
+              "iqr": 31.499999999985448
+            },
+            "localeToFrameMs": {
+              "n": 60,
+              "median": 197.0500000000102,
+              "min": 133.39999999999418,
+              "max": 305.70000000001164,
+              "q1": 165.84999999999854,
+              "q3": 233.15000000000146,
+              "iqr": 67.30000000000291
+            },
+            "cold.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 5044,
+              "min": 5024,
+              "max": 5056,
+              "q1": 5032.0,
+              "q3": 5052.0,
+              "iqr": 20.0
+            },
+            "cold.domContentLoadedMs": {
+              "n": 5,
+              "median": 10443.699999999997,
+              "min": 10434,
+              "max": 10459.900000000023,
+              "q1": 10437.5,
+              "q3": 10453.05000000001,
+              "iqr": 15.550000000010186
+            },
+            "cold.loadEventMs": {
+              "n": 5,
+              "median": 10455.699999999997,
+              "min": 10448.899999999994,
+              "max": 10471.100000000006,
+              "q1": 10451.049999999996,
+              "q3": 10471.000000000015,
+              "iqr": 19.950000000018917
+            },
+            "warm.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 296,
+              "min": 288,
+              "max": 316,
+              "q1": 288.0,
+              "q3": 306.0,
+              "iqr": 18.0
+            },
+            "warm.domContentLoadedMs": {
+              "n": 5,
+              "median": 475.19999999998254,
+              "min": 471.5,
+              "max": 524.8999999999942,
+              "q1": 472.1999999999971,
+              "q3": 511.6499999999942,
+              "iqr": 39.44999999999709
+            },
+            "warm.loadEventMs": {
+              "n": 5,
+              "median": 480.19999999998254,
+              "min": 476.90000000000873,
+              "max": 531.6999999999825,
+              "q1": 477.70000000000437,
+              "q3": 518.0499999999884,
+              "iqr": 40.34999999998399
+            },
+            "heapBefore.JSHeapUsedSize": {
+              "n": 5,
+              "median": 6822808,
+              "min": 6759964,
+              "max": 6869708,
+              "q1": 6768986.0,
+              "q3": 6848706.0,
+              "iqr": 79720.0
+            },
+            "heapAfter.JSHeapUsedSize": {
+              "n": 5,
+              "median": 8024456,
+              "min": 7657856,
+              "max": 10385408,
+              "q1": 7695674.0,
+              "q3": 10029542.0,
+              "iqr": 2333868.0
+            }
+          },
+          "candidate": {
+            "calculationToFrameMs": {
+              "n": 60,
+              "median": 75.14999999999418,
+              "min": 22.90000000000873,
+              "max": 122.10000000000582,
+              "q1": 55.20000000001164,
+              "q3": 90.09999999999854,
+              "iqr": 34.8999999999869
+            },
+            "localeToFrameMs": {
+              "n": 60,
+              "median": 191.95000000001164,
+              "min": 136,
+              "max": 348.30000000001746,
+              "q1": 173.4499999999971,
+              "q3": 212.29999999999563,
+              "iqr": 38.849999999998545
+            },
+            "cold.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 5032,
+              "min": 5020,
+              "max": 5044,
+              "q1": 5026.0,
+              "q3": 5042.0,
+              "iqr": 16.0
+            },
+            "cold.domContentLoadedMs": {
+              "n": 5,
+              "median": 10520.800000000003,
+              "min": 10504.699999999997,
+              "max": 10533.399999999994,
+              "q1": 10506.69999999999,
+              "q3": 10531.399999999994,
+              "iqr": 24.700000000004366
+            },
+            "cold.loadEventMs": {
+              "n": 5,
+              "median": 10532.300000000003,
+              "min": 10514.699999999997,
+              "max": 10544.199999999983,
+              "q1": 10517.299999999996,
+              "q3": 10542.25,
+              "iqr": 24.950000000004366
+            },
+            "warm.firstContentfulPaintMs": {
+              "n": 5,
+              "median": 292,
+              "min": 280,
+              "max": 320,
+              "q1": 286.0,
+              "q3": 314.0,
+              "iqr": 28.0
+            },
+            "warm.domContentLoadedMs": {
+              "n": 5,
+              "median": 480.30000000001746,
+              "min": 476.8000000000029,
+              "max": 513.6000000000058,
+              "q1": 477.79999999999563,
+              "q3": 503.1000000000058,
+              "iqr": 25.300000000010186
+            },
+            "warm.loadEventMs": {
+              "n": 5,
+              "median": 485.8999999999942,
+              "min": 482.6999999999971,
+              "max": 519.7000000000116,
+              "q1": 483.2499999999927,
+              "q3": 508.5500000000029,
+              "iqr": 25.300000000010186
+            },
+            "heapBefore.JSHeapUsedSize": {
+              "n": 5,
+              "median": 6879760,
+              "min": 6781292,
+              "max": 6955124,
+              "q1": 6822422.0,
+              "q3": 6929640.0,
+              "iqr": 107218.0
+            },
+            "heapAfter.JSHeapUsedSize": {
+              "n": 5,
+              "median": 8305300,
+              "min": 7548244,
+              "max": 9527348,
+              "q1": 7728334.0,
+              "q3": 9475186.0,
+              "iqr": 1746852.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "feedback": {
+    "measuredAt": "2026-11-15T10:00:38.379Z",
+    "mode": "controlled candidate guard reversal; all other bytes identical",
+    "environment": {
+      "node": "v22.23.4",
+      "platform": "linux",
+      "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+      "logicalCPUs": 4,
+      "locale": "en",
+      "network": "loopback; external HTTPS blocked; feedback API unconfigured",
+      "samplesPerVariantPerProfile": 5,
+      "operationsPerContext": 20,
+      "metric": "feedback input dispatch to next frame, aligned to preceding frame",
+      "cache": "routing disables cache equally for both variants",
+      "order": "alternating before/after context order",
+      "browser": "145.0.7632.6"
+    },
+    "test": {
+      "file": "tests/v0188-continued-state-performance.cjs",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 39892
+    },
+    "profiles": {
+      "desktop": {
+        "profile": {
+          "name": "desktop",
+          "width": 1440,
+          "cpuRate": 1
+        },
+        "variants": {
+          "before": {
+            "durationMs": {
+              "n": 100,
+              "median": 17.45000000001164,
+              "min": 16.5,
+              "max": 22.599999999976717,
+              "q1": 17.0,
+              "q3": 18.25,
+              "iqr": 1.25
+            },
+            "mutationRecords": {
+              "n": 100,
+              "median": 4.0,
+              "min": 4,
+              "max": 4,
+              "q1": 4.0,
+              "q3": 4.0,
+              "iqr": 0.0
+            },
+            "totalMutationRecords": 400
+          },
+          "after": {
+            "durationMs": {
+              "n": 100,
+              "median": 16.600000000034925,
+              "min": 16.199999999953434,
+              "max": 17.29999999998836,
+              "q1": 16.5,
+              "q3": 16.79999999998836,
+              "iqr": 0.29999999998835847
+            },
+            "mutationRecords": {
+              "n": 100,
+              "median": 0.0,
+              "min": 0,
+              "max": 0,
+              "q1": 0.0,
+              "q3": 0.0,
+              "iqr": 0.0
+            },
+            "totalMutationRecords": 0
+          },
+          "improvementPercent": 4.8710601717830935
+        }
+      },
+      "mobile-390": {
+        "profile": {
+          "name": "mobile-390",
+          "width": 390,
+          "cpuRate": 4
+        },
+        "variants": {
+          "before": {
+            "durationMs": {
+              "n": 100,
+              "median": 64.55000000001746,
+              "min": 57.5,
+              "max": 85.29999999998836,
+              "q1": 62.399999999965075,
+              "q3": 68.80000000001746,
+              "iqr": 6.400000000052387
+            },
+            "mutationRecords": {
+              "n": 100,
+              "median": 4.0,
+              "min": 4,
+              "max": 4,
+              "q1": 4.0,
+              "q3": 4.0,
+              "iqr": 0.0
+            },
+            "totalMutationRecords": 400
+          },
+          "after": {
+            "durationMs": {
+              "n": 100,
+              "median": 21.25,
+              "min": 18,
+              "max": 38.09999999997672,
+              "q1": 20.5,
+              "q3": 22.89999999999418,
+              "iqr": 2.3999999999941792
+            },
+            "mutationRecords": {
+              "n": 100,
+              "median": 0.0,
+              "min": 0,
+              "max": 0,
+              "q1": 0.0,
+              "q3": 0.0,
+              "iqr": 0.0
+            },
+            "totalMutationRecords": 0
+          },
+          "improvementPercent": 67.07978311387413
+        }
+      }
+    }
+  },
+  "memory": {
+    "startedAt": "2026-11-15T09:56:55.322Z",
+    "environment": {
+      "node": "v22.23.4",
+      "platform": "linux",
+      "arch": "x64",
+      "kernel": "7.0.0-1017-azure",
+      "cpus": 4,
+      "cpuModel": "AMD EPYC 9V74 80-Core Processor",
+      "playwright": "1.58.2",
+      "browserVersion": "145.0.7632.6",
+      "chromium": {
+        "protocolVersion": "1.3",
+        "product": "HeadlessChrome/145.0.7632.6",
+        "revision": "@47e20adcc15fc15f01825aa17e570c8f5492ac0f",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+        "jsVersion": "14.5.201.2"
+      }
+    },
+    "protocol": {
+      "profiles": [
+        {
+          "name": "desktop",
+          "width": 1440,
+          "height": 900,
+          "cpu": 1,
+          "mobile": false
+        },
+        {
+          "name": "mobile-emulation",
+          "width": 390,
+          "height": 844,
+          "cpu": 4,
+          "mobile": true
+        }
+      ],
+      "samplesPerVersionProfile": 3,
+      "warmupRounds": 2,
+      "measuredRounds": 6,
+      "reloads": 3,
+      "locales": [
+        "ja",
+        "en",
+        "fr",
+        "de",
+        "es",
+        "it",
+        "ko",
+        "zh-Hans",
+        "zh-Hant"
+      ],
+      "domProbeCapPerRound": 128,
+      "gc": "Two HeapProfiler.collectGarbage calls with task boundaries after pending persistence/two animation frames; prune cleared weak probes; one cleanup GC before heap/counter capture",
+      "controls": "Strongly held object/node survive; released object/node weak references clear",
+      "operations": "Allocation input; locale switch with exact numerical parity; local feedback open/input/close; canonical English/20 allocation endpoint",
+      "network": "Only local snapshot GET/HEAD; local feedback configuration disabled; no submission",
+      "retentionRule": "A retired sampled object surviving at least two further complete rounds and their full GC checkpoints requires investigation; this is not proof of an unbounded leak",
+      "interpretation": "Heap, document, node and listener trends require independent review; no percentage or slope threshold establishes a leak or leak-free status"
+    },
+    "profiles": {
+      "desktop": {
+        "baseline": {
+          "contexts": 3,
+          "heapMedianOfContextMediansBytes": {
+            "n": 3,
+            "median": 4776656.0,
+            "min": 4775130.0,
+            "max": 4797418.0,
+            "q1": 4775130.0,
+            "q3": 4797418.0,
+            "iqr": 22288.0
+          },
+          "heapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 76936,
+            "min": 76932,
+            "max": 77068,
+            "q1": 76932,
+            "q3": 77068,
+            "iqr": 136
+          },
+          "heapSlopeBytesPerRound": {
+            "n": 3,
+            "median": 17857.02857142857,
+            "min": 16514.85714285714,
+            "max": 17897.485714285714,
+            "q1": 16514.85714285714,
+            "q3": 17897.485714285714,
+            "iqr": 1382.6285714285732
+          },
+          "reloadHeapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 25220,
+            "min": 25140,
+            "max": 30596,
+            "q1": 25140,
+            "q3": 30596,
+            "iqr": 5456
+          },
+          "measuredWindowMs": {
+            "n": 3,
+            "median": 7525,
+            "min": 7493,
+            "max": 8014,
+            "q1": 7493,
+            "q3": 8014,
+            "iqr": 521
+          },
+          "documentsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "nodesDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "listenersDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "connectedElementsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          }
+        },
+        "candidate": {
+          "contexts": 3,
+          "heapMedianOfContextMediansBytes": {
+            "n": 3,
+            "median": 4755900.0,
+            "min": 4755472.0,
+            "max": 4757716.0,
+            "q1": 4755472.0,
+            "q3": 4757716.0,
+            "iqr": 2244.0
+          },
+          "heapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 25848,
+            "min": 25804,
+            "max": 25920,
+            "q1": 25804,
+            "q3": 25920,
+            "iqr": 116
+          },
+          "heapSlopeBytesPerRound": {
+            "n": 3,
+            "median": 5518.971428571429,
+            "min": 5181.714285714285,
+            "max": 5556.114285714286,
+            "q1": 5181.714285714285,
+            "q3": 5556.114285714286,
+            "iqr": 374.40000000000055
+          },
+          "reloadHeapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 27624,
+            "min": 27596,
+            "max": 27768,
+            "q1": 27596,
+            "q3": 27768,
+            "iqr": 172
+          },
+          "measuredWindowMs": {
+            "n": 3,
+            "median": 7249,
+            "min": 7239,
+            "max": 7254,
+            "q1": 7239,
+            "q3": 7254,
+            "iqr": 15
+          },
+          "documentsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "nodesDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "listenersDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "connectedElementsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          }
+        }
+      },
+      "mobile-emulation": {
+        "baseline": {
+          "contexts": 3,
+          "heapMedianOfContextMediansBytes": {
+            "n": 3,
+            "median": 4843802.0,
+            "min": 4840836.0,
+            "max": 4846306.0,
+            "q1": 4840836.0,
+            "q3": 4846306.0,
+            "iqr": 5470.0
+          },
+          "heapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 79172,
+            "min": 78164,
+            "max": 83788,
+            "q1": 78164,
+            "q3": 83788,
+            "iqr": 5624
+          },
+          "heapSlopeBytesPerRound": {
+            "n": 3,
+            "median": 17046.17142857143,
+            "min": 16748.342857142856,
+            "max": 18192.0,
+            "q1": 16748.342857142856,
+            "q3": 18192.0,
+            "iqr": 1443.6571428571442
+          },
+          "reloadHeapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 15224,
+            "min": 9800,
+            "max": 15720,
+            "q1": 9800,
+            "q3": 15720,
+            "iqr": 5920
+          },
+          "measuredWindowMs": {
+            "n": 3,
+            "median": 27645,
+            "min": 25910,
+            "max": 28624,
+            "q1": 25910,
+            "q3": 28624,
+            "iqr": 2714
+          },
+          "documentsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "nodesDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "listenersDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "connectedElementsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          }
+        },
+        "candidate": {
+          "contexts": 3,
+          "heapMedianOfContextMediansBytes": {
+            "n": 3,
+            "median": 4798872.0,
+            "min": 4797652.0,
+            "max": 4798896.0,
+            "q1": 4797652.0,
+            "q3": 4798896.0,
+            "iqr": 1244.0
+          },
+          "heapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 25632,
+            "min": 25492,
+            "max": 25656,
+            "q1": 25492,
+            "q3": 25656,
+            "iqr": 164
+          },
+          "heapSlopeBytesPerRound": {
+            "n": 3,
+            "median": 5397.942857142857,
+            "min": 5369.371428571429,
+            "max": 5410.285714285715,
+            "q1": 5369.371428571429,
+            "q3": 5410.285714285715,
+            "iqr": 40.91428571428605
+          },
+          "reloadHeapFirstLastDeltaBytes": {
+            "n": 3,
+            "median": 18016,
+            "min": 17968,
+            "max": 29460,
+            "q1": 17968,
+            "q3": 29460,
+            "iqr": 11492
+          },
+          "measuredWindowMs": {
+            "n": 3,
+            "median": 25693,
+            "min": 22833,
+            "max": 26468,
+            "q1": 22833,
+            "q3": 26468,
+            "iqr": 3635
+          },
+          "documentsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "nodesDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "listenersDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          },
+          "connectedElementsDelta": {
+            "n": 3,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "q1": 0,
+            "q3": 0,
+            "iqr": 0
+          }
+        }
+      }
+    },
+    "contexts": [
+      {
+        "version": "baseline",
+        "profile": "desktop",
+        "sample": 0,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4797418.0,
+            "min": 4730312,
+            "max": 4807244,
+            "q1": 4735984,
+            "q3": 4799244,
+            "iqr": 63260,
+            "first": 4730312,
+            "last": 4807244,
+            "delta": 76932,
+            "slopePerRound": 16514.85714285714
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4660232,
+            "min": 4647916,
+            "max": 4673056,
+            "q1": 4647916,
+            "q3": 4673056,
+            "iqr": 25140,
+            "first": 4647916,
+            "last": 4673056,
+            "delta": 25140
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 10952,
+            "q1": 10952,
+            "q3": 10952,
+            "iqr": 0,
+            "first": 10952,
+            "last": 10952,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 13924,
+        "measuredWindowMs": 8014,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "desktop",
+        "sample": 0,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4755472.0,
+            "min": 4731880,
+            "max": 4758716,
+            "q1": 4733108,
+            "q3": 4757684,
+            "iqr": 24576,
+            "first": 4731880,
+            "last": 4757684,
+            "delta": 25804,
+            "slopePerRound": 5518.971428571429
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4664272,
+            "min": 4650360,
+            "max": 4677984,
+            "q1": 4650360,
+            "q3": 4677984,
+            "iqr": 27624,
+            "first": 4650360,
+            "last": 4677984,
+            "delta": 27624
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 27391,
+        "measuredWindowMs": 7239,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "desktop",
+        "sample": 1,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4755900.0,
+            "min": 4732096,
+            "max": 4758868,
+            "q1": 4733324,
+            "q3": 4758016,
+            "iqr": 24692,
+            "first": 4732096,
+            "last": 4758016,
+            "delta": 25920,
+            "slopePerRound": 5556.114285714286
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4664660,
+            "min": 4650360,
+            "max": 4677956,
+            "q1": 4650360,
+            "q3": 4677956,
+            "iqr": 27596,
+            "first": 4650360,
+            "last": 4677956,
+            "delta": 27596
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 40670,
+        "measuredWindowMs": 7249,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      },
+      {
+        "version": "baseline",
+        "profile": "desktop",
+        "sample": 1,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4775130.0,
+            "min": 4730392,
+            "max": 4807460,
+            "q1": 4735072,
+            "q3": 4799324,
+            "iqr": 64252,
+            "first": 4730392,
+            "last": 4807460,
+            "delta": 77068,
+            "slopePerRound": 17897.485714285714
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4660240,
+            "min": 4647920,
+            "max": 4678516,
+            "q1": 4647920,
+            "q3": 4678516,
+            "iqr": 30596,
+            "first": 4647920,
+            "last": 4678516,
+            "delta": 30596
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 12992,
+            "q1": 10952,
+            "q3": 12992,
+            "iqr": 2040,
+            "first": 10952,
+            "last": 12992,
+            "delta": 2040
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 54398,
+        "measuredWindowMs": 7525,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "baseline",
+        "profile": "desktop",
+        "sample": 2,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4776656.0,
+            "min": 4732176,
+            "max": 4809112,
+            "q1": 4737060,
+            "q3": 4800976,
+            "iqr": 63916,
+            "first": 4732176,
+            "last": 4809112,
+            "delta": 76936,
+            "slopePerRound": 17857.02857142857
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4660240,
+            "min": 4647840,
+            "max": 4673060,
+            "q1": 4647840,
+            "q3": 4673060,
+            "iqr": 25220,
+            "first": 4647840,
+            "last": 4673060,
+            "delta": 25220
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 10952,
+            "q1": 10952,
+            "q3": 10952,
+            "iqr": 0,
+            "first": 10952,
+            "last": 10952,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 68156,
+        "measuredWindowMs": 7493,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "desktop",
+        "sample": 2,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4757716.0,
+            "min": 4734080,
+            "max": 4773044,
+            "q1": 4735332,
+            "q3": 4759928,
+            "iqr": 24596,
+            "first": 4734080,
+            "last": 4759928,
+            "delta": 25848,
+            "slopePerRound": 5181.714285714285
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4663700,
+            "min": 4649680,
+            "max": 4677448,
+            "q1": 4649680,
+            "q3": 4677448,
+            "iqr": 27768,
+            "first": 4649680,
+            "last": 4677448,
+            "delta": 27768
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 81375,
+        "measuredWindowMs": 7254,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      },
+      {
+        "version": "baseline",
+        "profile": "mobile-emulation",
+        "sample": 0,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4840836.0,
+            "min": 4772368,
+            "max": 4851540,
+            "q1": 4778424,
+            "q3": 4843540,
+            "iqr": 65116,
+            "first": 4772368,
+            "last": 4851540,
+            "delta": 79172,
+            "slopePerRound": 17046.17142857143
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4705212,
+            "min": 4702520,
+            "max": 4717744,
+            "q1": 4702520,
+            "q3": 4717744,
+            "iqr": 15224,
+            "first": 4702520,
+            "last": 4717744,
+            "delta": 15224
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 10952,
+            "q1": 10952,
+            "q3": 10952,
+            "iqr": 0,
+            "first": 10952,
+            "last": 10952,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 130116,
+        "measuredWindowMs": 28624,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "mobile-emulation",
+        "sample": 0,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4798872.0,
+            "min": 4775392,
+            "max": 4802156,
+            "q1": 4777540,
+            "q3": 4801048,
+            "iqr": 23508,
+            "first": 4775392,
+            "last": 4801048,
+            "delta": 25656,
+            "slopePerRound": 5410.285714285715
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4709536,
+            "min": 4704932,
+            "max": 4722900,
+            "q1": 4704932,
+            "q3": 4722900,
+            "iqr": 17968,
+            "first": 4704932,
+            "last": 4722900,
+            "delta": 17968
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 177459,
+        "measuredWindowMs": 25693,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "mobile-emulation",
+        "sample": 1,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4797652.0,
+            "min": 4774052,
+            "max": 4800996,
+            "q1": 4776308,
+            "q3": 4799684,
+            "iqr": 23376,
+            "first": 4774052,
+            "last": 4799684,
+            "delta": 25632,
+            "slopePerRound": 5397.942857142857
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4709528,
+            "min": 4704908,
+            "max": 4722924,
+            "q1": 4704908,
+            "q3": 4722924,
+            "iqr": 18016,
+            "first": 4704908,
+            "last": 4722924,
+            "delta": 18016
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 226133,
+        "measuredWindowMs": 26468,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      },
+      {
+        "version": "baseline",
+        "profile": "mobile-emulation",
+        "sample": 1,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4846306.0,
+            "min": 4778368,
+            "max": 4856532,
+            "q1": 4784232,
+            "q3": 4848136,
+            "iqr": 63904,
+            "first": 4778368,
+            "last": 4856532,
+            "delta": 78164,
+            "slopePerRound": 16748.342857142856
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4705792,
+            "min": 4703564,
+            "max": 4719284,
+            "q1": 4703564,
+            "q3": 4719284,
+            "iqr": 15720,
+            "first": 4703564,
+            "last": 4719284,
+            "delta": 15720
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 10952,
+            "q1": 10952,
+            "q3": 10952,
+            "iqr": 0,
+            "first": 10952,
+            "last": 10952,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 275795,
+        "measuredWindowMs": 27645,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "baseline",
+        "profile": "mobile-emulation",
+        "sample": 2,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4843802.0,
+            "min": 4772948,
+            "max": 4856736,
+            "q1": 4779172,
+            "q3": 4848580,
+            "iqr": 69408,
+            "first": 4772948,
+            "last": 4856736,
+            "delta": 83788,
+            "slopePerRound": 18192.0
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10947.0,
+            "min": 10947,
+            "max": 10947,
+            "q1": 10947,
+            "q3": 10947,
+            "iqr": 0,
+            "first": 10947,
+            "last": 10947,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 262.0,
+            "min": 262,
+            "max": 262,
+            "q1": 262,
+            "q3": 262,
+            "iqr": 0,
+            "first": 262,
+            "last": 262,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2260.0,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4707960,
+            "min": 4704908,
+            "max": 4717760,
+            "q1": 4704908,
+            "q3": 4717760,
+            "iqr": 12852,
+            "first": 4707960,
+            "last": 4717760,
+            "delta": 9800
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10952,
+            "min": 10952,
+            "max": 12992,
+            "q1": 10952,
+            "q3": 12992,
+            "iqr": 2040,
+            "first": 12992,
+            "last": 10952,
+            "delta": -2040
+          },
+          "listeners": {
+            "n": 3,
+            "median": 275,
+            "min": 275,
+            "max": 275,
+            "q1": 275,
+            "q3": 275,
+            "iqr": 0,
+            "first": 275,
+            "last": 275,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2260,
+            "min": 2260,
+            "max": 2260,
+            "q1": 2260,
+            "q3": 2260,
+            "iqr": 0,
+            "first": 2260,
+            "last": 2260,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 323077,
+        "measuredWindowMs": 25910,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 2560,
+        "sampledElements": 1024,
+        "skippedElements": 1536,
+        "calculationProbes": 80
+      },
+      {
+        "version": "candidate",
+        "profile": "mobile-emulation",
+        "sample": 2,
+        "status": "COMPLETE",
+        "calibration": {
+          "held": {
+            "node": true,
+            "object": true
+          },
+          "released": {
+            "node": false,
+            "object": false
+          }
+        },
+        "measuredCheckpoints": 6,
+        "metrics": {
+          "heapBytes": {
+            "n": 6,
+            "median": 4798896.0,
+            "min": 4775592,
+            "max": 4802144,
+            "q1": 4777780,
+            "q3": 4801084,
+            "iqr": 23304,
+            "first": 4775592,
+            "last": 4801084,
+            "delta": 25492,
+            "slopePerRound": 5369.371428571429
+          },
+          "documents": {
+            "n": 6,
+            "median": 1.0,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "nodes": {
+            "n": 6,
+            "median": 10953.0,
+            "min": 10953,
+            "max": 10953,
+            "q1": 10953,
+            "q3": 10953,
+            "iqr": 0,
+            "first": 10953,
+            "last": 10953,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "listeners": {
+            "n": 6,
+            "median": 263.0,
+            "min": 263,
+            "max": 263,
+            "q1": 263,
+            "q3": 263,
+            "iqr": 0,
+            "first": 263,
+            "last": 263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          },
+          "connectedElements": {
+            "n": 6,
+            "median": 2263.0,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0,
+            "slopePerRound": 0.0
+          }
+        },
+        "reloads": {
+          "heapBytes": {
+            "n": 3,
+            "median": 4709520,
+            "min": 4693440,
+            "max": 4722900,
+            "q1": 4693440,
+            "q3": 4722900,
+            "iqr": 29460,
+            "first": 4693440,
+            "last": 4722900,
+            "delta": 29460
+          },
+          "documents": {
+            "n": 3,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "q1": 1,
+            "q3": 1,
+            "iqr": 0,
+            "first": 1,
+            "last": 1,
+            "delta": 0
+          },
+          "nodes": {
+            "n": 3,
+            "median": 10958,
+            "min": 10958,
+            "max": 10958,
+            "q1": 10958,
+            "q3": 10958,
+            "iqr": 0,
+            "first": 10958,
+            "last": 10958,
+            "delta": 0
+          },
+          "listeners": {
+            "n": 3,
+            "median": 276,
+            "min": 276,
+            "max": 276,
+            "q1": 276,
+            "q3": 276,
+            "iqr": 0,
+            "first": 276,
+            "last": 276,
+            "delta": 0
+          },
+          "connectedElements": {
+            "n": 3,
+            "median": 2263,
+            "min": 2263,
+            "max": 2263,
+            "q1": 2263,
+            "q3": 2263,
+            "iqr": 0,
+            "first": 2263,
+            "last": 2263,
+            "delta": 0
+          }
+        },
+        "elapsedSinceRunStartMs": 365419,
+        "measuredWindowMs": 22833,
+        "totalProbes": 1104,
+        "collectedProbes": 1104,
+        "retainedProbeEntries": 0,
+        "agedRetainedProbes": 0,
+        "detachedTrees": 16,
+        "detachedNames": {
+          "OPTION": 16
+        },
+        "removedElements": 1280,
+        "sampledElements": 1024,
+        "skippedElements": 256,
+        "calculationProbes": 80
+      }
+    ],
+    "harnessStatus": "PASS",
+    "issues": [],
+    "limitations": [
+      "Bounded eight rounds per context, not hours of use",
+      "Weak probes cover selected retired calculator objects, not every allocation",
+      "No physical mobile device or native screen reader",
+      "No GPU/process memory claim",
+      "Local snapshots without external sprites, production feedback API or Turnstile"
+    ],
+    "elapsedMs": 369056,
+    "aggregate": {
+      "contextCount": 12,
+      "measuredRounds": 72,
+      "reloads": 36,
+      "totalProbes": 13248,
+      "collectedProbes": 13248,
+      "retainedProbeEntries": 0,
+      "agedRetainedProbes": 0,
+      "removedElements": 23040,
+      "sampledElements": 12288,
+      "skippedElements": 10752,
+      "calculationProbes": 960,
+      "detachedTreeCounts": [
+        16
+      ],
+      "allCalibrationControlsPassed": true,
+      "allContextStatusPassed": true,
+      "measuredWindowMs": {
+        "n": 12,
+        "median": 15423.5,
+        "min": 7239,
+        "max": 28624,
+        "q1": 7373.5,
+        "q3": 26189.0,
+        "iqr": 18815.5
+      }
+    },
+    "interpretation": "Bounded sampled-retention check only. All probes in the finite sampled set clearing does not establish universal object collection, a heap plateau, absence of memory leaks, or hours-long real-device stability. Positive post-GC heap/reload growth is retained in the statistics. Fixed detached OPTION trees require source/retainer interpretation; a count alone does not establish their identity or harmlessness."
+  },
+  "publicObservation": {
+    "observedAt": "2026-11-15T09:59:32.361Z",
+    "target": "https://kurohanolu.github.io/singularity/",
+    "observedPublicRelease": {
+      "version": "1.0.0",
+      "preRelease": null,
+      "tag": "v1.0.0",
+      "name": "Singularity v1.0.0",
+      "product": "Singularity",
+      "developer": "Chloha Labs",
+      "publicUrl": "https://kurohanolu.github.io/singularity/"
+    },
+    "mode": "existing approved public release GET-only browser observation",
+    "realDevice": false,
+    "productionMutations": 0,
+    "feedbackFormsOpened": 0,
+    "samplesPerProfile": 3,
+    "operationsPerSample": 12,
+    "conditions": {
+      "node": "v22.23.4",
+      "platform": "linux",
+      "cpu": "AMD EPYC 9V45 96-Core Processor",
+      "cache": "fresh isolated context then reload; no forced cache clearing between cold and warm",
+      "network": "actual CI-to-public-CDN route; mobile adds40ms latency,1.6Mbit/s down,750kbit/s up and4xCPU",
+      "guard": "CDP Fetch request interception permits only GET/HEAD to the named Pages subtree or PokeAPI sprite paths; interception may affect caching",
+      "timingCaveats": [
+        "zero transfer for cross-origin resources can mean missing Timing-Allow-Origin or caching",
+        "data-URL images are already counted inside HTML",
+        "heap is sampled without forced garbage collection",
+        "operation latency includes next animation frame",
+        "publicCDN values must not be directly compared to loopback candidate measurements",
+        "release.json validation requests are excluded from resource-transfer summaries"
+      ]
+    },
+    "browser": "145.0.7632.6",
+    "profileStatistics": {
+      "desktop": {
+        "calculationToFrameMs": {
+          "n": 36,
+          "median": 19.10000000000582,
+          "min": 6.5,
+          "max": 30.89999999999418,
+          "q1": 16.05000000000291,
+          "q3": 23.75,
+          "iqr": 7.69999999999709
+        },
+        "localeToFrameMs": {
+          "n": 36,
+          "median": 48.14999999999418,
+          "min": 36.30000000001746,
+          "max": 69.30000000001746,
+          "q1": 43.54999999998836,
+          "q3": 56.5,
+          "iqr": 12.950000000011642
+        },
+        "cold.FCPMs": {
+          "n": 3,
+          "median": 700,
+          "min": 304,
+          "max": 844,
+          "q1": 304,
+          "q3": 844,
+          "iqr": 540
+        },
+        "cold.domContentLoadedMs": {
+          "n": 3,
+          "median": 813.5,
+          "min": 386,
+          "max": 880,
+          "q1": 386,
+          "q3": 880,
+          "iqr": 494
+        },
+        "cold.loadMs": {
+          "n": 3,
+          "median": 885.1999999999825,
+          "min": 395,
+          "max": 996.1999999999825,
+          "q1": 395,
+          "q3": 996.1999999999825,
+          "iqr": 601.1999999999825
+        },
+        "warm.FCPMs": {
+          "n": 3,
+          "median": 84,
+          "min": 80,
+          "max": 92,
+          "q1": 80,
+          "q3": 92,
+          "iqr": 12
+        },
+        "warm.domContentLoadedMs": {
+          "n": 3,
+          "median": 118.60000000000582,
+          "min": 114,
+          "max": 124.90000000002328,
+          "q1": 114,
+          "q3": 124.90000000002328,
+          "iqr": 10.900000000023283
+        },
+        "warm.loadMs": {
+          "n": 3,
+          "median": 125.89999999999418,
+          "min": 121.09999999997672,
+          "max": 132.30000000001746,
+          "q1": 121.09999999997672,
+          "q3": 132.30000000001746,
+          "iqr": 11.200000000040745
+        }
+      },
+      "mobile-390": {
+        "calculationToFrameMs": {
+          "n": 36,
+          "median": 73.09999999999127,
+          "min": 25.79999999998836,
+          "max": 129.10000000000582,
+          "q1": 58.05000000001746,
+          "q3": 85.20000000001164,
+          "iqr": 27.14999999999418
+        },
+        "localeToFrameMs": {
+          "n": 36,
+          "median": 192.0500000000029,
+          "min": 136.5,
+          "max": 318.1000000000058,
+          "q1": 176.9499999999971,
+          "q3": 216.0500000000029,
+          "iqr": 39.10000000000582
+        },
+        "cold.FCPMs": {
+          "n": 3,
+          "median": 984,
+          "min": 980,
+          "max": 1100,
+          "q1": 980,
+          "q3": 1100,
+          "iqr": 120
+        },
+        "cold.domContentLoadedMs": {
+          "n": 3,
+          "median": 2757.399999999994,
+          "min": 2755.5999999999767,
+          "max": 2757.600000000006,
+          "q1": 2755.5999999999767,
+          "q3": 2757.600000000006,
+          "iqr": 2.000000000029104
+        },
+        "cold.loadMs": {
+          "n": 3,
+          "median": 2765.899999999994,
+          "min": 2763.7999999999884,
+          "max": 2766.899999999994,
+          "q1": 2763.7999999999884,
+          "q3": 2766.899999999994,
+          "iqr": 3.1000000000058208
+        },
+        "warm.FCPMs": {
+          "n": 3,
+          "median": 292,
+          "min": 284,
+          "max": 304,
+          "q1": 284,
+          "q3": 304,
+          "iqr": 20
+        },
+        "warm.domContentLoadedMs": {
+          "n": 3,
+          "median": 483,
+          "min": 466.1000000000058,
+          "max": 487.5,
+          "q1": 466.1000000000058,
+          "q3": 487.5,
+          "iqr": 21.39999999999418
+        },
+        "warm.loadMs": {
+          "n": 3,
+          "median": 487.80000000001746,
+          "min": 468,
+          "max": 493,
+          "q1": 468,
+          "q3": 493,
+          "iqr": 25
+        }
+      }
+    }
+  },
+  "rawFiles": {
+    "performance/browser-performance.json": {
+      "sha256": "676fd984285ece4a727a4b2d5ab3c7b0442b3546b52287a469e3f8bfbd562049",
+      "bytes": 84534
+    },
+    "performance/public-performance.json": {
+      "sha256": "546a84544f9e28de139256e844116e2705c211937f97935093ea902d7ab2f6a5",
+      "bytes": 150913
+    },
+    "memory/memory.json": {
+      "sha256": "6c87067c9b286d9c2eb7ed4cb995e2711c4544c6b03abbcdf1db8443c93d2af2",
+      "bytes": 181707
+    },
+    "quality/reports/v0188/continued-feedback-performance.json": {
+      "sha256": "564314427072840e04d2e48b41041805eeeb83edc9194255589a411298e39263",
+      "bytes": 24257
+    },
+    "quality/reports/v0188/test-run.json": {
+      "sha256": "7b0d34776ed9f243bf3af1bf0920678f4b3f9e83fe9597dfc65b9b94d29a5a5f",
+      "bytes": 5629
+    }
+  }
+}

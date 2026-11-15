@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant"
+  ],
+  "localeReloads": 9,
+  "conditionalMoves": [
+    "ボディプレス",
+    "サイコショック",
+    "イカサマ",
+    "はきだす",
+    "なげつける",
+    "ドラゴンアロー",
+    "ふくろだたき",
+    "はたきおとす"
+  ],
+  "storageFaults": [
+    "denied",
+    "quota"
+  ],
+  "multiTab": true,
+  "privacy": true,
+  "immediateReload": true
+}

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-15T10:08:17.292787+00:00",
+  "release": 445961829,
+  "sourceCommit": "0b270c1452505268364659edd402209b00b28673",
+  "sourceTree": "239c4cbd37aa6389f16dc81e7f9a861c09a723f2",
+  "stable": true,
+  "files": 413,
+  "assets": [
+    {
+      "name": "v1.0.0.zip",
+      "bytes": 2879887,
+      "sha256": "dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6",
+      "apiMatches": true
+    },
+    {
+      "name": "v1.0.0.zip.sha256",
+      "bytes": 77,
+      "sha256": "1bde49d06b8c7b4d27bb9716a4271a2f0669a21890c8fc093f16c6e0fda9d593",
+      "apiMatches": true
+    }
+  ],
+  "exactUTCArchiveByteEquality": true,
+  "checksumMatches": true,
+  "crc": true
+}
