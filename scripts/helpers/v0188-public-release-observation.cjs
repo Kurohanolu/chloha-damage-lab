@@ -11,16 +11,16 @@ function verifyObservation(localRelease,publicRelease,title,previous=null){
   const published=verifyFollowupDraft(localRelease);
   verifyCutoverApproval(published);
   assert.deepEqual(publicRelease,published,'Follow-up observations must match the complete pinned published manifest');
- }else if(localRelease.tag==='v0.188-pre.2'){
-  // Approved pre.2 CI must be able to observe the current pre.1 site before
+ }else if(['v0.188-pre.2','v1.0.0'].includes(localRelease.tag)){
+  // Approved successor CI must be able to observe the current pre.1 site before
   // cutover, since deployment itself requires that CI. Never accept a downgrade.
   verifyCutoverApproval(localRelease);
   if(actual.tag==='v0.188-pre.1'){
-   assert.equal(localRelease.migration.liveTargetVerified,false,'After pre.2 acceptance the previous public release is no longer valid');
+   assert.equal(localRelease.migration.liveTargetVerified,false,'After successor acceptance the previous public release is no longer valid');
    assert.deepEqual(publicRelease,publishedRelease(),'Pre-cutover observation must match the complete immutable pre.1 manifest');
   }else{
    verifyCutoverApproval(publicRelease);
-   assert.deepEqual(actual,identity(localRelease),'An approved pre.2 candidate may only observe its exact approved identity or the pinned pre-cutover pre.1');
+   assert.deepEqual(actual,identity(localRelease),'An approved successor candidate may only observe its exact approved identity or the pinned pre-cutover pre.1');
   }
  }else if(actual.tag===baseline.tag)assert.deepEqual(actual,baseline,'Published baseline identity must match the pinned v0.187 release');
  else{

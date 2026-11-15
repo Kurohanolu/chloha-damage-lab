@@ -7,7 +7,8 @@ const root=path.resolve(__dirname,'..');
 const workflow=fs.readFileSync(path.join(root,'.github/workflows/ui-smoke.yml'),'utf8');
 const packageJson=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
 const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
-assert.equal(packageJson.version,release.version+'.0','package metadata must match this release');
+const identity=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
+assert.equal(packageJson.version,identity.packageVersion,'package metadata must match this release');
 const lines=workflow.split(/\r?\n/);
 const runs=[...workflow.matchAll(/^\s+(?:- )?run: node (tests\/[^\s]+)$/gm)].map(m=>m[1]);
 const duplicates=runs.filter((p,i)=>runs.indexOf(p)!==i);
@@ -40,7 +41,7 @@ const suites={
 for(const [group,required] of Object.entries(suites))for(const script of required)
  assert.ok(runs.includes(script),'release audit lacks '+group+' suite: '+script);
 const evidence={
- versionTarget:'v'+release.version,status:'pre-release / automated coverage verified',
+ versionTarget:'v'+release.version,status:(identity.stable?'stable candidate':'pre-release')+' / automated coverage verified',
  checks:{ciScriptCount:runs.length,uniqueCiScripts:new Set(runs).size,groups:Object.fromEntries(Object.entries(suites).map(([k,v])=>[k,v.length])),triggerParity:true},
  observations:[
   {severity:'scope',subject:'move catalog',detail:'Legacy catalog flags remain distinct from runtime support; existing unverified game-parity conditions are preserved'},

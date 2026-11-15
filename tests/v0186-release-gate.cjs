@@ -9,6 +9,7 @@ const script=workflow.split('          script: |\n')[1];assert.ok(script);
 const legacy=['Showdown differential tests','Showdown differential audit','v0.184 engine baseline','Damage Lab CI and status ledger','UI & damage regression','GitHub Pages live smoke','v0.185 anonymous feedback'];
 if(fs.existsSync(root+'/.github/workflows/v0187-singularity-migration.yml'))legacy.push('v0.187 Singularity Migration');
 if(fs.existsSync(root+'/.github/workflows/v0188-quality-remediation.yml'))legacy.push('v0.188 Quality Remediation');
+if(require('../release.json').tag==='v1.0.0')legacy.push('v1.0.0 Stable Promotion');
 async function probe(mode){
  let publicationBoundary=0,mutations=0;
  const head='audit-only-head';

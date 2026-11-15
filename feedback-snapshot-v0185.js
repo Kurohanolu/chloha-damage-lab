@@ -12,7 +12,7 @@
    const r=last.r;
    result={minimumDamage:Math.min(...r.rolls),maximumDamage:Math.max(...r.rolls),koProbability:r.koProbability??null,baseDamage:r.base,attackStat:r.attack,defenseStat:r.defense,effectivePower:r.effectivePower};
   }
-  const snapshot={schemaVersion:1,appVersion:document.title.match(/v\d+\.\d+(?: Pre-Release \d+)?/)?.[0]||'',engineVersion:window.ChlohaDamageEngine?.version||'',locale:window.ChlohaLocale?.get?.()||'ja',selection,controls,engineInput,result};
+  const snapshot={schemaVersion:1,appVersion:window.ChlohaFeedbackRelease.identify(document.title).wireVersion,engineVersion:window.ChlohaDamageEngine?.version||'',locale:window.ChlohaLocale?.get?.()||'ja',selection,controls,engineInput,result};
   if(!C.validateSnapshot(snapshot))throw Error('snapshot_unavailable');
   return JSON.parse(JSON.stringify(snapshot));
  }

@@ -1,9 +1,9 @@
 {
-  "version": "0.188",
-  "preRelease": 2,
-  "tag": "v0.188-pre.2",
-  "name": "Singularity v0.188 Pre-Release 2",
-  "notes": "docs/releases/v0.188-pre.2.md",
+  "version": "1.0.0",
+  "preRelease": null,
+  "tag": "v1.0.0",
+  "name": "Singularity v1.0.0",
+  "notes": "docs/releases/v1.0.0.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -24,7 +24,7 @@
     "liveTargetVerified": false
   },
   "qualityReview": {
-    "releaseTag": "v0.188-pre.2",
+    "releaseTag": "v1.0.0",
     "auditor": "6.1 Sol",
     "auditStatus": "pending",
     "ownerApproval": "pending",
@@ -44,5 +44,6 @@
     "auditor": "6.1 Sol",
     "auditStatus": "pending",
     "ownerApproval": "pending"
-  }
+  },
+  "channel": "stable"
 }

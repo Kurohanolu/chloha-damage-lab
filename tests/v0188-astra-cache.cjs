@@ -1,7 +1,8 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const script=fs.readFileSync('scripts/verify-release.cjs','utf8'),html=fs.readFileSync('index.html','utf8');
-function verify(input){vm.runInNewContext(script,{URL,require(name){if(name==='node:fs')return {...fs,readFileSync(file,...args){return file==='index.html'?input:fs.readFileSync(file,...args);}};return require(name);},console:{log(){}}});}
+const requireVerifier=require('node:module').createRequire(require('node:path').resolve('scripts/verify-release.cjs'));
+function verify(input){vm.runInNewContext(script,{URL,require(name){if(name==='node:fs')return {...fs,readFileSync(file,...args){return file==='index.html'?input:fs.readFileSync(file,...args);}};return requireVerifier(name);},console:{log(){}}});}
 verify(html);
 for(const file of ['i18n.js','feedback-ui-v0185.js','damage-engine-v0184.js','persistence-v0188.js']){
  const version=require('../release.json').tag.slice(1).replaceAll('.','\\.');

@@ -24,10 +24,79 @@ const assetHashes=new Map([...runtimeAssets,...presentationAssets].map(({src,fil
 const expectedHash=crypto.createHash('sha256').update(source).digest('hex');
 if(!expected)throw Error('Cannot determine expected title from checked-out index.html');
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+// Runs only after the selected public baseline is the stable release. All edits
+// below are confined to this new browser context's local calculator/storage.
+async function stableAcceptance(page){
+ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+ const set=async(id,value)=>page.locator('#'+id).evaluate((node,value)=>{
+  if(node.type==='checkbox')node.checked=value;else node.value=String(value);
+  node.dispatchEvent(new Event('input',{bubbles:true}));node.dispatchEvent(new Event('change',{bubbles:true}));
+ },value);
+ const ready=()=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaPersistence&&!!window.ChlohaLocale);
+ const snapshot=()=>page.evaluate(()=>({state:ChlohaPersistence.capture(),input:ChlohaLastCalculation.a,rolls:ChlohaLastCalculation.r.rolls}));
+ const saved=()=>page.waitForFunction(()=>{
+  const raw=localStorage.getItem(ChlohaPersistence.key);
+  return raw&&JSON.stringify(JSON.parse(raw).state)===JSON.stringify(ChlohaPersistence.capture());
+ });
+ // Independent integer oracle for neutral Lv50 Attack150/Defense100. The full
+ // sixteen rolls must change when each manual Speed crosses this threshold.
+ const rolls=power=>{const base=Math.floor(Math.floor(22*power*150/100)/50)+2;return Array.from({length:16},(_,i)=>Math.floor(base*(85+i)/100));};
+ if(await page.locator('#feedbackPanel').isVisible())await page.locator('#feedbackClose').click();
+ await ready();await page.locator('#resetCalculation').click();
+ const move=await page.evaluate(()=>ChlohaGameData.moves.find(item=>item.name==='エレキボール').id);
+ await set('dbMove',move);await set('dbAuto',false);
+ for(const [id,value] of Object.entries({attack:150,defense:100,attSpeed:122,defSpeed:81,attType1:'ノーマル',attType2:'なし',defType1:'ノーマル',defType2:'なし',moveType:'でんき',stabMode:'none',attAbility:'none',defAbility:'none',attItem:'none',defItem:'none',weather:'none',terrain:'none',attackStage:0,defenseStage:0,battleFormat:'singles',spread:'single'}))await set(id,value);
+ assert.deepEqual((await snapshot()).rolls,rolls(60),'published manual Speed122/81 independent sixteen rolls');
+ for(const side of ['att','def'])if(await page.locator('#'+side+'Stats').isHidden())await page.locator('#'+side+'StatsToggle').click();
+ await page.locator('#att-speed-actual').fill('200');await page.locator('#att-speed-actual').press('Tab');
+ assert.equal(await page.locator('#attSpeed').inputValue(),'200');
+ assert.deepEqual((await snapshot()).rolls,rolls(80),'published attacker Speed editor changes effective power');
+ await page.locator('#def-speed-actual').fill('240');await page.locator('#def-speed-actual').press('Tab');
+ assert.equal(await page.locator('#defSpeed').inputValue(),'240');
+ assert.deepEqual((await snapshot()).rolls,rolls(40),'published defender Speed editor changes effective power');
+ await set('attMaxHp',250);await set('hp',260);await saved();
+ const original=await snapshot(),cases=[];
+ for(const locale of locales){
+  await page.locator('#chloha-locale').selectOption(locale);
+  await page.waitForFunction(value=>document.documentElement.lang===value,locale);
+  assert.deepEqual(await snapshot(),original,'public language switch preserves complete state/input/rolls: '+locale);
+  await saved();await page.reload({waitUntil:'domcontentloaded'});await ready();
+  assert.equal(await page.locator('#chloha-locale').inputValue(),locale,'public selected locale restored: '+locale);
+  assert.equal(await page.title(),'Singularity v1.0.0');
+  assert.equal((await page.locator('.version').innerText()).trim(),'v1.0.0','public stable version: '+locale);
+  assert.ok((await page.locator('#versionProvenance').innerText()).includes('v1.0.0'));
+  assert.deepEqual(await snapshot(),original,'public reload preserves complete state/input/sixteen rolls: '+locale);
+  for(const [id,value] of Object.entries({'att-speed-actual':'200','def-speed-actual':'240','att-hp-actual':'250','def-hp-actual':'260'}))assert.equal(await page.locator('#'+id).inputValue(),value,'public restored '+id+': '+locale);
+  await page.locator('#feedbackButton').click();await page.locator('#feedbackPanel').waitFor({state:'visible'});
+  await page.waitForFunction(()=>!document.getElementById('feedbackSubmit').disabled,undefined,{timeout:20000});
+  assert.equal(await page.locator('#feedbackAttach').isChecked(),false,'public attachment remains opt-in: '+locale);
+  assert.equal(await page.locator('#feedbackConfirm').isChecked(),false);
+  assert.equal(await page.locator('#feedbackDescription').inputValue(),'');
+  assert.equal(await page.locator('#feedbackEmail').inputValue(),'');
+  assert.equal(await page.locator('#feedbackMode').isVisible(),false,'public feedback remains production: '+locale);
+  assert.ok((await page.locator('#feedbackRelease').innerText()).includes('v1.0.0'),'public exact feedback version: '+locale);
+  assert.equal((await page.locator('#feedbackReleaseHeader').innerText()).trim(),'[Singularity release: v1.0.0]');
+  await page.locator('#feedbackClose').click();
+  assert.deepEqual(await snapshot(),original,'public feedback opening does not change calculation: '+locale);
+  cases.push({locale,stableIdentity:true,fullStateReload:true,manualSpeedAndHp:true,rolls:original.rolls,feedbackReadOnly:true});
+ }
+ return {url,sourceRef:process.env.PAGES_BASELINE_REF||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),browser:'Chromium headless',viewport:{width:390,height:844},realDevice:false,productionMutations:0,cases};
+}
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
-  const page=await browser.newPage({viewport:{width:390,height:844}});
+  const context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block'});
+  const blockedMethods={};let blockedReportPosts=0,stableEvidence=null;
+  if(release.tag==='v1.0.0')await context.route('**/*',route=>{
+   const request=route.request(),method=request.method();
+   if(['GET','HEAD','OPTIONS'].includes(method))return route.continue();
+   blockedMethods[method]=(blockedMethods[method]||0)+1;
+   if(new URL(request.url()).pathname==='/v1/reports')blockedReportPosts++;
+   // No mutating request (including third-party challenge requests) reaches
+   // production. We never submit a feedback form or manufacture a token.
+   return route.abort('blockedbyclient');
+  });
+  const page=await context.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   let actual='',actualHash='',lastError='',assetsReady=false;
   for(let attempt=1;attempt<=24;attempt++){
@@ -99,7 +168,13 @@ const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   }else{
    await page.screenshot({path:'pages-live-ja.png',fullPage:true});
   }
+  if(release.tag==='v1.0.0')stableEvidence=await stableAcceptance(page);
   assert.deepEqual(errors,[],'GitHub Pages runtime must have no uncaught JavaScript errors');
+  assert.equal(blockedReportPosts,0,'No feedback submission was attempted');
+  if(stableEvidence){
+   fs.writeFileSync('pages-live-v100.json',JSON.stringify({...stableEvidence,blockedMethods,blockedReportPosts,passed:true},null,2)+'\n');
+   console.log('PASS stable public acceptance: exact v1.0.0, nine locale reloads, manual Speed/HP, independent sixteen-roll thresholds, read-only feedback; zero report submissions');
+  }
   console.log('PASS GitHub Pages public URL '+url+'; title '+actual+'; verified assets '+assetHashes.size+'; locale '+(await locale.count()?'nine languages':'not present'));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1});

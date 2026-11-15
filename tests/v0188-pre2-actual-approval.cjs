@@ -19,7 +19,7 @@ try{
  for(const file of git(['ls-files','--cached','--others','--exclude-standard','-z'],original).split('\0').filter(Boolean)){
   const source=path.join(original,file);if(fs.statSync(source).isFile())write(path.join(temp,file),fs.readFileSync(source));
  }
- write(path.join(temp,'release.json'),JSON.stringify(pendingRelease(),null,2)+'\n');
+ require('./helpers/release-fixture.cjs').writeFixtureIdentity(temp,pendingRelease());
  git(['add','-A']);git(['-c','user.name=Synthetic Test Fixture','-c','user.email=fixture@example.invalid','commit','--allow-empty','-m','Synthetic pre2 candidate; never publish']);
  const commit=git(['rev-parse','HEAD']),tree=git(['rev-parse','HEAD^{tree}']);
  process.chdir(temp);

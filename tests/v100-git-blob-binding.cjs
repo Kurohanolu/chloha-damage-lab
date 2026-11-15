@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {verifyProtectedBlobBatch}=require('../scripts/helpers/v0188-pre2-approval-binding.cjs');
+const files=['first.js','binary.png'],bodies=new Map([['first.js',Buffer.from('a\nzero\0\n')],['binary.png',Buffer.from([255,0,10,32,98,108,111,98,10])]]);
+const frame=(body,type='blob',size=body.length)=>Buffer.concat([Buffer.from('a'.repeat(40)+' '+type+' '+size+'\n'),body,Buffer.from('\n')]);
+const batch=Buffer.concat(files.map(file=>frame(bodies.get(file))));
+assert.equal(verifyProtectedBlobBatch(files,batch,file=>bodies.get(file)),2,'Binary content is length-framed, not split or decoded as text');
+for(const bad of [batch.subarray(0,batch.length-1),batch.subarray(0,batch.length-3),Buffer.concat([batch,Buffer.from('ignored')]),Buffer.from('bad header\n'),Buffer.concat([frame(bodies.get('first.js'),'tree'),frame(bodies.get('binary.png'))]),Buffer.concat([frame(bodies.get('first.js'),'blob',Number.MAX_SAFE_INTEGER+1),frame(bodies.get('binary.png'))]),Buffer.concat([frame(bodies.get('binary.png')),frame(bodies.get('first.js'))])])assert.throws(()=>verifyProtectedBlobBatch(files,bad,file=>bodies.get(file)),'Malformed/truncated/reordered Git framing fails closed');
+const current=new Map(bodies);assert.doesNotThrow(()=>verifyProtectedBlobBatch(files,batch,file=>current.get(file)));
+current.set('first.js',Buffer.from('changed since last invocation'));assert.throws(()=>verifyProtectedBlobBatch(files,batch,file=>current.get(file)),/Protected source bytes/,'Current bytes are checked anew on every invocation');
+assert.throws(()=>verifyProtectedBlobBatch(files,batch,file=>file==='binary.png'?Buffer.from([255,0,10]):bodies.get(file)),/Protected source bytes/);
+console.log('PASS protected Git blob batch: exact binary SHA-256 equality, complete type/size framing, truncation/reordering/extra-data rejection and fresh current-byte checks');

@@ -2,6 +2,8 @@
 const assert=require('node:assert/strict'),fs=require('node:fs');
 const {execFileSync}=require('node:child_process');
 const {startLab,launchBrowser,ready,mockFeedback}=require('./helpers/v0188-browser-lab.cjs');
+const release=require('../release.json');
+const {stable,displayVersion}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const searches=[['moveSearch','moveSuggestions','Dragon'],['attSearch','attSuggestions','Charizard'],['defSearch','defSuggestions','Charizard']];
 const numeric=page=>page.evaluate(()=>JSON.stringify({a:window.ChlohaLastCalculation.a,r:window.ChlohaLastCalculation.r}));
@@ -104,6 +106,13 @@ if(!process.argv.includes('--source-only'))(async()=>{
      if(state==='switched'){await page.selectOption('#chloha-locale',locale==='en'?'ja':'en');await page.selectOption('#chloha-locale',locale);}
      if(state==='reloaded'){await page.reload();await ready(page);}
      versionNotice=await page.locator('#versionProvenance').innerText();checkNotice(versionNotice,locale);
+     assert.equal(await page.title(),release.name,'exact product title: '+locale+'/'+state);
+     assert.equal((await page.locator('.version').innerText()).replace(/\s+/g,' ').trim(),displayVersion,'exact visible version: '+locale+'/'+state);
+     assert.ok(versionNotice.includes(displayVersion),'localized public version: '+locale+'/'+state);
+     if(stable){
+      assert.doesNotMatch(await page.locator('#app').innerText(),/Pre-Release|Experimental build|実機未照合の検証版です/,'no obsolete prerelease identity: '+locale+'/'+state);
+      assert.equal(await page.locator('[data-singularity=scope]').textContent(),await page.evaluate(locale=>window.SingularityBrand.scopeNotices[locale],locale),'localized stable support disclaimer: '+locale+'/'+state);
+     }
      assert.equal(await numeric(page),original,'version notice '+locale+'/'+state+' preserves complete numeric result');
     }
     for(const [input,list,query] of searches)names[input]=await composingSearch(page,input,list,query);
@@ -130,7 +139,7 @@ if(!process.argv.includes('--source-only'))(async()=>{
      await page.evaluate(()=>scrollTo(0,0));
      const file=out+'/ui-'+locale+'-'+width+'.png';await page.screenshot({path:file,fullPage:true});evidence.screenshots.push(file);
     }
-    evidence.cases.push({locale,width,comboboxCompositionCases:3,names,versionNotice,passed:true});
+    evidence.cases.push({locale,width,comboboxCompositionCases:3,names,versionNotice,displayVersion,stableIdentity:stable,passed:true});
    }finally{await context.close();}
   }
   assert.equal(evidence.reportPosts,0,'no report submissions');evidence.passed=true;

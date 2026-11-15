@@ -1,7 +1,13 @@
-name: Publish verified prerelease
+name: Publish verified release
 on:
+  workflow_dispatch:
   pull_request:
     paths:
+      - docs/v100-*.md
+      - tests/v100-*.cjs
+      - scripts/v100-*.cjs
+      - scripts/helpers/**
+      - .github/workflows/v100-stable-promotion.yml
       - docs/v0188-*.md
       - tests/v0188-*.cjs
       - scripts/v0188-*.cjs
@@ -45,10 +51,10 @@ jobs:
       - run: node tests/v0184-public-baseline.cjs
       - run: node tests/v0185-feedback-production.cjs
   publish:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' }}
     needs: [validate]
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
       contents: write
       actions: read
@@ -63,24 +69,28 @@ jobs:
         run: node scripts/verify-publication-approval.cjs
       - name: Verify both public migration artifacts after final approval
         run: node scripts/v0187-live-migration-check.cjs
+      - name: Verify every stable asset including exact browser cache URLs
+        run: node -e "if(require('./release.json').tag==='v1.0.0')require('node:child_process').execFileSync(process.execPath,['scripts/v100-live-acceptance.cjs','--publication'],{stdio:'inherit'})"
       - name: Require a connected private feedback service
         run: node scripts/feedback-production-check.cjs
       - name: Package the exact release commit
-        run: git archive --format=zip --prefix=chloha-damage-lab/ -o release.zip HEAD
+        run: |
+          mkdir -p dist/release
+          TZ=UTC git archive --format=zip --prefix=chloha-damage-lab/ -o dist/release/release.zip HEAD
       - name: Require exact-commit CI and deployed-content checks
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const crypto = require('crypto');
             const manifest = JSON.parse(fs.readFileSync('release.json', 'utf8'));
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'GitHub Pages live smoke'];
             if (fs.existsSync('feedback-ui-v0185.js')) required.push('v0.185 anonymous feedback');
             if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
             if (fs.existsSync('.github/workflows/v0187-singularity-migration.yml')) required.push('v0.187 Singularity Migration');
             if (fs.existsSync('.github/workflows/v0188-quality-remediation.yml')) required.push('v0.188 Quality Remediation');
+            if (manifest.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
             let verified;
-            for (let attempt = 0; attempt < 40; attempt++) {
+            for (let attempt = 0; attempt < 80; attempt++) {
               const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, head_sha: context.sha, branch: 'main', event: 'push', per_page: 100});
               const latest = new Map();
               for (const run of response.data.workflow_runs) {
@@ -93,25 +103,25 @@ jobs:
                 verified = required.map(name => latest.get(name));
                 break;
               }
-              core.info(`Waiting for exact-commit CI (${latest.size}/${required.length} workflows found), attempt ${attempt + 1}/40`);
+              core.info(`Waiting for exact-commit CI (${latest.size}/${required.length} workflows found), attempt ${attempt + 1}/80`);
               await new Promise(resolve => setTimeout(resolve, 15000));
             }
             if (!verified) throw new Error('Exact-commit CI did not complete successfully; release was not published');
             const body = fs.readFileSync(manifest.notes, 'utf8') + `\n\nCommit: \`${context.sha}\`\n\n` + verified.map(run => `- [${run.name}](${run.html_url}): completed / success`).join('\n');
-            let release;
+            let existingRelease = null;
             try {
-              release = (await github.rest.repos.getReleaseByTag({...context.repo, tag: manifest.tag})).data;
-              if (release.target_commitish !== context.sha) throw new Error('Existing release targets a different commit; preserve the immutable tag');
+              existingRelease = (await github.rest.repos.getReleaseByTag({...context.repo, tag: manifest.tag})).data;
             } catch (error) {
               if (error.status !== 404) throw error;
-              release = (await github.rest.repos.createRelease({...context.repo, tag_name: manifest.tag, target_commitish: context.sha, name: manifest.name, body, prerelease: true, draft: false})).data;
             }
-            const archive = fs.readFileSync('release.zip');
-            const digest = crypto.createHash('sha256').update(archive).digest('hex');
-            const name = manifest.tag + '.zip';
-            const existing = (await github.rest.repos.listReleaseAssets({...context.repo, release_id: release.id})).data;
-            const previous = existing.find(asset => asset.name === name);
-            if (previous && (previous.size !== archive.length || (previous.digest && previous.digest !== 'sha256:' + digest))) throw new Error('Existing archive does not match this commit; preserve the published asset');
-            if (!existing.some(asset => asset.name === name)) await github.rest.repos.uploadReleaseAsset({...context.repo, release_id: release.id, name, headers: {'content-type': 'application/zip', 'content-length': archive.length}, data: archive});
-            if (!existing.some(asset => asset.name === name + '.sha256')) await github.rest.repos.uploadReleaseAsset({...context.repo, release_id: release.id, name: name + '.sha256', headers: {'content-type': 'text/plain'}, data: Buffer.from(digest + '  ' + name + '\n')});
-            core.notice(`Published ${release.html_url} at ${context.sha}; SHA256 ${digest}`);
+            if (manifest.tag === 'v1.0.0') {
+              const {verifyDeploymentRun} = require('./scripts/helpers/v100-deployment-proof.cjs');
+              await verifyDeploymentRun({github, sourceCommit:manifest.migration.liveAcceptanceSourceCommit, runUrl:manifest.migration.liveAcceptanceDeploymentRun, expectedWorkflow:fs.readFileSync('deployment/singularity-pages.yml')});
+              // CI polling can take minutes. Refresh current public bytes at the
+              // publication boundary instead of relying on the early readiness check.
+              require('node:child_process').execFileSync(process.execPath, ['scripts/v100-live-acceptance.cjs', '--publication'], {stdio:'inherit'});
+            }
+            const archive = fs.readFileSync('dist/release/release.zip');
+            const {publishArchive} = require('./scripts/helpers/github-release-publication.cjs');
+            const receipt = await publishArchive({github, repo:context.repo, sha:context.sha, manifest, body, archive, existingRelease});
+            core.notice(`Published ${receipt.url} at ${receipt.commit}; stable=${receipt.stable}; SHA256 ${receipt.sha256}`);

@@ -1,0 +1,26 @@
+# Singularity v1.0.0 release progress
+
+This checkpoint records the first stable candidate preparation. It is not a publication-success report.
+
+- Source branch: `audit/v0188-astra-quality`; reuse [PR #67](https://github.com/Kurohanolu/chloha-damage-lab/pull/67).
+- Audited starting source: `c9c52e1f7598fa6f7642a784a88e9bc3a4c7e095`, tree `bcf11e2ce7b2ff9a74db62309a33c0e3032a3c2b`.
+- Production/rollback remains `4f068544e670a85a6a4d34dd2c26e2be66bd9cb7`, immutable `v0.188-pre.1`. No v1 tag or Release has been issued at this checkpoint.
+- Owner instruction during execution: **「公開まで進めてくれ」**. Completion through publication is delegated, conditional on fresh independent review, exact-candidate CI and the existing serious-defect stop rule. Do not ask the same permission again; do not fabricate a future owner-supplied SHA.
+
+## Prepared changes
+
+Stable identity/version/cache metadata, truthful nine-language scope wording and release notes; no calculation engine/model/data change. A strict v1.0.0-only adapter preserves the unchanged feedback protocol and records the full exact version in every report body, including reports without snapshots. The deployed backend is not changed.
+
+Eleven required workflows (the original ten plus stable promotion), numerical identity comparison, real local Worker/SQLite compatibility, browser regression, exact-source deployment selection, complete artifact hashing, bound independent/owner/live receipts, immutable draft-first Release assets and rollback checks are retained or added. The actual source candidate must be fixed before these development checks count as release evidence.
+
+Independent preliminary review SOL-V100-01 found a Medium publication timing issue: checking public bytes before a potentially long CI wait left a stale acceptance interval. The publisher now repeats the complete GET-only hash check after exact-CI and deployment-run verification, immediately before Release writes. The source archive is under ignored `dist/release/`, keeping the strict clean-checkout requirement intact. This fix still requires the frozen candidate's independent review.
+
+## Completed baseline observations
+
+[Fresh operations record](v100-operations-baseline.md) and [per-request raw evidence](v100-operations-baseline.json) preserve all212/212 existing static-resource checks,371/371 external sprites, exact pre.1 ZIP and bounded public Worker/authentication observations. Cloudflare management access remains unavailable. These are existing-production observations, not v1 acceptance.
+
+## Resume point
+
+Fix this candidate's commit/tree, run all exact-SHA workflows and inspect every important step/artifact. Obtain the actual6.1Sol report. Follow the [promotion/recovery runbook](v100-promotion-runbook.md): reviewed R → approved A → actual deployment/acceptance → receipt-bound B → final main/source, public acceptance and immutable stable tag/Release. After each stage, record exact source/tree, CI URLs, target deployment run and outstanding work in GitHub. Never reuse an earlier SHA's PASS as later-source evidence.
+
+Known limitations remain explicit: current Cloudflare management/D1 linkage, physical devices/game hardware, native screen reader/OS IME, exhaustive linguistic review, finite memory observation and declared unsupported/partial Champions mechanics. The final report will distinguish each scope and preserve the owner-authorized conditional disposition.

@@ -19,6 +19,8 @@ function harness(){
  const context={document,console,structuredClone,URL,AbortSignal,crypto:require('node:crypto').webcrypto,setTimeout,clearTimeout,queueMicrotask,window:{ChlohaLocale:{get:()=>current.locale},ChlohaFeedbackContract:{categories:['bug'],controlIds:['attack','weather'],limits:{description:5000,email:254}},ChlohaFeedbackLocales:{text:(_lang,k)=>k,keys:['attachmentError']},ChlohaFeedbackSnapshot:{capture:()=>{if(unreadable)throw Error('synthetic unavailable');return structuredClone(current);}}}};
  // Dynamically created elements become addressable as in a browser DOM.
  const originalCreate=document.createElement;document.createElement=tag=>{const n=originalCreate(tag);Object.defineProperty(n,'id',{get(){return this._id||'';},set(v){this._id=v;nodes.set(v,this);},configurable:true});return n;};
+ vm.runInNewContext(fs.readFileSync(require('node:path').resolve(__dirname,'../feedback-release-v100.js'),'utf8'),context);
+ context.window.ChlohaFeedbackRelease=context.ChlohaFeedbackRelease;
  vm.runInNewContext(fs.readFileSync(require('node:path').resolve(__dirname,'../feedback-ui-v0185.js'),'utf8'),context);
  const fire=async(node,type)=>{const e={target:node,preventDefault(){}};for(const fn of node.events.get(type)||[])await fn(e);for(const fn of listeners.get(type)||[])await fn(e);await Promise.resolve();};
  const attach=async()=>{get('feedbackAttach').checked=true;await fire(get('feedbackAttach'),'change');get('feedbackConfirm').checked=true;};

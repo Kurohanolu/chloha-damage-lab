@@ -1,10 +1,25 @@
 'use strict';
-// Actual pre.2 publication authorization evidence; no network or production writes.
+// Actual successor publication authorization evidence; no network or production writes.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
 const {verifyFollowupDraft}=require('./v0188-followup-review.cjs');
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+function verifyProtectedBlobBatch(files,batch,readCurrent=file=>fs.readFileSync(file)){
+ let offset=0;
+ for(const file of files){
+  const newline=batch.indexOf(10,offset);assert.ok(newline>=offset,'Complete Git blob header required');
+  const header=/^[a-f0-9]{40} blob (\d+)$/.exec(batch.subarray(offset,newline).toString());assert.ok(header,'Reviewed protected object must be a Git blob');
+  const size=Number(header[1]),start=newline+1,end=start+size;
+  assert.ok(Number.isSafeInteger(size)&&end<batch.length&&batch[end]===10,'Complete Git blob framing required');
+  assert.equal(hash(readCurrent(file)),hash(batch.subarray(start,end)),'Protected source bytes differ from the Sol-reviewed candidate: '+file);
+  offset=end+1;
+ }
+ assert.equal(offset,batch.length,'No extra Git blob content may be ignored');
+ return files.length;
+}
+
 function verifyPre2ApprovalBinding(release){
- assert.equal(release.tag,'v0.188-pre.2');
+ assert.ok(['v0.188-pre.2','v1.0.0'].includes(release.tag),'Explicit successor approval policy required');
+ require('./release-identity.cjs').releaseIdentity(release);
  const review=release.qualityReview,git=args=>execFileSync('git',args,{maxBuffer:32*1024*1024,stdio:['ignore','pipe','pipe']});
  assert.match(review.reviewedSourceCommit||'',/^[a-f0-9]{40}$/);
  assert.equal(git(['rev-parse',review.reviewedSourceCommit+'^{tree}']).toString().trim(),review.reviewedTree,'Actual reviewed Git tree must match');
@@ -43,7 +58,11 @@ function verifyPre2ApprovalBinding(release){
  const files=git(['ls-files','-z']).toString().split('\0').filter(Boolean).filter(protectedFile).sort();
  const reviewedFiles=git(['ls-tree','-r','--name-only','-z',review.reviewedSourceCommit]).toString().split('\0').filter(Boolean).filter(protectedFile).sort();
  assert.deepEqual(files,reviewedFiles,'Protected source inventory must match the Sol-reviewed candidate');
- for(const file of files)assert.equal(hash(fs.readFileSync(file)),hash(reviewed(file)),'Protected source bytes differ from the Sol-reviewed candidate: '+file);
+ // Read immutable Git blobs in one framed batch; current files are still read
+ // afresh on every call, including after tampering tests. No cached approvals.
+ assert.ok(files.every(file=>!/[\r\n]/.test(file)),'Protected paths must be safe for the Git batch protocol');
+ const batch=execFileSync('git',['cat-file','--batch'],{input:files.map(file=>review.reviewedSourceCommit+':'+file+'\n').join(''),maxBuffer:32*1024*1024,stdio:['pipe','pipe','pipe']});
+ verifyProtectedBlobBatch(files,batch);
  return {reviewedSourceCommit:review.reviewedSourceCommit,reviewedTree:review.reviewedTree,protectedFiles:files.length};
 }
-module.exports={verifyPre2ApprovalBinding};
+module.exports={verifyProtectedBlobBatch,verifyPre2ApprovalBinding,verifySuccessorApprovalBinding:verifyPre2ApprovalBinding};
