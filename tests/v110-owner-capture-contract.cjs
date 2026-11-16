@@ -3,9 +3,14 @@
 // and canonical bindings; private screenshots are deliberately not required or published.
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
 const baseline='a70b45674c66dcfd7b87321c9f012dd36637c3f2',plain=x=>JSON.parse(JSON.stringify(x)),read=p=>fs.readFileSync(p,'utf8');
+const firstPublication='83af29133927a19fc7e0f9273c0e194c54384ae5';
 const manifestFile='docs/data/v110-es-la-owner-captures.json',M=JSON.parse(read(manifestFile)),S=JSON.parse(read('docs/data/v110-es-la-source-records.json')),C=JSON.parse(read('docs/data/v110-es-la-coverage.json'));
 const old=p=>execFileSync('git',['show',baseline+':'+p],{encoding:'utf8',maxBuffer:32*1024*1024});
+const published=p=>execFileSync('git',['show',firstPublication+':'+p],{encoding:'utf8',maxBuffer:32*1024*1024});
 const previous=JSON.parse(old('docs/data/v110-es-la-coverage.json')),previousSources=JSON.parse(old('docs/data/v110-es-la-source-records.json'));
+const firstCoverage=JSON.parse(published('docs/data/v110-es-la-coverage.json')),firstSources=JSON.parse(published('docs/data/v110-es-la-source-records.json')),firstRecords=new Map(firstSources.records.map(x=>[x.id,x]));
+assert.equal(execFileSync('git',['rev-parse',firstPublication+'^{tree}'],{encoding:'utf8'}).trim(),'cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b','First-batch results remain bound to the immutable publication');
+assert.equal(read(manifestFile),published(manifestFile),'The original ten-capture manifest must remain byte-identical');
 const c=vm.createContext({});vm.runInContext('window=globalThis',c);
 for(const file of ['names-v0179.js','names-ja-en.js','names-catalog-v0179.js','names-forms-v0179.js','locale-name-search.js','locale-name-catalog-adapter.js','locale-names-v0183.js','locale-names-pokeapi-v0183.js','ability-data-v0184.js','locale-es-la-data-v110.js','locale-es-la-v110.js'])vm.runInContext(read(file),c,{filename:file});
 const D=c.ChlohaEsLaData;
@@ -41,9 +46,21 @@ for(const capture of M.captures){
 }
 const captureSourceIds=new Set(M.captures.map(x=>x.sourceId)),ownerRecords=S.records.filter(x=>x.sourceIds.some(id=>captureSourceIds.has(id)));
 assert.equal(ownerRecords.length,65,'Repeated observations produce one source record per system identity');
-assert.equal(S.sources.length,previousSources.sources.length+10);assert.equal(S.records.length,previousSources.records.length+65);
+assert.equal(firstSources.sources.length,previousSources.sources.length+10);assert.equal(firstSources.records.length,previousSources.records.length+65);
+assert.ok(S.sources.length>=firstSources.sources.length);assert.ok(S.records.length>=firstSources.records.length);
 for(const original of previousSources.sources)assert.deepEqual(sources.get(original.id),original,'Keep previous source provenance');
 for(const original of previousSources.records)assert.deepEqual(records.get(original.id),original,'Keep previous evidence records');
+for(const original of firstSources.sources)assert.deepEqual(sources.get(original.id),original,'Keep all first-publication source provenance');
+const firstOwnerRecords=firstSources.records.filter(x=>x.sourceIds.some(id=>captureSourceIds.has(id)));
+assert.deepEqual(ownerRecords.map(x=>x.id).sort(),firstOwnerRecords.map(x=>x.id).sort(),'Later captures must reuse, not duplicate, first-batch identity records');
+const withoutAdditiveRefs=record=>{const {sourceIds,captureObservationIds,...rest}=record;return rest;};
+for(const original of firstOwnerRecords){
+ const current=records.get(original.id);
+ assert.deepEqual(withoutAdditiveRefs(current),withoutAdditiveRefs(original),'Only additive capture references may change a first-batch record');
+ assert.equal(new Set(current.sourceIds).size,current.sourceIds.length);assert.ok(original.sourceIds.every(id=>current.sourceIds.includes(id)),'Original capture sources remain attached');
+ for(const id of current.sourceIds){const source=sources.get(id);assert.ok(source);assert.equal(source.authority,'official');assert.equal(source.targetGame,'Pokémon Champions');}
+ if(current.captureObservationIds!==undefined){assert.ok(Array.isArray(current.captureObservationIds));assert.equal(new Set(current.captureObservationIds).size,current.captureObservationIds.length);assert.ok(current.captureObservationIds.includes(original.captureObservationId),'Additive observation list retains the original witness');}
+}
 assert.equal(M.observations.length,71);assert.equal(new Set(M.observations.map(x=>x.id)).size,71);
 const identities=M.observations.map(x=>x.category+'\0'+x.canonicalAnchor.en);assert.equal(new Set(identities).size,71,'Deduplicate canonical identities, not translated spellings');
 const accepted=M.observations.filter(x=>x.decision==='accepted-system-term'),context=M.observations.filter(x=>x.decision==='identity-context-only');
@@ -61,16 +78,18 @@ for(const observation of M.observations){
  else assert.equal(observation.rawObservedText,observation.esLA);
  if(observation.decision==='identity-context-only'){
   assert.equal(observation.category,'pokemon');assert.equal(observation.sourceRecordId,null);assert.equal(observation.officialChampions,false);
-  assert.deepEqual(withoutScopeUnion(C.entries.pokemon[anchor.key]),previous.entries.pokemon[anchor.key],'Nickname-capable labels cannot promote official species names');continue;
+  assert.deepEqual(withoutScopeUnion(firstCoverage.entries.pokemon[anchor.key]),previous.entries.pokemon[anchor.key],'First-batch nickname-capable labels did not promote official species names');continue;
  }
  assert.equal(observation.decision,'accepted-system-term');const record=records.get(observation.sourceRecordId);assert.ok(record);
  assert.equal(record.captureObservationId,observation.id);assert.equal(record.category,observation.category);assert.equal(record.canonicalEnglish,anchor.en);assert.equal(record.esLA,observation.esLA);
  assert.equal(record.status,'official');assert.equal(record.officialChampions,true);assert.equal(record.targetGame,'Pokémon Champions');assert.equal(record.verificationScope,'owner-provided-game-capture-name-only');
- assert.deepEqual([...record.sourceIds].sort(),[...new Set(observation.observationRefs.map(x=>x.sourceId))].sort());
+ assert.ok(observation.observationRefs.every(ref=>record.sourceIds.includes(ref.sourceId)),'Every original witness remains in the current source record');
  if(anchor.registered){
   const runtime=D.entries[observation.category][anchor.key];assert.ok(runtime);assert.equal(runtime.name,observation.esLA);assert.equal(runtime.status,'official');assert.equal(runtime.officialChampions,true);assert.equal(runtime.fallback,false);
   assert.deepEqual(plain(runtime.canonicalIds),anchor.canonicalIds);assert.ok(record.canonicalMatches.some(x=>x.category===observation.category&&x.key===anchor.key));
-  assert.ok(runtime.sourceIds.some(id=>record.sourceIds.includes(id)));assert.ok(C.entries[observation.category][anchor.key].recordIds.includes(record.id));
+  assert.ok(observation.observationRefs.every(ref=>runtime.sourceIds.includes(ref.sourceId)),'Current runtime retains all original capture sources');
+  const entry=C.entries[observation.category][anchor.key];assert.ok(entry.recordIds.includes(record.id));
+  const scopeUnion=[...new Set(entry.recordIds.map(id=>records.get(id)?.verificationScope).filter(Boolean))];assert.deepEqual(entry.verificationScopes||[],scopeUnion,'Current original-name audit scopes correspond to selected source records');
  }else{assert.equal(anchor.key,null);assert.deepEqual(anchor.canonicalIds,[]);assert.deepEqual(record.canonicalMatches,[]);assert.ok(!Object.values(C.entries[observation.category]).some(x=>x.en===anchor.en),'Off-runtime evidence cannot create a calculator identity');}
 }
 // Critical anchors are copied from the visible system fields, independently of
@@ -94,14 +113,16 @@ for(const [en,text,key,captureId,location] of [['Light Clay','Refleluz','ひか�
  const o=observation('items',en);assert.equal(o.esLA,text);assert.equal(o.canonicalAnchor.registered,false);assert.equal(o.canonicalAnchor.catalogKey,key);assert.equal(D.entries.items[key],undefined);assert.ok(o.observationRefs.some(x=>x.captureId===captureId&&x.location===location&&x.rawObservedText===text));
 }
 assert.equal(M.excludedObservations.length,1);assert.equal(M.excludedObservations[0].captureId,'32684');assert.equal(M.excludedObservations[0].location,'item-list.row-8-clipped-below-Baya-Drasi');assert.equal(M.excludedObservations[0].decision,'excluded-clipped-row');
-assert.ok(!accepted.some(x=>x.esLA==='Baya Anjiro'),'The clipped next row cannot provide an adopted name');assert.ok(!ownerRecords.some(x=>x.canonicalEnglish==='Haban Berry'));
+assert.ok(!accepted.some(x=>x.esLA==='Baya Anjiro'),'The first batch\'s clipped next row cannot provide an adopted name');assert.ok(!ownerRecords.some(x=>x.canonicalEnglish==='Haban Berry'),'Haban Berry must not cite a first-batch capture');
 assert.equal(M.uiObservations.length,18);for(const o of M.uiObservations){assert.equal(o.decision,'game-ui-observation-only');assert.equal(o.softwareUiCoverageCredit,false);}
 const registeredKeys=new Set(registered.map(x=>x.category+'\0'+x.canonicalAnchor.key));let changedStatus=0,newlyOfficial=0,newlyOfficialChampions=0;
+// Later batches may add evidence, names and aliases. Attribute these historical
+// totals only to the published first batch; live witnesses remain checked above.
 for(const [category,entries] of Object.entries(previous.entries)){
- assert.deepEqual(Object.keys(C.entries[category]),Object.keys(entries),'No inventory/engine identity expansion');
+ assert.deepEqual(Object.keys(firstCoverage.entries[category]),Object.keys(entries),'First batch did not expand inventory/engine identities');
  for(const [key,before] of Object.entries(entries)){
-  const after=C.entries[category][key];assert.deepEqual(after.canonicalIds,before.canonicalIds);assert.equal(after.name,before.name,'The capture batch adds attestation, not invented names');assert.deepEqual([...after.aliases].sort(),[...before.aliases].sort(),'Retain existing aliases');
-  const scopeUnion=[...new Set(after.recordIds.map(id=>records.get(id)?.verificationScope).filter(Boolean))];assert.deepEqual(after.verificationScopes||[],scopeUnion,'Full audit scope union corresponds only to selected source records');
+  const after=firstCoverage.entries[category][key];assert.deepEqual(after.canonicalIds,before.canonicalIds);assert.equal(after.name,before.name,'The first capture batch added attestation, not invented names');assert.deepEqual([...after.aliases].sort(),[...before.aliases].sort(),'First batch retained existing aliases');
+  const scopeUnion=[...new Set(after.recordIds.map(id=>firstRecords.get(id)?.verificationScope).filter(Boolean))];assert.deepEqual(after.verificationScopes||[],scopeUnion,'Published first-batch audit scopes correspond only to its selected source records');
   if(!registeredKeys.has(category+'\0'+key))assert.deepEqual(withoutScopeUnion(after),before,'Unobserved names retain their provenance');
   if(before.status!==after.status||before.officialChampions!==after.officialChampions)changedStatus++;
   if(before.status!=='official'&&after.status==='official')newlyOfficial++;
@@ -124,5 +145,5 @@ const combined={};for(const category of ['pokemon','moves','abilities','items'])
 const index=c.ChlohaNameCatalogAdapter.build(c.ChlohaNames,c.ChlohaNameSearch,combined);let aliasQueries=0;
 for(const [category,,key,,text]of anchors)for(const query of new Set([text,text.toUpperCase(),text.normalize('NFD').replace(/[\u0300-\u036f]/g,''),previous.entries[category][key].es])){assert.ok(c.ChlohaNameSearch.search(index,category,query).includes(key),'Observed/Spain/case/accent alias remains canonical: '+query);aliasQueries++;}
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0');for(const id of Object.keys(imageHashes))assert.ok(!tracked.some(p=>p===id+'.jpg'||p.endsWith('/'+id+'.jpg')),'Private capture bytes must stay out of Git');
-const evidence={passed:true,baseline,manifestSha256:crypto.createHash('sha256').update(read(manifestFile)).digest('hex'),sourceSha256:D.sourceSha256,privateCaptures:10,uniqueNameObservations:71,systemTerms:65,registeredTerms:41,offRuntimeTerms:24,speciesContextOnly:6,clippedExcluded:1,independentAnchors:anchors.length,aliasQueries,newlyOfficial,newlyOfficialChampions,statusOrGameScopeChanged:changedStatus,registeredNamesChanged:0,registeredAliasSetsChanged:0,ownerProvidedTerminologyCapturesVerified:true,physicalMechanicsVerified:false,privateImagesPublished:false};
+const evidence={passed:true,baseline,firstPublication,aggregateScope:'immutable first-batch publication; original witnesses also checked against current sources/runtime',manifestSha256:crypto.createHash('sha256').update(read(manifestFile)).digest('hex'),sourceSha256:D.sourceSha256,privateCaptures:10,uniqueNameObservations:71,systemTerms:65,registeredTerms:41,offRuntimeTerms:24,speciesContextOnly:6,clippedExcluded:1,independentAnchors:anchors.length,aliasQueries,newlyOfficial,newlyOfficialChampions,statusOrGameScopeChanged:changedStatus,registeredNamesChanged:0,registeredAliasSetsChanged:0,ownerProvidedTerminologyCapturesVerified:true,physicalMechanicsVerified:false,privateImagesPublished:false};
 fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/owner-capture-contract.json',JSON.stringify(evidence,null,2)+'\n');console.log('PASS v1.1.0 owner capture provenance: '+JSON.stringify(evidence));

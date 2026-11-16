@@ -2,7 +2,7 @@ name: v0.186 Accuracy & Mechanics Audit
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, feature/v110-es-la-localization]
   workflow_dispatch:
 permissions:
   contents: read

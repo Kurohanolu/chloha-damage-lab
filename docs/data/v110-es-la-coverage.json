@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427",
+  "sourceSha256": "44581f62a39cdeb543149a5a0ec18de591c6e95e38124e2af9b6edcae33b493b",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -18,55 +18,55 @@
   "coverage": {
     "pokemon": {
       "total": 373,
-      "official": 31,
+      "official": 35,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 342,
-      "officialChampions": 24,
+      "unverified": 338,
+      "officialChampions": 28,
       "displayAvailable": 373,
-      "individuallyAttested": 31,
-      "individuallyAttestedPercent": 8.31,
-      "officialPercent": 8.31,
-      "officialChampionsPercent": 6.43
+      "individuallyAttested": 35,
+      "individuallyAttestedPercent": 9.38,
+      "officialPercent": 9.38,
+      "officialChampionsPercent": 7.51
     },
     "moves": {
       "total": 335,
-      "official": 34,
-      "verified-secondary": 107,
+      "official": 46,
+      "verified-secondary": 103,
       "provisional": 0,
-      "unverified": 194,
-      "officialChampions": 33,
+      "unverified": 186,
+      "officialChampions": 45,
       "displayAvailable": 335,
-      "individuallyAttested": 141,
-      "individuallyAttestedPercent": 42.09,
-      "officialPercent": 10.15,
-      "officialChampionsPercent": 9.85
+      "individuallyAttested": 149,
+      "individuallyAttestedPercent": 44.48,
+      "officialPercent": 13.73,
+      "officialChampionsPercent": 13.43
     },
     "abilities": {
       "total": 245,
-      "official": 19,
-      "verified-secondary": 42,
+      "official": 22,
+      "verified-secondary": 41,
       "provisional": 0,
-      "unverified": 184,
-      "officialChampions": 19,
+      "unverified": 182,
+      "officialChampions": 22,
       "displayAvailable": 245,
-      "individuallyAttested": 61,
-      "individuallyAttestedPercent": 24.9,
-      "officialPercent": 7.76,
-      "officialChampionsPercent": 7.76
+      "individuallyAttested": 63,
+      "individuallyAttestedPercent": 25.71,
+      "officialPercent": 8.98,
+      "officialChampionsPercent": 8.98
     },
     "items": {
       "total": 41,
-      "official": 9,
+      "official": 19,
       "verified-secondary": 19,
       "provisional": 0,
-      "unverified": 13,
-      "officialChampions": 9,
+      "unverified": 3,
+      "officialChampions": 19,
       "displayAvailable": 41,
-      "individuallyAttested": 28,
-      "individuallyAttestedPercent": 68.29,
-      "officialPercent": 21.95,
-      "officialChampionsPercent": 21.95
+      "individuallyAttested": 38,
+      "individuallyAttestedPercent": 92.68,
+      "officialPercent": 46.34,
+      "officialChampionsPercent": 46.34
     },
     "types": {
       "total": 18,
@@ -83,29 +83,29 @@
     },
     "forms": {
       "total": 134,
-      "official": 20,
+      "official": 23,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 114,
-      "officialChampions": 13,
+      "unverified": 111,
+      "officialChampions": 16,
       "displayAvailable": 134,
-      "individuallyAttested": 20,
-      "individuallyAttestedPercent": 14.93,
-      "officialPercent": 14.93,
-      "officialChampionsPercent": 9.7
+      "individuallyAttested": 23,
+      "individuallyAttestedPercent": 17.16,
+      "officialPercent": 17.16,
+      "officialChampionsPercent": 11.94
     },
     "natures": {
       "total": 11,
-      "official": 4,
+      "official": 5,
       "verified-secondary": 1,
       "provisional": 0,
-      "unverified": 6,
-      "officialChampions": 4,
+      "unverified": 5,
+      "officialChampions": 5,
       "displayAvailable": 11,
-      "individuallyAttested": 5,
-      "individuallyAttestedPercent": 45.45,
-      "officialPercent": 36.36,
-      "officialChampionsPercent": 36.36
+      "individuallyAttested": 6,
+      "individuallyAttestedPercent": 54.55,
+      "officialPercent": 45.45,
+      "officialChampionsPercent": 45.45
     },
     "stats": {
       "total": 6,
@@ -2397,17 +2397,26 @@
         "canonicalIds": [
           "candidate093_23"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32717"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-aggron"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-aggron"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Aggron"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "candidate093_24": {
         "name": "Mega-Aggron",
@@ -2417,18 +2426,27 @@
         "canonicalIds": [
           "candidate093_24"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32717"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-mega-aggron"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-mega-aggron"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Aggron"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "candidate093_25": {
         "name": "Medicham",
@@ -3901,18 +3919,27 @@
         "canonicalIds": [
           "roster_v0104_017"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32721"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-mega-floette"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-mega-floette"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Floette"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "roster_v0104_018": {
         "name": "Mega-Lopunny",
@@ -5195,18 +5222,28 @@
         "canonicalIds": [
           "roster_v0105_029"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32719"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-floette-eternal-flower"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-floette-eternal-flower"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
-          "Floette (Flor Eterna)"
+          "Floette (Flor Eterna)",
+          "Floette Flor Eterna"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "roster_v0105_030": {
         "name": "Absol",
@@ -8027,17 +8064,26 @@
         "canonicalIds": [
           "earthquake"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32729"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-earthquake"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-earthquake"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Terremoto"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ドラゴンクロー": {
         "name": "Garra Dragón",
@@ -8049,13 +8095,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-moves-dragon-claw"
+          "official-champions-moves-dragon-claw",
+          "owner-champions-batch2-moves-dragon-claw"
         ],
         "relatedRecordIds": [
-          "official-champions-moves-dragon-claw"
+          "official-champions-moves-dragon-claw",
+          "owner-champions-batch2-moves-dragon-claw"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -8065,7 +8114,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "げきりん": {
@@ -8099,7 +8149,8 @@
         "status": "official",
         "sourceIds": [
           "champions-emboar-el",
-          "owner-champions-capture-32688"
+          "owner-champions-capture-32688",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
           "official-champions-moves-rock-slide",
@@ -8381,7 +8432,8 @@
           "owner-champions-capture-32690",
           "owner-champions-capture-32692",
           "owner-champions-capture-32694",
-          "owner-champions-capture-32696"
+          "owner-champions-capture-32696",
+          "owner-champions-capture-32719"
         ],
         "recordIds": [
           "official-champions-moves-protect",
@@ -8853,13 +8905,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719"
         ],
         "recordIds": [
-          "official-champions-moves-moonblast"
+          "official-champions-moves-moonblast",
+          "owner-champions-batch2-moves-moonblast"
         ],
         "relatedRecordIds": [
-          "official-champions-moves-moonblast"
+          "official-champions-moves-moonblast",
+          "owner-champions-batch2-moves-moonblast"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -8869,7 +8924,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "マジカルシャイン": {
@@ -8880,17 +8936,26 @@
         "canonicalIds": [
           "dazzlingGleam"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32719"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-dazzling-gleam"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-dazzling-gleam"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Brillo Mágico"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "たきのぼり": {
         "name": "Cascada",
@@ -8973,17 +9038,26 @@
         "canonicalIds": [
           "ironHead"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32711"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-iron-head"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-iron-head"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Cabeza de Hierro"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "エナジーボール": {
         "name": "Bola de Energía",
@@ -9279,17 +9353,27 @@
         "canonicalIds": [
           "bodyPress"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32713",
+          "owner-champions-capture-32715"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-body-press"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-body-press"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Plancha Corporal"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "エレキボール": {
         "name": "Electrobola",
@@ -9918,27 +10002,28 @@
         "canonicalIds": [
           "v096_073"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-32711"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-231"
+          "owner-champions-batch2-moves-iron-tail"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-231",
-          "pokexperto-champions-moves-231"
+          "pokexperto-champions-moves-231",
+          "owner-champions-batch2-moves-iron-tail"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Cola Férrea",
           "Cola de Hierro"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "アイアンローラー": {
@@ -9949,27 +10034,28 @@
         "canonicalIds": [
           "v096_074"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-32711"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-798"
+          "owner-champions-batch2-moves-steel-roller"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-798",
-          "pokexperto-champions-moves-798"
+          "pokexperto-champions-moves-798",
+          "owner-champions-batch2-moves-steel-roller"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Allanador Férreo",
           "Ferroaplanadora"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "アイススピナー": {
@@ -10386,17 +10472,26 @@
         "canonicalIds": [
           "v096_091"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32711"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-smart-strike"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-smart-strike"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Cuerno Certero"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "タネばくだん": {
         "name": "Bomba Semilla",
@@ -11078,27 +11173,29 @@
         "canonicalIds": [
           "gw0169_p022"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-32713",
+          "owner-champions-capture-32715"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-280"
+          "owner-champions-batch2-moves-brick-break"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-280",
-          "pokexperto-champions-moves-280"
+          "pokexperto-champions-moves-280",
+          "owner-champions-batch2-moves-brick-break"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Demolición",
           "Karatazo"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "がんせきアックス": {
@@ -11231,17 +11328,27 @@
         "canonicalIds": [
           "gw0169_p028"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32713",
+          "owner-champions-capture-32715"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-reversal"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-reversal"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Inversión"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "きょけんとつげき": {
         "name": "Asalto Espadón",
@@ -11493,7 +11600,9 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32694"
+          "owner-champions-capture-32694",
+          "owner-champions-capture-32713",
+          "owner-champions-capture-32715"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-moves-low-kick"
@@ -12695,7 +12804,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32690"
+          "owner-champions-capture-32690",
+          "owner-champions-capture-32715"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-moves-focus-blast"
@@ -13422,17 +13532,26 @@
         "canonicalIds": [
           "gw0169_s043"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32719"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-light-of-ruin"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-light-of-ruin"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Luz Aniquiladora"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "パラボラチャージ": {
         "name": "Carga Parabólica",
@@ -14263,17 +14382,27 @@
         "canonicalIds": [
           "gw0170_s010"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32713",
+          "owner-champions-capture-32715"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-moves-superpower"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-moves-superpower"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Fuerza Bruta"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "はがねのつばさ": {
         "name": "Ala de Acero",
@@ -14807,27 +14936,28 @@
         "canonicalIds": [
           "gw0170_u033"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-32711"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-484"
+          "owner-champions-batch2-moves-heavy-slam"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-484",
-          "pokexperto-champions-moves-484"
+          "pokexperto-champions-moves-484",
+          "owner-champions-batch2-moves-heavy-slam"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Cuerpo Pesado",
           "Golpe Pesado"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ほうふく": {
@@ -15233,7 +15363,8 @@
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-368",
           "official-champions-moves-metal-burst",
-          "pokexperto-champions-moves-368"
+          "pokexperto-champions-moves-368",
+          "owner-champions-batch2-moves-metal-burst"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -15241,6 +15372,17 @@
         "aliases": [
           "Represión Metal",
           "Expl. Metálica"
+        ],
+        "abbreviationEvidence": [
+          {
+            "recordId": "owner-champions-batch2-moves-metal-burst",
+            "name": "Expl. Metálica",
+            "sourceIds": [
+              "owner-champions-capture-32711"
+            ],
+            "status": "official",
+            "officialChampions": true
+          }
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
@@ -15672,13 +15814,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-moves-stomping-tantrum"
+          "official-champions-moves-stomping-tantrum",
+          "owner-champions-batch2-moves-stomping-tantrum"
         ],
         "relatedRecordIds": [
-          "official-champions-moves-stomping-tantrum"
+          "official-champions-moves-stomping-tantrum",
+          "owner-champions-batch2-moves-stomping-tantrum"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -15688,7 +15833,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "しっぺがえし": {
@@ -16709,17 +16855,26 @@
         "canonicalIds": [
           "fairyAura"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32721"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-abilities-fairy-aura"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-abilities-fairy-aura"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Aura Feérica"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ダークオーラ": {
         "name": "Aura Oscura",
@@ -18471,17 +18626,26 @@
         "canonicalIds": [
           "filter"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32717"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-abilities-filter"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-abilities-filter"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Filtro"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ハードロック": {
         "name": "Roca Sólida",
@@ -18593,13 +18757,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-abilities-rough-skin"
+          "official-champions-abilities-rough-skin",
+          "owner-champions-batch2-abilities-rough-skin"
         ],
         "relatedRecordIds": [
-          "official-champions-abilities-rough-skin"
+          "official-champions-abilities-rough-skin",
+          "owner-champions-batch2-abilities-rough-skin"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -18609,7 +18776,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ようりょくそ": {
@@ -20790,27 +20958,28 @@
         "canonicalIds": [
           "unsupported:フラワーベール"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-habilidades-2026-11-15"
+          "owner-champions-capture-32719"
         ],
         "recordIds": [
-          "pokexperto-champions-abilities-166"
+          "owner-champions-batch2-abilities-flower-veil"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-ability-id-166",
-          "pokexperto-champions-abilities-166"
+          "pokexperto-champions-abilities-166",
+          "owner-champions-batch2-abilities-flower-veil"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Velo Flor",
           "Velo Florido"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "きょうせい": {
@@ -22349,17 +22518,26 @@
         "canonicalIds": [
           "chilanBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-chilan-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-chilan-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Chilan"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "オッカのみ": {
         "name": "Baya Caoca",
@@ -22369,17 +22547,26 @@
         "canonicalIds": [
           "occaBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-occa-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-occa-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Caoca"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "イトケのみ": {
         "name": "Baya Pasio",
@@ -22389,17 +22576,26 @@
         "canonicalIds": [
           "passhoBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-passho-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-passho-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Pasio"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ソクノのみ": {
         "name": "Baya Gualot",
@@ -22409,17 +22605,26 @@
         "canonicalIds": [
           "wacanBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-wacan-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-wacan-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Gualot"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "リンドのみ": {
         "name": "Baya Tamar",
@@ -22429,17 +22634,26 @@
         "canonicalIds": [
           "rindoBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-rindo-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-rindo-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Tamar"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ヤチェのみ": {
         "name": "Baya Rimoya",
@@ -22451,7 +22665,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-yache-berry"
@@ -22480,7 +22695,9 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725",
+          "owner-champions-capture-32727"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-chople-berry"
@@ -22509,7 +22726,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-kebia-berry"
@@ -22538,7 +22756,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-shuca-berry"
@@ -22565,17 +22784,26 @@
         "canonicalIds": [
           "cobaBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32725"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-coba-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-coba-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Kouba"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ウタンのみ": {
         "name": "Baya Payapa",
@@ -22587,7 +22815,9 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725",
+          "owner-champions-capture-32727"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-payapa-berry"
@@ -22614,17 +22844,26 @@
         "canonicalIds": [
           "tangaBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32723"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-tanga-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-tanga-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Yecana"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ヨロギのみ": {
         "name": "Baya Alcho",
@@ -22636,7 +22875,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32725"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-charti-berry"
@@ -22665,7 +22905,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32684"
+          "owner-champions-capture-32684",
+          "owner-champions-capture-32727"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-kasib-berry"
@@ -22692,17 +22933,26 @@
         "canonicalIds": [
           "habanBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32727"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-haban-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-haban-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Anjiro"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ナモのみ": {
         "name": "Baya Dillo",
@@ -22712,17 +22962,26 @@
         "canonicalIds": [
           "colburBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32727"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-colbur-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-colbur-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Dillo"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "リリバのみ": {
         "name": "Baya Baribá",
@@ -22732,17 +22991,26 @@
         "canonicalIds": [
           "babiriBerry"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32727"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-items-babiri-berry"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-items-babiri-berry"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baya Baribá"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ロゼルのみ": {
         "name": "Baya Hibis",
@@ -22754,7 +23022,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32680"
+          "owner-champions-capture-32680",
+          "owner-champions-capture-32727"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-items-roseli-berry"
@@ -23276,7 +23545,8 @@
         ],
         "status": "official",
         "sourceIds": [
-          "owner-champions-capture-32694"
+          "owner-champions-capture-32694",
+          "owner-champions-capture-32717"
         ],
         "recordIds": [
           "owner-champions-2026-11-16-types-steel"
@@ -23306,13 +23576,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719",
+          "owner-champions-capture-32721"
         ],
         "recordIds": [
-          "official-champions-types-fairy"
+          "official-champions-types-fairy",
+          "owner-champions-batch2-types-fairy"
         ],
         "relatedRecordIds": [
-          "official-champions-types-fairy"
+          "official-champions-types-fairy",
+          "owner-champions-batch2-types-fairy"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -23322,7 +23596,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       }
     },
@@ -24232,18 +24507,27 @@
         "canonicalIds": [
           "candidate093_24"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32717"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-mega-aggron"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-mega-aggron"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Aggron"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "candidate093_26": {
         "name": "Mega-Medicham",
@@ -25147,18 +25431,27 @@
         "canonicalIds": [
           "roster_v0104_017"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32721"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-mega-floette"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-mega-floette"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Floette"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "roster_v0104_018": {
         "name": "Mega-Lopunny",
@@ -25732,18 +26025,28 @@
         "canonicalIds": [
           "roster_v0105_029"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32719"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-pokemon-floette-eternal-flower"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-pokemon-floette-eternal-flower"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
-          "Floette (Flor Eterna)"
+          "Floette (Flor Eterna)",
+          "Floette Flor Eterna"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "roster_v0105_043": {
         "name": "Avalugg de Hisui",
@@ -26339,7 +26642,7 @@
         "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
       },
       "いじっぱり": {
-        "name": "firme",
+        "name": "Firme",
         "ja": "いじっぱり",
         "en": "Adamant",
         "es": "Firme",
@@ -26348,13 +26651,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-natures-adamant"
+          "official-champions-natures-adamant",
+          "owner-champions-batch2-natures-adamant"
         ],
         "relatedRecordIds": [
-          "official-champions-natures-adamant"
+          "official-champions-natures-adamant",
+          "owner-champions-batch2-natures-adamant"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -26363,9 +26669,10 @@
           "Firme",
           "firme"
         ],
-        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ひかえめ": {
@@ -26436,17 +26743,26 @@
         "canonicalIds": [
           "timid"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32719"
+        ],
+        "recordIds": [
+          "owner-champions-batch2-natures-timid"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch2-natures-timid"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Miedosa"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ずぶとい": {
         "name": "osada",
@@ -26596,13 +26912,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-stats-hp"
+          "official-champions-stats-hp",
+          "owner-champions-batch2-stats-hp"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-hp"
+          "official-champions-stats-hp",
+          "owner-champions-batch2-stats-hp"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -26612,7 +26932,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "こうげき": {
@@ -26625,13 +26946,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-stats-attack"
+          "official-champions-stats-attack",
+          "owner-champions-batch2-stats-attack"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-attack"
+          "official-champions-stats-attack",
+          "owner-champions-batch2-stats-attack"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -26641,7 +26966,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ぼうぎょ": {
@@ -26654,13 +26980,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-stats-defense"
+          "official-champions-stats-defense",
+          "owner-champions-batch2-stats-defense"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-defense"
+          "official-champions-stats-defense",
+          "owner-champions-batch2-stats-defense"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -26670,7 +27000,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "とくこう": {
@@ -26689,13 +27020,27 @@
           "official-champions-stats-special-attack"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-special-attack"
+          "official-champions-stats-special-attack",
+          "owner-champions-batch2-stats-special-attack"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
         "fallback": false,
         "aliases": [
-          "Ataque Especial"
+          "Ataque Especial",
+          "At. Esp."
+        ],
+        "abbreviationEvidence": [
+          {
+            "recordId": "owner-champions-batch2-stats-special-attack",
+            "name": "At. Esp.",
+            "sourceIds": [
+              "owner-champions-capture-32719",
+              "owner-champions-capture-32729"
+            ],
+            "status": "official",
+            "officialChampions": true
+          }
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
@@ -26718,13 +27063,27 @@
           "official-champions-stats-special-defense"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-special-defense"
+          "official-champions-stats-special-defense",
+          "owner-champions-batch2-stats-special-defense"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
         "fallback": false,
         "aliases": [
-          "Defensa Especial"
+          "Defensa Especial",
+          "Def. Esp."
+        ],
+        "abbreviationEvidence": [
+          {
+            "recordId": "owner-champions-batch2-stats-special-defense",
+            "name": "Def. Esp.",
+            "sourceIds": [
+              "owner-champions-capture-32719",
+              "owner-champions-capture-32729"
+            ],
+            "status": "official",
+            "officialChampions": true
+          }
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
@@ -26741,13 +27100,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-emboar-el"
+          "champions-emboar-el",
+          "owner-champions-capture-32719",
+          "owner-champions-capture-32729"
         ],
         "recordIds": [
-          "official-champions-stats-speed"
+          "official-champions-stats-speed",
+          "owner-champions-batch2-stats-speed"
         ],
         "relatedRecordIds": [
-          "official-champions-stats-speed"
+          "official-champions-stats-speed",
+          "owner-champions-batch2-stats-speed"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -26757,7 +27120,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       }
     }
@@ -26926,6 +27290,24 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-pokemon-aggron",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_23"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-pokemon-mega-aggron",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_24"
+        }
+      ]
+    },
+    {
       "id": "official-champions-pokemon-sneasler",
       "canonicalMatches": [
         {
@@ -26989,6 +27371,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-pokemon-mega-floette",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_017"
+        }
+      ]
+    },
+    {
       "id": "official-champions-forms-malamar-mega",
       "canonicalMatches": [
         {
@@ -27012,6 +27403,15 @@
         {
           "category": "pokemon",
           "key": "roster_v0104_048"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-pokemon-floette-eternal-flower",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0105_029"
         }
       ]
     },
@@ -27043,7 +27443,25 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-moves-earthquake",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "じしん"
+        }
+      ]
+    },
+    {
       "id": "official-champions-moves-dragon-claw",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ドラゴンクロー"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-dragon-claw",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -27259,11 +27677,38 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-moves-moonblast",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ムーンフォース"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-dazzling-gleam",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "マジカルシャイン"
+        }
+      ]
+    },
+    {
       "id": "official-champions-moves-flare-blitz",
       "canonicalMatches": [
         {
           "category": "moves",
           "key": "フレアドライブ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-iron-head",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "アイアンヘッド"
         }
       ]
     },
@@ -27336,6 +27781,15 @@
         {
           "category": "moves",
           "key": "はどうだん"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-body-press",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ボディプレス"
         }
       ]
     },
@@ -27439,7 +27893,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-231",
+      "id": "owner-champions-batch2-moves-iron-tail",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -27448,7 +27902,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-798",
+      "id": "owner-champions-batch2-moves-steel-roller",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -27525,6 +27979,15 @@
         {
           "category": "moves",
           "key": "シャドークロー"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-smart-strike",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "スマートホーン"
         }
       ]
     },
@@ -27628,7 +28091,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-280",
+      "id": "owner-champions-batch2-moves-brick-break",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -27651,6 +28114,15 @@
         {
           "category": "moves",
           "key": "きあいパンチ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-reversal",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "きしかいせい"
         }
       ]
     },
@@ -27934,6 +28406,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-moves-light-of-ruin",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "はめつのひかり"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-570",
       "canonicalMatches": [
         {
@@ -28033,6 +28514,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-moves-superpower",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ばかぢから"
+        }
+      ]
+    },
+    {
       "id": "official-champions-moves-knock-off",
       "canonicalMatches": [
         {
@@ -28105,7 +28595,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-484",
+      "id": "owner-champions-batch2-moves-heavy-slam",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -28241,6 +28731,15 @@
     },
     {
       "id": "official-champions-moves-stomping-tantrum",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "じだんだ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-moves-stomping-tantrum",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -28398,6 +28897,15 @@
         {
           "category": "abilities",
           "key": "すいほう"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-abilities-fairy-aura",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "フェアリーオーラ"
         }
       ]
     },
@@ -28564,6 +29072,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-abilities-filter",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "フィルター"
+        }
+      ]
+    },
+    {
       "id": "official-champions-abilities-unnerve",
       "canonicalMatches": [
         {
@@ -28583,6 +29100,15 @@
     },
     {
       "id": "official-champions-abilities-rough-skin",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "さめはだ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-abilities-rough-skin",
       "canonicalMatches": [
         {
           "category": "abilities",
@@ -28807,7 +29333,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-abilities-166",
+      "id": "owner-champions-batch2-abilities-flower-veil",
       "canonicalMatches": [
         {
           "category": "abilities",
@@ -29086,6 +29612,51 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-items-chilan-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ホズのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-occa-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "オッカのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-passho-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "イトケのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-wacan-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ソクノのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-rindo-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "リンドのみ"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-2026-11-16-items-yache-berry",
       "canonicalMatches": [
         {
@@ -29122,11 +29693,29 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-items-coba-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "バコウのみ"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-2026-11-16-items-payapa-berry",
       "canonicalMatches": [
         {
           "category": "items",
           "key": "ウタンのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-tanga-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "タンガのみ"
         }
       ]
     },
@@ -29145,6 +29734,33 @@
         {
           "category": "items",
           "key": "カシブのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-haban-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ハバンのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-colbur-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "ナモのみ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-items-babiri-berry",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "リリバのみ"
         }
       ]
     },
@@ -29365,7 +29981,25 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-types-fairy",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "フェアリー"
+        }
+      ]
+    },
+    {
       "id": "official-champions-natures-adamant",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "いじっぱり"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-natures-adamant",
       "canonicalMatches": [
         {
           "category": "natures",
@@ -29388,6 +30022,15 @@
         {
           "category": "natures",
           "key": "ようき"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-natures-timid",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "おくびょう"
         }
       ]
     },
@@ -29419,6 +30062,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-stats-hp",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "HP"
+        }
+      ]
+    },
+    {
       "id": "official-champions-stats-attack",
       "canonicalMatches": [
         {
@@ -29428,7 +30080,25 @@
       ]
     },
     {
+      "id": "owner-champions-batch2-stats-attack",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "こうげき"
+        }
+      ]
+    },
+    {
       "id": "official-champions-stats-defense",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "ぼうぎょ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-stats-defense",
       "canonicalMatches": [
         {
           "category": "stats",
@@ -29456,6 +30126,15 @@
     },
     {
       "id": "official-champions-stats-speed",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "すばやさ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch2-stats-speed",
       "canonicalMatches": [
         {
           "category": "stats",
@@ -36313,6 +36992,19 @@
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
     },
     {
+      "id": "pokexperto-champions-moves-231",
+      "category": "moves",
+      "esLA": "Cola de Hierro",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "アイアンテール"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-moves-234",
       "category": "moves",
       "esLA": "Sol Matutino",
@@ -36372,6 +37064,19 @@
       "canonicalMatches": [],
       "selectionReason": "no-runtime-canonical-match",
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "pokexperto-champions-moves-280",
+      "category": "moves",
+      "esLA": "Karatazo",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かわらわり"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
       "id": "pokexperto-champions-moves-297",
@@ -36588,6 +37293,19 @@
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
     },
     {
+      "id": "pokexperto-champions-moves-484",
+      "category": "moves",
+      "esLA": "Golpe Pesado",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ヘビーボンバー"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-moves-495",
       "category": "moves",
       "esLA": "Ceda el Paso",
@@ -36691,6 +37409,19 @@
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
     },
     {
+      "id": "pokexperto-champions-moves-798",
+      "category": "moves",
+      "esLA": "Ferroaplanadora",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "アイアンローラー"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-moves-814",
       "category": "moves",
       "esLA": "Aletazo Doble",
@@ -36740,6 +37471,19 @@
         {
           "category": "abilities",
           "key": "もうか"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
+      "id": "pokexperto-champions-abilities-166",
+      "category": "abilities",
+      "esLA": "Velo Florido",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "フラワーベール"
         }
       ],
       "selectionReason": "superseded-by-higher-priority-evidence",
@@ -37026,6 +37770,53 @@
       "canonicalMatches": [],
       "selectionReason": "no-runtime-canonical-match",
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-batch2-moves-metal-burst",
+      "category": "moves",
+      "esLA": "Expl. Metálica",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "メタルバースト"
+        }
+      ],
+      "selectionReason": "abbreviation-only-evidence",
+      "reason": "Observed short form retained as alias-only evidence; full display-name coverage is not promoted."
+    },
+    {
+      "id": "owner-champions-batch2-items-persim-berry",
+      "category": "items",
+      "esLA": "Baya Caquic",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-batch2-stats-special-attack",
+      "category": "stats",
+      "esLA": "At. Esp.",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "とくこう"
+        }
+      ],
+      "selectionReason": "abbreviation-only-evidence",
+      "reason": "Observed short form retained as alias-only evidence; full display-name coverage is not promoted."
+    },
+    {
+      "id": "owner-champions-batch2-stats-special-defense",
+      "category": "stats",
+      "esLA": "Def. Esp.",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "とくぼう"
+        }
+      ],
+      "selectionReason": "abbreviation-only-evidence",
+      "reason": "Observed short form retained as alias-only evidence; full display-name coverage is not promoted."
     }
   ],
   "conflicts": [],
@@ -38040,30 +38831,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_23",
-      "canonicalIds": [
-        "candidate093_23"
-      ],
-      "ja": "ボスゴドラ",
-      "es": "Aggron",
-      "candidate": "Aggron",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "candidate093_24",
-      "canonicalIds": [
-        "candidate093_24"
-      ],
-      "ja": "メガボスゴドラ",
-      "es": "Mega-Aggron",
-      "candidate": "Mega-Aggron",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_25",
       "canonicalIds": [
         "candidate093_25"
@@ -38796,18 +39563,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0104_017",
-      "canonicalIds": [
-        "roster_v0104_017"
-      ],
-      "ja": "メガフラエッテ",
-      "es": "Mega-Floette",
-      "candidate": "Mega-Floette",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0104_018",
       "canonicalIds": [
         "roster_v0104_018"
@@ -39499,18 +40254,6 @@
       "ja": "スコヴィラン",
       "es": "Scovillain",
       "candidate": "Scovillain",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0105_029",
-      "canonicalIds": [
-        "roster_v0105_029"
-      ],
-      "ja": "フラエッテ(えいえんのはな)",
-      "es": "Floette (Flor Eterna)",
-      "candidate": "Floette (Flor Eterna)",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -41136,18 +41879,6 @@
     },
     {
       "category": "moves",
-      "key": "じしん",
-      "canonicalIds": [
-        "earthquake"
-      ],
-      "ja": "じしん",
-      "es": "Terremoto",
-      "candidate": "Terremoto",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "げきりん",
       "canonicalIds": [
         "outrage"
@@ -41268,18 +41999,6 @@
     },
     {
       "category": "moves",
-      "key": "マジカルシャイン",
-      "canonicalIds": [
-        "dazzlingGleam"
-      ],
-      "ja": "マジカルシャイン",
-      "es": "Brillo Mágico",
-      "candidate": "Brillo Mágico",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "たきのぼり",
       "canonicalIds": [
         "waterfall"
@@ -41304,18 +42023,6 @@
     },
     {
       "category": "moves",
-      "key": "アイアンヘッド",
-      "canonicalIds": [
-        "ironHead"
-      ],
-      "ja": "アイアンヘッド",
-      "es": "Cabeza de Hierro",
-      "candidate": "Cabeza de Hierro",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ラスターカノン",
       "canonicalIds": [
         "flashCannon"
@@ -41335,18 +42042,6 @@
       "ja": "なみのり",
       "es": "Surf",
       "candidate": "Surf",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "ボディプレス",
-      "canonicalIds": [
-        "bodyPress"
-      ],
-      "ja": "ボディプレス",
-      "es": "Plancha Corporal",
-      "candidate": "Plancha Corporal",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -41616,18 +42311,6 @@
     },
     {
       "category": "moves",
-      "key": "スマートホーン",
-      "canonicalIds": [
-        "v096_091"
-      ],
-      "ja": "スマートホーン",
-      "es": "Cuerno Certero",
-      "candidate": "Cuerno Certero",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "トリックフラワー",
       "canonicalIds": [
         "v096_094"
@@ -41875,18 +42558,6 @@
       "ja": "ギガインパクト",
       "es": "Gigaimpacto",
       "candidate": "Gigaimpacto",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "きしかいせい",
-      "canonicalIds": [
-        "gw0169_p028"
-      ],
-      "ja": "きしかいせい",
-      "es": "Inversión",
-      "candidate": "Inversión",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -42624,18 +43295,6 @@
     },
     {
       "category": "moves",
-      "key": "はめつのひかり",
-      "canonicalIds": [
-        "gw0169_s043"
-      ],
-      "ja": "はめつのひかり",
-      "es": "Luz Aniquiladora",
-      "candidate": "Luz Aniquiladora",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "パワージェム",
       "canonicalIds": [
         "gw0169_s045"
@@ -42919,18 +43578,6 @@
       "ja": "はいよるいちげき",
       "es": "Golpe Rastrero",
       "candidate": "Golpe Rastrero",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "ばかぢから",
-      "canonicalIds": [
-        "gw0170_s010"
-      ],
-      "ja": "ばかぢから",
-      "es": "Fuerza Bruta",
-      "candidate": "Fuerza Bruta",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -43640,18 +44287,6 @@
       "es": "",
       "candidate": "Hadron Engine",
       "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "フェアリーオーラ",
-      "canonicalIds": [
-        "fairyAura"
-      ],
-      "ja": "フェアリーオーラ",
-      "es": "Aura Feérica",
-      "candidate": "Aura Feérica",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
     {
@@ -44383,18 +45018,6 @@
       "ja": "どしょく",
       "es": "Geofagia",
       "candidate": "Geofagia",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "フィルター",
-      "canonicalIds": [
-        "filter"
-      ],
-      "ja": "フィルター",
-      "es": "Filtro",
-      "candidate": "Filtro",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -45707,126 +46330,6 @@
       "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
     },
     {
-      "category": "items",
-      "key": "ホズのみ",
-      "canonicalIds": [
-        "chilanBerry"
-      ],
-      "ja": "ホズのみ",
-      "es": "Baya Chilan",
-      "candidate": "Baya Chilan",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "オッカのみ",
-      "canonicalIds": [
-        "occaBerry"
-      ],
-      "ja": "オッカのみ",
-      "es": "Baya Caoca",
-      "candidate": "Baya Caoca",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "イトケのみ",
-      "canonicalIds": [
-        "passhoBerry"
-      ],
-      "ja": "イトケのみ",
-      "es": "Baya Pasio",
-      "candidate": "Baya Pasio",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "ソクノのみ",
-      "canonicalIds": [
-        "wacanBerry"
-      ],
-      "ja": "ソクノのみ",
-      "es": "Baya Gualot",
-      "candidate": "Baya Gualot",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "リンドのみ",
-      "canonicalIds": [
-        "rindoBerry"
-      ],
-      "ja": "リンドのみ",
-      "es": "Baya Tamar",
-      "candidate": "Baya Tamar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "バコウのみ",
-      "canonicalIds": [
-        "cobaBerry"
-      ],
-      "ja": "バコウのみ",
-      "es": "Baya Kouba",
-      "candidate": "Baya Kouba",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "タンガのみ",
-      "canonicalIds": [
-        "tangaBerry"
-      ],
-      "ja": "タンガのみ",
-      "es": "Baya Yecana",
-      "candidate": "Baya Yecana",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "ハバンのみ",
-      "canonicalIds": [
-        "habanBerry"
-      ],
-      "ja": "ハバンのみ",
-      "es": "Baya Anjiro",
-      "candidate": "Baya Anjiro",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "ナモのみ",
-      "canonicalIds": [
-        "colburBerry"
-      ],
-      "ja": "ナモのみ",
-      "es": "Baya Dillo",
-      "candidate": "Baya Dillo",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
-      "key": "リリバのみ",
-      "canonicalIds": [
-        "babiriBerry"
-      ],
-      "ja": "リリバのみ",
-      "es": "Baya Baribá",
-      "candidate": "Baya Baribá",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
       "category": "forms",
       "key": "mega_charizard_x",
       "canonicalIds": [
@@ -46147,18 +46650,6 @@
       "ja": "メガヘラクロス",
       "es": "Mega-Heracross",
       "candidate": "Mega-Heracross",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_24",
-      "canonicalIds": [
-        "candidate093_24"
-      ],
-      "ja": "メガボスゴドラ",
-      "es": "Mega-Aggron",
-      "candidate": "Mega-Aggron",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -46572,18 +47063,6 @@
     },
     {
       "category": "forms",
-      "key": "roster_v0104_017",
-      "canonicalIds": [
-        "roster_v0104_017"
-      ],
-      "ja": "メガフラエッテ",
-      "es": "Mega-Floette",
-      "candidate": "Mega-Floette",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "roster_v0104_018",
       "canonicalIds": [
         "roster_v0104_018"
@@ -46867,18 +47346,6 @@
       "ja": "ニャオニクス(メス)",
       "es": "Meowstic (Hembra)",
       "candidate": "Meowstic (Hembra)",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0105_029",
-      "canonicalIds": [
-        "roster_v0105_029"
-      ],
-      "ja": "フラエッテ(えいえんのはな)",
-      "es": "Floette (Flor Eterna)",
-      "candidate": "Floette (Flor Eterna)",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -47208,18 +47675,6 @@
     },
     {
       "category": "natures",
-      "key": "おくびょう",
-      "canonicalIds": [
-        "timid"
-      ],
-      "ja": "おくびょう",
-      "es": "Miedosa",
-      "candidate": "Miedosa",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: corresponding battle / summary text."
-    },
-    {
-      "category": "natures",
       "key": "おだやか",
       "canonicalIds": [
         "calm"
@@ -47346,8 +47801,8 @@
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3",
       "feedback-release-v100.js": "22a9d0ded69ba92ce0d8bdf9c976cbbf5adef218983aa676d00c4151afe2e12c",
-      "index.html": "6ae03522cc8868cab343984d782fa455db665ed402e1ef6caf6acbc55eb4d2eb",
-      "docs/data/v110-es-la-source-records.json": "d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427"
+      "index.html": "d45cd5aea4778a4dd31b7bf500920663fbdb1226e5287bdfa71c4ebea2d142f4",
+      "docs/data/v110-es-la-source-records.json": "44581f62a39cdeb543149a5a0ec18de591c6e95e38124e2af9b6edcae33b493b"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -56519,7 +56974,7 @@
         "englishReference": "Check your inputs",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 909,
+        "sourceLine": 910,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -56557,7 +57012,7 @@
         "englishReference": "対象はすでにひんし",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 901,
+        "sourceLine": 902,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -56652,7 +57107,7 @@
         "englishReference": "Guaranteed KO",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 903,
+        "sourceLine": 904,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -56671,7 +57126,7 @@
         "englishReference": "Possible KO",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 904,
+        "sourceLine": 905,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -56690,7 +57145,7 @@
         "englishReference": "ダメージなし",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 902,
+        "sourceLine": 903,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -56709,7 +57164,7 @@
         "englishReference": "Guaranteed survival",
         "outputVerified": true,
         "renderPath": "localizedUi",
-        "sourceLine": 900,
+        "sourceLine": 901,
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/index.html",
         "checkedAt": "2026-11-15",
         "targetGame": null,
@@ -65371,6 +65826,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "36a8cac0d3a148fb5322834b3cfd1cd04f102e69c6b43e2afbc5821f1b8a908a"
+    "sha256": "b53f02c7e1558cd4cfa671581bd27c777d0695db0aed12738d5cfa00fae1b487"
   }
 }

@@ -15,31 +15,37 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "approved",
+    "status": "awaiting-owner-approval",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true,
-    "liveAcceptanceSourceCommit": "f161866096baa2964489ece5fd912ab37db20b1e",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43777582461",
-    "liveAcceptanceEvidence": "docs/evidence/v110/live-acceptance-receipt.json",
-    "liveAcceptanceObservedAtJST": "2026-11-16T09:00:57+09:00"
+    "liveTargetVerified": false
   },
   "qualityReview": {
     "releaseTag": "v1.1.0-pre.1",
     "auditor": "6.1 Sol",
-    "auditStatus": "passed",
-    "ownerApproval": "approved",
-    "evidence": "docs/evidence/v110/sol-publication-review.md",
-    "reviewedSourceCommit": "4760cd59503b2ff46a502e83420cf2111412ada3",
-    "reviewedTree": "8122cda5bda8ddaf3bdf991bab766aefb8f6d05b",
-    "auditReportSha256": "a7333885e37b1530eca1d16b1e7dd7b9874e6501e067c6d7f65f0151ab528f83",
-    "auditOutcome": "conditional-pass",
-    "conditionsDisposition": "accepted-by-owner",
-    "ownerEvidence": "docs/v110-owner-publication-decision.json",
-    "ownerRecordedAtJST": "2026-11-16T08:48:32+09:00"
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "evidence": "",
+    "auditOutcome": "pending",
+    "conditionsDisposition": "pending",
+    "reviewedSourceCommit": null,
+    "reviewedTree": null,
+    "auditReportSha256": null,
+    "ownerEvidence": "",
+    "ownerRecordedAtJST": null
   },
-  "channel": "prerelease"
+  "channel": "prerelease",
+  "followupAudit": {
+    "status": "draft",
+    "purpose": "owner-capture-evidence-followup",
+    "baseCommit": "83af29133927a19fc7e0f9273c0e194c54384ae5",
+    "baseTree": "cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b",
+    "auditor": "6.1 Sol",
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "requiresNewReleaseTag": true
+  }
 }

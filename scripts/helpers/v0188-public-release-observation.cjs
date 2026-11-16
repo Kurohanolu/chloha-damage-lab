@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict');
 const {verifyCutoverApproval,verifyQualityApproval}=require('../verify-publication-approval.cjs');
 const {hasFollowup,verifyFollowupDraft,publishedRelease}=require('./v0188-followup-review.cjs');
+const v110Followup=require('./v110-followup-review.cjs');
 const baseline={version:'0.187',preRelease:33,tag:'v0.187-pre.33',name:'Singularity v0.187 Pre-Release 33',product:'Singularity',developer:'Chloha Labs',publicUrl:'https://kurohanolu.github.io/singularity/'};
 const fields=Object.keys(baseline);
 const stableCommit='0b270c1452505268364659edd402209b00b28673';
@@ -9,7 +10,12 @@ function stableManifest(){return JSON.parse(require('node:child_process').execFi
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.1'&&localRelease.qualityReview?.ownerApproval==='pending'){
+ if(v110Followup.isV110Followup(localRelease)){
+  const published=v110Followup.verifyFollowupDraft(localRelease);
+  // Full immutable source metadata is the evidence. Never apply the old
+  // release's current-working-tree approval checker to changed draft bytes.
+  assert.deepEqual(publicRelease,published,'ES-LA follow-up must observe the complete pinned published pre.1 manifest');
+ }else if(localRelease.tag==='v1.1.0-pre.1'&&localRelease.qualityReview?.ownerApproval==='pending'){
   // Development observes the immutable Stable deployment, never the unpublished
   // candidate. This grants no cutover approval and rejects any changed manifest.
   assert.equal(localRelease.qualityReview?.ownerApproval,'pending');

@@ -1,20 +1,43 @@
 # Singularity v1.1.0 — ES-LA handoff
 
-## Current checkpoint
+## Current checkpoint — 2026-11-16 JST
 
-- Branch: `feature/v110-es-la-localization`.
-- Review: [Draft PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
-- Starting main: `5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03`.
+- Branch: `feature/v110-es-la-localization`; [compare with main](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization).
+- History/review record: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68), already merged. It cannot be reopened; do not create a duplicate PR.
+- Published first-batch baseline: `83af29133927a19fc7e0f9273c0e194c54384ae5`, tree `cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b`, release `v1.1.0-pre.1`.
 - Stable numerical reference: `0b270c1452505268364659edd402209b00b28673`.
-- Candidate: `v1.1.0-pre.1` development metadata, not a published tag.
-- Accepted implementation: `215e5a1a8af9e20591d077e6acfcabb234a53b7a`, tree `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`.
-- Technical verification: 13/13 workflows and 11/11 new ES-LA tests passed. Existing nine-language regression, 110 rotating transitions, 15 reloads, 60 viewport cases and 4,520 Stable numerical comparisons passed. All 13 protected files (10 runtime engine/data, 2 fixtures, 1 reference lock) are byte-identical to Stable.
-- Scope: ES-LA data/provenance, locale integration, search, UI/state/feedback compatibility, ten-language verification.
-- Current public environment remains v1.0.0. No Cloudflare configuration/deployment or production feedback submissions performed.
+- Current work: second-batch terminology/provenance integration, **not yet published**. All 20 original owner images have been visually inspected. Original images remain private.
+- Verification: focused local preflight passed; fresh committed CI and final independent Sol review remain pending. Record exact new head/tree and receipts in the [test report](v110-es-la-test-report.md) before reporting completion.
 
-## Owner-capture update — 2026-11-16 JST
+## Completed evidence integration
 
-The [capture audit](v110-es-la-capture-audit.md) adds official Champions name evidence without changing displayed strings or calculation support. The prior accepted implementation above remains a historical checkpoint. Fresh capture provenance and regression results are bound to the subsequent PR head; consult the [test report](v110-es-la-test-report.md) and PR checks rather than applying an older PASS to new source data. No additional owner screenshot request is pending.
+The [20-image evidence audit](v110-es-la-owner-screenshot-evidence.md) and [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) record visible names, locations, canonical bindings, exclusions and effect descriptions. The second batch has 58 system-name observations: 56 registered and two off-runtime, including three abbreviation-only witnesses. Fourteen existing owner records gain new witnesses; 44 records are added. The combined ledger has 1,183 records from 60 sources. Across both owner batches there are 109 distinct system-name identities, of which 84 are registered and 25 off-runtime.
+
+Official Champions names increase **112 → 142 (+30)** and unverified names decrease **739 → 714 (−25)**. Overall official names increase 121 → 151. The unchanged denominator is 1,029 names in seven non-overlapping categories; forms overlap Pokémon and UI/warnings are separate. Remaining unverified counts are Pokémon 338/373, moves 186/335, abilities 182/245, items 3/41 and natures 5/11. Types and stats have no unverified entries; 17/18 types have official Champions evidence. The forms view has 111/134 unverified entries and is not added again.
+
+Only `firme` → `Firme` changes a display name. Added aliases are `Floette Flor Eterna`, `At. Esp.` and `Def. Esp.`; no aliases are removed. `Expl. Metálica` and the two stat abbreviations remain short-form evidence, not proof of unseen full wording. Existing nine-language dictionaries, canonical IDs, game inventory, state compatibility and calculation-engine behavior are unchanged. General UI remains 1,011 provisional authored/reused sites, including 169 overlapping warnings.
+
+No second-batch accepted name has an unresolved canonical binding. **Additional owner screenshots requested: 0.** No request to translate the remaining inventory is needed. Language settings, capture date/build and physical calculator testing remain explicitly outside the image evidence.
+
+## Resume procedure
+
+1. Fetch latest main and the existing feature branch, preserve the user-authored handoff commit `7759a90`, and inspect any newer changes before writing.
+2. Keep source evidence, generated coverage, aliases and cache hashes synchronized. The original ten-image manifest is immutable; additional witnesses extend existing records instead of duplicating them.
+3. Complete the new second-capture contracts and browser regressions, then run all 13 workflows on the exact new feature head. Require ten-language switching/reload/state/search/UI/feedback checks, original-nine regressions, and all 4,520 Stable numerical comparisons.
+4. Bind CI artifacts, raw results and final independent Sol review to the new commit/tree. Update the test report and PR #68 history with the reviewable branch difference. Earlier acceptance cannot substitute for current-head results.
+5. Preserve the live `v1.1.0-pre.1` release and its immutable tag. Any later publication of these follow-up changes needs a distinct release identity and fresh release evidence; the unpublished follow-up marker rejects reuse of the first publication's approval.
+
+## Publication state
+
+The first-batch release is already public at <https://kurohanolu.github.io/singularity/>. This follow-up has not changed main, the public repository, release tags or the production Worker. The published temporary ES-LA feedback restriction remains unchanged; the other nine locales retain their existing feedback behavior. Do not describe the production Worker as supporting ES-LA submissions until independently verified.
+
+The owner's earlier instruction authorized publication, but historical approval and acceptance receipts apply to their recorded source/tree. No additional permission request is created by this handoff. Complete the current audit and establish any future release's exact identity and fresh evidence before publication; do not overwrite the issued prerelease tag.
+
+## Historical checkpoints
+
+The initial accepted implementation was `215e5a1a8af9e20591d077e6acfcabb234a53b7a`, tree `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`, with 13/13 workflows and 11/11 ES-LA tests passing. The first owner-capture source-data candidate `9560399385349d0f62cba57a96c146bc08b7663b` passed all 13 workflows and twelve candidate acceptance files. The [first capture audit](v110-es-la-capture-audit.md), [historical test evidence](v110-es-la-test-report.md), and retained `docs/evidence/v110/` records preserve these results. First publication is the exact baseline listed above.
+
+The owner instruction below is retained from handoff commit `7759a90`. Its caution not to assume ingestion described the starting condition. The current checkpoint now records actual inspection and integration; its requirements for canonical identity, privacy, minimum screenshot burden and fresh validation remain in force.
 
 ## Owner instruction — second ES-LA capture batch and minimum screenshot requests (2026-11-16 JST)
 
@@ -24,26 +47,6 @@ The owner supplied a **second set of 10 Pokémon Champions ES-LA screenshots** i
 
 **Owner screenshot burden: default zero additional screenshots.** Exhaust existing 20 owner captures, official regional Pokémon materials, Pokéxperto and the existing catalogs before requesting anything. Only ask for an additional screenshot if a specific unresolved canonical ID is release-relevant, cannot be resolved through accessible evidence, and a particular game screen is likely to settle it. Batch all essential requests into **at most three screenshots in the first follow-up**, with canonical ID, Japanese/ES-ES name, ES-LA candidate, reason and exact screen to capture. Do not request captures merely to raise the official-confirmation percentage, do not ask the owner to translate the unresolved catalog, and do not block implementation solely for safe, disclosed ES-ES fallbacks.
 
-## Resume procedure
+## Continuing limits
 
-Fetch source main and PR #68 before changing files. Reuse this branch/PR; do not duplicate. Read source audit, coverage, implementation and test reports. Bind subsequent results to the exact new head/tree; never reuse a prior candidate PASS after code changes.
-
-Implementation, browser acceptance, CI and the five development reports are complete for the disclosed candidate scope. Reports/screenshots, CI receipts and independent review are retained under `docs/evidence/v110/`. A subsequent documentation/evidence-only commit preserves the source-bound acceptance above and must also have its own CI checked before handoff.
-
-Remaining decisions concern release readiness, not an unexecuted test queue: reduce or explicitly accept the disclosed unverified terminology; complete any required physical-device/native-language review; authorize the release-specific backend and publication work below. Owner release approval is still pending.
-
-## Translation scope for the owner decision
-
-All inventoried names can be displayed, but fallback availability is not verified ES-LA translation. The [coverage report](v110-es-la-translation-coverage.md) and its machine-readable inventory list each canonical ID, Japanese/ES-ES name, candidate, evidence and unresolved reason. Current unverified registered counts after the owner-capture follow-up are 342/373 Pokémon, 194/335 moves, 184/245 abilities, 13/41 items and 6/11 natures. The 114/134 unverified form records overlap Pokémon and must not be added again. All 18 types are individually attested, with official Champions confirmation for 17. Official Z-A and secondary evidence remain distinct from official Champions confirmation.
-
-The general UI inventory has 1,011 provisional authored/reused sites, including 169 overlapping warnings, with zero detected English/Japanese UI gaps in its bounded executed scope. This is not professional native-language certification. The source audit now records 1,139 attestations from 50 sources; nothing is promoted to official merely because it matches the existing Spanish dictionary. Ten owner game captures were added with exact canonical anchors, original-file hashes, provided/reviewed dates and screen locations. They verify 65 system terms, of which 41 are registered identities; no screenshot was published. Further evidence can use the same method. No request to translate the full unresolved inventory is required for this handoff.
-
-## Publication boundary
-
-No main merge, production cutover, tag or Release is authorized by the v1.1.0 development instruction. The publication metadata remains pending. A future owner decision must explicitly consider unresolved ES-LA terminology and verification limits. The production feedback validator must support `es-LA` before a frontend with this locale is released.
-
-Technical acceptance is not a prepared one-click publication. The current publication policy deliberately rejects v1.1.0, including a manifest with approval flags manually added. An authorized release task must implement an explicit v1.1 review/evidence policy, bind the exact source/tree and independent audit hash to the owner's decision, update the formal release identity and artifacts, rerun the release checks, and verify live acceptance. Merely adding a reviewer to the allowlist is insufficient because the existing evidence-binding rules are release-specific. These prerequisites are recorded rather than bypassed in this development PR.
-
-General UI copy remains provisional. Registered game-name fallbacks are listed in the coverage JSON; the unregistered Stockpile reference also retains its existing English fallback instead of inventing an official ES-LA term. No blanket request for the owner to translate these names is made.
-
-Unchanged known limitations: physical Android/iOS coverage, native screen readers and OS IME, exhaustive native-language terminology review, long-duration memory stability, and partially/unimplemented Champions mechanics. Browser emulation is not physical-device verification.
+Physical Android/iOS calculator testing, native screen readers and OS IME, exhaustive native-language review, all dynamic combinations, long-duration memory stability, and partially/unimplemented Champions mechanics are not certified. Browser emulation and terminology screenshots do not establish those properties. Unverified fallbacks remain disclosed rather than inferred as official.

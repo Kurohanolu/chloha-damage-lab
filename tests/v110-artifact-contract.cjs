@@ -23,6 +23,7 @@ const reversals=[
  ["   if(locale==='es-LA')item.setAttribute('aria-label',moveName);\n",''],
  ["  if(locale==='es-LA')return window.ChlohaEsLa?.entity(category,key,localizedName(category,key,'es'))||localizedName(category,key,'es');\n",''],
  ["   window.ChlohaPokeAPILocalizedNames?.[category]?.[key],\n   {regional:window.ChlohaEsLa?.entity(category,key,null)}","   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]"],
+ ["  records.push(window.ChlohaEsLa?.aliases(category,key)||[]);\n",''],
  ["const locales=window.ChlohaLocales?.entries.map(entry=>entry.code)||['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];","const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];"],
  ["es:'Seleccionado: ','es-LA':'Seleccionado: ',","es:'Seleccionado: ',"],
  ["es:['No compatible','Solo daño básico','Estimado'],'es-LA':['No compatible','Solo daño básico','Estimado'],","es:['No compatible','Solo daño básico','Estimado'],"],
@@ -36,7 +37,7 @@ for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"w
 assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
 assert.equal(release.tag,'v1.1.0-pre.1');assert.equal(release.channel,'prerelease');
-const draft=structuredClone(release);draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
+const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){
  const url=new URL(reference,'https://preview.invalid/'),file=url.pathname.slice(1);
@@ -48,7 +49,7 @@ for(const reference of assetReferences(html)){
  }
 }
 assert.ok(cached.includes('locale-es-la-data-v110.js')&&cached.includes('locale-es-la-v110.js'),'Both ES-LA resources are in the browser dependency/cache graph');
-const inheritedApproval=structuredClone(release);inheritedApproval.qualityReview=JSON.parse(old(stable,'release.json')).qualityReview;assert.throws(()=>verifyPublication(inheritedApproval),/owner|quality|review|approval|release/i,'Stable approval cannot authorize a new localization candidate');
+const inheritedApproval=structuredClone(release);delete inheritedApproval.followupAudit;inheritedApproval.qualityReview=JSON.parse(old(stable,'release.json')).qualityReview;assert.throws(()=>verifyPublication(inheritedApproval),/owner|quality|review|approval|release/i,'Stable approval cannot authorize a new localization candidate');
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-v110-assets-'));
 try{
  const {out,manifest}=buildSites(temp);assert.equal(manifest.publicCutoverPerformed,false);assert.equal(manifest.legacyCommit,legacyCommit);

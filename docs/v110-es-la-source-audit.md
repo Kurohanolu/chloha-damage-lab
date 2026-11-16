@@ -1,12 +1,30 @@
 # v1.1.0 ES-LA Source Audit
 
+## Current evidence checkpoint — second batch, 2026-11-16 JST
+
+All **20 original owner screenshots were visually inspected** by the implementation/review team. Original image bytes remain private. The [20-image evidence audit](v110-es-la-owner-screenshot-evidence.md) and [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) record exact visible text, source images, screen positions, existing canonical IDs, exclusions and effect-description context. No language-settings screen was supplied; the owner's ES-LA attestation and consistent regional vocabulary are the recorded locale evidence. Capture dates, game build and platform are not independently established.
+
+The second batch contains 58 system-name observations: 56 registered identities and two off-runtime references, including three abbreviation-only witnesses. Fourteen existing owner records gain additional source references; 44 new records bring the ledger to **1,183 attestations from 60 sources**. Across both batches, deduplication by category and canonical English identity leaves **109 system-name identities: 84 registered and 25 off-runtime**. Six editable party labels from batch one remain context only. Base Floette is an off-runtime species component supporting its registered forms, not a new inventory entry.
+
+Against the published first-batch baseline `83af29133927a19fc7e0f9273c0e194c54384ae5`, official Champions coverage increases **112 → 142 (+30)** and unverified names decrease **739 → 714 (−25)**. Overall official names increase 121 → 151. The unchanged denominator is 1,029 registered names across Pokémon, moves, abilities, items, types, natures and stats. The forms view overlaps Pokémon; UI/warnings are separate and are not added to these totals.
+
+The only display-name change is `firme` → `Firme`, preserving the game field's capitalization. Added aliases are `Floette Flor Eterna`, `At. Esp.` and `Def. Esp.`. Existing parentheses in `Floette (Flor Eterna)` are application composition of separate visible species/form fields, not claimed as an exact single game label. `Expl. Metálica`, `At. Esp.` and `Def. Esp.` attest abbreviations only; they do not upgrade unseen full-name wording. Previous valid evidence remains attached.
+
+Canonical checks resolve `Karatazo` to Brick Break, `Ataque Centrado` to Focus Blast, `Baya Tamar` to Rindo Berry and `Baya Yecana` to Tanga Berry. The eight recorded effect descriptions belong only to the selected move, displayed ability or separate `Baya Caquic` detail panel. They do not verify mechanics or authorize engine changes. `Baya Anjiro` is now fully visible in 32727; the clipped first-batch row remains excluded.
+
+No accepted second-batch name has an unresolved canonical identity. **Additional screenshots requested: 0.** Unverified inventory names remain honestly classified, rather than becoming official through spelling agreement. Existing nine-language dictionaries, registered game data and calculation-engine behavior are unchanged. Fresh CI and final independent review are tracked in the [test report](v110-es-la-test-report.md); older passes below are historical evidence only.
+
+## Historical source audit through first publication
+
+The following sections retain the original web and first-batch evidence checkpoints. Their record counts describe those earlier stages, not the current ledger above.
+
 - Web-source verification: 2026-11-15 (UTC); owner-capture follow-up: 2026-11-16 (JST).
 - Audited repository baseline: `5d6a685ceab3cc1fd3db873bd5591a35f0e6fc03`.
 - Stable release reference supplied by the owner: `0b270c1452505268364659edd402209b00b28673`.
 - Product locale: `es-LA`; browser/HTML/Intl locale: `es-419`; existing `es` is retained.
 - This document describes source evidence, not a claim that every registered entity has an independently verified ES-LA name. Runtime coverage is reported separately.
 
-## Owner-capture follow-up
+## First owner-capture follow-up
 
 Ten privately retained owner-provided Champions captures add 65 deduplicated system-name attestations, bringing the ledger to **1,139 records from 50 sources**. Forty-one terms intersect the registered inventory; 24 remain reference-only. There are 27 newly official identities and 31 new official Champions confirmations, with no changes to display names, aliases, canonical IDs or support denominators. See the [capture audit](v110-es-la-capture-audit.md) for exact rows, hashes, before/after counts and the language-settings limitation. Six party labels remain identity context because nicknames cannot be excluded. The eighteen observed game UI labels do not upgrade the application UI inventory. Original screenshots are not published.
 

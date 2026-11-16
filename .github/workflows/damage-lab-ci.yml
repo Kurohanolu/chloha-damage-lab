@@ -2,7 +2,7 @@ name: Damage Lab CI and status ledger
 
 on:
   push:
-    branches: [main]
+    branches: [main, feature/v110-es-la-localization]
   pull_request:
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
         run: node tests/v0183-all-select-options-audit.cjs
 
   report:
-    if: ${{ always() && github.event_name != 'pull_request' }}
+    if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
     needs: [verify]
     runs-on: ubuntu-latest
     steps:

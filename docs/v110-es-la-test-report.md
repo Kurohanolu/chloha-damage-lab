@@ -1,5 +1,23 @@
 # Singularity v1.1.0 — ES-LA test report
 
+## Current second-batch verification — 2026-11-16 JST
+
+Status: **local preflight passed; fresh committed CI and final independent Sol review pending**. This status applies to the additional ten screenshots and the combined 20-image audit. Historical passes below are not reused as a pass for the changed source data.
+
+Comparison baseline: published `83af29133927a19fc7e0f9273c0e194c54384ae5`, tree `cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b`. Stable numerical reference remains `0b270c1452505268364659edd402209b00b28673`. Exact follow-up commit/tree and workflow receipts must be recorded after the new branch push.
+
+Local checks passed for regenerated coverage/UI inventory, source and original-capture contracts, release identity, artifact cache hashes, and follow-up publication rejection. These were uncommitted working-tree checks. All 20 original screenshots were visually inspected; image identity and wording review are terminology evidence, not a physical-device calculation test.
+
+The new acceptance work covers second-batch canonical bindings, additive deduplication, 3 abbreviation-only witnesses, `Firme` capitalization, the 3 new aliases, unchanged inventory/engine/other-nine-language data, and rejection of historical approval reuse. Browser regressions target the ambiguous move/berry bindings and registered Floette forms. The full existing ten-language switching, reload/state, UI/mobile, feedback, and 4,520 Stable numerical-comparison gates remain required. Local Chromium cannot create its platform socket, so browser execution must be verified through fresh CI rather than asserted from local syntax checks.
+
+Expected data checkpoint: 1,183 source records/60 sources; second batch 58 system-name observations, 56 registered and 2 off-runtime; official Champions 112 → 142 and unverified 739 → 714 on an unchanged denominator of 1,029 names. Forms overlap Pokémon and are not counted again. The [20-image audit](v110-es-la-owner-screenshot-evidence.md) and [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) contain detailed evidence and exclusions.
+
+The feature branch now runs all 13 validation workflows without a new PR. [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68) is already merged; the [branch comparison](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization) is the review surface for this follow-up. No main update, new tag, public-site change, production Worker deployment, or real feedback submission is performed by these checks. Current public release `v1.1.0-pre.1` remains pinned to the baseline above.
+
+## Historical verification records
+
+The following results belong to earlier exact source commits. Wording such as “unpublished” or “production remains v1.0.0” describes those historical checkpoints, not today's already published first-batch release.
+
 ## Owner-capture follow-up — 2026-11-16 JST
 
 Baseline for the evidence update: `a70b45674c66dcfd7b87321c9f012dd36637c3f2`. Source record SHA-256: `d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427`. Capture manifest SHA-256: `fad28b34817effafb6096fb5c3c35f430b4ad70015e517ca7da5adcb4d6ecd8e`. This is a new source-data candidate; the older accepted checkpoint below is retained as history.

@@ -2,7 +2,7 @@ name: Showdown differential audit
 on:
   pull_request:
   push:
-    branches: [main, feature/v0179-ja-en-foundation]
+    branches: [main, feature/v0179-ja-en-foundation, feature/v110-es-la-localization]
   workflow_dispatch:
 jobs:
   showdown-differential:

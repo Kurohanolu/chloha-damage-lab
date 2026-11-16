@@ -1,7 +1,7 @@
 name: Showdown differential tests
 on:
   push:
-    branches: [main]
+    branches: [main, feature/v110-es-la-localization]
   pull_request:
     paths:
       - release.json

@@ -4,7 +4,8 @@ const {execFileSync}=require('node:child_process');
 const {releaseIdentity}=require('../scripts/helpers/release-identity.cjs');
 const {verifyCutoverApproval,verifyPublication}=require('../scripts/verify-publication-approval.cjs');
 assert.equal(require('./helpers/v0188-browser-lab.cjs').baselineForRelease({tag:'v1.1.0-pre.1'}),'0b270c1452505268364659edd402209b00b28673','Performance comparison uses the immediate stable release');
-const current=structuredClone(require('../release.json'));current.qualityReview.ownerApproval='pending';current.qualityReview.auditStatus='pending';current.migration.status='awaiting-owner-approval';current.migration.liveTargetVerified=false;for(const k of Object.keys(current.migration))if(k.startsWith('liveAcceptance'))delete current.migration[k];
+const current=structuredClone(require('../release.json'));delete current.followupAudit; // Original pre-publication identity fixture; the current follow-up is tested separately.
+current.qualityReview.ownerApproval='pending';current.qualityReview.auditStatus='pending';current.migration.status='awaiting-owner-approval';current.migration.liveTargetVerified=false;for(const k of Object.keys(current.migration))if(k.startsWith('liveAcceptance'))delete current.migration[k];
 const stable=JSON.parse(execFileSync('git',['show','0b270c1452505268364659edd402209b00b28673:release.json'],{encoding:'utf8'}));
 const {verifyObservation}=require('../scripts/helpers/v0188-public-release-observation.cjs');
 const observed=verifyObservation(current,stable,stable.name);

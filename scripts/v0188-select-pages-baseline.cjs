@@ -3,8 +3,14 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require(
 const {verifyCutoverApproval}=require('./verify-publication-approval.cjs');
 const {dependencies}=require('./v0187-build-sites.cjs');
 const {hasFollowup,verifyFollowupDraft,publishedCommit}=require('./helpers/v0188-followup-review.cjs');
+const v110Followup=require('./helpers/v110-followup-review.cjs');
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(v110Followup.isV110Followup(release)){
+  v110Followup.verifyFollowupDraft(release);
+  if(event==='pull_request'||baseRef)assert.equal(baseRef,v110Followup.publishedCommit,'ES-LA follow-up public base must be the immutable published pre.1');
+  return {ref:v110Followup.publishedCommit,mode:'published-v110-followup-base'};
+ }
  if(hasFollowup(release)){
   verifyFollowupDraft(release);
   assert.equal(event,'pull_request','Follow-up drafts can only observe the published PR base');

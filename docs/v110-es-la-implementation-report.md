@@ -1,5 +1,23 @@
 # Singularity v1.1.0 — ES-LA implementation report
 
+## Current implementation — second batch, 2026-11-16 JST
+
+The additional ten screenshots are integrated with the original ten as private terminology evidence. The [20-image audit](v110-es-la-owner-screenshot-evidence.md) is the current implementation record. The published baseline is `83af29133927a19fc7e0f9273c0e194c54384ae5` (`v1.1.0-pre.1`); this follow-up is **not yet published**. Work continues on `feature/v110-es-la-localization`. [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68) is already merged and is retained as the review/history record; no duplicate PR is created. The [branch comparison](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization) exposes subsequent changes.
+
+The source ledger now contains 1,183 records from 60 sources. The second batch contributes 58 system-name observations (56 registered, two off-runtime), reuses 14 existing owner records and adds 44 records. Three observations are abbreviation evidence only. Coverage across the unchanged 1,029-name denominator is official Champions 112 → 142 and unverified 739 → 714; overlapping form and UI views are excluded from that aggregate.
+
+Implementation changes are limited to ES-LA terminology/provenance, generated coverage, cache identity and regression/publication checks. `Firme` adopts the observed initial capital. Search gains `Floette Flor Eterna`, `At. Esp.` and `Def. Esp.` while retaining all existing aliases. The compiler distinguishes abbreviation-only evidence from full display-name evidence and accepts only exact case differences at an otherwise conflicting evidence rank. Distinct names, accents or punctuation still fail conflict validation. Existing nine-language data, canonical IDs, game inventory and the calculation engine remain unchanged.
+
+The original ten-image manifest stays immutable; later witnesses are additive. Effect-description transcriptions are kept separately from engine support. No owner screenshot bytes are added to Git. No additional screenshots are requested.
+
+All 13 validation workflows can run on the existing feature branch. Publication and person-directed CI result steps remain restricted to main. The follow-up manifest records an unpublished audit and clears reusable live/review acceptance. Historical public observation stays pinned to the already published source/tree. A future publication must use a distinct release identity with fresh evidence; this audit cannot overwrite `v1.1.0-pre.1` or reuse its approval.
+
+Focused local checks have passed; fresh committed CI and final Sol review are still pending at this checkpoint. The [test report](v110-es-la-test-report.md) will bind them to the resulting commit/tree. The live site stays at the published baseline. Its existing temporary ES-LA feedback restriction remains in place; other nine locales and the production Worker are unchanged.
+
+## Historical implementation and first-batch checkpoints
+
+The sections below preserve the development record before the first publication. Their earlier pending-release statements and counts are historical, superseded for current status by the checkpoint above.
+
 Status: implementation and technical acceptance complete for the disclosed development scope; terminology coverage and owner release approval remain open. Reviewable draft: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68).
 
 Accepted implementation commit: `215e5a1a8af9e20591d077e6acfcabb234a53b7a`, tree `fa77eab91c520fc4e40f9d146b63c909f47d8c4f`. The following documentation/evidence commit does not change runtime behavior. Exact test results are retained in the [test report](v110-es-la-test-report.md).

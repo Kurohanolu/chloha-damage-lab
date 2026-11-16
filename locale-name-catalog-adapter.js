@@ -16,7 +16,8 @@ const ChlohaNameCatalogAdapter=(()=>{
     const regional=globalThis.ChlohaEsLa?.entity(category,sourceKey,null);
     if(regional)translations['es-LA']=regional;
     // Existing canonical source key always wins; only add names for this exact key.
-    result.push({category,id:sourceKey,names:{...baseNames,...translations},aliases:[sourceKey]});
+    const regionalAliases=globalThis.ChlohaEsLa?.aliases(category,sourceKey)||[];
+    result.push({category,id:sourceKey,names:{...baseNames,...translations},aliases:[...new Set([sourceKey,...regionalAliases])]});
    }
   }
   return result;

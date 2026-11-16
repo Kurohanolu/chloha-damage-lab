@@ -8,13 +8,13 @@ Names are tied to existing canonical IDs. `official` means the exact spelling is
 
 | Category | Total | Official | Secondary | Provisional | Unverified | Individually attested | Official rate | Official Champions |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| pokemon | 373 | 31 | 0 | 0 | 342 | 8.31% | 8.31% | 24 (6.43%) |
-| moves | 335 | 34 | 107 | 0 | 194 | 42.09% | 10.15% | 33 (9.85%) |
-| abilities | 245 | 19 | 42 | 0 | 184 | 24.9% | 7.76% | 19 (7.76%) |
-| items | 41 | 9 | 19 | 0 | 13 | 68.29% | 21.95% | 9 (21.95%) |
+| pokemon | 373 | 35 | 0 | 0 | 338 | 9.38% | 9.38% | 28 (7.51%) |
+| moves | 335 | 46 | 103 | 0 | 186 | 44.48% | 13.73% | 45 (13.43%) |
+| abilities | 245 | 22 | 41 | 0 | 182 | 25.71% | 8.98% | 22 (8.98%) |
+| items | 41 | 19 | 19 | 0 | 3 | 92.68% | 46.34% | 19 (46.34%) |
 | types | 18 | 18 | 0 | 0 | 0 | 100% | 100% | 17 (94.44%) |
-| forms | 134 | 20 | 0 | 0 | 114 | 14.93% | 14.93% | 13 (9.7%) |
-| natures | 11 | 4 | 1 | 0 | 6 | 45.45% | 36.36% | 4 (36.36%) |
+| forms | 134 | 23 | 0 | 0 | 111 | 17.16% | 17.16% | 16 (11.94%) |
+| natures | 11 | 5 | 1 | 0 | 5 | 54.55% | 45.45% | 5 (45.45%) |
 | stats | 6 | 6 | 0 | 0 | 0 | 100% | 100% | 6 (100%) |
 | ui | 1011 | 0 | 0 | 1011 | 0 | 0% | 0% | 0 (0%) |
 | warnings | 169 | 0 | 0 | 169 | 0 | 0% | 0% | 0 (0%) |
@@ -27,8 +27,8 @@ Every inventoried name has a display fallback. That display availability is **no
 
 The complete unresolved list (canonical ID, Japanese, ES-ES, displayed candidate, reason and location to check) is in [v110-es-la-coverage.json](data/v110-es-la-coverage.json). The same file records selected source records and unselected records. For compatibility, the latter remain under unmatchedSourceRecords, with canonicalMatches and selectionReason distinguishing lower-priority evidence from actual missing runtime identities. [Source records](data/v110-es-la-source-records.json) preserve the source URLs, dates, target game and independent numeric namespaces.
 
-Selection priority for the same canonical identity is official Champions, explicit secondary Champions, official Z-A, then secondary Z-A. Newer game-specific Champions terminology can differ from Z-A even when the latter is official. Conflicting spellings at the chosen evidence level fail the generator. An explicit canonical English identity must match even when the ES-ES spelling happens to agree; a translated label cannot override a known identity mismatch. Searches may retain both regional spellings as aliases; translated strings never become calculation IDs.
+Selection priority for the same canonical identity is official Champions, explicit secondary Champions, official Z-A, then secondary Z-A. Newer game-specific Champions terminology can differ from Z-A even when the latter is official. Conflicting spellings at the chosen evidence level fail the generator, except exact case-only variants; the observed game-field case takes precedence over prose case. Abbreviation-only attestations remain separate from full display-name evidence. An explicit canonical English identity must match even when the ES-ES spelling happens to agree; a translated label cannot override a known identity mismatch. Searches may retain both regional spellings as aliases; translated strings never become calculation IDs.
 
 ## Remaining limitations
 
-The current source collection cannot establish every registered term as official Champions ES-LA. The [owner-capture manifest](data/v110-es-la-owner-captures.json) records 65 distinct visible system terms from 10 privately retained screenshots: 41 intersect the existing runtime inventory and 24 remain off-runtime references. Six party name labels remain identity context because nicknames cannot be excluded. Baya Drasi is fully visible and accepted; the following clipped row is excluded. UI labels observed in the game do not upgrade the calculator's authored UI. Existing display strings and calculation identifiers are preserved. The full coverage entries retain the union of selected verification scopes while the historical singular scope remains compatible. Unverified fallback is explicitly disclosed in the ES-LA product notice. Formal release needs the owner to judge the documented remaining scope. Existing nine-language dictionaries and calculation data are not modified by this generated name layer.
+The current source collection cannot establish every registered term as official Champions ES-LA. The immutable [first-batch manifest](data/v110-es-la-owner-captures.json) and additive [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) identify all 20 privately retained, visually reviewed screenshots. The first batch has 65 distinct system terms (41 registered); the second has 58 (56 registered, including three abbreviation-only witnesses). Across batches there are 109 distinct system-name identities, 84 registered and 25 off-runtime; repeated images, form overlap and prior attestations do not increase the denominator. Six editable party-name labels remain context only. Baya Anjiro is excluded from the clipped first-batch row but accepted from the fully visible second-batch row. Expl. Metálica, At. Esp. and Def. Esp. are recorded as short-form evidence and aliases without promoting unseen full names. Firme adopts the observed initial capital; Floette (Flor Eterna) retains existing display punctuation while its unparenthesized joined form is searchable. Game UI labels do not upgrade authored software UI. See [the 20-image audit](v110-es-la-owner-screenshot-evidence.md) for per-image bindings, effects, before/after counts and unresolved scope. No additional owner screenshots are requested. The full coverage entries retain the union of selected verification scopes while the historical singular scope remains compatible. Unverified fallback remains disclosed in the ES-LA product notice. Existing nine-language dictionaries and calculation data are not modified by this generated name layer.

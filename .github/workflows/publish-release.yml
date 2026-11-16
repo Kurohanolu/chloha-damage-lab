@@ -31,8 +31,9 @@ on:
       - scripts/feedback-production-check.cjs
       - .github/workflows/publish-release.yml
   push:
-    branches: [main]
+    branches: [main, feature/v110-es-la-localization]
     paths:
+      - docs/v110-es-la-owner-screenshot-evidence.md
       - release.json
       - .github/workflows/publish-release.yml
 permissions:
