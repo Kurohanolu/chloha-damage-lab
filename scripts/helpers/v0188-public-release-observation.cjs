@@ -42,7 +42,24 @@ function pre5Manifest(){
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.6'){
+ if(localRelease.tag==='v1.1.0-pre.6'&&localRelease.migration?.legacyPolicy==='community-pinned-v1'){
+  const base=require('./v110-community-public-base.cjs'),predecessor=base.manifest();
+  assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'));
+  if(localRelease.qualityReview?.ownerApproval==='pending'){
+   assert.equal(localRelease.migration.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,predecessor,'Community-policy revision observes the complete already-live pre.6, never an inferred same-version substitute');
+  }else{
+   verifyCutoverApproval(localRelease);
+   if(!localRelease.migration.liveTargetVerified&&require('node:util').isDeepStrictEqual(publicRelease,predecessor)){
+    assert.deepEqual(publicRelease,predecessor);
+   }else{
+    assert.equal(publicRelease.migration?.legacyPolicy,base.policy,'After new acceptance the old policy is not a valid current observation');
+    verifyCutoverApproval(publicRelease);
+    assert.deepEqual(actual,identity(localRelease));
+    assert.deepEqual(publicRelease.qualityReview,localRelease.qualityReview,'Same reviewed revision is required, not only the same version');
+   }
+  }
+ }else if(localRelease.tag==='v1.1.0-pre.6'){
   assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.6 must use its own release decision, not a historical follow-up marker');
   const predecessor=pre5Manifest();
   if(localRelease.qualityReview?.ownerApproval==='pending'){

@@ -16,13 +16,15 @@ try{
  // An impaired current deployment must not stop recovery of the old calculator.
  fs.writeFileSync(path.join(artifacts,'chloha-damage-lab/index.html'),'broken current deployment');
  const result=prepareLegacyRollback(artifacts,path.join(temp,'recovered'));
- assert.equal(result.deploymentPerformed,false);assert.equal(result.productionMutations,0);
+ assert.equal(result.deploymentPerformed,false);assert.equal(result.legacySiteOverwriteAuthorized,false);assert.equal(result.productionMutations,0);
  for(const [file,expected] of Object.entries(contract.files))assert.equal(hash(fs.readFileSync(path.join(result.output,file))),expected);
  assert.ok(!fs.readFileSync(path.join(result.output,'index.html'),'utf8').includes('legacy-notice-v0187'),'restore the original calculator without migration notice');
  const manifestPath=path.join(artifacts,'migration-artifacts.json'),file=Object.keys(contract.files).find(name=>name.endsWith('.js')),source=path.join(backup,file),originalBytes=fs.readFileSync(source);
- const cases=['missing-file','corrupt-file','rehashed-corruption','truncated-inventory','unsafe-inventory','wrong-release','symlink'];
+ const cases=['wrong-current-release','wrong-current-provenance','missing-file','corrupt-file','rehashed-corruption','truncated-inventory','unsafe-inventory','wrong-release','symlink'];
  for(const mode of cases){
   const fixture=structuredClone(manifest),output=path.join(temp,'reject-'+mode);
+  if(mode==='wrong-current-release')fixture.legacyCommit='0'.repeat(40);
+  if(mode==='wrong-current-provenance')fixture.legacyProvenance={...(fixture.legacyProvenance||{}),applicationSHA256:'0'.repeat(64)};
   if(mode==='missing-file')fs.rmSync(source);
   if(mode==='corrupt-file'||mode==='rehashed-corruption')fs.writeFileSync(source,'invalid backup bytes');
   if(mode==='rehashed-corruption')fixture.rollback.files[file]=hash(fs.readFileSync(source));

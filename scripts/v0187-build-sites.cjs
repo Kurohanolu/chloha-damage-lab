@@ -3,6 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
+const {communityPolicy,loadCommunityBaseline}=require('./helpers/community-pinned-baseline.cjs');
 const legacyCommit='4b2cde61f92610c5bb970618d34147a2c16a8d7b';
 const digest=body=>crypto.createHash('sha256').update(body).digest('hex');
 function localPath(url){
@@ -24,10 +25,13 @@ function buildSites(output){
  const oldFiles=new Map();
  const old=file=>{file=localPath(file);if(!oldFiles.has(file))oldFiles.set(file,execFileSync('git',['show',legacyCommit+':'+file],{cwd:root,maxBuffer:16*1024*1024}));return oldFiles.get(file);};
  const html=read('index.html').toString(),release=JSON.parse(read('release.json'));
+ const community=communityPolicy(release)?loadCommunityBaseline():null;
  write('singularity','index.html',html);write('singularity','release.json',read('release.json'));
  for(const file of new Set([...dependencies(html),...Object.values(release.branding)]))write('singularity',file,read(file));
  write('singularity','brand-preview.html',read('brand-preview.html'));write('singularity','.nojekyll','');
  const original=old('index.html').toString(),notice={css:read('migration/legacy-notice-v0187.css'),js:read('migration/legacy-notice-v0187.js')};
+ if(community){for(const [file,body]of community.files)write('chloha-damage-lab',file,body);}
+ else{
  // The calculator stays frozen; notice updates need independent cache keys.
  const noticeCSS='./legacy-notice-v0187.css?v='+digest(notice.css).slice(0,16),noticeJS='./legacy-notice-v0187.js?v='+digest(notice.js).slice(0,16);
  const legacyHTML=original.replace('</head>','<link rel="stylesheet" href="'+noticeCSS+'"></head>').replace('</body>','<script defer src="'+noticeJS+'"></script></body>');
@@ -35,6 +39,7 @@ function buildSites(output){
  for(const file of dependencies(original))write('chloha-damage-lab',file,old(file));
  write('chloha-damage-lab','legacy-notice-v0187.css',notice.css);
  write('chloha-damage-lab','legacy-notice-v0187.js',notice.js);write('chloha-damage-lab','.nojekyll','');
+ }
  // Keep a complete notice-free legacy tree outside both publishable sites.
  const rollback={legacyCommit,artifactPath:'rollback/chloha-damage-lab',files:{}};
  for(const file of new Set(['index.html','release.json',...dependencies(original),'.nojekyll'])){
@@ -43,6 +48,7 @@ function buildSites(output){
  }
  const dirty=Boolean(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim());
  const manifest={schemaVersion:1,mode:'approval-required-preview',sourceCommit:dirty?null:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),uncommittedPreview:dirty,legacyCommit,publicCutoverPerformed:false,files:inventory,rollback};
+ if(community){manifest.legacyCommit=community.manifest.sourceCommit;manifest.legacyProvenance={policy:community.manifest.policy,sourceCommit:community.manifest.sourceCommit,sourceTree:community.manifest.sourceTree,auditCommit:community.manifest.auditCommit,auditTree:community.manifest.auditTree,auditEvidenceSha256:community.manifest.auditEvidenceSha256,applicationSHA256:community.manifest.applicationSHA256,files:44,readOnlyBaseline:true};}
  fs.writeFileSync(path.join(out,'migration-artifacts.json'),JSON.stringify(manifest,null,2)+'\n');
  return {out,manifest};
 }

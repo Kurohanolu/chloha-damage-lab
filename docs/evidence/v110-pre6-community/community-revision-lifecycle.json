@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "priorAcceptedWebCommit": "a3eeebfc4f4ad9c4c341047ca7ef7af7cc71f8b9",
+  "priorAcceptedWebTree": "604f0632eaf2d28e2fbd40012d68133050f72f30",
+  "priorGitHubReleaseNotAsserted": true,
+  "priorApprovalNotReused": true,
+  "newIndependentReviewRequired": true,
+  "liveProofReset": true
+}

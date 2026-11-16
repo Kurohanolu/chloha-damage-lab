@@ -3,11 +3,13 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {verifyCutoverApproval,verifyPublication}=require('./verify-publication-approval.cjs');
 const {buildSites,dependencies,assetReferences}=require('./v0187-build-sites.cjs');
+const {communityPolicy,loadCommunityBaseline,verifyCommunityFiles}=require('./helpers/community-pinned-baseline.cjs');
 const hash=body=>crypto.createHash('sha256').update(body).digest('hex');
 async function checkLiveSites(directory,{fetchImpl=globalThis.fetch,mode='publication'}={}){
  assert.ok(['publication','new-target'].includes(mode),'explicit migration verification mode required');
  const release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));
  if(mode==='new-target')verifyCutoverApproval(release);else verifyPublication(release);
+ const community=communityPolicy(release)?loadCommunityBaseline():null;
  const manifest=JSON.parse(fs.readFileSync(path.join(directory,'migration-artifacts.json')));
  const bases={'singularity':release.publicUrl,'chloha-damage-lab':release.migration.legacyUrl};
  const sites=mode==='new-target'?['singularity']:Object.keys(bases);
@@ -23,12 +25,15 @@ async function checkLiveSites(directory,{fetchImpl=globalThis.fetch,mode='public
  // An empty/truncated inventory must not turn a missing deployment into PASS.
  for(const site of sites){
   const html=fs.readFileSync(path.join(directory,site,'index.html'),'utf8');
-  const required=[...new Set(['index.html','release.json',...dependencies(html),...(site==='singularity'?Object.values(release.branding):[])])].map(file=>site+'/'+file).sort();
-  const selected=entries.filter(([file])=>file.startsWith(site+'/')&&!excluded(file));
+  const isCommunity=site==='chloha-damage-lab'&&community;
+  if(isCommunity)verifyCommunityFiles(community.manifest,new Map(Object.entries(manifest.files).filter(([file])=>file.startsWith(site+'/')).map(([file])=>[file.slice(site.length+1),fs.readFileSync(path.join(directory,file))])));
+  const required=isCommunity?Object.keys(community.manifest.files).map(file=>site+'/'+file).sort():[...new Set(['index.html','release.json',...dependencies(html),...(site==='singularity'?Object.values(release.branding):[])])].map(file=>site+'/'+file).sort();
+  const selected=entries.filter(([file])=>file.startsWith(site+'/')&&(isCommunity||!excluded(file)));
   assert.deepEqual(selected.map(([file])=>file).sort(),required,'complete public artifact inventory: '+site);
   const browserURLs=new Map();
   for(const reference of assetReferences(html)){
    const file=site+'/'+reference.split(/[?#]/)[0].replace(/^\.\//,''),url=new URL(reference,bases[site]);url.hash='';
+   assert.ok(required.includes(file),'Every browser cache URL must be in complete inventory');
    if(!browserURLs.has(file))browserURLs.set(file,new Set());browserURLs.get(file).add(url.href);
   }
   for(const [file,expected] of selected){

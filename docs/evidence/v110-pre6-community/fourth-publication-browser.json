@@ -1,0 +1,1522 @@
+{
+  "sourceCommit": "788534afe73adb97928298f53baf886254dbbe4c",
+  "sourceTree": "7ad2d65d7b56f48f2820172a5cccff43557d6237",
+  "realDevice": false,
+  "productionMutations": 0,
+  "rows": [
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_charizard_x",
+      "id": "mega_charizard_x",
+      "name": "Mega-Charizard X",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw092_23",
+      "id": "gw092_23",
+      "name": "Mega-Gardevoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_14",
+      "id": "candidate093_14",
+      "name": "Mega-Ampharos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_28",
+      "id": "candidate093_28",
+      "name": "Mega-Altaria",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_006",
+      "id": "roster_v0104_006",
+      "name": "Mega-Kangaskhan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_019",
+      "id": "roster_v0104_019",
+      "name": "Mega-Sableye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega-absol",
+      "id": "mega-absol",
+      "name": "Mega-Absol",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_garchomp_z",
+      "id": "mega_garchomp_z",
+      "name": "Mega-Garchomp Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_baxcalibur",
+      "id": "mega_baxcalibur",
+      "name": "Mega-Baxcalibur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_023",
+      "id": "roster_v0104_023",
+      "name": "Mega-Chimecho",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_016",
+      "id": "roster_v0104_016",
+      "name": "Mega-Delphox",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_venusaur",
+      "id": "mega_venusaur",
+      "name": "Mega-Venusaur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_blastoise",
+      "id": "mega_blastoise",
+      "name": "Mega-Blastoise",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_salamence",
+      "id": "mega_salamence",
+      "name": "Mega-Salamence",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw091_01",
+      "id": "gw091_01",
+      "name": "Mega-Gengar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw091_04",
+      "id": "gw091_04",
+      "name": "Mega-Metagross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw092_17",
+      "id": "gw092_17",
+      "name": "Mega-Garchomp",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw092_30",
+      "id": "gw092_30",
+      "name": "Mega-Scizor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_08",
+      "id": "candidate093_08",
+      "name": "Mega-Gyarados",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_12",
+      "id": "candidate093_12",
+      "name": "Mega-Slowbro",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_16",
+      "id": "candidate093_16",
+      "name": "Mega-Heracross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_26",
+      "id": "candidate093_26",
+      "name": "Mega-Medicham",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "candidate093_30",
+      "id": "candidate093_30",
+      "name": "Mega-Abomasnow",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_001",
+      "id": "roster_v0104_001",
+      "name": "Mega-Beedrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_002",
+      "id": "roster_v0104_002",
+      "name": "Mega-Pidgeot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_004",
+      "id": "roster_v0104_004",
+      "name": "Mega-Alakazam",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_007",
+      "id": "roster_v0104_007",
+      "name": "Mega-Pinsir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_008",
+      "id": "roster_v0104_008",
+      "name": "Mega-Aerodactyl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_010",
+      "id": "roster_v0104_010",
+      "name": "Mega-Houndoom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_011",
+      "id": "roster_v0104_011",
+      "name": "Mega-Tyranitar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_014",
+      "id": "roster_v0104_014",
+      "name": "Mega-Manectric",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_018",
+      "id": "roster_v0104_018",
+      "name": "Mega-Lopunny",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_020",
+      "id": "roster_v0104_020",
+      "name": "Mega-Sharpedo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_021",
+      "id": "roster_v0104_021",
+      "name": "Mega-Camerupt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_022",
+      "id": "roster_v0104_022",
+      "name": "Mega-Banette",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_024",
+      "id": "roster_v0104_024",
+      "name": "Mega-Glalie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_025",
+      "id": "roster_v0104_025",
+      "name": "Mega-Gallade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_027",
+      "id": "roster_v0104_027",
+      "name": "Mega-Audino",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega-steelix",
+      "id": "mega-steelix",
+      "name": "Mega-Steelix",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_lucario_z",
+      "id": "mega_lucario_z",
+      "name": "Mega-Lucario Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "mega_absol_z",
+      "id": "mega_absol_z",
+      "name": "Mega-Absol Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0103_15",
+      "id": "roster_v0103_15",
+      "name": "Baxcalibur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw091_15",
+      "id": "gw091_15",
+      "name": "Rillaboom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "moves",
+      "key": "ソーラービーム",
+      "id": "solarBeam",
+      "name": "Rayo Solar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "moves",
+      "key": "かえんほうしゃ",
+      "id": "flamethrower",
+      "name": "Lanzallamas",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "moves",
+      "key": "エアスラッシュ",
+      "id": "airSlash",
+      "name": "Corte Aéreo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "charizard",
+      "id": "charizard",
+      "name": "Charizard",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "gw092_20",
+      "id": "gw092_20",
+      "name": "Swampert",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0104_050",
+      "id": "roster_v0104_050",
+      "name": "Sceptile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0105_002",
+      "id": "roster_v0105_002",
+      "name": "Blaziken",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "category": "pokemon",
+      "key": "roster_v0106_040",
+      "id": "roster_v0106_040",
+      "name": "Vivillon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_charizard_x",
+      "id": "mega_charizard_x",
+      "name": "Mega-Charizard X",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw092_23",
+      "id": "gw092_23",
+      "name": "Mega-Gardevoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_14",
+      "id": "candidate093_14",
+      "name": "Mega-Ampharos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_28",
+      "id": "candidate093_28",
+      "name": "Mega-Altaria",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_006",
+      "id": "roster_v0104_006",
+      "name": "Mega-Kangaskhan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_019",
+      "id": "roster_v0104_019",
+      "name": "Mega-Sableye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega-absol",
+      "id": "mega-absol",
+      "name": "Mega-Absol",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_garchomp_z",
+      "id": "mega_garchomp_z",
+      "name": "Mega-Garchomp Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_baxcalibur",
+      "id": "mega_baxcalibur",
+      "name": "Mega-Baxcalibur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_023",
+      "id": "roster_v0104_023",
+      "name": "Mega-Chimecho",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_016",
+      "id": "roster_v0104_016",
+      "name": "Mega-Delphox",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_venusaur",
+      "id": "mega_venusaur",
+      "name": "Mega-Venusaur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_blastoise",
+      "id": "mega_blastoise",
+      "name": "Mega-Blastoise",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_salamence",
+      "id": "mega_salamence",
+      "name": "Mega-Salamence",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw091_01",
+      "id": "gw091_01",
+      "name": "Mega-Gengar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw091_04",
+      "id": "gw091_04",
+      "name": "Mega-Metagross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw092_17",
+      "id": "gw092_17",
+      "name": "Mega-Garchomp",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw092_30",
+      "id": "gw092_30",
+      "name": "Mega-Scizor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_08",
+      "id": "candidate093_08",
+      "name": "Mega-Gyarados",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_12",
+      "id": "candidate093_12",
+      "name": "Mega-Slowbro",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_16",
+      "id": "candidate093_16",
+      "name": "Mega-Heracross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_26",
+      "id": "candidate093_26",
+      "name": "Mega-Medicham",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "candidate093_30",
+      "id": "candidate093_30",
+      "name": "Mega-Abomasnow",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_001",
+      "id": "roster_v0104_001",
+      "name": "Mega-Beedrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_002",
+      "id": "roster_v0104_002",
+      "name": "Mega-Pidgeot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_004",
+      "id": "roster_v0104_004",
+      "name": "Mega-Alakazam",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_007",
+      "id": "roster_v0104_007",
+      "name": "Mega-Pinsir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_008",
+      "id": "roster_v0104_008",
+      "name": "Mega-Aerodactyl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_010",
+      "id": "roster_v0104_010",
+      "name": "Mega-Houndoom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_011",
+      "id": "roster_v0104_011",
+      "name": "Mega-Tyranitar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_014",
+      "id": "roster_v0104_014",
+      "name": "Mega-Manectric",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_018",
+      "id": "roster_v0104_018",
+      "name": "Mega-Lopunny",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_020",
+      "id": "roster_v0104_020",
+      "name": "Mega-Sharpedo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_021",
+      "id": "roster_v0104_021",
+      "name": "Mega-Camerupt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_022",
+      "id": "roster_v0104_022",
+      "name": "Mega-Banette",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_024",
+      "id": "roster_v0104_024",
+      "name": "Mega-Glalie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_025",
+      "id": "roster_v0104_025",
+      "name": "Mega-Gallade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_027",
+      "id": "roster_v0104_027",
+      "name": "Mega-Audino",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega-steelix",
+      "id": "mega-steelix",
+      "name": "Mega-Steelix",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_lucario_z",
+      "id": "mega_lucario_z",
+      "name": "Mega-Lucario Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "mega_absol_z",
+      "id": "mega_absol_z",
+      "name": "Mega-Absol Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0103_15",
+      "id": "roster_v0103_15",
+      "name": "Baxcalibur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw091_15",
+      "id": "gw091_15",
+      "name": "Rillaboom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "moves",
+      "key": "ソーラービーム",
+      "id": "solarBeam",
+      "name": "Rayo Solar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "moves",
+      "key": "かえんほうしゃ",
+      "id": "flamethrower",
+      "name": "Lanzallamas",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "moves",
+      "key": "エアスラッシュ",
+      "id": "airSlash",
+      "name": "Corte Aéreo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "charizard",
+      "id": "charizard",
+      "name": "Charizard",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "gw092_20",
+      "id": "gw092_20",
+      "name": "Swampert",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0104_050",
+      "id": "roster_v0104_050",
+      "name": "Sceptile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0105_002",
+      "id": "roster_v0105_002",
+      "name": "Blaziken",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "category": "pokemon",
+      "key": "roster_v0106_040",
+      "id": "roster_v0106_040",
+      "name": "Vivillon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    }
+  ],
+  "itemRows": [
+    {
+      "width": 390,
+      "key": "こだわりハチマキ",
+      "id": "choiceBand",
+      "control": "attItem",
+      "name": "Cinta Elección",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": false,
+      "status": "provisional",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "こだわりハチマキ",
+          "display": "こだわりハチマキ（物理攻撃×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Choice Band",
+          "display": "Choice Band (Attack ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Bandeau Choix",
+          "display": "Bandeau Choix (Attaque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Wahlband",
+          "display": "Wahlband (Angriff ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Cinta Elección",
+          "display": "Cinta Elección (Ataque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Bendascelta",
+          "display": "Bendascelta (Attacco ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "구애머리띠",
+          "display": "구애머리띠 (공격 ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "讲究头带",
+          "display": "讲究头带（攻击×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "講究頭帶",
+          "display": "講究頭帶（攻擊×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Cinta Elección",
+          "display": "Cinta Elección (Ataque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "とつげきチョッキ",
+      "id": "assaultVest",
+      "control": "defItem",
+      "name": "Chaleco Asalto",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": false,
+      "status": "provisional",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "とつげきチョッキ",
+          "display": "とつげきチョッキ（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Assault Vest",
+          "display": "Assault Vest (Sp. Def ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Veste de Combat",
+          "display": "Veste de Combat (Déf. Spé. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Offensivweste",
+          "display": "Offensivweste (Spezial-Verteidigung ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Chaleco Asalto",
+          "display": "Chaleco Asalto (Def. Esp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Corpetto assalto",
+          "display": "Corpetto assalto (Dif. Sp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "돌격조끼",
+          "display": "돌격조끼 (특수방어 ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "突击背心",
+          "display": "突击背心（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "突擊背心",
+          "display": "突擊背心（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Chaleco Asalto",
+          "display": "Chaleco Asalto (Def. Esp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "こだわりハチマキ",
+      "id": "choiceBand",
+      "control": "attItem",
+      "name": "Cinta Elección",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": false,
+      "status": "provisional",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "こだわりハチマキ",
+          "display": "こだわりハチマキ（物理攻撃×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Choice Band",
+          "display": "Choice Band (Attack ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Bandeau Choix",
+          "display": "Bandeau Choix (Attaque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Wahlband",
+          "display": "Wahlband (Angriff ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Cinta Elección",
+          "display": "Cinta Elección (Ataque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Bendascelta",
+          "display": "Bendascelta (Attacco ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "구애머리띠",
+          "display": "구애머리띠 (공격 ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "讲究头带",
+          "display": "讲究头带（攻击×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "講究頭帶",
+          "display": "講究頭帶（攻擊×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Cinta Elección",
+          "display": "Cinta Elección (Ataque ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "とつげきチョッキ",
+      "id": "assaultVest",
+      "control": "defItem",
+      "name": "Chaleco Asalto",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": false,
+      "status": "provisional",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "とつげきチョッキ",
+          "display": "とつげきチョッキ（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Assault Vest",
+          "display": "Assault Vest (Sp. Def ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Veste de Combat",
+          "display": "Veste de Combat (Déf. Spé. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Offensivweste",
+          "display": "Offensivweste (Spezial-Verteidigung ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Chaleco Asalto",
+          "display": "Chaleco Asalto (Def. Esp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Corpetto assalto",
+          "display": "Corpetto assalto (Dif. Sp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "돌격조끼",
+          "display": "돌격조끼 (특수방어 ×1.5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "突击背心",
+          "display": "突击背心（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "突擊背心",
+          "display": "突擊背心（特防×1.5）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Chaleco Asalto",
+          "display": "Chaleco Asalto (Def. Esp. ×1,5)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "itemSearchScope": "Shared alias catalog for ten locale labels; Chromium native ES-LA typeahead, not a free-text item search widget or physical-device certification",
+  "widths": [
+    390,
+    1440
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "passed": true
+}

@@ -59,18 +59,22 @@ assert.ok(cached.includes('locale-es-la-data-v110.js')&&cached.includes('locale-
 const inheritedApproval=structuredClone(release);delete inheritedApproval.followupAudit;inheritedApproval.qualityReview=JSON.parse(old(stable,'release.json')).qualityReview;assert.throws(()=>verifyPublication(inheritedApproval),/owner|quality|review|approval|release/i,'Stable approval cannot authorize a new localization candidate');
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-v110-assets-'));
 try{
- const {out,manifest}=buildSites(temp);assert.equal(manifest.publicCutoverPerformed,false);assert.equal(manifest.legacyCommit,legacyCommit);
+ const {out,manifest}=buildSites(temp);assert.equal(manifest.publicCutoverPerformed,false);const community=require('../scripts/helpers/community-pinned-baseline.cjs'),communityActive=community.communityPolicy(release);assert.equal(manifest.legacyCommit,communityActive?community.loadCommunityBaseline().manifest.sourceCommit:legacyCommit);
  assert.ok(!Object.keys(manifest.files).some(f=>/(?:^|\/)(?:services|\.wrangler|node_modules|tests|docs|\.git)(?:\/|$)/.test(f)),'Private backend/development/research data must not enter public artifacts');
  for(const [file,digest] of Object.entries(manifest.files))assert.equal(hash(fs.readFileSync(path.join(out,file))),digest,'Manifest SHA256: '+file);
  for(const file of dependencies(html))assert.deepEqual(fs.readFileSync(path.join(out,'singularity',file)),fs.readFileSync(file),'Single source artifact bytes: '+file);
  assert.equal(fs.readFileSync(path.join(out,'singularity/index.html'),'utf8'),html);
+ if(communityActive){
+  const pinned=community.loadCommunityBaseline(),actual=new Map(Object.keys(pinned.manifest.files).map(file=>[file,fs.readFileSync(path.join(out,'chloha-damage-lab',file))]));community.verifyCommunityFiles(pinned.manifest,actual);
+ }else{
  for(const file of dependencies(legacyHTML))assert.deepEqual(fs.readFileSync(path.join(out,'chloha-damage-lab',file)),old(legacyCommit,file),'Frozen old URL calculator: '+file);
  const legacy=fs.readFileSync(path.join(out,'chloha-damage-lab/index.html'),'utf8');
  assert.equal(legacy.replace(/<link rel="stylesheet" href="\.\/legacy-notice-v0187\.css\?v=[a-f0-9]{16}">/,'').replace(/<script defer src="\.\/legacy-notice-v0187\.js\?v=[a-f0-9]{16}"><\/script>/,''),legacyHTML,'Only migration notice changes old URL');
+ }
  for(const [file,digest] of Object.entries(manifest.rollback.files)){
   const body=fs.readFileSync(path.join(out,manifest.rollback.artifactPath,file));assert.equal(hash(body),digest);if(file!=='.nojekyll')assert.deepEqual(body,old(legacyCommit,file),'Non-destructive rollback inventory: '+file);
  }
  assert.equal(manifest.rollback.legacyCommit,legacyCommit);assert.throws(()=>buildSites(temp),/empty output/);assert.throws(()=>buildSites(process.cwd()),/source tree/);
- fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,pendingFixturePublicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
+ fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,publicLegacyCommit:manifest.legacyCommit,communityActive,pendingFixturePublicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
  console.log('PASS v1.1.0 private candidate packaging: unchanged Worker/control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
