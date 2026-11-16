@@ -4,7 +4,7 @@ Baseline: published pre.8 `0b1f8fffea3b1d063036d00fd712b0a0e9695111`, tree `701f
 
 ## Result
 
-41 exact existing identities receive additional evidence: 32 from historical official Latin American marketing publications and nine newly read system labels in three existing private Champions screenshots. The 41 identities include 11 Pokémon/forms, 18 abilities and 12 moves. There are 39 newly official names: 37 previously unverified and two previously secondary. Two already-official names gain Champions-specific evidence. No display spelling, roster, calculation or other-language dictionary changes. The existing Transistor ability gains exactly one search alias, Transistor; all other aliases remain unchanged.
+41 exact existing identities receive additional evidence: 32 from historical official Latin American marketing publications and nine newly read system labels in three existing private Champions screenshots. The 41 identities include 11 Pokémon/forms, 18 abilities and 12 moves. There are 39 newly official names: 37 previously unverified and two previously secondary. Two already-official names gain Champions-specific evidence. No display spelling, roster, calculation or other-language dictionary changes. Transistor gains one ES-LA metadata alias, Transistor; it is not searchable or selectable in the current UI. All other aliases remain unchanged.
 
 | Metric | Before | Candidate |
 |---|---:|---:|
@@ -73,3 +73,7 @@ All old sources/records, 225 prior Pokédex confirmations, Expert Belt name and 
 | moves | `つのドリル` | Cuerno Taladro | Pokémon Champions |
 | moves | `ソーラービーム` | Rayo Solar | Pokémon Champions |
 | moves | `しっとのほのお` | Envidia Ardiente | Pokémon Champions |
+
+### Transistor verification boundary
+
+Browser coverage consists of 80 actual UI selection cases (40 identities × 2 widths) and 2 separate catalog-only Transistor cases. Transistor exists in the calculation catalog and ES-LA attestation data, but none of the 373 registered species has this ability. It is absent from both ability pickers, the nine-language name dictionaries, and the shared search index. The new stored ES-LA alias does not make it selectable or searchable. Tests assert these absences rather than inject a fictitious option or species. Across all ten locale settings, catalog-only cases preserve the exact attestation/canonical ID, compare old/current search non-membership, and save/reload while checking complete numerical and persisted state. No claim of ten translated Transistor labels or native Transistor selection is made. Other 40 identities retain their existing real search/native selection and unsupported fail-closed assertions.
