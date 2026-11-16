@@ -1,4 +1,28 @@
 'use strict';
+// Preserve the exact published pre.6 lifecycle test in its immutable source tree.
+// It verifies real approved bytes there; current pre.7 has a separate lifecycle gate.
+if(require('../release.json').tag!=='v1.1.0-pre.6'){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='2fb5655a89e076df5993a3294bddbe1bf31afa58',tree='002d2af5716f408f50d50b8390d66a73ba083be3';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre6-history-')),worktree=path.join(parent,'source');
+ let status=1;
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-community-revision-lifecycle.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.6 lifecycle must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/community-revision-lifecycle.json'),'utf8'));
+  fs.writeFileSync('reports/v110/community-revision-lifecycle.json',JSON.stringify({...report,role:'historical immutable pre.6, not current candidate acceptance',sourceCommit:ref,sourceTree:tree},null,2)+'\n');
+  status=0;
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(status);
+}
+'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const base=require('../scripts/helpers/v110-community-public-base.cjs'),{verifyObservation}=require('../scripts/helpers/v0188-public-release-observation.cjs'),{selectBaseline}=require('../scripts/v0188-select-pages-baseline.cjs'),{verifyCutoverApproval,verifyPublication}=require('../scripts/verify-publication-approval.cjs');
 const current=structuredClone(require('../release.json')),prior=base.manifest();assert.equal(current.tag,'v1.1.0-pre.6');assert.equal(current.migration.legacyPolicy,base.policy);assert.equal(base.commit,'a3eeebfc4f4ad9c4c341047ca7ef7af7cc71f8b9');assert.equal(base.tree,'604f0632eaf2d28e2fbd40012d68133050f72f30');

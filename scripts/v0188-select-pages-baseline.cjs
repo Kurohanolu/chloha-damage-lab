@@ -8,8 +8,20 @@ const pre2Commit='aba2d0558948e2a4dd375074fb11fd428edf6222',pre2Tree='5043182ba5
 const pre3Commit='082ab180bc8835304d959f583d4968e0565bdea3',pre3Tree='acbfb36b179a29be7b7071821a4dd2c2a8c446cc';
 const pre4Commit='61d87e82995bc60d4564aaf57a52dfc1fd859e4c',pre4Tree='213c12af29c002e9344b018e6be69e568a251dff';
 const pre5Commit='82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74',pre5Tree='f6e6bc6a8bedec4b8923671e9345ce24a8d45d40';
+const pre6Commit='2fb5655a89e076df5993a3294bddbe1bf31afa58',pre6Tree='002d2af5716f408f50d50b8390d66a73ba083be3';
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(release.tag==='v1.1.0-pre.7'){
+  assert.ok(!hasFollowup(release),'Pre.7 must use its own release decision, not a historical follow-up marker');
+  if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration?.liveTargetVerified,false,'Pre.7 must explicitly declare its pre-acceptance state');
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   assert.equal(execFileSync('git',['rev-parse',pre6Commit+'^{tree}'],{cwd:path.resolve(__dirname,'..'),encoding:'utf8'}).trim(),pre6Tree,'Published pre.6 commit/tree must remain pinned');
+   if(event==='pull_request'||baseRef)assert.equal(baseRef,pre6Commit,'Pre.7 public base must be the immutable published pre.6');
+   return {ref:pre6Commit,mode:'published-v110-pre7-base'};
+  }
+ }
  if(release.tag==='v1.1.0-pre.6'&&release.migration?.legacyPolicy==='community-pinned-v1'){
   const base=require('./helpers/v110-community-public-base.cjs');base.manifest();
   assert.ok(!hasFollowup(release));

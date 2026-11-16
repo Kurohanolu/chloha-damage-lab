@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "baseline": "2fb5655a89e076df5993a3294bddbe1bf31afa58",
+  "tree": "002d2af5716f408f50d50b8390d66a73ba083be3",
+  "visibleNames": 7,
+  "registered": 2,
+  "officialGain": 1,
+  "displayNamesChanged": 1,
+  "priorAliasPreserved": true,
+  "offRuntime": 5,
+  "before": {
+    "total": 1029,
+    "official": 205,
+    "unverified": 661,
+    "officialChampions": 152,
+    "provisional": 2
+  },
+  "after": {
+    "total": 1029,
+    "official": 206,
+    "unverified": 660,
+    "officialChampions": 153,
+    "provisional": 2
+  },
+  "protectedFiles": 29,
+  "physicalMechanicsVerified": false
+}

@@ -11,7 +11,7 @@ const {root,startLab,launchBrowser,ready}=require('../tests/helpers/v0188-browse
 // Retain each historical baseline; pre.2 compares against published pre.1,
 // while original pre.1 measurements retain the exact Stable predecessor.
 const COMMUNITY_REVISION=require('../release.json').tag==='v1.1.0-pre.6'&&require('../release.json').migration?.legacyPolicy==='community-pinned-v1';
-const BASELINE=COMMUNITY_REVISION ? require('./helpers/v110-community-public-base.cjs').commit : require('../release.json').tag==='v1.1.0-pre.6' ? '82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74' : require('../release.json').tag==='v1.1.0-pre.5' ? '61d87e82995bc60d4564aaf57a52dfc1fd859e4c' : require('../release.json').tag==='v1.1.0-pre.4'
+const BASELINE=require('../release.json').tag==='v1.1.0-pre.7' ? '2fb5655a89e076df5993a3294bddbe1bf31afa58' : COMMUNITY_REVISION ? require('./helpers/v110-community-public-base.cjs').commit : require('../release.json').tag==='v1.1.0-pre.6' ? '82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74' : require('../release.json').tag==='v1.1.0-pre.5' ? '61d87e82995bc60d4564aaf57a52dfc1fd859e4c' : require('../release.json').tag==='v1.1.0-pre.4'
  ?'082ab180bc8835304d959f583d4968e0565bdea3'
  :require('../release.json').tag==='v1.1.0-pre.3'
  ?'aba2d0558948e2a4dd375074fb11fd428edf6222'
@@ -30,6 +30,7 @@ const FEEDBACK_TEXT='LOCAL_MEMORY_AUDIT_NOT_FOR_SUBMISSION';
 const OUTPUT=path.join(root,'reports/v0188-final/memory.json');
 const started=Date.now();
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:1024*1024}).trim();
+if(require('../release.json').tag==='v1.1.0-pre.7')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'002d2af5716f408f50d50b8390d66a73ba083be3','Pre.7 exact Community-policy pre.6 baseline');
 if(COMMUNITY_REVISION)assert.equal(git('rev-parse',BASELINE+'^{tree}'),require('./helpers/v110-community-public-base.cjs').tree,'Policy revision retains exact previously accepted frontend');
 else if(require('../release.json').tag==='v1.1.0-pre.6')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'f6e6bc6a8bedec4b8923671e9345ce24a8d45d40','Pre.6 retains immutable public pre.5');
 if(require('../release.json').tag==='v1.1.0-pre.5')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'213c12af29c002e9344b018e6be69e568a251dff','Pre.5 retains immutable public pre.4');

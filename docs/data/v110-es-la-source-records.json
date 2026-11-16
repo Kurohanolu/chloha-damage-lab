@@ -1360,6 +1360,35 @@
         "Spanish TCG card 133/162 screenshot; not a Champions item screen and region not established.",
         "No official Champions or independently attested ES-LA status is asserted."
       ]
+    },
+    {
+      "id": "owner-champions-capture-IMG-0439",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-expert-belt-capture.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture IMG_0439 — held-item selection and Expert Belt detail",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "IMG_0439.png",
+      "rawSha256": "5a831cab011af020f534795c26801fdb1cbd1cba3eed61f1526a27fea391fb8f",
+      "byteLength": 558858,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation, supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "The game language settings screen was not supplied.",
+        "Capture timestamp, game build and platform are not independently established.",
+        "Visible names only; no mechanics implementation, supported-content additions or physical calculator validation.",
+        "Side-party labels may be nicknames and are not species-name evidence."
+      ]
     }
   ],
   "records": [
@@ -28676,6 +28705,160 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Spanish TCG card 133/162 screenshot; not a Champions item screen and region not established. Owner-selected spelling only; existing identity and mechanics unchanged."
+    },
+    {
+      "id": "owner-champions-IMG-0439-expert-belt",
+      "category": "items",
+      "canonicalEnglish": "Expert Belt",
+      "sourceEs": "Cinta Experto",
+      "esLA": "Cinturón de Experto",
+      "rawObservedText": "Cinturón de Experto",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "たつじんのおび",
+          "canonicalIds": [
+            "expertBelt"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Existing canonical identity; no mechanics change.",
+      "searchAliases": [
+        "Cinta Experto"
+      ],
+      "identityContext": "Selected item and detail title match; description states holder supereffective moves gain 20% power. Not Black Belt."
+    },
+    {
+      "id": "owner-champions-IMG-0439-life-orb",
+      "category": "items",
+      "canonicalEnglish": "Life Orb",
+      "sourceEs": "Vidasfera",
+      "esLA": "Vidaesfera",
+      "rawObservedText": "Vidaesfera",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "いのちのたま",
+          "canonicalIds": [
+            "lifeOrb"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Existing canonical identity; no mechanics change."
+    },
+    {
+      "id": "owner-champions-IMG-0439-fairy-feather",
+      "category": "items",
+      "canonicalEnglish": "Fairy Feather",
+      "sourceEs": "Pluma Feérica",
+      "esLA": "Pluma Feérica",
+      "rawObservedText": "Pluma Feérica",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Reference-only outside the 41 supported-item inventory; do not add support."
+    },
+    {
+      "id": "owner-champions-IMG-0439-muscle-band",
+      "category": "items",
+      "canonicalEnglish": "Muscle Band",
+      "sourceEs": "Cinta Fuerte",
+      "esLA": "Cinta Fuerte",
+      "rawObservedText": "Cinta Fuerte",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Reference-only outside the 41 supported-item inventory; do not add support."
+    },
+    {
+      "id": "owner-champions-IMG-0439-wise-glasses",
+      "category": "items",
+      "canonicalEnglish": "Wise Glasses",
+      "sourceEs": "Lentes Especiales",
+      "esLA": "Lentes Especiales",
+      "rawObservedText": "Lentes Especiales",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Reference-only outside the 41 supported-item inventory; do not add support."
+    },
+    {
+      "id": "owner-champions-IMG-0439-metronome",
+      "category": "items",
+      "canonicalEnglish": "Metronome",
+      "sourceEs": "Metrónomo",
+      "esLA": "Metrónomo",
+      "rawObservedText": "Metrónomo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Reference-only outside the 41 supported-item inventory; do not add support."
+    },
+    {
+      "id": "owner-champions-IMG-0439-focus-band",
+      "category": "items",
+      "canonicalEnglish": "Focus Band",
+      "sourceEs": "Cinta Aguante",
+      "esLA": "Cinta Aguante",
+      "rawObservedText": "Cinta Aguante",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-IMG-0439"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [],
+      "sourceCatalogMatches": [],
+      "notes": "Exact visible system item name. Reference-only outside the 41 supported-item inventory; do not add support.",
+      "identityContext": "Red Focus Band icon and Cinta Aguante. Not Focus Sash / Banda Aguante."
     }
   ],
   "observedConflicts": [

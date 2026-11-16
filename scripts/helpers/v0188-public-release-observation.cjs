@@ -39,10 +39,34 @@ function pre5Manifest(){
  assert.equal(release.tag,'v1.1.0-pre.5');assert.equal(release.migration.liveTargetVerified,true);
  return release;
 }
+const pre6Commit='2fb5655a89e076df5993a3294bddbe1bf31afa58',pre6Tree='002d2af5716f408f50d50b8390d66a73ba083be3';
+function pre6Manifest(){
+ const git=args=>require('node:child_process').execFileSync('git',args,{cwd:require('node:path').resolve(__dirname,'../..'),encoding:'utf8'}).trim();
+ assert.equal(git(['rev-parse',pre6Commit+'^{tree}']),pre6Tree,'Published pre.6 commit/tree must remain pinned');
+ const release=JSON.parse(git(['show',pre6Commit+':release.json']));
+ assert.equal(release.tag,'v1.1.0-pre.6');assert.equal(release.migration.liveTargetVerified,true);
+ return release;
+}
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.6'&&localRelease.migration?.legacyPolicy==='community-pinned-v1'){
+ if(localRelease.tag==='v1.1.0-pre.7'){
+  assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.7 must use its own release decision, not a historical follow-up marker');
+  const predecessor=pre6Manifest();
+  if(localRelease.qualityReview?.ownerApproval==='pending'){
+   assert.equal(localRelease.migration?.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,predecessor,'Pre.7 development must observe the complete pinned published pre.6 manifest');
+  }else{
+   verifyCutoverApproval(localRelease);
+   if(actual.tag===predecessor.tag){
+    assert.equal(localRelease.migration.liveTargetVerified,false,'After pre.7 acceptance the previous public release is no longer valid');
+    assert.deepEqual(publicRelease,predecessor,'Pre-cutover observation must match the complete immutable pre.6 manifest');
+   }else{
+    verifyCutoverApproval(publicRelease);
+    assert.deepEqual(actual,identity(localRelease),'Approved pre.7 may observe only its own identity or the pinned pre-cutover pre.6');
+   }
+  }
+ }else if(localRelease.tag==='v1.1.0-pre.6'&&localRelease.migration?.legacyPolicy==='community-pinned-v1'){
   const base=require('./v110-community-public-base.cjs'),predecessor=base.manifest();
   assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'));
   if(localRelease.qualityReview?.ownerApproval==='pending'){

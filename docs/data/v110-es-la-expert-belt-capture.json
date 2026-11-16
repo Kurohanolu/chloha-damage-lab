@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2fb5655a89e076df5993a3294bddbe1bf31afa58",
+  "baselineTree": "002d2af5716f408f50d50b8390d66a73ba083be3",
+  "source": {
+    "id": "owner-champions-capture-IMG-0439",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-expert-belt-capture.md",
+    "urlRole": "public-attestation-document-not-image",
+    "title": "Pokémon Champions ES-LA owner capture IMG_0439 — held-item selection and Expert Belt detail",
+    "authority": "official",
+    "targetGame": "Pokémon Champions",
+    "locale": "es-LA",
+    "providedAt": "2026-11-16",
+    "checkedAt": "2026-11-16",
+    "dateTimezone": "Asia/Tokyo",
+    "capturedAt": null,
+    "filename": "IMG_0439.png",
+    "rawSha256": "5a831cab011af020f534795c26801fdb1cbd1cba3eed61f1526a27fea391fb8f",
+    "byteLength": 558858,
+    "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+    "evidenceAccess": "private-owner-provided",
+    "imagePublished": false,
+    "localeEvidence": {
+      "basis": "Owner attestation, supported by visible regional vocabulary.",
+      "languageSettingsScreenSupplied": false
+    },
+    "limitations": [
+      "The game language settings screen was not supplied.",
+      "Capture timestamp, game build and platform are not independently established.",
+      "Visible names only; no mechanics implementation, supported-content additions or physical calculator validation.",
+      "Side-party labels may be nicknames and are not species-name evidence."
+    ]
+  },
+  "observations": [
+    {
+      "key": "たつじんのおび",
+      "canonicalEnglish": "Expert Belt",
+      "esLA": "Cinturón de Experto",
+      "canonicalIds": [
+        "expertBelt"
+      ],
+      "runtime": true,
+      "recordId": "owner-champions-IMG-0439-expert-belt",
+      "before": {
+        "name": "Cinta Experto",
+        "status": "unverified",
+        "officialChampions": false
+      }
+    },
+    {
+      "key": "いのちのたま",
+      "canonicalEnglish": "Life Orb",
+      "esLA": "Vidaesfera",
+      "canonicalIds": [
+        "lifeOrb"
+      ],
+      "runtime": true,
+      "recordId": "owner-champions-IMG-0439-life-orb",
+      "before": {
+        "name": "Vidaesfera",
+        "status": "official",
+        "officialChampions": true
+      }
+    },
+    {
+      "key": "ようせいのハネ",
+      "canonicalEnglish": "Fairy Feather",
+      "esLA": "Pluma Feérica",
+      "canonicalIds": [],
+      "runtime": false,
+      "recordId": "owner-champions-IMG-0439-fairy-feather",
+      "before": null
+    },
+    {
+      "key": "ちからのハチマキ",
+      "canonicalEnglish": "Muscle Band",
+      "esLA": "Cinta Fuerte",
+      "canonicalIds": [],
+      "runtime": false,
+      "recordId": "owner-champions-IMG-0439-muscle-band",
+      "before": null
+    },
+    {
+      "key": "ものしりメガネ",
+      "canonicalEnglish": "Wise Glasses",
+      "esLA": "Lentes Especiales",
+      "canonicalIds": [],
+      "runtime": false,
+      "recordId": "owner-champions-IMG-0439-wise-glasses",
+      "before": null
+    },
+    {
+      "key": "メトロノーム",
+      "canonicalEnglish": "Metronome",
+      "esLA": "Metrónomo",
+      "canonicalIds": [],
+      "runtime": false,
+      "recordId": "owner-champions-IMG-0439-metronome",
+      "before": null
+    },
+    {
+      "key": "きあいのハチマキ",
+      "canonicalEnglish": "Focus Band",
+      "esLA": "Cinta Aguante",
+      "canonicalIds": [],
+      "runtime": false,
+      "recordId": "owner-champions-IMG-0439-focus-band",
+      "before": null
+    }
+  ],
+  "summary": {
+    "visibleItemNames": 7,
+    "registeredIdentities": 2,
+    "newOfficial": 1,
+    "newOfficialChampions": 1,
+    "displayNamesChanged": 1,
+    "oldSearchAliasPreserved": "Cinta Experto",
+    "offRuntime": 5,
+    "privateImageBytesPublished": false
+  },
+  "exclusions": [
+    "Previous 32765 Black Belt image remains excluded as Expert Belt evidence.",
+    "Party labels are not independent species evidence.",
+    "Right-hand effect text applies only to selected Expert Belt, not the other six item rows."
+  ]
+}
