@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "scope": "Approved pre.2 A exact-source CI artifact verification; not a live deployment receipt. No private images included.",
+  "sourceCommit": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5",
+  "sourceTree": "af5bdaa8a537ee751a1eb31d95d26dca5da3056a",
+  "uncommittedPreview": false,
+  "runId": 43790291357,
+  "runUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43790291357",
+  "workflowConclusion": "success",
+  "artifacts": [
+    {
+      "artifactId": 14192620504,
+      "name": "v110-acceptance-early-evidence",
+      "zipSha256": "bb40930fc4af548122326dfd113ca281f2fd0536d6202a2a9e13b2262e175457",
+      "zipBytes": 1760377,
+      "githubDigestVerified": true
+    },
+    {
+      "artifactId": 14192900591,
+      "name": "v110-es-la-candidate-evidence",
+      "zipSha256": "e6542504ada07034a68dd40dca990b703ccc606bc52eaf011c07e4eba65ea94d",
+      "zipBytes": 9407428,
+      "githubDigestVerified": true
+    }
+  ],
+  "candidateAcceptance": {
+    "tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "all16FinalJsonReportsMatchEarlyBytes": true,
+    "completeOutputComparisons": 4520,
+    "unexplainedDifferences": 0,
+    "feedbackPausePosts": 0
+  },
+  "sourceArchiveVerification": {
+    "archiveEntry": "dist/v110/source-candidate.zip",
+    "sha256": "08e94bcf2b77377c4c3e6fb0faa9ecb0dbb659a5691c745b5980f90268794c05",
+    "sha256FileMatches": true,
+    "gitArchiveComment": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5",
+    "gitTree": "af5bdaa8a537ee751a1eb31d95d26dca5da3056a",
+    "gitBlobComparisons": 551,
+    "exactFileSetMatchesGitTree": true
+  },
+  "builtSiteVerification": {
+    "sourceCommit": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5",
+    "siteFilesVerified": 79,
+    "rollbackFilesVerified": 31,
+    "publicCutoverPerformed": false
+  },
+  "verifiedAt": "2026-11-16T02:16:34.485335+00:00"
+}

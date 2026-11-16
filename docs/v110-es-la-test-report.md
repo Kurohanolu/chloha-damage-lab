@@ -8,7 +8,7 @@ Exact source `95e61b419f7e348fe5ec59b4355692bf81f335a6`, tree `85cbdbd46d4d76086
 - [Retained raw evidence](evidence/v110-pre2/candidate/retained-files.json) and [final artifact verification](evidence/v110-pre2/candidate/final-artifact-receipt.json): all 526 source blobs, 79 site files and 31 rollback files matched. Historical reports below remain evidence of their original commits.
 - Numerical comparisons: 4,520, zero differences. Browser checks: 110 rotating transitions, 15 reloads, 86 added-name queries and 60 mobile viewport cases. Legacy state/locale/mobile, controlled memory, performance and local Worker regressions all passed. Production Worker was not changed and no production feedback report was submitted.
 
-Publication and live acceptance are recorded separately in the [publication status](v110-es-la-publication-status.md).
+Approved A `127b1da04765fc2e0b3a873a64ac22892ae3ccf5` passed its own 13/13 workflows. Actual deployment passed 79-file / 228-request GET-only acceptance and live ten-language UI/reload checks. [Approved A CI](evidence/v110-pre2/approved-a-ci-receipt.json), [live asset observations](evidence/v110-pre2/live-public-assets.json), and [browser observations](evidence/v110-pre2/live-browser.json) support these distinct claims. Final metadata promotion and tag publication are tracked in the [publication status](v110-es-la-publication-status.md).
 
 ## Historical second-batch verification — 2026-11-16 JST
 

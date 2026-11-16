@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only verification of actual GitHub Pages deployment provenance; current public bytes are verified separately.",
+  "sourceCommit": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5",
+  "sourceTree": "af5bdaa8a537ee751a1eb31d95d26dca5da3056a",
+  "targetRepository": "Kurohanolu/singularity",
+  "targetCommit": "14deea3397cb6ab6d186362d8bd8175334cc7899",
+  "runId": 43791451633,
+  "runUrl": "https://github.com/Kurohanolu/singularity/actions/runs/43791451633",
+  "runAttempt": 1,
+  "event": "push",
+  "branch": "main",
+  "status": "completed",
+  "conclusion": "success",
+  "allBuildAndDeployStepsSucceeded": true,
+  "request": {
+    "source_sha": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5"
+  },
+  "requestBlob": "9ef08e03d6966e5f556fc442937dfa1d1dc64e71",
+  "workflowPath": ".github/workflows/deploy.yml",
+  "workflowBlob": "c1aa56f291584d847a1fe35a36ed5eaca4a89eaf",
+  "workflowSha256": "a6c5123c4da3287a02037472c61f42cfdd2e31d209754750096be676a09ea9fc",
+  "workflowMatchesReviewedSourceTemplate": true,
+  "provenanceArtifact": {
+    "id": 14192318117,
+    "name": "source-provenance",
+    "zipSha256": "bcbb052767480aa6835901ddb27094db4746c9631479908636bd66892b9dd680",
+    "githubDigestVerified": true,
+    "manifestSha256": "36ec0edd68a151fce0425c0a18246de5f2e39ad34b91e43c875b6b9fb43969f0",
+    "matchesExactSourceCiArtifactBytes": true,
+    "siteFiles": 79,
+    "rollbackFiles": 31
+  },
+  "verifiedAt": "2026-11-16T02:20:53.681517+00:00"
+}

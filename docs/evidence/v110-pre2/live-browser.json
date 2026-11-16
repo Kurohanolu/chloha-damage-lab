@@ -1,0 +1,128 @@
+{
+  "sourceCommit": "127b1da04765fc2e0b3a873a64ac22892ae3ccf5",
+  "releaseTag": "v1.1.0-pre.2",
+  "url": "https://kurohanolu.github.io/singularity/",
+  "observedAt": "2026-11-16T02:21:43.512Z",
+  "mode": "Cloud Chrome UI; no physical-device claim",
+  "tenLanguageObservations": [
+    {
+      "damage": "108〜128 ダメージ",
+      "lang": "ja",
+      "locale": "ja",
+      "percent": "最大HPの 61.7〜73.1%",
+      "types": "ドラゴンじめん"
+    },
+    {
+      "damage": "108–128 damage",
+      "lang": "en",
+      "locale": "en",
+      "percent": "Of max HP: 61.7–73.1%",
+      "types": "DragonGround"
+    },
+    {
+      "damage": "108–128 dégâts",
+      "lang": "fr",
+      "locale": "fr",
+      "percent": "Des PV max. : 61.7–73.1%",
+      "types": "DragonSol"
+    },
+    {
+      "damage": "108–128 Schaden",
+      "lang": "de",
+      "locale": "de",
+      "percent": "Von max. KP: 61.7–73.1%",
+      "types": "DracheBoden"
+    },
+    {
+      "damage": "108–128 de daño",
+      "lang": "es",
+      "locale": "es",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "types": "DragónTierra"
+    },
+    {
+      "damage": "108–128 danni",
+      "lang": "it",
+      "locale": "it",
+      "percent": "Dei PS massimi: 61.7–73.1%",
+      "types": "DragoTerra"
+    },
+    {
+      "damage": "108–128 데미지",
+      "lang": "ko",
+      "locale": "ko",
+      "percent": "최대 HP 대비: 61.7–73.1%",
+      "types": "드래곤땅"
+    },
+    {
+      "damage": "108–128 伤害",
+      "lang": "zh-Hans",
+      "locale": "zh-Hans",
+      "percent": "占最大HP： 61.7–73.1%",
+      "types": "龙地面"
+    },
+    {
+      "damage": "108–128 傷害",
+      "lang": "zh-Hant",
+      "locale": "zh-Hant",
+      "percent": "佔最大HP： 61.7–73.1%",
+      "types": "龍地面"
+    },
+    {
+      "damage": "108–128 de daño",
+      "lang": "es-419",
+      "locale": "es-LA",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "types": "DragónTierra"
+    }
+  ],
+  "reload": {
+    "damage": "108–128 de daño",
+    "fields": [
+      [
+        "weather",
+        "none"
+      ],
+      [
+        "terrain",
+        "none"
+      ],
+      [
+        "screen",
+        "none"
+      ],
+      [
+        "battleFormat",
+        "doubles"
+      ],
+      [
+        "attItem",
+        "none"
+      ],
+      [
+        "defItem",
+        "none"
+      ],
+      [
+        "attAbility",
+        "none"
+      ],
+      [
+        "defAbility",
+        "none"
+      ]
+    ],
+    "locale": "es-LA",
+    "percent": "De los PS máximos: 61.7–73.1%",
+    "title": "Singularity v1.1.0 Pre-Release 2"
+  },
+  "esLaPause": {
+    "fieldsDisabled": true,
+    "locale": "es-LA",
+    "status": "El envío de reportes en español latinoamericano está temporalmente deshabilitado. Puedes usar otro idioma para enviar un reporte. No se envió nada.",
+    "submitDisabled": true
+  },
+  "englishFieldsRestored": true,
+  "productionReportsSubmitted": 0,
+  "screenshot": "live-public-screen.jpg"
+}

@@ -1,12 +1,12 @@
 # Singularity v1.1.0 — ES-LA implementation report
 
-## Current release preparation — v1.1.0 Pre-Release 2
+## Current release — v1.1.0 Pre-Release 2
 
-Candidate `95e61b419f7e348fe5ec59b4355692bf81f335a6` (tree `85cbdbd46d4d76086f7e739a67960cff9ba62816`) now has **13/13 successful workflows and 18/18 successful ES-LA tests**. See the [current test report](v110-es-la-test-report.md). Independent approval and actual deployment are tracked in the [publication status](v110-es-la-publication-status.md).
+Candidate `95e61b419f7e348fe5ec59b4355692bf81f335a6` (tree `85cbdbd46d4d76086f7e739a67960cff9ba62816`) now has **13/13 successful workflows and 18/18 successful ES-LA tests**. See the [current test report](v110-es-la-test-report.md). Approved source `127b1da04765fc2e0b3a873a64ac22892ae3ccf5` also passed all 13 workflows and deployed successfully. Actual live acceptance verified 79 files / 228 GET requests. Independent approval, live UI evidence and final tag/Release gates are tracked in the [publication status](v110-es-la-publication-status.md).
 
 Publication as **v1.1.0 Pre-Release 2** (`v1.1.0-pre.2`) is explicitly authorized by the owner. The new preparation updates release identity, packaging and release-specific validation around the accepted second-batch implementation. It does not add screenshots, change canonical mappings or alter the evidence totals: official Champions 142/1,029; unverified 714.
 
-Documentation checkpoint `3cc0a95` preserves the audit of tested source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`. Those results remain historical evidence; fresh Pre-Release 2 CI has passed on the new commit/tree; **final release/live verification remains pending**. Preserve the issued Pre-Release 1 tag and evidence. The production Worker and temporary ES-LA feedback restriction remain unchanged. The unpublished follow-up descriptions below refer to the earlier audit stage.
+Documentation checkpoint `3cc0a95` preserves the audit of tested source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`. Those results remain historical evidence; fresh Pre-Release 2 CI has passed on the new commit/tree; actual live verification is complete; final metadata CI/deployment and main publication gates remain mandatory. Preserve the issued Pre-Release 1 tag and evidence. The production Worker and temporary ES-LA feedback restriction remain unchanged. The unpublished follow-up descriptions below refer to the earlier audit stage.
 
 ## Accepted implementation — second batch, 2026-11-16 JST
 
