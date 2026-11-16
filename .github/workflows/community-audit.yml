@@ -1,0 +1,76 @@
+name: Community Edition audit tools
+on:
+  push:
+    branches: [audit/chloha-community-preparation]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: community-audit-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    name: Frozen engine, restored ZIP and nine-language browser
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out original audit tooling only
+        uses: actions/checkout@v4
+        with:
+          path: tooling
+      - name: Read the already published stable baseline without republishing it
+        uses: actions/checkout@v4
+        with:
+          ref: 0b270c1452505268364659edd402209b00b28673
+          path: stable
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply original review-only tooling in the temporary runner
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          for folder in ['community', 'scripts/community', 'tests/community']:
+              shutil.copytree(Path('tooling')/folder, Path('stable')/folder, dirs_exist_ok=True)
+          PY
+      - run: npm install --no-package-lock --no-audit --no-fund
+        working-directory: stable
+      - run: npx playwright install chromium
+        working-directory: stable
+      - run: node tests/v100-engine-promotion.cjs
+        working-directory: stable
+      - run: node tests/v0184-public-baseline.cjs
+        working-directory: stable
+      - run: python3 scripts/community/build.py --review-only
+        working-directory: stable
+      - run: node tests/community/package.cjs
+        working-directory: stable
+      - name: Unmodified Showdown tests against the actual candidate app
+        run: |
+          node dist/community/validation/tests/showdown-compare.mjs
+          node dist/community/validation/tests/showdown-differential.mjs
+        working-directory: stable
+      - run: node tests/community/browser.cjs
+        working-directory: stable
+      - name: Retain test reports only; exclude application and ZIP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: community-audit-reports
+          path: |
+            stable/reports/community/
+            stable/reports/v100/engine-promotion.json
+            stable/dist/community/build-receipt.json
+          if-no-files-found: error
+          retention-days: 30
+  publication-rights:
+    name: Publication rights gate (required)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/community/publication-gate.cjs

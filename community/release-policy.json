@@ -1,0 +1,21 @@
+{
+  "product": "Chloha Damage Lab",
+  "edition": "Community Edition",
+  "version": "1.0.0",
+  "channel": "stable",
+  "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
+  "baselineTag": "v1.0.0",
+  "baselineArchiveSHA256": "dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6",
+  "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
+  "currentProductUrl": "https://kurohanolu.github.io/singularity/",
+  "releaseTag": "chloha-damage-lab-v1.0.0-community",
+  "publicationAuthorizedConditionally": true,
+  "rightsStatus": "unresolved",
+  "publicationStatus": "blocked",
+  "blockers": [
+    "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
+    "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
+  ],
+  "exclusions": ["Pokemon artwork", "Singularity/Tiara logo assets", "private feedback backend and production endpoint", "external fonts", "development logs and credentials"],
+  "issue": "https://github.com/Kurohanolu/chloha-damage-lab/issues/73"
+}

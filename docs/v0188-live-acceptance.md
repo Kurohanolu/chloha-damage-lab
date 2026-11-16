@@ -1,9 +1,0 @@
-# v0.188 initial live acceptance
-
-The owner-approved source `aaba89a4d45191e45df351adbbd2227fa36ce30a` (tree `067bcf07cff83d35044e1af2d358311f3c448ac0`) was deployed successfully by [publishing run43679976219](https://github.com/Kurohanolu/singularity/actions/runs/43679976219), with target workflow commit `b30c0f1863f3262574cf5365721be87c42ffa3e9`. Build logs confirm exact SOURCE_SHA, clean source and every required source regression gate before deployment.
-
-At2026-11-15 14:14 JST the canonical `node --use-env-proxy scripts/v0187-live-migration-check.cjs --accept-new-target` returned ready=true:40required public files and36exact browser asset URLs matched approved source bytes, with no production mutation. Production feedback readiness10/10 also passed. The actual receipt is [initial-live-acceptance.json](evidence/v0188-initial-live-acceptance.json).
-
-A separate actual public Cloud Chrome interaction verified title v0.188 Pre-Release1. Setting attacker points20 and reloading in English retained20, damage122–146, the16rolls, and Image of Garchomp. All9languages were then selected and reloaded through normal controls: points and rolls remained identical and portrait alt followed each language. The DOM observations are recorded in [initial-live-browser.json](evidence/v0188-initial-live-browser.json). This is a desktop browser observation, not a physical phone test. No feedback was submitted.
-
-This evidence authorizes `liveTargetVerified=true` after genuine first acceptance. It is not a claim that the later metadata commit has already been deployed: that commit must pass its own exact-SHA CI, be redeployed, and satisfy the full dual-site/publication checker before merge and release completion. Runtime files remain bound to independently reviewed64adc9e. Final source, deployment, main and release evidence is recorded in PR #66.
