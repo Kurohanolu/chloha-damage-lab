@@ -1,0 +1,4532 @@
+{
+  "mode": "public Chromium mobile emulation",
+  "realDevice": false,
+  "sourceCommit": "a3a96817aa536faf21a451837a9e1d18c271e764",
+  "releaseTag": "v1.1.0-pre.8",
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    412,
+    430,
+    768
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "cycles": [
+    [
+      "ja",
+      "es-LA",
+      "ja"
+    ],
+    [
+      "es-LA",
+      "en",
+      "es-LA"
+    ],
+    [
+      "es",
+      "es-LA",
+      "es"
+    ]
+  ],
+  "cases": [
+    {
+      "width": 320,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "de",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "es",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "it",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 320,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 302,
+          "height": 87,
+          "right": 311,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 68.078125,
+          "height": 54,
+          "right": 77.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 85.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 85.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 175.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 183.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 311,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "en",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "de",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "es",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "it",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 360,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "header": {
+          "x": 9,
+          "y": 0,
+          "width": 342,
+          "height": 87,
+          "right": 351,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 9,
+          "y": 16,
+          "width": 108.078125,
+          "height": 54,
+          "right": 117.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 125.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 125.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 215.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 223.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 351,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "en",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "de",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "es",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "it",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 375,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 351,
+          "height": 87,
+          "right": 363,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 117.078125,
+          "height": 54,
+          "right": 129.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 137.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 137.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 227.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 235.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 363,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "de",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "it",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 390,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 366,
+          "height": 87,
+          "right": 378,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 132.078125,
+          "height": 54,
+          "right": 144.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 152.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 152.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 242.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 250.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 378,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "en",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "de",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "es",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "it",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 412,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 412,
+        "scrollWidth": 412,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 388,
+          "height": 87,
+          "right": 400,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 154.078125,
+          "height": 54,
+          "right": 166.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 174.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 174.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 264.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 272.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 400,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "en",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "de",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "es",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "it",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 430,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 430,
+        "scrollWidth": 430,
+        "header": {
+          "x": 12,
+          "y": 0,
+          "width": 406,
+          "height": 87,
+          "right": 418,
+          "bottom": 87,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 12,
+          "y": 16,
+          "width": 172.078125,
+          "height": 54,
+          "right": 184.078125,
+          "bottom": 70,
+          "row": "1",
+          "column": "1"
+        },
+        "control": {
+          "x": 192.078125,
+          "y": 10,
+          "width": 90,
+          "height": 66,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "1",
+          "column": "2"
+        },
+        "select": {
+          "x": 192.078125,
+          "y": 32,
+          "width": 90,
+          "height": 44,
+          "right": 282.078125,
+          "bottom": 76,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 290.078125,
+          "y": 34.203125,
+          "width": 127.921875,
+          "height": 17.59375,
+          "right": 418,
+          "bottom": 51.796875,
+          "row": "1",
+          "column": "3"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "ja",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+        "108〜128 ダメージ",
+        "最大HPの 61.7〜73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "en",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+        "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+        "108–128 damage",
+        "Of max HP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "fr",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Sélection : Séisme (Sol / 100) [Estimation non vérifiée sur console]",
+        "Les dégâts et l’ordre des arrondis n’ont pas été vérifiés sur Pokémon Champions.Capacité sélectionnée “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Son apprentissage, ses effets, sa puissance variable et sa précision ne sont pas vérifiés. Les résultats restent provisoires jusqu’à comparaison sur console.Choisir Aucun / Non appliqué ne garantit pas l’absence d’effet de talent.Les modificateurs combinés des murs, du soutien allié et des attaques de zone ont passé les tests internes, mais pas la vérification sur console.",
+        "108–128 dégâts",
+        "Des PV max. : 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "de",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Ausgewählt: Erdbeben (Boden / 100) [Schätzung; nicht auf Hardware geprüft]",
+        "Schadenswerte und Rundungsreihenfolge wurden nicht auf Pokémon Champions geprüft.Ausgewählte Attacke “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Erlernbarkeit, Effekte, variable Stärke und Genauigkeit sind nicht geprüft. Ergebnisse bleiben bis zum Vergleich auf echter Hardware vorläufig.Keine / Nicht angewendet garantiert nicht, dass kein Fähigkeitseffekt vorliegt.Kombinierte Effekte von Schutzschirmen, Partnerhilfe und Flächenattacken bestanden interne Tests, sind aber nicht auf Hardware geprüft.",
+        "108–128 Schaden",
+        "Von max. KP: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "es",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "it",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Selezionato: Terremoto (Terra / 100) [Stima non verificata su console]",
+        "I danni e l’ordine degli arrotondamenti non sono stati verificati su Pokémon Champions.Mossa selezionata “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：Apprendimento, effetti, potenza variabile e precisione non sono verificati. I risultati sono provvisori fino al confronto su console.Selezionare Nessuna / Non applicata non garantisce l’assenza di effetti dell’abilità.I modificatori combinati di schermi, supporto alleato e mosse ad area hanno superato i test interni, ma non la verifica su console.",
+        "108–128 danni",
+        "Dei PS massimi: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "ko",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "선택: 지진 (땅 / 100) [추정값 · 실기기 미검증]",
+        "데미지 수치와 반올림 순서는 Pokémon Champions 실기에서 검증되지 않았습니다.선택한 기술 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：습득 여부, 고유 효과, 위력 변화 및 명중률은 검증되지 않았습니다. 실기기와 비교하기 전까지 결과를 잠정값으로 취급하세요.특성을 없음 / 미적용으로 설정해도 특성 효과가 없다고 보장할 수 없습니다.벽, 아군 지원, 전체 공격 보정 조합은 내부 테스트를 통과했지만 실기 검증은 완료되지 않았습니다.",
+        "108–128 데미지",
+        "최대 HP 대비: 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "zh-Hans",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "已选择：地震 (地面 / 100) [估算值，未经实机验证]",
+        "伤害数值和取整顺序尚未通过Pokémon Champions实机验证。所选招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。特性设为无／不适用，不代表一定不存在特性效果。墙壁、队友支援及范围招式的组合修正已通过内部测试，但尚未实机验证。",
+        "108–128 伤害",
+        "占最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "zh-Hant",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "已選擇：地震 (地面 / 100) [估算值，未經實機驗證]",
+        "傷害數值與取整順序尚未透過Pokémon Champions實機驗證。所選招式 “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。特性設為無／不適用，不代表一定不存在特性效果。牆壁、隊友支援及範圍招式的組合修正已通過內部測試，但尚未實機驗證。",
+        "108–128 傷害",
+        "佔最大HP： 61.7–73.1%"
+      ]
+    },
+    {
+      "width": 768,
+      "locale": "es-LA",
+      "geometry": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 720,
+          "height": 101,
+          "right": 744,
+          "bottom": 101,
+          "row": "auto",
+          "column": "auto"
+        },
+        "brand": {
+          "x": 24,
+          "y": 10,
+          "width": 458.453125,
+          "height": 80,
+          "right": 482.453125,
+          "bottom": 90,
+          "row": "auto",
+          "column": "auto"
+        },
+        "control": {
+          "x": 498.453125,
+          "y": 15.40625,
+          "width": 90,
+          "height": 69.1875,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "select": {
+          "x": 498.453125,
+          "y": 40.59375,
+          "width": 90,
+          "height": 44,
+          "right": 588.453125,
+          "bottom": 84.59375,
+          "row": "auto",
+          "column": "auto"
+        },
+        "version": {
+          "x": 604.453125,
+          "y": 40.40625,
+          "width": 139.546875,
+          "height": 19.1875,
+          "right": 744,
+          "bottom": 59.59375,
+          "row": "auto",
+          "column": "auto"
+        }
+      },
+      "texts": [
+        "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+        "108–128 de daño",
+        "De los PS máximos: 61.7–73.1%"
+      ]
+    }
+  ],
+  "reloads": 7,
+  "requests": 546,
+  "productionMutations": 0,
+  "url": "https://kurohanolu.github.io/singularity/",
+  "passed": true,
+  "observedAt": "2026-11-16T15:02:22.746Z"
+}
