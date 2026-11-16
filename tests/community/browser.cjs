@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),http=require('node:http');
 const {chromium}=require('playwright');
+const {get}=require('./http.cjs');
 const root=path.resolve(__dirname,'../..'),out=path.join(root,'dist/community');
 const liveUrl=process.env.COMMUNITY_LIVE_URL||'';
 if(liveUrl)assert.equal(liveUrl,'https://kurohanolu.github.io/chloha-damage-lab/');
@@ -73,9 +74,9 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
     report.viewportChecks.push({mode,width,status:'passed'});
    }
    const current=page.locator('.community-links a[href="https://kurohanolu.github.io/singularity/"]');assert.equal(await current.getAttribute('target'),'_blank');
-   for(const link of ['README.html','TERMS.html']){const res=await context.request.get(base+link);assert.equal(res.status(),200);assert.ok((await res.text()).includes('AS IS'));}
+   for(const link of ['README.html','TERMS.html']){const res=await get(context.request,base+link,report);assert.equal(res.status(),200);assert.ok((await res.text()).includes('AS IS'));}
    for(const uri of ['Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','Chloha-Damage-Lab-v1.0.0-Community-Edition.zip.sha256','private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','../private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip']){
-    const res=await context.request.get(base+uri);assert.equal(res.status(),404,'No archive exposed through web root: '+mode+' '+uri);report.archive404Checks++;
+    const res=await get(context.request,base+uri,report);assert.equal(res.status(),404,'No archive exposed through web root: '+mode+' '+uri);report.archive404Checks++;
    }
    assert.deepEqual(errors,[]);await context.close();
   }

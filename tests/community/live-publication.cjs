@@ -5,6 +5,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const {chromium} = require('playwright');
+const {get} = require('./http.cjs');
 const root = path.resolve(__dirname, '../..');
 const site = path.join(root, 'dist/community/site');
 const base = 'https://kurohanolu.github.io/chloha-damage-lab/';
@@ -48,7 +49,7 @@ const files = dir => fs.readdirSync(dir, {withFileTypes:true}).flatMap(e =>
       await Promise.all(paths.slice(i,i+6).map(async local => {
         const rel = path.relative(site,local).split(path.sep).join('/');
         const expected = hash(fs.readFileSync(local));
-        const response = await context.request.get(base+rel+'?community-sha='+expected,{timeout:60000});
+        const response = await get(context.request,base+rel+'?community-sha='+expected,report);
         assert.equal(response.status(),200,'Published file: '+rel);
         assert.equal(hash(await response.body()),expected,'Exact published bytes: '+rel);
         report.files.push({path:rel,sha256:expected,status:200});
@@ -57,7 +58,7 @@ const files = dir => fs.readdirSync(dir, {withFileTypes:true}).flatMap(e =>
     report.files.sort((a,b)=>a.path.localeCompare(b.path));
     report.webFilesEqualRestoredPackage=true;
     for(const [rel,expected] of Object.entries(before)) {
-      const response = await context.request.get(current+rel,{timeout:60000});
+      const response = await get(context.request,current+rel,report);
       assert.equal(response.status(),200,'Current Singularity accessible');
       assert.equal(hash(await response.body()),expected,'Singularity bytes unchanged by legacy deployment: '+rel);
     }

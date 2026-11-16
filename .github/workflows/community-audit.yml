@@ -58,6 +58,8 @@ jobs:
           node dist/community/validation/tests/showdown-compare.mjs
           node dist/community/validation/tests/showdown-differential.mjs
         working-directory: stable
+      - run: node tests/community/http.cjs
+        working-directory: stable
       - run: node tests/community/browser.cjs
         working-directory: stable
       # Run these after deployment on the verification branch at the same tested commit.
@@ -75,7 +77,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: community-audit-reports
+          name: community-audit-reports-attempt-${{ github.run_attempt }}
           path: |
             stable/reports/community/
             stable/reports/v100/engine-promotion.json
