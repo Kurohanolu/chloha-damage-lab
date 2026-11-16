@@ -28,7 +28,7 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
    await page.goto(origin+'/'+mode+'/');await ready(page);
    assert.equal(await page.title(),'Chloha Damage Lab — Community Edition v1.0.0 Stable');
    assert.deepEqual(await page.locator('#chloha-locale option').evaluateAll(es=>es.map(e=>e.value)),locales);
-   assert.equal(await page.locator('h1').textContent(),'Chloha Damage Lab');
+   assert.equal(await page.locator('#app h1').textContent(),'Chloha Damage Lab');
    const baseline=await snapshot(page);assert.equal(baseline.r.rolls.length,16);
    if(expected)assert.deepEqual(baseline,expected,'Restored ZIP initial input/results equal web tree');else expected=baseline;
    for(let start=0;start<locales.length;start++){
