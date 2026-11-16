@@ -1,0 +1,209 @@
+{
+  "scope": "v1.1.0 candidate acceptance",
+  "commit": "788534afe73adb97928298f53baf886254dbbe4c",
+  "tree": "7ad2d65d7b56f48f2820172a5cccff43557d6237",
+  "uncommittedPreview": false,
+  "tests": [
+    {
+      "file": "v110-artifact-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 965
+    },
+    {
+      "file": "v110-community-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 18119
+    },
+    {
+      "file": "v110-community-pinned-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1621
+    },
+    {
+      "file": "v110-community-revision-lifecycle.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 820
+    },
+    {
+      "file": "v110-dynamic-ui.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 922
+    },
+    {
+      "file": "v110-engine-equivalence.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 742
+    },
+    {
+      "file": "v110-feedback-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 54800
+    },
+    {
+      "file": "v110-feedback-pause-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1056
+    },
+    {
+      "file": "v110-feedback-readiness.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 45
+    },
+    {
+      "file": "v110-followup-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 289
+    },
+    {
+      "file": "v110-fourth-publication-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 149938
+    },
+    {
+      "file": "v110-fourth-publication-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 178
+    },
+    {
+      "file": "v110-header-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 18274
+    },
+    {
+      "file": "v110-ja-return-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 4884
+    },
+    {
+      "file": "v110-locale-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 56
+    },
+    {
+      "file": "v110-owner-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 235
+    },
+    {
+      "file": "v110-owner-provisional-items.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 62
+    },
+    {
+      "file": "v110-pre2-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1249
+    },
+    {
+      "file": "v110-pre3-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1301
+    },
+    {
+      "file": "v110-pre4-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1307
+    },
+    {
+      "file": "v110-pre5-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1316
+    },
+    {
+      "file": "v110-pre6-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1313
+    },
+    {
+      "file": "v110-regional-search-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 15292
+    },
+    {
+      "file": "v110-release-identity.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 779
+    },
+    {
+      "file": "v110-result-source-roundtrip.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 93
+    },
+    {
+      "file": "v110-second-capture-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 15927
+    },
+    {
+      "file": "v110-second-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 438
+    },
+    {
+      "file": "v110-source-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 41
+    },
+    {
+      "file": "v110-ten-locale-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 21818
+    },
+    {
+      "file": "v110-third-capture-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 27698
+    },
+    {
+      "file": "v110-third-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 324
+    },
+    {
+      "file": "v110-ui-inventory.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 754
+    },
+    {
+      "file": "v110-ui-mobile.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 86976
+    }
+  ],
+  "startedAt": "2026-11-16T11:30:53.973Z",
+  "passed": true,
+  "finishedAt": "2026-11-16T11:38:03.606Z"
+}
