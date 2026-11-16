@@ -26,8 +26,12 @@ assert.equal(baselineForRelease({tag:'v1.1.0-pre.5'}),pre4Commit,'Pre.5 compares
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.6'}),pre5Commit,'Pre.6 compares against immutable public pre.5');
 const current=pending(require('../release.json'));
 assert.equal(current.tag,'v1.1.0-pre.6');assert.equal(current.preRelease,6);
+// Preserve the original pre.6 vs pre.5 identity contract; the same-version
+// Community policy lifecycle is independently exercised in its dedicated test.
+const originalPre6=current.migration.legacyPolicy?pending(require('../scripts/helpers/v110-community-public-base.cjs').manifest()):current;
+assert.deepEqual(releaseIdentity(current),releaseIdentity(originalPre6),'Policy-only revision preserves the exact current release identity');
 // Historical and current candidates retain separate, exact public baselines.
-for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[current,pre5,6]]){
+for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[originalPre6,pre5,6]]){
  const observed=verifyObservation(candidate,publicBase,publicBase.name);
  assert.deepEqual(verifyObservation(candidate,publicBase,publicBase.name,observed),observed,'Repeated observations cannot change release baseline');
  for(const altered of [{...publicBase,notes:'docs/tampered.md'},{...publicBase,tag:candidate.tag},candidate])assert.throws(()=>verifyObservation(candidate,altered,altered.name),'Changed or unpublished metadata is not a public baseline');

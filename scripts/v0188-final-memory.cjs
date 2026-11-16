@@ -295,7 +295,7 @@ async function runContext(browser,lab,profile,version,sample){
 (async()=>{
  let browser,lab;
  try{
-  save();lab=await startLab({compare:true});
+  save();lab=await startLab({compare:true,comparisonRef:BASELINE});
   assert.equal(lab.baseline,BASELINE,'memory audit requires the exact published baseline for this release line');
   browser=await launchBrowser();
   evidence.environment.browserVersion=browser.version();
