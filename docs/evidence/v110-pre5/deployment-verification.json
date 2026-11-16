@@ -1,0 +1,80 @@
+{
+  "sourceCommit": "0bc1eee7634fe6cb942910e4b59d7b5a877bf76d",
+  "sourceTree": "274031c667bc74348487d2e418c1bb21b5566aa3",
+  "deploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43831486994",
+  "deploymentRequestCommit": "142d78411698a07ef7ddc37e765e865d759567c0",
+  "publicBrowserArtifact": 14208183632,
+  "status": "passed",
+  "files": 79,
+  "assetRequests": 228,
+  "publicBrowserCases": 70,
+  "publicBrowserReloads": 7,
+  "productionMutations": 0,
+  "approvalSourceWorkflows": [
+    {
+      "id": 43830164072,
+      "name": "UI & damage regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830164180,
+      "name": "v0.188 Quality Remediation",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163701,
+      "name": "Publish verified release",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163618,
+      "name": "Showdown differential tests",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163681,
+      "name": "Showdown differential audit",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163592,
+      "name": "GitHub Pages live smoke",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163804,
+      "name": "v0.184 engine baseline",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163608,
+      "name": "Damage Lab CI and status ledger",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163744,
+      "name": "v0.185 anonymous feedback",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163635,
+      "name": "v1.0.0 Stable Promotion",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163642,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163634,
+      "name": "v0.187 Singularity Migration",
+      "conclusion": "success"
+    },
+    {
+      "id": 43830163902,
+      "name": "v1.1.0 ES-LA Localization",
+      "conclusion": "success"
+    }
+  ]
+}

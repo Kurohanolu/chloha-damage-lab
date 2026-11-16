@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "batch": 3,
+  "locale": "es-LA",
+  "browserLocale": "es-419",
+  "targetGame": "Pokémon Champions",
+  "providedAt": "2026-11-16",
+  "checkedAt": "2026-11-16",
+  "dateTimezone": "Asia/Tokyo",
+  "baseline": {
+    "commit": "61d87e82995bc60d4564aaf57a52dfc1fd859e4c",
+    "tree": "213c12af29c002e9344b018e6be69e568a251dff",
+    "sources": 60,
+    "sourceRecords": 1183,
+    "coverage": {
+      "pokemon": {
+        "total": 373,
+        "official": 35,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 338,
+        "officialChampions": 28,
+        "displayAvailable": 373,
+        "individuallyAttested": 35,
+        "individuallyAttestedPercent": 9.38,
+        "officialPercent": 9.38,
+        "officialChampionsPercent": 7.51
+      },
+      "moves": {
+        "total": 335,
+        "official": 46,
+        "verified-secondary": 103,
+        "provisional": 0,
+        "unverified": 186,
+        "officialChampions": 45,
+        "displayAvailable": 335,
+        "individuallyAttested": 149,
+        "individuallyAttestedPercent": 44.48,
+        "officialPercent": 13.73,
+        "officialChampionsPercent": 13.43
+      },
+      "abilities": {
+        "total": 245,
+        "official": 22,
+        "verified-secondary": 41,
+        "provisional": 0,
+        "unverified": 182,
+        "officialChampions": 22,
+        "displayAvailable": 245,
+        "individuallyAttested": 63,
+        "individuallyAttestedPercent": 25.71,
+        "officialPercent": 8.98,
+        "officialChampionsPercent": 8.98
+      },
+      "items": {
+        "total": 41,
+        "official": 19,
+        "verified-secondary": 19,
+        "provisional": 0,
+        "unverified": 3,
+        "officialChampions": 19,
+        "displayAvailable": 41,
+        "individuallyAttested": 38,
+        "individuallyAttestedPercent": 92.68,
+        "officialPercent": 46.34,
+        "officialChampionsPercent": 46.34
+      },
+      "types": {
+        "total": 18,
+        "official": 18,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 0,
+        "officialChampions": 17,
+        "displayAvailable": 18,
+        "individuallyAttested": 18,
+        "individuallyAttestedPercent": 100,
+        "officialPercent": 100,
+        "officialChampionsPercent": 94.44
+      },
+      "forms": {
+        "total": 134,
+        "official": 23,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 111,
+        "officialChampions": 16,
+        "displayAvailable": 134,
+        "individuallyAttested": 23,
+        "individuallyAttestedPercent": 17.16,
+        "officialPercent": 17.16,
+        "officialChampionsPercent": 11.94
+      },
+      "natures": {
+        "total": 11,
+        "official": 5,
+        "verified-secondary": 1,
+        "provisional": 0,
+        "unverified": 5,
+        "officialChampions": 5,
+        "displayAvailable": 11,
+        "individuallyAttested": 6,
+        "individuallyAttestedPercent": 54.55,
+        "officialPercent": 45.45,
+        "officialChampionsPercent": 45.45
+      },
+      "stats": {
+        "total": 6,
+        "official": 6,
+        "verified-secondary": 0,
+        "provisional": 0,
+        "unverified": 0,
+        "officialChampions": 6,
+        "displayAvailable": 6,
+        "individuallyAttested": 6,
+        "individuallyAttestedPercent": 100,
+        "officialPercent": 100,
+        "officialChampionsPercent": 100
+      },
+      "ui": {
+        "total": 1011,
+        "official": 0,
+        "verified-secondary": 0,
+        "provisional": 1011,
+        "unverified": 0,
+        "officialChampions": 0,
+        "displayAvailable": 1011,
+        "individuallyAttested": 0,
+        "individuallyAttestedPercent": 0,
+        "officialPercent": 0,
+        "officialChampionsPercent": 0
+      },
+      "warnings": {
+        "total": 169,
+        "official": 0,
+        "verified-secondary": 0,
+        "provisional": 169,
+        "unverified": 0,
+        "officialChampions": 0,
+        "displayAvailable": 169,
+        "individuallyAttested": 0,
+        "individuallyAttestedPercent": 0,
+        "officialPercent": 0,
+        "officialChampionsPercent": 0
+      }
+    }
+  },
+  "captures": [
+    {
+      "id": "32751",
+      "filename": "32751.jpg",
+      "sha256": "03d8f20e563eefb83e38e9daf19a1d29463d1de20a478d8ee6cbbc8572d9b112",
+      "sourceId": "owner-champions-capture-32751",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Lucario Z",
+      "canonicalEnglish": "Aura Guard",
+      "visibleName": "Aura Protectora",
+      "visibleEffectParaphrase": "Halves incoming damage from contact moves (50%).",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32753",
+      "filename": "32753.jpg",
+      "sha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "sourceId": "owner-champions-capture-32753",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Pyroar",
+      "canonicalEnglish": "Fire Mane",
+      "visibleName": "Melena de Fuego",
+      "visibleEffectParaphrase": "Increases the power of the Pokémon's Fire-type moves by 50%.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32755",
+      "filename": "32755.jpg",
+      "sha256": "5abd38196e87d1b400dd43e04374c4f4a63ab4b7ff6a856bcf5ff91cdbdee84c",
+      "sourceId": "owner-champions-capture-32755",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Meganium",
+      "canonicalEnglish": "Mega Sol",
+      "visibleName": "Megasolar",
+      "visibleEffectParaphrase": "Allows moves to function as if sunny regardless of actual weather.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32757",
+      "filename": "32757.jpg",
+      "sha256": "51d88f4065d251c6eda44f3af4f9ced86e10a0acebaf7fbea95cdd65c49686ca",
+      "sourceId": "owner-champions-capture-32757",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Eelektross",
+      "canonicalEnglish": "Eelevate",
+      "visibleName": "Impulso Anguila",
+      "visibleEffectParaphrase": "Levitation-like Ground/hazard immunity and +1 highest stat after KO with an attack.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32759",
+      "filename": "32759.jpg",
+      "sha256": "2b6d2d2066016c8b763ae323aa6eeb3d745514cb3dce3050fdec18812295ed60",
+      "sourceId": "owner-champions-capture-32759",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Feraligatr",
+      "canonicalEnglish": "Dragonize",
+      "visibleName": "Piel Dracónica",
+      "visibleEffectParaphrase": "Converts own Normal-type moves to Dragon type, boosts power by 20%.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32761",
+      "filename": "32761.jpg",
+      "sha256": "942ff8605d6d8efdc9468e48bce8bee4e97d44fa3302442323b4925806d3ec71",
+      "sourceId": "owner-champions-capture-32761",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Excadrill",
+      "canonicalEnglish": "Piercing Drill",
+      "visibleName": "Turbotaladro",
+      "visibleEffectParaphrase": "Contact moves bypass protecting targets at 25% original damage; other effects occur normally.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    },
+    {
+      "id": "32763",
+      "filename": "32763.jpg",
+      "sha256": "45d0a209dc3645c8b3796d179f23b3f5d9866c6ffae6fb93329dcb9db10bfcd0",
+      "sourceId": "owner-champions-capture-32763",
+      "privateImage": true,
+      "imagePublished": false,
+      "form": "Mega Scovillain",
+      "canonicalEnglish": "Spicy Spray",
+      "visibleName": "Salpicante",
+      "visibleEffectParaphrase": "Burns attacker if Pokémon takes damage from a move.",
+      "mechanicsVerified": false,
+      "capturedAt": null
+    }
+  ],
+  "observations": [
+    {
+      "id": "owner-champions-batch3-abilities-aura-guard",
+      "captureId": "32751",
+      "sourceId": "owner-champions-capture-32751",
+      "sourceRecordId": "owner-champions-batch3-abilities-aura-guard",
+      "category": "abilities",
+      "esLA": "Aura Protectora",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Aura Guard",
+        "key": "はどうのぼうご",
+        "canonicalIds": [
+          "auraGuard"
+        ],
+        "registered": true,
+        "calculationSupported": true
+      },
+      "before": {
+        "status": "verified-secondary",
+        "officialChampions": false,
+        "name": "Aura Protectora",
+        "sourceIds": [
+          "pokexperto-champions-habilidades-2026-11-15",
+          "pokexperto-champions-abilities-319-detail"
+        ]
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-fire-mane",
+      "captureId": "32753",
+      "sourceId": "owner-champions-capture-32753",
+      "sourceRecordId": "owner-champions-batch3-abilities-fire-mane",
+      "category": "abilities",
+      "esLA": "Melena de Fuego",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Fire Mane",
+        "key": "ほのおのたてがみ",
+        "canonicalIds": [
+          "fireMane"
+        ],
+        "registered": true,
+        "calculationSupported": true
+      },
+      "before": {
+        "status": "verified-secondary",
+        "officialChampions": false,
+        "name": "Melena de Fuego",
+        "sourceIds": [
+          "pokexperto-champions-habilidades-2026-11-15",
+          "pokexperto-champions-abilities-316-detail"
+        ]
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-mega-sol",
+      "captureId": "32755",
+      "sourceId": "owner-champions-capture-32755",
+      "sourceRecordId": "owner-champions-batch3-abilities-mega-sol",
+      "category": "abilities",
+      "esLA": "Megasolar",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Mega Sol",
+        "key": "メガソーラー",
+        "canonicalIds": [
+          "unsupported:メガソーラー"
+        ],
+        "registered": true,
+        "calculationSupported": false
+      },
+      "before": {
+        "status": "official",
+        "officialChampions": true,
+        "name": "Megasolar",
+        "sourceIds": [
+          "champions-press-march"
+        ]
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-eelevate",
+      "captureId": "32757",
+      "sourceId": "owner-champions-capture-32757",
+      "sourceRecordId": "owner-champions-batch3-abilities-eelevate",
+      "category": "abilities",
+      "esLA": "Impulso Anguila",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Eelevate",
+        "key": "うなぎのぼり",
+        "canonicalIds": [
+          "unsupported:うなぎのぼり"
+        ],
+        "registered": true,
+        "calculationSupported": false
+      },
+      "before": {
+        "status": "verified-secondary",
+        "officialChampions": false,
+        "name": "Impulso Anguila",
+        "sourceIds": [
+          "pokexperto-champions-habilidades-2026-11-15",
+          "pokexperto-champions-abilities-313-detail"
+        ]
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-dragonize",
+      "captureId": "32759",
+      "sourceId": "owner-champions-capture-32759",
+      "sourceRecordId": "owner-champions-batch3-abilities-dragonize",
+      "category": "abilities",
+      "esLA": "Piel Dracónica",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Dragonize",
+        "key": "ドラゴンスキン",
+        "canonicalIds": [
+          "dragonize"
+        ],
+        "registered": true,
+        "calculationSupported": true
+      },
+      "before": {
+        "status": "official",
+        "officialChampions": true,
+        "name": "Piel Dracónica",
+        "sourceIds": [
+          "champions-press-march"
+        ]
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-piercing-drill",
+      "captureId": "32761",
+      "sourceId": "owner-champions-capture-32761",
+      "sourceRecordId": "owner-champions-batch3-abilities-piercing-drill",
+      "category": "abilities",
+      "esLA": "Turbotaladro",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Piercing Drill",
+        "key": "かんつうドリル",
+        "canonicalIds": [
+          "unsupported:かんつうドリル"
+        ],
+        "registered": true,
+        "calculationSupported": false
+      },
+      "before": {
+        "status": "unverified",
+        "officialChampions": false,
+        "name": "Turbotaladro",
+        "sourceIds": []
+      },
+      "decision": "accepted-system-term"
+    },
+    {
+      "id": "owner-champions-batch3-abilities-spicy-spray",
+      "captureId": "32763",
+      "sourceId": "owner-champions-capture-32763",
+      "sourceRecordId": "owner-champions-batch3-abilities-spicy-spray",
+      "category": "abilities",
+      "esLA": "Salpicante",
+      "location": "ability-detail.name",
+      "canonicalAnchor": {
+        "en": "Spicy Spray",
+        "key": "とびだすハバネロ",
+        "canonicalIds": [
+          "unsupported:とびだすハバネロ"
+        ],
+        "registered": true,
+        "calculationSupported": false
+      },
+      "before": {
+        "status": "unverified",
+        "officialChampions": false,
+        "name": "Salpicante",
+        "sourceIds": []
+      },
+      "decision": "accepted-system-term"
+    }
+  ],
+  "limitations": [
+    "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+    "The original seven-capture ledger was inherited; a separate image audit verified private originals and corrected the truncated 32757 hash.",
+    "Name evidence does not authorize mechanics changes. Existing unsupported: identities are roster-derived display identities, not calculation support."
+  ]
+}

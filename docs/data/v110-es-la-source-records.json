@@ -1013,6 +1013,188 @@
         "The capture date, game build and platform were not independently established.",
         "Only visible wording is attested; move mechanics, damage, game availability and software release approval are not verified by these images."
       ]
+    },
+    {
+      "id": "owner-champions-capture-32751",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32751 — Aura Guard",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32751.jpg",
+      "rawSha256": "03d8f20e563eefb83e38e9daf19a1d29463d1de20a478d8ee6cbbc8572d9b112",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32753",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32753 — Fire Mane",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32753.jpg",
+      "rawSha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32755",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32755 — Mega Sol",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32755.jpg",
+      "rawSha256": "5abd38196e87d1b400dd43e04374c4f4a63ab4b7ff6a856bcf5ff91cdbdee84c",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32757",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32757 — Eelevate",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32757.jpg",
+      "rawSha256": "51d88f4065d251c6eda44f3af4f9ced86e10a0acebaf7fbea95cdd65c49686ca",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32759",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32759 — Dragonize",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32759.jpg",
+      "rawSha256": "2b6d2d2066016c8b763ae323aa6eeb3d745514cb3dce3050fdec18812295ed60",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32761",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32761 — Piercing Drill",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32761.jpg",
+      "rawSha256": "942ff8605d6d8efdc9468e48bce8bee4e97d44fa3302442323b4925806d3ec71",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-32763",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/1dd5ea6e6d953aefb17e0ae1d4854071bac8352c/docs/v110-es-la-owner-abilities-batch3.md",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 32763 — Spicy Spray",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-16",
+      "checkedAt": "2026-11-16",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "32763.jpg",
+      "rawSha256": "45d0a209dc3645c8b3796d179f23b3f5d9866c6ffae6fb93329dcb9db10bfcd0",
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner attestation supported by visible regional vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
+        "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
+      ]
     }
   ],
   "records": [
@@ -26666,6 +26848,202 @@
       "sourceCatalogMatches": [],
       "captureObservationId": "owner-champions-batch2-pokemon-mega-aggron",
       "notes": "Visible system wording with verified canonical identity. This is name evidence, not engine support or a mechanics test."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-aura-guard",
+      "category": "abilities",
+      "canonicalEnglish": "Aura Guard",
+      "sourceEs": "",
+      "esLA": "Aura Protectora",
+      "rawObservedText": "Aura Protectora",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32751"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "はどうのぼうご",
+          "canonicalIds": [
+            "auraGuard"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-aura-guard",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-fire-mane",
+      "category": "abilities",
+      "canonicalEnglish": "Fire Mane",
+      "sourceEs": "",
+      "esLA": "Melena de Fuego",
+      "rawObservedText": "Melena de Fuego",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32753"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ほのおのたてがみ",
+          "canonicalIds": [
+            "fireMane"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-fire-mane",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-mega-sol",
+      "category": "abilities",
+      "canonicalEnglish": "Mega Sol",
+      "sourceEs": "Megasolar",
+      "esLA": "Megasolar",
+      "rawObservedText": "Megasolar",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32755"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "メガソーラー",
+          "canonicalIds": [
+            "unsupported:メガソーラー"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-mega-sol",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-eelevate",
+      "category": "abilities",
+      "canonicalEnglish": "Eelevate",
+      "sourceEs": "",
+      "esLA": "Impulso Anguila",
+      "rawObservedText": "Impulso Anguila",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32757"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "うなぎのぼり",
+          "canonicalIds": [
+            "unsupported:うなぎのぼり"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-eelevate",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-dragonize",
+      "category": "abilities",
+      "canonicalEnglish": "Dragonize",
+      "sourceEs": "Piel Dragontina",
+      "esLA": "Piel Dracónica",
+      "rawObservedText": "Piel Dracónica",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32759"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ドラゴンスキン",
+          "canonicalIds": [
+            "dragonize"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-dragonize",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-piercing-drill",
+      "category": "abilities",
+      "canonicalEnglish": "Piercing Drill",
+      "sourceEs": "Turbotaladro",
+      "esLA": "Turbotaladro",
+      "rawObservedText": "Turbotaladro",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32761"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "かんつうドリル",
+          "canonicalIds": [
+            "unsupported:かんつうドリル"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-piercing-drill",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "owner-champions-batch3-abilities-spicy-spray",
+      "category": "abilities",
+      "canonicalEnglish": "Spicy Spray",
+      "sourceEs": "Salpicante",
+      "esLA": "Salpicante",
+      "rawObservedText": "Salpicante",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-32763"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "とびだすハバネロ",
+          "canonicalIds": [
+            "unsupported:とびだすハバネロ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "captureObservationId": "owner-champions-batch3-abilities-spicy-spray",
+      "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
     }
   ],
   "observedConflicts": [

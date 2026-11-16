@@ -1,0 +1,98 @@
+{
+  "reviewedSourceCommit": "8cc201ad68452aa3e8a9877c851770c31a6ba35a",
+  "reviewedTree": "98dc4a02da425a848a03ce3b82e3a0c19d3e3a24",
+  "observedAt": "2026-11-16T08:14:41.386Z",
+  "workflows": [
+    {
+      "id": 43828124617,
+      "name": "Showdown differential audit",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124617"
+    },
+    {
+      "id": 43828124454,
+      "name": "Publish verified release",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124454"
+    },
+    {
+      "id": 43828124586,
+      "name": "GitHub Pages live smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124586"
+    },
+    {
+      "id": 43828124494,
+      "name": "Showdown differential tests",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124494"
+    },
+    {
+      "id": 43828124581,
+      "name": "v0.184 engine baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124581"
+    },
+    {
+      "id": 43828124537,
+      "name": "v0.187 Singularity Migration",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124537"
+    },
+    {
+      "id": 43828124503,
+      "name": "v0.185 anonymous feedback",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124503"
+    },
+    {
+      "id": 43828124607,
+      "name": "Damage Lab CI and status ledger",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124607"
+    },
+    {
+      "id": 43828124606,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124606"
+    },
+    {
+      "id": 43828124619,
+      "name": "UI & damage regression",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124619"
+    },
+    {
+      "id": 43828124455,
+      "name": "v1.0.0 Stable Promotion",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124455"
+    },
+    {
+      "id": 43828124723,
+      "name": "v1.1.0 ES-LA Localization",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124723"
+    },
+    {
+      "id": 43828124545,
+      "name": "v0.188 Quality Remediation",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43828124545"
+    }
+  ]
+}

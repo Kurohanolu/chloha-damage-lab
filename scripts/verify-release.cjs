@@ -13,7 +13,7 @@ for(const match of html.matchAll(/<script\b[^>]*\bsrc=["'](?:\.\/)?([^"']+)["'][
  assert.ok(!match[1].includes('://')&&fs.existsSync(asset.pathname.slice(1)),'published runtime asset must exist: '+match[1]);
  assert.equal(asset.searchParams.get('v'),release.tag.slice(1),'every runtime URL must carry the current release cache key');
  if(asset.searchParams.has('h'))assert.equal(asset.searchParams.get('h'),crypto.createHash('sha256').update(fs.readFileSync(asset.pathname.slice(1))).digest('hex').slice(0,16),'runtime content cache key must match current bytes');
- if((release.followupAudit||['v0.188-pre.2','v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4'].includes(release.tag))&&['/i18n.js','/feedback-ui-v0185.js','/damage-engine-v0184.js','/persistence-v0188.js'].includes(asset.pathname))assert.ok(asset.searchParams.has('h'),'changed follow-up assets require content cache keys');
+ if((release.followupAudit||['v0.188-pre.2','v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5'].includes(release.tag))&&['/i18n.js','/feedback-ui-v0185.js','/damage-engine-v0184.js','/persistence-v0188.js'].includes(asset.pathname))assert.ok(asset.searchParams.has('h'),'changed follow-up assets require content cache keys');
 }
 if(release.product==='Singularity'){
  assert.equal(release.developer,'Chloha Labs');

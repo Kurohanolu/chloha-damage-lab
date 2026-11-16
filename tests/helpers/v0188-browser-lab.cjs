@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,'../..');
 // older migration baseline. Removing the draft marker after owner approval must
 // not silently change the pre.2 comparison. Preserve original pre.1 history.
 const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
-const baselineForRelease=metadata=>metadata.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':metadata.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':metadata.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':metadata.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':(metadata.followupAudit||['v0.188-pre.2','v1.0.0'].includes(metadata.tag))?'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7':'7210be99c39d75b49ea8200aad91d75801eb300a';
+const baselineForRelease=metadata=>metadata.tag==='v1.1.0-pre.5'?'61d87e82995bc60d4564aaf57a52dfc1fd859e4c':metadata.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':metadata.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':metadata.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':metadata.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':(metadata.followupAudit||['v0.188-pre.2','v1.0.0'].includes(metadata.tag))?'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7':'7210be99c39d75b49ea8200aad91d75801eb300a';
 const baseline=baselineForRelease(release);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webp':'image/webp','.json':'application/json'};
 function frontend(ref){
@@ -17,8 +17,8 @@ function frontend(ref){
  const files=new Set(['index.html','release.json',...Object.values(release.branding),...[...html.toString().matchAll(/<(?:script|link|img)\b[^>]*\b(?:src|href)=["'](\.\/[^"']+)["']/g)].map(m=>m[1].split(/[?#]/)[0].slice(2))]);
  return new Map([...files].map(file=>[file,read(file)]));
 }
-async function startLab({compare=false}={}){
- const snapshots=new Map([['candidate',frontend()]]);if(compare)snapshots.set('baseline',frontend(baseline));
+async function startLab({compare=false,comparisonRef=baseline}={}){
+ const snapshots=new Map([['candidate',frontend()]]);if(compare)snapshots.set('baseline',frontend(comparisonRef));
  const server=http.createServer((req,res)=>{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
   const url=new URL(req.url,'http://127.0.0.1'),match=url.pathname.match(/^\/(candidate|baseline)\/(.*)$/),file=match&&(match[2]||'index.html'),body=match&&snapshots.get(match[1])?.get(file);
@@ -29,7 +29,7 @@ async function startLab({compare=false}={}){
   res.writeHead(200,headers);res.end(req.method==='HEAD'?undefined:body);
  });
  await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
- return {origin:'http://127.0.0.1:'+server.address().port,close:()=>new Promise(resolve=>server.close(resolve)),baseline};
+ return {origin:'http://127.0.0.1:'+server.address().port,close:()=>new Promise(resolve=>server.close(resolve)),baseline:comparisonRef};
 }
 const launchBrowser=()=>chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale);
