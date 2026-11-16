@@ -8,7 +8,7 @@ const snapshot=page=>page.evaluate(()=>JSON.parse(JSON.stringify({a:window.Chloh
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale&&!!document.querySelector('#community-information'));
 async function choose(page,query,id){await page.locator('#moveSearch').fill(query);await page.locator('#moveSuggestions [role=option]').first().click();assert.equal(await page.locator('#dbMove').inputValue(),id);}
 (async()=>{
- const report={status:'running',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,distributionNoticeChecks:0,archive404Checks:0,networkRequests:[],viewportChecks:[],publicationStatus:'blocked'};
+ const report={status:'running',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,distributionNoticeChecks:0,archive404Checks:0,networkRequests:[],viewportChecks:[],publicationStatus:'requires-exact-commit-ci'};
  const server=http.createServer((req,res)=>{
   const url=new URL(req.url,'http://127.0.0.1'),m=url.pathname.match(/^\/(web|zip)\/(.*)$/);
   if(!m||m[2].includes('..')){res.writeHead(404);res.end();return;}

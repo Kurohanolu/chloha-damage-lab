@@ -9,12 +9,9 @@
   "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
   "currentProductUrl": "https://kurohanolu.github.io/singularity/",
   "publicationAuthorizedConditionally": true,
-  "rightsStatus": "unresolved",
-  "publicationStatus": "blocked",
-  "blockers": [
-    "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
-    "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
-  ],
+  "rightsStatus": "reviewed",
+  "publicationStatus": "candidate",
+  "blockers": [],
   "exclusions": [
     "Pokemon artwork",
     "Singularity/Tiara logo assets",
@@ -23,7 +20,7 @@
     "development logs and credentials"
   ],
   "issue": "https://github.com/Kurohanolu/chloha-damage-lab/issues/73",
-  "policyRevision": "2026-11-16-community-limited",
+  "policyRevision": "2026-11-16-individual-rights-assessment",
   "distribution": {
     "mode": "community-limited",
     "recipients": [
@@ -47,30 +44,27 @@
     "publiclyAccessible": true,
     "urlIsAccessControl": false,
     "archiveDownload": false,
-    "requiresIndependentRightsClearance": true
+    "requiresIndependentRightsClearance": true,
+    "publicWebAssetsInPagesBranch": true
   },
   "rightsAssessments": {
     "publicWeb": {
-      "status": "unresolved",
+      "status": "reviewed",
       "scope": "Public transmission of HTML, JavaScript, registries and translations; public browser operation",
       "requiredEvidence": [
         "public-web-code-and-data-delivery"
       ],
-      "blockers": [
-        "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
-        "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
-      ]
+      "blockers": [],
+      "basis": "Own calculator schema and minimal factual projection; owner code authorization; retained MIT/BSD notices; excluded third-party artwork and editorial metadata"
     },
     "communityZip": {
-      "status": "unresolved",
+      "status": "reviewed",
       "scope": "Copies to recognized members, personal modification and member-only sharing of modified copies",
       "requiredEvidence": [
         "community-copy-modify-and-share"
       ],
-      "blockers": [
-        "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
-        "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
-      ]
+      "blockers": [],
+      "basis": "Same reviewed files; owner/community-only copies and modifications; existing third-party grants preserved"
     },
     "generalRedistribution": {
       "status": "prohibited-by-owner-policy",
@@ -78,7 +72,9 @@
     }
   },
   "acceptanceStatus": {
-    "publicWeb": "blocked",
-    "communityZip": "blocked"
-  }
+    "publicWeb": "requires-exact-commit-ci",
+    "communityZip": "requires-exact-commit-ci"
+  },
+  "assessmentEvidence": "docs/community/individual-rights-assessment.md",
+  "thirdPartyPermissionClaim": "No permission from GameWith, AppMedia or Pokemon rights holders is asserted. Factual and short identifying fields are evaluated separately from creative expression."
 }

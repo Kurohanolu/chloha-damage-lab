@@ -13,11 +13,20 @@ for(const f of protectedFiles)assert.deepEqual(read(f),original(f),'Protected st
 for(const f of fs.readdirSync(site).filter(f=>/^(locale-|names-|i18n)/.test(f)))assert.deepEqual(read(f),original(f),'Nine-language dictionary/runtime frozen: '+f);
 // Independently compare embedded data and all executable inline behavior. The
 // presentation template and artwork ID table are deliberately outside this set.
-for(const name of ['ChlohaPokemonDB','ChlohaMovesDB','ChlohaMovePolicy']){
- const expression=new RegExp('const '+name+' = (.*);');
- assert.equal(after.match(expression)[1],before.match(expression)[1],'Embedded registry unchanged: '+name);
+function registry(html,name){return JSON.parse(html.match(new RegExp('const '+name+' = (.*);'))[1]);}
+for(const [name,collection,fields,count] of [
+ ['ChlohaPokemonDB','pokemon',['id','name','types','baseStats','abilities','verificationStatus'],373],
+ ['ChlohaMovesDB','moves',['id','name','type','power','category','target','calculationSupported','verificationStatus','accuracy'],335]
+]){
+ const old=registry(before,name)[collection],current=registry(after,name)[collection];
+ assert.equal(current.length,count);assert.equal(old.length,count);
+ const sort=rows=>rows.map(r=>Object.fromEntries(fields.filter(k=>Object.hasOwn(r,k)).map(k=>[k,r[k]]))).sort((a,b)=>a.id.localeCompare(b.id));
+ assert.deepEqual(sort(current),sort(old),'Every functional registry value unchanged: '+name);
+ assert.ok(current.every(row=>Object.keys(row).every(k=>fields.includes(k))),'Only reviewed runtime fields: '+name);
 }
-function logic(html){return [...html.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1].replace(/app\.innerHTML=`[\s\S]*?<\/aside>`;/,'/* UI */').replace(/window\.ChlohaSpriteIds=[^\n]+/,'/* artwork */'));}
+assert.deepEqual(registry(after,'ChlohaMovePolicy'),registry(before,'ChlohaMovePolicy'),'Owner-authored mechanics policy unchanged');
+assert.deepEqual(registry(after,'ChlohaLearnsetsDB').candidateMoves,registry(before,'ChlohaLearnsetsDB').candidateMoves);
+function logic(html){return [...html.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1].replace(/app\.innerHTML=`[\s\S]*?<\/aside>`;/,'/* UI */').replace(/window\.ChlohaSpriteIds=[^\n]+/,'/* artwork */').replace(/const Chloha(?:PokemonDB|MovesDB|LearnsetsDB) = [^\n]+/g,'/* reviewed runtime projection */'));}
 assert.deepEqual(logic(after),logic(before),'Every inline calculation/model/event handler is preserved');
 assert.ok(after.includes('window.ChlohaSpriteIds={};'));
 assert.ok(!after.includes('assets/singularity/'));
@@ -29,7 +38,7 @@ for(const k of ['publicArchive','publicDownloadLink','publicApplicationRepositor
 for(const k of ['personalUse','personalModification','inCommunityModifiedSharing','aiPersonalCustomization','preserveExistingLicenses'])assert.equal(policy.distribution[k],true,'Permitted use or retained rights: '+k);
 assert.equal(policy.web.urlIsAccessControl,false);
 assert.equal(policy.web.archiveDownload,false);
-for(const scope of ['publicWeb','communityZip'])assert.equal(policy.rightsAssessments[scope].status,'unresolved');
+for(const scope of ['publicWeb','communityZip'])assert.equal(policy.rightsAssessments[scope].status,'reviewed');
 assert.equal(policy.rightsAssessments.generalRedistribution.enabled,false);
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
 assert.ok(!walk(site).some(f=>/\.zip(?:\.sha256)?$|[/\\]private[/\\]/i.test(f)),'No private package or archive checksum in public web tree');
@@ -80,5 +89,5 @@ const validation=path.join(out,'validation');fs.mkdirSync(path.join(validation,'
 for(const f of fs.readdirSync(site))if(fs.statSync(path.join(site,f)).isFile())fs.copyFileSync(path.join(site,f),path.join(validation,f));
 for(const f of ['showdown-compare.mjs','showdown-differential.mjs'])fs.writeFileSync(path.join(validation,'tests',f),original('tests/'+f));
 fs.mkdirSync(path.join(root,'reports/community'),{recursive:true});
-const report={status:'passed',baselineCommit:BASE,protectedFiles:protectedFiles.length,allInlineLogicUnchanged:true,allRegistriesUnchanged:true,nineLanguageFilesUnchanged:true,zipExactFileParity:true,baselineComparisons:comparisons,applicationSHA256:manifest.applicationSHA256,zipSHA256:hash(fs.readFileSync(path.join(privateDir,zip))),distributionMode:policy.distribution.mode,publicArchiveAbsent:true,existingLicenseNoticesRetained:true,publicWebRights:policy.rightsAssessments.publicWeb.status,communityZipRights:policy.rightsAssessments.communityZip.status,publicationStatus:'blocked'};
+const report={status:'passed',baselineCommit:BASE,protectedFiles:protectedFiles.length,allInlineLogicUnchanged:true,runtimeRegistryValuesUnchanged:true,unusedMetadataRemoved:true,nineLanguageFilesUnchanged:true,zipExactFileParity:true,baselineComparisons:comparisons,applicationSHA256:manifest.applicationSHA256,zipSHA256:hash(fs.readFileSync(path.join(privateDir,zip))),distributionMode:policy.distribution.mode,publicArchiveAbsent:true,existingLicenseNoticesRetained:true,publicWebRights:policy.rightsAssessments.publicWeb.status,communityZipRights:policy.rightsAssessments.communityZip.status,publicationStatus:'requires-exact-commit-ci'};
 fs.writeFileSync(path.join(root,'reports/community/package.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS Community package: '+JSON.stringify(report));

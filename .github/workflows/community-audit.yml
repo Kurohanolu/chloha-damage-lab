@@ -32,7 +32,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import shutil
-          for folder in ['community', 'scripts/community', 'tests/community']:
+          for folder in ['community', 'scripts/community', 'tests/community', 'docs/community']:
               shutil.copytree(Path('tooling')/folder, Path('stable')/folder, dirs_exist_ok=True)
           PY
       - run: npm install --no-package-lock --no-audit --no-fund
@@ -50,6 +50,8 @@ jobs:
       - run: python3 scripts/community/build.py --review-only
         working-directory: stable
       - run: node tests/community/package.cjs
+        working-directory: stable
+      - run: node tests/community/rights-gate.cjs
         working-directory: stable
       - name: Unmodified Showdown tests against the actual candidate app
         run: |
@@ -74,16 +76,44 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: tooling
+      - uses: actions/checkout@v4
+        with:
+          ref: 0b270c1452505268364659edd402209b00b28673
+          path: stable
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/community/publication-gate.cjs --scope publicWeb
+      - name: Build reviewed files and validate Web-specific evidence
+        working-directory: stable
+        run: |
+          cp -R ../tooling/community ./
+          cp -R ../tooling/scripts/community scripts/
+          cp -R ../tooling/docs/community docs/
+          python3 scripts/community/build.py --review-only
+          node scripts/community/publication-gate.cjs --scope publicWeb
   community-zip-rights:
     name: Community-only ZIP rights gate (required)
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: tooling
+      - uses: actions/checkout@v4
+        with:
+          ref: 0b270c1452505268364659edd402209b00b28673
+          path: stable
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/community/publication-gate.cjs --scope communityZip
+      - name: Build reviewed files and validate member ZIP-specific evidence
+        working-directory: stable
+        run: |
+          cp -R ../tooling/community ./
+          cp -R ../tooling/scripts/community scripts/
+          cp -R ../tooling/docs/community docs/
+          python3 scripts/community/build.py --review-only
+          node scripts/community/publication-gate.cjs --scope communityZip

@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtJST": "2026-11-16",
+  "reviewedBy": "ChatGPT Work",
+  "reviewMethod": "individual-content-and-license-assessment",
+  "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
+  "assessment": {
+    "path": "docs/community/individual-rights-assessment.md",
+    "sha256": "8b62bef6fd5c998f1580bfd288faa6e0782c4a9e0f9f91abf451ec14ebe8d996"
+  },
+  "applicationSHA256": "55096a2490a4505b84f821f1108bed0ee877cfa03c53a07019c00c34bc819dbd",
+  "scopes": {
+    "publicWeb": {
+      "decision": "permitted-with-conditions",
+      "reason": "Reviewed static calculator files only: minimal factual/identifying records in own schema, owner-authorized code, MIT/BSD notices; no external artwork/editorial text or public ZIP link."
+    },
+    "communityZip": {
+      "decision": "permitted-with-conditions",
+      "reason": "Identical reviewed application plus documented notices; owner and recognized members only, personal modification/member sharing allowed; no claimed private-use exemption for unlicensed creative content."
+    }
+  },
+  "files": {
+    ".nojekyll": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "INDIVIDUAL-RIGHTS-REVIEW.md": {
+      "sha256": "8b62bef6fd5c998f1580bfd288faa6e0782c4a9e0f9f91abf451ec14ebe8d996",
+      "category": "review-evidence",
+      "reason": "Original audit report and reproducible hash/projection metadata describing actual supplied files, exclusions and scoped assessment; no external article body included.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "LICENSE": {
+      "sha256": "2cba2ed502cf57a0e4e078f99b66c92db840c93068b3da797a2bafed3ffd5396",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "README.html": {
+      "sha256": "fc0e54596d63d72eb06e0ebae197056cbd0e697700465932077aa9c70c75ce5e",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "README.md": {
+      "sha256": "a592035a9f1b49869bfe20cf28e9232d1c1b45fd27fe28ee5487b6cd7d2149f8",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "TERMS.html": {
+      "sha256": "66a17556f595981dfd5c6fa32322f53df7ea3bff0b88e33dae119bc40a9d2ed7",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "THIRD-PARTY-NOTICES.md": {
+      "sha256": "7d07bea26572bfdedfb2a6b703afccfd18e94088d09ca42cb4ddabbd7f11751a",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "ability-data-v0184.js": {
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177",
+      "category": "upstream-mit",
+      "reason": "Project mappings incorporating Showdown-derived mechanical facts and flags; upstream MIT copyright, permission and disclaimer retained.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "application-manifest.json": {
+      "sha256": "3d7d0a64a04ea0e74c747fe7396243d811646af0d5f31100e3f3f7bf37f452c9",
+      "category": "review-evidence",
+      "reason": "Original audit report and reproducible hash/projection metadata describing actual supplied files, exclusions and scoped assessment; no external article body included.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "battle-data-v0184.js": {
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "brand-v0187.js": {
+      "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "community.css": {
+      "sha256": "440031972ca52cfcc031eb2da86a7a0ce58ca8e653dd59dfda2c8ba8c7a1ac17",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "community.js": {
+      "sha256": "bfb0503a9948a45992d8b1a424a9673190b28cb9ff37e921624e5ef9cd848573",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "damage-calculator-v0184.js": {
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "damage-engine-v0184.js": {
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "damage-ui-adapter-v0184.js": {
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "data-projection.json": {
+      "sha256": "225c4b2c7bc65677615dd63f8283c6db2c5bbcab395ceeb4bee73e3d40488568",
+      "category": "review-evidence",
+      "reason": "Original audit report and reproducible hash/projection metadata describing actual supplied files, exclusions and scoped assessment; no external article body included.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "i18n.js": {
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "index.html": {
+      "sha256": "230d7284bf461ed0403e0ff4980de2846765121f2feb4d636f8c649b6a42fa5f",
+      "category": "factual-runtime-projection",
+      "reason": "Own calculator schema with 373 species and 335 move records restricted to numerical, identifying and operational fields; unused external-source audit metadata and prose removed. Values and identifiers unchanged.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "licenses/Chloha-Labs-Prior-MIT.txt": {
+      "sha256": "0da3aa27991fbbf04fd93501dae497401ef94dd4ff2b73b4369818dbaefb544d",
+      "category": "license-notice",
+      "reason": "Verbatim prior or upstream license notice preserved; not replaced by the owner-only community conditions.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "licenses/PokeAPI-BSD-3-Clause.txt": {
+      "sha256": "1c04595dc662981c20956ae4251dfa7b62b475c345eddf98bc9b904cb2373f2c",
+      "category": "license-notice",
+      "reason": "Verbatim prior or upstream license notice preserved; not replaced by the owner-only community conditions.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "licenses/Pokemon-Showdown-MIT.txt": {
+      "sha256": "b2002a9fd52ba8db3783a05fbdebfb09c34fd09513b90f6b390a2c0dfbc93ed0",
+      "category": "license-notice",
+      "reason": "Verbatim prior or upstream license notice preserved; not replaced by the owner-only community conditions.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-catalog.js": {
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-form-species-v0183.js": {
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+      "category": "identifying-names",
+      "reason": "Reviewed short identifying entity names and ordinary form labels; no article descriptions or character artwork. PokeAPI-derived base labels retain the BSD notice. See per-file content counts and history in the assessment.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-name-search.js": {
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-names-pokeapi-v0183.js": {
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+      "category": "upstream-bsd",
+      "reason": "PokeAPI name CSV-derived mapping with BSD-3-Clause copyright, conditions and disclaimer retained; no endorsement or trademark grant.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-names-v0183.js": {
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+      "category": "identifying-names",
+      "reason": "Reviewed short identifying entity names and ordinary form labels; no article descriptions or character artwork. PokeAPI-derived base labels retain the BSD notice. See per-file content counts and history in the assessment.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-quality-v0188.js": {
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "locale-registry.js": {
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "move-mechanics-data-v0184.js": {
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+      "category": "upstream-mit",
+      "reason": "Project mappings incorporating Showdown-derived mechanical facts and flags; upstream MIT copyright, permission and disclaimer retained.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "multi-hit.js": {
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-catalog-v0179.js": {
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+      "category": "upstream-bsd",
+      "reason": "PokeAPI name CSV-derived mapping with BSD-3-Clause copyright, conditions and disclaimer retained; no endorsement or trademark grant.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-forms-v0179.js": {
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+      "category": "identifying-names",
+      "reason": "Reviewed short identifying entity names and ordinary form labels; no article descriptions or character artwork. PokeAPI-derived base labels retain the BSD notice. See per-file content counts and history in the assessment.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-ja-en.js": {
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+      "category": "identifying-names",
+      "reason": "Reviewed short identifying entity names and ordinary form labels; no article descriptions or character artwork. PokeAPI-derived base labels retain the BSD notice. See per-file content counts and history in the assessment.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-ui-v0179.js": {
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-ui-v0183.js": {
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "names-v0179.js": {
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+      "category": "identifying-names",
+      "reason": "Reviewed short identifying entity names and ordinary form labels; no article descriptions or character artwork. PokeAPI-derived base labels retain the BSD notice. See per-file content counts and history in the assessment.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "persistence-v0188.js": {
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "pokemon-weights-v0181.js": {
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+      "category": "upstream-mit",
+      "reason": "Project mappings incorporating Showdown-derived mechanical facts and flags; upstream MIT copyright, permission and disclaimer retained.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "portrait-alt-v0188.js": {
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "release.json": {
+      "sha256": "349a0d5144585a3ff30905ea3985293de2a420bae462f77c28fcd3b9a7db994a",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "rights-inventory.json": {
+      "sha256": "e56194dce6537b089e30cbe054a66ccfcf327a686bdaaecc0a4dedc94f323e7a",
+      "category": "review-evidence",
+      "reason": "Original audit report and reproducible hash/projection metadata describing actual supplied files, exclusions and scoped assessment; no external article body included.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "variable-power.js": {
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    },
+    "weight-power.js": {
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+      "category": "owner-authorized",
+      "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
+      "scopes": {
+        "publicWeb": "permitted-with-conditions",
+        "communityZip": "permitted-with-conditions"
+      }
+    }
+  }
+}
