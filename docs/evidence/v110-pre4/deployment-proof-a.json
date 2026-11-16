@@ -1,0 +1,10 @@
+{
+  "runUrl": "https://github.com/Kurohanolu/singularity/actions/runs/43813214477",
+  "runAttempt": 1,
+  "sourceCommit": "7df8158729bcff252bffda57b19674f36775c9e4",
+  "workflowCommit": "e62d9001048b07c3d96dac3ec58e27d3f847345a",
+  "workflowSha256": "dee1e67ed9dcfeb2b9745ea6089dbe50db965aa3115b9619f182569412d68f70",
+  "provenanceArtifact": 14200899121,
+  "status": "passed",
+  "productionMutations": 0
+}
