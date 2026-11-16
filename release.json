@@ -1,9 +1,9 @@
 {
   "version": "1.1.0",
-  "preRelease": 7,
-  "tag": "v1.1.0-pre.7",
-  "name": "Singularity v1.1.0 Pre-Release 7",
-  "notes": "docs/releases/v1.1.0-pre.7.md",
+  "preRelease": 8,
+  "tag": "v1.1.0-pre.8",
+  "name": "Singularity v1.1.0 Pre-Release 8",
+  "notes": "docs/releases/v1.1.0-pre.8.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -15,32 +15,28 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "approved",
+    "status": "awaiting-owner-approval",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true,
-    "legacyPolicy": "community-pinned-v1",
-    "liveAcceptanceSourceCommit": "5060db7c4deb7cfe14885f3de7284198e9f00c67",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43874494792",
-    "liveAcceptanceEvidence": "docs/evidence/v110-pre7/live-acceptance.json",
-    "liveAcceptanceObservedAtJST": "2026-11-16T22:21:17+09:00"
+    "liveTargetVerified": false,
+    "legacyPolicy": "community-pinned-v1"
   },
   "qualityReview": {
-    "releaseTag": "v1.1.0-pre.7",
+    "releaseTag": "v1.1.0-pre.8",
     "auditor": "6.1 Sol",
-    "auditStatus": "passed",
-    "ownerApproval": "approved",
-    "evidence": "docs/evidence/v110-pre7/sol-candidate-review.md",
-    "auditOutcome": "pass",
-    "conditionsDisposition": "accepted-by-owner",
-    "reviewedSourceCommit": "62bba5d7033b15169d0ac6a2d069b8e5e77d09e1",
-    "reviewedTree": "149eeecee11c5cd80b6622905266edd8eba05dc2",
-    "auditReportSha256": "55b52bd4b0b9b0a5fee4b4d6b92121a6139ee31117703f1662ea5f6bad3f8f36",
-    "ownerEvidence": "docs/evidence/v110-pre7/owner-publication-decision.json",
-    "ownerRecordedAtJST": "2026-11-16T21:56:42+09:00"
+    "auditStatus": "pending",
+    "ownerApproval": "pending",
+    "evidence": "",
+    "auditOutcome": "pending",
+    "conditionsDisposition": "pending",
+    "reviewedSourceCommit": null,
+    "reviewedTree": null,
+    "auditReportSha256": null,
+    "ownerEvidence": "",
+    "ownerRecordedAtJST": null
   },
   "channel": "prerelease"
 }

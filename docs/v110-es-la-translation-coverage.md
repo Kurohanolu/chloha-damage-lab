@@ -8,7 +8,7 @@ Names are tied to existing canonical IDs. `official` means the exact spelling is
 
 | Category | Total | Official | Secondary | Provisional | Unverified | Individually attested | Official rate | Official Champions |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| pokemon | 373 | 82 | 0 | 0 | 291 | 21.98% | 21.98% | 33 (8.85%) |
+| pokemon | 373 | 307 | 0 | 0 | 66 | 82.31% | 82.31% | 33 (8.85%) |
 | moves | 335 | 48 | 103 | 0 | 184 | 45.07% | 14.33% | 45 (13.43%) |
 | abilities | 245 | 27 | 38 | 0 | 180 | 26.53% | 11.02% | 27 (11.02%) |
 | items | 41 | 20 | 19 | 2 | 0 | 95.12% | 48.78% | 20 (48.78%) |
@@ -30,6 +30,8 @@ The complete unresolved list (canonical ID, Japanese, ES-ES, displayed candidate
 Selection priority for the same canonical identity is official Champions, explicit secondary Champions, official non-Champions material, then secondary Z-A. Generic franchise spelling evidence is explicitly labeled Generic Pokémon franchise and never counts as Champions verification. Explicit owner-selected provisional names rank below every verified source and above an unverified fallback; they remain provisional and never count as official or independently attested. Newer game-specific Champions terminology can differ from Z-A even when the latter is official. Conflicting spellings at the chosen evidence level fail the generator, except exact case-only variants; the observed game-field case takes precedence over prose case. Abbreviation-only attestations remain separate from full display-name evidence. An explicit canonical English identity must match even when the ES-ES spelling happens to agree; a translated label cannot override a known identity mismatch. Searches may retain both regional spellings as aliases; translated strings never become calculation IDs.
 
 ## Remaining limitations
+
+The [fifth-batch Pokédex manifest](data/v110-es-la-official-pokedex-batch5.json) adds 225 exact existing species names as generic official Latin American publication evidence, with one overlapping Z-A corroboration. Display names and aliases do not change; Champions confirmation does not increase. Numbered names were retrieved from the official /el/pokedex search index, not direct HTML. The official es-MX press site explicitly links Pokemon.com/LATAM to /el; the Pokédex-specific footer and current rendered page were not retrieved. No forms, mechanics, availability, ability names or type names are inferred.
 
 The [Expert Belt capture manifest](data/v110-es-la-expert-belt-capture.json) confirms Cinturón de Experto for the existing expertBelt identity and retains Cinta Experto as a search alias. Six other visible names add one corroboration and five off-runtime references without changing the denominator. Earlier checkpoints below remain historical.
 

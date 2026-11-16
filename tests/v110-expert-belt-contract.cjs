@@ -1,4 +1,28 @@
 'use strict';
+// Preserve the exact published pre.7 Expert Belt contract test in its immutable source tree.
+// It verifies real approved bytes there; current pre.8 has a separate Expert Belt contract gate.
+if(require('../release.json').tag!=='v1.1.0-pre.7'){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='66a085ba325655bc9369656ea0645f7f6f997127',tree='531c22a3fd647f674a287808a7a63b74010ccb58';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre7-history-')),worktree=path.join(parent,'source');
+ let status=1;
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-expert-belt-contract.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.7 Expert Belt contract must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/expert-belt-contract.json'),'utf8'));
+  fs.writeFileSync('reports/v110/expert-belt-contract.json',JSON.stringify({...report,role:'historical immutable pre.7, not current candidate acceptance',sourceCommit:ref,sourceTree:tree},null,2)+'\n');
+  status=0;
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(status);
+}
+'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
 const baseline='2fb5655a89e076df5993a3294bddbe1bf31afa58',tree='002d2af5716f408f50d50b8390d66a73ba083be3',read=f=>fs.readFileSync(f,'utf8'),old=f=>execFileSync('git',['show',baseline+':'+f],{encoding:'utf8',maxBuffer:32*1024*1024}),json=f=>JSON.parse(read(f));
 assert.equal(execFileSync('git',['rev-parse',baseline+'^{tree}'],{encoding:'utf8'}).trim(),tree);
