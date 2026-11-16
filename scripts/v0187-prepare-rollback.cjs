@@ -10,7 +10,11 @@ function prepareLegacyRollback(directory,output){
  assert.ok(out!==artifacts&&!artifacts.startsWith(out+path.sep)&&!out.startsWith(artifacts+path.sep),'rollback output must not alter artifact evidence');
  assert.ok(!fs.existsSync(out),'use a new rollback output directory');
  const manifest=JSON.parse(fs.readFileSync(path.join(artifacts,'migration-artifacts.json'))),rollback=manifest.rollback;
- assert.equal(manifest.legacyCommit,contract.legacyCommit,'pinned legacy release required');
+ if(manifest.legacyProvenance){
+  const {manifest:pinned}=require('./helpers/community-pinned-baseline.cjs').loadCommunityBaseline();
+  assert.equal(manifest.legacyCommit,pinned.sourceCommit,'Pinned current Community source required');
+  assert.deepEqual(manifest.legacyProvenance,{policy:pinned.policy,sourceCommit:pinned.sourceCommit,sourceTree:pinned.sourceTree,auditCommit:pinned.auditCommit,auditTree:pinned.auditTree,auditEvidenceSha256:pinned.auditEvidenceSha256,applicationSHA256:pinned.applicationSHA256,files:44,readOnlyBaseline:true},'Exact independent Community provenance required');
+ }else assert.equal(manifest.legacyCommit,contract.legacyCommit,'pinned legacy release required');
  assert.equal(rollback?.legacyCommit,contract.legacyCommit,'pinned rollback release required');
  assert.equal(rollback.artifactPath,'rollback/chloha-damage-lab','fixed rollback artifact path required');
  assert.deepEqual(rollback.files,contract.files,'rollback inventory must match the independent frozen release contract');
@@ -22,7 +26,7 @@ function prepareLegacyRollback(directory,output){
  }
  // Validate every byte before making the first destination write.
  for(const [file,bytes] of files){const dest=path.join(out,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,bytes);}
- return {mode:'local-rollback-preparation',legacyCommit:contract.legacyCommit,preparedFiles:files.length,output:out,productionMutations:0,deploymentPerformed:false};
+ return {mode:'local-rollback-preparation',historicalOnly:!!manifest.legacyProvenance,legacySiteOverwriteAuthorized:false,legacyCommit:contract.legacyCommit,preparedFiles:files.length,output:out,productionMutations:0,deploymentPerformed:false};
 }
 module.exports={prepareLegacyRollback};
 if(require.main===module){
