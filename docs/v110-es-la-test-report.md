@@ -2,17 +2,37 @@
 
 ## Current second-batch verification — 2026-11-16 JST
 
-Status: **local preflight passed; fresh committed CI and final independent Sol review pending**. This status applies to the additional ten screenshots and the combined 20-image audit. Historical passes below are not reused as a pass for the changed source data.
+Status: **technical acceptance PASS on exact source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`**, tree `bc565c1918cf99e3df83e0322cb64551692dcd71`. All **13/13 workflows succeeded**, including all **17/17 v1.1.0 acceptance tests**. This is the additional ten screenshots and combined 20-image audit, not a reuse of historical test results. The following evidence-only documentation checkpoint does not change runtime, source data, workflows or tests.
 
-Comparison baseline: published `83af29133927a19fc7e0f9273c0e194c54384ae5`, tree `cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b`. Stable numerical reference remains `0b270c1452505268364659edd402209b00b28673`. Exact follow-up commit/tree and workflow receipts must be recorded after the new branch push.
+- [Exact-source localization run](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43787168916) and [13-workflow API receipt](evidence/v110-second-captures/ci-receipt.json).
+- [Raw report hash manifest](evidence/v110-second-captures/retained-files.json), [test runner report](evidence/v110-second-captures/test-run.json) and [independent Sol review](evidence/v110-second-captures/sol-independent-review.md).
+- Early artifact `14190738790`, ZIP SHA-256 `8fd354ed7c16f25a646338f926ed5d85845a5d1e69b6c9a0750ea0cc67e5b23a`. All 15 retained JSON reports match its exact bytes and hashes. The archive digest also matches GitHub metadata. No owner image bytes are retained in Git.
+- [Final artifact and legacy report verification](evidence/v110-second-captures/final-retained-files.json): artifact `14190539887`, ZIP SHA-256 `c973c105af2b01f7bb65bc077f2da57f2837e13261feb6c8a84ba5e04a7ea6bd`. Three legacy reports are retained; all 15 candidate reports match the early artifact. The embedded source archive matches all 503 Git blobs, and the build manifest verifies 79 site files plus 31 rollback files. This is package verification without deployment.
 
-Local checks passed for regenerated coverage/UI inventory, source and original-capture contracts, release identity, artifact cache hashes, and follow-up publication rejection. These were uncommitted working-tree checks. All 20 original screenshots were visually inspected; image identity and wording review are terminology evidence, not a physical-device calculation test.
+The comparison baseline for this evidence addition is published `83af29133927a19fc7e0f9273c0e194c54384ae5`, tree `cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b`. Stable numerical reference remains `0b270c1452505268364659edd402209b00b28673`.
 
-The new acceptance work covers second-batch canonical bindings, additive deduplication, 3 abbreviation-only witnesses, `Firme` capitalization, the 3 new aliases, unchanged inventory/engine/other-nine-language data, and rejection of historical approval reuse. Browser regressions target the ambiguous move/berry bindings and registered Floette forms. The full existing ten-language switching, reload/state, UI/mobile, feedback, and 4,520 Stable numerical-comparison gates remain required. Local Chromium cannot create its platform socket, so browser execution must be verified through fresh CI rather than asserted from local syntax checks.
+| Verification | Observed result |
+|---|---|
+| Candidate acceptance | 17/17 tests PASS; no discovery exclusions |
+| Stable numerical equivalence | 4,520 complete outputs agree; 13 protected engine/data/fixture files unchanged |
+| Ten-language browser checks | 110 rotating transitions, 6 explicit transitions, 15 reloads, 70 numerical cases |
+| Dynamic DOM | 11 scenarios; zero reported translation failures |
+| Additional name search | 86 alias queries; 8 move, 8 ability, 4 form and 2 nature cases across 390/1440 px |
+| Resistance berries | 36 name/ID/type checks in the actual page registries; 2 automatic-selector UI roundtrips |
+| Unsupported abilities | Flower Veil/Rough Skin preserve null output, visible error and disabled actions across locale switches |
+| Existing nine languages | Dynamic-output comparisons and separate legacy switching/state/mobile regression passed |
+| Mobile UI | 10 locales × 6 widths; 60 cases passed |
+| Feedback | Local Worker/browser contracts and existing ES-LA pause passed; no production report submitted |
+| Quality | Full state/accessibility/locale/mobile, controlled memory and performance jobs passed |
+| Packaging and public observation | Unpublished artifacts built; public site remains the pinned pre.1; publishing jobs skipped |
 
-Expected data checkpoint: 1,183 source records/60 sources; second batch 58 system-name observations, 56 registered and 2 off-runtime; official Champions 112 → 142 and unverified 739 → 714 on an unchanged denominator of 1,029 names. Forms overlap Pokémon and are not counted again. The [20-image audit](v110-es-la-owner-screenshot-evidence.md) and [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) contain detailed evidence and exclusions.
+The browser test was corrected to respect two existing behaviors: unsupported abilities intentionally have no calculation result, and named resistance berries are engine/catalog identities while the UI exposes automatic selection. These corrections do not add support or selector options. All 18 berry name bindings remain independently tested.
 
-The feature branch now runs all 13 validation workflows without a new PR. [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68) is already merged; the [branch comparison](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization) is the review surface for this follow-up. No main update, new tag, public-site change, production Worker deployment, or real feedback submission is performed by these checks. Current public release `v1.1.0-pre.1` remains pinned to the baseline above.
+Data checkpoint: 1,183 source records/60 sources; second batch 58 system observations, 56 registered and 2 off-runtime, including 3 abbreviation-only witnesses. Official Champions **112 → 142**, unverified **739 → 714**, unchanged denominator **1,029**. Forms overlap Pokémon and are not counted twice. The [20-image audit](v110-es-la-owner-screenshot-evidence.md) retains exact screen positions, canonical matches and exclusions. Additional screenshots requested: **0**.
+
+All 20 originals were visually inspected for terminology. Browser results above are CI emulation; they are not physical-device calculation tests or exhaustive native-language certification. Local Chromium launch was blocked by the environment; successful browser claims refer to the exact CI reports. Remaining 714 unverified fallback names and provisional software UI copy remain disclosed.
+
+Work is saved on `feature/v110-es-la-localization`. [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68) is already merged, so the [branch comparison](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization) is the review surface. This follow-up has not changed main, the public repository, the immutable `v1.1.0-pre.1` tag or the production Worker. A future publication needs a distinct release identity and current release evidence; this is technical acceptance, not a claim that a new version is live.
 
 ## Historical verification records
 

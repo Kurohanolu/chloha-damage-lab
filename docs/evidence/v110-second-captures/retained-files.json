@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "Unmodified JSON reports from the exact-source candidate acceptance artifact. Includes local browser emulation, catalog bindings, and numeric regression; does not assert completion of subsequent workflow steps or live publication. No private screenshots or generated screenshots retained. Hash manifest excludes itself and separately authored review documents.",
+  "sourceCommit": "41e5ad156f0e19f46b342c28353e36e37f46d7a7",
+  "sourceTree": "bc565c1918cf99e3df83e0322cb64551692dcd71",
+  "uncommittedPreview": false,
+  "artifact": {
+    "repository": "Kurohanolu/chloha-damage-lab",
+    "runId": 43787168916,
+    "runUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43787168916",
+    "artifactId": 14190738790,
+    "name": "v110-acceptance-early-evidence",
+    "archiveSha256": "8fd354ed7c16f25a646338f926ed5d85845a5d1e69b6c9a0750ea0cc67e5b23a",
+    "archiveBytes": 1757356,
+    "githubDigestVerified": true
+  },
+  "verifiedAt": "2026-11-16T01:41:46.141933+00:00",
+  "files": [
+    {
+      "path": "docs/evidence/v110-second-captures/artifact-contract.json",
+      "artifactEntry": "artifact-contract.json",
+      "sha256": "4f08a0e1562cc217ed15ea06be7cabec437aa8b940a499e2ea1f4c66f6a0b02d",
+      "bytes": 882
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/dynamic-ui.json",
+      "artifactEntry": "dynamic-ui.json",
+      "sha256": "c2f63f2835afab15ea2e8adfc31e25b7fe42cc900e21546020ab824dded7ef40",
+      "bytes": 314
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/engine-promotion.json",
+      "artifactEntry": "engine-promotion.json",
+      "sha256": "7539b7c6505f7b824d7bbb4a332c814ecd3fd9bae5912776ff08f08f8883921d",
+      "bytes": 2313
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/feedback-browser.json",
+      "artifactEntry": "feedback-browser.json",
+      "sha256": "a3188d59ac8be887c03527efeb6a3b783acb451b2f438510cc9a4ac34a95af83",
+      "bytes": 2050
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/feedback-pause.json",
+      "artifactEntry": "feedback-pause.json",
+      "sha256": "8f1f13d148f7c8dd4354933e4e57b1d508215d45383facd81aae5f8505eca56c",
+      "bytes": 99
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/locale-contract.json",
+      "artifactEntry": "locale-contract.json",
+      "sha256": "1f81b41a19792e196352669f26da6acb8493369b91b04ffe977b5b0cc13f28aa",
+      "bytes": 359
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/owner-capture-contract.json",
+      "artifactEntry": "owner-capture-contract.json",
+      "sha256": "f90f589c5012cce47f28942e7133c0cbdb5be163555f02fdee673ae4f9ff0083",
+      "bytes": 949
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/regional-search-browser.json",
+      "artifactEntry": "regional-search-browser.json",
+      "sha256": "0562b09d0ca83cf2b11f534d2bd6e491341bedc5afa2013b4f9f4822b1dbabc4",
+      "bytes": 6703
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/second-capture-browser.json",
+      "artifactEntry": "second-capture-browser.json",
+      "sha256": "7a161648d660d9470a790d061125388837de4de55612f65233fdd07e8e5bd510",
+      "bytes": 11740
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/second-capture-contract.json",
+      "artifactEntry": "second-capture-contract.json",
+      "sha256": "8bcf3279ddb2a0a57ac1a0470c73e998166ff4462e95eaac4c329777b7874783",
+      "bytes": 1572
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/source-contract.json",
+      "artifactEntry": "source-contract.json",
+      "sha256": "e30c909b44bc5363d49ba77ef63097a4ccb18d5415771633e337353fc2b25fd0",
+      "bytes": 1561
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/ten-locale-browser.json",
+      "artifactEntry": "ten-locale-browser.json",
+      "sha256": "c9de0a9ac6a942943172e152a78ebf0f977e6b0b1c82c2a7b6ecc3a3db0253b6",
+      "bytes": 23447
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/test-run.json",
+      "artifactEntry": "test-run.json",
+      "sha256": "54c61cabe7ede2cc2900f13b3ed359cfd87804380de37e49d665e795386bd41c",
+      "bytes": 2400
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/ui-inventory.json",
+      "artifactEntry": "ui-inventory.json",
+      "sha256": "2db37fe1c553b24e8e6632267af9eec52cc1885cbf6aa4efe2ef05c19ba25f29",
+      "bytes": 1061
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/ui-mobile-60.json",
+      "artifactEntry": "ui-mobile-60.json",
+      "sha256": "25fcda9e34b8323b7ef474abf07e47d61c1d6422c1e2fc79fca28b806c6eec3e",
+      "bytes": 16507
+    }
+  ]
+}

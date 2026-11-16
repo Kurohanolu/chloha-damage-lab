@@ -1,6 +1,6 @@
 # 6.1 Sol independent review — second owner-capture batch
 
-Outcome: **technical pass; exact-commit CI pending**. This is a review of an uncommitted working-tree candidate above `68c29af0c3843d3c822cafe2a8d7607e7bfba22e`, compared with the immutable first publication `83af29133927a19fc7e0f9273c0e194c54384ae5`. File digests below identify the reviewed work. A commit/CI addendum is required before treating this as exact-commit acceptance. This review does not approve a new release or republication of immutable `v1.1.0-pre.1`.
+Outcome: **final technical pass** for `41e5ad156f0e19f46b342c28353e36e37f46d7a7` / tree `bc565c1918cf99e3df83e0322cb64551692dcd71`. All 13 recorded exact-source workflows passed. This does not authorize a new release. The initial working-tree review above `68c29af0c3843d3c822cafe2a8d7607e7bfba22e` is retained below as history, followed by addenda binding the committed source and CI receipts. The comparison baseline remains the immutable first publication `83af29133927a19fc7e0f9273c0e194c54384ae5`. File digests identify the reviewed implementation; the final addendum supersedes earlier pending statuses.
 
 ## Independent visual evidence
 
@@ -36,3 +36,23 @@ Browser launch failed locally because Chromium headless-shell revision 1208 is a
 | `index.html` | `d45cd5aea4778a4dd31b7bf500920663fbdb1226e5287bdfa71c4ebea2d142f4` |
 | `locale-name-catalog-adapter.js` | `8c2502357d47749f5fed7378b988685726185dc89c3794bfcc7ef54b091f1e65` |
 | `release.json` | `87817d4bfa7669c7d560782855c63f0547d05da5326e71e4803906ee053653e1` |
+
+## Historical intermediate addendum — candidate acceptance before full CI
+
+Reviewed candidate: `41e5ad156f0e19f46b342c28353e36e37f46d7a7`; tree: `bc565c1918cf99e3df83e0322cb64551692dcd71`. Technical acceptance is **passed** for the retained 17-test candidate suite. Overall completion of all repository workflows remains **pending** at this addendum; this is not final release approval.
+
+I reviewed the intervening test-only corrections: unsupported abilities now require null calculation state and disabled output actions; berry checks use the 18 actual page-registry name/ID/type bindings and the existing automatic-berry control, not nonexistent individual selector options. Product files remain as previously reviewed. These changes correct the test's model of existing behavior without granting unsupported mechanics.
+
+I read the retained raw JSON reports and independently verified all 15 retained file hashes and byte lengths against `retained-files.json`. The clean source/tree in `test-run.json` and `second-capture-browser.json` match the candidate above; all 17 test statuses are zero. Raw browser evidence reports 86 alias queries, eight move cases, eight ability cases (including blocked unsupported state), four form cases, two nature cases, 36 berry registry cases and two automatic-berry UI roundtrips at 390/1440 widths. The numeric report records 4,520 complete-output comparisons with zero unexplained differences.
+
+Artifact provenance is recorded by the retaining reviewer for run `43787168916`, artifact `14190738790`, archive SHA-256 `8fd354ed7c16f25a646338f926ed5d85845a5d1e69b6c9a0750ea0cc67e5b23a`. My independent checks here verify the retained reports and their manifest; I did not independently download the archive or query GitHub metadata in this addendum. Browser success is the retained CI result, not a claimed local browser rerun. Final all-workflow status requires its separate receipt.
+
+## Final exact-source technical acceptance
+
+**6.1 Sol: final technical pass.** Accepted source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`, tree `bc565c1918cf99e3df83e0322cb64551692dcd71`. Earlier pending statements in this document describe intermediate review stages and are superseded by this addendum.
+
+I independently read and validated `ci-receipt.json`: all 13 workflows are completed/success for this exact source/tree; 18 jobs comprise 16 successful validation jobs and two intentionally skipped write jobs. The quality-remediation run `43787168801` contains three successful jobs with successful steps. Release publication, the issue-report job and the UI verdict write were skipped as required for this feature-branch evidence follow-up. The 17-test candidate acceptance and 86-query browser evidence remain as verified above.
+
+I also checked the three retained legacy report files against the byte lengths and SHA-256 values in `final-retained-files.json`. That manifest records the retaining reviewers' independent archive verification: final artifact `14190539887`, archive digest `c973c105af2b01f7bb65bc077f2da57f2837e13261feb6c8a84ba5e04a7ea6bd`, 503 Git-source blob comparisons, 79 built-site files and 31 rollback files. My role here checked the retained receipt/report consistency; direct GitHub/API and ZIP verification are attributed to the retaining reviewers rather than claimed as additional network work by this reviewer.
+
+No blocking technical finding remains. The current public baseline stays the immutable first publication `83af29133927a19fc7e0f9273c0e194c54384ae5`; this accepted evidence follow-up has not received a new release identity, cutover approval, deployment or publication. A later release must obtain its own source-bound approval and live acceptance. Original screenshots remain private, and name/effect-text evidence still does not constitute physical-device mechanics validation.

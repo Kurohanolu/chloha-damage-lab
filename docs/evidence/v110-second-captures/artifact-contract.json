@@ -1,0 +1,32 @@
+{
+  "stable": "0b270c1452505268364659edd402209b00b28673",
+  "legacyCommit": "4b2cde61f92610c5bb970618d34147a2c16a8d7b",
+  "publicationBlocked": true,
+  "productionMutations": 0,
+  "candidateControlIDs": 188,
+  "preservedControlIDs": 188,
+  "changedRuntimeCacheKeys": [
+    "singularity-v0187.css",
+    "locale-registry.js",
+    "locale-catalog.js",
+    "locale-es-la-data-v110.js",
+    "locale-es-la-v110.js",
+    "locale-ui-es-la-v110.js",
+    "i18n.js",
+    "locale-name-search.js",
+    "names-ui-v0183.js",
+    "feedback-contract-v0185.js",
+    "feedback-locales-v0185.js",
+    "feedback-config-v0185.js",
+    "feedback-release-v100.js",
+    "feedback-ui-v0185.js",
+    "brand-v0187.js",
+    "portrait-alt-v0188.js",
+    "persistence-v0188.js",
+    "locale-quality-v0188.js"
+  ],
+  "publicAssets": 79,
+  "rollbackAssets": 31,
+  "manifestHashesVerified": true,
+  "passed": true
+}

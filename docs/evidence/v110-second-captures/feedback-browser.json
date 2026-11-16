@@ -1,0 +1,88 @@
+{
+  "mode": "local Worker/SQLite and mocked Turnstile",
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "cases": [
+    {
+      "locale": "ja",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "de",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "it",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "ko",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "zh-Hans",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "zh-Hant",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    },
+    {
+      "locale": "es-LA",
+      "privateSnapshot": true,
+      "staleConsentRejected": true,
+      "doubleSubmissionRejected": true,
+      "storedReports": 1,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -7,7 +7,7 @@
 - Published first-batch baseline: `83af29133927a19fc7e0f9273c0e194c54384ae5`, tree `cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b`, release `v1.1.0-pre.1`.
 - Stable numerical reference: `0b270c1452505268364659edd402209b00b28673`.
 - Current work: second-batch terminology/provenance integration, **not yet published**. All 20 original owner images have been visually inspected. Original images remain private.
-- Verification: focused local preflight passed; fresh committed CI and final independent Sol review remain pending. Record exact new head/tree and receipts in the [test report](v110-es-la-test-report.md) before reporting completion.
+- Verified source: `41e5ad156f0e19f46b342c28353e36e37f46d7a7`, tree `bc565c1918cf99e3df83e0322cb64551692dcd71`. **13/13 workflows and 17/17 ES-LA acceptance tests PASS**, with independent Sol technical acceptance. Raw reports and API receipts are linked from the [test report](v110-es-la-test-report.md). The later documentation/evidence checkpoint does not alter tested runtime/data/tests.
 
 ## Completed evidence integration
 
@@ -23,8 +23,8 @@ No second-batch accepted name has an unresolved canonical binding. **Additional 
 
 1. Fetch latest main and the existing feature branch, preserve the user-authored handoff commit `7759a90`, and inspect any newer changes before writing.
 2. Keep source evidence, generated coverage, aliases and cache hashes synchronized. The original ten-image manifest is immutable; additional witnesses extend existing records instead of duplicating them.
-3. Complete the new second-capture contracts and browser regressions, then run all 13 workflows on the exact new feature head. Require ten-language switching/reload/state/search/UI/feedback checks, original-nine regressions, and all 4,520 Stable numerical comparisons.
-4. Bind CI artifacts, raw results and final independent Sol review to the new commit/tree. Update the test report and PR #68 history with the reviewable branch difference. Earlier acceptance cannot substitute for current-head results.
+3. The current second-capture contracts, browser regressions and all 13 workflows are complete on the verified source above. Any subsequent implementation change needs fresh relevant checks; do not substitute historical receipts.
+4. Preserve the retained raw reports, their hashes, the 13-workflow receipt and final independent Sol review under `docs/evidence/v110-second-captures/`. PR #68 records the branch comparison and exact verified source.
 5. Preserve the live `v1.1.0-pre.1` release and its immutable tag. Any later publication of these follow-up changes needs a distinct release identity and fresh release evidence; the unpublished follow-up marker rejects reuse of the first publication's approval.
 
 ## Publication state

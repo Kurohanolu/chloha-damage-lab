@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "scope": "Unmodified legacy nine-language regression reports from the successful v110 candidate workflow. No images retained; no publication performed. Hash manifest excludes itself.",
+  "sourceCommit": "41e5ad156f0e19f46b342c28353e36e37f46d7a7",
+  "sourceTree": "bc565c1918cf99e3df83e0322cb64551692dcd71",
+  "uncommittedPreview": false,
+  "artifact": {
+    "repository": "Kurohanolu/chloha-damage-lab",
+    "runId": 43787168916,
+    "runUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43787168916",
+    "artifactId": 14190539887,
+    "name": "v110-es-la-candidate-evidence",
+    "archiveSha256": "c973c105af2b01f7bb65bc077f2da57f2837e13261feb6c8a84ba5e04a7ea6bd",
+    "archiveBytes": 9356016,
+    "githubDigestVerified": true
+  },
+  "candidateReportsMatchRetainedEarlyBytes": true,
+  "sourceArchiveVerification": {
+    "archiveEntry": "dist/v110/source-candidate.zip",
+    "sha256": "913de8894b531b5d2519ec555e00aa5e3985452c72bf0928ef50f5b80b8708aa",
+    "sha256FileMatches": true,
+    "gitArchiveComment": "41e5ad156f0e19f46b342c28353e36e37f46d7a7",
+    "gitTree": "bc565c1918cf99e3df83e0322cb64551692dcd71",
+    "gitBlobComparisons": 503,
+    "exactFileSetMatchesGitTree": true
+  },
+  "builtSiteVerification": {
+    "manifestEntry": "dist/v110/migration-artifacts.json",
+    "manifestSha256": "fd7f93e545393a142d2952348d28f148927174da627182124d7cbf628dcf8e93",
+    "sourceCommit": "41e5ad156f0e19f46b342c28353e36e37f46d7a7",
+    "publicCutoverPerformed": false,
+    "siteFilesVerified": 79,
+    "rollbackFilesVerified": 31
+  },
+  "verifiedAt": "2026-11-16T01:44:34.706630+00:00",
+  "files": [
+    {
+      "path": "docs/evidence/v110-second-captures/legacy/continued-state-browser.json",
+      "artifactEntry": "reports/v0188/continued-state-browser.json",
+      "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f",
+      "bytes": 9580
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/legacy/continued-locale-browser.json",
+      "artifactEntry": "reports/v0188/continued-locale-browser.json",
+      "sha256": "4aed984daae259f8fb8e3aa59886883009edee32265f878b3d5540a46d513d43",
+      "bytes": 4422
+    },
+    {
+      "path": "docs/evidence/v110-second-captures/legacy/ui-mobile.json",
+      "artifactEntry": "reports/v0188/ui-mobile.json",
+      "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc",
+      "bytes": 6666
+    }
+  ]
+}

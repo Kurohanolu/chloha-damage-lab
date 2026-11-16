@@ -12,7 +12,7 @@ The only display-name change is `firme` → `Firme`, preserving the game field's
 
 Canonical checks resolve `Karatazo` to Brick Break, `Ataque Centrado` to Focus Blast, `Baya Tamar` to Rindo Berry and `Baya Yecana` to Tanga Berry. The eight recorded effect descriptions belong only to the selected move, displayed ability or separate `Baya Caquic` detail panel. They do not verify mechanics or authorize engine changes. `Baya Anjiro` is now fully visible in 32727; the clipped first-batch row remains excluded.
 
-No accepted second-batch name has an unresolved canonical identity. **Additional screenshots requested: 0.** Unverified inventory names remain honestly classified, rather than becoming official through spelling agreement. Existing nine-language dictionaries, registered game data and calculation-engine behavior are unchanged. Fresh CI and final independent review are tracked in the [test report](v110-es-la-test-report.md); older passes below are historical evidence only.
+No accepted second-batch name has an unresolved canonical identity. **Additional screenshots requested: 0.** Unverified inventory names remain honestly classified, rather than becoming official through spelling agreement. Existing nine-language dictionaries, registered game data and calculation-engine behavior are unchanged. Exact-source CI is complete: `41e5ad156f0e19f46b342c28353e36e37f46d7a7` passed all 13 workflows and all 17 candidate tests. Final independent Sol technical acceptance and raw evidence are linked in the [test report](v110-es-la-test-report.md); older passes below are historical evidence only.
 
 ## Historical source audit through first publication
 

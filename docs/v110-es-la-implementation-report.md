@@ -12,7 +12,7 @@ The original ten-image manifest stays immutable; later witnesses are additive. E
 
 All 13 validation workflows can run on the existing feature branch. Publication and person-directed CI result steps remain restricted to main. The follow-up manifest records an unpublished audit and clears reusable live/review acceptance. Historical public observation stays pinned to the already published source/tree. A future publication must use a distinct release identity with fresh evidence; this audit cannot overwrite `v1.1.0-pre.1` or reuse its approval.
 
-Focused local checks have passed; fresh committed CI and final Sol review are still pending at this checkpoint. The [test report](v110-es-la-test-report.md) will bind them to the resulting commit/tree. The live site stays at the published baseline. Its existing temporary ES-LA feedback restriction remains in place; other nine locales and the production Worker are unchanged.
+Implementation `41e5ad156f0e19f46b342c28353e36e37f46d7a7` passed all 13 workflows and all 17 candidate tests, including 4,520 numerical comparisons, with independent Sol technical acceptance. The [test report](v110-es-la-test-report.md) binds the raw reports to its exact commit/tree. The live site stays at the published baseline. Its existing temporary ES-LA feedback restriction remains in place; other nine locales and the production Worker are unchanged.
 
 ## Historical implementation and first-batch checkpoints
 
