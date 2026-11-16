@@ -1,0 +1,168 @@
+{
+  "reviewedAt": "2026-11-15",
+  "repository": "Kurohanolu/chloha-damage-lab",
+  "pullRequest": 68,
+  "head": "215e5a1a8af9e20591d077e6acfcabb234a53b7a",
+  "checkoutCommit": "7fbfd7d904d27629bfa8a5df28cb61a40b4b54d7",
+  "sourceTree": "fa77eab91c520fc4e40f9d146b63c909f47d8c4f",
+  "workflowRun": 43727755993,
+  "job": 132853300602,
+  "jobConclusion": "success",
+  "allStepsPassed": true,
+  "earlyArtifact": {
+    "id": 14166704773,
+    "bytes": 1753797,
+    "sha256": "6b4b8d9297e3334543f7b937122e5faaafe0438f47b8d12fba3393842e2f91e2",
+    "downloadedDigestVerified": true
+  },
+  "fullArtifact": {
+    "id": 14166918126,
+    "bytes": 7346143,
+    "sha256": "24644102d55c6fbf7e5620672cebaa7c9286ea1aba13482982d92dfaf2a77a10",
+    "downloadedDigestVerified": true
+  },
+  "sourceZip": {
+    "path": "dist/v110/source-candidate.zip",
+    "bytes": 3328745,
+    "sha256": "6b98743884d6fa3b687d5bc03b24c787ebc1b753d0c40e7e850f21da8721d718",
+    "embeddedDigestVerified": true,
+    "all442GitBlobsMatchHead": true,
+    "copyToRepository": false
+  },
+  "earlyAndFullReportsByteIdentical": true,
+  "visualAudit": {
+    "sixPngsReviewed": true,
+    "method": "Each of six images reviewed visually in cc5a757; e7453c1 and 215e5a1 images verified byte-identical by SHA256.",
+    "physicalDevice": false
+  },
+  "preservableReports": [
+    {
+      "path": "reports/v110/artifact-contract.json",
+      "bytes": 850,
+      "sha256": "0915194ef1c01726e6220a4930bfcebc4b8a1c06c14ec943b458333aaa1596bb",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/dynamic-ui.json",
+      "bytes": 314,
+      "sha256": "c2f63f2835afab15ea2e8adfc31e25b7fe42cc900e21546020ab824dded7ef40",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/engine-promotion.json",
+      "bytes": 2313,
+      "sha256": "2a6d2733d860ae1357ef293e34bc267fd800c50e381a2f9202862df8648b649e",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-details-390.png",
+      "bytes": 443678,
+      "sha256": "70f67a25added98235c810bf0dcb47e4f9640f708295fb7bb08036e59b607d42",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-feedback-390.png",
+      "bytes": 96687,
+      "sha256": "da96d009bb187cd5a4069712112ba7a762d919abf372df6bfb8bb489e6cfe25a",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-feedback-viewport-390.png",
+      "bytes": 69478,
+      "sha256": "c17ecd3b8e02b7dd98e951be3eed5d65e895f52617b5a81bfe3e9bcd97dff1a5",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-initial-1440.png",
+      "bytes": 501761,
+      "sha256": "c1bf969f89eff5c856b3683d1ec4d83148affe2958f3e61930d5c6f49a9c237c",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-initial-320.png",
+      "bytes": 348719,
+      "sha256": "1a91f05ac8b4b5821e965caa7ed2401290a77baef4e31217fde7a3881d65765a",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/es-la-initial-390.png",
+      "bytes": 355212,
+      "sha256": "654f1e7c8db7279e05027ab09010b5a36a24504db74dbdf1d976ac0e16a1a8bd",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/feedback-browser.json",
+      "bytes": 2050,
+      "sha256": "a3188d59ac8be887c03527efeb6a3b783acb451b2f438510cc9a4ac34a95af83",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/locale-contract.json",
+      "bytes": 359,
+      "sha256": "1f81b41a19792e196352669f26da6acb8493369b91b04ffe977b5b0cc13f28aa",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/regional-search-browser.json",
+      "bytes": 4784,
+      "sha256": "d0e62bb7df0f8e76f053e2f34155d3c2bd8033d61f75d707f2018ec7b8be248f",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/source-contract.json",
+      "bytes": 1505,
+      "sha256": "78c37358fe3c5123d72e69d70aed5ebde272f432cd7fffc7a162658e17d84993",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/ten-locale-browser.json",
+      "bytes": 23447,
+      "sha256": "c9de0a9ac6a942943172e152a78ebf0f977e6b0b1c82c2a7b6ecc3a3db0253b6",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/test-run.json",
+      "bytes": 1639,
+      "sha256": "71f8152e118eb8e8fa4369248ad5f49465710760242916f2cfd110fcff1aa635",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/ui-inventory.json",
+      "bytes": 1061,
+      "sha256": "2db37fe1c553b24e8e6632267af9eec52cc1885cbf6aa4efe2ef05c19ba25f29",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v110/ui-mobile-60.json",
+      "bytes": 16507,
+      "sha256": "25fcda9e34b8323b7ef474abf07e47d61c1d6422c1e2fc79fca28b806c6eec3e",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v0188/continued-locale-browser.json",
+      "bytes": 4422,
+      "sha256": "caeb8ab3e07c880597dda9a985c79855bf39080545d23645c8751439fcd593a6",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v0188/continued-state-browser.json",
+      "bytes": 9580,
+      "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f",
+      "safeToCommit": true
+    },
+    {
+      "path": "reports/v0188/ui-mobile.json",
+      "bytes": 6666,
+      "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc",
+      "safeToCommit": true
+    }
+  ],
+  "privacyReview": "Only public canonical IDs/source hashes, rendered test UI, non-personal test counts and fixtures. No raw Worker data, contact data, request headers or authentication material.",
+  "limitations": [
+    "Local Chromium emulation, not physical Android/iOS",
+    "No exhaustive index.html template parsing or all dynamic combinations",
+    "No native screen reader/IME certification",
+    "No professional Spanish review or Champions hardware verification",
+    "Owner approval still required for release/deployment"
+  ]
+}

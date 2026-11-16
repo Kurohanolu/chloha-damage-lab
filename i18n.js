@@ -317,7 +317,27 @@ function translateAccessibilityLabel(base){
  return attributeLabels[base]||dictionary[base]||translateRuntime(base);
 }
 
+// ES-LA reuses reviewed Spanish UI templates; game names stay keyed by canonical IDs.
+// Reused names are a documented fallback, not evidence of official ES-LA terminology.
+function localeUiCode(code){return code==='es-LA'?'es':code;}
+function regionalEntity(category,key,target,fallback){
+ return target==='es-LA'?(globalThis.ChlohaEsLa?.entity?.(category,key,fallback)||fallback):fallback;
+}
+// Authored UI wording; these entries do not certify game-name provenance.
+const esLaUiCopy=Object.freeze({
+ '可変':'Variable','計算未対応':'No compatible',
+ '能力ポイントは0〜32の整数で入力してください':'Los puntos de estadísticas deben ser enteros entre 0 y 32.',
+ '能力ポイント合計は66以内':'El total de puntos de estadísticas no puede superar 66.',
+ '攻撃側の能力ポイント合計は66以内':'El total de puntos de estadísticas del atacante no puede superar 66.',
+ '防御側の能力ポイント合計は66以内':'El total de puntos de estadísticas del defensor no puede superar 66.'
+});
+function regionalUi(text,base,target){
+ if(target!=='es-LA')return text;
+ const copy=esLaUiCopy[base]||globalThis.ChlohaEsLaUi?.text?.(text,base)||text;
+ return globalThis.ChlohaEsLa?.translateUi?.(copy,base)||copy;
+}
 function translateOptions(){
+ const uiLocale=localeUiCode(locale);
  const root=document.getElementById('app');
  if(!root)return;
  // Legacy move-form selectors live outside #app; include them in native option localization.
@@ -342,8 +362,8 @@ function translateOptions(){
    // Localize every Plate and resistance Berry by canonical Japanese item name
    // plus the localized type; avoid English-only effect suffixes.
    const itemDictionary=window.ChlohaPokeAPILocalizedNames?.items||{};
-   const plateName=plateJapanese&&itemDictionary[plateJapanese[1]]?.[locale];
-   const berryName=berryJapanese&&itemDictionary[berryJapanese[1]]?.[locale];
+   const plateName=plateJapanese&&regionalEntity('items',plateJapanese[1],locale,itemDictionary[plateJapanese[1]]?.[uiLocale]);
+   const berryName=berryJapanese&&regionalEntity('items',berryJapanese[1],locale,itemDictionary[berryJapanese[1]]?.[uiLocale]);
    const plateType=plateJapanese&&localizedPokemonType(plateJapanese[2],locale);
    const berryTypeLocalized=berryJapanese&&localizedPokemonType(
     Object.keys(berryType).length?Object.entries(typeNames).find(([,en])=>en===berryType)?.[0]:null,locale);
@@ -355,7 +375,7 @@ function translateOptions(){
     ko:[' (','타입 기술 ×1.2)',' (','타입 기술 데미지 ×0.5)'],
     'zh-Hans':['（','属性招式×1.2）','（','属性伤害×0.5）'],
     'zh-Hant':['（','屬性招式×1.2）','（','屬性傷害×0.5）']
-   }[locale];
+   }[uiLocale];
    const localizedPlate=plateName&&plateType&&itemEffectSuffix?
     plateName+itemEffectSuffix[0]+plateType+itemEffectSuffix[1]:null;
    const localizedBerry=berryName&&berryTypeLocalized&&itemEffectSuffix?
@@ -369,8 +389,10 @@ function translateOptions(){
     : move
      ? (entityNames[move[1]]||move[1])+' ('+(typeNames[move[2]]||move[2])+' / '+(move[3]==='可変'?'Variable':move[3])+')'+(moveStatuses[move[4]]||move[4])
      : (selectLabels[base]||entityNames[base]||dictionary[base]||translateRuntime(base)));
-   const localizedEntity=window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[locale]||(pokemonOption?pokemonByJapanese.get(base)?.[locale]:null)
-    ||(pokemonOption?localizedProvisionalForm(option.value,base,locale):null);
+   const entityCategory=pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves';
+   const entityKey=pokemonOption?option.value:base;
+   const localizedEntity=regionalEntity(entityCategory,entityKey,locale,window.ChlohaLocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[uiLocale]||window.ChlohaPokeAPILocalizedNames?.[pokemonOption?'pokemon':/ability/i.test(select.id)?'abilities':/item/i.test(select.id)?'items':'moves']?.[pokemonOption?option.value:base]?.[uiLocale]||(pokemonOption?pokemonByJapanese.get(base)?.[uiLocale]:null)
+    ||(pokemonOption?localizedProvisionalForm(option.value,base,uiLocale):null));
    const abilityStatusLabels={
     fr:[' (pris en charge)',' (partiellement pris en charge)',' (non pris en charge)'],
     de:[' (unterstützt)',' (teilweise unterstützt)',' (nicht unterstützt)'],
@@ -380,18 +402,29 @@ function translateOptions(){
     'zh-Hans':['（支持）','（部分支持）','（不支持）'],
     'zh-Hant':['（支援）','（部分支援）','（不支援）']
    };
-   const abilityName=ability&&(window.ChlohaLocalizedNames?.abilities?.[ability[1]]?.[locale]||window.ChlohaPokeAPILocalizedNames?.abilities?.[ability[1]]?.[locale]||abilityEnglish[ability[1]]||entityNames[ability[1]]||translateRuntime(ability[1]));
+   const abilityName=ability&&regionalEntity('abilities',ability[1],locale,(window.ChlohaLocalizedNames?.abilities?.[ability[1]]?.[uiLocale]||window.ChlohaPokeAPILocalizedNames?.abilities?.[ability[1]]?.[uiLocale]||abilityEnglish[ability[1]]||entityNames[ability[1]]||translateRuntime(ability[1])));
    const abilityStatus=ability&&(ability[2]==='対応'?0:ability[2]==='一部技のみ対応'?1:2);
-   const localizedAbility=ability&&abilityName+(abilityStatusLabels[locale]?.[abilityStatus]||'');
-   const moveName=move&&(window.ChlohaLocalizedNames?.moves?.[move[1]]?.[locale]||window.ChlohaPokeAPILocalizedNames?.moves?.[move[1]]?.[locale]||entityNames[move[1]]||move[1]);
+   const localizedAbility=ability&&abilityName+(abilityStatusLabels[uiLocale]?.[abilityStatus]||'');
+   const moveName=move&&regionalEntity('moves',move[1],locale,(window.ChlohaLocalizedNames?.moves?.[move[1]]?.[uiLocale]||window.ChlohaPokeAPILocalizedNames?.moves?.[move[1]]?.[uiLocale]||entityNames[move[1]]||move[1]));
    const moveStatusLocalized={
     '［計算未対応］':{fr:' [Non pris en charge]',de:' [Nicht unterstützt]',es:' [No compatible]',it:' [Non supportato]',ko:' [미지원]','zh-Hans':'［暂不支持］','zh-Hant':'［暫不支援］'},
     '［基本ダメージのみ・実機未照合］':{fr:' [Dégâts de base uniquement ; non vérifié]',de:' [Nur Grundschaden; ungeprüft]',es:' [Solo daño básico; sin verificar]',it:' [Solo danno base; non verificato]',ko:' [기본 데미지만; 미검증]','zh-Hans':'［仅基础伤害；未经验证］','zh-Hant':'［僅基礎傷害；未經驗證］'},
     '［計算試算・実機未照合］':{fr:' [Estimation ; non vérifiée]',de:' [Schätzung; ungeprüft]',es:' [Estimado; sin verificar]',it:' [Stima; non verificata]',ko:' [추정치; 미검증]','zh-Hans':'［估算；未经验证］','zh-Hant':'［估算；未經驗證］'}
    };
-   const moveType=localizedTypeNames[move?.[2]]?.[locale]||typeNames[move?.[2]]||move?.[2];
-   const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[locale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[locale]||moveStatuses[move[4]]||move[4]);
-   const next=locale==='ja'?base:(nativeOptionTranslations[base]?.[locale]||null)|| (locale==='en'?englishOption:(localizedPlate||localizedBerry||localizedItemOptionPhrases[englishOption]?.[locale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[locale]||localeUiPhrases[base]?.[locale]||localizedUi(base)));
+   const moveType=regionalEntity('types',move?.[2],locale,localizedTypeNames[move?.[2]]?.[uiLocale]||typeNames[move?.[2]]||move?.[2]);
+   const localizedMove=move&&moveName+' ('+moveType+' / '+(move[3]==='可変'?(localeUiPhrases['Variable']?.[uiLocale]||'Variable'):move[3])+')'+(moveStatusLocalized[move[4]]?.[uiLocale]||moveStatuses[move[4]]||move[4]);
+   let next=locale==='ja'?base:(nativeOptionTranslations[base]?.[uiLocale]||null)|| (locale==='en'?englishOption:(localizedPlate||localizedBerry||localizedItemOptionPhrases[englishOption]?.[uiLocale]||localizedEntity||localizedAbility||localizedMove||battlefieldNames[base]?.[uiLocale]||localeUiPhrases[base]?.[uiLocale]||localizedUi(base)));
+   if(locale==='es-LA'){
+    // Compound item labels carry a canonical name plus a numeric effect suffix.
+    // Replace only that known prefix; do not match arbitrary translated text.
+    const itemKey=/item/i.test(select.id)&&base.match(/^(.+?)（/u)?.[1];
+    const itemEs=itemKey&&(window.ChlohaLocalizedNames?.items?.[itemKey]?.es||itemDictionary[itemKey]?.es);
+    if(itemEs&&next.startsWith(itemEs))next=regionalEntity('items',itemKey,locale,itemEs)+next.slice(itemEs.length);
+    if(pokemonOption)next=regionalEntity('pokemon',option.value,locale,next);
+    if(/^(ragingBullForm|auraWheelForm)$/.test(select.id))next=regionalEntity('forms',base,locale,next);
+    if(typeNames[base])next=localizedPokemonType(base,locale);
+    next=regionalUi(next,base,locale);
+   }
    if(option.textContent!==next)option.textContent=next;
    // Android's native select sheet may read option.label instead of textContent.
    if(option.label!==next)option.label=next;
@@ -565,7 +598,7 @@ function recoverJapanese(value){
  return result;
 }
 const key='chloha.damageLab.locale';
-const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+const supportedLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
 let locale='ja';try{const saved=localStorage.getItem(key);locale=supportedLocales.includes(saved)?saved:'ja';}catch{}
 // v0.183: reviewed high-visibility labels, separate from damage engine.
 const expandedSettingsTranslations={
@@ -891,7 +924,7 @@ function localizedPokemonType(value,target){
  const raw=String(value||'').trim();
  const ja=localizedTypeNames[raw]?raw:englishTypeToJapanese[raw.toLowerCase()];
  if(!ja)return raw;
- return target==='ja'?ja:(localizedTypeNames[ja][target]||localizedTypeNames[ja].en);
+ return target==='ja'?ja:regionalEntity('types',ja,target,localizedTypeNames[ja][localeUiCode(target)]||localizedTypeNames[ja].en);
 }
 const localizedPlateOptions={
  'だいちのプレート':{
@@ -1056,9 +1089,9 @@ function localizedBattleSummary(base,target){
  const resolve=(name,kind)=>{
   for(const table of [local[kind],registries[kind]]){
    if(!table)continue;
-   const entry=Object.values(table).find(row=>row&&typeof row==='object'&&
+   const match=Object.entries(table).find(([,row])=>row&&typeof row==='object'&&
     (row.ja===name||row.en===name||Object.values(row).includes(name)));
-   if(entry)return entry[target]||entry.en||name;
+   if(match){const [key,entry]=match;return regionalEntity(kind,key,target,entry[localeUiCode(target)]||entry.en||name);}
   }
   if(target==='en')return entityNames[name]||name;
   return name;
@@ -1068,14 +1101,14 @@ function localizedBattleSummary(base,target){
  const defender=resolve(match[4],'pokemon');
  return attacker+' '+move+' ('+match[3]+') → '+defender+' ('+match[5]+' / HP '+match[6]+')';
 }
-function localizedUi(base){
+function localizedUiTemplate(base,target,entityTarget=target){
  const catalog=globalThis.ChlohaLocaleCatalog;
- if(locale==='ja')return base;
- const versionNotice=localizedVersionProvenance(base,locale);
+ if(target==='ja')return base;
+ const versionNotice=localizedVersionProvenance(base,target);
  if(versionNotice)return versionNotice;
- const battleSummary=localizedBattleSummary(base,locale);
+ const battleSummary=localizedBattleSummary(base,entityTarget);
  if(battleSummary)return battleSummary;
- if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
+ if(localizedTypeNames[base]?.[target])return localizedPokemonType(base,entityTarget);
  const reviewed={
  'Referenced stat stage (own Defense for Body Press; target Attack for Foul Play)':['Niveau de la statistique utilisée (Défense du lanceur pour Big Splash ; Attaque de la cible pour Tricherie)','Stufe des verwendeten Werts (eigene Verteidigung für Body Press; gegnerischer Angriff für Schmarotzer)','Nivel de la estadística usada (Defensa propia para Plancha Corporal; Ataque del objetivo para Juego Sucio)','Livello della statistica usata (Difesa propria per Schiacciacorpo; Attacco del bersaglio per Ripicca)','참조 능력 랭크 (바디프레스는 자신의 방어, 속임수는 대상의 공격)','引用能力等级（扑击使用自身防御；欺诈使用目标攻击）','引用能力等級（撲擊使用自身防禦；欺詐使用目標攻擊）'],
  'Residual damage (Stealth Rock, weather, poison, etc.) is not calculated automatically. Adjust current HP manually.':['Les dégâts résiduels (Piège de Roc, météo, poison, etc.) ne sont pas calculés automatiquement. Ajustez les PV actuels manuellement.','Restschaden (Tarnsteine, Wetter, Gift usw.) wird nicht automatisch berechnet. Aktuelle KP manuell anpassen.','El daño residual (Trampa Rocas, clima, veneno, etc.) no se calcula automáticamente. Ajusta los PS actuales manualmente.','I danni residui (Levitoroccia, meteo, veleno, ecc.) non sono calcolati automaticamente. Regola manualmente i PS attuali.','스텔스록, 날씨, 독 등의 지속 피해는 자동 계산되지 않습니다. 현재 HP를 직접 조정하세요.','隐形岩、天气、中毒等持续伤害不会自动计算。请手动调整当前HP。','隱形岩、天氣、中毒等持續傷害不會自動計算。請手動調整目前HP。'],
@@ -1102,32 +1135,44 @@ function localizedUi(base){
    'zh-Hans':['所选招式','尚未验证可学性、附加效果、变化威力及命中率。与实机结果核对前，请将计算结果视为暂定值。'],
    'zh-Hant':['所選招式','尚未驗證可學性、附加效果、變化威力及命中率。與實機結果核對前，請將計算結果視為暫定值。']
   };
-  if(labels[locale]){
+  if(labels[target]){
    const moveTables=[globalThis.ChlohaLocalizedNames?.moves,globalThis.ChlohaPokeAPILocalizedNames?.moves];
    let localizedMove=warning[1];
    for(const table of moveTables){
-    const entry=Object.values(table||{}).find(row=>row&&typeof row==='object'&&(row.ja===warning[1]||row.en===warning[1]||Object.values(row).includes(warning[1])));
-    if(entry){localizedMove=entry[locale]||entry.en||warning[1];break;}
+    const match=Object.entries(table||{}).find(([,row])=>row&&typeof row==='object'&&(row.ja===warning[1]||row.en===warning[1]||Object.values(row).includes(warning[1])));
+    if(match){const [key,entry]=match;localizedMove=regionalEntity('moves',key,entityTarget,entry[target]||entry.en||warning[1]);break;}
    }
-   return labels[locale][0]+' “'+localizedMove+'”：'+labels[locale][1];
+   return labels[target][0]+' “'+localizedMove+'”：'+labels[target][1];
   }
  }
  const screenshotText=translateRuntime(base);
- if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
+ if(screenshotLocalePhrases[screenshotText]?.[target])return screenshotLocalePhrases[screenshotText][target];
  const reviewedEntry=reviewed[translateRuntime(base)]||reviewed[base];
  if(reviewedEntry){
-  const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(locale);
+  const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(target);
   if(index>=0)return reviewedEntry[index];
  }
- const dynamic=localizedDynamicControl(base,locale)||localizedBattlefield(base,locale)||localizedLiveSummary(base,locale)||localizedVerdict(base,locale)||localizedDamageRange(base,locale);
+ const dynamic=localizedDynamicControl(base,target)||localizedBattlefield(base,target)||localizedLiveSummary(base,target)||localizedVerdict(base,target)||localizedDamageRange(base,target);
  if(dynamic)return dynamic;
- const direct=expandedSettingsTranslations[base]?.[locale]||expandedSettingsTranslations[translateRuntime(base)]?.[locale]||expandedLongTextTranslations[base]?.[locale]||expandedLongTextTranslations[translateRuntime(base)]?.[locale]||expandedPanelTranslations[base]?.[locale]||expandedPanelTranslations[translateRuntime(base)]?.[locale]||localeUiPhrases[base]?.[locale]||localeUiPhrases[translateRuntime(base)]?.[locale];
+ const direct=expandedSettingsTranslations[base]?.[target]||expandedSettingsTranslations[translateRuntime(base)]?.[target]||expandedLongTextTranslations[base]?.[target]||expandedLongTextTranslations[translateRuntime(base)]?.[target]||expandedPanelTranslations[base]?.[target]||expandedPanelTranslations[translateRuntime(base)]?.[target]||localeUiPhrases[base]?.[target]||localeUiPhrases[translateRuntime(base)]?.[target];
  if(direct)return direct;
  if(!catalog)return translateRuntime(base);
  const source=catalog.ja||{};
  const entry=Object.keys(source).find(key=>source[key]===base||catalog.en?.[key]===base);
- if(entry&&catalog[locale]?.[entry])return catalog[locale][entry];
+ if(entry&&catalog[target]?.[entry])return catalog[target][entry];
  return translateRuntime(base);
+}
+// The selected language remains es-LA in storage/events; only general UI templates share Spanish.
+function localizedUi(base){
+ if(locale==='es-LA'){
+  // Reliability embeds the native option's display label. Resolve its identity
+  // from the selected canonical ID before any mixed-text English substitution.
+  const selectedMoveId=base.startsWith('選択技「')?document.getElementById?.('dbMove')?.value:null;
+  const selectedMove=selectedMoveId?globalThis.ChlohaGameData?.moves?.find(move=>move.id===selectedMoveId):null;
+  const dynamic=globalThis.ChlohaEsLaUi?.dynamic?.(base,localizedTypeNames,selectedMove);
+  if(dynamic!==null&&dynamic!==undefined)return dynamic;
+ }
+ return regionalUi(localizedUiTemplate(base,localeUiCode(locale),locale),base,locale);
 }
 // Reverse every known UI translation before caching fresh DOM text.
 // This prevents a rerendered Spanish/French/Korean label from becoming the
@@ -1137,10 +1182,12 @@ for(const table of [screenshotLocalePhrases,localeUiPhrases,expandedSettingsTran
  for(const [english,variants] of Object.entries(table)){
   for(const translated of Object.values(variants||{})){
    if(typeof translated==='string'&&translated&&translated!==english&&!reverseLocalePhrases.has(translated))reverseLocalePhrases.set(translated,english);
+   if(typeof translated==='string'&&translated===variants.es){const regional=regionalUi(translated,english,'es-LA');if(regional!==translated&&!reverseLocalePhrases.has(regional))reverseLocalePhrases.set(regional,english);}
   }
  }
 }
 function normalizeFreshLocaleText(value){
+ value=globalThis.ChlohaEsLaUi?.source?.(value)||value;
  const source=reverseLocalePhrases.get(value);
  return recoverJapanese(source||value);
 }
@@ -1186,7 +1233,7 @@ function translate(root){
 }
 function setLocale(next){
  locale=supportedLocales.includes(next)?next:'ja';
- document.documentElement.lang=locale;
+ document.documentElement.lang=globalThis.ChlohaLocales?.browserLocale?.(locale)||(locale==='es-LA'?'es-419':locale);
  try{localStorage.setItem(key,locale);}catch{}
  translate(document.getElementById('app')||document.body);
  // Legacy verification notes live in the original document outside the v0.182 app.
@@ -1236,7 +1283,7 @@ function initialize(){
  select.id='chloha-locale';
  select.setAttribute('aria-label','Language / 言語');
  select.style.cssText='width:auto;min-height:36px;padding:5px 8px';
- for(const [value,title] of [['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文']]){
+ for(const [value,title] of [['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['es-LA','Español (Latinoamérica)']]){
   const option=document.createElement('option');option.value=value;option.textContent=title;select.append(option);
  }
  select.addEventListener('change',()=>setLocale(select.value));

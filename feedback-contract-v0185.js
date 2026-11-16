@@ -1,7 +1,7 @@
 /* Shared, data-only feedback contract. No calculator mutation or personal-data discovery. */
 (()=>{
  'use strict';
- const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
+ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
  const categories=['bug','calculation','translation','feature'];
  const statuses=['New','Reviewing','Accepted','Resolved','Rejected'];
  const numbers='hitsTaken faintedAllies level power attack defense hp currentHp attackStage defenseStage attCurrentHp attMaxHp supremeOverlordFainted customMultiplier friendGuardCount bodyPressDefenseStage foulPlayTargetStage attSpeed defSpeed attSpeedStage defSpeedStage'.split(' ');

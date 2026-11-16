@@ -1,0 +1,79 @@
+name: v1.1.0 ES-LA Localization
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  WRANGLER_SEND_METRICS: 'false'
+  PYTHONDONTWRITEBYTECODE: '1'
+jobs:
+  candidate-ten-locales:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-package-lock --no-audit --no-fund
+      - run: npm ci --prefix services/feedback --no-audit --no-fund
+      - run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Install CJK fonts for preserved language coverage
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Validate release identity and unchanged 300-case contract
+        run: |
+          node scripts/verify-release.cjs
+          node scripts/v110-es-la-ui-inventory.cjs --check
+          node scripts/v110-es-la-coverage.cjs --check
+          node tests/v0184-public-baseline.cjs
+      - name: Run all new candidate acceptance (no test discovery exclusions)
+        if: ${{ !cancelled() }}
+        run: node scripts/v110-run-tests.cjs
+      - name: Preserve immediate candidate diagnostics while legacy checks continue
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: v110-acceptance-early-evidence
+          path: reports/v110/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Preserve existing nine-language 90-transition candidate regression
+        if: ${{ !cancelled() }}
+        run: node tests/v0183-nine-locale-roundtrip.cjs
+      - name: Preserve existing nine-language state and mobile candidate regressions
+        if: ${{ !cancelled() }}
+        run: |
+          node tests/v0188-continued-state-browser.cjs
+          node tests/v0188-continued-locale-browser.cjs
+          node tests/v0188-ui-mobile.cjs
+      - name: Validate local Worker without production calls
+        if: ${{ !cancelled() }}
+        run: npm test --prefix services/feedback
+      - name: Build unpublished candidate site pair and hashes
+        if: ${{ !cancelled() }}
+        run: |
+          node -e "if(require('child_process').execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim())throw Error('Candidate must be clean')"
+          node scripts/v0187-build-sites.cjs --output dist/v110
+          TZ=UTC git archive --format=zip --prefix=chloha-damage-lab/ -o dist/v110/source-candidate.zip HEAD
+          sha256sum dist/v110/source-candidate.zip > dist/v110/source-candidate.zip.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v110-es-la-candidate-evidence
+          path: |
+            reports/v110/
+            reports/v0188/continued-state-browser.json
+            reports/v0188/continued-locale-browser.json
+            reports/v0188/ui-mobile.json
+            dist/v110/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30

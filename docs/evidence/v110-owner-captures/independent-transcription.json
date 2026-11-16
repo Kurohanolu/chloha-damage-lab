@@ -1,0 +1,1419 @@
+{
+  "reviewer": "Sol independent read-only review",
+  "baseline": "a70b45674c66dcfd7b87321c9f012dd36637c3f2",
+  "allTenOriginalsViewedUsingViewImage": true,
+  "captures": [
+    {
+      "id": "32678",
+      "sha256": "96218d638601b75eded57b257aff97c95b4bec65750a13438591c49ac848ae37",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32680",
+      "sha256": "210166f846d62d3582b53fb3c31b6d757738c8ceaf1ae4e178fba7c2a285c8d4",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32682",
+      "sha256": "30df61c23bad36b8a13033502477156fce973e9d1aba6248ae6208808cccdeb7",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32684",
+      "sha256": "1d21245a766ac212f7941d0e1432bbaf176efa37f2bf0072304a68c6c504861a",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32686",
+      "sha256": "2b576788790872570ab40ce547d4e61aba96b3ba71289ea30bc11207ef937a30",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32692",
+      "sha256": "04b634f176254d36caefb2ce719f5672a5719ee416265aa9412f367044103381",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32690",
+      "sha256": "5bc870da195d8069f7c3ff7de0444d4a6f574eab2f7cef28d86334d68f376115",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32688",
+      "sha256": "2e92005752cb8a14841849d000ca7283641034f1f04d86d9fbb627ddbf4ade89",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32694",
+      "sha256": "1df3113c76d427a78f8dbc803360c6bf052766f671bfcf75839bb77e3567f396",
+      "viewedOriginal": true
+    },
+    {
+      "id": "32696",
+      "sha256": "55f512b00ccee84f967c90627e4d3776e7bf5395d8d6b5d2380ce07ebb034de8",
+      "viewedOriginal": true
+    }
+  ],
+  "languageEvidence": "Owner attests ES-LA Champions; no settings screen or independently authenticated game build/version capture. Pelea/Insecto/regional vocabulary corroborates but does not replace this provenance disclosure.",
+  "counts": {
+    "items": {
+      "observed": 29,
+      "registered": 9
+    },
+    "moves": {
+      "observed": 20,
+      "registered": 16
+    },
+    "abilities": {
+      "observed": 6,
+      "registered": 6
+    },
+    "types": {
+      "observed": 10,
+      "registered": 10
+    }
+  },
+  "systemOwnedUniqueNames": 65,
+  "registeredSystemOwnedNames": 41,
+  "speciesContextCount": 6,
+  "observations": [
+    {
+      "category": "items",
+      "observedText": "Hierba Blanca",
+      "canonicalJapanese": "しろいハーブ",
+      "canonicalEnglish": "White Herb",
+      "captureIds": [
+        "32678",
+        "32686",
+        "32688"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Pañuelo Elección",
+      "canonicalJapanese": "こだわりスカーフ",
+      "canonicalEnglish": "Choice Scarf",
+      "captureIds": [
+        "32678",
+        "32680"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Semilla Electro",
+      "canonicalJapanese": "エレキシード",
+      "canonicalEnglish": "Electric Seed",
+      "captureIds": [
+        "32678"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Semilla Psique",
+      "canonicalJapanese": "サイコシード",
+      "canonicalEnglish": "Psychic Seed",
+      "captureIds": [
+        "32678"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Semilla Bruma",
+      "canonicalJapanese": "ミストシード",
+      "canonicalEnglish": "Misty Seed",
+      "captureIds": [
+        "32678"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Semilla Césped",
+      "canonicalJapanese": "グラスシード",
+      "canonicalEnglish": "Grassy Seed",
+      "captureIds": [
+        "32678"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Pañuelo de Seda",
+      "canonicalJapanese": "シルクのスカーフ",
+      "canonicalEnglish": "Silk Scarf",
+      "captureIds": [
+        "32678",
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Vidaesfera",
+      "canonicalJapanese": "いのちのたま",
+      "canonicalEnglish": "Life Orb",
+      "captureIds": [
+        "32680",
+        "32686",
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "lifeOrb"
+      ],
+      "baseline": {
+        "name": "Vidaesfera",
+        "status": "verified-secondary",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Citrón",
+      "canonicalJapanese": "オボンのみ",
+      "canonicalEnglish": "Sitrus Berry",
+      "captureIds": [
+        "32680",
+        "32686",
+        "32692"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Hibis",
+      "canonicalJapanese": "ロゼルのみ",
+      "canonicalEnglish": "Roseli Berry",
+      "captureIds": [
+        "32680"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "roseliBerry"
+      ],
+      "baseline": {
+        "name": "Baya Hibis",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Charizardita Y",
+      "canonicalJapanese": "リザードナイトＹ",
+      "canonicalEnglish": "Charizardite Y",
+      "captureIds": [
+        "32680"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Aerodactylita",
+      "canonicalJapanese": "プテラナイト",
+      "canonicalEnglish": "Aerodactylite",
+      "captureIds": [
+        "32680"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Refleluz",
+      "canonicalJapanese": "ひかりのねんど",
+      "canonicalEnglish": "Light Clay",
+      "captureIds": [
+        "32680"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Semilla Milagro",
+      "canonicalJapanese": "きせきのタネ",
+      "canonicalEnglish": "Miracle Seed",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Carbón",
+      "canonicalJapanese": "もくたん",
+      "canonicalEnglish": "Charcoal",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Agua Mística",
+      "canonicalJapanese": "しんぴのしずく",
+      "canonicalEnglish": "Mystic Water",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Imán",
+      "canonicalJapanese": "じしゃく",
+      "canonicalEnglish": "Magnet",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Polvo Plata",
+      "canonicalJapanese": "ぎんのこな",
+      "canonicalEnglish": "Silver Powder",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Pico Afilado",
+      "canonicalJapanese": "するどいくちばし",
+      "canonicalEnglish": "Sharp Beak",
+      "captureIds": [
+        "32682"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Alcho",
+      "canonicalJapanese": "ヨロギのみ",
+      "canonicalEnglish": "Charti Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "chartiBerry"
+      ],
+      "baseline": {
+        "name": "Baya Alcho",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Kebia",
+      "canonicalJapanese": "ビアーのみ",
+      "canonicalEnglish": "Kebia Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "kebiaBerry"
+      ],
+      "baseline": {
+        "name": "Baya Kebia",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Acardo",
+      "canonicalJapanese": "シュカのみ",
+      "canonicalEnglish": "Shuca Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "shucaBerry"
+      ],
+      "baseline": {
+        "name": "Baya Acardo",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Rimoya",
+      "canonicalJapanese": "ヤチェのみ",
+      "canonicalEnglish": "Yache Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "yacheBerry"
+      ],
+      "baseline": {
+        "name": "Baya Rimoya",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Pomaro",
+      "canonicalJapanese": "ヨプのみ",
+      "canonicalEnglish": "Chople Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "chopleBerry"
+      ],
+      "baseline": {
+        "name": "Baya Pomaro",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Payapa",
+      "canonicalJapanese": "ウタンのみ",
+      "canonicalEnglish": "Payapa Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "payapaBerry"
+      ],
+      "baseline": {
+        "name": "Baya Payapa",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Baya Drasi",
+      "canonicalJapanese": "カシブのみ",
+      "canonicalEnglish": "Kasib Berry",
+      "captureIds": [
+        "32684"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "kasibBerry"
+      ],
+      "baseline": {
+        "name": "Baya Drasi",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Banda Aguante",
+      "canonicalJapanese": "きあいのタスキ",
+      "canonicalEnglish": "Focus Sash",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Raichunita Y",
+      "canonicalJapanese": "ライチュウナイトＹ",
+      "canonicalEnglish": "Raichunite Y",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "items",
+      "observedText": "Hielo Perpetuo",
+      "canonicalJapanese": "とけないこおり",
+      "canonicalEnglish": "Never-Melt Ice",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Huracán",
+      "canonicalJapanese": "ぼうふう",
+      "canonicalEnglish": "Hurricane",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0170c_003"
+      ],
+      "baseline": {
+        "name": "Huracán",
+        "status": "verified-secondary",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Viento Afín",
+      "canonicalJapanese": "おいかぜ",
+      "canonicalEnglish": "Tailwind",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Somnífero",
+      "canonicalJapanese": "ねむりごな",
+      "canonicalEnglish": "Sleep Powder",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Protección",
+      "canonicalJapanese": "まもる",
+      "canonicalEnglish": "Protect",
+      "captureIds": [
+        "32686",
+        "32690",
+        "32692",
+        "32694",
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "protect"
+      ],
+      "baseline": {
+        "name": "Protección",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Garra Nociva",
+      "canonicalJapanese": "フェイタルクロー",
+      "canonicalEnglish": "Dire Claw",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0170_s024"
+      ],
+      "baseline": {
+        "name": "Garra Nociva",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Cuerpo a Cuerpo",
+      "canonicalJapanese": "インファイト",
+      "canonicalEnglish": "Close Combat",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "closeCombat"
+      ],
+      "baseline": {
+        "name": "Cuerpo a Cuerpo",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Avalancha",
+      "canonicalJapanese": "いわなだれ",
+      "canonicalEnglish": "Rock Slide",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "rockSlide"
+      ],
+      "baseline": {
+        "name": "Avalancha",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Sorpresa",
+      "canonicalJapanese": "ねこだまし",
+      "canonicalEnglish": "Fake Out",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "v096_095"
+      ],
+      "baseline": {
+        "name": "Sorpresa",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Electrocañón",
+      "canonicalJapanese": "でんじほう",
+      "canonicalEnglish": "Zap Cannon",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0169_s032"
+      ],
+      "baseline": {
+        "name": "Electrocañón",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Ataque Centrado",
+      "canonicalJapanese": "きあいだま",
+      "canonicalEnglish": "Focus Blast",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0169_s013"
+      ],
+      "baseline": {
+        "name": "Ataque Centrado",
+        "status": "verified-secondary",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Otra Vez",
+      "canonicalJapanese": "アンコール",
+      "canonicalEnglish": "Encore",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Fuerza Psíquica",
+      "canonicalJapanese": "サイコキネシス",
+      "canonicalEnglish": "Psychic",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "psychic"
+      ],
+      "baseline": {
+        "name": "Fuerza Psíquica",
+        "status": "verified-secondary",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Hipervoz",
+      "canonicalJapanese": "ハイパーボイス",
+      "canonicalEnglish": "Hyper Voice",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "hyperVoice"
+      ],
+      "baseline": {
+        "name": "Hipervoz",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Espacio Raro",
+      "canonicalJapanese": "トリックルーム",
+      "canonicalEnglish": "Trick Room",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": false,
+      "runtimeIds": [],
+      "baseline": {
+        "name": null,
+        "status": null,
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Genufendiente",
+      "canonicalJapanese": "ドゲザン",
+      "canonicalEnglish": "Kowtow Cleave",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0169_p075"
+      ],
+      "baseline": {
+        "name": "Genufendiente",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Golpe Bajo",
+      "canonicalJapanese": "ふいうち",
+      "canonicalEnglish": "Sucker Punch",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "suckerPunch"
+      ],
+      "baseline": {
+        "name": "Golpe Bajo",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Patada Baja",
+      "canonicalJapanese": "けたぐり",
+      "canonicalEnglish": "Low Kick",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0169_p040"
+      ],
+      "baseline": {
+        "name": "Patada Baja",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Ventisca",
+      "canonicalJapanese": "ふぶき",
+      "canonicalEnglish": "Blizzard",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "blizzard"
+      ],
+      "baseline": {
+        "name": "Ventisca",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Liofilización",
+      "canonicalJapanese": "フリーズドライ",
+      "canonicalEnglish": "Freeze-Dry",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0169_s052"
+      ],
+      "baseline": {
+        "name": "Liofilización",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "moves",
+      "observedText": "Esquirla Helada",
+      "canonicalJapanese": "こおりのつぶて",
+      "canonicalEnglish": "Ice Shard",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "gw0170b_003"
+      ],
+      "baseline": {
+        "name": "Esquirla Helada",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "Ojo Compuesto",
+      "canonicalJapanese": "ふくがん",
+      "canonicalEnglish": "Compound Eyes",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "unsupported:ふくがん"
+      ],
+      "baseline": {
+        "name": "Ojo Compuesto",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "Liviano",
+      "canonicalJapanese": "かるわざ",
+      "canonicalEnglish": "Unburden",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "unsupported:かるわざ"
+      ],
+      "baseline": {
+        "name": "Liviano",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "Pararrayos",
+      "canonicalJapanese": "ひらいしん",
+      "canonicalEnglish": "Lightning Rod",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "lightningRod"
+      ],
+      "baseline": {
+        "name": "Pararrayos",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "Cola Armadura",
+      "canonicalJapanese": "テイルアーマー",
+      "canonicalEnglish": "Armor Tail",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "unsupported:テイルアーマー"
+      ],
+      "baseline": {
+        "name": "Cola Armadura",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "General Supremo",
+      "canonicalJapanese": "そうだいしょう",
+      "canonicalEnglish": "Supreme Overlord",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "supremeOverlord"
+      ],
+      "baseline": {
+        "name": "General Supremo",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "abilities",
+      "observedText": "Nevada",
+      "canonicalJapanese": "ゆきふらし",
+      "canonicalEnglish": "Snow Warning",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "snowWarning"
+      ],
+      "baseline": {
+        "name": "Nevada",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "INSECTO",
+      "canonicalJapanese": "むし",
+      "canonicalEnglish": "Bug",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "むし"
+      ],
+      "baseline": {
+        "name": "Insecto",
+        "status": "verified-secondary",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "VOLADOR",
+      "canonicalJapanese": "ひこう",
+      "canonicalEnglish": "Flying",
+      "captureIds": [
+        "32686"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "ひこう"
+      ],
+      "baseline": {
+        "name": "Volador",
+        "status": "official",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "PELEA",
+      "canonicalJapanese": "かくとう",
+      "canonicalEnglish": "Fighting",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "かくとう"
+      ],
+      "baseline": {
+        "name": "Pelea",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "VENENO",
+      "canonicalJapanese": "どく",
+      "canonicalEnglish": "Poison",
+      "captureIds": [
+        "32688"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "どく"
+      ],
+      "baseline": {
+        "name": "Veneno",
+        "status": "official",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "ELÉCTRICO",
+      "canonicalJapanese": "でんき",
+      "canonicalEnglish": "Electric",
+      "captureIds": [
+        "32690"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "でんき"
+      ],
+      "baseline": {
+        "name": "Eléctrico",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "NORMAL",
+      "canonicalJapanese": "ノーマル",
+      "canonicalEnglish": "Normal",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "ノーマル"
+      ],
+      "baseline": {
+        "name": "Normal",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "PSÍQUICO",
+      "canonicalJapanese": "エスパー",
+      "canonicalEnglish": "Psychic",
+      "captureIds": [
+        "32692"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "エスパー"
+      ],
+      "baseline": {
+        "name": "Psíquico",
+        "status": "official",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "SINIESTRO",
+      "canonicalJapanese": "あく",
+      "canonicalEnglish": "Dark",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "あく"
+      ],
+      "baseline": {
+        "name": "Siniestro",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "ACERO",
+      "canonicalJapanese": "はがね",
+      "canonicalEnglish": "Steel",
+      "captureIds": [
+        "32694"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "はがね"
+      ],
+      "baseline": {
+        "name": "Acero",
+        "status": "official",
+        "officialChampions": false
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    },
+    {
+      "category": "types",
+      "observedText": "HIELO",
+      "canonicalJapanese": "こおり",
+      "canonicalEnglish": "Ice",
+      "captureIds": [
+        "32696"
+      ],
+      "readable": true,
+      "registered": true,
+      "runtimeIds": [
+        "こおり"
+      ],
+      "baseline": {
+        "name": "Hielo",
+        "status": "official",
+        "officialChampions": true
+      },
+      "recommendedDisposition": "eligible-game-ui-name-attestation; owner-attested-region; no-mechanics-upgrade"
+    }
+  ],
+  "species": [
+    {
+      "observedText": "Vivillon",
+      "runtimeId": "roster_v0106_040",
+      "canonicalJapanese": "ビビヨン",
+      "captureId": "32686",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    },
+    {
+      "observedText": "Sneasler",
+      "runtimeId": "sneasler",
+      "canonicalJapanese": "オオニューラ",
+      "captureId": "32688",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    },
+    {
+      "observedText": "Raichu",
+      "runtimeId": "gw091_08",
+      "canonicalJapanese": "ライチュウ",
+      "captureId": "32690",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    },
+    {
+      "observedText": "Farigiraf",
+      "runtimeId": "roster_v0107_032",
+      "canonicalJapanese": "リキキリン",
+      "captureId": "32692",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    },
+    {
+      "observedText": "Kingambit",
+      "runtimeId": "roster_v0105_035",
+      "canonicalJapanese": "ドドゲザン",
+      "captureId": "32694",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    },
+    {
+      "observedText": "Vanilluxe",
+      "runtimeId": "roster_v0107_001",
+      "canonicalJapanese": "バイバニラ",
+      "captureId": "32696",
+      "disposition": "identity-context-only; default-species-name-not-proven; nickname-editability-not-excluded"
+    }
+  ],
+  "excluded": [
+    {
+      "captureId": "32684",
+      "location": "partially visible next row below fully visible Baya Drasi",
+      "reason": "Text and row cut by bottom boundary; do not adopt or infer the item from partial text/icon."
+    },
+    {
+      "captures": "32678/32680/32682",
+      "location": "partially visible next row below seventh full item row",
+      "reason": "No adoption from bottom fragments."
+    }
+  ],
+  "uiObservations": [
+    "Pokémon",
+    "Todos",
+    "Recientes",
+    "Potencia",
+    "Defensa",
+    "Curación",
+    "Baya",
+    "Combate Amistoso",
+    "Combate Doble",
+    "Datos varios",
+    "Características",
+    "Habilidad",
+    "Objeto",
+    "Ocultar datos",
+    "¡Todo listo!"
+  ],
+  "privacy": "Private originals and trainer/team/account/quantity metadata must not be published. This private transcription records only terminology/context and source hashes."
+}

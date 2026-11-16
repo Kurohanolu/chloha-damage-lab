@@ -1,9 +1,10 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const context={};for(const file of ['locale-names-v0183.js','locale-names-pokeapi-v0183.js','locale-quality-v0188.js'])vm.runInNewContext(fs.readFileSync(require.resolve('../'+file),'utf8'),context);
+const context={};for(const file of ['locale-names-v0183.js','locale-names-pokeapi-v0183.js','locale-es-la-data-v110.js','locale-es-la-v110.js','locale-quality-v0188.js'])vm.runInNewContext(fs.readFileSync(require.resolve('../'+file),'utf8'),context);
 const api=context.ChlohaLocaleQuality;
 for(const locale of api.locales){
- const name=context.ChlohaLocalizedNames.moves['はきだす']?.[locale]||context.ChlohaPokeAPILocalizedNames.moves['はきだす'][locale];
+ const existing=context.ChlohaLocalizedNames.moves['はきだす']?.[locale]||context.ChlohaPokeAPILocalizedNames.moves['はきだす'][locale];
+ const name=locale==='es-LA'?context.ChlohaEsLa.entity('moves','はきだす',context.ChlohaLocalizedNames.moves['はきだす']?.es||context.ChlohaPokeAPILocalizedNames.moves['はきだす'].es):existing;
  for(const count of [1,2,3]){
   const copy=api.stockpile(locale,count);
   assert.ok(copy.title.includes(name),'reuse existing localized move names: '+locale);
@@ -68,5 +69,5 @@ for(const locale of api.locales)assert.ok(api.stockpile(locale,1).title,'explici
  for(const n of Object.values(nodes))assert.equal(n.hasAttribute('data-no-translate'),false,'unknown text stays delegated after locale change');
  nodes.error.setAttribute('data-no-translate');nodes.error.textContent='pre-existing external exclusion';changed();flush();assert.equal(nodes.error.hasAttribute('data-no-translate'),true,'never remove another component’s marker');
 }
-console.log('PASS v0.188 stockpile and allocation-error nine-language copy, names reuse and locale recognition');
+console.log('PASS v0.188 stockpile and allocation-error copy: original nine locales plus ES-LA, canonical names reuse and locale recognition');
 

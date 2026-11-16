@@ -52,13 +52,17 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Install locked Worker dependencies
         run: npm ci --prefix services/feedback --no-audit --no-fund
-      - name: Validate complete nine-language contract
-        run: node tests/v0185-feedback-contract.cjs
+      - name: Immutable v1.0.0 exact-nine privacy contract (historical evidence)
+        run: node scripts/v110-historical-contracts.cjs --suite feedback-nine
+      - name: Candidate ten-language catalogs and private snapshot allowlist
+        run: node tests/v110-locale-contract.cjs
       - name: Validate fail-closed production release checks
         run: node tests/v0185-feedback-production.cjs
       - name: Exercise private API, security and moderated Issue state machine

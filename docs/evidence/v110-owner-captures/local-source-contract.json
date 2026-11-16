@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-11-16",
+  "sourceSha256": "d97ee7339ab128ec669cf22f0d8705f07c59f3a8a7a3f45f858f9b762b42a427",
+  "counts": {
+    "pokemon": {
+      "total": 373,
+      "official": 31,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 342,
+      "fallback": 342
+    },
+    "moves": {
+      "total": 335,
+      "official": 34,
+      "verified-secondary": 107,
+      "provisional": 0,
+      "unverified": 194,
+      "fallback": 194
+    },
+    "abilities": {
+      "total": 245,
+      "official": 19,
+      "verified-secondary": 42,
+      "provisional": 0,
+      "unverified": 184,
+      "fallback": 184
+    },
+    "items": {
+      "total": 41,
+      "official": 9,
+      "verified-secondary": 19,
+      "provisional": 0,
+      "unverified": 13,
+      "fallback": 13
+    },
+    "types": {
+      "total": 18,
+      "official": 18,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 0,
+      "fallback": 0
+    },
+    "forms": {
+      "total": 134,
+      "official": 20,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 114,
+      "fallback": 114
+    },
+    "natures": {
+      "total": 11,
+      "official": 4,
+      "verified-secondary": 1,
+      "provisional": 0,
+      "unverified": 6,
+      "fallback": 6
+    },
+    "stats": {
+      "total": 6,
+      "official": 6,
+      "verified-secondary": 0,
+      "provisional": 0,
+      "unverified": 0,
+      "fallback": 0
+    }
+  },
+  "ownerProvidedTerminologyCapturesVerified": true,
+  "physicalMechanicsVerified": false,
+  "passed": true
+}

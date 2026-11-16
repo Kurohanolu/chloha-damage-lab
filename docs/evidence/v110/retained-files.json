@@ -1,0 +1,157 @@
+{
+  "scope": "Unmodified reports/screenshots and independent review records, plus exact CI receipt and path mapping. Synthetic test inputs only. Hash manifest excludes itself.",
+  "implementationHead": "215e5a1a8af9e20591d077e6acfcabb234a53b7a",
+  "implementationTree": "fa77eab91c520fc4e40f9d146b63c909f47d8c4f",
+  "files": [
+    {
+      "path": "docs/evidence/v110/README.md",
+      "sha256": "9eeab208969e0b2274cc057e4ee8f38af23c49631cf38c6487fabd7ddd200713",
+      "bytes": 3102
+    },
+    {
+      "path": "docs/evidence/v110/artifact-contract.json",
+      "sha256": "0915194ef1c01726e6220a4930bfcebc4b8a1c06c14ec943b458333aaa1596bb",
+      "bytes": 850
+    },
+    {
+      "path": "docs/evidence/v110/browser-acceptance-receipt.json",
+      "sha256": "a29e35f3b14c6452e36f49bf663ab4030d182fd8802636e8a0145a2e30d201b2",
+      "bytes": 5822
+    },
+    {
+      "path": "docs/evidence/v110/browser-acceptance-review.md",
+      "sha256": "c9f1b240af923a51b3f2e1604816bf452ac157eda57b99fc607430aeda4f0b8e",
+      "bytes": 4843
+    },
+    {
+      "path": "docs/evidence/v110/browser-cc5a-review.md",
+      "sha256": "2ebc166eb606af05d90405f26208664f6d0d73f9ccb0003a2637db38b4af7920",
+      "bytes": 4314
+    },
+    {
+      "path": "docs/evidence/v110/browser-performance.json",
+      "sha256": "05e37880d2ac33f82119f1bcc5a463b1cd7418ff4a0eb0bb6191ad5866638009",
+      "bytes": 84343
+    },
+    {
+      "path": "docs/evidence/v110/browser-workflow-job.json",
+      "sha256": "7b97e66e670b725907834a928ad08afabafc0214cd44b733626ae5f879fce8ae",
+      "bytes": 3113
+    },
+    {
+      "path": "docs/evidence/v110/ci-acceptance.json",
+      "sha256": "2d5628a10032045966fc639551c888ed72d24717286b7b694bbc9104512b058b",
+      "bytes": 71061
+    },
+    {
+      "path": "docs/evidence/v110/continued-locale-browser.json",
+      "sha256": "caeb8ab3e07c880597dda9a985c79855bf39080545d23645c8751439fcd593a6",
+      "bytes": 4422
+    },
+    {
+      "path": "docs/evidence/v110/continued-state-browser.json",
+      "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f",
+      "bytes": 9580
+    },
+    {
+      "path": "docs/evidence/v110/dynamic-ui.json",
+      "sha256": "c2f63f2835afab15ea2e8adfc31e25b7fe42cc900e21546020ab824dded7ef40",
+      "bytes": 314
+    },
+    {
+      "path": "docs/evidence/v110/engine-promotion.json",
+      "sha256": "2a6d2733d860ae1357ef293e34bc267fd800c50e381a2f9202862df8648b649e",
+      "bytes": 2313
+    },
+    {
+      "path": "docs/evidence/v110/es-la-details-390.png",
+      "sha256": "70f67a25added98235c810bf0dcb47e4f9640f708295fb7bb08036e59b607d42",
+      "bytes": 443678
+    },
+    {
+      "path": "docs/evidence/v110/es-la-feedback-390.png",
+      "sha256": "da96d009bb187cd5a4069712112ba7a762d919abf372df6bfb8bb489e6cfe25a",
+      "bytes": 96687
+    },
+    {
+      "path": "docs/evidence/v110/es-la-feedback-viewport-390.png",
+      "sha256": "c17ecd3b8e02b7dd98e951be3eed5d65e895f52617b5a81bfe3e9bcd97dff1a5",
+      "bytes": 69478
+    },
+    {
+      "path": "docs/evidence/v110/es-la-initial-1440.png",
+      "sha256": "c1bf969f89eff5c856b3683d1ec4d83148affe2958f3e61930d5c6f49a9c237c",
+      "bytes": 501761
+    },
+    {
+      "path": "docs/evidence/v110/es-la-initial-320.png",
+      "sha256": "1a91f05ac8b4b5821e965caa7ed2401290a77baef4e31217fde7a3881d65765a",
+      "bytes": 348719
+    },
+    {
+      "path": "docs/evidence/v110/es-la-initial-390.png",
+      "sha256": "654f1e7c8db7279e05027ab09010b5a36a24504db74dbdf1d976ac0e16a1a8bd",
+      "bytes": 355212
+    },
+    {
+      "path": "docs/evidence/v110/feedback-browser.json",
+      "sha256": "a3188d59ac8be887c03527efeb6a3b783acb451b2f438510cc9a4ac34a95af83",
+      "bytes": 2050
+    },
+    {
+      "path": "docs/evidence/v110/locale-contract.json",
+      "sha256": "1f81b41a19792e196352669f26da6acb8493369b91b04ffe977b5b0cc13f28aa",
+      "bytes": 359
+    },
+    {
+      "path": "docs/evidence/v110/memory.json",
+      "sha256": "3f4f7320a0768f99c7f88d1543c08b07492af24ee0773c949ad38a41d5f0356b",
+      "bytes": 181603
+    },
+    {
+      "path": "docs/evidence/v110/public-performance.json",
+      "sha256": "1d662fde353d277022cc6e2e90efa23993e4d9a9de79d44115731d9fbf8685ed",
+      "bytes": 151058
+    },
+    {
+      "path": "docs/evidence/v110/regional-search-browser.json",
+      "sha256": "d0e62bb7df0f8e76f053e2f34155d3c2bd8033d61f75d707f2018ec7b8be248f",
+      "bytes": 4784
+    },
+    {
+      "path": "docs/evidence/v110/sol-independent-review.md",
+      "sha256": "67b00132ce9c0930753218e73d5134998cb493609b9ec083642fee4a06d16ace",
+      "bytes": 41194
+    },
+    {
+      "path": "docs/evidence/v110/source-contract.json",
+      "sha256": "78c37358fe3c5123d72e69d70aed5ebde272f432cd7fffc7a162658e17d84993",
+      "bytes": 1505
+    },
+    {
+      "path": "docs/evidence/v110/ten-locale-browser.json",
+      "sha256": "c9de0a9ac6a942943172e152a78ebf0f977e6b0b1c82c2a7b6ecc3a3db0253b6",
+      "bytes": 23447
+    },
+    {
+      "path": "docs/evidence/v110/test-run.json",
+      "sha256": "71f8152e118eb8e8fa4369248ad5f49465710760242916f2cfd110fcff1aa635",
+      "bytes": 1639
+    },
+    {
+      "path": "docs/evidence/v110/ui-inventory.json",
+      "sha256": "2db37fe1c553b24e8e6632267af9eec52cc1885cbf6aa4efe2ef05c19ba25f29",
+      "bytes": 1061
+    },
+    {
+      "path": "docs/evidence/v110/ui-mobile-60.json",
+      "sha256": "25fcda9e34b8323b7ef474abf07e47d61c1d6422c1e2fc79fca28b806c6eec3e",
+      "bytes": 16507
+    },
+    {
+      "path": "docs/evidence/v110/ui-mobile.json",
+      "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc",
+      "bytes": 6666
+    }
+  ]
+}

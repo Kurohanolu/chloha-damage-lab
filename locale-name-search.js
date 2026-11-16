@@ -1,7 +1,7 @@
 /* v0.183 multilingual entity-name search foundation. IDs are canonical; no battle data changes. */
 'use strict';
 const ChlohaNameSearch=(()=>{
- const supported=Object.freeze(['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant']);
+ const supported=Object.freeze(['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA']);
  const categories=Object.freeze(['pokemon','moves','abilities','items']);
  function normalize(value){
   return String(value??'').normalize('NFKC').toLocaleLowerCase('und').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[\s\u3000\-_.'’]/g,'');

@@ -1,0 +1,266 @@
+{
+  "verifiedAt": "2026-11-15T19:32:15.111Z",
+  "commit": "9560399385349d0f62cba57a96c146bc08b7663b",
+  "runs": {
+    "workflow_runs": [
+      {
+        "id": 43736481185,
+        "name": "v0.188 Quality Remediation",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 33,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481185/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481185/logs",
+        "workflow_id": 418813329
+      },
+      {
+        "id": 43736481172,
+        "name": "v1.1.0 ES-LA Localization",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 6,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481172/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481172/logs",
+        "workflow_id": 419177137
+      },
+      {
+        "id": 43736481448,
+        "name": "v0.184 engine baseline",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 102,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481448/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481448/logs",
+        "workflow_id": 417900004
+      },
+      {
+        "id": 43736481285,
+        "name": "v0.187 Singularity Migration",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 48,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481285/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481285/logs",
+        "workflow_id": 418393801
+      },
+      {
+        "id": 43736481301,
+        "name": "Showdown differential audit",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 1100,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481301/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481301/logs",
+        "workflow_id": 414870050
+      },
+      {
+        "id": 43736481187,
+        "name": "Publish verified release",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 63,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481187/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481187/logs",
+        "workflow_id": 417994524
+      },
+      {
+        "id": 43736481193,
+        "name": "Showdown differential tests",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 475,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481193/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481193/logs",
+        "workflow_id": 414873246
+      },
+      {
+        "id": 43736481239,
+        "name": "GitHub Pages live smoke",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 294,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481239/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481239/logs",
+        "workflow_id": 415350000
+      },
+      {
+        "id": 43736481178,
+        "name": "Damage Lab CI and status ledger",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 247,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481178/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481178/logs",
+        "workflow_id": 417125250
+      },
+      {
+        "id": 43736481213,
+        "name": "v0.185 anonymous feedback",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 62,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481213/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481213/logs",
+        "workflow_id": 418035883
+      },
+      {
+        "id": 43736481203,
+        "name": "v1.0.0 Stable Promotion",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 14,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481203/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481203/logs",
+        "workflow_id": 418997480
+      },
+      {
+        "id": 43736481388,
+        "name": "v0.186 Accuracy & Mechanics Audit",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 56,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481388/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481388/logs",
+        "workflow_id": 418283182
+      },
+      {
+        "id": 43736481257,
+        "name": "UI & damage regression",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 1118,
+        "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481257/jobs",
+        "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43736481257/logs",
+        "workflow_id": 414221936
+      }
+    ]
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "id": 132880093436,
+        "name": "candidate-ten-locales",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 43736481172,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --no-package-lock --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Install CJK fonts for preserved language coverage",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Validate release identity and unchanged 300-case contract",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run all new candidate acceptance (no test discovery exclusions)",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Preserve immediate candidate diagnostics while legacy checks continue",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Preserve existing nine-language 90-transition candidate regression",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Preserve existing nine-language state and mobile candidate regressions",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Validate local Worker without production calls",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Build unpublished candidate site pair and hashes",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 31
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 32
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 33
+          }
+        ]
+      }
+    ]
+  }
+}

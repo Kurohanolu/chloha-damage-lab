@@ -32,7 +32,12 @@ jobs:
           node scripts/verify-release.cjs
           node tests/v0177-version-provenance.cjs
           node tests/v0184-public-baseline.cjs
-          node tests/v0187-migration-contract.cjs
+          if [ "$(node -p "require('./release.json').tag")" = "v1.1.0-pre.1" ]; then
+            node scripts/v110-historical-contracts.cjs --suite migration
+            node tests/v110-artifact-contract.cjs
+          else
+            node tests/v0187-migration-contract.cjs
+          fi
           node tests/v0187-live-readiness.cjs
           node tests/v0187-deployment-gate.cjs
           node tests/v0187-rollback.cjs

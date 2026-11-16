@@ -1,0 +1,40 @@
+{
+  "scope": "Local preflight against an uncommitted source-data preview plus independent visual transcription. Exact committed CI remains separate. Original screenshots are private and not included.",
+  "files": [
+    {
+      "path": "docs/evidence/v110-owner-captures/independent-transcription.json",
+      "sha256": "63279d52bd8e3cbc89ad5484f7ca3725fa058dc796314ffa10de3ee3450476b5",
+      "bytes": 39931
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/independent-transcription.md",
+      "sha256": "38b40116cfc7ef9376f915c68c31de1706e71c261e5d53ac706cb20b12449029",
+      "bytes": 11328
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/local-dynamic-ui.json",
+      "sha256": "c2f63f2835afab15ea2e8adfc31e25b7fe42cc900e21546020ab824dded7ef40",
+      "bytes": 314
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/local-engine-promotion.json",
+      "sha256": "80a1852d9586b08e88b548544e176f7436d719537b6892aced87336681ae9422",
+      "bytes": 2312
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/local-locale-contract.json",
+      "sha256": "1f81b41a19792e196352669f26da6acb8493369b91b04ffe977b5b0cc13f28aa",
+      "bytes": 359
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/local-owner-capture-contract.json",
+      "sha256": "ca49e3383e94f4863afd9c76c6fc64331ec22bd3678a98c01d17005844b86184",
+      "bytes": 761
+    },
+    {
+      "path": "docs/evidence/v110-owner-captures/local-source-contract.json",
+      "sha256": "2610f283f35c8cb7b2d18718a92a48154a5d5e633192636471fa19f6ce5cfbd4",
+      "bytes": 1562
+    }
+  ]
+}
