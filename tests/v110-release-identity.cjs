@@ -8,6 +8,7 @@ const {baselineForRelease}=require('./helpers/v0188-browser-lab.cjs');
 const stableCommit='0b270c1452505268364659edd402209b00b28673',pre1Commit='83af29133927a19fc7e0f9273c0e194c54384ae5',pre2Commit='aba2d0558948e2a4dd375074fb11fd428edf6222';
 const historical=commit=>JSON.parse(execFileSync('git',['show',commit+':release.json'],{encoding:'utf8'}));
 const pre3Commit='082ab180bc8835304d959f583d4968e0565bdea3',pre3=historical(pre3Commit);
+const pre4Commit='61d87e82995bc60d4564aaf57a52dfc1fd859e4c',pre4=historical(pre4Commit);
 const stable=historical(stableCommit),pre1=historical(pre1Commit),pre2=historical(pre2Commit);
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.1'}),stableCommit,'Original pre.1 performance baseline remains Stable');
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.2'}),pre1Commit,'Pre.2 compares against the immutable published predecessor');
@@ -20,10 +21,11 @@ function pending(manifest){
  result.qualityReview={releaseTag:result.tag,auditor:'6.1 Sol',auditStatus:'pending',ownerApproval:'pending',evidence:'',auditOutcome:'pending',conditionsDisposition:'pending',reviewedSourceCommit:null,reviewedTree:null,auditReportSha256:null,ownerEvidence:'',ownerRecordedAtJST:null};
  return result;
 }
+assert.equal(baselineForRelease({tag:'v1.1.0-pre.5'}),pre4Commit,'Pre.5 compares against immutable public pre.4');
 const current=pending(require('../release.json'));
-assert.equal(current.tag,'v1.1.0-pre.4');assert.equal(current.preRelease,4);
+assert.equal(current.tag,'v1.1.0-pre.5');assert.equal(current.preRelease,5);
 // Historical and current candidates retain separate, exact public baselines.
-for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[current,pre3,4]]){
+for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[current,pre4,5]]){
  const observed=verifyObservation(candidate,publicBase,publicBase.name);
  assert.deepEqual(verifyObservation(candidate,publicBase,publicBase.name,observed),observed,'Repeated observations cannot change release baseline');
  for(const altered of [{...publicBase,notes:'docs/tampered.md'},{...publicBase,tag:candidate.tag},candidate])assert.throws(()=>verifyObservation(candidate,altered,altered.name),'Changed or unpublished metadata is not a public baseline');
@@ -44,7 +46,7 @@ for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre
 }
 assert.deepEqual(releaseIdentity(stable),{stable:true,displayVersion:'v1.0.0',packageVersion:'1.0.0'});
 const context=vm.createContext({});vm.runInContext(fs.readFileSync('feedback-release-v100.js','utf8'),context);const R=context.ChlohaFeedbackRelease;
-for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[current.name,4]]){
+for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name,4],[current.name,5]]){
  const id=R.identify(title);
  assert.equal(id.wireVersion,'v1.1 Pre-Release '+number);assert.equal(id.fullVersion,'v1.1.0 Pre-Release '+number);assert.equal(id.prefix,'[Singularity release: v1.1.0 Pre-Release '+number+']\n\n');
  assert.equal(R.description(title,'a'.repeat(id.descriptionLimit)).length,R.wireDescriptionLimit);
@@ -53,6 +55,6 @@ for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[current.n
   const text=R.text(locale,'compatibility',title);assert.ok(text.includes(id.wireVersion)&&text.includes(id.fullVersion));assert.ok(!text.includes('v1.0.0'));
  }
 }
-for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 5','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
+for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 6','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
 assert.equal(R.identify(stable.name).fullVersion,'v1.0.0');assert.equal(R.identify('Singularity v0.188 Pre-Release 1').compatibility,false);
-console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');
+console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4/pre.5 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');

@@ -1,5 +1,10 @@
 # Singularity v1.1.0 — ES-LA handoff
 
+## Current work — batch 3 integration
+
+The seven private ability captures are now integrated in the pre.5 candidate. All seven map to existing translation IDs (three supported calculation abilities, four roster-only unsupported identities). Five names gain official Champions status, two add corroboration only. Overall official coverage is 156/1,029; Champions-specific coverage 147/1,029; unverified names 712. Names/aliases and all protected engine/other-language data remain unchanged. See [batch-3 audit](v110-es-la-owner-abilities-batch3.md) for corrected hash, mappings and limits. Candidate tests are not a publication claim. Older checkpoints below are historical.
+
+
 ## Pending evidence integration — seven new Mega ability captures (2026-11-16 JST)
 
 The owner provided seven additional private Pokémon Champions ES-LA ability-detail screenshots, bringing the owner-provided total to **27**. See [batch-3 evidence ledger](v110-es-la-owner-abilities-batch3.md) for screenshot hashes, visible names, form/English identity mapping, and exact effect paraphrases. **This is a new documentation-only checkpoint, not an assertion that the seven have been ingested into the generated translation catalog or that CI has passed.** Before changing localization counts, deduplicate with existing official/secondary records and confirm which of the seven abilities have registered canonical runtime IDs. Absent abilities remain off-runtime; do not inflate the 245-entry denominator or imply mechanics support. Preserve published pre.4 and do not deploy as part of this evidence handoff. Default owner screenshot request is zero.

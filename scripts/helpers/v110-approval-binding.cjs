@@ -10,7 +10,7 @@ function evidence(file){
  return fs.readFileSync(file);
 }
 function verifyV110Binding(release){
- assert.ok(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4'].includes(release.tag),'Explicit ES-LA release policy required');
+ assert.ok(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5'].includes(release.tag),'Explicit ES-LA release policy required');
  const r=release.qualityReview;
  assert.match(r.reviewedSourceCommit||'',/^[a-f0-9]{40}$/);
  assert.equal(git(['rev-parse',r.reviewedSourceCommit+'^{tree}']).toString().trim(),r.reviewedTree);
@@ -18,8 +18,8 @@ function verifyV110Binding(release){
  const before=JSON.parse(reviewed('release.json'));
  assert.equal(before.tag,release.tag);assert.equal(before.qualityReview.ownerApproval,'pending');
  assert.ok(!Object.hasOwn(before,'followupAudit'),'A distinct reviewed release candidate is required');
- if(['v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4'].includes(release.tag)){
-  assert.equal(before.preRelease,release.tag==='v1.1.0-pre.4'?4:release.tag==='v1.1.0-pre.3'?3:2);assert.equal(before.qualityReview.releaseTag,release.tag);
+ if(['v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5'].includes(release.tag)){
+  assert.equal(before.preRelease,release.tag==='v1.1.0-pre.5'?5:release.tag==='v1.1.0-pre.4'?4:release.tag==='v1.1.0-pre.3'?3:2);assert.equal(before.qualityReview.releaseTag,release.tag);
   assert.equal(before.qualityReview.auditStatus,'pending');
  }
  assert.equal(before.migration.liveTargetVerified,false);

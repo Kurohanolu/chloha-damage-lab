@@ -1,4 +1,28 @@
 'use strict';
+// Preserve the exact published second capture batch lifecycle test in its immutable source tree.
+// It verifies real approved bytes there; current batch 3 has a separate provenance and preservation gate.
+if(require('node:fs').existsSync('docs/data/v110-es-la-owner-captures-batch3.json')){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='61d87e82995bc60d4564aaf57a52dfc1fd859e4c',tree='213c12af29c002e9344b018e6be69e568a251dff';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre3-history-')),worktree=path.join(parent,'source');
+ let status=1;
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-second-capture-contract.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published second capture batch lifecycle must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/second-capture-contract.json'),'utf8'));
+  fs.writeFileSync('reports/v110/second-capture-contract.json',JSON.stringify({...report,role:'historical immutable second capture batch, not current candidate acceptance',sourceCommit:ref,sourceTree:tree},null,2)+'\n');
+  status=0;
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(status);
+}
+'use strict';
 // Fixed witnesses from the reviewed second capture batch, independent of the
 // generator. CI checks the attestation and identity bindings, not private image
 // pixels or physical game mechanics. The first publication is immutable.

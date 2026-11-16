@@ -1,5 +1,10 @@
 # v1.1.0 ES-LA Source Audit
 
+## Current evidence checkpoint — third batch
+
+The seven private ability captures are now integrated in the pre.5 candidate. All seven map to existing translation IDs (three supported calculation abilities, four roster-only unsupported identities). Five names gain official Champions status, two add corroboration only. Overall official coverage is 156/1,029; Champions-specific coverage 147/1,029; unverified names 712. Names/aliases and all protected engine/other-language data remain unchanged. See [batch-3 audit](v110-es-la-owner-abilities-batch3.md) for corrected hash, mappings and limits. Candidate tests are not a publication claim. Older checkpoints below are historical.
+
+
 ## Current evidence checkpoint — second batch, 2026-11-16 JST
 
 All **20 original owner screenshots were visually inspected** by the implementation/review team. Original image bytes remain private. The [20-image evidence audit](v110-es-la-owner-screenshot-evidence.md) and [second-batch manifest](data/v110-es-la-owner-captures-batch2.json) record exact visible text, source images, screen positions, existing canonical IDs, exclusions and effect-description context. No language-settings screen was supplied; the owner's ES-LA attestation and consistent regional vocabulary are the recorded locale evidence. Capture dates, game build and platform are not independently established.

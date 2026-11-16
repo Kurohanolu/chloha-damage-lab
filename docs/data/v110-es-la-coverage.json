@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "44581f62a39cdeb543149a5a0ec18de591c6e95e38124e2af9b6edcae33b493b",
+  "sourceSha256": "b14374b64b2b9ab6f1d8e7f8495f01e76f6517e4e09b163a2ecbd1a283f40922",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -44,16 +44,16 @@
     },
     "abilities": {
       "total": 245,
-      "official": 22,
-      "verified-secondary": 41,
+      "official": 27,
+      "verified-secondary": 38,
       "provisional": 0,
-      "unverified": 182,
-      "officialChampions": 22,
+      "unverified": 180,
+      "officialChampions": 27,
       "displayAvailable": 245,
-      "individuallyAttested": 63,
-      "individuallyAttestedPercent": 25.71,
-      "officialPercent": 8.98,
-      "officialChampionsPercent": 8.98
+      "individuallyAttested": 65,
+      "individuallyAttestedPercent": 26.53,
+      "officialPercent": 11.02,
+      "officialChampionsPercent": 11.02
     },
     "items": {
       "total": 41,
@@ -16709,26 +16709,26 @@
         "canonicalIds": [
           "fireMane"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-habilidades-2026-11-15",
-          "pokexperto-champions-abilities-316-detail"
+          "owner-champions-capture-32753"
         ],
         "recordIds": [
-          "pokexperto-champions-abilities-316"
+          "owner-champions-batch3-abilities-fire-mane"
         ],
         "relatedRecordIds": [
-          "pokexperto-champions-abilities-316"
+          "pokexperto-champions-abilities-316",
+          "owner-champions-batch3-abilities-fire-mane"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Melena de Fuego"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "もらいび": {
@@ -17712,14 +17712,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-press-march"
+          "champions-press-march",
+          "owner-champions-capture-32759"
         ],
         "recordIds": [
-          "official-champions-abilities-dragonize"
+          "official-champions-abilities-dragonize",
+          "owner-champions-batch3-abilities-dragonize"
         ],
         "relatedRecordIds": [
           "official-champions-abilities-dragonize",
-          "pokexperto-champions-abilities-312"
+          "pokexperto-champions-abilities-312",
+          "owner-champions-batch3-abilities-dragonize"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -17730,7 +17733,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ノーマルスキン": {
@@ -18022,26 +18026,26 @@
         "canonicalIds": [
           "auraGuard"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-habilidades-2026-11-15",
-          "pokexperto-champions-abilities-319-detail"
+          "owner-champions-capture-32751"
         ],
         "recordIds": [
-          "pokexperto-champions-abilities-319"
+          "owner-champions-batch3-abilities-aura-guard"
         ],
         "relatedRecordIds": [
-          "pokexperto-champions-abilities-319"
+          "pokexperto-champions-abilities-319",
+          "owner-champions-batch3-abilities-aura-guard"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Aura Protectora"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ぼうだん": {
@@ -18981,13 +18985,16 @@
         ],
         "status": "official",
         "sourceIds": [
-          "champions-press-march"
+          "champions-press-march",
+          "owner-champions-capture-32755"
         ],
         "recordIds": [
-          "official-champions-abilities-mega-sol"
+          "official-champions-abilities-mega-sol",
+          "owner-champions-batch3-abilities-mega-sol"
         ],
         "relatedRecordIds": [
-          "official-champions-abilities-mega-sol"
+          "official-champions-abilities-mega-sol",
+          "owner-champions-batch3-abilities-mega-sol"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -18997,7 +19004,8 @@
         ],
         "verificationScope": "official-publication-not-physical-game-test",
         "verificationScopes": [
-          "official-publication-not-physical-game-test"
+          "official-publication-not-physical-game-test",
+          "owner-provided-game-capture-name-only"
         ]
       },
       "おみとおし": {
@@ -20141,17 +20149,26 @@
         "canonicalIds": [
           "unsupported:かんつうドリル"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32761"
+        ],
+        "recordIds": [
+          "owner-champions-batch3-abilities-piercing-drill"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch3-abilities-piercing-drill"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Turbotaladro"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "うなぎのぼり": {
         "name": "Impulso Anguila",
@@ -20161,26 +20178,26 @@
         "canonicalIds": [
           "unsupported:うなぎのぼり"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-habilidades-2026-11-15",
-          "pokexperto-champions-abilities-313-detail"
+          "owner-champions-capture-32757"
         ],
         "recordIds": [
-          "pokexperto-champions-abilities-313"
+          "owner-champions-batch3-abilities-eelevate"
         ],
         "relatedRecordIds": [
-          "pokexperto-champions-abilities-313"
+          "pokexperto-champions-abilities-313",
+          "owner-champions-batch3-abilities-eelevate"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Impulso Anguila"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "とびだすハバネロ": {
@@ -20191,17 +20208,26 @@
         "canonicalIds": [
           "unsupported:とびだすハバネロ"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-32763"
+        ],
+        "recordIds": [
+          "owner-champions-batch3-abilities-spicy-spray"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch3-abilities-spicy-spray"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Salpicante"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ヘドロえき": {
         "name": "Toxisecreción",
@@ -28874,7 +28900,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-abilities-316",
+      "id": "owner-champions-batch3-abilities-fire-mane",
       "canonicalMatches": [
         {
           "category": "abilities",
@@ -28973,6 +28999,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch3-abilities-dragonize",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ドラゴンスキン"
+        }
+      ]
+    },
+    {
       "id": "official-champions-abilities-blaze",
       "canonicalMatches": [
         {
@@ -28991,7 +29026,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-abilities-319",
+      "id": "owner-champions-batch3-abilities-aura-guard",
       "canonicalMatches": [
         {
           "category": "abilities",
@@ -29135,6 +29170,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch3-abilities-mega-sol",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "メガソーラー"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-abilities-119",
       "canonicalMatches": [
         {
@@ -29234,11 +29278,29 @@
       ]
     },
     {
-      "id": "pokexperto-champions-abilities-313",
+      "id": "owner-champions-batch3-abilities-piercing-drill",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "かんつうドリル"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch3-abilities-eelevate",
       "canonicalMatches": [
         {
           "category": "abilities",
           "key": "うなぎのぼり"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch3-abilities-spicy-spray",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "とびだすハバネロ"
         }
       ]
     },
@@ -37503,6 +37565,45 @@
       "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
+      "id": "pokexperto-champions-abilities-313",
+      "category": "abilities",
+      "esLA": "Impulso Anguila",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "うなぎのぼり"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
+      "id": "pokexperto-champions-abilities-316",
+      "category": "abilities",
+      "esLA": "Melena de Fuego",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ほのおのたてがみ"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
+      "id": "pokexperto-champions-abilities-319",
+      "category": "abilities",
+      "esLA": "Aura Protectora",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "はどうのぼうご"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-items-240",
       "category": "items",
       "esLA": "Lentes de Sol",
@@ -45618,30 +45719,6 @@
       "ja": "プレッシャー",
       "es": "Presión",
       "candidate": "Presión",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "かんつうドリル",
-      "canonicalIds": [
-        "unsupported:かんつうドリル"
-      ],
-      "ja": "かんつうドリル",
-      "es": "Turbotaladro",
-      "candidate": "Turbotaladro",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "とびだすハバネロ",
-      "canonicalIds": [
-        "unsupported:とびだすハバネロ"
-      ],
-      "ja": "とびだすハバネロ",
-      "es": "Salpicante",
-      "candidate": "Salpicante",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
