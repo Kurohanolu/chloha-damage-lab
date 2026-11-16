@@ -2,6 +2,8 @@
 // A draft manifest is valid for development, but cannot publish a migration.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 function verifyCutoverApproval(release){
+ const community=require('./helpers/community-pinned-baseline.cjs');
+ if(community.communityPolicy(release))community.loadCommunityBaseline();
  assert.ok(!Object.prototype.hasOwnProperty.call(release,'followupAudit'),'Follow-up audit drafts cannot deploy or republish an immutable release; a new release decision is required');
  if(!release.migration){verifyQualityApproval(release);return;}
  assert.equal(release.migration.status,'approved','Singularity publication requires final owner cutover approval');

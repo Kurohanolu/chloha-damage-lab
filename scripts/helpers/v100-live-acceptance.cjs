@@ -3,6 +3,7 @@
 // the final metadata commit is currently live. The publisher separately fetches
 // and hashes the exact final public artifacts before creating a stable Release.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+const {communityPolicy,loadCommunityBaseline}=require('./community-pinned-baseline.cjs');
 const {dependencies,legacyCommit}=require('../v0187-build-sites.cjs');
 const {publishedCommit}=require('./v0188-followup-review.cjs');
 const digest=body=>crypto.createHash('sha256').update(body).digest('hex');
@@ -14,6 +15,10 @@ function acceptanceFiles(source){
  const html=read('index.html').toString(),release=JSON.parse(read('release.json'));
  const files={};
  for(const file of new Set(['index.html','release.json',...dependencies(html),...Object.values(release.branding),'brand-preview.html','.nojekyll']))files['singularity/'+file]=digest(file==='.nojekyll'?Buffer.alloc(0):read(file));
+ if(communityPolicy(release)){
+  const community=loadCommunityBaseline();for(const [file,body]of community.files)files['chloha-damage-lab/'+file]=digest(body);
+  return files;
+ }
  const original=old('index.html').toString(),css=read('migration/legacy-notice-v0187.css'),js=read('migration/legacy-notice-v0187.js');
  const legacyHTML=original.replace('</head>','<link rel="stylesheet" href="./legacy-notice-v0187.css?v='+digest(css).slice(0,16)+'"></head>').replace('</body>','<script defer src="./legacy-notice-v0187.js?v='+digest(js).slice(0,16)+'"></script></body>');
  for(const file of new Set(['index.html','release.json',...dependencies(original),'legacy-notice-v0187.css','legacy-notice-v0187.js','.nojekyll'])){

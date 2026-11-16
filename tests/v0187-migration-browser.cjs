@@ -51,10 +51,11 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
 (async()=>{
  const {startLocalApp}=await import('../services/feedback/test/harness.mjs');
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-browser-'));buildSites(temp);
+ const historicalLegacyFixture=require('../scripts/helpers/community-pinned-baseline.cjs').communityPolicy(release)?require('./helpers/v110-historical-legacy-preview.cjs')(temp):null;
  const preview=await startPreview(temp);let browser;
  try{browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});}
  catch(error){await preview.close();fs.rmSync(temp,{recursive:true,force:true});throw error;}
- const evidence={locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,introLayoutChecks:0,legacyNoticeLocales:0,legacyViewportWidth:320,legacyURLDataTransferred:false,productionRequests:0,productionMutations:0};
+ const evidence={historicalLegacyFixture,locales,proposedPath:'/singularity/',legacyPath:'/chloha-damage-lab/',mode:'local-URL-simulation-with-real-local-Worker-SQLite',numericChecks:0,successfulLocalReports:0,introLayoutChecks:0,legacyNoticeLocales:0,legacyViewportWidth:320,legacyURLDataTransferred:false,productionRequests:0,productionMutations:0};
  fs.mkdirSync('reports/v0187',{recursive:true});
  try{
   for(let index=0;index<locales.length;index++){

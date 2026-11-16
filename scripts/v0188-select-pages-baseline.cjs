@@ -10,7 +10,17 @@ const pre4Commit='61d87e82995bc60d4564aaf57a52dfc1fd859e4c',pre4Tree='213c12af29
 const pre5Commit='82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74',pre5Tree='f6e6bc6a8bedec4b8923671e9345ce24a8d45d40';
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
- if(release.tag==='v1.1.0-pre.6'){
+ if(release.tag==='v1.1.0-pre.6'&&release.migration?.legacyPolicy==='community-pinned-v1'){
+  const base=require('./helpers/v110-community-public-base.cjs');base.manifest();
+  assert.ok(!hasFollowup(release));
+  if(release.migration.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration.liveTargetVerified,false);
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   if(event==='pull_request'||baseRef)assert.equal(baseRef,base.commit,'Policy revision public base is the exact previously accepted pre.6 frontend');
+   return {ref:base.commit,mode:'accepted-web-v110-pre6-community-revision-base'};
+  }
+ }else if(release.tag==='v1.1.0-pre.6'){
   assert.ok(!hasFollowup(release),'Pre.6 must use its own release decision, not a historical follow-up marker');
   if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
   else{
