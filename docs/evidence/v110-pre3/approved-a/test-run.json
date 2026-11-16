@@ -1,0 +1,137 @@
+{
+  "scope": "v1.1.0 candidate acceptance",
+  "commit": "8a2ec7bfdd36673ce67f335da56211ec9f8a419f",
+  "tree": "ad3e0573de9ca8af05c6dbe9c3eecf589240732c",
+  "uncommittedPreview": false,
+  "tests": [
+    {
+      "file": "v110-artifact-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 492
+    },
+    {
+      "file": "v110-dynamic-ui.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 957
+    },
+    {
+      "file": "v110-engine-equivalence.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 750
+    },
+    {
+      "file": "v110-feedback-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 61311
+    },
+    {
+      "file": "v110-feedback-pause-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1190
+    },
+    {
+      "file": "v110-feedback-readiness.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 47
+    },
+    {
+      "file": "v110-followup-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 308
+    },
+    {
+      "file": "v110-ja-return-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 7259
+    },
+    {
+      "file": "v110-locale-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 59
+    },
+    {
+      "file": "v110-owner-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 242
+    },
+    {
+      "file": "v110-pre2-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1277
+    },
+    {
+      "file": "v110-pre3-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 267
+    },
+    {
+      "file": "v110-regional-search-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 15194
+    },
+    {
+      "file": "v110-release-identity.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 512
+    },
+    {
+      "file": "v110-result-source-roundtrip.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 102
+    },
+    {
+      "file": "v110-second-capture-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 15123
+    },
+    {
+      "file": "v110-second-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 293
+    },
+    {
+      "file": "v110-source-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 44
+    },
+    {
+      "file": "v110-ten-locale-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 24213
+    },
+    {
+      "file": "v110-ui-inventory.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 774
+    },
+    {
+      "file": "v110-ui-mobile.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 88541
+    }
+  ],
+  "startedAt": "2026-11-16T04:28:08.220Z",
+  "passed": true,
+  "finishedAt": "2026-11-16T04:31:47.176Z"
+}

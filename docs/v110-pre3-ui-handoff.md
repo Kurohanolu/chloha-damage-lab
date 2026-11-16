@@ -28,3 +28,7 @@ This is a UI/release correction. It does not introduce screenshot evidence, cano
 5. Publish the distinct Pre-Release 3 identity and verify the actual deployed files and affected UI. Record live acceptance only after observing that outcome.
 
 Local validation passed 4,520 numerical-equivalence comparisons and 300 baseline cases on an uncommitted preview. These checks do not constitute committed CI or live acceptance. Runtime fixes are implemented; fresh CI, final Sol review, the source-bound owner receipt and live acceptance remain **pending**. No publication result is asserted by this handoff.
+
+## Completion update — 2026-11-16 JST
+
+Fresh candidate and approved-A CI each passed 13/13 workflows; 21 candidate acceptance tests passed. Independent Sol review, source-bound existing owner authorization, successful actual A deployment, complete 79-file/228-request live hash acceptance and public UI observations are retained under `docs/evidence/v110-pre3/`. The source-bound report and owner decision are for this exact pre.3 identity. The acceptance promotion must still pass its own CI/deployment and the final main publisher; those results are not asserted by this checkpoint.

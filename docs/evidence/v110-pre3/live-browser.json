@@ -1,0 +1,387 @@
+{
+  "sourceCommit": "64f72916018df120ef595c7689fdae7224f52878",
+  "releaseTag": "v1.1.0-pre.3",
+  "mode": "Cloud Chrome UI; desktop and 454 CSS-pixel viewport using 300% browser zoom",
+  "realDevice": false,
+  "feedbackReportsSubmitted": 0,
+  "observations": [
+    {
+      "label": "ES-LA recalculation at narrow CSS width",
+      "htmlLang": "es-419",
+      "scrollWidth": 449,
+      "selector": {
+        "label": "ES-LA",
+        "value": "es-LA"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108–128 de daño",
+        "miniDamage": "108–128 de daño",
+        "miniPercent": "De los PS máximos: 61.7–73.1%",
+        "moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "percent": "De los PS máximos: 61.7–73.1%",
+        "reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Campo: se admiten las condiciones de contacto con el suelo y los modificadores de potencia. No se admiten la inmunidad a movimientos con prioridad, la recuperación, los estados ni ciertos efectos de movimientos. El redondeo en consola sigue sin verificarse.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "175",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 312,
+        "width": 454
+      }
+    },
+    {
+      "label": "Japanese return after Spanish recalculation",
+      "htmlLang": "ja",
+      "scrollWidth": 449,
+      "selector": {
+        "label": "日本語",
+        "value": "ja"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108〜128 ダメージ",
+        "miniDamage": "108〜128 ダメージ",
+        "miniPercent": "最大HPの 61.7〜73.1%",
+        "moveSelected": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "percent": "最大HPの 61.7〜73.1%",
+        "reliabilityDetails": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。フィールド：接地と威力補正に対応。先制技無効・回復・状態異常・一部技固有変化は未対応です。実機の丸め順序は未照合です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。"
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "175",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 312,
+        "width": 454
+      }
+    },
+    {
+      "label": "Spanish committed history on public desktop",
+      "htmlLang": "es-419",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "ES-LA",
+        "value": "es-LA"
+      },
+      "texts": {
+        "battleHistory": "Turno 1: Terremoto (Tierra / 100) [Estimación; sin verificar en consola] / 54 de daño / PS 175→121 / No coincide con la predicción; verificar",
+        "battleStatus": "Terremoto (Tierra / 100) [Estimación; sin verificar en consola] confirmado. PS del objetivo 121 / 175, campo: Campo Eléctrico. No coincide con la predicción. Registra y verifica las condiciones y el daño observado.",
+        "damage": "108–128 de daño",
+        "miniDamage": "108–128 de daño",
+        "miniPercent": "De los PS máximos: 61.7–73.1%",
+        "moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "percent": "De los PS máximos: 61.7–73.1%",
+        "reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Campo: se admiten las condiciones de contacto con el suelo y los modificadores de potencia. No se admiten la inmunidad a movimientos con prioridad, la recuperación, los estados ni ciertos efectos de movimientos. El redondeo en consola sigue sin verificarse.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "121",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    {
+      "label": "Japanese history and terrain confirmation",
+      "htmlLang": "ja",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "日本語",
+        "value": "ja"
+      },
+      "texts": {
+        "battleHistory": "1手目：じしん（じめん / 100）［計算試算・実機未照合］ / 54ダメージ / HP 175→121 / 予測と不一致・要照合",
+        "battleStatus": "じしん（じめん / 100）［計算試算・実機未照合］を確定。相手HP 121 / 175、フィールド：エレキフィールド。予測と不一致です。条件・実測値を記録して照合してください。",
+        "damage": "108〜128 ダメージ",
+        "miniDamage": "108〜128 ダメージ",
+        "miniPercent": "最大HPの 61.7〜73.1%",
+        "moveSelected": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "percent": "最大HPの 61.7〜73.1%",
+        "reliabilityDetails": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。フィールド：接地と威力補正に対応。先制技無効・回復・状態異常・一部技固有変化は未対応です。実機の丸め順序は未照合です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。"
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "121",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    {
+      "label": "Japanese reload preserves calculation inputs",
+      "htmlLang": "ja",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "日本語",
+        "value": "ja"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108〜128 ダメージ",
+        "miniDamage": "108〜128 ダメージ",
+        "miniPercent": "最大HPの 61.7〜73.1%",
+        "moveSelected": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "percent": "最大HPの 61.7〜73.1%",
+        "reliabilityDetails": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。フィールド：接地と威力補正に対応。先制技無効・回復・状態異常・一部技固有変化は未対応です。実機の丸め順序は未照合です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。"
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "121",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    {
+      "label": "ES-LA reload keeps short selector and state",
+      "htmlLang": "es-419",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "ES-LA",
+        "value": "es-LA"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108–128 de daño",
+        "miniDamage": "108–128 de daño",
+        "miniPercent": "De los PS máximos: 61.7–73.1%",
+        "moveSelected": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+        "percent": "De los PS máximos: 61.7–73.1%",
+        "reliabilityDetails": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Campo: se admiten las condiciones de contacto con el suelo y los modificadores de potencia. No se admiten la inmunidad a movimientos con prioridad, la recuperación, los estados ni ciertos efectos de movimientos. El redondeo en consola sigue sin verificarse.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola."
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "121",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "electric",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    {
+      "label": "ES-LA feedback pause",
+      "submitDisabled": true,
+      "notice": "Enviar comentarios\nCerrar\n\nEnvía un reporte de error o una sugerencia de forma privada, sin crear una cuenta.\n\nVersión del producto reportada: v1.1.0 Pre-Release 3\n\nEl encabezado de versión siguiente se agrega a la descripción, con o sin archivo adjunto.\n\n[Singularity release: v1.1.0 Pre-Release 3]\nCategoría del reporte (obligatoria)\nElige una categoría\nReportar un error\nError en el cálculo de daño\nProblema de traducción\nSolicitud de mejora\nDescripción (obligatoria)\n\nDescribe lo ocurrido, los pasos para reproducirlo y el resultado esperado en 1–4955 caracteres. No incluyas nombres ni contraseñas.\n\nCorreo de contacto (opcional)\n\nIndícalo solo si deseas una respuesta. No es necesario registrarse.\n\nAdjuntar el cálculo actual (opcional)\n\nSolo incluye identificadores de datos, valores ingresados, resultados numéricos, versión e idioma. No se adjuntan el historial de búsqueda ni información del dispositivo.\n\nWebsite\n\nLos reportes son privados. El acceso termina a los 90 días; los registros se eliminan como máximo al día siguiente. También se aplica la retención de copias de seguridad de la infraestructura. Solo los resúmenes técnicos revisados pueden publicarse en GitHub. Se utiliza Cloudflare Turnstile contra los bots.\n\nPrivacidad del servicio de protección contra bots\n\nEl envío de reportes en español latinoamericano está temporalmente deshabilitado. Puedes usar otro idioma para enviar un reporte. No se envió nada.\n\nEnviar",
+      "submitted": false
+    },
+    {
+      "label": "English feedback restored",
+      "submitEnabled": true,
+      "descriptionEnabled": true,
+      "submitted": false
+    },
+    {
+      "label": "Ten-language live display cycle",
+      "passed": true,
+      "cases": [
+        {
+          "damage": "108–128 damage",
+          "hp": "175",
+          "label": "English",
+          "locale": "en",
+          "miniPercent": "Of max HP: 61.7–73.1%",
+          "percent": "Of max HP: 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 dégâts",
+          "hp": "175",
+          "label": "Français",
+          "locale": "fr",
+          "miniPercent": "Des PV max. : 61.7–73.1%",
+          "percent": "Des PV max. : 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 Schaden",
+          "hp": "175",
+          "label": "Deutsch",
+          "locale": "de",
+          "miniPercent": "Von max. KP: 61.7–73.1%",
+          "percent": "Von max. KP: 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 de daño",
+          "hp": "175",
+          "label": "Español",
+          "locale": "es",
+          "miniPercent": "De los PS máximos: 61.7–73.1%",
+          "percent": "De los PS máximos: 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 danni",
+          "hp": "175",
+          "label": "Italiano",
+          "locale": "it",
+          "miniPercent": "Dei PS massimi: 61.7–73.1%",
+          "percent": "Dei PS massimi: 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 데미지",
+          "hp": "175",
+          "label": "한국어",
+          "locale": "ko",
+          "miniPercent": "최대 HP 대비: 61.7–73.1%",
+          "percent": "최대 HP 대비: 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 伤害",
+          "hp": "175",
+          "label": "简体中文",
+          "locale": "zh-Hans",
+          "miniPercent": "占最大HP： 61.7–73.1%",
+          "percent": "占最大HP： 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 傷害",
+          "hp": "175",
+          "label": "繁體中文",
+          "locale": "zh-Hant",
+          "miniPercent": "佔最大HP： 61.7–73.1%",
+          "percent": "佔最大HP： 61.7–73.1%"
+        },
+        {
+          "damage": "108–128 de daño",
+          "hp": "175",
+          "label": "ES-LA",
+          "locale": "es-LA",
+          "miniPercent": "De los PS máximos: 61.7–73.1%",
+          "percent": "De los PS máximos: 61.7–73.1%"
+        },
+        {
+          "damage": "108〜128 ダメージ",
+          "hp": "175",
+          "label": "日本語",
+          "locale": "ja",
+          "miniPercent": "最大HPの 61.7〜73.1%",
+          "percent": "最大HPの 61.7〜73.1%"
+        }
+      ]
+    },
+    {
+      "label": "Restored Japanese final state",
+      "htmlLang": "ja",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "日本語",
+        "value": "ja"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108〜128 ダメージ",
+        "miniDamage": "108〜128 ダメージ",
+        "miniPercent": "最大HPの 61.7〜73.1%",
+        "moveSelected": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "percent": "最大HPの 61.7〜73.1%",
+        "reliabilityDetails": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。"
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "175",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "none",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    {
+      "label": "Final Japanese deliverable, desktop zoom restored",
+      "htmlLang": "ja",
+      "scrollWidth": 1348,
+      "selector": {
+        "label": "日本語",
+        "value": "ja"
+      },
+      "texts": {
+        "battleHistory": "",
+        "battleStatus": "",
+        "damage": "108〜128 ダメージ",
+        "miniDamage": "108〜128 ダメージ",
+        "miniPercent": "最大HPの 61.7〜73.1%",
+        "moveSelected": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+        "percent": "最大HPの 61.7〜73.1%",
+        "reliabilityDetails": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。"
+      },
+      "title": "Singularity v1.1.0 Pre-Release 3",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "values": {
+        "attack": "165",
+        "currentHp": "175",
+        "customMultiplier": "1",
+        "dbMove": "earthquake",
+        "defense": "130",
+        "hp": "175",
+        "terrain": "none",
+        "weather": "none"
+      },
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    }
+  ]
+}

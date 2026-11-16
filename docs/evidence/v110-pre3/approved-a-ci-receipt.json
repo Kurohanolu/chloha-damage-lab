@@ -1,0 +1,139 @@
+{
+  "sourceCommit": "64f72916018df120ef595c7689fdae7224f52878",
+  "sourceTree": "ad3e0573de9ca8af05c6dbe9c3eecf589240732c",
+  "checkedAt": "2026-11-16T04:35:37.848Z",
+  "passed": 13,
+  "total": 13,
+  "runs": [
+    {
+      "id": 43804087927,
+      "name": "Showdown differential tests",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 495,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087927/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087927/logs",
+      "workflow_id": 414873246
+    },
+    {
+      "id": 43804087946,
+      "name": "Publish verified release",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 82,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087946/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087946/logs",
+      "workflow_id": 417994524
+    },
+    {
+      "id": 43804087914,
+      "name": "Showdown differential audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 1121,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087914/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087914/logs",
+      "workflow_id": 414870050
+    },
+    {
+      "id": 43804087986,
+      "name": "GitHub Pages live smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 315,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087986/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087986/logs",
+      "workflow_id": 415350000
+    },
+    {
+      "id": 43804087933,
+      "name": "Damage Lab CI and status ledger",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 268,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087933/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087933/logs",
+      "workflow_id": 417125250
+    },
+    {
+      "id": 43804088117,
+      "name": "v0.185 anonymous feedback",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 83,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088117/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088117/logs",
+      "workflow_id": 418035883
+    },
+    {
+      "id": 43804088009,
+      "name": "v0.184 engine baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 122,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088009/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088009/logs",
+      "workflow_id": 417900004
+    },
+    {
+      "id": 43804087989,
+      "name": "v0.187 Singularity Migration",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 69,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087989/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087989/logs",
+      "workflow_id": 418393801
+    },
+    {
+      "id": 43804088054,
+      "name": "v1.0.0 Stable Promotion",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 35,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088054/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088054/logs",
+      "workflow_id": 418997480
+    },
+    {
+      "id": 43804087945,
+      "name": "UI & damage regression",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 1139,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087945/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087945/logs",
+      "workflow_id": 414221936
+    },
+    {
+      "id": 43804088137,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 77,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088137/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804088137/logs",
+      "workflow_id": 418283182
+    },
+    {
+      "id": 43804087971,
+      "name": "v1.1.0 ES-LA Localization",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 27,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087971/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087971/logs",
+      "workflow_id": 419177137
+    },
+    {
+      "id": 43804087957,
+      "name": "v0.188 Quality Remediation",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 54,
+      "jobs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087957/jobs",
+      "logs_url": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs/43804087957/logs",
+      "workflow_id": 418813329
+    }
+  ]
+}

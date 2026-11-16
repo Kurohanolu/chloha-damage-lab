@@ -1,3 +1,15 @@
+# Pre-Release 3 UI correction — live acceptance
+
+The owner requested completion and publication. Candidate `6903bd2866090169808cc0c88fc6870f220a3f51`, tree `3918f8f443b24bc732e402319811d1c9ec2fa56d`, passed 13/13 workflows and 21/21 ES-LA tests. Independent 6.1 Sol found no blocking issue; the fresh report digest and existing owner instruction are bound in the pre.3 receipts.
+
+Approved source `64f72916018df120ef595c7689fdae7224f52878`, tree `ad3e0573de9ca8af05c6dbe9c3eecf589240732c`, passed its own 13/13 workflows, then [deployed successfully](https://github.com/Kurohanolu/singularity/actions/runs/43805044546). The exact target workflow, source request and all required deployment steps passed provenance verification.
+
+[Live asset acceptance](evidence/v110-pre3/live-acceptance-receipt.json) and [raw observations](evidence/v110-pre3/live-public-assets.json) confirm all 79 files and 228 GET requests match, including bare and exact browser cache URLs, with zero production mutations. [Live browser observations](evidence/v110-pre3/live-browser.json) confirm the short ES-LA label, Japanese recovery of compact percentages, warnings, committed history and electric-terrain confirmation, Japanese/ES-LA reload persistence, and ten-language 108–128 damage / 61.7–73.1% display parity. The browser used desktop 1363 CSS pixels and a narrow 454 CSS-pixel viewport at 300% zoom; exact 320/390 mobile emulation is covered by committed CI, not claimed as a physical phone. [Public UI screenshot](evidence/v110-pre3/live-public-es-la.jpg). ES-LA report submission remains disabled and English reporting controls restore; no report was submitted.
+
+This acceptance promotion changes only metadata and documentation. Its own CI and deployment must succeed before main integration. The main publisher independently requires exact-main CI, final complete public-byte checks and the approved A deployment provenance before creating the immutable `v1.1.0-pre.3` tag and GitHub prerelease. Pre.2, its evidence and the twenty private owner captures remain unchanged. Terminology coverage and the established ES-LA feedback pause remain disclosed.
+
+---
+
 # v1.1.0 publication execution — 2026-11-16 JST
 
 ## Pre-Release 2 public acceptance
