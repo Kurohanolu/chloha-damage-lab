@@ -29,6 +29,8 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
    assert.equal(await page.title(),'Chloha Damage Lab — Community Edition v1.0.0 Stable');
    assert.deepEqual(await page.locator('#chloha-locale option').evaluateAll(es=>es.map(e=>e.value)),locales);
    assert.equal(await page.locator('#app h1').textContent(),'Chloha Damage Lab');
+   assert.equal(await page.locator('.lab-footer strong').textContent(),'Chloha Damage Lab');
+   assert.equal(await page.locator('meta[name="application-name"]').getAttribute('content'),'Chloha Damage Lab');
    const baseline=await snapshot(page);assert.equal(baseline.r.rolls.length,16);
    if(expected)assert.deepEqual(baseline,expected,'Restored ZIP initial input/results equal web tree');else expected=baseline;
    for(let start=0;start<locales.length;start++){
@@ -53,7 +55,10 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
     await page.setViewportSize({width,height:900});await page.selectOption('#chloha-locale','ja');
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No page overflow: '+mode+' '+width);
     await page.locator('#attDetails').evaluate(el=>{el.open=true});assert.equal(await page.locator('#attDetails').getAttribute('open'),'');
-    if(mode==='web'&&[390,1440].includes(width))await page.screenshot({path:path.join(root,'reports/community','community-'+width+'.png'),fullPage:true});
+    if(mode==='web'&&[390,1440].includes(width)){
+     await page.evaluate(()=>scrollTo(0,0));
+     await page.screenshot({path:path.join(root,'reports/community','community-'+width+'.png'),fullPage:true});
+    }
     report.viewportChecks.push({mode,width,status:'passed'});
    }
    const current=page.locator('.community-links a[href="https://kurohanolu.github.io/singularity/"]');assert.equal(await current.getAttribute('target'),'_blank');

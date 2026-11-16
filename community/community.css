@@ -15,4 +15,5 @@
 .community-links a:focus-visible{outline:3px solid #db3d63;outline-offset:3px}
 .community-state{background:#fff5df;border-left:4px solid #bb7a08;padding:10px 12px;border-radius:8px;font-size:13px}
 .community-frozen{font-weight:650}.community-legal{font-size:12px}
+@media(max-width:700px){.lab-header{display:grid;grid-template-columns:minmax(0,1fr) auto}.lab-header .brand{grid-column:1;grid-row:1}.lab-header .version{grid-column:2;grid-row:1;margin-left:0}#chloha-locale-control{grid-row:2;grid-column:1/-1;justify-self:end;margin-left:0}}
 @media(max-width:420px){.lab{padding-left:10px;padding-right:10px}.lab-header .brand{font-size:14px}.lab-header .version{max-width:142px}.community-panel{padding:15px}.community-links a{flex:1 1 130px}#chloha-locale-control{margin-left:auto}.community-mark{width:28px;height:28px}.lab-intro{gap:10px}}

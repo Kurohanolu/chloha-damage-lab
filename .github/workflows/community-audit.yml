@@ -39,6 +39,10 @@ jobs:
         working-directory: stable
       - run: npx playwright install chromium
         working-directory: stable
+      - name: Install CJK fonts for readable visual evidence
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk
       - run: node tests/v100-engine-promotion.cjs
         working-directory: stable
       - run: node tests/v0184-public-baseline.cjs
