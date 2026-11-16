@@ -10,7 +10,9 @@ const {root,startLab,launchBrowser,ready}=require('../tests/helpers/v0188-browse
 
 // Retain each historical baseline; pre.2 compares against published pre.1,
 // while original pre.1 measurements retain the exact Stable predecessor.
-const BASELINE=require('../release.json').tag==='v1.1.0-pre.2'
+const BASELINE=require('../release.json').tag==='v1.1.0-pre.3'
+ ?'aba2d0558948e2a4dd375074fb11fd428edf6222'
+ :require('../release.json').tag==='v1.1.0-pre.2'
  ?'83af29133927a19fc7e0f9273c0e194c54384ae5'
  :require('../release.json').tag==='v1.1.0-pre.1'
  ?'0b270c1452505268364659edd402209b00b28673'
@@ -25,6 +27,7 @@ const FEEDBACK_TEXT='LOCAL_MEMORY_AUDIT_NOT_FOR_SUBMISSION';
 const OUTPUT=path.join(root,'reports/v0188-final/memory.json');
 const started=Date.now();
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:1024*1024}).trim();
+if(require('../release.json').tag==='v1.1.0-pre.3')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'5043182ba5b292f13630b461897457a74812dcfd','Pre.3 memory comparison must retain the immutable published pre.2 tree');
 const median=values=>{
  const a=[...values].sort((x,y)=>x-y),m=Math.floor(a.length/2);
  return a.length?(a.length%2?a[m]:(a[m-1]+a[m])/2):null;

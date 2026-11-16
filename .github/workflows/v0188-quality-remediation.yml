@@ -2,7 +2,7 @@ name: v0.188 Quality Remediation
 on:
   pull_request:
   push:
-    branches: [main, feature/v110-es-la-localization]
+    branches: [main, feature/v110-es-la-localization, fix/es-la-compact-selector-pre2]
   workflow_dispatch:
 permissions:
   contents: read
@@ -33,7 +33,7 @@ jobs:
         run: |
           node scripts/verify-release.cjs
           node tests/v0184-public-baseline.cjs
-          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2'].includes(require('./release.json').tag)?0:1)"; then
+          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(require('./release.json').tag)?0:1)"; then
             node scripts/v110-historical-contracts.cjs --suite migration
             node tests/v110-artifact-contract.cjs
           else

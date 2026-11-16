@@ -144,7 +144,18 @@ assert.equal(M.contextObservations.length,2);assert.ok(M.contextObservations.eve
 // Protect all inherited languages and calculation sources byte for byte. The
 // canonical roster/moves inline data is checked separately from cache hashes.
 const protectedFiles=['battle-data-v0184.js','move-mechanics-data-v0184.js','ability-data-v0184.js','damage-engine-v0184.js','damage-calculator-v0184.js','damage-ui-adapter-v0184.js','multi-hit.js','variable-power.js','pokemon-weights-v0181.js','weight-power.js','tests/fixtures/v0184-public-baseline.json','tests/fixtures/v0186-baseline-corrections.json','tests/reference/package-lock.json','i18n.js','locale-names-v0183.js','locale-names-pokeapi-v0183.js','locale-form-species-v0183.js','names-v0179.js','names-ja-en.js','names-catalog-v0179.js','names-forms-v0179.js','names-ui-v0179.js','names-ui-v0183.js','locale-registry.js','locale-catalog.js','locale-name-search.js','locale-ui-es-la-v110.js'];
-for(const file of protectedFiles)assert.equal(read(file),old(file),'Unchanged numeric/data/other-language source: '+file);
+// Pre.3 authorizes only the compact ES-LA label and actual selector's registry
+// wiring. All remaining bytes, including the nine dictionaries, stay protected.
+const selectorChanges={
+ 'locale-registry.js':["label:'ES-LA'","label:'Español (Latinoamérica)'"],
+ 'i18n.js':[" const localeChoices=globalThis.ChlohaLocales?.entries?.map(entry=>[entry.code,entry.label])||[['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['es-LA','ES-LA']];\n for(const [value,title] of localeChoices){\n"," for(const [value,title] of [['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['es-LA','Español (Latinoamérica)']]){\n"]
+};
+for(const file of protectedFiles){
+ let current=read(file);const change=selectorChanges[file];
+ if(change){assert.equal(current.split(change[0]).length-1,1,'One exact compact selector delta: '+file);current=current.replace(change[0],change[1]);}
+ assert.equal(current,old(file),'Unchanged numeric/data/other-language source outside exact selector change: '+file);
+}
+
 function inheritedAdapterRecords(reader){
  const c=vm.createContext({});vm.runInContext('window=globalThis',c);
  for(const file of ['names-v0179.js','names-ja-en.js','names-catalog-v0179.js','names-forms-v0179.js','locale-names-v0183.js','locale-names-pokeapi-v0183.js','locale-name-catalog-adapter.js'])vm.runInContext(reader(file),c,{filename:file});
