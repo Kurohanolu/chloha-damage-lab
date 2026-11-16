@@ -1,0 +1,4525 @@
+{
+  "sourceCommit": "20765ea8f6e13e1ccdf93950a0f961f7c3f67cfd",
+  "sourceTree": "c43cca84a00b62eaddcc6d0ff443fea7153749cd",
+  "realDevice": false,
+  "widths": [
+    390,
+    1440
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "rows": [
+    {
+      "width": 390,
+      "key": "tyranitar",
+      "id": "tyranitar",
+      "name": "Tyranitar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "venusaur",
+      "id": "venusaur",
+      "name": "Venusaur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "hydreigon",
+      "id": "hydreigon",
+      "name": "Hydreigon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "goodra",
+      "id": "goodra",
+      "name": "Goodra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "kommo_o",
+      "id": "kommo_o",
+      "name": "Kommo-o",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "dragapult",
+      "id": "dragapult",
+      "name": "Dragapult",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "blastoise",
+      "id": "blastoise",
+      "name": "Blastoise",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "meganium",
+      "id": "meganium",
+      "name": "Meganium",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "typhlosion",
+      "id": "typhlosion",
+      "name": "Typhlosion",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "feraligatr",
+      "id": "feraligatr",
+      "name": "Feraligatr",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_02",
+      "id": "gw091_02",
+      "name": "Gengar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_05",
+      "id": "gw091_05",
+      "name": "Metagross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_06",
+      "id": "gw091_06",
+      "name": "Salamence",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_10",
+      "id": "gw091_10",
+      "name": "Starmie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_11",
+      "id": "gw091_11",
+      "name": "Volcarona",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_14",
+      "id": "gw091_14",
+      "name": "Toxapex",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_16",
+      "id": "gw091_16",
+      "name": "Cinderace",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_17",
+      "id": "gw091_17",
+      "name": "Meowscarada",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_18",
+      "id": "gw091_18",
+      "name": "Pawmot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_19",
+      "id": "gw091_19",
+      "name": "Scizor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_20",
+      "id": "gw091_20",
+      "name": "Umbreon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw091_22",
+      "id": "gw091_22",
+      "name": "Greninja",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_01",
+      "id": "gw092_01",
+      "name": "Torterra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_02",
+      "id": "gw092_02",
+      "name": "Infernape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_03",
+      "id": "gw092_03",
+      "name": "Empoleon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_04",
+      "id": "gw092_04",
+      "name": "Serperior",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_07",
+      "id": "gw092_07",
+      "name": "Samurott",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_09",
+      "id": "gw092_09",
+      "name": "Chesnaught",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_10",
+      "id": "gw092_10",
+      "name": "Delphox",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_11",
+      "id": "gw092_11",
+      "name": "Decidueye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_15",
+      "id": "gw092_15",
+      "name": "Skeledirge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_16",
+      "id": "gw092_16",
+      "name": "Quaquaval",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_18",
+      "id": "gw092_18",
+      "name": "Mimikyu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_19",
+      "id": "gw092_19",
+      "name": "Whimsicott",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_22",
+      "id": "gw092_22",
+      "name": "Gardevoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_24",
+      "id": "gw092_24",
+      "name": "Torkoal",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_25",
+      "id": "gw092_25",
+      "name": "Milotic",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_26",
+      "id": "gw092_26",
+      "name": "Staraptor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw092_28",
+      "id": "gw092_28",
+      "name": "Sylveon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_01",
+      "id": "candidate093_01",
+      "name": "Pikachu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_03",
+      "id": "candidate093_03",
+      "name": "Clefable",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_04",
+      "id": "candidate093_04",
+      "name": "Ninetales",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_05",
+      "id": "candidate093_05",
+      "name": "Arcanine",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_07",
+      "id": "candidate093_07",
+      "name": "Gyarados",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_09",
+      "id": "candidate093_09",
+      "name": "Lapras",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_10",
+      "id": "candidate093_10",
+      "name": "Snorlax",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_11",
+      "id": "candidate093_11",
+      "name": "Slowbro",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_13",
+      "id": "candidate093_13",
+      "name": "Ampharos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_15",
+      "id": "candidate093_15",
+      "name": "Heracross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_17",
+      "id": "candidate093_17",
+      "name": "Blissey",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_18",
+      "id": "candidate093_18",
+      "name": "Skarmory",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_19",
+      "id": "candidate093_19",
+      "name": "Azumarill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_20",
+      "id": "candidate093_20",
+      "name": "Breloom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_21",
+      "id": "candidate093_21",
+      "name": "Mawile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_25",
+      "id": "candidate093_25",
+      "name": "Medicham",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_27",
+      "id": "candidate093_27",
+      "name": "Altaria",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_29",
+      "id": "candidate093_29",
+      "name": "Abomasnow",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_36",
+      "id": "candidate093_36",
+      "name": "Rotom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_37",
+      "id": "candidate093_37",
+      "name": "Togekiss",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_38",
+      "id": "candidate093_38",
+      "name": "Excadrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_39",
+      "id": "candidate093_39",
+      "name": "Ferrothorn",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "candidate093_40",
+      "id": "candidate093_40",
+      "name": "Chandelure",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "pelipper",
+      "id": "pelipper",
+      "name": "Pelipper",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "ceruledge",
+      "id": "ceruledge",
+      "name": "Ceruledge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "bastiodon",
+      "id": "bastiodon",
+      "name": "Bastiodon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "v098_133",
+      "id": "v098_133",
+      "name": "Wigglytuff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "v098_134",
+      "id": "v098_134",
+      "name": "Persian",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "v098_135",
+      "id": "v098_135",
+      "name": "Swalot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "v098_136",
+      "id": "v098_136",
+      "name": "Gogoat",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_02",
+      "id": "roster_v0103_02",
+      "name": "Farfetch’d",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_03",
+      "id": "roster_v0103_03",
+      "name": "Mr. Mime",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_04",
+      "id": "roster_v0103_04",
+      "name": "Golisopod",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_05",
+      "id": "roster_v0103_05",
+      "name": "Inteleon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_06",
+      "id": "roster_v0103_06",
+      "name": "Thievul",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_09",
+      "id": "roster_v0103_09",
+      "name": "Grapploct",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_10",
+      "id": "roster_v0103_10",
+      "name": "Perrserker",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_11",
+      "id": "roster_v0103_11",
+      "name": "Sirfetch’d",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_12",
+      "id": "roster_v0103_12",
+      "name": "Pincurchin",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_13",
+      "id": "roster_v0103_13",
+      "name": "Arboliva",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0103_14",
+      "id": "roster_v0103_14",
+      "name": "Mabosstiff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_042",
+      "id": "roster_v0104_042",
+      "name": "Beedrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_043",
+      "id": "roster_v0104_043",
+      "name": "Pidgeot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_044",
+      "id": "roster_v0104_044",
+      "name": "Alakazam",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_045",
+      "id": "roster_v0104_045",
+      "name": "Victreebel",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_046",
+      "id": "roster_v0104_046",
+      "name": "Kangaskhan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_047",
+      "id": "roster_v0104_047",
+      "name": "Pinsir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0104_049",
+      "id": "roster_v0104_049",
+      "name": "Houndoom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_001",
+      "id": "roster_v0105_001",
+      "name": "Manectric",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_003",
+      "id": "roster_v0105_003",
+      "name": "Lopunny",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_004",
+      "id": "roster_v0105_004",
+      "name": "Sableye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_005",
+      "id": "roster_v0105_005",
+      "name": "Sharpedo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_006",
+      "id": "roster_v0105_006",
+      "name": "Camerupt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_007",
+      "id": "roster_v0105_007",
+      "name": "Banette",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_008",
+      "id": "roster_v0105_008",
+      "name": "Chimecho",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_009",
+      "id": "roster_v0105_009",
+      "name": "Glalie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_010",
+      "id": "roster_v0105_010",
+      "name": "Gallade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_011",
+      "id": "roster_v0105_011",
+      "name": "Froslass",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_012",
+      "id": "roster_v0105_012",
+      "name": "Audino",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_013",
+      "id": "roster_v0105_013",
+      "name": "Scolipede",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_014",
+      "id": "roster_v0105_014",
+      "name": "Scrafty",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_015",
+      "id": "roster_v0105_015",
+      "name": "Golurk",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_018",
+      "id": "roster_v0105_018",
+      "name": "Malamar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_019",
+      "id": "roster_v0105_019",
+      "name": "Barbaracle",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_020",
+      "id": "roster_v0105_020",
+      "name": "Dragalge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_021",
+      "id": "roster_v0105_021",
+      "name": "Hawlucha",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_022",
+      "id": "roster_v0105_022",
+      "name": "Crabominable",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_023",
+      "id": "roster_v0105_023",
+      "name": "Drampa",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_024",
+      "id": "roster_v0105_024",
+      "name": "Falinks",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_025",
+      "id": "roster_v0105_025",
+      "name": "Glimmora",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_026",
+      "id": "roster_v0105_026",
+      "name": "Eelektross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_027",
+      "id": "roster_v0105_027",
+      "name": "Pyroar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_028",
+      "id": "roster_v0105_028",
+      "name": "Scovillain",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_030",
+      "id": "roster_v0105_030",
+      "name": "Absol",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_031",
+      "id": "roster_v0105_031",
+      "name": "Lucario",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_033",
+      "id": "roster_v0105_033",
+      "name": "Corviknight",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_034",
+      "id": "roster_v0105_034",
+      "name": "Gholdengo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_035",
+      "id": "roster_v0105_035",
+      "name": "Kingambit",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_036",
+      "id": "roster_v0105_036",
+      "name": "Hippowdon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_040",
+      "id": "roster_v0105_040",
+      "name": "Grimmsnarl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_041",
+      "id": "roster_v0105_041",
+      "name": "Bronzong",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_042",
+      "id": "roster_v0105_042",
+      "name": "Avalugg",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_044",
+      "id": "roster_v0105_044",
+      "name": "Heliolisk",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_045",
+      "id": "roster_v0105_045",
+      "name": "Gastrodon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_046",
+      "id": "roster_v0105_046",
+      "name": "Amoonguss",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_047",
+      "id": "roster_v0105_047",
+      "name": "Tinkaton",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_048",
+      "id": "roster_v0105_048",
+      "name": "Maushold",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_049",
+      "id": "roster_v0105_049",
+      "name": "Annihilape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0105_050",
+      "id": "roster_v0105_050",
+      "name": "Chi-Yu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_001",
+      "id": "roster_v0106_001",
+      "name": "Vileplume",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_002",
+      "id": "roster_v0106_002",
+      "name": "Qwilfish",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_003",
+      "id": "roster_v0106_003",
+      "name": "Musharna",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_004",
+      "id": "roster_v0106_004",
+      "name": "Overqwil",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_005",
+      "id": "roster_v0106_005",
+      "name": "Houndstone",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_009",
+      "id": "roster_v0106_009",
+      "name": "Ditto",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_010",
+      "id": "roster_v0106_010",
+      "name": "Vaporeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_011",
+      "id": "roster_v0106_011",
+      "name": "Jolteon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_012",
+      "id": "roster_v0106_012",
+      "name": "Flareon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_013",
+      "id": "roster_v0106_013",
+      "name": "Espeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_014",
+      "id": "roster_v0106_014",
+      "name": "Leafeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_015",
+      "id": "roster_v0106_015",
+      "name": "Glaceon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_016",
+      "id": "roster_v0106_016",
+      "name": "Eevee",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_017",
+      "id": "roster_v0106_017",
+      "name": "Luxray",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_018",
+      "id": "roster_v0106_018",
+      "name": "Rampardos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_019",
+      "id": "roster_v0106_019",
+      "name": "Clawitzer",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_020",
+      "id": "roster_v0106_020",
+      "name": "Tyrantrum",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_021",
+      "id": "roster_v0106_021",
+      "name": "Aurorus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_022",
+      "id": "roster_v0106_022",
+      "name": "Hydrapple",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_023",
+      "id": "roster_v0106_023",
+      "name": "Klefki",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_024",
+      "id": "roster_v0106_024",
+      "name": "Electivire",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_025",
+      "id": "roster_v0106_025",
+      "name": "Magmortar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_026",
+      "id": "roster_v0106_026",
+      "name": "Porygon2",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_027",
+      "id": "roster_v0106_027",
+      "name": "Porygon-Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_028",
+      "id": "roster_v0106_028",
+      "name": "Slowking",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_035",
+      "id": "roster_v0106_035",
+      "name": "Cursola",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_036",
+      "id": "roster_v0106_036",
+      "name": "Mandibuzz",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_037",
+      "id": "roster_v0106_037",
+      "name": "Braviary",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_039",
+      "id": "roster_v0106_039",
+      "name": "Furfrou",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_042",
+      "id": "roster_v0106_042",
+      "name": "Zoroark",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_043",
+      "id": "roster_v0106_043",
+      "name": "Roserade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_044",
+      "id": "roster_v0106_044",
+      "name": "Carbink",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_045",
+      "id": "roster_v0106_045",
+      "name": "Slurpuff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_046",
+      "id": "roster_v0106_046",
+      "name": "Aromatisse",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_047",
+      "id": "roster_v0106_047",
+      "name": "Tsareena",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_048",
+      "id": "roster_v0106_048",
+      "name": "Oranguru",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_049",
+      "id": "roster_v0106_049",
+      "name": "Passimian",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0106_050",
+      "id": "roster_v0106_050",
+      "name": "Mudsdale",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_001",
+      "id": "roster_v0107_001",
+      "name": "Vanilluxe",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_002",
+      "id": "roster_v0107_002",
+      "name": "Hatterene",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_003",
+      "id": "roster_v0107_003",
+      "name": "Bellibolt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_004",
+      "id": "roster_v0107_004",
+      "name": "Arbok",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_005",
+      "id": "roster_v0107_005",
+      "name": "Sandslash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_007",
+      "id": "roster_v0107_007",
+      "name": "Nidoqueen",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_008",
+      "id": "roster_v0107_008",
+      "name": "Nidoking",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_009",
+      "id": "roster_v0107_009",
+      "name": "Golduck",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_010",
+      "id": "roster_v0107_010",
+      "name": "Primeape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_011",
+      "id": "roster_v0107_011",
+      "name": "Tentacruel",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_012",
+      "id": "roster_v0107_012",
+      "name": "Golem",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_014",
+      "id": "roster_v0107_014",
+      "name": "Rapidash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_016",
+      "id": "roster_v0107_016",
+      "name": "Cloyster",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_017",
+      "id": "roster_v0107_017",
+      "name": "Electrode",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_019",
+      "id": "roster_v0107_019",
+      "name": "Exeggutor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_021",
+      "id": "roster_v0107_021",
+      "name": "Hitmonlee",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_022",
+      "id": "roster_v0107_022",
+      "name": "Hitmonchan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_023",
+      "id": "roster_v0107_023",
+      "name": "Hitmontop",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_024",
+      "id": "roster_v0107_024",
+      "name": "Venomoth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_025",
+      "id": "roster_v0107_025",
+      "name": "Tauros",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_026",
+      "id": "roster_v0107_026",
+      "name": "Chansey",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_027",
+      "id": "roster_v0107_027",
+      "name": "Tangrowth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_028",
+      "id": "roster_v0107_028",
+      "name": "Kingdra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_029",
+      "id": "roster_v0107_029",
+      "name": "Donphan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_030",
+      "id": "roster_v0107_030",
+      "name": "Quagsire",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_031",
+      "id": "roster_v0107_031",
+      "name": "Girafarig",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_032",
+      "id": "roster_v0107_032",
+      "name": "Farigiraf",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_033",
+      "id": "roster_v0107_033",
+      "name": "Dudunsparce",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_034",
+      "id": "roster_v0107_034",
+      "name": "Whiscash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_035",
+      "id": "roster_v0107_035",
+      "name": "Relicanth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_036",
+      "id": "roster_v0107_036",
+      "name": "Toxicroak",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_037",
+      "id": "roster_v0107_037",
+      "name": "Gliscor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_038",
+      "id": "roster_v0107_038",
+      "name": "Mamoswine",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_039",
+      "id": "roster_v0107_039",
+      "name": "Dusknoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_040",
+      "id": "roster_v0107_040",
+      "name": "Garbodor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_041",
+      "id": "roster_v0107_041",
+      "name": "Krookodile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_042",
+      "id": "roster_v0107_042",
+      "name": "Cofagrigus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_044",
+      "id": "roster_v0107_044",
+      "name": "Jellicent",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_045",
+      "id": "roster_v0107_045",
+      "name": "Haxorus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "roster_v0107_046",
+      "id": "roster_v0107_046",
+      "name": "Druddigon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "steelix",
+      "id": "steelix",
+      "name": "Steelix",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_006",
+      "id": "gw_screen_006",
+      "name": "Rhyperior",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_026",
+      "id": "gw_screen_026",
+      "name": "Watchog",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_027",
+      "id": "gw_screen_027",
+      "name": "Liepard",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_028",
+      "id": "gw_screen_028",
+      "name": "Simisage",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_029",
+      "id": "gw_screen_029",
+      "name": "Simisear",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_030",
+      "id": "gw_screen_030",
+      "name": "Simipour",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_036",
+      "id": "gw_screen_036",
+      "name": "Conkeldurr",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_046",
+      "id": "gw_screen_046",
+      "name": "Reuniclus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_052",
+      "id": "gw_screen_052",
+      "name": "Mr. Rime",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_053",
+      "id": "gw_screen_053",
+      "name": "Runerigus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_054",
+      "id": "gw_screen_054",
+      "name": "Alcremie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_060",
+      "id": "gw_screen_060",
+      "name": "Morpeko",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_062",
+      "id": "gw_screen_062",
+      "name": "Wyrdeer",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_063",
+      "id": "gw_screen_063",
+      "name": "Kleavor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_078",
+      "id": "gw_screen_078",
+      "name": "Garganacl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_079",
+      "id": "gw_screen_079",
+      "name": "Armarouge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_085",
+      "id": "gw_screen_085",
+      "name": "Espathra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "gw_screen_089",
+      "id": "gw_screen_089",
+      "name": "Orthworm",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "tyranitar",
+      "id": "tyranitar",
+      "name": "Tyranitar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "venusaur",
+      "id": "venusaur",
+      "name": "Venusaur",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "hydreigon",
+      "id": "hydreigon",
+      "name": "Hydreigon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "goodra",
+      "id": "goodra",
+      "name": "Goodra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "kommo_o",
+      "id": "kommo_o",
+      "name": "Kommo-o",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "dragapult",
+      "id": "dragapult",
+      "name": "Dragapult",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "blastoise",
+      "id": "blastoise",
+      "name": "Blastoise",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "meganium",
+      "id": "meganium",
+      "name": "Meganium",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "typhlosion",
+      "id": "typhlosion",
+      "name": "Typhlosion",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "feraligatr",
+      "id": "feraligatr",
+      "name": "Feraligatr",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_02",
+      "id": "gw091_02",
+      "name": "Gengar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_05",
+      "id": "gw091_05",
+      "name": "Metagross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_06",
+      "id": "gw091_06",
+      "name": "Salamence",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_10",
+      "id": "gw091_10",
+      "name": "Starmie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_11",
+      "id": "gw091_11",
+      "name": "Volcarona",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_14",
+      "id": "gw091_14",
+      "name": "Toxapex",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_16",
+      "id": "gw091_16",
+      "name": "Cinderace",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_17",
+      "id": "gw091_17",
+      "name": "Meowscarada",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_18",
+      "id": "gw091_18",
+      "name": "Pawmot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_19",
+      "id": "gw091_19",
+      "name": "Scizor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_20",
+      "id": "gw091_20",
+      "name": "Umbreon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw091_22",
+      "id": "gw091_22",
+      "name": "Greninja",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_01",
+      "id": "gw092_01",
+      "name": "Torterra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_02",
+      "id": "gw092_02",
+      "name": "Infernape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_03",
+      "id": "gw092_03",
+      "name": "Empoleon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_04",
+      "id": "gw092_04",
+      "name": "Serperior",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_07",
+      "id": "gw092_07",
+      "name": "Samurott",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_09",
+      "id": "gw092_09",
+      "name": "Chesnaught",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_10",
+      "id": "gw092_10",
+      "name": "Delphox",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_11",
+      "id": "gw092_11",
+      "name": "Decidueye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_15",
+      "id": "gw092_15",
+      "name": "Skeledirge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_16",
+      "id": "gw092_16",
+      "name": "Quaquaval",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_18",
+      "id": "gw092_18",
+      "name": "Mimikyu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_19",
+      "id": "gw092_19",
+      "name": "Whimsicott",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_22",
+      "id": "gw092_22",
+      "name": "Gardevoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_24",
+      "id": "gw092_24",
+      "name": "Torkoal",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_25",
+      "id": "gw092_25",
+      "name": "Milotic",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_26",
+      "id": "gw092_26",
+      "name": "Staraptor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw092_28",
+      "id": "gw092_28",
+      "name": "Sylveon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_01",
+      "id": "candidate093_01",
+      "name": "Pikachu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_03",
+      "id": "candidate093_03",
+      "name": "Clefable",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_04",
+      "id": "candidate093_04",
+      "name": "Ninetales",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_05",
+      "id": "candidate093_05",
+      "name": "Arcanine",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_07",
+      "id": "candidate093_07",
+      "name": "Gyarados",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_09",
+      "id": "candidate093_09",
+      "name": "Lapras",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_10",
+      "id": "candidate093_10",
+      "name": "Snorlax",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_11",
+      "id": "candidate093_11",
+      "name": "Slowbro",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_13",
+      "id": "candidate093_13",
+      "name": "Ampharos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_15",
+      "id": "candidate093_15",
+      "name": "Heracross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_17",
+      "id": "candidate093_17",
+      "name": "Blissey",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_18",
+      "id": "candidate093_18",
+      "name": "Skarmory",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_19",
+      "id": "candidate093_19",
+      "name": "Azumarill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_20",
+      "id": "candidate093_20",
+      "name": "Breloom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_21",
+      "id": "candidate093_21",
+      "name": "Mawile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_25",
+      "id": "candidate093_25",
+      "name": "Medicham",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_27",
+      "id": "candidate093_27",
+      "name": "Altaria",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_29",
+      "id": "candidate093_29",
+      "name": "Abomasnow",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_36",
+      "id": "candidate093_36",
+      "name": "Rotom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_37",
+      "id": "candidate093_37",
+      "name": "Togekiss",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_38",
+      "id": "candidate093_38",
+      "name": "Excadrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_39",
+      "id": "candidate093_39",
+      "name": "Ferrothorn",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "candidate093_40",
+      "id": "candidate093_40",
+      "name": "Chandelure",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "pelipper",
+      "id": "pelipper",
+      "name": "Pelipper",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "ceruledge",
+      "id": "ceruledge",
+      "name": "Ceruledge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "bastiodon",
+      "id": "bastiodon",
+      "name": "Bastiodon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "v098_133",
+      "id": "v098_133",
+      "name": "Wigglytuff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "v098_134",
+      "id": "v098_134",
+      "name": "Persian",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "v098_135",
+      "id": "v098_135",
+      "name": "Swalot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "v098_136",
+      "id": "v098_136",
+      "name": "Gogoat",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_02",
+      "id": "roster_v0103_02",
+      "name": "Farfetch’d",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_03",
+      "id": "roster_v0103_03",
+      "name": "Mr. Mime",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_04",
+      "id": "roster_v0103_04",
+      "name": "Golisopod",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_05",
+      "id": "roster_v0103_05",
+      "name": "Inteleon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_06",
+      "id": "roster_v0103_06",
+      "name": "Thievul",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_09",
+      "id": "roster_v0103_09",
+      "name": "Grapploct",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_10",
+      "id": "roster_v0103_10",
+      "name": "Perrserker",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_11",
+      "id": "roster_v0103_11",
+      "name": "Sirfetch’d",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_12",
+      "id": "roster_v0103_12",
+      "name": "Pincurchin",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_13",
+      "id": "roster_v0103_13",
+      "name": "Arboliva",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0103_14",
+      "id": "roster_v0103_14",
+      "name": "Mabosstiff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_042",
+      "id": "roster_v0104_042",
+      "name": "Beedrill",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_043",
+      "id": "roster_v0104_043",
+      "name": "Pidgeot",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_044",
+      "id": "roster_v0104_044",
+      "name": "Alakazam",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_045",
+      "id": "roster_v0104_045",
+      "name": "Victreebel",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_046",
+      "id": "roster_v0104_046",
+      "name": "Kangaskhan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_047",
+      "id": "roster_v0104_047",
+      "name": "Pinsir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0104_049",
+      "id": "roster_v0104_049",
+      "name": "Houndoom",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_001",
+      "id": "roster_v0105_001",
+      "name": "Manectric",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_003",
+      "id": "roster_v0105_003",
+      "name": "Lopunny",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_004",
+      "id": "roster_v0105_004",
+      "name": "Sableye",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_005",
+      "id": "roster_v0105_005",
+      "name": "Sharpedo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_006",
+      "id": "roster_v0105_006",
+      "name": "Camerupt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_007",
+      "id": "roster_v0105_007",
+      "name": "Banette",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_008",
+      "id": "roster_v0105_008",
+      "name": "Chimecho",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_009",
+      "id": "roster_v0105_009",
+      "name": "Glalie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_010",
+      "id": "roster_v0105_010",
+      "name": "Gallade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_011",
+      "id": "roster_v0105_011",
+      "name": "Froslass",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_012",
+      "id": "roster_v0105_012",
+      "name": "Audino",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_013",
+      "id": "roster_v0105_013",
+      "name": "Scolipede",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_014",
+      "id": "roster_v0105_014",
+      "name": "Scrafty",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_015",
+      "id": "roster_v0105_015",
+      "name": "Golurk",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_018",
+      "id": "roster_v0105_018",
+      "name": "Malamar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_019",
+      "id": "roster_v0105_019",
+      "name": "Barbaracle",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_020",
+      "id": "roster_v0105_020",
+      "name": "Dragalge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_021",
+      "id": "roster_v0105_021",
+      "name": "Hawlucha",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_022",
+      "id": "roster_v0105_022",
+      "name": "Crabominable",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_023",
+      "id": "roster_v0105_023",
+      "name": "Drampa",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_024",
+      "id": "roster_v0105_024",
+      "name": "Falinks",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_025",
+      "id": "roster_v0105_025",
+      "name": "Glimmora",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_026",
+      "id": "roster_v0105_026",
+      "name": "Eelektross",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_027",
+      "id": "roster_v0105_027",
+      "name": "Pyroar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_028",
+      "id": "roster_v0105_028",
+      "name": "Scovillain",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_030",
+      "id": "roster_v0105_030",
+      "name": "Absol",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_031",
+      "id": "roster_v0105_031",
+      "name": "Lucario",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_033",
+      "id": "roster_v0105_033",
+      "name": "Corviknight",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_034",
+      "id": "roster_v0105_034",
+      "name": "Gholdengo",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_035",
+      "id": "roster_v0105_035",
+      "name": "Kingambit",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_036",
+      "id": "roster_v0105_036",
+      "name": "Hippowdon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_040",
+      "id": "roster_v0105_040",
+      "name": "Grimmsnarl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_041",
+      "id": "roster_v0105_041",
+      "name": "Bronzong",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_042",
+      "id": "roster_v0105_042",
+      "name": "Avalugg",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_044",
+      "id": "roster_v0105_044",
+      "name": "Heliolisk",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_045",
+      "id": "roster_v0105_045",
+      "name": "Gastrodon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_046",
+      "id": "roster_v0105_046",
+      "name": "Amoonguss",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_047",
+      "id": "roster_v0105_047",
+      "name": "Tinkaton",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_048",
+      "id": "roster_v0105_048",
+      "name": "Maushold",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_049",
+      "id": "roster_v0105_049",
+      "name": "Annihilape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0105_050",
+      "id": "roster_v0105_050",
+      "name": "Chi-Yu",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_001",
+      "id": "roster_v0106_001",
+      "name": "Vileplume",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_002",
+      "id": "roster_v0106_002",
+      "name": "Qwilfish",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_003",
+      "id": "roster_v0106_003",
+      "name": "Musharna",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_004",
+      "id": "roster_v0106_004",
+      "name": "Overqwil",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_005",
+      "id": "roster_v0106_005",
+      "name": "Houndstone",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_009",
+      "id": "roster_v0106_009",
+      "name": "Ditto",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_010",
+      "id": "roster_v0106_010",
+      "name": "Vaporeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_011",
+      "id": "roster_v0106_011",
+      "name": "Jolteon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_012",
+      "id": "roster_v0106_012",
+      "name": "Flareon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_013",
+      "id": "roster_v0106_013",
+      "name": "Espeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_014",
+      "id": "roster_v0106_014",
+      "name": "Leafeon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_015",
+      "id": "roster_v0106_015",
+      "name": "Glaceon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_016",
+      "id": "roster_v0106_016",
+      "name": "Eevee",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_017",
+      "id": "roster_v0106_017",
+      "name": "Luxray",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_018",
+      "id": "roster_v0106_018",
+      "name": "Rampardos",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_019",
+      "id": "roster_v0106_019",
+      "name": "Clawitzer",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_020",
+      "id": "roster_v0106_020",
+      "name": "Tyrantrum",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_021",
+      "id": "roster_v0106_021",
+      "name": "Aurorus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_022",
+      "id": "roster_v0106_022",
+      "name": "Hydrapple",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_023",
+      "id": "roster_v0106_023",
+      "name": "Klefki",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_024",
+      "id": "roster_v0106_024",
+      "name": "Electivire",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_025",
+      "id": "roster_v0106_025",
+      "name": "Magmortar",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_026",
+      "id": "roster_v0106_026",
+      "name": "Porygon2",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_027",
+      "id": "roster_v0106_027",
+      "name": "Porygon-Z",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_028",
+      "id": "roster_v0106_028",
+      "name": "Slowking",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_035",
+      "id": "roster_v0106_035",
+      "name": "Cursola",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_036",
+      "id": "roster_v0106_036",
+      "name": "Mandibuzz",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_037",
+      "id": "roster_v0106_037",
+      "name": "Braviary",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_039",
+      "id": "roster_v0106_039",
+      "name": "Furfrou",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_042",
+      "id": "roster_v0106_042",
+      "name": "Zoroark",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_043",
+      "id": "roster_v0106_043",
+      "name": "Roserade",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_044",
+      "id": "roster_v0106_044",
+      "name": "Carbink",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_045",
+      "id": "roster_v0106_045",
+      "name": "Slurpuff",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_046",
+      "id": "roster_v0106_046",
+      "name": "Aromatisse",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_047",
+      "id": "roster_v0106_047",
+      "name": "Tsareena",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_048",
+      "id": "roster_v0106_048",
+      "name": "Oranguru",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_049",
+      "id": "roster_v0106_049",
+      "name": "Passimian",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0106_050",
+      "id": "roster_v0106_050",
+      "name": "Mudsdale",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_001",
+      "id": "roster_v0107_001",
+      "name": "Vanilluxe",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_002",
+      "id": "roster_v0107_002",
+      "name": "Hatterene",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_003",
+      "id": "roster_v0107_003",
+      "name": "Bellibolt",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_004",
+      "id": "roster_v0107_004",
+      "name": "Arbok",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_005",
+      "id": "roster_v0107_005",
+      "name": "Sandslash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_007",
+      "id": "roster_v0107_007",
+      "name": "Nidoqueen",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_008",
+      "id": "roster_v0107_008",
+      "name": "Nidoking",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_009",
+      "id": "roster_v0107_009",
+      "name": "Golduck",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_010",
+      "id": "roster_v0107_010",
+      "name": "Primeape",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_011",
+      "id": "roster_v0107_011",
+      "name": "Tentacruel",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_012",
+      "id": "roster_v0107_012",
+      "name": "Golem",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_014",
+      "id": "roster_v0107_014",
+      "name": "Rapidash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_016",
+      "id": "roster_v0107_016",
+      "name": "Cloyster",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_017",
+      "id": "roster_v0107_017",
+      "name": "Electrode",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_019",
+      "id": "roster_v0107_019",
+      "name": "Exeggutor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_021",
+      "id": "roster_v0107_021",
+      "name": "Hitmonlee",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_022",
+      "id": "roster_v0107_022",
+      "name": "Hitmonchan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_023",
+      "id": "roster_v0107_023",
+      "name": "Hitmontop",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_024",
+      "id": "roster_v0107_024",
+      "name": "Venomoth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_025",
+      "id": "roster_v0107_025",
+      "name": "Tauros",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_026",
+      "id": "roster_v0107_026",
+      "name": "Chansey",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_027",
+      "id": "roster_v0107_027",
+      "name": "Tangrowth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_028",
+      "id": "roster_v0107_028",
+      "name": "Kingdra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_029",
+      "id": "roster_v0107_029",
+      "name": "Donphan",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_030",
+      "id": "roster_v0107_030",
+      "name": "Quagsire",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_031",
+      "id": "roster_v0107_031",
+      "name": "Girafarig",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_032",
+      "id": "roster_v0107_032",
+      "name": "Farigiraf",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_033",
+      "id": "roster_v0107_033",
+      "name": "Dudunsparce",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_034",
+      "id": "roster_v0107_034",
+      "name": "Whiscash",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_035",
+      "id": "roster_v0107_035",
+      "name": "Relicanth",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_036",
+      "id": "roster_v0107_036",
+      "name": "Toxicroak",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_037",
+      "id": "roster_v0107_037",
+      "name": "Gliscor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_038",
+      "id": "roster_v0107_038",
+      "name": "Mamoswine",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_039",
+      "id": "roster_v0107_039",
+      "name": "Dusknoir",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_040",
+      "id": "roster_v0107_040",
+      "name": "Garbodor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_041",
+      "id": "roster_v0107_041",
+      "name": "Krookodile",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_042",
+      "id": "roster_v0107_042",
+      "name": "Cofagrigus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_044",
+      "id": "roster_v0107_044",
+      "name": "Jellicent",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_045",
+      "id": "roster_v0107_045",
+      "name": "Haxorus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "roster_v0107_046",
+      "id": "roster_v0107_046",
+      "name": "Druddigon",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "steelix",
+      "id": "steelix",
+      "name": "Steelix",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_006",
+      "id": "gw_screen_006",
+      "name": "Rhyperior",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_026",
+      "id": "gw_screen_026",
+      "name": "Watchog",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_027",
+      "id": "gw_screen_027",
+      "name": "Liepard",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_028",
+      "id": "gw_screen_028",
+      "name": "Simisage",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_029",
+      "id": "gw_screen_029",
+      "name": "Simisear",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_030",
+      "id": "gw_screen_030",
+      "name": "Simipour",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_036",
+      "id": "gw_screen_036",
+      "name": "Conkeldurr",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_046",
+      "id": "gw_screen_046",
+      "name": "Reuniclus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_052",
+      "id": "gw_screen_052",
+      "name": "Mr. Rime",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_053",
+      "id": "gw_screen_053",
+      "name": "Runerigus",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_054",
+      "id": "gw_screen_054",
+      "name": "Alcremie",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_060",
+      "id": "gw_screen_060",
+      "name": "Morpeko",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_062",
+      "id": "gw_screen_062",
+      "name": "Wyrdeer",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_063",
+      "id": "gw_screen_063",
+      "name": "Kleavor",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_078",
+      "id": "gw_screen_078",
+      "name": "Garganacl",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_079",
+      "id": "gw_screen_079",
+      "name": "Armarouge",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_085",
+      "id": "gw_screen_085",
+      "name": "Espathra",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "gw_screen_089",
+      "id": "gw_screen_089",
+      "name": "Orthworm",
+      "localeSwitches": 10,
+      "reload": true,
+      "blocked": false,
+      "passed": true
+    }
+  ],
+  "productionMutations": 0,
+  "passed": true
+}
