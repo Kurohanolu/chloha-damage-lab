@@ -64,9 +64,11 @@ Windowsで`python3`がない場合は`py -m http.server 8000 --bind 127.0.0.1`�
 
 ## 開発者向け再構成
 
-ZIP内のアプリは静的ファイル一式です。利用やCSS編集にnpmは不要です。同じ同じ固定版を作り直す場合は、全Git履歴を持つv1.0.0の作業コピーを用意し、監査ブランチからcommunity、scripts/community、tests/communityをコピーした後、次を実行します。これはローカル検証であり再配布の許可ではありません。
+ZIP内のアプリは静的ファイル一式です。利用やCSS編集にnpmは不要です。同じ固定版を作り直す場合は、全Git履歴を持つv1.0.0の作業コピーを用意し、監査ブランチからcommunity、scripts/community、tests/community、docs/communityをコピーした後、次を実行します。これはローカル検証であり再配布の許可ではありません。
 
 ```sh
+npm install --no-package-lock --no-audit --no-fund
+npx playwright install chromium
 python3 scripts/community/build.py --review-only
 node tests/community/package.cjs
 node tests/community/browser.cjs

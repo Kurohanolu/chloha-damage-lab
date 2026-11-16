@@ -1,7 +1,7 @@
 name: Community Edition audit tools
 on:
   push:
-    branches: [audit/chloha-community-preparation]
+    branches: [audit/chloha-community-preparation, verify/chloha-community-production]
   workflow_dispatch:
 permissions:
   contents: read
@@ -60,12 +60,15 @@ jobs:
         working-directory: stable
       - run: node tests/community/browser.cjs
         working-directory: stable
+      # Run these after deployment on the verification branch at the same tested commit.
       - name: Verify the live legacy URL against the restored ZIP
+        if: github.ref == 'refs/heads/verify/chloha-community-production'
         run: node tests/community/browser.cjs
         env:
           COMMUNITY_LIVE_URL: https://kurohanolu.github.io/chloha-damage-lab/
         working-directory: stable
       - name: Verify all deployed bytes and the current Singularity site
+        if: github.ref == 'refs/heads/verify/chloha-community-production'
         run: node tests/community/live-publication.cjs
         working-directory: stable
       - name: Retain test reports only; exclude application and ZIP

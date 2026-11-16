@@ -18,3 +18,8 @@ Public Web delivery and limited community ZIP delivery have separate rights asse
 The prepared release branch was not pushed: automatic approval review rejected transmission of a tree containing unresolved application data. This data-free tooling branch is the materially narrower alternative, not a deployment or a workaround for application publication.
 
 The earlier blanket stop based on source references is superseded by `docs/community/individual-rights-assessment.md`. The runtime registry is reduced to its factual/identifying fields; numerical values and calculation code remain frozen. `rights-clearance.json` pins every reviewed delivery file. The original raw registries are not included in this tooling branch.
+
+
+## Candidate and production acceptance
+
+The audit branch runs all required calculation/package and both scoped rights gates before deployment. After those pass and the reviewed Web tree is deployed, advance `verify/chloha-community-production` to that same tested tooling commit. It reruns the mandatory gates plus live Web-versus-ZIP, all published file hashes and current Singularity acceptance. A local candidate pass alone does not establish production acceptance. Neither phase uploads the private ZIP to GitHub.

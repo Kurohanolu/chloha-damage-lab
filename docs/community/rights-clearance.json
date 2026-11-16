@@ -48,7 +48,7 @@
       }
     },
     "README.html": {
-      "sha256": "fc0e54596d63d72eb06e0ebae197056cbd0e697700465932077aa9c70c75ce5e",
+      "sha256": "bd17c910311afc4611650ff1fd4471e735114d47dc53b3b055d9fd8df15f535e",
       "category": "owner-authorized",
       "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
       "scopes": {
@@ -57,7 +57,7 @@
       }
     },
     "README.md": {
-      "sha256": "a592035a9f1b49869bfe20cf28e9232d1c1b45fd27fe28ee5487b6cd7d2149f8",
+      "sha256": "ed8164fec9041292cbbff32b11a11bea00e8f9a6129875ac9bb83d1d84efbf47",
       "category": "owner-authorized",
       "reason": "Original Chloha Labs calculator implementation, display logic, documentation or generated document; owner expressly authorizes use, modification and public Web/member ZIP delivery, while preserving existing third-party grants.",
       "scopes": {
@@ -390,7 +390,7 @@
       }
     },
     "rights-inventory.json": {
-      "sha256": "e56194dce6537b089e30cbe054a66ccfcf327a686bdaaecc0a4dedc94f323e7a",
+      "sha256": "8b3b2394d53689295a833d79325e2f68e8583a5286c260438b39747bca82c934",
       "category": "review-evidence",
       "reason": "Original audit report and reproducible hash/projection metadata describing actual supplied files, exclusions and scoped assessment; no external article body included.",
       "scopes": {

@@ -19,7 +19,7 @@ const files = dir => fs.readdirSync(dir, {withFileTypes:true}).flatMap(e =>
   e.isDirectory() ? files(path.join(dir,e.name)) : [path.join(dir,e.name)]);
 (async () => {
   const report = {status:'running',observedAt:new Date().toISOString(),legacyUrl:base,
-    legacyCommit:'7214a4024e847a3ed8552c6f134bafe152aecdfd',files:[],
+    legacyCommit:null,files:[],
     singularityUrl:current,singularityBeforeDeployment:before,realDevice:false};
   const output = path.join(root,'reports/community/live');
   fs.mkdirSync(output,{recursive:true});
@@ -27,7 +27,22 @@ const files = dir => fs.readdirSync(dir, {withFileTypes:true}).flatMap(e =>
   try {
     browser = await chromium.launch({headless:true});
     const context = await browser.newContext({viewport:{width:390,height:900},isMobile:true,hasTouch:true});
+    const refResponse = await context.request.get('https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/ref/heads/pages-legacy');
+    assert.equal(refResponse.status(),200);
+    report.legacyCommit=(await refResponse.json()).object.sha;
+    assert.match(report.legacyCommit,/^[a-f0-9]{40}$/);
+    const treeResponse=await context.request.get('https://api.github.com/repos/Kurohanolu/chloha-damage-lab/git/trees/'+report.legacyCommit+'?recursive=1');
+    assert.equal(treeResponse.status(),200);
+    const deployedTree=await treeResponse.json();
+    assert.equal(deployedTree.truncated,false);
+    const blobs=deployedTree.tree.filter(x=>x.type==='blob');
     const paths = files(site).sort();
+    assert.deepEqual(blobs.map(x=>x.path).sort(),paths.map(x=>path.relative(site,x).split(path.sep).join('/')).sort());
+    for(const blob of blobs){
+      const bytes=fs.readFileSync(path.join(site,blob.path));
+      const gitSHA=crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
+      assert.equal(gitSHA,blob.sha,'Reviewed Web bytes match the publication commit: '+blob.path);
+    }
     assert.equal(paths.length,44);
     for(let i=0;i<paths.length;i+=6) {
       await Promise.all(paths.slice(i,i+6).map(async local => {
