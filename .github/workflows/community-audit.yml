@@ -69,12 +69,21 @@ jobs:
             stable/dist/community/build-receipt.json
           if-no-files-found: error
           retention-days: 30
-  publication-rights:
-    name: Publication rights gate (required)
+  public-web-rights:
+    name: Public Web rights gate (required)
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/community/publication-gate.cjs
+      - run: node scripts/community/publication-gate.cjs --scope publicWeb
+  community-zip-rights:
+    name: Community-only ZIP rights gate (required)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/community/publication-gate.cjs --scope communityZip

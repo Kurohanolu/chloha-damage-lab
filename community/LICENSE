@@ -1,31 +1,55 @@
-License scope — REVIEW CANDIDATE, redistribution of the complete bundle blocked
-
-The MIT License below applies only to original Chloha Labs contributions and
-the Community Edition build, documentation and presentation additions. It does
-not relicense external code, datasets, names, artwork, trademarks or logos.
-Consult THIRD-PARTY-NOTICES.md and rights-inventory.json for file-level scope.
-The embedded registries and supplemental name tables remain subject to the
-unresolved provenance restrictions listed there. Do not treat this file as
-permission to redistribute the complete application while those remain open.
-
-MIT License
-
+Chloha Damage Lab — Community Edition 限定利用条件
+方針改訂日：2026-11-16（JST） / 対象：v1.0.0 Stable
 Copyright (c) 2026 Chloha Labs / Kurohanolu
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+状態：権利確認中の検証候補。完成品の配布開始を意味しません。
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. 対象と適用範囲
+本完成品は一般向けオープンソース配布ではありません。オーナー本人と、
+オーナーが所属メンバーとして認めるコミュニティのメンバーを対象とします。
+以下はChloha Labsが許諾権限を有する部分に適用する追加の利用許諾です。
+第三者部分と既存の許諾については第5項が優先します。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. 許可する利用
+権利確認を終えて正規に提供された完成品について、対象者による個人利用、
+複製、個人改造、および同じ所属コミュニティ内での利用と改造版共有を許可します。
+ChatGPT等を利用した個人カスタマイズも、この範囲で許可します。
+改造版には独自の名前・版番号を付け、元の固定版を別途保存してください。
+
+3. 禁止する利用
+本完成品および本条件の対象部分を含む改造版について、次を禁止します。
+・コミュニティ外への再配布
+・改造版の一般公開（公開リポジトリ、公開サイト、公開共有リンク等を含む）
+・商用販売
+受領者を所属メンバーに制限したチャンネル等で共有してください。
+公開GitHubへのForkや、誰でも取得できるZIP置き場は配布方法に使いません。
+カスタマイズに用いるサービスへの入力も、第三者条件とサービスの取扱条件に
+従い、完成品・改造版を一般公開する設定にしないでください。
+
+4. オーナーが提供するWeb版
+公開可能な素材・コード・データの確認を終えた場合、オーナーは従来URLで
+Web版を一般アクセス可能に提供し、訪問者はブラウザで計算機を利用できます。
+この提供はコミュニティ外への完成版ZIP・改造版の再配布許諾ではありません。
+Web版に完成版ZIPのダウンロードリンクを設置しません。
+URLを共有するだけではアクセス制御になりません。静的Web版のHTML、JS、
+データはブラウザに送られるため、ZIPがなくても公開の権利確認が必要です。
+
+5. 第三者条件・既存許諾の維持
+この文書は第三者の著作権、商標権、ライセンスを上書きしません。
+MIT、BSD等で既に許諾された部分や過去の版の許諾を取り消したり、その条件で
+認められた権利を追加制限したりするものではありません。当該部分をその
+既存許諾に基づいて利用する場合は、その条件が適用されます。
+本完成品全体がMIT/BSDで許諾されている、という意味でもありません。
+licenses/ 内の著作権・許諾・免責表示を保持してください。
+第三者部分の詳細はTHIRD-PARTY-NOTICES.mdとrights-inventory.jsonを参照。
+Tiara、Singularity等のロゴ・ブランド素材の利用許諾は含みません。
+限定配布だけを理由に第三者の再配布許可が不要とは判断しません。
+法令により認められる権利を制限する趣旨ではありません。
+
+6. 無保証・責任の範囲
+本ソフトウェアは現状有姿（AS IS）で提供されます。動作、計算精度、完全性、
+特定目的への適合性を保証しません。利用、改変、共有、派生開発に伴う不具合や
+損害について、開発元の責任は適用法令で認められる最大限の範囲で制限されます。
+法律上すべての責任が必ず免除されるという意味ではありません。
+派生作品はChloha LabsおよびSingularityの公式製品ではなく、承認や品質保証を
+意味しません。

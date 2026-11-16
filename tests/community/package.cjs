@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'../..'),out=path.join(root,'dist/community'),site=path.join(out,'site');
 const BASE='0b270c1452505268364659edd402209b00b28673',zip='Chloha-Damage-Lab-v1.0.0-Community-Edition.zip';
+const privateDir=path.join(out,'private');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const original=f=>execFileSync('git',['show',BASE+':'+f],{cwd:root,maxBuffer:16*1024*1024});
 const read=f=>fs.readFileSync(path.join(site,f));
@@ -22,12 +23,29 @@ assert.ok(after.includes('window.ChlohaSpriteIds={};'));
 assert.ok(!after.includes('assets/singularity/'));
 assert.ok(!after.includes('src="./feedback-'));
 assert.ok(!fs.readdirSync(site).some(f=>/feedback|\.png|\.webp|\.woff|\.env/.test(f)));
+const policy=JSON.parse(read('release.json'));
+assert.equal(policy.distribution.mode,'community-limited');
+for(const k of ['publicArchive','publicDownloadLink','publicApplicationRepository','outsideRedistribution','publicModifiedVersions','commercialSale'])assert.equal(policy.distribution[k],false,'Restricted package distribution: '+k);
+for(const k of ['personalUse','personalModification','inCommunityModifiedSharing','aiPersonalCustomization','preserveExistingLicenses'])assert.equal(policy.distribution[k],true,'Permitted use or retained rights: '+k);
+assert.equal(policy.web.urlIsAccessControl,false);
+assert.equal(policy.web.archiveDownload,false);
+for(const scope of ['publicWeb','communityZip'])assert.equal(policy.rightsAssessments[scope].status,'unresolved');
+assert.equal(policy.rightsAssessments.generalRedistribution.enabled,false);
+const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
+assert.ok(!walk(site).some(f=>/\.zip(?:\.sha256)?$|[/\\]private[/\\]/i.test(f)),'No private package or archive checksum in public web tree');
+const guide=read('README.md').toString(),terms=read('LICENSE').toString();
+for(const t of ['コミュニティ外への再配布','改造版の一般公開','商用販売'])assert.ok(terms.includes(t),t);
+assert.ok(terms.includes('既存許諾に基づいて利用する場合'));
+assert.ok(!guide.includes('旧サイトまたは専用GitHub Release'));
+assert.ok(!guide.includes('## GitHubでForkする'));
+assert.ok(read('licenses/Chloha-Labs-Prior-MIT.txt').toString().includes('MIT License'));
+assert.ok(!/releases\/download\//.test(guide),'No public archive acquisition route in guide');
 const manifest=JSON.parse(read('application-manifest.json'));
 for(const [f,h] of Object.entries(manifest.files))assert.equal(hash(read(f)),h,'Application hash: '+f);
 assert.equal(hash(Object.entries(manifest.files).map(([f,h])=>h+'  '+f+'\n').join('')),manifest.applicationSHA256);
 const inventory=JSON.parse(read('rights-inventory.json'));
 for(const [f,entry] of Object.entries(inventory.files))if(entry.sha256)assert.equal(hash(read(f)),entry.sha256,'Inventory: '+f);
-assert.equal(hash(fs.readFileSync(path.join(out,zip))),fs.readFileSync(path.join(out,zip+'.sha256'),'utf8').split(' ')[0]);
+assert.equal(hash(fs.readFileSync(path.join(privateDir,zip))),fs.readFileSync(path.join(privateDir,zip+'.sha256'),'utf8').split(' ')[0]);
 // The ZIP is extracted into a new directory. Exact byte equality, safe paths and
 // the identical file set ensure the web tree and ZIP contain the same app.
 execFileSync('python3',['-c',`
@@ -36,7 +54,7 @@ import zipfile,hashlib
 root=Path(${JSON.stringify(out)})
 dest=root/'restored'
 if dest.exists():raise RuntimeError('Fresh extraction required')
-with zipfile.ZipFile(root/${JSON.stringify(zip)}) as z:
+with zipfile.ZipFile(root/'private'/${JSON.stringify(zip)}) as z:
  for info in z.infolist():
   p=Path(info.filename)
   assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='Chloha-Damage-Lab'
@@ -62,5 +80,5 @@ const validation=path.join(out,'validation');fs.mkdirSync(path.join(validation,'
 for(const f of fs.readdirSync(site))if(fs.statSync(path.join(site,f)).isFile())fs.copyFileSync(path.join(site,f),path.join(validation,f));
 for(const f of ['showdown-compare.mjs','showdown-differential.mjs'])fs.writeFileSync(path.join(validation,'tests',f),original('tests/'+f));
 fs.mkdirSync(path.join(root,'reports/community'),{recursive:true});
-const report={status:'passed',baselineCommit:BASE,protectedFiles:protectedFiles.length,allInlineLogicUnchanged:true,allRegistriesUnchanged:true,nineLanguageFilesUnchanged:true,zipExactFileParity:true,baselineComparisons:comparisons,applicationSHA256:manifest.applicationSHA256,zipSHA256:hash(fs.readFileSync(path.join(out,zip))),publicationStatus:'blocked'};
+const report={status:'passed',baselineCommit:BASE,protectedFiles:protectedFiles.length,allInlineLogicUnchanged:true,allRegistriesUnchanged:true,nineLanguageFilesUnchanged:true,zipExactFileParity:true,baselineComparisons:comparisons,applicationSHA256:manifest.applicationSHA256,zipSHA256:hash(fs.readFileSync(path.join(privateDir,zip))),distributionMode:policy.distribution.mode,publicArchiveAbsent:true,existingLicenseNoticesRetained:true,publicWebRights:policy.rightsAssessments.publicWeb.status,communityZipRights:policy.rightsAssessments.communityZip.status,publicationStatus:'blocked'};
 fs.writeFileSync(path.join(root,'reports/community/package.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS Community package: '+JSON.stringify(report));

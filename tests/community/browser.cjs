@@ -8,7 +8,7 @@ const snapshot=page=>page.evaluate(()=>JSON.parse(JSON.stringify({a:window.Chloh
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale&&!!document.querySelector('#community-information'));
 async function choose(page,query,id){await page.locator('#moveSearch').fill(query);await page.locator('#moveSuggestions [role=option]').first().click();assert.equal(await page.locator('#dbMove').inputValue(),id);}
 (async()=>{
- const report={status:'running',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,networkRequests:[],viewportChecks:[],publicationStatus:'blocked'};
+ const report={status:'running',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,distributionNoticeChecks:0,archive404Checks:0,networkRequests:[],viewportChecks:[],publicationStatus:'blocked'};
  const server=http.createServer((req,res)=>{
   const url=new URL(req.url,'http://127.0.0.1'),m=url.pathname.match(/^\/(web|zip)\/(.*)$/);
   if(!m||m[2].includes('..')){res.writeHead(404);res.end();return;}
@@ -48,6 +48,11 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
     const value=await snapshot(page);assert.equal(await page.evaluate(()=>window.ChlohaPersistence.save()),true);
     await page.reload();await ready(page);assert.equal(await page.locator('#chloha-locale').inputValue(),locale);assert.deepEqual(await snapshot(page),value);report.reloads++;
     assert.ok((await page.locator('.community-state').textContent()).length>20);
+    const notice=await page.locator('.community-distribution').textContent();
+    assert.ok(notice.length>70,'Community-only notice present: '+locale);
+    assert.ok(notice.includes('ZIP'),'Distribution notice identifies the package: '+locale);
+    report.distributionNoticeChecks++;
+    assert.deepEqual(await page.locator('a[href]').evaluateAll(links=>links.filter(a=>/\.zip(?:[?#]|$)|releases\/download\//i.test(a.getAttribute('href'))).map(a=>a.getAttribute('href'))),[],'No public ZIP links in any locale');
    }
    await choose(page,'Fissure','gw0169_p050');assert.equal(await page.locator('#damage').textContent(),'—');
    await choose(page,'Earthquake','earthquake');assert.ok((await snapshot(page)).r.rolls.length===16);
@@ -65,6 +70,9 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
    }
    const current=page.locator('.community-links a[href="https://kurohanolu.github.io/singularity/"]');assert.equal(await current.getAttribute('target'),'_blank');
    for(const link of ['README.html','TERMS.html']){const res=await context.request.get(origin+'/'+mode+'/'+link);assert.equal(res.status(),200);assert.ok((await res.text()).includes('AS IS'));}
+   for(const uri of ['Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','Chloha-Damage-Lab-v1.0.0-Community-Edition.zip.sha256','private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','../private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip']){
+    const res=await context.request.get(origin+'/'+mode+'/'+uri);assert.equal(res.status(),404,'No archive exposed through web root: '+mode+' '+uri);report.archive404Checks++;
+   }
    assert.deepEqual(errors,[]);await context.close();
   }
   const local=await browser.newPage();await local.goto('file://'+path.join(out,'restored/Chloha-Damage-Lab/index.html'));await ready(local);assert.deepEqual(await snapshot(local),expected,'Direct local-file calculation');await local.close();

@@ -8,7 +8,6 @@
   "baselineArchiveSHA256": "dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6",
   "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
   "currentProductUrl": "https://kurohanolu.github.io/singularity/",
-  "releaseTag": "chloha-damage-lab-v1.0.0-community",
   "publicationAuthorizedConditionally": true,
   "rightsStatus": "unresolved",
   "publicationStatus": "blocked",
@@ -16,6 +15,70 @@
     "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
     "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
   ],
-  "exclusions": ["Pokemon artwork", "Singularity/Tiara logo assets", "private feedback backend and production endpoint", "external fonts", "development logs and credentials"],
-  "issue": "https://github.com/Kurohanolu/chloha-damage-lab/issues/73"
+  "exclusions": [
+    "Pokemon artwork",
+    "Singularity/Tiara logo assets",
+    "private feedback backend and production endpoint",
+    "external fonts",
+    "development logs and credentials"
+  ],
+  "issue": "https://github.com/Kurohanolu/chloha-damage-lab/issues/73",
+  "policyRevision": "2026-11-16-community-limited",
+  "distribution": {
+    "mode": "community-limited",
+    "recipients": [
+      "owner",
+      "owner-recognized-community-members"
+    ],
+    "personalUse": true,
+    "personalModification": true,
+    "inCommunityModifiedSharing": true,
+    "outsideRedistribution": false,
+    "publicModifiedVersions": false,
+    "commercialSale": false,
+    "aiPersonalCustomization": true,
+    "publicArchive": false,
+    "publicDownloadLink": false,
+    "publicApplicationRepository": false,
+    "delivery": "owner-managed-members-only-channel",
+    "preserveExistingLicenses": true
+  },
+  "web": {
+    "publiclyAccessible": true,
+    "urlIsAccessControl": false,
+    "archiveDownload": false,
+    "requiresIndependentRightsClearance": true
+  },
+  "rightsAssessments": {
+    "publicWeb": {
+      "status": "unresolved",
+      "scope": "Public transmission of HTML, JavaScript, registries and translations; public browser operation",
+      "requiredEvidence": [
+        "public-web-code-and-data-delivery"
+      ],
+      "blockers": [
+        "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
+        "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
+      ]
+    },
+    "communityZip": {
+      "status": "unresolved",
+      "scope": "Copies to recognized members, personal modification and member-only sharing of modified copies",
+      "requiredEvidence": [
+        "community-copy-modify-and-share"
+      ],
+      "blockers": [
+        "Embedded Pokemon/move registry records cite GameWith and AppMedia; redistribution permission or complete independently licensed replacement provenance has not been established.",
+        "Supplemental localized form/new ability name provenance must be documented at file/record level before granting redistribution rights for the complete bundle."
+      ]
+    },
+    "generalRedistribution": {
+      "status": "prohibited-by-owner-policy",
+      "enabled": false
+    }
+  },
+  "acceptanceStatus": {
+    "publicWeb": "blocked",
+    "communityZip": "blocked"
+  }
 }

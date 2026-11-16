@@ -4,12 +4,15 @@ This independent branch contains **only newly authored review/build/test/UI/docu
 
 The already-public stable source remains at `v1.0.0`, commit `0b270c1452505268364659edd402209b00b28673`. CI reads that existing source into a temporary runner, applies the original tools, and validates a **local review candidate**. Only test reports/screenshots are retained. The app and ZIP are never uploaded or deployed by this workflow.
 
-The complete Community Edition remains blocked by unresolved third-party redistribution provenance. A successful technical verification is not publication clearance. The required publication-rights job remains red until evidence and an appropriate release implementation are reviewed. No original source branch, main, Pages branch, stable tag, or Singularity production asset is modified.
+The complete Community Edition is now intended for **owner/community-only ZIP distribution**, with no public download link, public Release asset or public application fork. Individual customization and member-only sharing of modifications are permitted under the package terms; outside redistribution, public derivatives and commercial sale are prohibited within the owner's licensing scope. Existing MIT/BSD grants remain intact. This data-free audit tooling remains covered by the root LICENSE; it is not the complete application.
+
+Public Web delivery and limited community ZIP delivery have separate rights assessments and required gates. Both remain blocked by unresolved third-party provenance. General ZIP redistribution is disabled by policy, not merely waiting for clearance. A successful technical verification is not publication clearance. No original source branch, main, Pages branch, stable tag, or Singularity production asset is modified. The build places ZIP files under `dist/community/private/` and only app/docs under `dist/community/site/`; neither is published by this workflow.
 
 - [Audit and remaining blockers](docs/community/restoration-audit.md)
 - [Candidate beginner guide](community/README.md)
 - [Scoped license](community/LICENSE)
 - [Third-party findings](community/THIRD-PARTY-NOTICES.md)
+- [Distribution-scope assessment](docs/community/distribution-scope-review.md)
 - Tracking: https://github.com/Kurohanolu/chloha-damage-lab/issues/73
 
 The prepared release branch was not pushed: automatic approval review rejected transmission of a tree containing unresolved application data. This data-free tooling branch is the materially narrower alternative, not a deployment or a workaround for application publication.

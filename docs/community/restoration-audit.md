@@ -3,6 +3,8 @@
 Status: **candidate prepared; publication blocked by unresolved redistribution rights**.
 Tracking: https://github.com/Kurohanolu/chloha-damage-lab/issues/73
 
+**2026-11-16 policy update:** the complete ZIP is now owner/community-only. Public Web and limited ZIP delivery are assessed separately and both remain unresolved. General ZIP distribution and public fork instructions are withdrawn. See [distribution-scope-review.md](distribution-scope-review.md). The original MIT notice described in this historical audit is preserved for existing grants; the new package terms do not revoke it. Current technical outcomes are recorded in Issue #73 and exact-commit CI evidence.
+
 ## Provenance verified on 2026-11-16 JST
 
 - Source and tag: `0b270c1452505268364659edd402209b00b28673` / `v1.0.0`.
