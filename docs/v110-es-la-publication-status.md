@@ -1,35 +1,34 @@
 # v1.1.0 publication execution — 2026-11-16 JST
 
-The owner instructed **「公開作業まで進めてくれ」**. Publication work is authorized; no second approval is needed for the disclosed release scope. The owner subsequently selected **ES-LAの送信だけ停止して公開** after Cloudflare login returned 403. Publication now proceeds as `v1.1.0-pre.1` with ES-LA reporting paused and the original nine report locales preserved. No Cloudflare login retry is requested.
+The owner authorized public publication and selected **ES-LAの送信だけ停止して公開** after Cloudflare login returned 403. The public prerelease is `v1.1.0-pre.1`: ten-language calculation, search and display; ES-LA feedback temporarily paused; the original nine report locales preserved. The production Worker and database are unchanged. Original game screenshots remain private.
 
-## Completed preparation
+## Completed public acceptance
 
-- Source checkpoint `73302401ca0d68914c7bac42a88a96f2af8444cc`: all 13 PR workflows completed successfully.
-- Existing ES-LA implementation already preserves ten report locales locally, including `es-LA`; this is not evidence that production has those bytes.
-- Added `supportedLocales` to the public Worker configuration, derived directly from its intake contract. No private report, configuration secret or administrator information is exposed.
-- Added a read-only release preflight requirement for all ten locales for version 1.1.0. A missing capability list, nine-locale backend, or `es-419` in place of internal `es-LA` blocks publication. No production report is submitted to test compatibility.
-- Local validation: Worker API 18/18, new production-readiness negatives, legacy production-readiness tests, ten-locale contract, Worker dry-run bundle, and 4,520 numeric comparisons passed. Independent Sol review: [readiness review](evidence/v110/sol-feedback-readiness-review.md).
+- Reviewed source `4760cd59503b2ff46a502e83420cf2111412ada3`, tree `8122cda5bda8ddaf3bdf991bab766aefb8f6d05b`; independent 6.1 Sol conditional-pass and accepted owner conditions remain bound by the unchanged review digest and decision receipt.
+- Approved deployment source `f161866096baa2964489ece5fd912ab37db20b1e`, tree `b32d3875c6c437ba109b0aee2cc469922d0ad262`: all 13 PR workflows passed.
+- The GitHub workflow-write permission issue was resolved by the owner. The target workflow includes exact-source ES-LA CI and version-specific migration contracts; no gate was bypassed.
+- [Actual public deployment](https://github.com/Kurohanolu/singularity/actions/runs/43777582461) completed successfully.
+- [Live receipt](evidence/v110/live-acceptance-receipt.json): all 79 new/legacy public files matched, including 228 bare, cache-busted and exact browser-cache URLs. The check was GET-only and made zero production mutations.
+- Live Chrome UI confirmed the v1.1.0 Pre-Release 1 label, ES-LA type/result display, unchanged 108–128 example damage, persistence after reload, visible ES-LA feedback pause and disabled fields, and restoration of editable feedback fields after switching to English. No feedback report was submitted. [Live screenshot](evidence/v110/live-es-la-calculation.jpg).
+- Production read-only preflight passed: enabled intake, production Turnstile key configuration, 90-day retention, exact-origin CORS, no-store, denied anonymous administrator access, and no public report listing.
 
-## Confirmed blocker
+## Candidate verification evidence
 
-Locked Wrangler reports `loggedIn:false`. No Cloudflare credential was supplied. A read-only GET of the production `/v1/config` returned HTTP 200, enabled production intake, and no `supportedLocales` declaration. This does not prove the exact deployed validator; it means ten-locale production support cannot currently be certified.
+The early [ES-LA artifact](https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43776815550/artifacts/14186289724) has SHA-256 `6e776a050be999c491a1369f7dad2e7c7804bbf7b06995f25c58a77783e3bee3`, independently matched to GitHub metadata. Its expected PR merge commit `d4f6fb162fc7d0547a16dfdbba777cd5aa3a4a8d` has exactly the approved A tree, with no uncommitted changes.
 
-The earlier full-ten-language feedback gate is superseded by the explicit owner-selected pause: the production frontend blocks ES-LA submission with a visible notice and permits the original nine locales. The production Worker source is restored unchanged. The public preflight retains all existing authentication/CORS/retention checks; declaring ES-LA support remains required if the pause is ever removed. Existing v1.0.0 stays public. No Worker deployment, D1 migration, production report, tag, GitHub Release or frontend cutover was performed in this execution.
+- New candidate tests: 14/14 passed.
+- Numerical comparison: 4,520 completed; zero unexplained differences.
+- Ten-language switching: 110 transitions and 15 reloads passed.
+- Mobile: 10 locales × 6 widths, 60 cases passed.
+- Feedback pause: zero POST requests, restored form on locale switch, draft preserved.
+- Existing nine-language regression, state/mobile checks, controlled memory and comparative performance all completed in the 13 successful workflows.
 
-## Future restoration of ES-LA reporting
+## Final publication boundary
 
-From the exact reviewed PR checkout, run `npm ci --prefix services/feedback --no-audit --no-fund`. Authenticate Wrangler to the account owning `chloha-private-feedback`, inspect its current version/bindings/secrets and record the rollback version before deployment. Deploy with `cd services/feedback && npx wrangler deploy`, preserving existing secrets and D1 data; no schema migration is required. Do not paste tokens into chat or commit them.
+This metadata-only acceptance promotion adds the live receipt and its four release-manifest bindings. Reviewed runtime, engine, dictionaries, tests and workflows remain byte-identical. Before merge, the promoted candidate must pass its own CI and be deployed, and its current public bytes must match. The main publisher separately requires exact-main CI, current complete public hashes and the successful deployment provenance before creating the immutable tag and GitHub prerelease. Those final promotion steps are not claimed complete by this receipt.
 
-Then run `node scripts/feedback-production-check.cjs` at repository root and require all checks to pass. Finish the explicit v1.1.0 release identity, source/tree/report/owner-delegation binding, independent release review, exact-source CI, public-artifact deployment, current live-byte/browser checks and immutable tag/Release creation. The existing publication policy still correctly rejects the development manifest; no authorization flags were forged to bypass it.
+## Scope and deferred feedback restoration
 
-## Current publication plan
+Coverage retains incomplete official terminology and physical-device/native-language limitations. Registered official Champions counts rose from 81 to 112, and unverified registered names fell from 761 to 739; overlapping forms are excluded from these aggregate counts. Individual categories are in the capture audit and generated coverage report.
 
-The v1.1.0-pre.1 release policy binds the independent Sol-reviewed source and Git tree, report SHA-256, owner delegation and explicit feedback scope. Protected code/workflows/tests must remain byte-identical after review. Public deployment requires the ten-language CI gate in addition to existing regressions. Live acceptance and final Release publication retain complete public-file and exact browser-cache URL checks and deployment-run proof. No gate is satisfied by manually renaming old approval evidence. The prerelease label and incomplete terminology/native-device verification remain disclosed.
-
-## Additional confirmed publication blocker
-
-Updating `Kurohanolu/singularity/.github/workflows/deploy.yml` through the connected GitHub app returned HTTP 403 `Resource not accessible by integration`. The reviewed update adds mandatory ES-LA exact-source CI and is retained as `deployment/singularity-pages.yml`. The public workflow was not changed and no deployment was triggered. Owner publication authorization is present; the missing capability is the integration permission to write the public deployment workflow. No authentication or CI gate was weakened in response.
-
-## Permission recovery
-
-Owner updated GitHub access. The public repository workflow write succeeded. The deployment route now uses the same version-specific historical/current migration checks as source CI; the refreshed independent review and owner receipt bind this correction. Publication execution continues under existing authorization.
+ES-LA feedback restoration remains separate: authenticate to the existing Cloudflare account, inspect and record the current Worker version/bindings/secrets, deploy the reviewed ten-locale validator without schema changes, then require the public capability declaration before removing the frontend pause. No credential is requested in chat and no Cloudflare login retry is required for this publication.
