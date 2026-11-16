@@ -1,4 +1,28 @@
 'use strict';
+// Preserve the exact published prior candidate provenance test in its immutable source tree.
+// It verifies real approved bytes there; current Expert Belt batch has separate additive preservation and source-scope gates.
+if(require('node:fs').existsSync('docs/data/v110-es-la-expert-belt-capture.json')){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='a3eeebfc4f4ad9c4c341047ca7ef7af7cc71f8b9',tree='604f0632eaf2d28e2fbd40012d68133050f72f30';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre6-history-')),worktree=path.join(parent,'source');
+ let status=1;
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-owner-provisional-items.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published prior candidate provenance must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/owner-provisional-items.json'),'utf8'));
+  fs.writeFileSync('reports/v110/owner-provisional-items.json',JSON.stringify({...report,role:'historical immutable pre.6, not current candidate acceptance',sourceCommit:ref,sourceTree:tree},null,2)+'\n');
+  status=0;
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(status);
+}
+'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),S=read('docs/data/v110-es-la-source-records.json'),C=read('docs/data/v110-es-la-coverage.json'),M=read('docs/data/v110-es-la-owner-provisional-items.json'),baseline=M.baselineCommit,B=JSON.parse(execFileSync('git',['show',baseline+':docs/data/v110-es-la-coverage.json'],{encoding:'utf8',maxBuffer:32*1024*1024}));
 assert.equal(baseline,'82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74');assert.equal(M.observations.length,2);assert.deepEqual(M.observations.map(o=>o.canonicalId).sort(),['assaultVest','choiceBand']);

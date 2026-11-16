@@ -1,5 +1,10 @@
 # Singularity v1.1.0 — ES-LA handoff
 
+## Current pre.7 candidate: Expert Belt
+
+The new owner screenshot directly attests Cinturón de Experto for expertBelt. The old Cinta Experto spelling remains searchable. Official 206/1,029; Champions-specific153/1,029; unverified660, provisional2. One display-name change, no support or mechanics change. See [the scoped capture audit](v110-es-la-expert-belt-capture.md). Publication gates remain pending; checkpoints below are historical.
+
+
 ## New checkpoint: pre.6 official-publication expansion (pending release gates)
 
 52 additional attestations confirm 49 previously unverified existing names. Official evidence across stated scopes: 205/1,029; Champions-specific: 152/1,029; unverified: 661; owner-selected provisional: 2. Generic franchise confirmations (28) are explicitly distinguished from game-specific evidence. Names and aliases are unchanged. See [batch-4 audit](v110-es-la-official-publications-batch4.md). Three new owner-supplied images are documented in [the provisional-item audit](v110-es-la-owner-provisional-items.md); no new official item confirmation or mechanics validation is claimed. Historical checkpoints below are retained.

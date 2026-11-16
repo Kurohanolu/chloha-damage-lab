@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "c15403623e422f814c3f3926b1895b23e2b323c1c98d6c3d6cf8715c24df25f7",
+  "sourceSha256": "e21d4ae04fb57974cc030ae2dc7dfdf4cfe2cf871615338a8fb4621bbbc196be",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -57,16 +57,16 @@
     },
     "items": {
       "total": 41,
-      "official": 19,
+      "official": 20,
       "verified-secondary": 19,
       "provisional": 2,
-      "unverified": 1,
-      "officialChampions": 19,
+      "unverified": 0,
+      "officialChampions": 20,
       "displayAvailable": 41,
-      "individuallyAttested": 38,
-      "individuallyAttestedPercent": 92.68,
-      "officialPercent": 46.34,
-      "officialChampionsPercent": 46.34
+      "individuallyAttested": 39,
+      "individuallyAttestedPercent": 95.12,
+      "officialPercent": 48.78,
+      "officialChampionsPercent": 48.78
     },
     "types": {
       "total": 18,
@@ -22431,16 +22431,19 @@
           "owner-champions-capture-32690",
           "owner-champions-capture-32692",
           "owner-champions-capture-32694",
-          "owner-champions-capture-32696"
+          "owner-champions-capture-32696",
+          "owner-champions-capture-IMG-0439"
         ],
         "recordIds": [
-          "owner-champions-2026-11-16-items-life-orb"
+          "owner-champions-2026-11-16-items-life-orb",
+          "owner-champions-IMG-0439-life-orb"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-item-id-270",
           "wikidex-champions-item-82",
           "pokexperto-champions-items-270",
-          "owner-champions-2026-11-16-items-life-orb"
+          "owner-champions-2026-11-16-items-life-orb",
+          "owner-champions-IMG-0439-life-orb"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": true,
@@ -22510,24 +22513,34 @@
         ]
       },
       "たつじんのおび": {
-        "name": "Cinta Experto",
+        "name": "Cinturón de Experto",
         "ja": "たつじんのおび",
         "en": "Expert Belt",
         "es": "Cinta Experto",
         "canonicalIds": [
           "expertBelt"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
-        "aliases": [
-          "Cinta Experto"
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-IMG-0439"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "recordIds": [
+          "owner-champions-IMG-0439-expert-belt"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-IMG-0439-expert-belt"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
+        "aliases": [
+          "Cinta Experto",
+          "Cinturón de Experto"
+        ],
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ひのたまプレート": {
         "name": "Placa Llama",
@@ -30779,6 +30792,15 @@
       ]
     },
     {
+      "id": "owner-champions-IMG-0439-life-orb",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "いのちのたま"
+        }
+      ]
+    },
+    {
       "id": "pre6-owner-provisional-choiceBand-name",
       "canonicalMatches": [
         {
@@ -30793,6 +30815,15 @@
         {
           "category": "items",
           "key": "こだわりメガネ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-IMG-0439-expert-belt",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "たつじんのおび"
         }
       ]
     },
@@ -39242,6 +39273,46 @@
       ],
       "selectionReason": "superseded-by-higher-priority-evidence",
       "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
+      "id": "owner-champions-IMG-0439-fairy-feather",
+      "category": "items",
+      "esLA": "Pluma Feérica",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-IMG-0439-muscle-band",
+      "category": "items",
+      "esLA": "Cinta Fuerte",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-IMG-0439-wise-glasses",
+      "category": "items",
+      "esLA": "Lentes Especiales",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-IMG-0439-metronome",
+      "category": "items",
+      "esLA": "Metrónomo",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "owner-champions-IMG-0439-focus-band",
+      "category": "items",
+      "esLA": "Cinta Aguante",
+      "canonicalMatches": [],
+      "selectionReason": "no-runtime-canonical-match",
+      "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
     }
   ],
   "conflicts": [],
@@ -47107,18 +47178,6 @@
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
     {
-      "category": "items",
-      "key": "たつじんのおび",
-      "canonicalIds": [
-        "expertBelt"
-      ],
-      "ja": "たつじんのおび",
-      "es": "Cinta Experto",
-      "candidate": "Cinta Experto",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
       "category": "forms",
       "key": "hisuian_goodra",
       "canonicalIds": [
@@ -48109,9 +48168,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3",
-      "feedback-release-v100.js": "8f1baf22dfc1252079d716becc2c9c9052b1f87a5905edb6a31364447055c67c",
-      "index.html": "5a6a457264b2583b3dc878f6e6f6203fcdf94d3038ea5f44164f99dad1db74a5",
-      "docs/data/v110-es-la-source-records.json": "c15403623e422f814c3f3926b1895b23e2b323c1c98d6c3d6cf8715c24df25f7"
+      "feedback-release-v100.js": "eab14c4cd44a9e354eeeb5079a7cf927ee37568f15d1f66a6e79f247ca2ae410",
+      "index.html": "966a380ca901dcf190794a694795bf9446c61be374a7bce4c63cd7ea1b558be7",
+      "docs/data/v110-es-la-source-records.json": "e21d4ae04fb57974cc030ae2dc7dfdf4cfe2cf871615338a8fb4621bbbc196be"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -50308,7 +50367,7 @@
         "checkedAt": "2026-11-15",
         "targetGame": null,
         "warningOrError": false,
-        "renderedText": "Cinta Experto (daño supereficaz ×1,2)"
+        "renderedText": "Cinturón de Experto (daño supereficaz ×1,2)"
       },
       {
         "id": "locale-ui-es-la-v110.js:exact-ui:Assault Vest (Sp. Def ×1.5)",
@@ -58282,7 +58341,7 @@
         "source": "i18n.js",
         "group": "canonical-dictionary",
         "canonicalKey": "たつじんのおび（効果抜群時×1.2）",
-        "text": "Cinta Experto (daño supereficaz ×1,2)",
+        "text": "Cinturón de Experto (daño supereficaz ×1,2)",
         "status": "provisional",
         "origin": "executed-canonical-ui-key",
         "officialGameNameEvidence": false,
@@ -62740,7 +62799,7 @@
         "source": "i18n.js",
         "group": "canonical-selectLabels",
         "canonicalKey": "たつじんのおび（効果抜群時×1.2）",
-        "text": "Cinta Experto (supereficaz ×1,2)",
+        "text": "Cinturón de Experto (supereficaz ×1,2)",
         "status": "provisional",
         "origin": "executed-canonical-ui-key",
         "officialGameNameEvidence": false,
@@ -66135,6 +66194,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "57f6de33e0ebf6a79b3ac1cbf7718a4f90c573326f73334a759fd033580d37b9"
+    "sha256": "5a8c1fd6b18a5bb678134021107a0bf3fe84bd27c62ede02f59fcded0cff046c"
   }
 }

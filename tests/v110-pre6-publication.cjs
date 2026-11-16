@@ -1,17 +1,17 @@
 'use strict';
-// Preserve the exact published prior pre.6 lifecycle test in its immutable source tree.
-// It verifies real approved bytes there; current Community policy revision has separate additive preservation and source-scope gates.
-if(require('../release.json').migration?.legacyPolicy==='community-pinned-v1'){
+// Preserve the exact published pre.6 lifecycle test in its immutable source tree.
+// It verifies real approved bytes there; current pre.7 has a separate lifecycle gate.
+if(require('../release.json').tag!=='v1.1.0-pre.6'){
  const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
  const {execFileSync,spawnSync}=require('node:child_process');
- const ref='a3eeebfc4f4ad9c4c341047ca7ef7af7cc71f8b9',tree='604f0632eaf2d28e2fbd40012d68133050f72f30';
+ const ref='2fb5655a89e076df5993a3294bddbe1bf31afa58',tree='002d2af5716f408f50d50b8390d66a73ba083be3';
  assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
  const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre6-history-')),worktree=path.join(parent,'source');
  let status=1;
  try{
   execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
   const result=spawnSync(process.execPath,['tests/v110-pre6-publication.cjs'],{cwd:worktree,stdio:'inherit'});
-  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published prior pre.6 lifecycle must pass');
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.6 lifecycle must pass');
   assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
   fs.mkdirSync('reports/v110',{recursive:true});
   const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/pre6-publication.json'),'utf8'));
