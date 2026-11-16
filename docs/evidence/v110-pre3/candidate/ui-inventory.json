@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "sourceSites": 1011,
+  "dynamicBranches": 79,
+  "authoredReasons": 52,
+  "authoredErrors": 41,
+  "declaredDynamicTemplates": 28,
+  "remainingGaps": 0,
+  "remainingScopeLimits": [
+    "Dynamic branches are represented by concrete witness inputs; arbitrary values and every branch combination are not exhaustively enumerated.",
+    "Static markup and JavaScript DOM-template literals in index.html are not independently exhaustively parsed; the canonical dictionaries and browser tests cover their known rendered paths.",
+    "Function-local literal extraction uses explicit checked anchors, not a general JavaScript AST; new unnamed translation tables require an inventory update.",
+    "UI wording remains provisional authored/reused copy. Game-name verification is tracked in the separate canonical source ledger.",
+    "A warning/error flag is an explicit-plus-pattern classification; it is not a proof that every warning in the application has been enumerated."
+  ],
+  "negativeEnglishFallbackDetected": true,
+  "deterministic": true
+}

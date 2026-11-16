@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "releaseTag": "v1.1.0-pre.2",
+  "publicPredecessor": "83af29133927a19fc7e0f9273c0e194c54384ae5",
+  "publicPredecessorTree": "cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b",
+  "pendingCannotPublish": true,
+  "oldReceiptsRejected": true,
+  "unapprovedLiveFlagRejected": true,
+  "publicMetadataPinned": true,
+  "role": "historical immutable pre.2, not current candidate acceptance",
+  "sourceCommit": "aba2d0558948e2a4dd375074fb11fd428edf6222",
+  "sourceTree": "5043182ba5b292f13630b461897457a74812dcfd"
+}

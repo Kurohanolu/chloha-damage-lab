@@ -1,0 +1,481 @@
+{
+  "mode": "local Chromium emulation; no private images required",
+  "sourceCommit": "987e9610752a5289918726d1f6bc624587a40d3c",
+  "sourceTree": "3918f8f443b24bc732e402319811d1c9ec2fa56d",
+  "uncommittedPreview": false,
+  "realDevice": false,
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "indexQueries": 86,
+  "widths": [
+    390,
+    1440
+  ],
+  "moves": [
+    {
+      "width": 390,
+      "id": "gw0169_p022",
+      "name": "Karatazo",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "gw0169_s013",
+      "name": "Ataque Centrado",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "gw0170_u033",
+      "name": "Golpe Pesado",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "gw0169_p028",
+      "name": "Inversión",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "gw0169_p022",
+      "name": "Karatazo",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "gw0169_s013",
+      "name": "Ataque Centrado",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "gw0170_u033",
+      "name": "Golpe Pesado",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "gw0169_p028",
+      "name": "Inversión",
+      "passed": true
+    }
+  ],
+  "berries": [
+    {
+      "width": 390,
+      "id": "chilanBerry",
+      "name": "Baya Chilan",
+      "type": "ノーマル",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "rindoBerry",
+      "name": "Baya Tamar",
+      "type": "くさ",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "occaBerry",
+      "name": "Baya Caoca",
+      "type": "ほのお",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "passhoBerry",
+      "name": "Baya Pasio",
+      "type": "みず",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "wacanBerry",
+      "name": "Baya Gualot",
+      "type": "でんき",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "tangaBerry",
+      "name": "Baya Yecana",
+      "type": "むし",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "cobaBerry",
+      "name": "Baya Kouba",
+      "type": "ひこう",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "chartiBerry",
+      "name": "Baya Alcho",
+      "type": "いわ",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "kebiaBerry",
+      "name": "Baya Kebia",
+      "type": "どく",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "shucaBerry",
+      "name": "Baya Acardo",
+      "type": "じめん",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "yacheBerry",
+      "name": "Baya Rimoya",
+      "type": "こおり",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "chopleBerry",
+      "name": "Baya Pomaro",
+      "type": "かくとう",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "payapaBerry",
+      "name": "Baya Payapa",
+      "type": "エスパー",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "kasibBerry",
+      "name": "Baya Drasi",
+      "type": "ゴースト",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "habanBerry",
+      "name": "Baya Anjiro",
+      "type": "ドラゴン",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "colburBerry",
+      "name": "Baya Dillo",
+      "type": "あく",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "babiriBerry",
+      "name": "Baya Baribá",
+      "type": "はがね",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "roseliBerry",
+      "name": "Baya Hibis",
+      "type": "フェアリー",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "chilanBerry",
+      "name": "Baya Chilan",
+      "type": "ノーマル",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "rindoBerry",
+      "name": "Baya Tamar",
+      "type": "くさ",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "occaBerry",
+      "name": "Baya Caoca",
+      "type": "ほのお",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "passhoBerry",
+      "name": "Baya Pasio",
+      "type": "みず",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "wacanBerry",
+      "name": "Baya Gualot",
+      "type": "でんき",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "tangaBerry",
+      "name": "Baya Yecana",
+      "type": "むし",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "cobaBerry",
+      "name": "Baya Kouba",
+      "type": "ひこう",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "chartiBerry",
+      "name": "Baya Alcho",
+      "type": "いわ",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "kebiaBerry",
+      "name": "Baya Kebia",
+      "type": "どく",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "shucaBerry",
+      "name": "Baya Acardo",
+      "type": "じめん",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "yacheBerry",
+      "name": "Baya Rimoya",
+      "type": "こおり",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "chopleBerry",
+      "name": "Baya Pomaro",
+      "type": "かくとう",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "payapaBerry",
+      "name": "Baya Payapa",
+      "type": "エスパー",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "kasibBerry",
+      "name": "Baya Drasi",
+      "type": "ゴースト",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "habanBerry",
+      "name": "Baya Anjiro",
+      "type": "ドラゴン",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "colburBerry",
+      "name": "Baya Dillo",
+      "type": "あく",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "babiriBerry",
+      "name": "Baya Baribá",
+      "type": "はがね",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "roseliBerry",
+      "name": "Baya Hibis",
+      "type": "フェアリー",
+      "mode": "page registry and engine catalog; no individual UI option",
+      "passed": true
+    }
+  ],
+  "autoBerryUi": [
+    {
+      "width": 390,
+      "id": "autoResistBerry",
+      "numericalStatePreserved": true,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "autoResistBerry",
+      "numericalStatePreserved": true,
+      "passed": true
+    }
+  ],
+  "abilities": [
+    {
+      "width": 390,
+      "id": "filter",
+      "name": "Filtro",
+      "blockedOutputPreserved": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "unsupported:フラワーベール",
+      "name": "Velo Florido",
+      "blockedOutputPreserved": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "fairyAura",
+      "name": "Aura Feérica",
+      "blockedOutputPreserved": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "unsupported:さめはだ",
+      "name": "Piel Tosca",
+      "blockedOutputPreserved": true,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "filter",
+      "name": "Filtro",
+      "blockedOutputPreserved": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "unsupported:フラワーベール",
+      "name": "Velo Florido",
+      "blockedOutputPreserved": true,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "fairyAura",
+      "name": "Aura Feérica",
+      "blockedOutputPreserved": false,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "unsupported:さめはだ",
+      "name": "Piel Tosca",
+      "blockedOutputPreserved": true,
+      "passed": true
+    }
+  ],
+  "forms": [
+    {
+      "width": 390,
+      "id": "roster_v0105_029",
+      "name": "Floette (Flor Eterna)",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "id": "roster_v0104_017",
+      "name": "Mega-Floette",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "roster_v0105_029",
+      "name": "Floette (Flor Eterna)",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "id": "roster_v0104_017",
+      "name": "Mega-Floette",
+      "passed": true
+    }
+  ],
+  "natures": [
+    {
+      "width": 390,
+      "name": "Firme",
+      "ids": [
+        "adamant"
+      ],
+      "attack": 200,
+      "specialAttack": 118,
+      "neutralAttack": 182,
+      "neutralSpecialAttack": 132,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "name": "Firme",
+      "ids": [
+        "adamant"
+      ],
+      "attack": 200,
+      "specialAttack": 118,
+      "neutralAttack": 182,
+      "neutralSpecialAttack": 132,
+      "passed": true
+    }
+  ],
+  "nativeSearch": "Abilities use visible-label keyboard typeahead; accent/space variants also use the canonical alias catalog",
+  "berryValidation": "18 names/IDs/types in the actual page registries and alias catalog; the existing UI offers automatic resistance berry selection, not 18 individual options",
+  "passed": true
+}
