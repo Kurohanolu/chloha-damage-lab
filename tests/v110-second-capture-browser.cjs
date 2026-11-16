@@ -11,16 +11,16 @@ const moves=[
  {key:'きしかいせい',id:'gw0169_p028',name:'Inversión',es:'Inversión'}
 ];
 const berries=[
- ['ホズのみ','chilanBerry','Baya Chilan'],['リンドのみ','rindoBerry','Baya Tamar'],
- ['オッカのみ','occaBerry','Baya Caoca'],['イトケのみ','passhoBerry','Baya Pasio'],
- ['ソクノのみ','wacanBerry','Baya Gualot'],['タンガのみ','tangaBerry','Baya Yecana'],
- ['バコウのみ','cobaBerry','Baya Kouba'],['ヨロギのみ','chartiBerry','Baya Alcho'],
- ['ビアーのみ','kebiaBerry','Baya Kebia'],['シュカのみ','shucaBerry','Baya Acardo'],
- ['ヤチェのみ','yacheBerry','Baya Rimoya'],['ヨプのみ','chopleBerry','Baya Pomaro'],
- ['ウタンのみ','payapaBerry','Baya Payapa'],['カシブのみ','kasibBerry','Baya Drasi'],
- ['ハバンのみ','habanBerry','Baya Anjiro'],['ナモのみ','colburBerry','Baya Dillo'],
- ['リリバのみ','babiriBerry','Baya Baribá'],['ロゼルのみ','roseliBerry','Baya Hibis']
-].map(([key,id,name])=>({key,id,name}));
+ ['ホズのみ','chilanBerry','Baya Chilan','ノーマル'],['リンドのみ','rindoBerry','Baya Tamar','くさ'],
+ ['オッカのみ','occaBerry','Baya Caoca','ほのお'],['イトケのみ','passhoBerry','Baya Pasio','みず'],
+ ['ソクノのみ','wacanBerry','Baya Gualot','でんき'],['タンガのみ','tangaBerry','Baya Yecana','むし'],
+ ['バコウのみ','cobaBerry','Baya Kouba','ひこう'],['ヨロギのみ','chartiBerry','Baya Alcho','いわ'],
+ ['ビアーのみ','kebiaBerry','Baya Kebia','どく'],['シュカのみ','shucaBerry','Baya Acardo','じめん'],
+ ['ヤチェのみ','yacheBerry','Baya Rimoya','こおり'],['ヨプのみ','chopleBerry','Baya Pomaro','かくとう'],
+ ['ウタンのみ','payapaBerry','Baya Payapa','エスパー'],['カシブのみ','kasibBerry','Baya Drasi','ゴースト'],
+ ['ハバンのみ','habanBerry','Baya Anjiro','ドラゴン'],['ナモのみ','colburBerry','Baya Dillo','あく'],
+ ['リリバのみ','babiriBerry','Baya Baribá','はがね'],['ロゼルのみ','roseliBerry','Baya Hibis','フェアリー']
+].map(([key,id,name,type])=>({key,id,name,type}));
 const abilities=[
  {key:'フィルター',id:'filter',name:'Filtro',species:'candidate093_24',side:'def'},
  {key:'フラワーベール',id:'unsupported:フラワーベール',name:'Velo Florido',species:'roster_v0105_029',side:'att'},
@@ -69,7 +69,7 @@ async function localeRoundtrip(page,control,expectedId,spainLabel){
 }
 (async()=>{
  const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
- const evidence={mode:'local Chromium emulation; no private images required',sourceCommit:git('rev-parse','HEAD'),sourceTree:git('rev-parse','HEAD^{tree}'),uncommittedPreview:!!git('status','--porcelain'),realDevice:false,productionRequests:0,productionMutations:0,indexQueries,widths:[390,1440],moves:[],berries:[],abilities:[],forms:[],natures:[],nativeSearch:'Visible-label keyboard typeahead; accent/space variants additionally tested in the canonical alias catalog'};
+ const evidence={mode:'local Chromium emulation; no private images required',sourceCommit:git('rev-parse','HEAD'),sourceTree:git('rev-parse','HEAD^{tree}'),uncommittedPreview:!!git('status','--porcelain'),realDevice:false,productionRequests:0,productionMutations:0,indexQueries,widths:[390,1440],moves:[],berries:[],autoBerryUi:[],abilities:[],forms:[],natures:[],nativeSearch:'Abilities use visible-label keyboard typeahead; accent/space variants also use the canonical alias catalog',berryValidation:'18 names/IDs/types in the actual page registries and alias catalog; the existing UI offers automatic resistance berry selection, not 18 individual options'};
  let lab,browser,context;
  try{
   lab=await startLab();browser=await launchBrowser();
@@ -110,15 +110,17 @@ async function localeRoundtrip(page,control,expectedId,spainLabel){
     await localeRoundtrip(page,w.side+'Ability',w.id);evidence.abilities.push({width,id:w.id,name:w.name,blockedOutputPreserved:blocked,passed:true});
    }
    // Restore a calculable state after the deliberately unsupported Rough Skin
-   // witness so berry selections also exercise live numeric-state preservation.
+   // witness before checking the existing automatic-berry UI.
    await page.selectOption('#attAbility','none');await page.waitForFunction(()=>!!window.ChlohaLastCalculation);
    const item=page.locator('#defItem');await expose(item);
+   assert.deepEqual(await item.locator('option').evaluateAll(options=>options.map(option=>option.value)),['none','assaultVest','autoResistBerry'],'The test must not invent individual berry selector options');
    for(const w of berries){
-    const option=item.locator('option[value="'+w.id+'"]');assert.equal(await option.count(),1);assert.ok((await option.textContent()).includes(w.name));
-    await item.selectOption('none');await item.focus();await page.keyboard.press('Home');await page.keyboard.type(w.name,{delay:20});await page.keyboard.press('Tab');
-    assert.equal(await item.inputValue(),w.id,'Native berry typeahead resolves exact canonical ID: '+w.name);
-    await localeRoundtrip(page,'defItem',w.id);evidence.berries.push({width,id:w.id,name:w.name,passed:true});
+    const observed=await page.evaluate(w=>({name:ChlohaEsLa.entity('items',w.key),ids:ChlohaEsLa.metadata('items',w.key).canonicalIds,officialChampions:ChlohaEsLa.metadata('items',w.key).officialChampions,type:ChlohaBattleData.RESIST_BERRIES[w.id],engineRecognizes:ChlohaBattleData.DEFENDER_ITEM_IDS.includes(w.id),aliasRecognizes:ChlohaEsLa.aliases('items',w.key).some(alias=>ChlohaNameSearch.normalize(alias)===ChlohaNameSearch.normalize(w.name))}),w);
+    assert.deepEqual(observed,{name:w.name,ids:[w.id],officialChampions:true,type:w.type,engineRecognizes:true,aliasRecognizes:true},'Actual page berry name/ID/type binding: '+w.name);
+    evidence.berries.push({width,id:w.id,name:w.name,type:w.type,mode:'page registry and engine catalog; no individual UI option',passed:true});
    }
+   await item.selectOption('autoResistBerry');assert.equal(await item.inputValue(),'autoResistBerry');
+   await localeRoundtrip(page,'defItem','autoResistBerry');evidence.autoBerryUi.push({width,id:'autoResistBerry',numericalStatePreserved:true,passed:true});
    // The UI exposes per-stat modifiers, not a full nature-name selector. Verify
    // the attested name maps to Adamant and the existing calculator's modifiers.
    const nature=await page.evaluate(()=>{
@@ -129,8 +131,8 @@ async function localeRoundtrip(page,control,expectedId,spainLabel){
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No document overflow after second-batch selections');
    assert.deepEqual(errors,[]);await context.close();context=null;
   }
-  for(const [key,count] of [['moves',8],['berries',36],['abilities',8],['forms',4],['natures',2]])assert.equal(evidence[key].length,count);
-  evidence.passed=true;console.log('PASS second capture browser: '+indexQueries+' alias queries; four move identities, eighteen berries, four abilities, two Floette forms and Firme across two viewports');
+  for(const [key,count] of [['moves',8],['berries',36],['autoBerryUi',2],['abilities',8],['forms',4],['natures',2]])assert.equal(evidence[key].length,count);
+  evidence.passed=true;console.log('PASS second capture browser: '+indexQueries+' alias queries; four move identities, eighteen page-registry berry bindings, existing automatic-berry UI, four abilities, two Floette forms and Firme across two viewports');
  }catch(error){evidence.passed=false;evidence.error=error.message;throw error;}
  finally{fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/second-capture-browser.json',JSON.stringify(evidence,null,2)+'\n');await context?.close();await browser?.close();await lab?.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});
