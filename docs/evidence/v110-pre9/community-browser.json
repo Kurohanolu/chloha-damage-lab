@@ -1,0 +1,317 @@
+{
+  "sourceCommit": "2a60accfbcae602d177e2e63ba1b7bf97b5773c1",
+  "realDevice": false,
+  "mode": "local Chromium emulation",
+  "widths": [
+    320,
+    390,
+    1440
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant"
+  ],
+  "rows": [
+    {
+      "width": 320,
+      "locale": "ja",
+      "searchName": "じしん",
+      "accessibleName": "じしん",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "searchName": "Earthquake",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "fr",
+      "searchName": "Séisme",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "de",
+      "searchName": "Erdbeben",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "es",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "it",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "ko",
+      "searchName": "지진",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "zh-Hans",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 320,
+      "locale": "zh-Hant",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "ja",
+      "searchName": "じしん",
+      "accessibleName": "じしん",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "searchName": "Earthquake",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "fr",
+      "searchName": "Séisme",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "de",
+      "searchName": "Erdbeben",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "it",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "ko",
+      "searchName": "지진",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "zh-Hans",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 390,
+      "locale": "zh-Hant",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "ja",
+      "searchName": "じしん",
+      "accessibleName": "じしん",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "searchName": "Earthquake",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "fr",
+      "searchName": "Séisme",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "de",
+      "searchName": "Erdbeben",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "it",
+      "searchName": "Terremoto",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "ko",
+      "searchName": "지진",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "zh-Hans",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    },
+    {
+      "width": 1440,
+      "locale": "zh-Hant",
+      "searchName": "地震",
+      "accessibleName": "Earthquake",
+      "canonicalMove": "earthquake",
+      "rolls": 16,
+      "reload": true,
+      "completeNumericParity": true
+    }
+  ],
+  "externalAttempts": [
+    {
+      "url": "https://kurohanolu.github.io/singularity/",
+      "expected": true
+    },
+    {
+      "url": "https://kurohanolu.github.io/singularity/",
+      "expected": true
+    },
+    {
+      "url": "https://kurohanolu.github.io/singularity/",
+      "expected": true
+    }
+  ],
+  "nonReadAttempts": [],
+  "productionRequests": 0,
+  "productionMutations": 0,
+  "liveAcceptance": false,
+  "numericContracts": 900,
+  "communitySource": "5ac31cbd9d128f82c42121b2c1fc12fcdc4c24ed",
+  "communityTree": "c641405fe8a33e8a4568049f0a5396373c3817f6",
+  "files": 44,
+  "applicationSHA256": "55096a2490a4505b84f821f1108bed0ee877cfa03c53a07019c00c34bc819dbd",
+  "passed": true
+}
