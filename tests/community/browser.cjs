@@ -54,9 +54,11 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
    for(const width of report.widths){
     await page.setViewportSize({width,height:900});await page.selectOption('#chloha-locale','ja');
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No page overflow: '+mode+' '+width);
+    for(const selector of ['#attSearch','#defSearch'])assert.ok((await page.locator(selector).boundingBox()).width>=Math.min(220,width-80),'Usable search width after artwork removal: '+selector+' '+width);
     await page.locator('#attDetails').evaluate(el=>{el.open=true});assert.equal(await page.locator('#attDetails').getAttribute('open'),'');
     if(mode==='web'&&[390,1440].includes(width)){
-     await page.evaluate(()=>scrollTo(0,0));
+     await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));
+     await page.waitForFunction(()=>scrollY===0);
      await page.screenshot({path:path.join(root,'reports/community','community-'+width+'.png'),fullPage:true});
     }
     report.viewportChecks.push({mode,width,status:'passed'});
