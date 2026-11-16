@@ -17,8 +17,8 @@ function frontend(ref){
  const files=new Set(['index.html','release.json',...Object.values(release.branding),...[...html.toString().matchAll(/<(?:script|link|img)\b[^>]*\b(?:src|href)=["'](\.\/[^"']+)["']/g)].map(m=>m[1].split(/[?#]/)[0].slice(2))]);
  return new Map([...files].map(file=>[file,read(file)]));
 }
-async function startLab({compare=false}={}){
- const snapshots=new Map([['candidate',frontend()]]);if(compare)snapshots.set('baseline',frontend(baseline));
+async function startLab({compare=false,comparisonRef=baseline}={}){
+ const snapshots=new Map([['candidate',frontend()]]);if(compare)snapshots.set('baseline',frontend(comparisonRef));
  const server=http.createServer((req,res)=>{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
   const url=new URL(req.url,'http://127.0.0.1'),match=url.pathname.match(/^\/(candidate|baseline)\/(.*)$/),file=match&&(match[2]||'index.html'),body=match&&snapshots.get(match[1])?.get(file);
@@ -29,7 +29,7 @@ async function startLab({compare=false}={}){
   res.writeHead(200,headers);res.end(req.method==='HEAD'?undefined:body);
  });
  await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
- return {origin:'http://127.0.0.1:'+server.address().port,close:()=>new Promise(resolve=>server.close(resolve)),baseline};
+ return {origin:'http://127.0.0.1:'+server.address().port,close:()=>new Promise(resolve=>server.close(resolve)),baseline:comparisonRef};
 }
 const launchBrowser=()=>chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale);

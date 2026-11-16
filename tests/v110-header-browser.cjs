@@ -4,6 +4,8 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require(
 const {execFileSync}=require('node:child_process');
 const {startLab,launchBrowser,ready}=require('./helpers/v0188-browser-lab.cjs');
 const release=require('../release.json'),live=process.argv.includes('--public');
+// The positive defect control remains pre.3, independently of the release performance baseline.
+const defectSource='082ab180bc8835304d959f583d4968e0565bdea3';
 const widths=[320,360,375,390,412,430,768],locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
 const cycles=[['ja','es-LA','ja'],['es-LA','en','es-LA'],['es','es-LA','es']];
 const output='reports/v110/'+(live?'header-public':'header-local');
@@ -32,7 +34,11 @@ async function inspect(page,width,locale,reference){
  let lab,browser,context;const evidence={mode:live?'public Chromium mobile emulation':'local Chromium mobile emulation',realDevice:false,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),releaseTag:release.tag,widths,locales,cycles,cases:[],reloads:0,requests:0,productionMutations:0};
  fs.mkdirSync(output,{recursive:true});
  try{
-  if(!live)lab=await startLab({compare:true});
+  if(!live){
+   lab=await startLab({compare:true,comparisonRef:defectSource});
+   assert.equal(lab.baseline,defectSource,'Header defect control must remain pinned to pre.3');
+   evidence.predecessorSourceCommit=defectSource;
+  }
   const url=live?release.publicUrl:lab.origin+'/candidate/';evidence.url=url;browser=await launchBrowser();
   if(!live){
    context=await browser.newContext({viewport:{width:390,height:900}});const page=await context.newPage();await context.route('https://**',r=>r.abort());await page.goto(lab.origin+'/baseline/');await ready(page);await choose(page,'es-LA');const old=await geometry(page);assert.ok(old.control.y>=old.brand.bottom,'Pinned pre.3 reproduces the second-row defect');evidence.predecessorDefect=old;await context.close();context=null;

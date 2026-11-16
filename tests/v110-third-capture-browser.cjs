@@ -18,7 +18,11 @@ const state=page=>page.evaluate(()=>JSON.stringify({state:ChlohaPersistence.capt
   for(const query of new Set([o.esLA,o.esLA.toUpperCase(),o.esLA.normalize('NFD').replace(/[\u0300-\u036f]/g,'')]))assert.equal(await page.evaluate(({key,query})=>ChlohaEsLa.aliases('abilities',key).some(x=>ChlohaNameSearch.normalize(x)===ChlohaNameSearch.normalize(query)),{key:anchor.key,query}),true,'Accent/case alias search: '+query);
   const before=await state(page),snapshot=JSON.parse(before),blocked=id.startsWith('unsupported:');assert.equal(snapshot.result===null,blocked);assert.equal(snapshot.outputHidden,blocked);assert.equal(snapshot.errorHidden,!blocked);if(blocked)assert.equal(snapshot.copyDisabled,true);
   for(const locale of locales){await page.selectOption('#chloha-locale',locale);assert.equal(await state(page),before,'Numerical/canonical state unchanged '+anchor.en+'/'+locale);assert.equal(await control.inputValue(),id);}
-  assert.equal(await page.evaluate(()=>ChlohaPersistence.save()),true);await page.reload();await ready(page);assert.equal(await page.locator('#chloha-locale').inputValue(),'es-LA');assert.equal(await state(page),before,'Saved identity and numeric/unsupported result after reload');assert.equal(await page.locator('#'+side+'Ability').inputValue(),id);
+  assert.equal(await page.evaluate(()=>ChlohaPersistence.save()),true);await page.reload();
+  // Unsupported canonical abilities intentionally produce no calculation. Wait
+  // for their fail-closed UI instead of the supported-calculation ready helper.
+  if(blocked)await page.waitForFunction(()=>!!window.ChlohaLocale&&!!window.ChlohaPersistence&&!window.ChlohaLastCalculation&&!document.getElementById('error').hidden&&document.getElementById('output').hidden&&document.getElementById('copy').disabled);else await ready(page);
+  assert.equal(await page.locator('#chloha-locale').inputValue(),'es-LA');assert.equal(await state(page),before,'Saved identity and numeric/unsupported result after reload');assert.equal(await page.locator('#'+side+'Ability').inputValue(),id);
   evidence.rows.push({width,key:anchor.key,id,name:o.esLA,species,side,localeSwitches:10,reload:true,unsupportedPreserved:blocked,passed:true});
  }
  assert.deepEqual(errors,[]);await context.close();context=null;}
