@@ -1,5 +1,9 @@
 # Singularity v1.1.0 — ES-LA handoff
 
+## New checkpoint: pre.6 official-publication expansion (pending release gates)
+
+52 additional attestations confirm 49 previously unverified existing names. Official evidence across stated scopes: 205/1,029; Champions-specific: 152/1,029; unverified: 661; owner-selected provisional: 2. Generic franchise confirmations (28) are explicitly distinguished from game-specific evidence. Names and aliases are unchanged. See [batch-4 audit](v110-es-la-official-publications-batch4.md). Three new owner-supplied images are documented in [the provisional-item audit](v110-es-la-owner-provisional-items.md); no new official item confirmation or mechanics validation is claimed. Historical checkpoints below are retained.
+
 ## Current work — batch 3 integration
 
 The seven private ability captures are now integrated in the pre.5 candidate. All seven map to existing translation IDs (three supported calculation abilities, four roster-only unsupported identities). Five names gain official Champions status, two add corroboration only. Overall official coverage is 156/1,029; Champions-specific coverage 147/1,029; unverified names 712. Names/aliases and all protected engine/other-language data remain unchanged. See [batch-3 audit](v110-es-la-owner-abilities-batch3.md) for corrected hash, mappings and limits. Candidate tests are not a publication claim. Older checkpoints below are historical.

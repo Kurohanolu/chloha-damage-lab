@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "b14374b64b2b9ab6f1d8e7f8495f01e76f6517e4e09b163a2ecbd1a283f40922",
+  "sourceSha256": "c15403623e422f814c3f3926b1895b23e2b323c1c98d6c3d6cf8715c24df25f7",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -18,28 +18,28 @@
   "coverage": {
     "pokemon": {
       "total": 373,
-      "official": 35,
+      "official": 82,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 338,
-      "officialChampions": 28,
+      "unverified": 291,
+      "officialChampions": 33,
       "displayAvailable": 373,
-      "individuallyAttested": 35,
-      "individuallyAttestedPercent": 9.38,
-      "officialPercent": 9.38,
-      "officialChampionsPercent": 7.51
+      "individuallyAttested": 82,
+      "individuallyAttestedPercent": 21.98,
+      "officialPercent": 21.98,
+      "officialChampionsPercent": 8.85
     },
     "moves": {
       "total": 335,
-      "official": 46,
+      "official": 48,
       "verified-secondary": 103,
       "provisional": 0,
-      "unverified": 186,
+      "unverified": 184,
       "officialChampions": 45,
       "displayAvailable": 335,
-      "individuallyAttested": 149,
-      "individuallyAttestedPercent": 44.48,
-      "officialPercent": 13.73,
+      "individuallyAttested": 151,
+      "individuallyAttestedPercent": 45.07,
+      "officialPercent": 14.33,
       "officialChampionsPercent": 13.43
     },
     "abilities": {
@@ -59,8 +59,8 @@
       "total": 41,
       "official": 19,
       "verified-secondary": 19,
-      "provisional": 0,
-      "unverified": 3,
+      "provisional": 2,
+      "unverified": 1,
       "officialChampions": 19,
       "displayAvailable": 41,
       "individuallyAttested": 38,
@@ -83,16 +83,16 @@
     },
     "forms": {
       "total": 134,
-      "official": 23,
+      "official": 63,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 111,
-      "officialChampions": 16,
+      "unverified": 71,
+      "officialChampions": 19,
       "displayAvailable": 134,
-      "individuallyAttested": 23,
-      "individuallyAttestedPercent": 17.16,
-      "officialPercent": 17.16,
-      "officialChampionsPercent": 11.94
+      "individuallyAttested": 63,
+      "individuallyAttestedPercent": 47.01,
+      "officialPercent": 47.01,
+      "officialChampionsPercent": 14.18
     },
     "natures": {
       "total": 11,
@@ -255,17 +255,26 @@
         "canonicalIds": [
           "charizard"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-charizard-gift"
+        ],
+        "recordIds": [
+          "pre6-za-charizard-gift-charizard"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-charizard-gift-charizard"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Charizard"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_charizard_x": {
         "name": "Mega-Charizard X",
@@ -275,18 +284,27 @@
         "canonicalIds": [
           "mega_charizard_x"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-charizard-x"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-charizard-x"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Charizard X"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_charizard_y": {
         "name": "Mega-Charizard Y",
@@ -456,18 +474,27 @@
         "canonicalIds": [
           "mega_venusaur"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-venusaur"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-venusaur"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Venusaur"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "blastoise": {
         "name": "Blastoise",
@@ -497,18 +524,27 @@
         "canonicalIds": [
           "mega_blastoise"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-blastoise"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-blastoise"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Blastoise"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "meganium": {
         "name": "Meganium",
@@ -659,18 +695,27 @@
         "canonicalIds": [
           "mega_absol_z"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-mega-absol-z"
+        ],
+        "relatedRecordIds": [
+          "pre6-champions-worlds-mega-absol-z"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Absol Z"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_garchomp_z": {
         "name": "Mega-Garchomp Z",
@@ -680,18 +725,28 @@
         "canonicalIds": [
           "mega_garchomp_z"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-mega-garchomp-z"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-garchomp-z",
+          "pre6-champions-worlds-mega-garchomp-z"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Garchomp Z"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_lucario_z": {
         "name": "Mega-Lucario Z",
@@ -703,16 +758,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "za-lucario-z"
+          "pre6-champions-worlds"
         ],
         "recordIds": [
-          "official-za-forms-lucario-mega-z"
+          "pre6-champions-worlds-mega-lucario-z"
         ],
         "relatedRecordIds": [
+          "pre6-champions-worlds-mega-lucario-z",
           "official-za-forms-lucario-mega-z"
         ],
-        "targetGame": "Pokémon LEGENDS Z-A",
-        "officialChampions": false,
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Mega-Lucario Z"
@@ -731,18 +787,27 @@
         "canonicalIds": [
           "mega_salamence"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-salamence"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-salamence"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Salamence"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_golisopod": {
         "name": "Mega-Golisopod",
@@ -773,18 +838,27 @@
         "canonicalIds": [
           "mega_baxcalibur"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-dlc"
+        ],
+        "recordIds": [
+          "pre6-za-dlc-mega-baxcalibur"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-baxcalibur"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Baxcalibur"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_01": {
         "name": "Mega-Gengar",
@@ -794,18 +868,27 @@
         "canonicalIds": [
           "gw091_01"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gengar"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gengar"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gengar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_02": {
         "name": "Gengar",
@@ -865,18 +948,27 @@
         "canonicalIds": [
           "gw091_04"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-metagross"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-metagross"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Metagross"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_05": {
         "name": "Metagross",
@@ -1108,17 +1200,26 @@
         "canonicalIds": [
           "gw091_15"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-rillaboom"
+        ],
+        "relatedRecordIds": [
+          "pre6-champions-worlds-rillaboom"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Rillaboom"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_16": {
         "name": "Cinderace",
@@ -1628,18 +1729,27 @@
         "canonicalIds": [
           "gw092_17"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-garchomp"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-garchomp"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Garchomp"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw092_18": {
         "name": "Mimikyu",
@@ -1689,17 +1799,26 @@
         "canonicalIds": [
           "gw092_20"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-battle-club"
+        ],
+        "recordIds": [
+          "pre6-za-battle-club-swampert"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-battle-club-swampert"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Swampert"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw092_21": {
         "name": "Mega-Swampert",
@@ -1759,18 +1878,27 @@
         "canonicalIds": [
           "gw092_23"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-gardevoir"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-gardevoir"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gardevoir"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw092_24": {
         "name": "Torkoal",
@@ -1920,18 +2048,27 @@
         "canonicalIds": [
           "gw092_30"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-scizor"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-scizor"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Scizor"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_01": {
         "name": "Pikachu",
@@ -2083,18 +2220,27 @@
         "canonicalIds": [
           "candidate093_08"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gyarados"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gyarados"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gyarados"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_09": {
         "name": "Lapras",
@@ -2164,18 +2310,27 @@
         "canonicalIds": [
           "candidate093_12"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-slowbro"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-slowbro"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Slowbro"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_13": {
         "name": "Ampharos",
@@ -2205,18 +2360,27 @@
         "canonicalIds": [
           "candidate093_14"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-ampharos"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-ampharos"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Ampharos"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_15": {
         "name": "Heracross",
@@ -2246,18 +2410,27 @@
         "canonicalIds": [
           "candidate093_16"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-heracross"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-heracross"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Heracross"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_17": {
         "name": "Blissey",
@@ -2476,18 +2649,27 @@
         "canonicalIds": [
           "candidate093_26"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-medicham"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-medicham"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Medicham"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_27": {
         "name": "Altaria",
@@ -2517,18 +2699,27 @@
         "canonicalIds": [
           "candidate093_28"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-altaria"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-altaria"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Altaria"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_29": {
         "name": "Abomasnow",
@@ -2558,18 +2749,27 @@
         "canonicalIds": [
           "candidate093_30"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-abomasnow"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-abomasnow"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Abomasnow"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_31": {
         "name": "Rotom (Lavado)",
@@ -3434,17 +3634,26 @@
         "canonicalIds": [
           "roster_v0103_15"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-baxcalibur"
+        ],
+        "relatedRecordIds": [
+          "pre6-champions-worlds-baxcalibur"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Baxcalibur"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0103_16": {
         "name": "Squawkabilly (Verde)",
@@ -3538,18 +3747,27 @@
         "canonicalIds": [
           "roster_v0104_001"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-beedrill"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-beedrill"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Beedrill"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_002": {
         "name": "Mega-Pidgeot",
@@ -3559,18 +3777,27 @@
         "canonicalIds": [
           "roster_v0104_002"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-pidgeot"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-pidgeot"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Pidgeot"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_003": {
         "name": "Mega-Raichu X",
@@ -3610,18 +3837,27 @@
         "canonicalIds": [
           "roster_v0104_004"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-alakazam"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-alakazam"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Alakazam"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_005": {
         "name": "Mega-Victreebel",
@@ -3661,18 +3897,27 @@
         "canonicalIds": [
           "roster_v0104_006"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-kangaskhan"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-kangaskhan"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Kangaskhan"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_007": {
         "name": "Mega-Pinsir",
@@ -3682,18 +3927,27 @@
         "canonicalIds": [
           "roster_v0104_007"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-pinsir"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-pinsir"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Pinsir"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_008": {
         "name": "Mega-Aerodactyl",
@@ -3703,18 +3957,27 @@
         "canonicalIds": [
           "roster_v0104_008"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-aerodactyl"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-aerodactyl"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Aerodactyl"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_009": {
         "name": "Mega-Skarmory",
@@ -3745,18 +4008,27 @@
         "canonicalIds": [
           "roster_v0104_010"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-houndoom"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-houndoom"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Houndoom"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_011": {
         "name": "Mega-Tyranitar",
@@ -3766,18 +4038,27 @@
         "canonicalIds": [
           "roster_v0104_011"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-tyranitar"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-tyranitar"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Tyranitar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_012": {
         "name": "Mega-Sceptile",
@@ -3847,18 +4128,27 @@
         "canonicalIds": [
           "roster_v0104_014"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-manectric"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-manectric"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Manectric"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_015": {
         "name": "Mega-Chesnaught",
@@ -3898,18 +4188,27 @@
         "canonicalIds": [
           "roster_v0104_016"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-stones"
+        ],
+        "recordIds": [
+          "pre6-za-mega-stones-mega-delphox"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-stones-mega-delphox"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Delphox"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_017": {
         "name": "Mega-Floette",
@@ -3949,18 +4248,27 @@
         "canonicalIds": [
           "roster_v0104_018"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-lopunny"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-lopunny"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Lopunny"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_019": {
         "name": "Mega-Sableye",
@@ -3970,18 +4278,27 @@
         "canonicalIds": [
           "roster_v0104_019"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-sableye"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-sableye"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Sableye"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_020": {
         "name": "Mega-Sharpedo",
@@ -3991,18 +4308,27 @@
         "canonicalIds": [
           "roster_v0104_020"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-sharpedo"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-sharpedo"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Sharpedo"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_021": {
         "name": "Mega-Camerupt",
@@ -4012,18 +4338,27 @@
         "canonicalIds": [
           "roster_v0104_021"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-camerupt"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-camerupt"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Camerupt"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_022": {
         "name": "Mega-Banette",
@@ -4033,18 +4368,27 @@
         "canonicalIds": [
           "roster_v0104_022"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-banette"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-banette"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Banette"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_023": {
         "name": "Mega-Chimecho",
@@ -4054,18 +4398,27 @@
         "canonicalIds": [
           "roster_v0104_023"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-dlc"
+        ],
+        "recordIds": [
+          "pre6-za-dlc-mega-chimecho"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-chimecho"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Chimecho"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_024": {
         "name": "Mega-Glalie",
@@ -4075,18 +4428,27 @@
         "canonicalIds": [
           "roster_v0104_024"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-glalie"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-glalie"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Glalie"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_025": {
         "name": "Mega-Gallade",
@@ -4096,18 +4458,27 @@
         "canonicalIds": [
           "roster_v0104_025"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gallade"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gallade"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gallade"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_026": {
         "name": "Mega-Froslass",
@@ -4138,18 +4509,27 @@
         "canonicalIds": [
           "roster_v0104_027"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-audino"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-audino"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Audino"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_028": {
         "name": "Mega-Scolipede",
@@ -4640,17 +5020,26 @@
         "canonicalIds": [
           "roster_v0104_050"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-battle-club"
+        ],
+        "recordIds": [
+          "pre6-za-battle-club-sceptile"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-battle-club-sceptile"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Sceptile"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0105_001": {
         "name": "Manectric",
@@ -4680,17 +5069,26 @@
         "canonicalIds": [
           "roster_v0105_002"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-battle-club"
+        ],
+        "recordIds": [
+          "pre6-za-battle-club-blaziken"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-battle-club-blaziken"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Blaziken"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0105_003": {
         "name": "Lopunny",
@@ -6413,17 +6811,26 @@
         "canonicalIds": [
           "roster_v0106_040"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-vivillon"
+        ],
+        "recordIds": [
+          "pre6-za-vivillon-vivillon"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-vivillon-vivillon"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Vivillon"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0106_041": {
         "name": "Zoroark de Hisui",
@@ -7539,18 +7946,27 @@
         "canonicalIds": [
           "mega-absol"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-absol"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-absol"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Absol"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega-lucario": {
         "name": "Mega-Lucario",
@@ -7610,18 +8026,27 @@
         "canonicalIds": [
           "mega-steelix"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-steelix"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-steelix"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Steelix"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw_screen_006": {
         "name": "Rhyperior",
@@ -8200,17 +8625,27 @@
         "canonicalIds": [
           "flamethrower"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-charizard-gift",
+          "pre6-za-charizard-gift-en"
+        ],
+        "recordIds": [
+          "pre6-za-charizard-gift-flamethrower"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-charizard-gift-flamethrower"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Lanzallamas"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "だいもんじ": {
         "name": "Llamarada",
@@ -8249,7 +8684,8 @@
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-403",
-          "pokexperto-champions-moves-403"
+          "pokexperto-champions-moves-403",
+          "pre6-za-charizard-gift-air-slash"
         ],
         "targetGame": "Pokémon Champions",
         "officialChampions": false,
@@ -8271,17 +8707,27 @@
         "canonicalIds": [
           "solarBeam"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-charizard-gift",
+          "pre6-za-charizard-gift-en"
+        ],
+        "recordIds": [
+          "pre6-za-charizard-gift-solar-beam"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-charizard-gift-solar-beam"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Rayo Solar"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "ヘドロばくだん": {
         "name": "Bomba Lodo",
@@ -22016,17 +22462,26 @@
         "canonicalIds": [
           "choiceBand"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
+        "status": "provisional",
+        "sourceIds": [
+          "pre6-owner-provisional-choiceBand"
+        ],
+        "recordIds": [
+          "pre6-owner-provisional-choiceBand-name"
+        ],
+        "relatedRecordIds": [
+          "pre6-owner-provisional-choiceBand-name"
+        ],
         "targetGame": null,
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Cinta Elección"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-selected-provisional-name",
+        "verificationScopes": [
+          "owner-selected-provisional-name"
+        ]
       },
       "こだわりメガネ": {
         "name": "Lentes Elección",
@@ -22524,17 +22979,26 @@
         "canonicalIds": [
           "assaultVest"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
+        "status": "provisional",
+        "sourceIds": [
+          "pre6-owner-provisional-assaultVest"
+        ],
+        "recordIds": [
+          "pre6-owner-provisional-assaultVest-name"
+        ],
+        "relatedRecordIds": [
+          "pre6-owner-provisional-assaultVest-name"
+        ],
         "targetGame": null,
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Chaleco Asalto"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-selected-provisional-name",
+        "verificationScopes": [
+          "owner-selected-provisional-name"
+        ]
       },
       "ホズのみ": {
         "name": "Baya Chilan",
@@ -23636,18 +24100,27 @@
         "canonicalIds": [
           "mega_charizard_x"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-charizard-x"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-charizard-x"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Charizard X"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_charizard_y": {
         "name": "Mega-Charizard Y",
@@ -23708,18 +24181,27 @@
         "canonicalIds": [
           "mega_venusaur"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-venusaur"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-venusaur"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Venusaur"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_blastoise": {
         "name": "Mega-Blastoise",
@@ -23729,18 +24211,27 @@
         "canonicalIds": [
           "mega_blastoise"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-blastoise"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-blastoise"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Blastoise"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_meganium": {
         "name": "Mega-Meganium",
@@ -23831,18 +24322,27 @@
         "canonicalIds": [
           "mega_absol_z"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-mega-absol-z"
+        ],
+        "relatedRecordIds": [
+          "pre6-champions-worlds-mega-absol-z"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Absol Z"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_garchomp_z": {
         "name": "Mega-Garchomp Z",
@@ -23852,18 +24352,28 @@
         "canonicalIds": [
           "mega_garchomp_z"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "pre6-champions-worlds"
+        ],
+        "recordIds": [
+          "pre6-champions-worlds-mega-garchomp-z"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-garchomp-z",
+          "pre6-champions-worlds-mega-garchomp-z"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Mega-Garchomp Z"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_lucario_z": {
         "name": "Mega-Lucario Z",
@@ -23875,16 +24385,17 @@
         ],
         "status": "official",
         "sourceIds": [
-          "za-lucario-z"
+          "pre6-champions-worlds"
         ],
         "recordIds": [
-          "official-za-forms-lucario-mega-z"
+          "pre6-champions-worlds-mega-lucario-z"
         ],
         "relatedRecordIds": [
+          "pre6-champions-worlds-mega-lucario-z",
           "official-za-forms-lucario-mega-z"
         ],
-        "targetGame": "Pokémon LEGENDS Z-A",
-        "officialChampions": false,
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Mega-Lucario Z"
@@ -23903,18 +24414,27 @@
         "canonicalIds": [
           "mega_salamence"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-salamence"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-salamence"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Salamence"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega_golisopod": {
         "name": "Mega-Golisopod",
@@ -23945,18 +24465,27 @@
         "canonicalIds": [
           "mega_baxcalibur"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-dlc"
+        ],
+        "recordIds": [
+          "pre6-za-dlc-mega-baxcalibur"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-baxcalibur"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Baxcalibur"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_01": {
         "name": "Mega-Gengar",
@@ -23966,18 +24495,27 @@
         "canonicalIds": [
           "gw091_01"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gengar"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gengar"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gengar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_03": {
         "name": "Mega-Dragonite",
@@ -24017,18 +24555,27 @@
         "canonicalIds": [
           "gw091_04"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-metagross"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-metagross"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Metagross"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw091_07": {
         "name": "Mega-Raichu Y",
@@ -24224,18 +24771,27 @@
         "canonicalIds": [
           "gw092_17"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-garchomp"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-garchomp"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Garchomp"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw092_21": {
         "name": "Mega-Swampert",
@@ -24275,18 +24831,27 @@
         "canonicalIds": [
           "gw092_23"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-gardevoir"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-gardevoir"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gardevoir"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw092_27": {
         "name": "Mega-Staraptor",
@@ -24356,18 +24921,27 @@
         "canonicalIds": [
           "gw092_30"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-scizor"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-scizor"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Scizor"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_02": {
         "name": "Raichu de Alola",
@@ -24419,18 +24993,27 @@
         "canonicalIds": [
           "candidate093_08"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gyarados"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gyarados"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gyarados"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_12": {
         "name": "Mega-Slowbro",
@@ -24440,18 +25023,27 @@
         "canonicalIds": [
           "candidate093_12"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-slowbro"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-slowbro"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Slowbro"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_14": {
         "name": "Mega-Ampharos",
@@ -24461,18 +25053,27 @@
         "canonicalIds": [
           "candidate093_14"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-ampharos"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-ampharos"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Ampharos"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_16": {
         "name": "Mega-Heracross",
@@ -24482,18 +25083,27 @@
         "canonicalIds": [
           "candidate093_16"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-heracross"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-heracross"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Heracross"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_22": {
         "name": "Mega-Mawile",
@@ -24563,18 +25173,27 @@
         "canonicalIds": [
           "candidate093_26"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-medicham"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-medicham"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Medicham"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_28": {
         "name": "Mega-Altaria",
@@ -24584,18 +25203,27 @@
         "canonicalIds": [
           "candidate093_28"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-altaria"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-altaria"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Altaria"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_30": {
         "name": "Mega-Abomasnow",
@@ -24605,18 +25233,27 @@
         "canonicalIds": [
           "candidate093_30"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-abomasnow"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-abomasnow"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Abomasnow"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "candidate093_31": {
         "name": "Rotom (Lavado)",
@@ -25076,18 +25713,27 @@
         "canonicalIds": [
           "roster_v0104_001"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-beedrill"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-beedrill"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Beedrill"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_002": {
         "name": "Mega-Pidgeot",
@@ -25097,18 +25743,27 @@
         "canonicalIds": [
           "roster_v0104_002"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-pidgeot"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-pidgeot"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Pidgeot"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_003": {
         "name": "Mega-Raichu X",
@@ -25148,18 +25803,27 @@
         "canonicalIds": [
           "roster_v0104_004"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-alakazam"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-alakazam"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Alakazam"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_005": {
         "name": "Mega-Victreebel",
@@ -25199,18 +25863,27 @@
         "canonicalIds": [
           "roster_v0104_006"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-kangaskhan"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-kangaskhan"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Kangaskhan"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_007": {
         "name": "Mega-Pinsir",
@@ -25220,18 +25893,27 @@
         "canonicalIds": [
           "roster_v0104_007"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-pinsir"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-pinsir"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Pinsir"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_008": {
         "name": "Mega-Aerodactyl",
@@ -25241,18 +25923,27 @@
         "canonicalIds": [
           "roster_v0104_008"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-aerodactyl"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-aerodactyl"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Aerodactyl"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_009": {
         "name": "Mega-Skarmory",
@@ -25283,18 +25974,27 @@
         "canonicalIds": [
           "roster_v0104_010"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-houndoom"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-houndoom"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Houndoom"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_011": {
         "name": "Mega-Tyranitar",
@@ -25304,18 +26004,27 @@
         "canonicalIds": [
           "roster_v0104_011"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-tyranitar"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-tyranitar"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Tyranitar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_012": {
         "name": "Mega-Sceptile",
@@ -25385,18 +26094,27 @@
         "canonicalIds": [
           "roster_v0104_014"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-manectric"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-manectric"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Manectric"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_015": {
         "name": "Mega-Chesnaught",
@@ -25436,18 +26154,27 @@
         "canonicalIds": [
           "roster_v0104_016"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-stones"
+        ],
+        "recordIds": [
+          "pre6-za-mega-stones-mega-delphox"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-stones-mega-delphox"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Delphox"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_017": {
         "name": "Mega-Floette",
@@ -25487,18 +26214,27 @@
         "canonicalIds": [
           "roster_v0104_018"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-lopunny"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-lopunny"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Lopunny"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_019": {
         "name": "Mega-Sableye",
@@ -25508,18 +26244,27 @@
         "canonicalIds": [
           "roster_v0104_019"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-sableye"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-sableye"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Sableye"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_020": {
         "name": "Mega-Sharpedo",
@@ -25529,18 +26274,27 @@
         "canonicalIds": [
           "roster_v0104_020"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-sharpedo"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-sharpedo"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Sharpedo"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_021": {
         "name": "Mega-Camerupt",
@@ -25550,18 +26304,27 @@
         "canonicalIds": [
           "roster_v0104_021"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-camerupt"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-camerupt"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Camerupt"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_022": {
         "name": "Mega-Banette",
@@ -25571,18 +26334,27 @@
         "canonicalIds": [
           "roster_v0104_022"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-banette"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-banette"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Banette"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_023": {
         "name": "Mega-Chimecho",
@@ -25592,18 +26364,27 @@
         "canonicalIds": [
           "roster_v0104_023"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-dlc"
+        ],
+        "recordIds": [
+          "pre6-za-dlc-mega-chimecho"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-dlc-mega-chimecho"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Chimecho"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_024": {
         "name": "Mega-Glalie",
@@ -25613,18 +26394,27 @@
         "canonicalIds": [
           "roster_v0104_024"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-glalie"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-glalie"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Glalie"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_025": {
         "name": "Mega-Gallade",
@@ -25634,18 +26424,27 @@
         "canonicalIds": [
           "roster_v0104_025"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-gallade"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-gallade"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Gallade"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_026": {
         "name": "Mega-Froslass",
@@ -25676,18 +26475,27 @@
         "canonicalIds": [
           "roster_v0104_027"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-audino"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-audino"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Audino"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0104_028": {
         "name": "Mega-Scolipede",
@@ -26439,18 +27247,27 @@
         "canonicalIds": [
           "mega-absol"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-za-mega-pokemon"
+        ],
+        "recordIds": [
+          "pre6-za-mega-pokemon-mega-absol"
+        ],
+        "relatedRecordIds": [
+          "pre6-za-mega-pokemon-mega-absol"
+        ],
+        "targetGame": "Pokémon LEGENDS Z-A",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Absol"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "mega-lucario": {
         "name": "Mega-Lucario",
@@ -26490,18 +27307,27 @@
         "canonicalIds": [
           "mega-steelix"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "pre6-generic-mega"
+        ],
+        "recordIds": [
+          "pre6-generic-mega-mega-steelix"
+        ],
+        "relatedRecordIds": [
+          "pre6-generic-mega-mega-steelix"
+        ],
+        "targetGame": "Generic Pokémon franchise",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mega-Steelix"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "gw_screen_087": {
         "name": "Palafin (Forma Ingenua)",
@@ -27172,6 +27998,24 @@
       ]
     },
     {
+      "id": "pre6-za-charizard-gift-charizard",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "charizard"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-charizard-x",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_charizard_x"
+        }
+      ]
+    },
+    {
       "id": "official-champions-forms-charizard-mega-y",
       "canonicalMatches": [
         {
@@ -27186,6 +28030,24 @@
         {
           "category": "pokemon",
           "key": "archaludon"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-venusaur",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_venusaur"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-blastoise",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_blastoise"
         }
       ]
     },
@@ -27208,11 +28070,56 @@
       ]
     },
     {
-      "id": "official-za-forms-lucario-mega-z",
+      "id": "pre6-champions-worlds-mega-absol-z",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_absol_z"
+        }
+      ]
+    },
+    {
+      "id": "pre6-champions-worlds-mega-garchomp-z",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_garchomp_z"
+        }
+      ]
+    },
+    {
+      "id": "pre6-champions-worlds-mega-lucario-z",
       "canonicalMatches": [
         {
           "category": "pokemon",
           "key": "mega_lucario_z"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-salamence",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_salamence"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-dlc-mega-baxcalibur",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_baxcalibur"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-gengar",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_01"
         }
       ]
     },
@@ -27222,6 +28129,15 @@
         {
           "category": "pokemon",
           "key": "gw091_03"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-metagross",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_04"
         }
       ]
     },
@@ -27240,6 +28156,15 @@
         {
           "category": "pokemon",
           "key": "gw091_08"
+        }
+      ]
+    },
+    {
+      "id": "pre6-champions-worlds-rillaboom",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_15"
         }
       ]
     },
@@ -27280,11 +28205,38 @@
       ]
     },
     {
+      "id": "pre6-generic-mega-mega-garchomp",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_17"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-battle-club-swampert",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_20"
+        }
+      ]
+    },
+    {
       "id": "official-champions-forms-swampert-mega",
       "canonicalMatches": [
         {
           "category": "pokemon",
           "key": "gw092_21"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-gardevoir",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_23"
         }
       ]
     },
@@ -27303,6 +28255,51 @@
         {
           "category": "pokemon",
           "key": "gw092_29"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-scizor",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_30"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-gyarados",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_08"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-slowbro",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_12"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-ampharos",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_14"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-heracross",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_16"
         }
       ]
     },
@@ -27334,6 +28331,33 @@
       ]
     },
     {
+      "id": "pre6-generic-mega-mega-medicham",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_26"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-altaria",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_28"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-abomasnow",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_30"
+        }
+      ]
+    },
+    {
       "id": "official-champions-pokemon-sneasler",
       "canonicalMatches": [
         {
@@ -27352,6 +28376,33 @@
       ]
     },
     {
+      "id": "pre6-champions-worlds-baxcalibur",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0103_15"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-beedrill",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_001"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-pidgeot",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_002"
+        }
+      ]
+    },
+    {
       "id": "official-champions-forms-raichu-mega-x",
       "canonicalMatches": [
         {
@@ -27361,11 +28412,65 @@
       ]
     },
     {
+      "id": "pre6-generic-mega-mega-alakazam",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_004"
+        }
+      ]
+    },
+    {
       "id": "official-za-forms-victreebel-mega",
       "canonicalMatches": [
         {
           "category": "pokemon",
           "key": "roster_v0104_005"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-kangaskhan",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_006"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-pinsir",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_007"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-aerodactyl",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_008"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-houndoom",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_010"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-tyranitar",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_011"
         }
       ]
     },
@@ -27388,6 +28493,15 @@
       ]
     },
     {
+      "id": "pre6-generic-mega-mega-manectric",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_014"
+        }
+      ]
+    },
+    {
       "id": "official-za-forms-chesnaught-mega",
       "canonicalMatches": [
         {
@@ -27397,11 +28511,101 @@
       ]
     },
     {
+      "id": "pre6-za-mega-stones-mega-delphox",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_016"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-batch2-pokemon-mega-floette",
       "canonicalMatches": [
         {
           "category": "pokemon",
           "key": "roster_v0104_017"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-lopunny",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_018"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-sableye",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_019"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-sharpedo",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_020"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-camerupt",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_021"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-banette",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_022"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-dlc-mega-chimecho",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_023"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-glalie",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_024"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-gallade",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_025"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-audino",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_027"
         }
       ]
     },
@@ -27433,6 +28637,24 @@
       ]
     },
     {
+      "id": "pre6-za-battle-club-sceptile",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_050"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-battle-club-blaziken",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0105_002"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-batch2-pokemon-floette-eternal-flower",
       "canonicalMatches": [
         {
@@ -27451,11 +28673,38 @@
       ]
     },
     {
+      "id": "pre6-za-vivillon-vivillon",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0106_040"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-absol",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega-absol"
+        }
+      ]
+    },
+    {
       "id": "official-za-forms-lucario-mega",
       "canonicalMatches": [
         {
           "category": "pokemon",
           "key": "mega-lucario"
+        }
+      ]
+    },
+    {
+      "id": "pre6-generic-mega-mega-steelix",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega-steelix"
         }
       ]
     },
@@ -27514,11 +28763,29 @@
       ]
     },
     {
+      "id": "pre6-za-charizard-gift-flamethrower",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かえんほうしゃ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-403",
       "canonicalMatches": [
         {
           "category": "moves",
           "key": "エアスラッシュ"
+        }
+      ]
+    },
+    {
+      "id": "pre6-za-charizard-gift-solar-beam",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ソーラービーム"
         }
       ]
     },
@@ -29512,6 +30779,15 @@
       ]
     },
     {
+      "id": "pre6-owner-provisional-choiceBand-name",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "こだわりハチマキ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-za-pokemon-game-item-id-297",
       "canonicalMatches": [
         {
@@ -29670,6 +30946,15 @@
         {
           "category": "items",
           "key": "せいれいプレート"
+        }
+      ]
+    },
+    {
+      "id": "pre6-owner-provisional-assaultVest-name",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "とつげきチョッキ"
         }
       ]
     },
@@ -36868,6 +38153,19 @@
       "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
+      "id": "official-za-forms-lucario-mega-z",
+      "category": "forms",
+      "esLA": "Mega-Lucario Z",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_lucario_z"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "official-za-pokemon-hoopa",
       "category": "pokemon",
       "esLA": "Hoopa",
@@ -37918,6 +39216,32 @@
       ],
       "selectionReason": "abbreviation-only-evidence",
       "reason": "Observed short form retained as alias-only evidence; full display-name coverage is not promoted."
+    },
+    {
+      "id": "pre6-za-dlc-mega-garchomp-z",
+      "category": "pokemon",
+      "esLA": "Mega-Garchomp Z",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_garchomp_z"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
+      "id": "pre6-za-charizard-gift-air-slash",
+      "category": "moves",
+      "esLA": "Corte Aéreo",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "エアスラッシュ"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     }
   ],
   "conflicts": [],
@@ -37943,30 +39267,6 @@
       "ja": "フシギバナ",
       "es": "Venusaur",
       "candidate": "Venusaur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "charizard",
-      "canonicalIds": [
-        "charizard"
-      ],
-      "ja": "リザードン",
-      "es": "Charizard",
-      "candidate": "Charizard",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "mega_charizard_x",
-      "canonicalIds": [
-        "mega_charizard_x"
-      ],
-      "ja": "メガリザードンX",
-      "es": "Mega-Charizard X",
-      "candidate": "Mega-Charizard X",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38032,18 +39332,6 @@
     },
     {
       "category": "pokemon",
-      "key": "mega_venusaur",
-      "canonicalIds": [
-        "mega_venusaur"
-      ],
-      "ja": "メガフシギバナ",
-      "es": "Mega-Venusaur",
-      "candidate": "Mega-Venusaur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "blastoise",
       "canonicalIds": [
         "blastoise"
@@ -38051,18 +39339,6 @@
       "ja": "カメックス",
       "es": "Blastoise",
       "candidate": "Blastoise",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "mega_blastoise",
-      "canonicalIds": [
-        "mega_blastoise"
-      ],
-      "ja": "メガカメックス",
-      "es": "Mega-Blastoise",
-      "candidate": "Mega-Blastoise",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38116,42 +39392,6 @@
     },
     {
       "category": "pokemon",
-      "key": "mega_absol_z",
-      "canonicalIds": [
-        "mega_absol_z"
-      ],
-      "ja": "メガアブソルZ",
-      "es": "Mega-Absol Z",
-      "candidate": "Mega-Absol Z",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "mega_garchomp_z",
-      "canonicalIds": [
-        "mega_garchomp_z"
-      ],
-      "ja": "メガガブリアスZ",
-      "es": "Mega-Garchomp Z",
-      "candidate": "Mega-Garchomp Z",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "mega_salamence",
-      "canonicalIds": [
-        "mega_salamence"
-      ],
-      "ja": "メガボーマンダ",
-      "es": "Mega-Salamence",
-      "candidate": "Mega-Salamence",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "mega_golisopod",
       "canonicalIds": [
         "mega_golisopod"
@@ -38164,30 +39404,6 @@
     },
     {
       "category": "pokemon",
-      "key": "mega_baxcalibur",
-      "canonicalIds": [
-        "mega_baxcalibur"
-      ],
-      "ja": "メガセグレイブ",
-      "es": "Mega-Baxcalibur",
-      "candidate": "Mega-Baxcalibur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "gw091_01",
-      "canonicalIds": [
-        "gw091_01"
-      ],
-      "ja": "メガゲンガー",
-      "es": "Mega-Gengar",
-      "candidate": "Mega-Gengar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "gw091_02",
       "canonicalIds": [
         "gw091_02"
@@ -38195,18 +39411,6 @@
       "ja": "ゲンガー",
       "es": "Gengar",
       "candidate": "Gengar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "gw091_04",
-      "canonicalIds": [
-        "gw091_04"
-      ],
-      "ja": "メガメタグロス",
-      "es": "Mega-Metagross",
-      "candidate": "Mega-Metagross",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38303,18 +39507,6 @@
       "ja": "ドヒドイデ",
       "es": "Toxapex",
       "candidate": "Toxapex",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "gw091_15",
-      "canonicalIds": [
-        "gw091_15"
-      ],
-      "ja": "ゴリランダー",
-      "es": "Rillaboom",
-      "candidate": "Rillaboom",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38548,18 +39740,6 @@
     },
     {
       "category": "pokemon",
-      "key": "gw092_17",
-      "canonicalIds": [
-        "gw092_17"
-      ],
-      "ja": "メガガブリアス",
-      "es": "Mega-Garchomp",
-      "candidate": "Mega-Garchomp",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "gw092_18",
       "canonicalIds": [
         "gw092_18"
@@ -38584,18 +39764,6 @@
     },
     {
       "category": "pokemon",
-      "key": "gw092_20",
-      "canonicalIds": [
-        "gw092_20"
-      ],
-      "ja": "ラグラージ",
-      "es": "Swampert",
-      "candidate": "Swampert",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "gw092_22",
       "canonicalIds": [
         "gw092_22"
@@ -38603,18 +39771,6 @@
       "ja": "サーナイト",
       "es": "Gardevoir",
       "candidate": "Gardevoir",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "gw092_23",
-      "canonicalIds": [
-        "gw092_23"
-      ],
-      "ja": "メガサーナイト",
-      "es": "Mega-Gardevoir",
-      "candidate": "Mega-Gardevoir",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38663,18 +39819,6 @@
       "ja": "ニンフィア",
       "es": "Sylveon",
       "candidate": "Sylveon",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "gw092_30",
-      "canonicalIds": [
-        "gw092_30"
-      ],
-      "ja": "メガハッサム",
-      "es": "Mega-Scizor",
-      "candidate": "Mega-Scizor",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38764,18 +39908,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_08",
-      "canonicalIds": [
-        "candidate093_08"
-      ],
-      "ja": "メガギャラドス",
-      "es": "Mega-Gyarados",
-      "candidate": "Mega-Gyarados",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_09",
       "canonicalIds": [
         "candidate093_09"
@@ -38812,18 +39944,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_12",
-      "canonicalIds": [
-        "candidate093_12"
-      ],
-      "ja": "メガヤドラン",
-      "es": "Mega-Slowbro",
-      "candidate": "Mega-Slowbro",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_13",
       "canonicalIds": [
         "candidate093_13"
@@ -38836,18 +39956,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_14",
-      "canonicalIds": [
-        "candidate093_14"
-      ],
-      "ja": "メガデンリュウ",
-      "es": "Mega-Ampharos",
-      "candidate": "Mega-Ampharos",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_15",
       "canonicalIds": [
         "candidate093_15"
@@ -38855,18 +39963,6 @@
       "ja": "ヘラクロス",
       "es": "Heracross",
       "candidate": "Heracross",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "candidate093_16",
-      "canonicalIds": [
-        "candidate093_16"
-      ],
-      "ja": "メガヘラクロス",
-      "es": "Mega-Heracross",
-      "candidate": "Mega-Heracross",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -38944,18 +40040,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_26",
-      "canonicalIds": [
-        "candidate093_26"
-      ],
-      "ja": "メガチャーレム",
-      "es": "Mega-Medicham",
-      "candidate": "Mega-Medicham",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_27",
       "canonicalIds": [
         "candidate093_27"
@@ -38968,18 +40052,6 @@
     },
     {
       "category": "pokemon",
-      "key": "candidate093_28",
-      "canonicalIds": [
-        "candidate093_28"
-      ],
-      "ja": "メガチルタリス",
-      "es": "Mega-Altaria",
-      "candidate": "Mega-Altaria",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "candidate093_29",
       "canonicalIds": [
         "candidate093_29"
@@ -38987,18 +40059,6 @@
       "ja": "ユキノオー",
       "es": "Abomasnow",
       "candidate": "Abomasnow",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "candidate093_30",
-      "canonicalIds": [
-        "candidate093_30"
-      ],
-      "ja": "メガユキノオー",
-      "es": "Mega-Abomasnow",
-      "candidate": "Mega-Abomasnow",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -39472,18 +40532,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0103_15",
-      "canonicalIds": [
-        "roster_v0103_15"
-      ],
-      "ja": "セグレイブ",
-      "es": "Baxcalibur",
-      "candidate": "Baxcalibur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0103_16",
       "canonicalIds": [
         "roster_v0103_16"
@@ -39532,78 +40580,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0104_001",
-      "canonicalIds": [
-        "roster_v0104_001"
-      ],
-      "ja": "メガスピアー",
-      "es": "Mega-Beedrill",
-      "candidate": "Mega-Beedrill",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_002",
-      "canonicalIds": [
-        "roster_v0104_002"
-      ],
-      "ja": "メガピジョット",
-      "es": "Mega-Pidgeot",
-      "candidate": "Mega-Pidgeot",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_004",
-      "canonicalIds": [
-        "roster_v0104_004"
-      ],
-      "ja": "メガフーディン",
-      "es": "Mega-Alakazam",
-      "candidate": "Mega-Alakazam",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_006",
-      "canonicalIds": [
-        "roster_v0104_006"
-      ],
-      "ja": "メガガルーラ",
-      "es": "Mega-Kangaskhan",
-      "candidate": "Mega-Kangaskhan",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_007",
-      "canonicalIds": [
-        "roster_v0104_007"
-      ],
-      "ja": "メガカイロス",
-      "es": "Mega-Pinsir",
-      "candidate": "Mega-Pinsir",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_008",
-      "canonicalIds": [
-        "roster_v0104_008"
-      ],
-      "ja": "メガプテラ",
-      "es": "Mega-Aerodactyl",
-      "candidate": "Mega-Aerodactyl",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0104_009",
       "canonicalIds": [
         "roster_v0104_009"
@@ -39616,150 +40592,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0104_010",
-      "canonicalIds": [
-        "roster_v0104_010"
-      ],
-      "ja": "メガヘルガー",
-      "es": "Mega-Houndoom",
-      "candidate": "Mega-Houndoom",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_011",
-      "canonicalIds": [
-        "roster_v0104_011"
-      ],
-      "ja": "メガバンギラス",
-      "es": "Mega-Tyranitar",
-      "candidate": "Mega-Tyranitar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_014",
-      "canonicalIds": [
-        "roster_v0104_014"
-      ],
-      "ja": "メガライボルト",
-      "es": "Mega-Manectric",
-      "candidate": "Mega-Manectric",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_016",
-      "canonicalIds": [
-        "roster_v0104_016"
-      ],
-      "ja": "メガマフォクシー",
-      "es": "Mega-Delphox",
-      "candidate": "Mega-Delphox",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_018",
-      "canonicalIds": [
-        "roster_v0104_018"
-      ],
-      "ja": "メガミミロップ",
-      "es": "Mega-Lopunny",
-      "candidate": "Mega-Lopunny",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_019",
-      "canonicalIds": [
-        "roster_v0104_019"
-      ],
-      "ja": "メガヤミラミ",
-      "es": "Mega-Sableye",
-      "candidate": "Mega-Sableye",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_020",
-      "canonicalIds": [
-        "roster_v0104_020"
-      ],
-      "ja": "メガサメハダー",
-      "es": "Mega-Sharpedo",
-      "candidate": "Mega-Sharpedo",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_021",
-      "canonicalIds": [
-        "roster_v0104_021"
-      ],
-      "ja": "メガバクーダ",
-      "es": "Mega-Camerupt",
-      "candidate": "Mega-Camerupt",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_022",
-      "canonicalIds": [
-        "roster_v0104_022"
-      ],
-      "ja": "メガジュペッタ",
-      "es": "Mega-Banette",
-      "candidate": "Mega-Banette",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_023",
-      "canonicalIds": [
-        "roster_v0104_023"
-      ],
-      "ja": "メガチリーン",
-      "es": "Mega-Chimecho",
-      "candidate": "Mega-Chimecho",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_024",
-      "canonicalIds": [
-        "roster_v0104_024"
-      ],
-      "ja": "メガオニゴーリ",
-      "es": "Mega-Glalie",
-      "candidate": "Mega-Glalie",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_025",
-      "canonicalIds": [
-        "roster_v0104_025"
-      ],
-      "ja": "メガエルレイド",
-      "es": "Mega-Gallade",
-      "candidate": "Mega-Gallade",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0104_026",
       "canonicalIds": [
         "roster_v0104_026"
@@ -39767,18 +40599,6 @@
       "ja": "メガユキメノコ",
       "es": "Mega-Froslass",
       "candidate": "Mega-Froslass",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0104_027",
-      "canonicalIds": [
-        "roster_v0104_027"
-      ],
-      "ja": "メガタブンネ",
-      "es": "Mega-Audino",
-      "candidate": "Mega-Audino",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -40012,18 +40832,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0104_050",
-      "canonicalIds": [
-        "roster_v0104_050"
-      ],
-      "ja": "ジュカイン",
-      "es": "Sceptile",
-      "candidate": "Sceptile",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0105_001",
       "canonicalIds": [
         "roster_v0105_001"
@@ -40031,18 +40839,6 @@
       "ja": "ライボルト",
       "es": "Manectric",
       "candidate": "Manectric",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "roster_v0105_002",
-      "canonicalIds": [
-        "roster_v0105_002"
-      ],
-      "ja": "バシャーモ",
-      "es": "Blaziken",
-      "candidate": "Blaziken",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -41032,18 +41828,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0106_040",
-      "canonicalIds": [
-        "roster_v0106_040"
-      ],
-      "ja": "ビビヨン",
-      "es": "Vivillon",
-      "candidate": "Vivillon",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0106_041",
       "canonicalIds": [
         "roster_v0106_041"
@@ -41704,18 +42488,6 @@
     },
     {
       "category": "pokemon",
-      "key": "mega-absol",
-      "canonicalIds": [
-        "mega-absol"
-      ],
-      "ja": "メガアブソル",
-      "es": "Mega-Absol",
-      "candidate": "Mega-Absol",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "steelix",
       "canonicalIds": [
         "steelix"
@@ -41723,18 +42495,6 @@
       "ja": "ハガネール",
       "es": "Steelix",
       "candidate": "Steelix",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
-      "key": "mega-steelix",
-      "canonicalIds": [
-        "mega-steelix"
-      ],
-      "ja": "メガハガネール",
-      "es": "Mega-Steelix",
-      "candidate": "Mega-Steelix",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -42004,18 +42764,6 @@
     },
     {
       "category": "moves",
-      "key": "かえんほうしゃ",
-      "canonicalIds": [
-        "flamethrower"
-      ],
-      "ja": "かえんほうしゃ",
-      "es": "Lanzallamas",
-      "candidate": "Lanzallamas",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "だいもんじ",
       "canonicalIds": [
         "fireBlast"
@@ -42023,18 +42771,6 @@
       "ja": "だいもんじ",
       "es": "Llamarada",
       "candidate": "Llamarada",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "ソーラービーム",
-      "canonicalIds": [
-        "solarBeam"
-      ],
-      "ja": "ソーラービーム",
-      "es": "Rayo Solar",
-      "candidate": "Rayo Solar",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -46372,18 +47108,6 @@
     },
     {
       "category": "items",
-      "key": "こだわりハチマキ",
-      "canonicalIds": [
-        "choiceBand"
-      ],
-      "ja": "こだわりハチマキ",
-      "es": "Cinta Elección",
-      "candidate": "Cinta Elección",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "items",
       "key": "たつじんのおび",
       "canonicalIds": [
         "expertBelt"
@@ -46395,30 +47119,6 @@
       "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
     },
     {
-      "category": "items",
-      "key": "とつげきチョッキ",
-      "canonicalIds": [
-        "assaultVest"
-      ],
-      "ja": "とつげきチョッキ",
-      "es": "Chaleco Asalto",
-      "candidate": "Chaleco Asalto",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: held-item selection / item description."
-    },
-    {
-      "category": "forms",
-      "key": "mega_charizard_x",
-      "canonicalIds": [
-        "mega_charizard_x"
-      ],
-      "ja": "メガリザードンX",
-      "es": "Mega-Charizard X",
-      "candidate": "Mega-Charizard X",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
       "category": "forms",
       "key": "hisuian_goodra",
       "canonicalIds": [
@@ -46427,30 +47127,6 @@
       "ja": "ヒスイヌメルゴン",
       "es": "Goodra de Hisui",
       "candidate": "Goodra de Hisui",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega_venusaur",
-      "canonicalIds": [
-        "mega_venusaur"
-      ],
-      "ja": "メガフシギバナ",
-      "es": "Mega-Venusaur",
-      "candidate": "Mega-Venusaur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega_blastoise",
-      "canonicalIds": [
-        "mega_blastoise"
-      ],
-      "ja": "メガカメックス",
-      "es": "Mega-Blastoise",
-      "candidate": "Mega-Blastoise",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -46468,42 +47144,6 @@
     },
     {
       "category": "forms",
-      "key": "mega_absol_z",
-      "canonicalIds": [
-        "mega_absol_z"
-      ],
-      "ja": "メガアブソルZ",
-      "es": "Mega-Absol Z",
-      "candidate": "Mega-Absol Z",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega_garchomp_z",
-      "canonicalIds": [
-        "mega_garchomp_z"
-      ],
-      "ja": "メガガブリアスZ",
-      "es": "Mega-Garchomp Z",
-      "candidate": "Mega-Garchomp Z",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega_salamence",
-      "canonicalIds": [
-        "mega_salamence"
-      ],
-      "ja": "メガボーマンダ",
-      "es": "Mega-Salamence",
-      "candidate": "Mega-Salamence",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "mega_golisopod",
       "canonicalIds": [
         "mega_golisopod"
@@ -46511,42 +47151,6 @@
       "ja": "メガグソクムシャ",
       "es": "Mega-Golisopod",
       "candidate": "Mega-Golisopod",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega_baxcalibur",
-      "canonicalIds": [
-        "mega_baxcalibur"
-      ],
-      "ja": "メガセグレイブ",
-      "es": "Mega-Baxcalibur",
-      "candidate": "Mega-Baxcalibur",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "gw091_01",
-      "canonicalIds": [
-        "gw091_01"
-      ],
-      "ja": "メガゲンガー",
-      "es": "Mega-Gengar",
-      "candidate": "Mega-Gengar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "gw091_04",
-      "canonicalIds": [
-        "gw091_04"
-      ],
-      "ja": "メガメタグロス",
-      "es": "Mega-Metagross",
-      "candidate": "Mega-Metagross",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -46624,42 +47228,6 @@
     },
     {
       "category": "forms",
-      "key": "gw092_17",
-      "canonicalIds": [
-        "gw092_17"
-      ],
-      "ja": "メガガブリアス",
-      "es": "Mega-Garchomp",
-      "candidate": "Mega-Garchomp",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "gw092_23",
-      "canonicalIds": [
-        "gw092_23"
-      ],
-      "ja": "メガサーナイト",
-      "es": "Mega-Gardevoir",
-      "candidate": "Mega-Gardevoir",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "gw092_30",
-      "canonicalIds": [
-        "gw092_30"
-      ],
-      "ja": "メガハッサム",
-      "es": "Mega-Scizor",
-      "candidate": "Mega-Scizor",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "candidate093_02",
       "canonicalIds": [
         "candidate093_02"
@@ -46679,90 +47247,6 @@
       "ja": "ヒスイウインディ",
       "es": "Arcanine de Hisui",
       "candidate": "Arcanine de Hisui",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_08",
-      "canonicalIds": [
-        "candidate093_08"
-      ],
-      "ja": "メガギャラドス",
-      "es": "Mega-Gyarados",
-      "candidate": "Mega-Gyarados",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_12",
-      "canonicalIds": [
-        "candidate093_12"
-      ],
-      "ja": "メガヤドラン",
-      "es": "Mega-Slowbro",
-      "candidate": "Mega-Slowbro",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_14",
-      "canonicalIds": [
-        "candidate093_14"
-      ],
-      "ja": "メガデンリュウ",
-      "es": "Mega-Ampharos",
-      "candidate": "Mega-Ampharos",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_16",
-      "canonicalIds": [
-        "candidate093_16"
-      ],
-      "ja": "メガヘラクロス",
-      "es": "Mega-Heracross",
-      "candidate": "Mega-Heracross",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_26",
-      "canonicalIds": [
-        "candidate093_26"
-      ],
-      "ja": "メガチャーレム",
-      "es": "Mega-Medicham",
-      "candidate": "Mega-Medicham",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_28",
-      "canonicalIds": [
-        "candidate093_28"
-      ],
-      "ja": "メガチルタリス",
-      "es": "Mega-Altaria",
-      "candidate": "Mega-Altaria",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "candidate093_30",
-      "canonicalIds": [
-        "candidate093_30"
-      ],
-      "ja": "メガユキノオー",
-      "es": "Mega-Abomasnow",
-      "candidate": "Mega-Abomasnow",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -47008,78 +47492,6 @@
     },
     {
       "category": "forms",
-      "key": "roster_v0104_001",
-      "canonicalIds": [
-        "roster_v0104_001"
-      ],
-      "ja": "メガスピアー",
-      "es": "Mega-Beedrill",
-      "candidate": "Mega-Beedrill",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_002",
-      "canonicalIds": [
-        "roster_v0104_002"
-      ],
-      "ja": "メガピジョット",
-      "es": "Mega-Pidgeot",
-      "candidate": "Mega-Pidgeot",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_004",
-      "canonicalIds": [
-        "roster_v0104_004"
-      ],
-      "ja": "メガフーディン",
-      "es": "Mega-Alakazam",
-      "candidate": "Mega-Alakazam",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_006",
-      "canonicalIds": [
-        "roster_v0104_006"
-      ],
-      "ja": "メガガルーラ",
-      "es": "Mega-Kangaskhan",
-      "candidate": "Mega-Kangaskhan",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_007",
-      "canonicalIds": [
-        "roster_v0104_007"
-      ],
-      "ja": "メガカイロス",
-      "es": "Mega-Pinsir",
-      "candidate": "Mega-Pinsir",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_008",
-      "canonicalIds": [
-        "roster_v0104_008"
-      ],
-      "ja": "メガプテラ",
-      "es": "Mega-Aerodactyl",
-      "candidate": "Mega-Aerodactyl",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "roster_v0104_009",
       "canonicalIds": [
         "roster_v0104_009"
@@ -47092,150 +47504,6 @@
     },
     {
       "category": "forms",
-      "key": "roster_v0104_010",
-      "canonicalIds": [
-        "roster_v0104_010"
-      ],
-      "ja": "メガヘルガー",
-      "es": "Mega-Houndoom",
-      "candidate": "Mega-Houndoom",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_011",
-      "canonicalIds": [
-        "roster_v0104_011"
-      ],
-      "ja": "メガバンギラス",
-      "es": "Mega-Tyranitar",
-      "candidate": "Mega-Tyranitar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_014",
-      "canonicalIds": [
-        "roster_v0104_014"
-      ],
-      "ja": "メガライボルト",
-      "es": "Mega-Manectric",
-      "candidate": "Mega-Manectric",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_016",
-      "canonicalIds": [
-        "roster_v0104_016"
-      ],
-      "ja": "メガマフォクシー",
-      "es": "Mega-Delphox",
-      "candidate": "Mega-Delphox",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_018",
-      "canonicalIds": [
-        "roster_v0104_018"
-      ],
-      "ja": "メガミミロップ",
-      "es": "Mega-Lopunny",
-      "candidate": "Mega-Lopunny",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_019",
-      "canonicalIds": [
-        "roster_v0104_019"
-      ],
-      "ja": "メガヤミラミ",
-      "es": "Mega-Sableye",
-      "candidate": "Mega-Sableye",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_020",
-      "canonicalIds": [
-        "roster_v0104_020"
-      ],
-      "ja": "メガサメハダー",
-      "es": "Mega-Sharpedo",
-      "candidate": "Mega-Sharpedo",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_021",
-      "canonicalIds": [
-        "roster_v0104_021"
-      ],
-      "ja": "メガバクーダ",
-      "es": "Mega-Camerupt",
-      "candidate": "Mega-Camerupt",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_022",
-      "canonicalIds": [
-        "roster_v0104_022"
-      ],
-      "ja": "メガジュペッタ",
-      "es": "Mega-Banette",
-      "candidate": "Mega-Banette",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_023",
-      "canonicalIds": [
-        "roster_v0104_023"
-      ],
-      "ja": "メガチリーン",
-      "es": "Mega-Chimecho",
-      "candidate": "Mega-Chimecho",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_024",
-      "canonicalIds": [
-        "roster_v0104_024"
-      ],
-      "ja": "メガオニゴーリ",
-      "es": "Mega-Glalie",
-      "candidate": "Mega-Glalie",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_025",
-      "canonicalIds": [
-        "roster_v0104_025"
-      ],
-      "ja": "メガエルレイド",
-      "es": "Mega-Gallade",
-      "candidate": "Mega-Gallade",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "roster_v0104_026",
       "canonicalIds": [
         "roster_v0104_026"
@@ -47243,18 +47511,6 @@
       "ja": "メガユキメノコ",
       "es": "Mega-Froslass",
       "candidate": "Mega-Froslass",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "roster_v0104_027",
-      "canonicalIds": [
-        "roster_v0104_027"
-      ],
-      "ja": "メガタブンネ",
-      "es": "Mega-Audino",
-      "candidate": "Mega-Audino",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
     },
@@ -47632,30 +47888,6 @@
     },
     {
       "category": "forms",
-      "key": "mega-absol",
-      "canonicalIds": [
-        "mega-absol"
-      ],
-      "ja": "メガアブソル",
-      "es": "Mega-Absol",
-      "candidate": "Mega-Absol",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
-      "key": "mega-steelix",
-      "canonicalIds": [
-        "mega-steelix"
-      ],
-      "ja": "メガハガネール",
-      "es": "Mega-Steelix",
-      "candidate": "Mega-Steelix",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "gw_screen_087",
       "canonicalIds": [
         "gw_screen_087"
@@ -47877,9 +48109,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3",
-      "feedback-release-v100.js": "7b786bd7f7c1fedc18317d3d03822a73c3afb16dba712fb64301fe981a3b81a5",
-      "index.html": "2180d456c365ac4eac6ccfa39f39e108760464f9fe84c79c0991ee18f91f5267",
-      "docs/data/v110-es-la-source-records.json": "b14374b64b2b9ab6f1d8e7f8495f01e76f6517e4e09b163a2ecbd1a283f40922"
+      "feedback-release-v100.js": "8f1baf22dfc1252079d716becc2c9c9052b1f87a5905edb6a31364447055c67c",
+      "index.html": "5a6a457264b2583b3dc878f6e6f6203fcdf94d3038ea5f44164f99dad1db74a5",
+      "docs/data/v110-es-la-source-records.json": "c15403623e422f814c3f3926b1895b23e2b323c1c98d6c3d6cf8715c24df25f7"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -65903,6 +66135,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "799b8b727f9bce24deea0d6ae9b92a844e9dcae953fd6109d06ed8b355c6de6e"
+    "sha256": "57f6de33e0ebf6a79b3ac1cbf7718a4f90c573326f73334a759fd033580d37b9"
   }
 }

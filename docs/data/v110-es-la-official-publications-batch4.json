@@ -1,0 +1,1037 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74",
+  "baselineTree": "f6e6bc6a8bedec4b8923671e9345ce24a8d45d40",
+  "checkedAt": "2026-11-16",
+  "scope": "Additional official publication attestations; generic franchise and Z-A do not establish Champions. No new translations inferred from ES-ES.",
+  "sources": [
+    {
+      "id": "pre6-za-mega-pokemon",
+      "url": "https://legends.pokemon.com/es-mx/mega-pokemon",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-dlc",
+      "url": "https://legends.pokemon.com/es-mx/dlc",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-mega-stones",
+      "url": "https://legends.pokemon.com/es-mx/news/mega-stones",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-generic-mega",
+      "url": "https://mega.pokemon.com/es-mx/",
+      "title": "Official Latin American Mega Evolution name gallery",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Generic Pokémon franchise",
+      "evidenceMethod": "Direct official HTML and independently read parsed web page; visible América Latina region label.",
+      "rawSha256": "ab3b6375ae3d70ed24a6456a1b1f5a2c30ed4384330d5b3c0c99e1179095f493",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-champions-worlds",
+      "url": "https://press.pokemon.com/es-MX/releases/Pokemon-Celebrates-30-Years-with-New-Announcements-at-Inaugural-Pokemo",
+      "title": "PokémonXP and Worlds 2026 announcement: Champions subsection",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "evidenceMethod": "Direct official ES-MX HTML; only the Champions subsection is used.",
+      "rawSha256": "a9d9bcf83985af3d829f450b60f18ca9bbb530e876bad94752f46df99d3ce2af",
+      "limitations": [
+        "Official Champions publication, not physical game or calculator mechanics testing."
+      ]
+    },
+    {
+      "id": "pre6-za-charizard-gift",
+      "url": "https://legends.pokemon.com/es-mx/news/get-alpha-charizard",
+      "title": "Receive an Alpha Charizard: named Pokémon and moves",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-charizard-gift-en",
+      "url": "https://legends.pokemon.com/en-us/news/get-alpha-charizard?pubDate=20251209",
+      "title": "Same Charizard gift: canonical English move identities",
+      "checkedAt": "2026-11-16",
+      "locale": "en-US",
+      "websiteLocale": "en-US",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ],
+      "purpose": "Identity corroboration only, not evidence of Spanish spelling."
+    },
+    {
+      "id": "pre6-za-battle-club",
+      "url": "https://legends.pokemon.com/es-mx/news/z-a-battle-club-ranked-battles",
+      "title": "Z-A Battle Club: Sceptile, Blaziken and Swampert",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-vivillon",
+      "url": "https://legends.pokemon.com/es-mx/news/vivillon-challenge",
+      "title": "Z-A Spewpa gift and Vivillon challenge",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-charizard-x",
+      "category": "pokemon",
+      "key": "mega_charizard_x",
+      "canonicalEnglish": "Mega Charizard X",
+      "canonicalIds": [
+        "mega_charizard_x"
+      ],
+      "esLA": "Mega-Charizard X",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-gardevoir",
+      "category": "pokemon",
+      "key": "gw092_23",
+      "canonicalEnglish": "Mega Gardevoir",
+      "canonicalIds": [
+        "gw092_23"
+      ],
+      "esLA": "Mega-Gardevoir",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-ampharos",
+      "category": "pokemon",
+      "key": "candidate093_14",
+      "canonicalEnglish": "Mega Ampharos",
+      "canonicalIds": [
+        "candidate093_14"
+      ],
+      "esLA": "Mega-Ampharos",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-altaria",
+      "category": "pokemon",
+      "key": "candidate093_28",
+      "canonicalEnglish": "Mega Altaria",
+      "canonicalIds": [
+        "candidate093_28"
+      ],
+      "esLA": "Mega-Altaria",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-kangaskhan",
+      "category": "pokemon",
+      "key": "roster_v0104_006",
+      "canonicalEnglish": "Mega Kangaskhan",
+      "canonicalIds": [
+        "roster_v0104_006"
+      ],
+      "esLA": "Mega-Kangaskhan",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-sableye",
+      "category": "pokemon",
+      "key": "roster_v0104_019",
+      "canonicalEnglish": "Mega Sableye",
+      "canonicalIds": [
+        "roster_v0104_019"
+      ],
+      "esLA": "Mega-Sableye",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-pokemon-mega-absol",
+      "category": "pokemon",
+      "key": "mega-absol",
+      "canonicalEnglish": "Mega Absol",
+      "canonicalIds": [
+        "mega-absol"
+      ],
+      "esLA": "Mega-Absol",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-dlc-mega-garchomp-z",
+      "category": "pokemon",
+      "key": "mega_garchomp_z",
+      "canonicalEnglish": "Mega Garchomp Z",
+      "canonicalIds": [
+        "mega_garchomp_z"
+      ],
+      "esLA": "Mega-Garchomp Z",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-dlc-mega-baxcalibur",
+      "category": "pokemon",
+      "key": "mega_baxcalibur",
+      "canonicalEnglish": "Mega Baxcalibur",
+      "canonicalIds": [
+        "mega_baxcalibur"
+      ],
+      "esLA": "Mega-Baxcalibur",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-dlc-mega-chimecho",
+      "category": "pokemon",
+      "key": "roster_v0104_023",
+      "canonicalEnglish": "Mega Chimecho",
+      "canonicalIds": [
+        "roster_v0104_023"
+      ],
+      "esLA": "Mega-Chimecho",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-mega-stones-mega-delphox",
+      "category": "pokemon",
+      "key": "roster_v0104_016",
+      "canonicalEnglish": "Mega Delphox",
+      "canonicalIds": [
+        "roster_v0104_016"
+      ],
+      "esLA": "Mega-Delphox",
+      "sourceIds": [
+        "pre6-za-mega-stones"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-venusaur",
+      "category": "pokemon",
+      "key": "mega_venusaur",
+      "canonicalEnglish": "Mega Venusaur",
+      "canonicalIds": [
+        "mega_venusaur"
+      ],
+      "esLA": "Mega-Venusaur",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-blastoise",
+      "category": "pokemon",
+      "key": "mega_blastoise",
+      "canonicalEnglish": "Mega Blastoise",
+      "canonicalIds": [
+        "mega_blastoise"
+      ],
+      "esLA": "Mega-Blastoise",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-salamence",
+      "category": "pokemon",
+      "key": "mega_salamence",
+      "canonicalEnglish": "Mega Salamence",
+      "canonicalIds": [
+        "mega_salamence"
+      ],
+      "esLA": "Mega-Salamence",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-gengar",
+      "category": "pokemon",
+      "key": "gw091_01",
+      "canonicalEnglish": "Mega Gengar",
+      "canonicalIds": [
+        "gw091_01"
+      ],
+      "esLA": "Mega-Gengar",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-metagross",
+      "category": "pokemon",
+      "key": "gw091_04",
+      "canonicalEnglish": "Mega Metagross",
+      "canonicalIds": [
+        "gw091_04"
+      ],
+      "esLA": "Mega-Metagross",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-garchomp",
+      "category": "pokemon",
+      "key": "gw092_17",
+      "canonicalEnglish": "Mega Garchomp",
+      "canonicalIds": [
+        "gw092_17"
+      ],
+      "esLA": "Mega-Garchomp",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-scizor",
+      "category": "pokemon",
+      "key": "gw092_30",
+      "canonicalEnglish": "Mega Scizor",
+      "canonicalIds": [
+        "gw092_30"
+      ],
+      "esLA": "Mega-Scizor",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-gyarados",
+      "category": "pokemon",
+      "key": "candidate093_08",
+      "canonicalEnglish": "Mega Gyarados",
+      "canonicalIds": [
+        "candidate093_08"
+      ],
+      "esLA": "Mega-Gyarados",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-slowbro",
+      "category": "pokemon",
+      "key": "candidate093_12",
+      "canonicalEnglish": "Mega Slowbro",
+      "canonicalIds": [
+        "candidate093_12"
+      ],
+      "esLA": "Mega-Slowbro",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-heracross",
+      "category": "pokemon",
+      "key": "candidate093_16",
+      "canonicalEnglish": "Mega Heracross",
+      "canonicalIds": [
+        "candidate093_16"
+      ],
+      "esLA": "Mega-Heracross",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-medicham",
+      "category": "pokemon",
+      "key": "candidate093_26",
+      "canonicalEnglish": "Mega Medicham",
+      "canonicalIds": [
+        "candidate093_26"
+      ],
+      "esLA": "Mega-Medicham",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-abomasnow",
+      "category": "pokemon",
+      "key": "candidate093_30",
+      "canonicalEnglish": "Mega Abomasnow",
+      "canonicalIds": [
+        "candidate093_30"
+      ],
+      "esLA": "Mega-Abomasnow",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-beedrill",
+      "category": "pokemon",
+      "key": "roster_v0104_001",
+      "canonicalEnglish": "Mega Beedrill",
+      "canonicalIds": [
+        "roster_v0104_001"
+      ],
+      "esLA": "Mega-Beedrill",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-pidgeot",
+      "category": "pokemon",
+      "key": "roster_v0104_002",
+      "canonicalEnglish": "Mega Pidgeot",
+      "canonicalIds": [
+        "roster_v0104_002"
+      ],
+      "esLA": "Mega-Pidgeot",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-alakazam",
+      "category": "pokemon",
+      "key": "roster_v0104_004",
+      "canonicalEnglish": "Mega Alakazam",
+      "canonicalIds": [
+        "roster_v0104_004"
+      ],
+      "esLA": "Mega-Alakazam",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-pinsir",
+      "category": "pokemon",
+      "key": "roster_v0104_007",
+      "canonicalEnglish": "Mega Pinsir",
+      "canonicalIds": [
+        "roster_v0104_007"
+      ],
+      "esLA": "Mega-Pinsir",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-aerodactyl",
+      "category": "pokemon",
+      "key": "roster_v0104_008",
+      "canonicalEnglish": "Mega Aerodactyl",
+      "canonicalIds": [
+        "roster_v0104_008"
+      ],
+      "esLA": "Mega-Aerodactyl",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-houndoom",
+      "category": "pokemon",
+      "key": "roster_v0104_010",
+      "canonicalEnglish": "Mega Houndoom",
+      "canonicalIds": [
+        "roster_v0104_010"
+      ],
+      "esLA": "Mega-Houndoom",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-tyranitar",
+      "category": "pokemon",
+      "key": "roster_v0104_011",
+      "canonicalEnglish": "Mega Tyranitar",
+      "canonicalIds": [
+        "roster_v0104_011"
+      ],
+      "esLA": "Mega-Tyranitar",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-manectric",
+      "category": "pokemon",
+      "key": "roster_v0104_014",
+      "canonicalEnglish": "Mega Manectric",
+      "canonicalIds": [
+        "roster_v0104_014"
+      ],
+      "esLA": "Mega-Manectric",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-lopunny",
+      "category": "pokemon",
+      "key": "roster_v0104_018",
+      "canonicalEnglish": "Mega Lopunny",
+      "canonicalIds": [
+        "roster_v0104_018"
+      ],
+      "esLA": "Mega-Lopunny",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-sharpedo",
+      "category": "pokemon",
+      "key": "roster_v0104_020",
+      "canonicalEnglish": "Mega Sharpedo",
+      "canonicalIds": [
+        "roster_v0104_020"
+      ],
+      "esLA": "Mega-Sharpedo",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-camerupt",
+      "category": "pokemon",
+      "key": "roster_v0104_021",
+      "canonicalEnglish": "Mega Camerupt",
+      "canonicalIds": [
+        "roster_v0104_021"
+      ],
+      "esLA": "Mega-Camerupt",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-banette",
+      "category": "pokemon",
+      "key": "roster_v0104_022",
+      "canonicalEnglish": "Mega Banette",
+      "canonicalIds": [
+        "roster_v0104_022"
+      ],
+      "esLA": "Mega-Banette",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-glalie",
+      "category": "pokemon",
+      "key": "roster_v0104_024",
+      "canonicalEnglish": "Mega Glalie",
+      "canonicalIds": [
+        "roster_v0104_024"
+      ],
+      "esLA": "Mega-Glalie",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-gallade",
+      "category": "pokemon",
+      "key": "roster_v0104_025",
+      "canonicalEnglish": "Mega Gallade",
+      "canonicalIds": [
+        "roster_v0104_025"
+      ],
+      "esLA": "Mega-Gallade",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-audino",
+      "category": "pokemon",
+      "key": "roster_v0104_027",
+      "canonicalEnglish": "Mega Audino",
+      "canonicalIds": [
+        "roster_v0104_027"
+      ],
+      "esLA": "Mega-Audino",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-generic-mega-mega-steelix",
+      "category": "pokemon",
+      "key": "mega-steelix",
+      "canonicalEnglish": "Mega Steelix",
+      "canonicalIds": [
+        "mega-steelix"
+      ],
+      "esLA": "Mega-Steelix",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-champions-worlds-mega-lucario-z",
+      "category": "pokemon",
+      "key": "mega_lucario_z",
+      "canonicalEnglish": "Mega Lucario Z",
+      "canonicalIds": [
+        "mega_lucario_z"
+      ],
+      "esLA": "Mega-Lucario Z",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "priorStatus": "official",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-champions-worlds-mega-garchomp-z",
+      "category": "pokemon",
+      "key": "mega_garchomp_z",
+      "canonicalEnglish": "Mega Garchomp Z",
+      "canonicalIds": [
+        "mega_garchomp_z"
+      ],
+      "esLA": "Mega-Garchomp Z",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-champions-worlds-mega-absol-z",
+      "category": "pokemon",
+      "key": "mega_absol_z",
+      "canonicalEnglish": "Mega Absol Z",
+      "canonicalIds": [
+        "mega_absol_z"
+      ],
+      "esLA": "Mega-Absol Z",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-champions-worlds-baxcalibur",
+      "category": "pokemon",
+      "key": "roster_v0103_15",
+      "canonicalEnglish": "Baxcalibur",
+      "canonicalIds": [
+        "roster_v0103_15"
+      ],
+      "esLA": "Baxcalibur",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-champions-worlds-rillaboom",
+      "category": "pokemon",
+      "key": "gw091_15",
+      "canonicalEnglish": "Rillaboom",
+      "canonicalIds": [
+        "gw091_15"
+      ],
+      "esLA": "Rillaboom",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-charizard-gift-solar-beam",
+      "category": "moves",
+      "key": "ソーラービーム",
+      "canonicalEnglish": "Solar Beam",
+      "canonicalIds": [
+        "solarBeam"
+      ],
+      "esLA": "Rayo Solar",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-charizard-gift-flamethrower",
+      "category": "moves",
+      "key": "かえんほうしゃ",
+      "canonicalEnglish": "Flamethrower",
+      "canonicalIds": [
+        "flamethrower"
+      ],
+      "esLA": "Lanzallamas",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-charizard-gift-air-slash",
+      "category": "moves",
+      "key": "エアスラッシュ",
+      "canonicalEnglish": "Air Slash",
+      "canonicalIds": [
+        "airSlash"
+      ],
+      "esLA": "Corte Aéreo",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "verified-secondary",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-charizard-gift-charizard",
+      "category": "pokemon",
+      "key": "charizard",
+      "canonicalEnglish": "Charizard",
+      "canonicalIds": [
+        "charizard"
+      ],
+      "esLA": "Charizard",
+      "sourceIds": [
+        "pre6-za-charizard-gift"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-battle-club-swampert",
+      "category": "pokemon",
+      "key": "gw092_20",
+      "canonicalEnglish": "Swampert",
+      "canonicalIds": [
+        "gw092_20"
+      ],
+      "esLA": "Swampert",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-battle-club-sceptile",
+      "category": "pokemon",
+      "key": "roster_v0104_050",
+      "canonicalEnglish": "Sceptile",
+      "canonicalIds": [
+        "roster_v0104_050"
+      ],
+      "esLA": "Sceptile",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-battle-club-blaziken",
+      "category": "pokemon",
+      "key": "roster_v0105_002",
+      "canonicalEnglish": "Blaziken",
+      "canonicalIds": [
+        "roster_v0105_002"
+      ],
+      "esLA": "Blaziken",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    },
+    {
+      "recordId": "pre6-za-vivillon-vivillon",
+      "category": "pokemon",
+      "key": "roster_v0106_040",
+      "canonicalEnglish": "Vivillon",
+      "canonicalIds": [
+        "roster_v0106_040"
+      ],
+      "esLA": "Vivillon",
+      "sourceIds": [
+        "pre6-za-vivillon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "priorStatus": "unverified",
+      "priorOfficialChampions": false
+    }
+  ],
+  "displayNamesChanged": 0,
+  "aliasesChanged": 0
+}

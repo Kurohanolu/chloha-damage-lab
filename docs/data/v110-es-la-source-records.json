@@ -1195,6 +1195,171 @@
         "Locale is owner-attested; language settings screen, capture time, build and platform are not independently established.",
         "Visible terminology only; calculator mechanics and real-device browser behavior were not verified by these screenshots."
       ]
+    },
+    {
+      "id": "pre6-za-mega-pokemon",
+      "url": "https://legends.pokemon.com/es-mx/mega-pokemon",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-dlc",
+      "url": "https://legends.pokemon.com/es-mx/dlc",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-mega-stones",
+      "url": "https://legends.pokemon.com/es-mx/news/mega-stones",
+      "title": "Official Z-A Latin American Pokémon names",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-generic-mega",
+      "url": "https://mega.pokemon.com/es-mx/",
+      "title": "Official Latin American Mega Evolution name gallery",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Generic Pokémon franchise",
+      "evidenceMethod": "Direct official HTML and independently read parsed web page; visible América Latina region label.",
+      "rawSha256": "ab3b6375ae3d70ed24a6456a1b1f5a2c30ed4384330d5b3c0c99e1179095f493",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-champions-worlds",
+      "url": "https://press.pokemon.com/es-MX/releases/Pokemon-Celebrates-30-Years-with-New-Announcements-at-Inaugural-Pokemo",
+      "title": "PokémonXP and Worlds 2026 announcement: Champions subsection",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "evidenceMethod": "Direct official ES-MX HTML; only the Champions subsection is used.",
+      "rawSha256": "a9d9bcf83985af3d829f450b60f18ca9bbb530e876bad94752f46df99d3ce2af",
+      "limitations": [
+        "Official Champions publication, not physical game or calculator mechanics testing."
+      ]
+    },
+    {
+      "id": "pre6-za-charizard-gift",
+      "url": "https://legends.pokemon.com/es-mx/news/get-alpha-charizard",
+      "title": "Receive an Alpha Charizard: named Pokémon and moves",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-charizard-gift-en",
+      "url": "https://legends.pokemon.com/en-us/news/get-alpha-charizard?pubDate=20251209",
+      "title": "Same Charizard gift: canonical English move identities",
+      "checkedAt": "2026-11-16",
+      "locale": "en-US",
+      "websiteLocale": "en-US",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ],
+      "purpose": "Identity corroboration only, not evidence of Spanish spelling."
+    },
+    {
+      "id": "pre6-za-battle-club",
+      "url": "https://legends.pokemon.com/es-mx/news/z-a-battle-club-ranked-battles",
+      "title": "Z-A Battle Club: Sceptile, Blaziken and Swampert",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-za-vivillon",
+      "url": "https://legends.pokemon.com/es-mx/news/vivillon-challenge",
+      "title": "Z-A Spewpa gift and Vivillon challenge",
+      "checkedAt": "2026-11-16",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "authority": "official",
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "evidenceMethod": "Official regional page text retrieved through web search/open; direct HTTP can return a script-only response.",
+      "limitations": [
+        "Exact Latin American name evidence only; no calculation mechanics or availability claim.",
+        "Generic franchise or Z-A evidence does not establish Champions-specific naming."
+      ]
+    },
+    {
+      "id": "pre6-owner-provisional-choiceBand",
+      "title": "Owner-selected provisional choiceBand",
+      "checkedAt": "2026-11-16",
+      "authority": "owner-provided-provisional",
+      "targetGame": null,
+      "evidenceMethod": "Private owner-supplied screenshot visually reviewed; owner explicitly requested provisional registration without item-specific UI caveats.",
+      "captureId": "32772",
+      "sha256": "d26ede045982ffa936c3cb0598e7dbd074c847c563e283670c07bc1ec1043fb9",
+      "limitations": [
+        "WikiDex screenshot; secondary page asserts shared regional spelling, not independently established Champions evidence.",
+        "No official Champions or independently attested ES-LA status is asserted."
+      ]
+    },
+    {
+      "id": "pre6-owner-provisional-assaultVest",
+      "title": "Owner-selected provisional assaultVest",
+      "checkedAt": "2026-11-16",
+      "authority": "owner-provided-provisional",
+      "targetGame": null,
+      "evidenceMethod": "Private owner-supplied screenshot visually reviewed; owner explicitly requested provisional registration without item-specific UI caveats.",
+      "captureId": "32769",
+      "sha256": "b24ded9cf2a8b7136ebc0f48d23f42c0577470bc02682e74d8ed07a0130e8e65",
+      "limitations": [
+        "Spanish TCG card 133/162 screenshot; not a Champions item screen and region not established.",
+        "No official Champions or independently attested ES-LA status is asserted."
+      ]
     }
   ],
   "records": [
@@ -27044,6 +27209,1473 @@
       "sourceCatalogMatches": [],
       "captureObservationId": "owner-champions-batch3-abilities-spicy-spray",
       "notes": "Exact visible ability-detail name. Existing roster-only unsupported IDs stay calculation-unsupported; no mechanics or support additions."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-charizard-x",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Charizard X",
+      "sourceEs": "Mega-Charizard X",
+      "esLA": "Mega-Charizard X",
+      "rawObservedText": "Mega-Charizard X",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_charizard_x",
+          "canonicalIds": [
+            "mega_charizard_x"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-gardevoir",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Gardevoir",
+      "sourceEs": "Mega-Gardevoir",
+      "esLA": "Mega-Gardevoir",
+      "rawObservedText": "Mega-Gardevoir",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_23",
+          "canonicalIds": [
+            "gw092_23"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-ampharos",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Ampharos",
+      "sourceEs": "Mega-Ampharos",
+      "esLA": "Mega-Ampharos",
+      "rawObservedText": "Mega-Ampharos",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_14",
+          "canonicalIds": [
+            "candidate093_14"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-altaria",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Altaria",
+      "sourceEs": "Mega-Altaria",
+      "esLA": "Mega-Altaria",
+      "rawObservedText": "Mega-Altaria",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_28",
+          "canonicalIds": [
+            "candidate093_28"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-kangaskhan",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Kangaskhan",
+      "sourceEs": "Mega-Kangaskhan",
+      "esLA": "Mega-Kangaskhan",
+      "rawObservedText": "Mega-Kangaskhan",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_006",
+          "canonicalIds": [
+            "roster_v0104_006"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-sableye",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Sableye",
+      "sourceEs": "Mega-Sableye",
+      "esLA": "Mega-Sableye",
+      "rawObservedText": "Mega-Sableye",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_019",
+          "canonicalIds": [
+            "roster_v0104_019"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-pokemon-mega-absol",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Absol",
+      "sourceEs": "Mega-Absol",
+      "esLA": "Mega-Absol",
+      "rawObservedText": "Mega-Absol",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-pokemon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega-absol",
+          "canonicalIds": [
+            "mega-absol"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-dlc-mega-garchomp-z",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Garchomp Z",
+      "sourceEs": "Mega-Garchomp Z",
+      "esLA": "Mega-Garchomp Z",
+      "rawObservedText": "Mega-Garchomp Z",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_garchomp_z",
+          "canonicalIds": [
+            "mega_garchomp_z"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-dlc-mega-baxcalibur",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Baxcalibur",
+      "sourceEs": "Mega-Baxcalibur",
+      "esLA": "Mega-Baxcalibur",
+      "rawObservedText": "Mega-Baxcalibur",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_baxcalibur",
+          "canonicalIds": [
+            "mega_baxcalibur"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-dlc-mega-chimecho",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Chimecho",
+      "sourceEs": "Mega-Chimecho",
+      "esLA": "Mega-Chimecho",
+      "rawObservedText": "Mega-Chimecho",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-dlc"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_023",
+          "canonicalIds": [
+            "roster_v0104_023"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-mega-stones-mega-delphox",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Delphox",
+      "sourceEs": "Mega-Delphox",
+      "esLA": "Mega-Delphox",
+      "rawObservedText": "Mega-Delphox",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-mega-stones"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_016",
+          "canonicalIds": [
+            "roster_v0104_016"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-venusaur",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Venusaur",
+      "sourceEs": "Mega-Venusaur",
+      "esLA": "Mega-Venusaur",
+      "rawObservedText": "Mega-Venusaur",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_venusaur",
+          "canonicalIds": [
+            "mega_venusaur"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-blastoise",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Blastoise",
+      "sourceEs": "Mega-Blastoise",
+      "esLA": "Mega-Blastoise",
+      "rawObservedText": "Mega-Blastoise",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_blastoise",
+          "canonicalIds": [
+            "mega_blastoise"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-salamence",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Salamence",
+      "sourceEs": "Mega-Salamence",
+      "esLA": "Mega-Salamence",
+      "rawObservedText": "Mega-Salamence",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_salamence",
+          "canonicalIds": [
+            "mega_salamence"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-gengar",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Gengar",
+      "sourceEs": "Mega-Gengar",
+      "esLA": "Mega-Gengar",
+      "rawObservedText": "Mega-Gengar",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_01",
+          "canonicalIds": [
+            "gw091_01"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-metagross",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Metagross",
+      "sourceEs": "Mega-Metagross",
+      "esLA": "Mega-Metagross",
+      "rawObservedText": "Mega-Metagross",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_04",
+          "canonicalIds": [
+            "gw091_04"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-garchomp",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Garchomp",
+      "sourceEs": "Mega-Garchomp",
+      "esLA": "Mega-Garchomp",
+      "rawObservedText": "Mega-Garchomp",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_17",
+          "canonicalIds": [
+            "gw092_17"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-scizor",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Scizor",
+      "sourceEs": "Mega-Scizor",
+      "esLA": "Mega-Scizor",
+      "rawObservedText": "Mega-Scizor",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_30",
+          "canonicalIds": [
+            "gw092_30"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-gyarados",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Gyarados",
+      "sourceEs": "Mega-Gyarados",
+      "esLA": "Mega-Gyarados",
+      "rawObservedText": "Mega-Gyarados",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_08",
+          "canonicalIds": [
+            "candidate093_08"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-slowbro",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Slowbro",
+      "sourceEs": "Mega-Slowbro",
+      "esLA": "Mega-Slowbro",
+      "rawObservedText": "Mega-Slowbro",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_12",
+          "canonicalIds": [
+            "candidate093_12"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-heracross",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Heracross",
+      "sourceEs": "Mega-Heracross",
+      "esLA": "Mega-Heracross",
+      "rawObservedText": "Mega-Heracross",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_16",
+          "canonicalIds": [
+            "candidate093_16"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-medicham",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Medicham",
+      "sourceEs": "Mega-Medicham",
+      "esLA": "Mega-Medicham",
+      "rawObservedText": "Mega-Medicham",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_26",
+          "canonicalIds": [
+            "candidate093_26"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-abomasnow",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Abomasnow",
+      "sourceEs": "Mega-Abomasnow",
+      "esLA": "Mega-Abomasnow",
+      "rawObservedText": "Mega-Abomasnow",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_30",
+          "canonicalIds": [
+            "candidate093_30"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-beedrill",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Beedrill",
+      "sourceEs": "Mega-Beedrill",
+      "esLA": "Mega-Beedrill",
+      "rawObservedText": "Mega-Beedrill",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_001",
+          "canonicalIds": [
+            "roster_v0104_001"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-pidgeot",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Pidgeot",
+      "sourceEs": "Mega-Pidgeot",
+      "esLA": "Mega-Pidgeot",
+      "rawObservedText": "Mega-Pidgeot",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_002",
+          "canonicalIds": [
+            "roster_v0104_002"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-alakazam",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Alakazam",
+      "sourceEs": "Mega-Alakazam",
+      "esLA": "Mega-Alakazam",
+      "rawObservedText": "Mega-Alakazam",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_004",
+          "canonicalIds": [
+            "roster_v0104_004"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-pinsir",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Pinsir",
+      "sourceEs": "Mega-Pinsir",
+      "esLA": "Mega-Pinsir",
+      "rawObservedText": "Mega-Pinsir",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_007",
+          "canonicalIds": [
+            "roster_v0104_007"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-aerodactyl",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Aerodactyl",
+      "sourceEs": "Mega-Aerodactyl",
+      "esLA": "Mega-Aerodactyl",
+      "rawObservedText": "Mega-Aerodactyl",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_008",
+          "canonicalIds": [
+            "roster_v0104_008"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-houndoom",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Houndoom",
+      "sourceEs": "Mega-Houndoom",
+      "esLA": "Mega-Houndoom",
+      "rawObservedText": "Mega-Houndoom",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_010",
+          "canonicalIds": [
+            "roster_v0104_010"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-tyranitar",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Tyranitar",
+      "sourceEs": "Mega-Tyranitar",
+      "esLA": "Mega-Tyranitar",
+      "rawObservedText": "Mega-Tyranitar",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_011",
+          "canonicalIds": [
+            "roster_v0104_011"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-manectric",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Manectric",
+      "sourceEs": "Mega-Manectric",
+      "esLA": "Mega-Manectric",
+      "rawObservedText": "Mega-Manectric",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_014",
+          "canonicalIds": [
+            "roster_v0104_014"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-lopunny",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Lopunny",
+      "sourceEs": "Mega-Lopunny",
+      "esLA": "Mega-Lopunny",
+      "rawObservedText": "Mega-Lopunny",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_018",
+          "canonicalIds": [
+            "roster_v0104_018"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-sharpedo",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Sharpedo",
+      "sourceEs": "Mega-Sharpedo",
+      "esLA": "Mega-Sharpedo",
+      "rawObservedText": "Mega-Sharpedo",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_020",
+          "canonicalIds": [
+            "roster_v0104_020"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-camerupt",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Camerupt",
+      "sourceEs": "Mega-Camerupt",
+      "esLA": "Mega-Camerupt",
+      "rawObservedText": "Mega-Camerupt",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_021",
+          "canonicalIds": [
+            "roster_v0104_021"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-banette",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Banette",
+      "sourceEs": "Mega-Banette",
+      "esLA": "Mega-Banette",
+      "rawObservedText": "Mega-Banette",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_022",
+          "canonicalIds": [
+            "roster_v0104_022"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-glalie",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Glalie",
+      "sourceEs": "Mega-Glalie",
+      "esLA": "Mega-Glalie",
+      "rawObservedText": "Mega-Glalie",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_024",
+          "canonicalIds": [
+            "roster_v0104_024"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-gallade",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Gallade",
+      "sourceEs": "Mega-Gallade",
+      "esLA": "Mega-Gallade",
+      "rawObservedText": "Mega-Gallade",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_025",
+          "canonicalIds": [
+            "roster_v0104_025"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-audino",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Audino",
+      "sourceEs": "Mega-Audino",
+      "esLA": "Mega-Audino",
+      "rawObservedText": "Mega-Audino",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_027",
+          "canonicalIds": [
+            "roster_v0104_027"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-generic-mega-mega-steelix",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Steelix",
+      "sourceEs": "Mega-Steelix",
+      "esLA": "Mega-Steelix",
+      "rawObservedText": "Mega-Steelix",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-generic-mega"
+      ],
+      "targetGame": "Generic Pokémon franchise",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega-steelix",
+          "canonicalIds": [
+            "mega-steelix"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-champions-worlds-mega-lucario-z",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Lucario Z",
+      "sourceEs": "Mega-Lucario Z",
+      "esLA": "Mega-Lucario Z",
+      "rawObservedText": "Mega-Lucario Z",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_lucario_z",
+          "canonicalIds": [
+            "mega_lucario_z"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-champions-worlds-mega-garchomp-z",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Garchomp Z",
+      "sourceEs": "Mega-Garchomp Z",
+      "esLA": "Mega-Garchomp Z",
+      "rawObservedText": "Mega-Garchomp Z",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_garchomp_z",
+          "canonicalIds": [
+            "mega_garchomp_z"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-champions-worlds-mega-absol-z",
+      "category": "pokemon",
+      "canonicalEnglish": "Mega Absol Z",
+      "sourceEs": "Mega-Absol Z",
+      "esLA": "Mega-Absol Z",
+      "rawObservedText": "Mega-Absol Z",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "mega_absol_z",
+          "canonicalIds": [
+            "mega_absol_z"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-champions-worlds-baxcalibur",
+      "category": "pokemon",
+      "canonicalEnglish": "Baxcalibur",
+      "sourceEs": "Baxcalibur",
+      "esLA": "Baxcalibur",
+      "rawObservedText": "Baxcalibur",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0103_15",
+          "canonicalIds": [
+            "roster_v0103_15"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-champions-worlds-rillaboom",
+      "category": "pokemon",
+      "canonicalEnglish": "Rillaboom",
+      "sourceEs": "Rillaboom",
+      "esLA": "Rillaboom",
+      "rawObservedText": "Rillaboom",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-champions-worlds"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_15",
+          "canonicalIds": [
+            "gw091_15"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-charizard-gift-solar-beam",
+      "category": "moves",
+      "canonicalEnglish": "Solar Beam",
+      "sourceEs": "Rayo Solar",
+      "esLA": "Rayo Solar",
+      "rawObservedText": "Rayo Solar",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ソーラービーム",
+          "canonicalIds": [
+            "solarBeam"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change.",
+      "numericId": 76,
+      "numericNamespace": "pokemon-game-move-id"
+    },
+    {
+      "id": "pre6-za-charizard-gift-flamethrower",
+      "category": "moves",
+      "canonicalEnglish": "Flamethrower",
+      "sourceEs": "Lanzallamas",
+      "esLA": "Lanzallamas",
+      "rawObservedText": "Lanzallamas",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かえんほうしゃ",
+          "canonicalIds": [
+            "flamethrower"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change.",
+      "numericId": 53,
+      "numericNamespace": "pokemon-game-move-id"
+    },
+    {
+      "id": "pre6-za-charizard-gift-air-slash",
+      "category": "moves",
+      "canonicalEnglish": "Air Slash",
+      "sourceEs": "Tajo Aéreo",
+      "esLA": "Corte Aéreo",
+      "rawObservedText": "Corte Aéreo",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-charizard-gift",
+        "pre6-za-charizard-gift-en"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "エアスラッシュ",
+          "canonicalIds": [
+            "airSlash"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change.",
+      "numericId": 403,
+      "numericNamespace": "pokemon-game-move-id"
+    },
+    {
+      "id": "pre6-za-charizard-gift-charizard",
+      "category": "pokemon",
+      "canonicalEnglish": "Charizard",
+      "sourceEs": "Charizard",
+      "esLA": "Charizard",
+      "rawObservedText": "Charizard",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-charizard-gift"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "charizard",
+          "canonicalIds": [
+            "charizard"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-battle-club-swampert",
+      "category": "pokemon",
+      "canonicalEnglish": "Swampert",
+      "sourceEs": "Swampert",
+      "esLA": "Swampert",
+      "rawObservedText": "Swampert",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_20",
+          "canonicalIds": [
+            "gw092_20"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-battle-club-sceptile",
+      "category": "pokemon",
+      "canonicalEnglish": "Sceptile",
+      "sourceEs": "Sceptile",
+      "esLA": "Sceptile",
+      "rawObservedText": "Sceptile",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0104_050",
+          "canonicalIds": [
+            "roster_v0104_050"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-battle-club-blaziken",
+      "category": "pokemon",
+      "canonicalEnglish": "Blaziken",
+      "sourceEs": "Blaziken",
+      "esLA": "Blaziken",
+      "rawObservedText": "Blaziken",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-battle-club"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0105_002",
+          "canonicalIds": [
+            "roster_v0105_002"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-za-vivillon-vivillon",
+      "category": "pokemon",
+      "canonicalEnglish": "Vivillon",
+      "sourceEs": "Vivillon",
+      "esLA": "Vivillon",
+      "rawObservedText": "Vivillon",
+      "displayNormalization": "none; nonbreaking text spaces normalized to ASCII spaces where applicable",
+      "status": "official",
+      "sourceIds": [
+        "pre6-za-vivillon"
+      ],
+      "targetGame": "Pokémon LEGENDS Z-A",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0106_040",
+          "canonicalIds": [
+            "roster_v0106_040"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Existing canonical inventory only. No mechanics, species, supported-content or other-language change."
+    },
+    {
+      "id": "pre6-owner-provisional-choiceBand-name",
+      "category": "items",
+      "canonicalEnglish": "Choice Band",
+      "sourceEs": "Cinta Elección",
+      "esLA": "Cinta Elección",
+      "rawObservedText": "Cinta Elección",
+      "status": "provisional",
+      "sourceIds": [
+        "pre6-owner-provisional-choiceBand"
+      ],
+      "targetGame": null,
+      "officialChampions": false,
+      "ownerSelected": true,
+      "verificationScope": "owner-selected-provisional-name",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "こだわりハチマキ",
+          "canonicalIds": [
+            "choiceBand"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "WikiDex screenshot; secondary page asserts shared regional spelling, not independently established Champions evidence. Owner-selected spelling only; existing identity and mechanics unchanged."
+    },
+    {
+      "id": "pre6-owner-provisional-assaultVest-name",
+      "category": "items",
+      "canonicalEnglish": "Assault Vest",
+      "sourceEs": "Chaleco Asalto",
+      "esLA": "Chaleco Asalto",
+      "rawObservedText": "Chaleco Asalto",
+      "status": "provisional",
+      "sourceIds": [
+        "pre6-owner-provisional-assaultVest"
+      ],
+      "targetGame": null,
+      "officialChampions": false,
+      "ownerSelected": true,
+      "verificationScope": "owner-selected-provisional-name",
+      "canonicalMatches": [
+        {
+          "category": "items",
+          "key": "とつげきチョッキ",
+          "canonicalIds": [
+            "assaultVest"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Spanish TCG card 133/162 screenshot; not a Champions item screen and region not established. Owner-selected spelling only; existing identity and mechanics unchanged."
     }
   ],
   "observedConflicts": [

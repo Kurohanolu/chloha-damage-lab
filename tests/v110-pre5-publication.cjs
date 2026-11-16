@@ -1,4 +1,28 @@
 'use strict';
+// Preserve the exact published pre.5 lifecycle test in its immutable source tree.
+// It verifies real approved bytes there; current pre.6 has a separate lifecycle gate.
+if(require('../release.json').tag!=='v1.1.0-pre.5'){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74',tree='f6e6bc6a8bedec4b8923671e9345ce24a8d45d40';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre5-history-')),worktree=path.join(parent,'source');
+ let status=1;
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-pre5-publication.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.5 lifecycle must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  const report=JSON.parse(fs.readFileSync(path.join(worktree,'reports/v110/pre5-publication.json'),'utf8'));
+  fs.writeFileSync('reports/v110/pre5-publication.json',JSON.stringify({...report,role:'historical immutable pre.5, not current candidate acceptance',sourceCommit:ref,sourceTree:tree},null,2)+'\n');
+  status=0;
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(status);
+}
+'use strict';
 // A new prerelease must earn its own approval. The published pre.4 is the
 // immutable observation/rollback baseline, never a reusable approval receipt.
 const assert=require('node:assert/strict'),fs=require('node:fs');
