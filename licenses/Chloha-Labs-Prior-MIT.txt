@@ -1,0 +1,31 @@
+License scope — REVIEW CANDIDATE, redistribution of the complete bundle blocked
+
+The MIT License below applies only to original Chloha Labs contributions and
+the Community Edition build, documentation and presentation additions. It does
+not relicense external code, datasets, names, artwork, trademarks or logos.
+Consult THIRD-PARTY-NOTICES.md and rights-inventory.json for file-level scope.
+The embedded registries and supplemental name tables remain subject to the
+unresolved provenance restrictions listed there. Do not treat this file as
+permission to redistribute the complete application while those remain open.
+
+MIT License
+
+Copyright (c) 2026 Chloha Labs / Kurohanolu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

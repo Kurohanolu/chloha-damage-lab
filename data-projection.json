@@ -1,0 +1,81 @@
+{
+  "ChlohaPokemonDB": {
+    "records": 373,
+    "retainedFields": [
+      "id",
+      "name",
+      "types",
+      "baseStats",
+      "abilities",
+      "verificationStatus"
+    ],
+    "removedFields": [
+      "abilityAuditV0121",
+      "abilityAuditV0125",
+      "abilityCandidateSource",
+      "abilityDataStatus",
+      "abilityReauditV0122",
+      "abilityReauditV0123",
+      "abilityVerifiedV0124",
+      "auditV0110",
+      "championsAvailability",
+      "championsDataStatus",
+      "learnsetStatus",
+      "reviewStatus",
+      "rosterAudit",
+      "rosterEvidenceV0128",
+      "screenshotSourceName",
+      "screenshotStatsAbilitiesConfirmed",
+      "source",
+      "sourceAlias",
+      "sourceBatch",
+      "sourceEvidence",
+      "sourceNote",
+      "statsSource",
+      "statsVerification",
+      "statsVerifiedAt",
+      "typeSourceStatus",
+      "unverifiedFields",
+      "v0109Audit",
+      "verification",
+      "verifiedFields"
+    ],
+    "allRetainedValuesUnchanged": true,
+    "order": "project-id"
+  },
+  "ChlohaMovesDB": {
+    "records": 335,
+    "retainedFields": [
+      "id",
+      "name",
+      "type",
+      "power",
+      "category",
+      "target",
+      "calculationSupported",
+      "verificationStatus",
+      "accuracy"
+    ],
+    "removedFields": [
+      "catalogNote",
+      "mechanicNote",
+      "note",
+      "source",
+      "unverifiedFields",
+      "verification",
+      "verifiedFields"
+    ],
+    "allRetainedValuesUnchanged": true,
+    "order": "project-id"
+  },
+  "ChlohaLearnsetsDB": {
+    "retainedFields": [
+      "candidateMoves"
+    ],
+    "allRetainedValuesUnchanged": true,
+    "removedFields": [
+      "note",
+      "verifiedMoveSubsets"
+    ]
+  }
+}

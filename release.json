@@ -1,8 +1,80 @@
 {
-  "version": "0.186",
-  "preRelease": 32,
-  "tag": "v0.186-pre.32",
-  "name": "Chloha Damage Lab v0.186 Pre-Release 32",
-  "notes": "docs/releases/v0.186-pre.32.md",
-  "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/"
+  "product": "Chloha Damage Lab",
+  "edition": "Community Edition",
+  "version": "1.0.0",
+  "channel": "stable",
+  "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
+  "baselineTag": "v1.0.0",
+  "baselineArchiveSHA256": "dda8fdaaa2f0eab02fae16072cc2fa6e5185cd5e92b84134ab3e81ccdb7791c6",
+  "publicUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
+  "currentProductUrl": "https://kurohanolu.github.io/singularity/",
+  "publicationAuthorizedConditionally": true,
+  "rightsStatus": "reviewed",
+  "publicationStatus": "candidate",
+  "blockers": [],
+  "exclusions": [
+    "Pokemon artwork",
+    "Singularity/Tiara logo assets",
+    "private feedback backend and production endpoint",
+    "external fonts",
+    "development logs and credentials"
+  ],
+  "issue": "https://github.com/Kurohanolu/chloha-damage-lab/issues/73",
+  "policyRevision": "2026-11-16-individual-rights-assessment",
+  "distribution": {
+    "mode": "community-limited",
+    "recipients": [
+      "owner",
+      "owner-recognized-community-members"
+    ],
+    "personalUse": true,
+    "personalModification": true,
+    "inCommunityModifiedSharing": true,
+    "outsideRedistribution": false,
+    "publicModifiedVersions": false,
+    "commercialSale": false,
+    "aiPersonalCustomization": true,
+    "publicArchive": false,
+    "publicDownloadLink": false,
+    "publicApplicationRepository": false,
+    "delivery": "owner-managed-members-only-channel",
+    "preserveExistingLicenses": true
+  },
+  "web": {
+    "publiclyAccessible": true,
+    "urlIsAccessControl": false,
+    "archiveDownload": false,
+    "requiresIndependentRightsClearance": true,
+    "publicWebAssetsInPagesBranch": true
+  },
+  "rightsAssessments": {
+    "publicWeb": {
+      "status": "reviewed",
+      "scope": "Public transmission of HTML, JavaScript, registries and translations; public browser operation",
+      "requiredEvidence": [
+        "public-web-code-and-data-delivery"
+      ],
+      "blockers": [],
+      "basis": "Own calculator schema and minimal factual projection; owner code authorization; retained MIT/BSD notices; excluded third-party artwork and editorial metadata"
+    },
+    "communityZip": {
+      "status": "reviewed",
+      "scope": "Copies to recognized members, personal modification and member-only sharing of modified copies",
+      "requiredEvidence": [
+        "community-copy-modify-and-share"
+      ],
+      "blockers": [],
+      "basis": "Same reviewed files; owner/community-only copies and modifications; existing third-party grants preserved"
+    },
+    "generalRedistribution": {
+      "status": "prohibited-by-owner-policy",
+      "enabled": false
+    }
+  },
+  "acceptanceStatus": {
+    "publicWeb": "requires-exact-commit-ci",
+    "communityZip": "requires-exact-commit-ci"
+  },
+  "assessmentEvidence": "docs/community/individual-rights-assessment.md",
+  "thirdPartyPermissionClaim": "No permission from GameWith, AppMedia or Pokemon rights holders is asserted. Factual and short identifying fields are evaluated separately from creative expression."
 }

@@ -1,0 +1,559 @@
+{
+  "publicationStatus": "requires-exact-commit-ci",
+  "distributionMode": "community-limited",
+  "rightsAssessments": {
+    "publicWeb": {
+      "status": "reviewed",
+      "scope": "Public transmission of HTML, JavaScript, registries and translations; public browser operation",
+      "requiredEvidence": [
+        "public-web-code-and-data-delivery"
+      ],
+      "blockers": [],
+      "basis": "Own calculator schema and minimal factual projection; owner code authorization; retained MIT/BSD notices; excluded third-party artwork and editorial metadata"
+    },
+    "communityZip": {
+      "status": "reviewed",
+      "scope": "Copies to recognized members, personal modification and member-only sharing of modified copies",
+      "requiredEvidence": [
+        "community-copy-modify-and-share"
+      ],
+      "blockers": [],
+      "basis": "Same reviewed files; owner/community-only copies and modifications; existing third-party grants preserved"
+    },
+    "generalRedistribution": {
+      "status": "prohibited-by-owner-policy",
+      "enabled": false
+    }
+  },
+  "files": {
+    ".nojekyll": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "INDIVIDUAL-RIGHTS-REVIEW.md": {
+      "sha256": "8b62bef6fd5c998f1580bfd288faa6e0782c4a9e0f9f91abf451ec14ebe8d996",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "LICENSE": {
+      "sha256": "2cba2ed502cf57a0e4e078f99b66c92db840c93068b3da797a2bafed3ffd5396",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "README.html": {
+      "sha256": "fc0e54596d63d72eb06e0ebae197056cbd0e697700465932077aa9c70c75ce5e",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "README.md": {
+      "sha256": "a592035a9f1b49869bfe20cf28e9232d1c1b45fd27fe28ee5487b6cd7d2149f8",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "TERMS.html": {
+      "sha256": "66a17556f595981dfd5c6fa32322f53df7ea3bff0b88e33dae119bc40a9d2ed7",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "THIRD-PARTY-NOTICES.md": {
+      "sha256": "7d07bea26572bfdedfb2a6b703afccfd18e94088d09ca42cb4ddabbd7f11751a",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "ability-data-v0184.js": {
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177",
+      "origin": "Chloha Labs mappings; Pokemon Showdown-derived weights/move flags",
+      "condition": "MIT, retaining upstream copyright notice",
+      "status": "upstream-license-identified",
+      "evidence": "licenses/Pokemon-Showdown-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "application-manifest.json": {
+      "sha256": "3d7d0a64a04ea0e74c747fe7396243d811646af0d5f31100e3f3f7bf37f452c9",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "battle-data-v0184.js": {
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "brand-v0187.js": {
+      "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "community.css": {
+      "sha256": "440031972ca52cfcc031eb2da86a7a0ce58ca8e653dd59dfda2c8ba8c7a1ac17",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "community.js": {
+      "sha256": "bfb0503a9948a45992d8b1a424a9673190b28cb9ff37e921624e5ef9cd848573",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "damage-calculator-v0184.js": {
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "damage-engine-v0184.js": {
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "damage-ui-adapter-v0184.js": {
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "data-projection.json": {
+      "sha256": "225c4b2c7bc65677615dd63f8283c6db2c5bbcab395ceeb4bee73e3d40488568",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "i18n.js": {
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "index.html": {
+      "sha256": "230d7284bf461ed0403e0ff4980de2846765121f2feb4d636f8c649b6a42fa5f",
+      "origin": "Owner-authored calculator and minimal factual runtime projection",
+      "condition": "Numerical parameters and short identifiers in own schema; editorial/audit metadata removed; no claim of third-party permission",
+      "status": "reviewed-factual-projection",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; data-projection.json",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "licenses/Chloha-Labs-Prior-MIT.txt": {
+      "sha256": "0da3aa27991fbbf04fd93501dae497401ef94dd4ff2b73b4369818dbaefb544d",
+      "origin": "Upstream license notice",
+      "condition": "Retain verbatim",
+      "status": "notice",
+      "evidence": "licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "licenses/PokeAPI-BSD-3-Clause.txt": {
+      "sha256": "1c04595dc662981c20956ae4251dfa7b62b475c345eddf98bc9b904cb2373f2c",
+      "origin": "Upstream license notice",
+      "condition": "Retain verbatim",
+      "status": "notice",
+      "evidence": "licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "licenses/Pokemon-Showdown-MIT.txt": {
+      "sha256": "b2002a9fd52ba8db3783a05fbdebfb09c34fd09513b90f6b390a2c0dfbc93ed0",
+      "origin": "Upstream license notice",
+      "condition": "Retain verbatim",
+      "status": "notice",
+      "evidence": "licenses/Pokemon-Showdown-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-catalog.js": {
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-form-species-v0183.js": {
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+      "origin": "Short entity identifiers, PokéAPI base names and owner-authored form labels in stable history",
+      "condition": "Identifying names and short factual labels only; no descriptions/artwork; retain PokéAPI notice where applicable; no trademark grant",
+      "status": "reviewed-identifying-names",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-name-search.js": {
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-names-pokeapi-v0183.js": {
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+      "origin": "PokeAPI/pokeapi data/v2/csv name tables; project ID mapping",
+      "condition": "BSD-3-Clause; retain notice; trademarks excluded",
+      "status": "upstream-license-identified",
+      "evidence": "licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-names-v0183.js": {
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+      "origin": "Short entity identifiers, PokéAPI base names and owner-authored form labels in stable history",
+      "condition": "Identifying names and short factual labels only; no descriptions/artwork; retain PokéAPI notice where applicable; no trademark grant",
+      "status": "reviewed-identifying-names",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-quality-v0188.js": {
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "locale-registry.js": {
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "move-mechanics-data-v0184.js": {
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+      "origin": "Chloha Labs mappings; Pokemon Showdown-derived weights/move flags",
+      "condition": "MIT, retaining upstream copyright notice",
+      "status": "upstream-license-identified",
+      "evidence": "licenses/Pokemon-Showdown-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "multi-hit.js": {
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-catalog-v0179.js": {
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+      "origin": "PokeAPI/pokeapi data/v2/csv name tables; project ID mapping",
+      "condition": "BSD-3-Clause; retain notice; trademarks excluded",
+      "status": "upstream-license-identified",
+      "evidence": "licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-forms-v0179.js": {
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+      "origin": "Short entity identifiers, PokéAPI base names and owner-authored form labels in stable history",
+      "condition": "Identifying names and short factual labels only; no descriptions/artwork; retain PokéAPI notice where applicable; no trademark grant",
+      "status": "reviewed-identifying-names",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-ja-en.js": {
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+      "origin": "Short entity identifiers, PokéAPI base names and owner-authored form labels in stable history",
+      "condition": "Identifying names and short factual labels only; no descriptions/artwork; retain PokéAPI notice where applicable; no trademark grant",
+      "status": "reviewed-identifying-names",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-ui-v0179.js": {
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-ui-v0183.js": {
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "names-v0179.js": {
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+      "origin": "Short entity identifiers, PokéAPI base names and owner-authored form labels in stable history",
+      "condition": "Identifying names and short factual labels only; no descriptions/artwork; retain PokéAPI notice where applicable; no trademark grant",
+      "status": "reviewed-identifying-names",
+      "evidence": "INDIVIDUAL-RIGHTS-REVIEW.md; licenses/PokeAPI-BSD-3-Clause.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "persistence-v0188.js": {
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "pokemon-weights-v0181.js": {
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+      "origin": "Chloha Labs mappings; Pokemon Showdown-derived weights/move flags",
+      "condition": "MIT, retaining upstream copyright notice",
+      "status": "upstream-license-identified",
+      "evidence": "licenses/Pokemon-Showdown-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "portrait-alt-v0188.js": {
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "release.json": {
+      "sha256": "349a0d5144585a3ff30905ea3985293de2a420bae462f77c28fcd3b9a7db994a",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "variable-power.js": {
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "weight-power.js": {
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      }
+    },
+    "rights-inventory.json": {
+      "sha256": null,
+      "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
+      "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
+      "status": "original-contribution",
+      "evidence": "LICENSE; licenses/Chloha-Labs-Prior-MIT.txt",
+      "rightsByUse": {
+        "publicWeb": "reviewed-conditional-on-notices-and-existing-grants",
+        "communityZip": "reviewed-conditional-on-notices-and-existing-grants",
+        "generalBundleRedistribution": "not-offered-by-owner-policy"
+      },
+      "hashReason": "Self-reference excluded; whole-package ZIP hash covers this file"
+    }
+  }
+}

@@ -439,6 +439,24 @@ function translateBattleMoveLabel(value){
  const statuses={'［計算未対応］':' [Unsupported]','［基本ダメージのみ・実機未照合］':' [Basic damage only; unverified]','［計算試算・実機未照合］':' [Estimated; unverified]'};
  return (entityNames[match[1]]||match[1])+' ('+(types[match[2]]||match[2])+' / '+(match[3]==='可変'?'Variable':match[3])+')'+(statuses[match[4]]||match[4]);
 }
+function localizedVersionProvenance(base,target){
+ if(!base.startsWith('バージョンについて：画面の「'))return null;
+ const version=base.match(/画面の「([^」]+)」/),core=base.match(/計算コア(?:の内部API識別子は|の)「([^」]+)」/),regression=base.match(/(v[\d.]+)の自動回帰監査/);
+ if(!version||!core||!regression)return base;
+ const v=version[1],c=core[1],r=regression[1];
+ // Translate the current canonical notice, without inferring case counts or hardware evidence.
+ const notices={
+  en:`About versions: The on-screen “${v}” is the public UI version. The calculation core “${c}” identifies the internal API foundation. It is managed separately from the public UI version and does not mean that verification of accuracy on Pokémon Champions hardware is complete. Automated regression checks for ${r}, browser checks for four weight-dependent moves and multi-hit moves, and Showdown differential tests have passed. Some conditions, including Multiscale handling for multi-hit moves, are unsupported. Showdown is the calculation-specification reference; confirmed Pokémon Champions-specific differences will be handled separately.`,
+  fr:`À propos des versions : « ${v} » est la version publique de l’interface. L’identifiant de l’API interne du moteur de calcul est « ${c} ». Il est géré séparément de la version publique de l’interface et ne signifie pas que la vérification de la précision sur console est terminée. Les tests automatiques de régression pour ${r}, les tests dans le navigateur de quatre capacités dépendant du poids et des capacités à coups multiples, ainsi que les tests différentiels avec Showdown ont réussi. Certaines conditions, notamment la gestion de Multiécaille pour les capacités à coups multiples, ne sont pas prises en charge. Showdown sert de référence pour les règles de calcul ; les différences propres à Pokémon Champions seront traitées séparément lorsqu’elles seront confirmées.`,
+  de:`Versionshinweis: „${v}“ ist die öffentliche Version der Benutzeroberfläche. Die interne API-Kennung des Rechenkerns lautet „${c}“. Sie wird getrennt von der öffentlichen Version verwaltet und bedeutet nicht, dass die Genauigkeitsprüfung auf echter Hardware abgeschlossen ist. Die automatischen Regressionstests für ${r}, die Browser-Tests für vier gewichtsabhängige Attacken und Mehrfachtreffer-Attacken sowie die Showdown-Differenztests wurden bestanden. Einige Bedingungen, darunter die Behandlung von Multischuppe bei Mehrfachtreffer-Attacken, werden nicht unterstützt. Showdown dient als Referenz für die Berechnungsregeln; bestätigte Besonderheiten von Pokémon Champions werden gesondert behandelt.`,
+  es:`Sobre las versiones: «${v}» es la versión pública de la interfaz. El identificador de la API interna del motor de cálculo es «${c}». Se gestiona por separado de la versión pública y no significa que se haya completado la verificación de precisión en consola. Se superaron las pruebas automáticas de regresión de ${r}, las pruebas en navegador de cuatro movimientos dependientes del peso y de movimientos de varios golpes, y las pruebas diferenciales con Showdown. Algunas condiciones, incluido el tratamiento de Multiescamas en movimientos de varios golpes, no están implementadas. Showdown es la referencia para las reglas de cálculo; las diferencias específicas de Pokémon Champions se tratarán por separado cuando se confirmen.`,
+  it:`Informazioni sulle versioni: «${v}» è la versione pubblica dell’interfaccia. L’identificatore dell’API interna del motore di calcolo è «${c}». È gestito separatamente dalla versione pubblica e non significa che la verifica della precisione su console sia completa. Sono stati superati i test automatici di regressione per ${r}, i test nel browser di quattro mosse dipendenti dal peso e delle mosse multicolpo, e i test differenziali con Showdown. Alcune condizioni, inclusa la gestione di Multisquame nelle mosse multicolpo, non sono supportate. Showdown è il riferimento per le regole di calcolo; le differenze specifiche di Pokémon Champions verranno gestite separatamente quando saranno confermate.`,
+  ko:`버전 안내: 화면에 표시되는 “${v}”는 공개 UI 버전입니다. 계산 코어의 내부 API 식별자는 “${c}”입니다. 공개 UI 버전과 별도로 관리되며, 실기기 기준 정확도 검증이 완료되었다는 뜻이 아닙니다. ${r} 자동 회귀 검사, 체중에 따라 달라지는 기술 4종과 연속 공격 기술의 브라우저 검사 및 Showdown 차등 테스트는 통과했습니다. 연속 공격 기술의 멀티스케일 처리 등 일부 조건은 지원하지 않습니다. Showdown을 계산 규칙 검증의 기준으로 사용하며, Pokémon Champions 고유의 사양 차이가 확인되면 개별적으로 대응합니다.`,
+  'zh-Hans':`版本说明：画面显示的“${v}”是公开UI版本。计算核心的内部API标识为“${c}”。它与公开UI版本分开管理，不代表已完成实机精度验证。${r}的自动回归测试、4种依赖体重的招式及多段招式的浏览器测试，以及Showdown差分测试均已通过。多段招式的多重鳞片处理等部分条件尚不支持。以Showdown作为计算规则验证的基准；确认Pokémon Champions特有的机制差异后，将另行处理。`,
+  'zh-Hant':`版本說明：畫面顯示的「${v}」是公開UI版本。計算核心的內部API識別碼為「${c}」。它與公開UI版本分開管理，不代表已完成實機精度驗證。${r}的自動回歸測試、4種依賴體重的招式及多段招式的瀏覽器測試，以及Showdown差分測試均已通過。多段招式的多重鱗片處理等部分條件尚不支援。以Showdown作為計算規則驗證的基準；確認Pokémon Champions特有的機制差異後，將另行處理。`
+ };
+ return notices[target]||base;
+}
 function translateRuntime(base){
  if(base==='パンクロック：音技の威力1.3倍に対応しています。音技の被ダメージ半減は防御側特性として未対応です。')return 'Punk Rock: Boosts sound-based move power by 1.3x. Halving incoming sound damage is not yet supported as a defending ability.';
  if(base==='かたいツメ：登録済み335技の接触判定をShowdownデータで照合し、接触技に威力1.3倍を適用します。')return 'Tough Claws: Applies a 1.3x power boost to contact moves, based on Showdown contact flags checked across all 335 catalog moves.';
@@ -451,17 +469,8 @@ function translateRuntime(base){
   return base.replace(/^現在の盤面：天候\s+(.+?)\s*／\s*フィールド\s+(.+?)\s*／\s*壁\s+(.+)$/,(_,w,t,sc)=>'Current battlefield: Weather '+(options[w]||w)+' / Terrain '+(options[t]||t)+' / Screen '+(options[sc]||sc));
  }
  if(base.startsWith('最大HPに対する割合：'))return base.replace('最大HPに対する割合：','Of max HP: ');
- if(base.startsWith('バージョンについて：画面の「')){
-  const release=base.match(/画面の「([^」]+)」/);
-  const core=base.match(/計算コア(?:の内部API識別子は|の)「([^」]+)」/);
-  const regression=base.match(/(v[\d.]+)の自動回帰監査/);
-  const cases=base.match(/Showdown比較(\d+)ケース/);
-  return 'About versions: The on-screen “'+(release?.[1]||'current release')+
-   '” is the public UI version. The calculation core “'+(core?.[1]||'internal core')+
-   '” identifies the internal API foundation; it does not indicate the current public version or that verification is complete. Automated regression checks for '+
-   (regression?.[1]||'the public release')+' and '+(cases?.[1]||'54')+
-   ' Showdown comparison cases have passed. Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.';
- }
+ const versionNotice=localizedVersionProvenance(base,'en');
+ if(versionNotice)return versionNotice;
  if(attributeLabels[base])return attributeLabels[base];
  if(dictionary[base])return dictionary[base];
  if(uiTerms[base])return uiTerms[base];
@@ -733,6 +742,9 @@ const screenshotLocalePhrases={
  'The 373 Pokémon and 335 moves include candidates. Learnsets are unverified. Unsupported abilities stop calculation. Complex interactions, Terastallization and hardware rounding order remain unverified.':{fr:"Les 373 Pokémon et 335 capacités comprennent des entrées provisoires. Les capacités apprises ne sont pas vérifiées. Les talents non pris en charge interrompent le calcul. Les interactions complexes, la Téracristallisation et les arrondis sur console restent non vérifiés.",de:"Die 373 Pokémon und 335 Attacken enthalten vorläufige Einträge. Erlernbare Attacken sind nicht geprüft. Nicht unterstützte Fähigkeiten stoppen die Berechnung. Komplexe Wechselwirkungen, Terakristallisierung und Rundungsreihenfolge auf Hardware sind ungeprüft.",es:"Los 373 Pokémon y 335 movimientos incluyen entradas provisionales. No se ha verificado qué movimientos pueden aprender. Las habilidades no compatibles detienen el cálculo. Las interacciones complejas, la teracristalización y el orden de redondeo en consola siguen sin verificarse.",it:"I 373 Pokémon e le 335 mosse includono voci provvisorie. Le mosse apprendibili non sono verificate. Le abilità non supportate interrompono il calcolo. Le interazioni complesse, la teracristallizzazione e gli arrotondamenti su console non sono verificati.",ko:'포켓몬 373종과 기술 335개에는 후보 데이터가 포함됩니다. 기술 습득 여부는 검증되지 않았습니다. 미지원 특성은 계산을 중단합니다. 복잡한 상호작용, 테라스탈 및 실기기 반올림 순서는 검증되지 않았습니다.','zh-Hans':'373只宝可梦和335个招式的数据包含候选项目。尚未验证招式学习范围；遇到不支持的特性时将停止计算。复杂交互、太晶化及实机的取整顺序仍未验证。','zh-Hant':'373隻寶可夢和335個招式的資料包含候選項目。尚未驗證招式學習範圍；遇到不支援的特性時將停止計算。複雜交互、太晶化及實機的取整順序仍未驗證。'}
 };
 const localeUiPhrases={
+ 'Variable':{fr:'Variable',de:'Variabel',es:'Variable',it:'Variabile',ko:'가변','zh-Hans':'可变','zh-Hant':'可變'},
+ 'Unsupported':{fr:'Non pris en charge',de:'Nicht unterstützt',es:'No compatible',it:'Non supportato',ko:'미지원','zh-Hans':'暂不支持','zh-Hant':'暫不支援'},
+ 'Basic damage only; unverified':{fr:'Dégâts de base uniquement ; non vérifié',de:'Nur Grundschaden; ungeprüft',es:'Solo daño básico; sin verificar',it:'Solo danno base; non verificato',ko:'기본 데미지만; 미검증','zh-Hans':'仅基础伤害；未经验证','zh-Hant':'僅基礎傷害；未經驗證'},
  'Swap sides':{fr:'Inverser les côtés',de:'Seiten tauschen',es:'Intercambiar lados',it:'Scambia lati',ko:'양쪽 교체','zh-Hans':'交换双方','zh-Hant':'交換雙方'},
  'e.g. Earthquake, Thunderbolt':{fr:'Ex. : Séisme, Tonnerre',de:'z. B. Erdbeben, Donnerblitz',es:'p. ej., Terremoto, Rayo',it:'es. Terremoto, Fulmine',ko:'예: 지진, 10만볼트','zh-Hans':'例如：地震、十万伏特','zh-Hant':'例如：地震、十萬伏特'},
  'Attack':{fr:'Attaque',de:'Angriff',es:'Ataque',it:'Attacco',ko:'공격','zh-Hans':'攻击','zh-Hant':'攻擊'},
@@ -898,6 +910,10 @@ const localizedItemOptionPhrases={
  'Expert Belt (super-effective ×1.2)':{fr:'Ceinture Pro (super efficace ×1,2)',de:'Expertengurt (sehr effektiv ×1,2)',es:'Cinta Experto (supereficaz ×1,2)',it:'Abilcintura (superefficace ×1,2)',ko:'달인의띠 (효과가 굉장함 ×1.2)','zh-Hans':'达人带（效果绝佳×1.2）','zh-Hant':'達人帶（效果絕佳×1.2）'}
 };
 const localizedControlPhrases={
+ 'Calculator navigation':{fr:'Navigation du calculateur',de:'Rechnernavigation',es:'Navegación de la calculadora',it:'Navigazione del calcolatore',ko:'계산기 탐색','zh-Hans':'计算器导航','zh-Hant':'計算器導覽'},
+ 'Swap attacker and defender':{fr:'Intervertir attaquant et défenseur',de:'Angreifer und Verteidiger tauschen',es:'Intercambiar atacante y defensor',it:'Scambia attaccante e difensore',ko:'공격 측과 방어 측 바꾸기','zh-Hans':'交换攻击方和防御方','zh-Hant':'交換攻擊方和防禦方'},
+ 'Clear weather, terrain and screens':{fr:'Réinitialiser météo, terrain et protections',de:'Wetter, Feld und Schutzschirme zurücksetzen',es:'Restablecer clima, campo y pantallas',it:'Azzera meteo, terreno e schermi',ko:'날씨, 필드 및 벽 초기화','zh-Hans':'清除天气、场地和墙壁','zh-Hant':'清除天氣、場地和牆壁'},
+ 'Damage calculation summary':{fr:'Résumé du calcul des dégâts',de:'Zusammenfassung der Schadensberechnung',es:'Resumen del cálculo de daño',it:'Riepilogo del calcolo dei danni',ko:'데미지 계산 요약','zh-Hans':'伤害计算摘要','zh-Hant':'傷害計算摘要'},
  'Defender ability':{fr:'Talent du défenseur',de:'Fähigkeit des Verteidigers',es:'Habilidad del defensor',it:'Abilità del difensore',ko:'방어 측 특성','zh-Hans':'防御方特性','zh-Hant':'防禦方特性'},
  'Attacker ability':{fr:'Talent de l’attaquant',de:'Fähigkeit des Angreifers',es:'Habilidad del atacante',it:'Abilità dell’attaccante',ko:'공격 측 특성','zh-Hans':'攻击方特性','zh-Hant':'攻擊方特性'},
  'Held item':{fr:'Objet tenu',de:'Getragenes Item',es:'Objeto equipado',it:'Strumento tenuto',ko:'지닌 도구','zh-Hans':'携带道具','zh-Hant':'攜帶道具'},
@@ -914,7 +930,7 @@ function localizedDynamicControl(base,target){
  }
 
  if(target==='ja'||target==='en')return null;
- const exact=localizedControlPhrases[base]?.[target];
+ const exact=localizedControlPhrases[base]?.[target]||localizedControlPhrases[english]?.[target];
  if(exact)return exact;
  const statNames={
   'HP':['PV','KP','PS','PS','HP','HP','HP'],
@@ -926,10 +942,16 @@ function localizedDynamicControl(base,target){
  };
  const order=['fr','de','es','it','ko','zh-Hans','zh-Hant'];
  const idx=order.indexOf(target);
- const compound=String(english).match(/^(Attacker|Defender)?\\s*(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)\\s*(stat points|nature modifier|actual stat|stat points slider|stat|stage|max HP|remaining HP|points)$/);
+ const roles={Attacker:['Attaquant','Angreifer','Atacante','Attaccante','공격 측','攻击方','攻擊方'],Defender:['Défenseur','Verteidiger','Defensor','Difensore','방어 측','防御方','防禦方']};
+ const overview=String(english).match(/^(Attacker|Defender) six stats$/);
+ if(overview&&idx>=0)return roles[overview[1]][idx]+' — '+['six statistiques','sechs Statuswerte','seis estadísticas','sei statistiche','능력치 6개','六项能力值','六項能力值'][idx];
+ const edit=String(english).match(/^(Attacker|Defender) (HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed) (\d+) points\. Edit$/);
+ if(edit&&idx>=0)return roles[edit[1]][idx]+' '+statNames[edit[2]][idx]+' '+edit[3]+' '+['points. Modifier','Punkte. Bearbeiten','puntos. Editar','punti. Modifica','포인트. 편집','点。编辑','點。編輯'][idx];
+ const preset=String(english).match(/^(Attacker|Defender) ((?:[HABCDS]\d+)(?:\/[HABCDS]\d+)*|Reset all to 0)$/);
+ if(preset&&idx>=0)return roles[preset[1]][idx]+' '+(preset[2]==='Reset all to 0'?localeUiPhrases[preset[2]][target]:preset[2]);
+ const compound=String(english).match(/^(Attacker|Defender)?\s*(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)\s*(stat points|nature modifier|actual stat|stat points slider|stat|stage|max HP|remaining HP|points)$/);
  if(compound&&idx>=0){
   const role=compound[1],stat=statNames[compound[2]][idx],kind=compound[3];
-  const roles={Attacker:['Attaquant','Angreifer','Atacante','Attaccante','공격 측','攻击方','攻擊方'],Defender:['Défenseur','Verteidiger','Defensor','Difensore','방어 측','防御方','防禦方']};
   const kinds={
    'stat points':['points de statistique','Statuspunkte','puntos de estadística','punti statistica','능력 포인트','能力点','能力點'],
    'nature modifier':['modificateur de nature','Wesen-Modifikator','modificador de naturaleza','modificatore natura','성격 보정','性格修正','性格修正'],
@@ -946,11 +968,10 @@ function localizedDynamicControl(base,target){
  }
  // Normalize composite labels generated from adjacent stat widgets. The original
  // DOM often has no whitespace between the stat name and its suffix.
- const normalized=String(english).replace(/(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)(?=(?:actual stat|stat points))/g,'$1 ');
- const extra=normalized.match(/^(Attacker|Defender)?\\s*(HP|Attack|Defense|Sp\\. Atk|Sp\\. Def|Speed)\\s*(nature modifier|actual stat|stat points|stat points slider|stat|stage|points)$/);
+ const normalized=String(english).replace(/(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)(?=(?:actual stat|stat points))/g,'$1 ');
+ const extra=normalized.match(/^(Attacker|Defender)?\s*(HP|Attack|Defense|Sp\. Atk|Sp\. Def|Speed)\s*(nature modifier|actual stat|stat points|stat points slider|stat|stage|points)$/);
  if(extra&&idx>=0){
   const role=extra[1],stat=statNames[extra[2]][idx],kind=extra[3];
-  const roles={Attacker:['Attaquant','Angreifer','Atacante','Attaccante','공격 측','攻击方','攻擊方'],Defender:['Défenseur','Verteidiger','Defensor','Difensore','방어 측','防御方','防禦方']};
   const labels={
    'nature modifier':['modificateur de nature','Wesen-Korrektur','modificador de naturaleza','modificatore natura','성격 보정','性格修正','性格修正'],
    'actual stat':['valeur réelle','tatsächlicher Wert','valor real','valore effettivo','실제 능력치','实际能力值','實際能力值'],
@@ -1016,7 +1037,7 @@ function localizedDynamicControl(base,target){
   const ja={'HP':'HP','Attack':'攻撃','Defense':'防御','Sp. Atk':'特攻','Sp. Def':'特防','Speed':'素早さ'}[point[1]];
   return (localizedTypeNames[ja]?.[target]||localeUiPhrases[point[1]]?.[target]||point[1])+' '+point[2];
  }
- const budget=String(base).match(/^Stat points\s+(\d+)\s*\/\s*(\d+)\s*\(remaining\s+(\d+)\)(.*)$/);
+ const budget=String(english).match(/^Stat points\s+(\d+)\s*\/\s*(\d+)\s*[（(]remaining\s+(-?\d+)[）)](.*)$/);
  if(budget){
   const labels={fr:['Points','restants'],de:['Punkte','übrig'],es:['Puntos','restantes'],it:['Punti','rimanenti'],ko:['능력 포인트','남음'],'zh-Hans':['能力点','剩余'],'zh-Hant':['能力點','剩餘']};
   const [name,remaining]=labels[target]||labels.fr;
@@ -1050,6 +1071,8 @@ function localizedBattleSummary(base,target){
 function localizedUi(base){
  const catalog=globalThis.ChlohaLocaleCatalog;
  if(locale==='ja')return base;
+ const versionNotice=localizedVersionProvenance(base,locale);
+ if(versionNotice)return versionNotice;
  const battleSummary=localizedBattleSummary(base,locale);
  if(battleSummary)return battleSummary;
  if(localizedTypeNames[base]?.[locale])return localizedTypeNames[base][locale];
@@ -1091,38 +1114,6 @@ function localizedUi(base){
  }
  const screenshotText=translateRuntime(base);
  if(screenshotLocalePhrases[screenshotText]?.[locale])return screenshotLocalePhrases[screenshotText][locale];
- if(['fr','de','es','it'].includes(locale)&&screenshotText.startsWith('About versions:')){
-  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
-  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
-  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
-  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
-  const v=version?.[1]||'v0.184',c=core?.[1]||'v0.184',reg=regression?.[1]||'v0.184',count=cases?.[1]||'54';
-  const translations={
-   fr:'À propos des versions : « '+v+' » est la version publique de l’interface. Le cœur de calcul « '+c+' » désigne la base de l’API interne et ne signifie pas que la vérification est terminée. Les tests de régression '+reg+' et '+count+' comparaisons Showdown ont réussi. Seules certaines conditions ont été comparées sur Pokémon Champions ; une correspondance parfaite n’est pas garantie.',
-   de:'Versionshinweis: „'+v+'“ ist die öffentliche UI-Version. Der Rechenkern „'+c+'“ bezeichnet die interne API-Grundlage und bedeutet keine vollständige Verifizierung. Die Regressionstests für '+reg+' und '+count+' Showdown-Vergleichsfälle wurden bestanden. Nur einige Bedingungen wurden auf Pokémon Champions-Hardware geprüft; identische Ergebnisse sind nicht garantiert.',
-   es:'Sobre las versiones: «'+v+'» es la versión pública de la interfaz. El núcleo de cálculo «'+c+'» identifica la base de la API interna y no implica que la verificación esté completa. Se superaron las pruebas de regresión de '+reg+' y '+count+' comparaciones con Showdown. Solo se han contrastado algunas condiciones en Pokémon Champions; no se garantizan resultados idénticos en todos los casos.',
-   it:'Informazioni sulle versioni: «'+v+'» è la versione pubblica dell’interfaccia. Il motore di calcolo «'+c+'» indica la base dell’API interna e non implica una verifica completa. Sono stati superati i test di regressione per '+reg+' e '+count+' confronti con Showdown. Solo alcune condizioni sono state confrontate su Pokémon Champions; non si garantiscono risultati identici in ogni situazione.'
-  };
-  return translations[locale];
- }
- if((locale==='zh-Hans'||locale==='zh-Hant')&&screenshotText.startsWith('About versions:')){
-  const traditional=locale==='zh-Hant';
-  const version=screenshotText.match(/on-screen [“"]([^”"]+)[”"]/);
-  const core=screenshotText.match(/calculation core [“"]([^”"]+)[”"]/);
-  const regression=screenshotText.match(/regression checks for (v[\d.]+)/);
-  const cases=screenshotText.match(/and (\d+) Showdown comparison cases/);
-  return traditional
-   ?'版本說明：畫面顯示的「'+(version?.[1]||'目前版本')+'」是公開UI版本。計算核心「'+(core?.[1]||'內部版本')+'」表示內部API基礎版本，不代表目前公開版本，也不表示驗證已完成。'+(regression?.[1]||'目前版本')+'的自動回歸測試及'+(cases?.[1]||'54')+'個Showdown比較案例已通過。僅部分條件與Pokémon Champions實機比較過，無法保證所有條件下的結果完全一致。'
-   :'版本说明：画面显示的“'+(version?.[1]||'当前版本')+'”是公开UI版本。计算核心“'+(core?.[1]||'内部版本')+'”表示内部API基础版本，不代表当前公开版本，也不表示验证已完成。'+(regression?.[1]||'当前版本')+'的自动回归测试及'+(cases?.[1]||'54')+'个Showdown比较案例已通过。仅部分条件与Pokémon Champions实机比较过，无法保证所有条件下的结果完全一致。';
- }
- if(locale==='ko'&&screenshotText.startsWith('About versions:'))return screenshotText
-  .replace(/^About versions:/,'버전 안내:')
-  .replace(' is the public UI version. The calculation core ','는 공개 UI 버전입니다. 계산 코어 ')
-  .replace(' identifies the internal API foundation; it does not indicate the current public version or that verification is complete.','는 내부 API 기반 버전으로, 현재 공개 버전이나 검증 완료를 뜻하지 않습니다.')
-  .replace('Automated regression checks for ','자동 회귀 검사 ')
-  .replace(' and ',' 및 ')
-  .replace(' Showdown comparison cases have passed.','건의 Showdown 비교 테스트를 통과했습니다.')
-  .replace('Only some conditions have been compared against Pokémon Champions hardware; matching results under all conditions are not guaranteed.','일부 조건만 Pokémon Champions 실기기와 비교했으며, 모든 조건에서 동일한 결과를 보장하지 않습니다.');
  const reviewedEntry=reviewed[translateRuntime(base)]||reviewed[base];
  if(reviewedEntry){
   const index=['fr','de','es','it','ko','zh-Hans','zh-Hant'].indexOf(locale);
