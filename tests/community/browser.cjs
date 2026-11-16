@@ -2,13 +2,16 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),http=require('node:http');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'../..'),out=path.join(root,'dist/community');
+const liveUrl=process.env.COMMUNITY_LIVE_URL||'';
+if(liveUrl)assert.equal(liveUrl,'https://kurohanolu.github.io/chloha-damage-lab/');
+const reportDir=path.join(root,'reports/community',liveUrl?'live':'');
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'};
 const snapshot=page=>page.evaluate(()=>JSON.parse(JSON.stringify({a:window.ChlohaLastCalculation.a,r:window.ChlohaLastCalculation.r})));
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale&&!!document.querySelector('#community-information'));
 async function choose(page,query,id){await page.locator('#moveSearch').fill(query);await page.locator('#moveSuggestions [role=option]').first().click();assert.equal(await page.locator('#dbMove').inputValue(),id);}
 (async()=>{
- const report={status:'running',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,distributionNoticeChecks:0,archive404Checks:0,networkRequests:[],viewportChecks:[],publicationStatus:'requires-exact-commit-ci'};
+ const report={status:'running',webUrl:liveUrl||'local-candidate',realDevice:false,browser:'Chromium',locales,widths:[320,360,390,430,768,1440],rotations:0,reloads:0,searchChecks:0,distributionNoticeChecks:0,archive404Checks:0,networkRequests:[],viewportChecks:[],publicationStatus:'requires-exact-commit-ci'};
  const server=http.createServer((req,res)=>{
   const url=new URL(req.url,'http://127.0.0.1'),m=url.pathname.match(/^\/(web|zip)\/(.*)$/);
   if(!m||m[2].includes('..')){res.writeHead(404);res.end();return;}
@@ -18,14 +21,15 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
  });
  await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
  let browser;
- fs.mkdirSync(path.join(root,'reports/community'),{recursive:true});
+ fs.mkdirSync(reportDir,{recursive:true});
  try{
   browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
   let expected;
   for(const mode of ['web','zip']){
+   const base=mode==='web'&&liveUrl?liveUrl:origin+'/'+mode+'/';
    const context=await browser.newContext({viewport:{width:390,height:900},isMobile:true,hasTouch:true}),page=await context.newPage(),errors=[];
-   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith(origin))report.networkRequests.push(r.url());});
-   await page.goto(origin+'/'+mode+'/');await ready(page);
+   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith(origin+'/')&&!(liveUrl&&r.url().startsWith(liveUrl)))report.networkRequests.push(r.url());});
+   await page.goto(base);await ready(page);
    assert.equal(await page.title(),'Chloha Damage Lab — Community Edition v1.0.0 Stable');
    assert.deepEqual(await page.locator('#chloha-locale option').evaluateAll(es=>es.map(e=>e.value)),locales);
    assert.equal(await page.locator('#app h1').textContent(),'Chloha Damage Lab');
@@ -64,14 +68,14 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
     if(mode==='web'&&[390,1440].includes(width)){
      await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));
      await page.waitForFunction(()=>scrollY===0);
-     await page.screenshot({path:path.join(root,'reports/community','community-'+width+'.png'),fullPage:true});
+     await page.screenshot({path:path.join(reportDir,'community-'+width+'.png'),fullPage:true});
     }
     report.viewportChecks.push({mode,width,status:'passed'});
    }
    const current=page.locator('.community-links a[href="https://kurohanolu.github.io/singularity/"]');assert.equal(await current.getAttribute('target'),'_blank');
-   for(const link of ['README.html','TERMS.html']){const res=await context.request.get(origin+'/'+mode+'/'+link);assert.equal(res.status(),200);assert.ok((await res.text()).includes('AS IS'));}
+   for(const link of ['README.html','TERMS.html']){const res=await context.request.get(base+link);assert.equal(res.status(),200);assert.ok((await res.text()).includes('AS IS'));}
    for(const uri of ['Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','Chloha-Damage-Lab-v1.0.0-Community-Edition.zip.sha256','private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip','../private/Chloha-Damage-Lab-v1.0.0-Community-Edition.zip']){
-    const res=await context.request.get(origin+'/'+mode+'/'+uri);assert.equal(res.status(),404,'No archive exposed through web root: '+mode+' '+uri);report.archive404Checks++;
+    const res=await context.request.get(base+uri);assert.equal(res.status(),404,'No archive exposed through web root: '+mode+' '+uri);report.archive404Checks++;
    }
    assert.deepEqual(errors,[]);await context.close();
   }
@@ -79,5 +83,5 @@ async function choose(page,query,id){await page.locator('#moveSearch').fill(quer
   assert.deepEqual(report.networkRequests,[],'No external runtime dependency');
   report.directFileCalculation=true;report.warningStateVerified=true;report.status='passed';console.log('PASS Community browser: '+JSON.stringify(report));
  }catch(e){report.status='failed';report.error=e.stack;throw e;}
- finally{fs.writeFileSync(path.join(root,'reports/community/browser.json'),JSON.stringify(report,null,2)+'\n');await browser?.close();await new Promise(r=>server.close(r));}
+ finally{fs.writeFileSync(path.join(reportDir,'browser.json'),JSON.stringify(report,null,2)+'\n');await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

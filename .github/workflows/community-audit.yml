@@ -60,6 +60,14 @@ jobs:
         working-directory: stable
       - run: node tests/community/browser.cjs
         working-directory: stable
+      - name: Verify the live legacy URL against the restored ZIP
+        run: node tests/community/browser.cjs
+        env:
+          COMMUNITY_LIVE_URL: https://kurohanolu.github.io/chloha-damage-lab/
+        working-directory: stable
+      - name: Verify all deployed bytes and the current Singularity site
+        run: node tests/community/live-publication.cjs
+        working-directory: stable
       - name: Retain test reports only; exclude application and ZIP
         if: always()
         uses: actions/upload-artifact@v4
