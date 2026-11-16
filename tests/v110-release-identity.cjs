@@ -7,10 +7,12 @@ const {verifyObservation}=require('../scripts/helpers/v0188-public-release-obser
 const {baselineForRelease}=require('./helpers/v0188-browser-lab.cjs');
 const stableCommit='0b270c1452505268364659edd402209b00b28673',pre1Commit='83af29133927a19fc7e0f9273c0e194c54384ae5',pre2Commit='aba2d0558948e2a4dd375074fb11fd428edf6222';
 const historical=commit=>JSON.parse(execFileSync('git',['show',commit+':release.json'],{encoding:'utf8'}));
+const pre3Commit='082ab180bc8835304d959f583d4968e0565bdea3',pre3=historical(pre3Commit);
 const stable=historical(stableCommit),pre1=historical(pre1Commit),pre2=historical(pre2Commit);
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.1'}),stableCommit,'Original pre.1 performance baseline remains Stable');
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.2'}),pre1Commit,'Pre.2 compares against the immutable published predecessor');
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.3'}),pre2Commit,'Pre.3 compares against immutable public pre.2');
+assert.equal(baselineForRelease({tag:'v1.1.0-pre.4'}),pre3Commit,'Pre.4 compares against immutable public pre.3');
 function pending(manifest){
  const result=structuredClone(manifest);delete result.followupAudit;
  result.migration.status='awaiting-owner-approval';result.migration.liveTargetVerified=false;
@@ -19,9 +21,9 @@ function pending(manifest){
  return result;
 }
 const current=pending(require('../release.json'));
-assert.equal(current.tag,'v1.1.0-pre.3');assert.equal(current.preRelease,3);
+assert.equal(current.tag,'v1.1.0-pre.4');assert.equal(current.preRelease,4);
 // Historical and current candidates retain separate, exact public baselines.
-for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[current,pre2,3]]){
+for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[current,pre3,4]]){
  const observed=verifyObservation(candidate,publicBase,publicBase.name);
  assert.deepEqual(verifyObservation(candidate,publicBase,publicBase.name,observed),observed,'Repeated observations cannot change release baseline');
  for(const altered of [{...publicBase,notes:'docs/tampered.md'},{...publicBase,tag:candidate.tag},candidate])assert.throws(()=>verifyObservation(candidate,altered,altered.name),'Changed or unpublished metadata is not a public baseline');
@@ -32,7 +34,7 @@ for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre
  for(const override of [{channel:'stable'},{channel:'unknown'},{version:'1.1'},{preRelease:null},{preRelease:0},{tag:'v1.0.0'},{name:'Singularity v1.1.0'},{notes:'docs/releases/v1.0.0.md'}])assert.throws(()=>releaseIdentity({...candidate,...override}),'Invalid exact prerelease identity');
  for(const verify of [verifyCutoverApproval,verifyPublication]){
   assert.throws(()=>verify(candidate),'Pending review never grants publication approval');
-  for(const earlier of [stable,pre1,pre2]){
+  for(const earlier of [stable,pre1,pre2,pre3]){
    const stale={...structuredClone(candidate),migration:structuredClone(earlier.migration),qualityReview:structuredClone(earlier.qualityReview)};
    assert.throws(()=>verify(stale),'An earlier release approval cannot authorize this candidate');
    stale.qualityReview.releaseTag=candidate.tag;
@@ -42,7 +44,7 @@ for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre
 }
 assert.deepEqual(releaseIdentity(stable),{stable:true,displayVersion:'v1.0.0',packageVersion:'1.0.0'});
 const context=vm.createContext({});vm.runInContext(fs.readFileSync('feedback-release-v100.js','utf8'),context);const R=context.ChlohaFeedbackRelease;
-for(const [title,number]of [[pre1.name,1],[pre2.name,2],[current.name,3]]){
+for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[current.name,4]]){
  const id=R.identify(title);
  assert.equal(id.wireVersion,'v1.1 Pre-Release '+number);assert.equal(id.fullVersion,'v1.1.0 Pre-Release '+number);assert.equal(id.prefix,'[Singularity release: v1.1.0 Pre-Release '+number+']\n\n');
  assert.equal(R.description(title,'a'.repeat(id.descriptionLimit)).length,R.wireDescriptionLimit);
@@ -51,6 +53,6 @@ for(const [title,number]of [[pre1.name,1],[pre2.name,2],[current.name,3]]){
   const text=R.text(locale,'compatibility',title);assert.ok(text.includes(id.wireVersion)&&text.includes(id.fullVersion));assert.ok(!text.includes('v1.0.0'));
  }
 }
-for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 4','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
+for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 5','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
 assert.equal(R.identify(stable.name).fullVersion,'v1.0.0');assert.equal(R.identify('Singularity v0.188 Pre-Release 1').compatibility,false);
-console.log('PASS v1.1.0 pre.1/pre.2/pre.3 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');
+console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');

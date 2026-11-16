@@ -1,9 +1,9 @@
 {
   "version": "1.1.0",
-  "preRelease": 3,
-  "tag": "v1.1.0-pre.3",
-  "name": "Singularity v1.1.0 Pre-Release 3",
-  "notes": "docs/releases/v1.1.0-pre.3.md",
+  "preRelease": 4,
+  "tag": "v1.1.0-pre.4",
+  "name": "Singularity v1.1.0 Pre-Release 4",
+  "notes": "docs/releases/v1.1.0-pre.4.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -22,24 +22,24 @@
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
     "liveTargetVerified": true,
-    "liveAcceptanceSourceCommit": "64f72916018df120ef595c7689fdae7224f52878",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43805044546",
-    "liveAcceptanceEvidence": "docs/evidence/v110-pre3/live-acceptance-receipt.json",
-    "liveAcceptanceObservedAtJST": "2026-11-16T13:38:51+09:00"
+    "liveAcceptanceSourceCommit": "7df8158729bcff252bffda57b19674f36775c9e4",
+    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/43813214477",
+    "liveAcceptanceEvidence": "docs/evidence/v110-pre4/live-acceptance-receipt.json",
+    "liveAcceptanceObservedAtJST": "2026-11-16T14:56:48+09:00"
   },
   "qualityReview": {
-    "releaseTag": "v1.1.0-pre.3",
+    "releaseTag": "v1.1.0-pre.4",
     "auditor": "6.1 Sol",
     "auditStatus": "passed",
     "ownerApproval": "approved",
-    "evidence": "docs/evidence/v110-pre3/sol-publication-review.md",
+    "evidence": "docs/evidence/v110-pre4/sol-publication-review.md",
     "auditOutcome": "conditional-pass",
     "conditionsDisposition": "accepted-by-owner",
-    "reviewedSourceCommit": "6903bd2866090169808cc0c88fc6870f220a3f51",
-    "reviewedTree": "3918f8f443b24bc732e402319811d1c9ec2fa56d",
-    "auditReportSha256": "e9c769ce7a54934a70aeb4cef5c12e14ae6397f8e93f2dbafe25a74d833fbc3f",
-    "ownerEvidence": "docs/v110-pre3-owner-publication-decision.json",
-    "ownerRecordedAtJST": "2026-11-16T13:25:05+09:00"
+    "reviewedSourceCommit": "cea64a6526156111b1e0a50ed3392a3dae6d44a3",
+    "reviewedTree": "5351d4abc4759bec66ce8560dd9241ca383b09e6",
+    "auditReportSha256": "c15504ef7e8f38755f3466420e21f6daf8fc2f96de8e7975652caeeed927255e",
+    "ownerEvidence": "docs/v110-pre4-owner-publication-decision.json",
+    "ownerRecordedAtJST": "2026-11-16T14:43:13+09:00"
   },
   "channel": "prerelease"
 }

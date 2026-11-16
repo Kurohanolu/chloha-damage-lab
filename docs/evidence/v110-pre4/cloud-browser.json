@@ -1,0 +1,449 @@
+{
+  "mode": "Cloud Chrome at 300% zoom; CSS viewport 454px",
+  "realDevice": false,
+  "cases": [
+    {
+      "damage": "108〜128 ダメージ",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "ja",
+      "label": "日本語",
+      "locale": "ja",
+      "miniDamage": "108〜128 ダメージ",
+      "miniPercent": "最大HPの 61.7〜73.1%",
+      "move": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+      "percent": "最大HPの 61.7〜73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es-419",
+      "label": "ES-LA",
+      "locale": "es-LA",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    },
+    {
+      "damage": "108〜128 ダメージ",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "ja",
+      "label": "日本語",
+      "locale": "ja",
+      "miniDamage": "108〜128 ダメージ",
+      "miniPercent": "最大HPの 61.7〜73.1%",
+      "move": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+      "percent": "最大HPの 61.7〜73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es-419",
+      "label": "ES-LA",
+      "locale": "es-LA",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    },
+    {
+      "damage": "108–128 damage",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "en",
+      "label": "English",
+      "locale": "en",
+      "miniDamage": "108–128 damage",
+      "miniPercent": "Of max HP: 61.7–73.1%",
+      "move": "Selected: Earthquake (Ground / 100) [Estimated; not hardware-verified]",
+      "percent": "Of max HP: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Damage values and rounding order have not been verified against Pokémon Champions hardware。Selected move “Earthquake（Ground / 100）［Estimated; not hardware-verified］”: learnset, effects, variable power and accuracy are unverified. Treat results as provisional until compared against hardware.Ability set to None / Not applied does not guarantee that no ability effect exists.Combined screen, ally support and spread modifiers passed internal tests but are not hardware-verified.",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es-419",
+      "label": "ES-LA",
+      "locale": "es-LA",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es",
+      "label": "Español",
+      "locale": "es",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es-419",
+      "label": "ES-LA",
+      "locale": "es-LA",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    },
+    {
+      "damage": "108–128 de daño",
+      "geometry": {
+        "brand": {
+          "height": 54,
+          "width": 211.95834350585935,
+          "x": 12,
+          "y": 16
+        },
+        "control": {
+          "height": 66,
+          "width": 90,
+          "x": 231.95834350585935,
+          "y": 10
+        },
+        "header": {
+          "height": 87,
+          "width": 425.3333435058594,
+          "x": 12,
+          "y": 0
+        },
+        "version": {
+          "height": 17.59895896911621,
+          "width": 107.375,
+          "x": 329.9583435058594,
+          "y": 34.19791793823242
+        }
+      },
+      "htmlLang": "es",
+      "label": "Español",
+      "locale": "es",
+      "miniDamage": "108–128 de daño",
+      "miniPercent": "De los PS máximos: 61.7–73.1%",
+      "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+      "percent": "De los PS máximos: 61.7–73.1%",
+      "scrollWidth": 449,
+      "title": "Singularity v1.1.0 Pre-Release 4",
+      "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Earthquake（Ground / 100）［Estimated; not hardware-verified］”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+      "width": 454
+    }
+  ],
+  "reload": {
+    "damage": "108–128 de daño",
+    "geometry": {
+      "brand": {
+        "height": 54,
+        "width": 211.95834350585935,
+        "x": 12,
+        "y": 16
+      },
+      "control": {
+        "height": 66,
+        "width": 90,
+        "x": 231.95834350585935,
+        "y": 10
+      },
+      "header": {
+        "height": 87,
+        "width": 425.3333435058594,
+        "x": 12,
+        "y": 0
+      },
+      "version": {
+        "height": 17.59895896911621,
+        "width": 107.375,
+        "x": 329.9583435058594,
+        "y": 34.19791793823242
+      }
+    },
+    "htmlLang": "es-419",
+    "label": "ES-LA",
+    "locale": "es-LA",
+    "miniDamage": "108–128 de daño",
+    "miniPercent": "De los PS máximos: 61.7–73.1%",
+    "move": "Seleccionado: Terremoto (Tierra / 100) [Estimación sin verificar en consola]",
+    "percent": "De los PS máximos: 61.7–73.1%",
+    "scrollWidth": 449,
+    "title": "Singularity v1.1.0 Pre-Release 4",
+    "warning": "Los daños y el orden de redondeo no se han verificado en Pokémon Champions.Movimiento seleccionado “Terremoto (Tierra / 100) [Estimación; sin verificar en consola]”：No se han verificado su aprendizaje, efectos, potencia variable ni precisión. Los resultados son provisionales hasta compararlos en consola.Elegir Ninguna / No aplicada no garantiza que no haya efectos de habilidad.Los modificadores combinados de pantallas, apoyo aliado y ataques de área pasaron pruebas internas, pero no se verificaron en consola.",
+    "width": 454
+  },
+  "returnedJapanese": {
+    "damage": "108〜128 ダメージ",
+    "geometry": {
+      "brand": {
+        "height": 54,
+        "width": 211.95834350585935,
+        "x": 12,
+        "y": 16
+      },
+      "control": {
+        "height": 66,
+        "width": 90,
+        "x": 231.95834350585935,
+        "y": 10
+      },
+      "header": {
+        "height": 87,
+        "width": 425.3333435058594,
+        "x": 12,
+        "y": 0
+      },
+      "version": {
+        "height": 17.59895896911621,
+        "width": 107.375,
+        "x": 329.9583435058594,
+        "y": 34.19791793823242
+      }
+    },
+    "htmlLang": "ja",
+    "label": "日本語",
+    "locale": "ja",
+    "miniDamage": "108〜128 ダメージ",
+    "miniPercent": "最大HPの 61.7〜73.1%",
+    "move": "選択中：じしん（じめん / 100）［計算試算・実機未照合］",
+    "percent": "最大HPの 61.7〜73.1%",
+    "scrollWidth": 449,
+    "title": "Singularity v1.1.0 Pre-Release 4",
+    "warning": "Pokémon Champions実機のダメージ値・丸め順序との一致は未検証です。選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。特性「なし／未適用」は特性効果が存在しないことを保証しません。壁・味方支援・範囲技の複合補正は内部テスト済みですが実機未照合です。",
+    "width": 454
+  },
+  "passed": true,
+  "observedAt": "2026-11-16T05:57:24.051Z",
+  "url": "https://kurohanolu.github.io/singularity/"
+}
