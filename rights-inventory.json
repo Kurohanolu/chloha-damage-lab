@@ -63,7 +63,7 @@
       }
     },
     "README.html": {
-      "sha256": "fc0e54596d63d72eb06e0ebae197056cbd0e697700465932077aa9c70c75ce5e",
+      "sha256": "bd17c910311afc4611650ff1fd4471e735114d47dc53b3b055d9fd8df15f535e",
       "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
       "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
       "status": "original-contribution",
@@ -75,7 +75,7 @@
       }
     },
     "README.md": {
-      "sha256": "a592035a9f1b49869bfe20cf28e9232d1c1b45fd27fe28ee5487b6cd7d2149f8",
+      "sha256": "ed8164fec9041292cbbff32b11a11bea00e8f9a6129875ac9bb83d1d84efbf47",
       "origin": "Chloha Labs source/documentation; game names and brands excluded from grant",
       "condition": "Community terms within owner authority; existing MIT grants and third-party rights preserved",
       "status": "original-contribution",
