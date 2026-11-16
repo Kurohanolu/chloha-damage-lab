@@ -9,8 +9,8 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity .lab{max-width:1140px;padding-top:0}
 .singularity h1,.singularity h2,.singularity h3,.singularity strong{color:var(--sg-text)}
 .singularity p,.singularity small,.singularity label,.singularity summary{color:var(--sg-muted)}
-.singularity .lab-header{display:grid;grid-template-columns:minmax(240px,1fr) auto auto;border-color:var(--sg-border);min-height:100px;gap:10px 16px;padding:10px 0}
-.singularity #chloha-locale-control{margin:0!important}
+.singularity .lab-header{display:grid;grid-template-columns:minmax(0,1fr) 90px auto;border-color:var(--sg-border);min-height:100px;gap:10px 16px;padding:10px 0}
+.singularity #chloha-locale-control{margin:0!important;min-width:0;max-width:100%;white-space:nowrap}
 .singularity .brand{letter-spacing:0;flex-shrink:0;min-width:0}
 .singularity .brand-logo{display:block;width:240px;height:80px;object-fit:contain;background:#000;border-radius:8px}
 .singularity .version{color:var(--sg-text);font-variant-numeric:tabular-nums}
@@ -27,7 +27,7 @@ body.singularity{background:var(--sg-background);color:var(--sg-text);font-size:
 .singularity input::placeholder,.singularity textarea::placeholder{color:#b5aabd;opacity:1}
 .singularity input:disabled,.singularity select:disabled{background:#25222d;color:#c1b9cb}
 .singularity input[type=checkbox]{min-height:20px;min-width:20px;accent-color:var(--sg-pink)}
-.singularity #chloha-locale{min-height:44px!important}
+.singularity #chloha-locale{min-height:44px!important;width:100%!important;min-width:0;max-width:100%}
 .singularity button{background:#211b29;color:var(--sg-text);border:1px solid #706078;min-height:44px}
 .singularity :is(input,select,textarea,button,a,summary):focus-visible{outline:3px solid var(--sg-focus);outline-offset:3px}
 .singularity .fighter{--accent:var(--sg-pink);--tint:#291725;background:var(--sg-surface);border-color:var(--sg-border);border-top-color:var(--accent);box-shadow:none}
@@ -94,7 +94,7 @@ body.singularity #feedbackPanel a{color:#ffb3e3}
 body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{color:var(--sg-danger)}
 @media(max-width:700px){
  .singularity .lab{padding-inline:12px;padding-bottom:110px}
- .singularity .lab-header{grid-template-columns:minmax(0,1fr) minmax(72px,90px) auto;gap:8px;min-height:0;padding-block:10px}
+ .singularity .lab-header{grid-template-columns:minmax(0,1fr) 90px auto;gap:8px;min-height:0;padding-block:10px}
  .singularity .brand-logo{width:155px;height:54px;max-width:100%}
  .singularity .brand{grid-column:1;grid-row:1}
  .singularity .version{grid-column:3;grid-row:1;margin:0;font-size:11px;text-align:right}
@@ -114,13 +114,8 @@ body.singularity #feedbackPanel [role=alert],body.singularity #feedbackStatus{co
  .singularity .mobile-result{padding-bottom:max(10px,env(safe-area-inset-bottom))}
 }
 @media(max-width:360px){.singularity .lab{padding-inline:9px}.singularity .fighter{padding-inline:10px}}
-/* Keep the regional Spanish label readable; the original nine locale layouts
-   retain their existing header geometry. */
+/* Feedback sheet visibility is independent of the shared header grid. */
 @media(max-width:700px){
- html[lang="es-419"] .singularity .lab-header{grid-template-columns:minmax(0,1fr) auto}
- html[lang="es-419"] .singularity .version{grid-column:2}
- html[lang="es-419"] .singularity #chloha-locale-control{grid-column:1 / -1;grid-row:2;font-size:12px!important}
- html[lang="es-419"] .singularity #chloha-locale{min-width:0;flex:1}
  html[lang="es-419"] body.singularity:has(#feedbackPanel:not([hidden])) .mobile-result{display:none}
 }
 @media(prefers-reduced-motion:reduce){.singularity *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

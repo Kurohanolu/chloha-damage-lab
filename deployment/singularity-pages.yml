@@ -18,6 +18,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
+    outputs:
+      source_sha: ${{ steps.source.outputs.source_sha }}
     if: github.repository == 'Kurohanolu/singularity' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -63,7 +65,7 @@ jobs:
           node -e "const r=require('./release.json');require('node:assert/strict').equal(r.product,'Singularity');require('./scripts/verify-publication-approval.cjs').verifyCutoverApproval(r)"
           node scripts/verify-release.cjs
           node tests/v0184-public-baseline.cjs
-          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(require('./release.json').tag)?0:1)"; then
+          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4'].includes(require('./release.json').tag)?0:1)"; then
             node scripts/v110-historical-contracts.cjs --suite migration
             node tests/v110-artifact-contract.cjs
           else
@@ -80,7 +82,7 @@ jobs:
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];
             const release = require('./release.json');
             if (Number(release.version.split('.')[0]) > 0 || Number(release.version.split('.')[1]) >= 188) required.push('v0.188 Quality Remediation');
-            if (['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(release.tag)) required.push('v1.1.0 ES-LA Localization');
+            if (['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4'].includes(release.tag)) required.push('v1.1.0 ES-LA Localization');
             if (release.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
             const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});
             const latest = new Map();
@@ -110,6 +112,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
@@ -119,3 +122,27 @@ jobs:
       - name: Deploy exact generated frontend
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Check out the same approved source for public browser verification
+        uses: actions/checkout@v4
+        with:
+          repository: Kurohanolu/chloha-damage-lab
+          ref: ${{ needs.build.outputs.source_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare public browser verification
+        run: |
+          npm install --no-package-lock --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify live header, language cycles, reload and numerical parity
+        run: node tests/v110-header-browser.cjs --public
+      - name: Preserve exact-source public browser evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-header-browser-evidence
+          path: reports/v110/header-public/
+          if-no-files-found: error

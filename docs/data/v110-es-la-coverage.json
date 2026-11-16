@@ -47800,8 +47800,8 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3",
-      "feedback-release-v100.js": "95eec3a53ac92188a9f23f7db8c155c45d6003024a16c1457a28bff7b0595473",
-      "index.html": "98f70bbfcd4efc458c0575727ee6fdc5d44e1ae7d65fecffab71a839b56b69b8",
+      "feedback-release-v100.js": "76153ef703b783feb16e4a6762a708009a7f1d6cb495b1910d611d1af7e284ec",
+      "index.html": "d114f89655a96cc416c22ba17d349c7ced49077cf48c5bda7c117c4e7e938db4",
       "docs/data/v110-es-la-source-records.json": "44581f62a39cdeb543149a5a0ec18de591c6e95e38124e2af9b6edcae33b493b"
     },
     "policyReasonInventory": {
@@ -54195,7 +54195,7 @@
         "source": "feedback-release-v100.js",
         "group": "release-copy",
         "canonicalKey": "compatibility",
-        "text": "El campo appVersion «v1.1 Pre-Release 3» del adjunto es un identificador de compatibilidad. La versión completa del producto es v1.1.0 Pre-Release 3.",
+        "text": "El campo appVersion «v1.1 Pre-Release 4» del adjunto es un identificador de compatibilidad. La versión completa del producto es v1.1.0 Pre-Release 4.",
         "status": "provisional",
         "origin": "authored-or-explicit-es-reuse",
         "officialGameNameEvidence": false,
@@ -64747,13 +64747,13 @@
         "source": "i18n.js",
         "group": "dynamic-template",
         "canonicalKey": "version-provenance",
-        "text": "Sobre las versiones: «v1.1.0 Pre-Release 3» es la versión pública de la interfaz. El identificador de la API interna del motor de cálculo es «v0.184». Se gestiona por separado de la versión pública y no significa que se haya completado la verificación de precisión en consola. Se superaron las pruebas automáticas de regresión de v0.184, las pruebas en navegador de cuatro movimientos dependientes del peso y de movimientos de varios golpes, y las pruebas diferenciales con Showdown. Algunas condiciones, incluido el tratamiento de Multiescamas en movimientos de varios golpes, no están implementadas. Showdown es la referencia para las reglas de cálculo; las diferencias específicas de Pokémon Champions se tratarán por separado cuando se confirmen.",
+        "text": "Sobre las versiones: «v1.1.0 Pre-Release 4» es la versión pública de la interfaz. El identificador de la API interna del motor de cálculo es «v0.184». Se gestiona por separado de la versión pública y no significa que se haya completado la verificación de precisión en consola. Se superaron las pruebas automáticas de regresión de v0.184, las pruebas en navegador de cuatro movimientos dependientes del peso y de movimientos de varios golpes, y las pruebas diferenciales con Showdown. Algunas condiciones, incluido el tratamiento de Multiescamas en movimientos de varios golpes, no están implementadas. Showdown es la referencia para las reglas de cálculo; las diferencias específicas de Pokémon Champions se tratarán por separado cuando se confirmen.",
         "status": "provisional",
         "origin": "executed-dynamic-template",
         "officialGameNameEvidence": false,
         "templateId": "version-provenance",
-        "canonicalInput": "バージョンについて：画面の「v1.1.0 Pre-Release 3」は公開UI版。計算コアの内部API識別子は「v0.184」。v0.184の自動回帰監査",
-        "englishReference": "About versions: The on-screen “v1.1.0 Pre-Release 3” is the public UI version. The calculation core “v0.184” identifies the internal API foundation. It is managed separately from the public UI version and does not mean that verification of accuracy on Pokémon Champions hardware is complete. Automated regression checks for v0.184, browser checks for four weight-dependent moves and multi-hit moves, and Showdown differential tests have passed. Some conditions, including Multiscale handling for multi-hit moves, are unsupported. Showdown is the calculation-specification reference; confirmed Pokémon Champions-specific differences will be handled separately.",
+        "canonicalInput": "バージョンについて：画面の「v1.1.0 Pre-Release 4」は公開UI版。計算コアの内部API識別子は「v0.184」。v0.184の自動回帰監査",
+        "englishReference": "About versions: The on-screen “v1.1.0 Pre-Release 4” is the public UI version. The calculation core “v0.184” identifies the internal API foundation. It is managed separately from the public UI version and does not mean that verification of accuracy on Pokémon Champions hardware is complete. Automated regression checks for v0.184, browser checks for four weight-dependent moves and multi-hit moves, and Showdown differential tests have passed. Some conditions, including Multiscale handling for multi-hit moves, are unsupported. Showdown is the calculation-specification reference; confirmed Pokémon Champions-specific differences will be handled separately.",
         "outputVerified": true,
         "inventoryUnit": "one sampled renderer branch, not every possible output",
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/i18n.js",
@@ -65826,6 +65826,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "fc165ccb978890c3abaa91bc81e75ee1e6a8ce32b6328e34e33d9358fcb336ac"
+    "sha256": "98bf08d778ae30c3fcb9658423084569e21084037b424e787e637ab17c9ebe28"
   }
 }
