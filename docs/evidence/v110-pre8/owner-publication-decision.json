@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "releaseTag": "v1.1.0-pre.8",
+  "reviewedSourceCommit": "fb3ebd279aebe05c82f0c9cde61f579701cf2206",
+  "reviewedTree": "c43cca84a00b62eaddcc6d0ff443fea7153749cd",
+  "auditReportSha256": "6db5a909120b9fb6f63831f3e53282b3dbc6e14c6d585e7295039ef6da801310",
+  "auditor": "6.1 Sol",
+  "auditOutcome": "pass",
+  "conditionsDisposition": "accepted-by-owner",
+  "decision": "approved",
+  "approvedActions": [
+    "main-merge",
+    "new-tag",
+    "github-release",
+    "public-cutover"
+  ],
+  "feedbackPolicy": "pause-es-LA-preserve-nine",
+  "recordedAtJST": "2026-11-16T23:36:18+09:00"
+}

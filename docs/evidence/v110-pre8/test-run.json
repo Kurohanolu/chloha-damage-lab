@@ -1,0 +1,245 @@
+{
+  "scope": "v1.1.0 candidate acceptance",
+  "commit": "20765ea8f6e13e1ccdf93950a0f961f7c3f67cfd",
+  "tree": "c43cca84a00b62eaddcc6d0ff443fea7153749cd",
+  "uncommittedPreview": false,
+  "tests": [
+    {
+      "file": "v110-artifact-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1186
+    },
+    {
+      "file": "v110-community-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 16122
+    },
+    {
+      "file": "v110-community-pinned-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 2214
+    },
+    {
+      "file": "v110-community-revision-lifecycle.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 3632
+    },
+    {
+      "file": "v110-dynamic-ui.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 867
+    },
+    {
+      "file": "v110-engine-equivalence.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 712
+    },
+    {
+      "file": "v110-expert-belt-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 13629
+    },
+    {
+      "file": "v110-expert-belt-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 367
+    },
+    {
+      "file": "v110-feedback-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 54576
+    },
+    {
+      "file": "v110-feedback-pause-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1109
+    },
+    {
+      "file": "v110-feedback-readiness.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 42
+    },
+    {
+      "file": "v110-followup-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 343
+    },
+    {
+      "file": "v110-fourth-publication-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 162239
+    },
+    {
+      "file": "v110-fourth-publication-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 368
+    },
+    {
+      "file": "v110-header-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 19680
+    },
+    {
+      "file": "v110-ja-return-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 7075
+    },
+    {
+      "file": "v110-locale-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 65
+    },
+    {
+      "file": "v110-owner-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 261
+    },
+    {
+      "file": "v110-owner-provisional-items.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 220
+    },
+    {
+      "file": "v110-pokedex-batch5-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 610008
+    },
+    {
+      "file": "v110-pokedex-batch5-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 209
+    },
+    {
+      "file": "v110-pre2-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1435
+    },
+    {
+      "file": "v110-pre3-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1464
+    },
+    {
+      "file": "v110-pre4-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1450
+    },
+    {
+      "file": "v110-pre5-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1469
+    },
+    {
+      "file": "v110-pre6-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1671
+    },
+    {
+      "file": "v110-pre7-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 4631
+    },
+    {
+      "file": "v110-pre8-publication.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1849
+    },
+    {
+      "file": "v110-regional-search-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 14385
+    },
+    {
+      "file": "v110-release-identity.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1889
+    },
+    {
+      "file": "v110-result-source-roundtrip.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 87
+    },
+    {
+      "file": "v110-second-capture-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 14543
+    },
+    {
+      "file": "v110-second-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 458
+    },
+    {
+      "file": "v110-source-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 41
+    },
+    {
+      "file": "v110-ten-locale-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 19048
+    },
+    {
+      "file": "v110-third-capture-browser.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 31349
+    },
+    {
+      "file": "v110-third-capture-contract.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 332
+    },
+    {
+      "file": "v110-ui-inventory.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 574
+    },
+    {
+      "file": "v110-ui-mobile.cjs",
+      "status": 0,
+      "signal": null,
+      "durationMs": 82287
+    }
+  ],
+  "startedAt": "2026-11-16T14:13:26.840Z",
+  "passed": true,
+  "finishedAt": "2026-11-16T14:31:20.727Z"
+}

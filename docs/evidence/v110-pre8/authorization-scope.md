@@ -1,0 +1,5 @@
+# Pre.8 authorization scope
+
+The owner explicitly authorized evidence-backed ES-LA dictionary/provenance changes, required exact canonical identities, independent mandatory audit, all CI and existing release gates, and autonomous merge/tag/release/publication within those limits. The owner later authorized preserving the exact Community public baseline without weakening checks. The owner repeatedly requested continued work on remaining names.
+
+This decision applies those existing instructions to the independently reviewed exact candidate, not a new owner reply or waiver. The batch adds only attested generic species-name provenance (225 identities, unchanged display and aliases), with explicit search-index limitations and no Champions, form, availability or mechanics inference. All 13 candidate workflows and 39 acceptance tests passed. The independent reviewer recorded PASS. Fresh approved-source CI, deployment and two-site live acceptance remain necessary. No engine, supported roster, other-language dictionary or legacy-site change is authorized.

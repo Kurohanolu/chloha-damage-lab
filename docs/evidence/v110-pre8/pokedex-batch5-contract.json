@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "baseline": "66a085ba325655bc9369656ea0645f7f6f997127",
+  "tree": "531c22a3fd647f674a287808a7a63b74010ccb58",
+  "records": 225,
+  "corroboration": 1,
+  "newlyOfficial": 225,
+  "before": {
+    "total": 1029,
+    "official": 206,
+    "unverified": 660,
+    "officialChampions": 153,
+    "provisional": 2
+  },
+  "after": {
+    "total": 1029,
+    "official": 431,
+    "unverified": 435,
+    "officialChampions": 153,
+    "provisional": 2
+  },
+  "displayNamesChanged": 0,
+  "aliasesChanged": 0,
+  "protectedFiles": 31,
+  "physicalMechanicsVerified": false,
+  "directHtmlRetrieved": false
+}
