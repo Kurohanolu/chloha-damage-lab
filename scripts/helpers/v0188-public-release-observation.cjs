@@ -31,10 +31,34 @@ function pre4Manifest(){
  assert.equal(release.tag,'v1.1.0-pre.4');assert.equal(release.migration.liveTargetVerified,true);
  return release;
 }
+const pre5Commit='82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74',pre5Tree='f6e6bc6a8bedec4b8923671e9345ce24a8d45d40';
+function pre5Manifest(){
+ const git=args=>require('node:child_process').execFileSync('git',args,{cwd:require('node:path').resolve(__dirname,'../..'),encoding:'utf8'}).trim();
+ assert.equal(git(['rev-parse',pre5Commit+'^{tree}']),pre5Tree,'Published pre.5 commit/tree must remain pinned');
+ const release=JSON.parse(git(['show',pre5Commit+':release.json']));
+ assert.equal(release.tag,'v1.1.0-pre.5');assert.equal(release.migration.liveTargetVerified,true);
+ return release;
+}
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.5'){
+ if(localRelease.tag==='v1.1.0-pre.6'){
+  assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.6 must use its own release decision, not a historical follow-up marker');
+  const predecessor=pre5Manifest();
+  if(localRelease.qualityReview?.ownerApproval==='pending'){
+   assert.equal(localRelease.migration?.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,predecessor,'Pre.6 development must observe the complete pinned published pre.5 manifest');
+  }else{
+   verifyCutoverApproval(localRelease);
+   if(actual.tag===predecessor.tag){
+    assert.equal(localRelease.migration.liveTargetVerified,false,'After pre.6 acceptance the previous public release is no longer valid');
+    assert.deepEqual(publicRelease,predecessor,'Pre-cutover observation must match the complete immutable pre.5 manifest');
+   }else{
+    verifyCutoverApproval(publicRelease);
+    assert.deepEqual(actual,identity(localRelease),'Approved pre.6 may observe only its own identity or the pinned pre-cutover pre.5');
+   }
+  }
+ }else if(localRelease.tag==='v1.1.0-pre.5'){
   assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.5 must use its own release decision, not a historical follow-up marker');
   const predecessor=pre4Manifest();
   if(localRelease.qualityReview?.ownerApproval==='pending'){

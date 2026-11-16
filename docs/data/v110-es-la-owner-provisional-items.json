@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74",
+  "ownerInstructionScope": "Register Choice Band and Assault Vest provisionally; no additional item-specific UI warning. No official classification authorized without evidence.",
+  "observations": [
+    {
+      "key": "こだわりハチマキ",
+      "canonicalId": "choiceBand",
+      "esLA": "Cinta Elección",
+      "recordId": "pre6-owner-provisional-choiceBand-name",
+      "sourceId": "pre6-owner-provisional-choiceBand",
+      "captureId": "32772",
+      "sha256": "d26ede045982ffa936c3cb0598e7dbd074c847c563e283670c07bc1ec1043fb9",
+      "status": "provisional"
+    },
+    {
+      "key": "とつげきチョッキ",
+      "canonicalId": "assaultVest",
+      "esLA": "Chaleco Asalto",
+      "recordId": "pre6-owner-provisional-assaultVest-name",
+      "sourceId": "pre6-owner-provisional-assaultVest",
+      "captureId": "32769",
+      "sha256": "b24ded9cf2a8b7136ebc0f48d23f42c0577470bc02682e74d8ed07a0130e8e65",
+      "status": "provisional"
+    }
+  ],
+  "rejectedMapping": {
+    "captureId": "32765",
+    "sha256": "75c1ffdb34bed38333a730d574e6a135383bc2fa2adcd25733326934b25b85d4",
+    "observed": "Cinturón Negro",
+    "canonicalEnglish": "Black Belt",
+    "excludedCanonicalId": "expertBelt",
+    "reason": "The selected item and description (Fighting moves +20%) identify Black Belt, not Expert Belt. Not in current supported item inventory; no support added."
+  },
+  "privateImageBytesPublished": false,
+  "displayNamesChanged": 0,
+  "officialGain": 0
+}

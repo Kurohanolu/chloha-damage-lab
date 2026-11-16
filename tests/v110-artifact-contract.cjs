@@ -24,9 +24,9 @@ const reversals=[
  ["  // A refresh can run while the main result is already translated. Rebuild the\n  // mini result from the calculation so that its cached source stays Japanese.\n  el('miniDamage').textContent=r?`${lo}〜${hi} ダメージ`:'入力を確認してください';\n  el('miniPercent').textContent=r?`最大HPの ${(lo/a.hp*100).toFixed(1)}〜${(hi/a.hp*100).toFixed(1)}%`:'';\n", "  el('miniDamage').textContent=r?el('damage').textContent:'入力を確認してください';el('miniPercent').textContent=r?el('percent').textContent:'';\n"],
  ["es:'No hay movimientos coincidentes','es-LA':'No hay movimientos coincidentes',","es:'No hay movimientos coincidentes',"],
  ["es:'No hay Pokémon coincidentes','es-LA':'No hay Pokémon coincidentes',","es:'No hay Pokémon coincidentes',"],
- ['>v1.1.0 Pre-Release 5</span>','>v1.0.0</span>'],
- ['画面の「v1.1.0 Pre-Release 5」は','画面の「v1.0.0」は'],
- ['./assets/singularity/header.webp?v=1.1.0-pre.5','./assets/singularity/header.webp?v=1.0.0'],
+ ['>v1.1.0 Pre-Release 6</span>','>v1.0.0</span>'],
+ ['画面の「v1.1.0 Pre-Release 6」は','画面の「v1.0.0」は'],
+ ['./assets/singularity/header.webp?v=1.1.0-pre.6','./assets/singularity/header.webp?v=1.0.0'],
  ["   if(locale==='es-LA')item.setAttribute('aria-label',moveName);\n",''],
  ["  if(locale==='es-LA')return window.ChlohaEsLa?.entity(category,key,localizedName(category,key,'es'))||localizedName(category,key,'es');\n",''],
  ["   window.ChlohaPokeAPILocalizedNames?.[category]?.[key],\n   {regional:window.ChlohaEsLa?.entity(category,key,null)}","   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]"],
@@ -43,7 +43,7 @@ for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"w
 
 assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
-assert.equal(release.tag,'v1.1.0-pre.5');assert.equal(release.channel,'prerelease');
+assert.equal(release.tag,'v1.1.0-pre.6');assert.equal(release.channel,'prerelease');
 const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){
