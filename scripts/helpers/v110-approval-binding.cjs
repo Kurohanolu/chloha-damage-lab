@@ -10,13 +10,18 @@ function evidence(file){
  return fs.readFileSync(file);
 }
 function verifyV110Binding(release){
- assert.equal(release.tag,'v1.1.0-pre.1');
+ assert.ok(['v1.1.0-pre.1','v1.1.0-pre.2'].includes(release.tag),'Explicit ES-LA release policy required');
  const r=release.qualityReview;
  assert.match(r.reviewedSourceCommit||'',/^[a-f0-9]{40}$/);
  assert.equal(git(['rev-parse',r.reviewedSourceCommit+'^{tree}']).toString().trim(),r.reviewedTree);
  const reviewed=file=>git(['show',r.reviewedSourceCommit+':'+file]);
  const before=JSON.parse(reviewed('release.json'));
  assert.equal(before.tag,release.tag);assert.equal(before.qualityReview.ownerApproval,'pending');
+ assert.ok(!Object.hasOwn(before,'followupAudit'),'A distinct reviewed release candidate is required');
+ if(release.tag==='v1.1.0-pre.2'){
+  assert.equal(before.preRelease,2);assert.equal(before.qualityReview.releaseTag,release.tag);
+  assert.equal(before.qualityReview.auditStatus,'pending');
+ }
  assert.equal(before.migration.liveTargetVerified,false);
  const expected=structuredClone(before);expected.qualityReview=r;expected.migration.status='approved';
  expected.migration.liveTargetVerified=release.migration.liveTargetVerified;

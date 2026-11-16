@@ -10,7 +10,23 @@ function stableManifest(){return JSON.parse(require('node:child_process').execFi
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(v110Followup.isV110Followup(localRelease)){
+ if(localRelease.tag==='v1.1.0-pre.2'){
+  assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.2 must use its own release decision, not the historical follow-up marker');
+  const predecessor=v110Followup.publishedRelease();
+  if(localRelease.qualityReview?.ownerApproval==='pending'){
+   assert.equal(localRelease.migration?.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,predecessor,'ES-LA pre.2 development must observe the complete pinned published pre.1 manifest');
+  }else{
+   verifyCutoverApproval(localRelease);
+   if(actual.tag===predecessor.tag){
+    assert.equal(localRelease.migration.liveTargetVerified,false,'After pre.2 acceptance the previous public release is no longer valid');
+    assert.deepEqual(publicRelease,predecessor,'Pre-cutover observation must match the complete immutable ES-LA pre.1 manifest');
+   }else{
+    verifyCutoverApproval(publicRelease);
+    assert.deepEqual(actual,identity(localRelease),'Approved ES-LA pre.2 may observe only its own identity or the pinned pre-cutover pre.1');
+   }
+  }
+ }else if(v110Followup.isV110Followup(localRelease)){
   const published=v110Followup.verifyFollowupDraft(localRelease);
   // Full immutable source metadata is the evidence. Never apply the old
   // release's current-working-tree approval checker to changed draft bytes.

@@ -17,9 +17,9 @@ const inline=source=>[...source.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*
 const reversals=[
  ["es:'No hay movimientos coincidentes','es-LA':'No hay movimientos coincidentes',","es:'No hay movimientos coincidentes',"],
  ["es:'No hay Pokémon coincidentes','es-LA':'No hay Pokémon coincidentes',","es:'No hay Pokémon coincidentes',"],
- ['>v1.1.0 Pre-Release 1</span>','>v1.0.0</span>'],
- ['画面の「v1.1.0 Pre-Release 1」は','画面の「v1.0.0」は'],
- ['./assets/singularity/header.webp?v=1.1.0-pre.1','./assets/singularity/header.webp?v=1.0.0'],
+ ['>v1.1.0 Pre-Release 2</span>','>v1.0.0</span>'],
+ ['画面の「v1.1.0 Pre-Release 2」は','画面の「v1.0.0」は'],
+ ['./assets/singularity/header.webp?v=1.1.0-pre.2','./assets/singularity/header.webp?v=1.0.0'],
  ["   if(locale==='es-LA')item.setAttribute('aria-label',moveName);\n",''],
  ["  if(locale==='es-LA')return window.ChlohaEsLa?.entity(category,key,localizedName(category,key,'es'))||localizedName(category,key,'es');\n",''],
  ["   window.ChlohaPokeAPILocalizedNames?.[category]?.[key],\n   {regional:window.ChlohaEsLa?.entity(category,key,null)}","   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]"],
@@ -36,7 +36,7 @@ for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"w
 
 assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
-assert.equal(release.tag,'v1.1.0-pre.1');assert.equal(release.channel,'prerelease');
+assert.equal(release.tag,'v1.1.0-pre.2');assert.equal(release.channel,'prerelease');
 const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){
@@ -64,6 +64,6 @@ try{
   const body=fs.readFileSync(path.join(out,manifest.rollback.artifactPath,file));assert.equal(hash(body),digest);if(file!=='.nojekyll')assert.deepEqual(body,old(legacyCommit,file),'Non-destructive rollback inventory: '+file);
  }
  assert.equal(manifest.rollback.legacyCommit,legacyCommit);assert.throws(()=>buildSites(temp),/empty output/);assert.throws(()=>buildSites(process.cwd()),/source tree/);
- fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,publicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
- console.log('PASS v1.1.0 private candidate packaging: unchanged Worker/control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and owner-pending publication');
+ fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,pendingFixturePublicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
+ console.log('PASS v1.1.0 private candidate packaging: unchanged Worker/control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
 }finally{fs.rmSync(temp,{recursive:true,force:true});}

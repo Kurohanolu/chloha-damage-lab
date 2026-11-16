@@ -6,6 +6,16 @@ const {hasFollowup,verifyFollowupDraft,publishedCommit}=require('./helpers/v0188
 const v110Followup=require('./helpers/v110-followup-review.cjs');
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(release.tag==='v1.1.0-pre.2'){
+  assert.ok(!hasFollowup(release),'Pre.2 must use its own release decision, not the historical follow-up marker');
+  if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration?.liveTargetVerified,false,'Pre.2 must explicitly declare its pre-acceptance state');
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   if(event==='pull_request'||baseRef)assert.equal(baseRef,v110Followup.publishedCommit,'ES-LA pre.2 public base must be the immutable published pre.1');
+   return {ref:v110Followup.publishedCommit,mode:'published-v110-pre2-base'};
+  }
+ }
  if(v110Followup.isV110Followup(release)){
   v110Followup.verifyFollowupDraft(release);
   if(event==='pull_request'||baseRef)assert.equal(baseRef,v110Followup.publishedCommit,'ES-LA follow-up public base must be the immutable published pre.1');

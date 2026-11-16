@@ -8,9 +8,11 @@ const os=require('node:os');
 const {execFileSync}=require('node:child_process');
 const {root,startLab,launchBrowser,ready}=require('../tests/helpers/v0188-browser-lab.cjs');
 
-// Retain the historical baseline for old release lines; compare ES-LA against
-// the exact Stable version it extends, with the same bounded protocol.
-const BASELINE=require('../release.json').tag==='v1.1.0-pre.1'
+// Retain each historical baseline; pre.2 compares against published pre.1,
+// while original pre.1 measurements retain the exact Stable predecessor.
+const BASELINE=require('../release.json').tag==='v1.1.0-pre.2'
+ ?'83af29133927a19fc7e0f9273c0e194c54384ae5'
+ :require('../release.json').tag==='v1.1.0-pre.1'
  ?'0b270c1452505268364659edd402209b00b28673'
  :'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7';
 const LOCALES=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];

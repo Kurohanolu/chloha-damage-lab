@@ -1,6 +1,14 @@
 # Singularity v1.1.0 — ES-LA handoff
 
-## Current checkpoint — 2026-11-16 JST
+## Current release preparation — v1.1.0 Pre-Release 2
+
+The owner has explicitly requested publication as **v1.1.0 Pre-Release 2** (`v1.1.0-pre.2`). Prepare and validate that distinct release identity, then publish the verified candidate; another permission request is not pending. The issued `v1.1.0-pre.1` tag and its evidence remain immutable.
+
+This step packages the accepted 20-image translation work. It adds no screenshots, canonical mappings or terminology changes: the 142 official Champions names, 714 unverified names and 1,029-name denominator remain unchanged. The audit documentation checkpoint `3cc0a95` and tested source `41e5ad156f0e19f46b342c28353e36e37f46d7a7` below are historical inputs, not acceptance of the new release identity.
+
+**Pre-Release 2 CI, release-specific evidence binding and live acceptance are pending.** Record the new candidate commit/tree and current checks before publication, then record the actual public result. Existing restrictions on private screenshot publication and production Worker changes remain in force; the current ES-LA feedback restriction is retained. The earlier unpublished-follow-up status below describes the preceding audit checkpoint.
+
+## Accepted second-batch checkpoint — 2026-11-16 JST
 
 - Branch: `feature/v110-es-la-localization`; [compare with main](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization).
 - History/review record: [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68), already merged. It cannot be reopened; do not create a duplicate PR.

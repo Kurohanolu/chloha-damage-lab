@@ -1,6 +1,12 @@
 # Singularity v1.1.0 — ES-LA implementation report
 
-## Current implementation — second batch, 2026-11-16 JST
+## Current release preparation — v1.1.0 Pre-Release 2
+
+Publication as **v1.1.0 Pre-Release 2** (`v1.1.0-pre.2`) is explicitly authorized by the owner. The new preparation updates release identity, packaging and release-specific validation around the accepted second-batch implementation. It does not add screenshots, change canonical mappings or alter the evidence totals: official Champions 142/1,029; unverified 714.
+
+Documentation checkpoint `3cc0a95` preserves the audit of tested source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`. Those results remain historical evidence; **fresh Pre-Release 2 CI and final release/live verification are pending** and must be bound to the new commit/tree. Preserve the issued Pre-Release 1 tag and evidence. The production Worker and temporary ES-LA feedback restriction remain unchanged. The unpublished follow-up descriptions below refer to the earlier audit stage.
+
+## Accepted implementation — second batch, 2026-11-16 JST
 
 The additional ten screenshots are integrated with the original ten as private terminology evidence. The [20-image audit](v110-es-la-owner-screenshot-evidence.md) is the current implementation record. The published baseline is `83af29133927a19fc7e0f9273c0e194c54384ae5` (`v1.1.0-pre.1`); this follow-up is **not yet published**. Work continues on `feature/v110-es-la-localization`. [PR #68](https://github.com/Kurohanolu/chloha-damage-lab/pull/68) is already merged and is retained as the review/history record; no duplicate PR is created. The [branch comparison](https://github.com/Kurohanolu/chloha-damage-lab/compare/main...feature/v110-es-la-localization) exposes subsequent changes.
 

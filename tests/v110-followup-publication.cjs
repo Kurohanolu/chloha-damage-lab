@@ -5,13 +5,13 @@ const {publishedCommit,publishedTree,publishedRelease,pendingRelease,isV110Follo
 const {verifyCutoverApproval,verifyQualityApproval,verifyPublication}=require('../scripts/verify-publication-approval.cjs');
 const {verifyObservation}=require('../scripts/helpers/v0188-public-release-observation.cjs');
 const {selectBaseline}=require('../scripts/v0188-select-pages-baseline.cjs');
-const current=require('../release.json'),draft=pendingRelease(),published=publishedRelease();
+// Preserve the historical pre.1 draft's publication block after pre.2 begins.
+const draft=pendingRelease(),published=publishedRelease();
 assert.equal(publishedCommit,'83af29133927a19fc7e0f9273c0e194c54384ae5');
 assert.equal(publishedTree,'cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b');
 assert.deepEqual(published,JSON.parse(execFileSync('git',['show',publishedCommit+':release.json'],{encoding:'utf8'})));
 assert.equal(published.tag,'v1.1.0-pre.1');assert.equal(published.migration.liveTargetVerified,true);
-assert.ok(isV110Followup(current),'This candidate must explicitly remain an unpublished follow-up');
-assert.deepEqual(verifyFollowupDraft(current),published);
+assert.ok(isV110Followup(draft),'Historical fixture must remain an unpublished follow-up');
 assert.deepEqual(verifyFollowupDraft(draft),published);
 assert.throws(()=>verifyCutoverApproval(published),'Copying the old approved manifest cannot authorize the changed follow-up source');
 for(const verify of [verifyCutoverApproval,verifyQualityApproval,verifyPublication]){

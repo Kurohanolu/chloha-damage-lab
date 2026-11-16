@@ -3,8 +3,11 @@
  'use strict';
  const wireDescriptionLimit=5000;
  const stableTitle='Singularity v1.0.0',stableVersion='v1.0.0',wireVersion='v1.0';
- const candidateTitle='Singularity v1.1.0 Pre-Release 1',candidateVersion='v1.1.0 Pre-Release 1',candidateWireVersion='v1.1 Pre-Release 1';
- const candidatePrefix='[Singularity release: v1.1.0 Pre-Release 1]\n\n';
+ // Only explicitly supported releases may use the historical two-part wire format.
+ const candidates=new Map([1,2].map(number=>{
+  const fullVersion='v1.1.0 Pre-Release '+number,wireVersion='v1.1 Pre-Release '+number;
+  return ['Singularity '+fullVersion,Object.freeze({fullVersion,wireVersion,prefix:'[Singularity release: '+fullVersion+']\n\n'})];
+ }));
  const stablePrefix='[Singularity release: v1.0.0]\n\n';
  const copy=Object.freeze({
   ja:Object.freeze({label:'報告する製品版',header:'以下の版情報は、添付の有無にかかわらず本文に自動で付加されます。',compatibility:'添付内のappVersion「v1.0」は互換送信用の識別子です。完全な製品版はv1.0.0です。',unsupported:'この製品版の報告形式には未対応です。内容は送信されていません。'}),
@@ -19,7 +22,8 @@
   'zh-Hant':Object.freeze({label:'回報的產品版本',header:'無論是否附加計算條件，以下版本資訊都會自動加入說明中。',compatibility:'附件中的appVersion「v1.0」是相容傳輸識別碼。完整產品版本為v1.0.0。',unsupported:'尚不支援此產品版本的回報格式。內容未傳送。'})
  });
  function identify(title){
-  if(title===candidateTitle)return Object.freeze({fullVersion:candidateVersion,wireVersion:candidateWireVersion,prefix:candidatePrefix,descriptionLimit:wireDescriptionLimit-candidatePrefix.length,compatibility:true});
+  const candidate=candidates.get(title);
+  if(candidate)return Object.freeze({...candidate,descriptionLimit:wireDescriptionLimit-candidate.prefix.length,compatibility:true});
   if(title===stableTitle)return Object.freeze({fullVersion:stableVersion,wireVersion,prefix:stablePrefix,descriptionLimit:wireDescriptionLimit-stablePrefix.length,compatibility:true});
   // Historical prereleases keep their exact existing wire identity. In
   // particular, no prefix/partial match may silently truncate v1.0.1 or 1.0.0.
@@ -35,9 +39,10 @@
  }
  function text(locale,key,title){
   const value=(copy[locale]||copy.en)[key];
-  if(title!==candidateTitle||typeof value!=='string')return value;
+  const candidate=candidates.get(title);
+  if(!candidate||typeof value!=='string')return value;
   // Replace only the two exact identity literals; never truncate arbitrary versions.
-  return value.replaceAll(stableVersion,'{fullVersion}').replaceAll(wireVersion,candidateWireVersion).replaceAll('{fullVersion}',candidateVersion);
+  return value.replaceAll(stableVersion,'{fullVersion}').replaceAll(wireVersion,candidate.wireVersion).replaceAll('{fullVersion}',candidate.fullVersion);
  }
  globalThis.ChlohaFeedbackRelease=Object.freeze({identify,description,text,copy,wireDescriptionLimit});
 })();

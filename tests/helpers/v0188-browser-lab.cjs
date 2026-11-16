@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,'../..');
 // older migration baseline. Removing the draft marker after owner approval must
 // not silently change the pre.2 comparison. Preserve original pre.1 history.
 const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
-const baselineForRelease=metadata=>metadata.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':(metadata.followupAudit||['v0.188-pre.2','v1.0.0'].includes(metadata.tag))?'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7':'7210be99c39d75b49ea8200aad91d75801eb300a';
+const baselineForRelease=metadata=>metadata.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':metadata.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':(metadata.followupAudit||['v0.188-pre.2','v1.0.0'].includes(metadata.tag))?'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7':'7210be99c39d75b49ea8200aad91d75801eb300a';
 const baseline=baselineForRelease(release);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webp':'image/webp','.json':'application/json'};
 function frontend(ref){
