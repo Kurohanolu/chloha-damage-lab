@@ -1,0 +1,251 @@
+{
+  "sourceCommit": "979bac851c8af861f9b0f8f8965732931589f166",
+  "publicRepositoryCommit": "ef98f32169d83afbebcbd93f10392d7bc607524b",
+  "deploymentRun": 43845693576,
+  "approvalSourceCI": [
+    {
+      "id": 43843914172,
+      "name": "v0.185 anonymous feedback",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913962,
+      "name": "v1.0.0 Stable Promotion",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913873,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913945,
+      "name": "Damage Lab CI and status ledger",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913880,
+      "name": "v0.187 Singularity Migration",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913922,
+      "name": "Publish verified release",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843914322,
+      "name": "Showdown differential audit",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843914015,
+      "name": "v0.184 engine baseline",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843914014,
+      "name": "Showdown differential tests",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843914100,
+      "name": "GitHub Pages live smoke",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843914090,
+      "name": "UI & damage regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913887,
+      "name": "v0.188 Quality Remediation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43843913941,
+      "name": "v1.1.0 ES-LA Localization",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 133225173483,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43845693576,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Read immutable deployment request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Validate exact source selection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Require owner adoption and exact source contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Require exact-source regression workflows",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Generate isolated public artifact and provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-pages-artifact@v3",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Read immutable deployment request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 133225374774,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 43845693576,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Deploy exact generated frontend",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Check out the same approved source for public browser verification",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Prepare public browser verification",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Verify live header, language cycles, reload and numerical parity",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Preserve exact-source public browser evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Check out the same approved source for public browser verification",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    }
+  ]
+}
