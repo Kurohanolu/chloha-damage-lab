@@ -1,0 +1,307 @@
+{
+  "sourceCommit": "2a60accfbcae602d177e2e63ba1b7bf97b5773c1",
+  "sourceTree": "8ae18702309ad86ebdd381ec68a9692bc8249cf9",
+  "realDevice": false,
+  "productionMutations": 0,
+  "rows": [],
+  "itemRows": [
+    {
+      "width": 320,
+      "key": "たつじんのおび",
+      "id": "expertBelt",
+      "control": "attItem",
+      "name": "Cinturón de Experto",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": true,
+      "status": "official",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "たつじんのおび",
+          "display": "たつじんのおび（効果抜群時×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Expert Belt",
+          "display": "Expert Belt (super-effective ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Ceinture Pro",
+          "display": "Ceinture Pro (super efficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Expertengurt",
+          "display": "Expertengurt (sehr effektiv ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Cinta Experto",
+          "display": "Cinta Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Abilcintura",
+          "display": "Abilcintura (superefficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "달인의띠",
+          "display": "달인의띠 (효과가 굉장함 ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "达人带",
+          "display": "达人带（效果绝佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "達人帶",
+          "display": "達人帶（效果絕佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Cinturón de Experto",
+          "display": "Cinturón de Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "key": "たつじんのおび",
+      "id": "expertBelt",
+      "control": "attItem",
+      "name": "Cinturón de Experto",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": true,
+      "status": "official",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "たつじんのおび",
+          "display": "たつじんのおび（効果抜群時×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Expert Belt",
+          "display": "Expert Belt (super-effective ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Ceinture Pro",
+          "display": "Ceinture Pro (super efficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Expertengurt",
+          "display": "Expertengurt (sehr effektiv ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Cinta Experto",
+          "display": "Cinta Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Abilcintura",
+          "display": "Abilcintura (superefficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "달인의띠",
+          "display": "달인의띠 (효과가 굉장함 ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "达人带",
+          "display": "达人带（效果绝佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "達人帶",
+          "display": "達人帶（效果絕佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Cinturón de Experto",
+          "display": "Cinturón de Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "key": "たつじんのおび",
+      "id": "expertBelt",
+      "control": "attItem",
+      "name": "Cinturón de Experto",
+      "nativeRegionalTypeahead": true,
+      "officialChampions": true,
+      "status": "official",
+      "locales": [
+        {
+          "locale": "ja",
+          "name": "たつじんのおび",
+          "display": "たつじんのおび（効果抜群時×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "en",
+          "name": "Expert Belt",
+          "display": "Expert Belt (super-effective ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "fr",
+          "name": "Ceinture Pro",
+          "display": "Ceinture Pro (super efficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "de",
+          "name": "Expertengurt",
+          "display": "Expertengurt (sehr effektiv ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es",
+          "name": "Cinta Experto",
+          "display": "Cinta Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "it",
+          "name": "Abilcintura",
+          "display": "Abilcintura (superefficace ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "ko",
+          "name": "달인의띠",
+          "display": "달인의띠 (효과가 굉장함 ×1.2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hans",
+          "name": "达人带",
+          "display": "达人带（效果绝佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "zh-Hant",
+          "name": "達人帶",
+          "display": "達人帶（效果絕佳×1.2）",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        },
+        {
+          "locale": "es-LA",
+          "name": "Cinturón de Experto",
+          "display": "Cinturón de Experto (supereficaz ×1,2)",
+          "aliasIndex": true,
+          "reload": true,
+          "numericalParity": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "itemSearchScope": "Shared alias catalog for ten locale labels; Chromium native ES-LA typeahead, not a free-text item search widget or physical-device certification",
+  "widths": [
+    320,
+    390,
+    1440
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "passed": true
+}

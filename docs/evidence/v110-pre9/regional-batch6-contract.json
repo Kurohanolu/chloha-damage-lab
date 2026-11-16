@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "baseline": "0b1f8fffea3b1d063036d00fd712b0a0e9695111",
+  "tree": "701fbae7b142ba2ac5e5e23f1755a84f39d82b6c",
+  "observations": 41,
+  "gains": 39,
+  "removed": 37,
+  "champions": 9,
+  "before": {
+    "total": 1029,
+    "official": 431,
+    "unverified": 435,
+    "officialChampions": 153,
+    "provisional": 2
+  },
+  "after": {
+    "total": 1029,
+    "official": 470,
+    "unverified": 398,
+    "officialChampions": 162,
+    "provisional": 2
+  },
+  "namesChanged": 0,
+  "aliasesChanged": 1,
+  "aliasException": {
+    "category": "abilities",
+    "key": "トランジスタ",
+    "before": [],
+    "after": [
+      "Transistor"
+    ]
+  },
+  "protectedFiles": 33,
+  "physicalMechanicsVerified": false
+}

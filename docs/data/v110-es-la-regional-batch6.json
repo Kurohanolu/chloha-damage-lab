@@ -1,0 +1,1599 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "0b1f8fffea3b1d063036d00fd712b0a0e9695111",
+  "baselineTree": "701fbae7b142ba2ac5e5e23f1755a84f39d82b6c",
+  "checkedAt": "2026-11-16",
+  "scope": "32 historical official LATAM publication identities plus 9 newly read system labels from existing private Champions captures. No display, support or mechanics changes. One verified Transistor search alias is added.",
+  "sources": [
+    {
+      "id": "pre9-web-e4b4e09d199f",
+      "url": "https://legends.arceus.pokemon.com/es-mx/pokemon/decidueye/",
+      "title": "Official Latin American Legends: Arceus terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Legends: Arceus",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "075e82812e5089c7e7cdac1e1b439f9f745b19205d78fc0c09507fea5447e710",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-d55acf17121d",
+      "url": "https://legends.arceus.pokemon.com/es-mx/pokemon/typhlosion/",
+      "title": "Official Latin American Legends: Arceus terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Legends: Arceus",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "933cd91be0388c4992edee9a8e0daffe64da1c082ce0fe2b10b2bc32ae1d8b29",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-1910e13f7c90",
+      "url": "https://legends.arceus.pokemon.com/es-mx/pokemon/samurott/",
+      "title": "Official Latin American Legends: Arceus terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Legends: Arceus",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "22d3b22e4329edab5e9b13f92ab87f516df9cfdcec4bbd24836c49812186d144",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-a8ea5c3c6f5c",
+      "url": "https://legends.arceus.pokemon.com/es-mx/pokemon/zoroark/",
+      "title": "Official Latin American Legends: Arceus terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Legends: Arceus",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "8999401b426e478859c66d3e61c034ebacd052d442ff2a15b466e461703fb3af",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-dcc416301d01",
+      "url": "https://legends.arceus.pokemon.com/es-mx/pokemon/pokemon-0717/",
+      "title": "Official Latin American Legends: Arceus terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Legends: Arceus",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "5c07f27ab5220d06c6e4276f0efeaef28b9d4a61b6f2367dbac5a7c3b7d30206",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-9ba98b77f4a7",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowbro/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "c4b939b551fc50d18f52055fb3454b6cc55ccf2c882055a4697a3e48f0eb27cf",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-720b277f6185",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowking/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "ebce334fd72ba48fc571368320aa9f28b740a701b16daf43e25c9e67cf260f49",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-894cde2e8e51",
+      "url": "https://swordshield.pokemon.com/es-mx/gameplay/dynamaxing-max-moves/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "e5cfe25399bdc6f3094aa2699c267ad0d7eda16313433852c25b8e83ba8a5adb",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-922c9b058ab9",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/rolycoly/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "eadb755230473b470ebd6d97088d83330f2d75afd1a8d5b7194a7a18b9c4a867",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-c5123982fba0",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/corviknight/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "597fb4d06565aa1302521b4ea85aa68b85f244ed970b8792ea57a6cad0c23cd1",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-d6c3b65530cd",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/duraludon/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "47efb8a83b33e1ccc2e7d586fe199f7f9e693fcadb046709fce93041049d0faa",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-8653d760a028",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/morpeko/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "95ec4f4991b283fb537b08c9528c51d08daa1e611cb8d65f5de7e8a920333cac",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-a564ea80ac1d",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/grookey/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "2801c798ee75e83a5210b4dec88de65b005035f9108217f57b0f62422ec54c5a",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-ead699cd2c0b",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/sobble/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "fbc5af31b5504398414455921d46299923b2d101b6eadab5899559b08889241c",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-cf8cfa2b3999",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/sirfetchd/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "31e3e2f0652cb3e6b904787cfca689175dff79421f46f4bd933b2786213c0d90",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-0dcc49bcd4ce",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/polteageist/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "749f5c0d6a170a7d7c3c1aa3b0c8cd076e0cbad26827b28e708a21f6774d4c55",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-4a4b71abad16",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/obstagoon/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "3c15279bf51c3f894abcf4e6a062830e50632b40c9a4fc8567e6d87609507483",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-8f816fbbca44",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/alcremie/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "871ba6205f358b530bbd7b09e7faa1f9741efb8c4f70d453d2356a5b14c0324a",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-0900cbea96b9",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/cramorant/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "5108b45b7ba298a26d993b07d9f40499142205081e597aef97ed1944f924decd",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-567c80bb35da",
+      "url": "https://swordshield.pokemon.com/es-mx/gameplay/hidden-abilities/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "a9481fc47a503fd60840adc20d125a405277d42490b24a51bbe7a6c67ad2e952",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-d5173e442b9b",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/urshifu/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "51e8d0809c4db40482ba66093c15ec59fc9e0657e0f5c7e1d16fb423bc6c8a80",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-4b9f1e09a906",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/regieleki/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "1460b5c214d7f5f7f1fdb556e009edd7e7b3b2729126a1fc3ba75ebe7db447e7",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    },
+    {
+      "id": "pre9-web-983a739dc570",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/weezing/",
+      "title": "Official Latin American Sword and Shield terminology",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-16",
+      "evidenceMethod": "Direct official HTML, visible text extracted excluding script/style; exact whole name, not reconstructed form suffix.",
+      "rawSha256": "1e3958bfae2dcc62e965279ecf5d892d818e79cfff19d9db7a497d3b6f7f1ef3",
+      "localeEvidence": {
+        "basis": "América Latina locale control and official es-mx regional route; English pairs used only for canonical identity.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
+        "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "category": "pokemon",
+      "key": "gw092_12",
+      "canonicalIds": [
+        "gw092_12"
+      ],
+      "canonicalEnglish": "Hisuian Decidueye",
+      "ja": "ヒスイジュナイパー",
+      "esLA": "Decidueye de Hisui",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-a302c1488180",
+      "sourceIds": [
+        "pre9-web-e4b4e09d199f"
+      ],
+      "sourceURL": "https://legends.arceus.pokemon.com/es-mx/pokemon/decidueye/",
+      "targetGame": "Pokémon Legends: Arceus",
+      "officialChampions": false,
+      "rawObservedText": "Decidueye de Hisui",
+      "rawSha256": "075e82812e5089c7e7cdac1e1b439f9f745b19205d78fc0c09507fea5447e710",
+      "extractionSha256": "4ec0584c6ca4891a242367c10089a6c5e554e0ed663d42018926f6fbd6a1166e",
+      "pairedEnglishURL": "https://legends.arceus.pokemon.com/en-us/pokemon/decidueye/",
+      "pairedEnglishRawSha256": "7568e265b16e2c102f83f753a942bce84f169564fa702e622358ad7a7d5f938f",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-hisui-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "hisuian_typhlosion",
+      "canonicalIds": [
+        "hisuian_typhlosion"
+      ],
+      "canonicalEnglish": "Hisuian Typhlosion",
+      "ja": "ヒスイバクフーン",
+      "esLA": "Typhlosion de Hisui",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-08ba4396e846",
+      "sourceIds": [
+        "pre9-web-d55acf17121d"
+      ],
+      "sourceURL": "https://legends.arceus.pokemon.com/es-mx/pokemon/typhlosion/",
+      "targetGame": "Pokémon Legends: Arceus",
+      "officialChampions": false,
+      "rawObservedText": "Typhlosion de Hisui",
+      "rawSha256": "933cd91be0388c4992edee9a8e0daffe64da1c082ce0fe2b10b2bc32ae1d8b29",
+      "extractionSha256": "adab5748f9dd66c3a6eba31170b6c17c8779a7b5168ea270abb2965e4549dbb8",
+      "pairedEnglishURL": "https://legends.arceus.pokemon.com/en-us/pokemon/typhlosion/",
+      "pairedEnglishRawSha256": "d2c91e8bab9fbad4d1481106c41160d9c7fe34f7a971b2edcb78f9c8ce29dd88",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-hisui-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "gw092_08",
+      "canonicalIds": [
+        "gw092_08"
+      ],
+      "canonicalEnglish": "Hisuian Samurott",
+      "ja": "ヒスイダイケンキ",
+      "esLA": "Samurott de Hisui",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-24e641c8363c",
+      "sourceIds": [
+        "pre9-web-1910e13f7c90"
+      ],
+      "sourceURL": "https://legends.arceus.pokemon.com/es-mx/pokemon/samurott/",
+      "targetGame": "Pokémon Legends: Arceus",
+      "officialChampions": false,
+      "rawObservedText": "Samurott de Hisui",
+      "rawSha256": "22d3b22e4329edab5e9b13f92ab87f516df9cfdcec4bbd24836c49812186d144",
+      "extractionSha256": "621befcac8b00e134dcb96b44bffd93cec2b22f02e4581446653d426337ad3a9",
+      "pairedEnglishURL": "https://legends.arceus.pokemon.com/en-us/pokemon/samurott/",
+      "pairedEnglishRawSha256": "8b239e59c10eb48f0bc6d4400b6e995643eabf52604df506793feee6309910be",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-hisui-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "roster_v0106_041",
+      "canonicalIds": [
+        "roster_v0106_041"
+      ],
+      "canonicalEnglish": "Hisuian Zoroark",
+      "ja": "ヒスイゾロアーク",
+      "esLA": "Zoroark de Hisui",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-d04820c38103",
+      "sourceIds": [
+        "pre9-web-a8ea5c3c6f5c"
+      ],
+      "sourceURL": "https://legends.arceus.pokemon.com/es-mx/pokemon/zoroark/",
+      "targetGame": "Pokémon Legends: Arceus",
+      "officialChampions": false,
+      "rawObservedText": "Zoroark de Hisui",
+      "rawSha256": "8999401b426e478859c66d3e61c034ebacd052d442ff2a15b466e461703fb3af",
+      "extractionSha256": "1909b5884691f8b6a2656e7e2d465647469d3aa91d5659a1cfc28e7e722b3c72",
+      "pairedEnglishURL": "https://legends.arceus.pokemon.com/en-us/pokemon/zoroark/",
+      "pairedEnglishRawSha256": "4c2479c2dc50d8a027ddac220469f2c3f9034440824938696a9bdeb790c3f8a1",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-hisui-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "roster_v0106_038",
+      "canonicalIds": [
+        "roster_v0106_038"
+      ],
+      "canonicalEnglish": "Hisuian Braviary",
+      "ja": "ヒスイウォーグル",
+      "esLA": "Braviary de Hisui",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-0d8448ad12cf",
+      "sourceIds": [
+        "pre9-web-dcc416301d01"
+      ],
+      "sourceURL": "https://legends.arceus.pokemon.com/es-mx/pokemon/pokemon-0717/",
+      "targetGame": "Pokémon Legends: Arceus",
+      "officialChampions": false,
+      "rawObservedText": "Braviary de Hisui",
+      "rawSha256": "5c07f27ab5220d06c6e4276f0efeaef28b9d4a61b6f2367dbac5a7c3b7d30206",
+      "extractionSha256": "c173cbcc8b699192b6f983320d0e897405b4fa0f6a656fda433969553ad3628f",
+      "pairedEnglishURL": "https://legends.arceus.pokemon.com/en-us/pokemon/braviary/",
+      "pairedEnglishRawSha256": "53eeab6e9e7b4bcb39117ffdff37af3ca0829b2771893d8f421fb287c257bb1c",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-hisui-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "シェルアームズ",
+      "canonicalIds": [
+        "gw0169_s020"
+      ],
+      "canonicalEnglish": "Shell Side Arm",
+      "ja": "シェルアームズ",
+      "esLA": "Moluscañón",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-842468354c5d",
+      "sourceIds": [
+        "pre9-web-9ba98b77f4a7"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowbro/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Moluscañón",
+      "rawSha256": "c4b939b551fc50d18f52055fb3454b6cc55ccf2c882055a4697a3e48f0eb27cf",
+      "extractionSha256": "2ea40a290266f89b5a39425805867453330c4660377339b8721befe46b9f08db",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowbro/",
+      "pairedEnglishRawSha256": "535f09b44993261035d9d8fca5cac890e576aaf125f348eb813b588c276b1c1f",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-terminology-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "ぶきみなじゅもん",
+      "canonicalIds": [
+        "gw0169_s050"
+      ],
+      "canonicalEnglish": "Eerie Spell",
+      "ja": "ぶきみなじゅもん",
+      "esLA": "Conjuro Funesto",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-fce0c6b5de06",
+      "sourceIds": [
+        "pre9-web-720b277f6185"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowking/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Conjuro Funesto",
+      "rawSha256": "ebce334fd72ba48fc571368320aa9f28b740a701b16daf43e25c9e67cf260f49",
+      "extractionSha256": "30fcb4c0ea40729a6deec497955f0f3beed3642349c05f95dba765b490b83391",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowking/",
+      "pairedEnglishRawSha256": "8a976b8f605c08f6dda4aeb1be5221cf15027e3d7b857cdb3236cca715d182f2",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-terminology-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "クイックドロウ",
+      "canonicalIds": [
+        "unsupported:クイックドロウ"
+      ],
+      "canonicalEnglish": "Quick Draw",
+      "ja": "クイックドロウ",
+      "esLA": "Mano Rápida",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-c39af5c25938",
+      "sourceIds": [
+        "pre9-web-9ba98b77f4a7"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowbro/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Mano Rápida",
+      "rawSha256": "c4b939b551fc50d18f52055fb3454b6cc55ccf2c882055a4697a3e48f0eb27cf",
+      "extractionSha256": "2ea40a290266f89b5a39425805867453330c4660377339b8721befe46b9f08db",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowbro/",
+      "pairedEnglishRawSha256": "535f09b44993261035d9d8fca5cac890e576aaf125f348eb813b588c276b1c1f",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-terminology-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "きみょうなくすり",
+      "canonicalIds": [
+        "unsupported:きみょうなくすり"
+      ],
+      "canonicalEnglish": "Curious Medicine",
+      "ja": "きみょうなくすり",
+      "esLA": "Medicina Extraña",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-932da553da3e",
+      "sourceIds": [
+        "pre9-web-720b277f6185"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowking/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Medicina Extraña",
+      "rawSha256": "ebce334fd72ba48fc571368320aa9f28b740a701b16daf43e25c9e67cf260f49",
+      "extractionSha256": "30fcb4c0ea40729a6deec497955f0f3beed3642349c05f95dba765b490b83391",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowking/",
+      "pairedEnglishRawSha256": "8a976b8f605c08f6dda4aeb1be5221cf15027e3d7b857cdb3236cca715d182f2",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-terminology-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "かがくへんかガス",
+      "canonicalIds": [
+        "unsupported:かがくへんかガス"
+      ],
+      "canonicalEnglish": "Neutralizing Gas",
+      "ja": "かがくへんかガス",
+      "esLA": "Gas Reactivo",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-d363e7e3c1d1",
+      "sourceIds": [
+        "pre9-web-894cde2e8e51"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/gameplay/dynamaxing-max-moves/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Gas Reactivo",
+      "rawSha256": "e5cfe25399bdc6f3094aa2699c267ad0d7eda16313433852c25b8e83ba8a5adb",
+      "extractionSha256": "7813f40cedd6aec7fb863c474576173a7675a1699ea01786eca46ae99467dd47",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/gameplay/dynamaxing-max-moves/",
+      "pairedEnglishRawSha256": "aa0dfd8f63c4da5158119af72a388bee2ddce9edb02ef24f015f405a5cd7fd59",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-terminology-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "たいねつ",
+      "canonicalIds": [
+        "heatproof"
+      ],
+      "canonicalEnglish": "Heatproof",
+      "ja": "たいねつ",
+      "esLA": "Ignífugo",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-14b45e2ffa98",
+      "sourceIds": [
+        "pre9-web-922c9b058ab9"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/rolycoly/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Ignífugo",
+      "rawSha256": "eadb755230473b470ebd6d97088d83330f2d75afd1a8d5b7194a7a18b9c4a867",
+      "extractionSha256": "dc0201bd00ca4a3a49877775bbca92539a2c880d556fb3b5e8900acf78b4f2cf",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/rolycoly/",
+      "pairedEnglishRawSha256": "3ad0c56229b45da20a672a5d42c472fb4dfbda995146e470aba5a0b3a7e92205",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "プレッシャー",
+      "canonicalIds": [
+        "unsupported:プレッシャー"
+      ],
+      "canonicalEnglish": "Pressure",
+      "ja": "プレッシャー",
+      "esLA": "Presión",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-649bb9c4a591",
+      "sourceIds": [
+        "pre9-web-c5123982fba0"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/corviknight/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Presión",
+      "rawSha256": "597fb4d06565aa1302521b4ea85aa68b85f244ed970b8792ea57a6cad0c23cd1",
+      "extractionSha256": "e93ce24957625e7a0b1817519921b07f1e0e515e1f19f7e0d0d47623dbed6b1c",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/corviknight/",
+      "pairedEnglishRawSha256": "fe6df6d6ffcbe3616aa263c88c1959e7195c22f708f05121fc183e9b9ea557dc",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "ライトメタル",
+      "canonicalIds": [
+        "unsupported:ライトメタル"
+      ],
+      "canonicalEnglish": "Light Metal",
+      "ja": "ライトメタル",
+      "esLA": "Metal Liviano",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-12022418bce4",
+      "sourceIds": [
+        "pre9-web-d6c3b65530cd"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/duraludon/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Metal Liviano",
+      "rawSha256": "47efb8a83b33e1ccc2e7d586fe199f7f9e693fcadb046709fce93041049d0faa",
+      "extractionSha256": "4a487e8fa3ed11f575a0bd7ccc1cd8e5d91419462fe1e97151189b56af844b0a",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/duraludon/",
+      "pairedEnglishRawSha256": "8a8b38725296fdd4d471e4af6e10f886653e796b0f64b0a1feae783143ea8da5",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "ヘヴィメタル",
+      "canonicalIds": [
+        "unsupported:ヘヴィメタル"
+      ],
+      "canonicalEnglish": "Heavy Metal",
+      "ja": "ヘヴィメタル",
+      "esLA": "Metal Pesado",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-89575205ab7b",
+      "sourceIds": [
+        "pre9-web-d6c3b65530cd"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/duraludon/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Metal Pesado",
+      "rawSha256": "47efb8a83b33e1ccc2e7d586fe199f7f9e693fcadb046709fce93041049d0faa",
+      "extractionSha256": "4a487e8fa3ed11f575a0bd7ccc1cd8e5d91419462fe1e97151189b56af844b0a",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/duraludon/",
+      "pairedEnglishRawSha256": "8a8b38725296fdd4d471e4af6e10f886653e796b0f64b0a1feae783143ea8da5",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "はらぺこスイッチ",
+      "canonicalIds": [
+        "unsupported:はらぺこスイッチ"
+      ],
+      "canonicalEnglish": "Hunger Switch",
+      "ja": "はらぺこスイッチ",
+      "esLA": "Mutapetito",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-25839badb9d9",
+      "sourceIds": [
+        "pre9-web-8653d760a028"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/morpeko/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Mutapetito",
+      "rawSha256": "95ec4f4991b283fb537b08c9528c51d08daa1e611cb8d65f5de7e8a920333cac",
+      "extractionSha256": "dc410d10468ced14e32e06f14d2f929948e5ba8db9a946774158d91131896826",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/morpeko/",
+      "pairedEnglishRawSha256": "f84a61cbe2a9044da3f4bf159bbfa509283e8be77265ee21bf820175deab8058",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "しんりょく",
+      "canonicalIds": [
+        "overgrow"
+      ],
+      "canonicalEnglish": "Overgrow",
+      "ja": "しんりょく",
+      "esLA": "Espesura",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-7582b4e32b8c",
+      "sourceIds": [
+        "pre9-web-a564ea80ac1d"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/grookey/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Espesura",
+      "rawSha256": "2801c798ee75e83a5210b4dec88de65b005035f9108217f57b0f62422ec54c5a",
+      "extractionSha256": "35c520c017e40ff8f9dc7a56450a4b769432c7a5f5c62672cd9d317752e7b164",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/grookey/",
+      "pairedEnglishRawSha256": "6c9258875b89c865578b6cc38846b274ec016b4408b11cefdcac3f069bc7c1cf",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "げきりゅう",
+      "canonicalIds": [
+        "torrent"
+      ],
+      "canonicalEnglish": "Torrent",
+      "ja": "げきりゅう",
+      "esLA": "Torrente",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-f35fc478fa74",
+      "sourceIds": [
+        "pre9-web-ead699cd2c0b"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/sobble/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Torrente",
+      "rawSha256": "fbc5af31b5504398414455921d46299923b2d101b6eadab5899559b08889241c",
+      "extractionSha256": "27baeb09a710008adfa01c3f91e54e8ad9ef5236c4b8cc9e52dbf26e08bc7fb4",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/sobble/",
+      "pairedEnglishRawSha256": "a32342a4527422259bbc943961911ee7440a7e890e7732f6a23428f48ba9fcd2",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "ふくつのこころ",
+      "canonicalIds": [
+        "unsupported:ふくつのこころ"
+      ],
+      "canonicalEnglish": "Steadfast",
+      "ja": "ふくつのこころ",
+      "esLA": "Impasible",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-61b2259929ec",
+      "sourceIds": [
+        "pre9-web-cf8cfa2b3999"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/sirfetchd/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Impasible",
+      "rawSha256": "31e3e2f0652cb3e6b904787cfca689175dff79421f46f4bd933b2786213c0d90",
+      "extractionSha256": "4ab3eb91ffd85b29ad6c254fda77733a810d9f68dfd9c7602d4f2bb21f9b5f90",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/sirfetchd/",
+      "pairedEnglishRawSha256": "c702feea039087cd0ca17500ed2671fc177dc1f4ae1035e861511a2727a65c33",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "くだけるよろい",
+      "canonicalIds": [
+        "unsupported:くだけるよろい"
+      ],
+      "canonicalEnglish": "Weak Armor",
+      "ja": "くだけるよろい",
+      "esLA": "Armadura Frágil",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-285704156f99",
+      "sourceIds": [
+        "pre9-web-0dcc49bcd4ce"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/polteageist/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Armadura Frágil",
+      "rawSha256": "749f5c0d6a170a7d7c3c1aa3b0c8cd076e0cbad26827b28e708a21f6774d4c55",
+      "extractionSha256": "8f1016b3476b8fd5a63eeb11cc55847661fbc3835c9896a632cb108da37db1ac",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/polteageist/",
+      "pairedEnglishRawSha256": "8b60954284b266c64925c08647b83037680d359218ab3b7fa056535a9a66bb7b",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "すてみ",
+      "canonicalIds": [
+        "reckless"
+      ],
+      "canonicalEnglish": "Reckless",
+      "ja": "すてみ",
+      "esLA": "Audaz",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-186e422cfacf",
+      "sourceIds": [
+        "pre9-web-4a4b71abad16"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/obstagoon/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Audaz",
+      "rawSha256": "3c15279bf51c3f894abcf4e6a062830e50632b40c9a4fc8567e6d87609507483",
+      "extractionSha256": "87760d631f75fd7dd15288bdad3d785c15d7fa444945a764e3e151dda45b0e19",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/obstagoon/",
+      "pairedEnglishRawSha256": "f57d2b19af4340093701ad48ba07a1580d24041366371668401be39a2139e403",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "こんじょう",
+      "canonicalIds": [
+        "guts"
+      ],
+      "canonicalEnglish": "Guts",
+      "ja": "こんじょう",
+      "esLA": "Agallas",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-0c0b8f494338",
+      "sourceIds": [
+        "pre9-web-4a4b71abad16"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/obstagoon/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Agallas",
+      "rawSha256": "3c15279bf51c3f894abcf4e6a062830e50632b40c9a4fc8567e6d87609507483",
+      "extractionSha256": "87760d631f75fd7dd15288bdad3d785c15d7fa444945a764e3e151dda45b0e19",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/obstagoon/",
+      "pairedEnglishRawSha256": "f57d2b19af4340093701ad48ba07a1580d24041366371668401be39a2139e403",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "スイートベール",
+      "canonicalIds": [
+        "unsupported:スイートベール"
+      ],
+      "canonicalEnglish": "Sweet Veil",
+      "ja": "スイートベール",
+      "esLA": "Velo Dulce",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-59f617485296",
+      "sourceIds": [
+        "pre9-web-8f816fbbca44"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/alcremie/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Velo Dulce",
+      "rawSha256": "871ba6205f358b530bbd7b09e7faa1f9741efb8c4f70d453d2356a5b14c0324a",
+      "extractionSha256": "15c7267f8e65b73920993bfabd9fe5a014fe1ae9c996546877d9296f37df07f4",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/alcremie/",
+      "pairedEnglishRawSha256": "c22a72d959726685ae719b1d19d79d0fc728e5e666a82929d46501f344019205",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "なみのり",
+      "canonicalIds": [
+        "surf"
+      ],
+      "canonicalEnglish": "Surf",
+      "ja": "なみのり",
+      "esLA": "Surf",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-be8d9af79e43",
+      "sourceIds": [
+        "pre9-web-0900cbea96b9"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/cramorant/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Surf",
+      "rawSha256": "5108b45b7ba298a26d993b07d9f40499142205081e597aef97ed1944f924decd",
+      "extractionSha256": "ac3bc28a8c0dd041ad847fdb68372b65938e8e1eba1fbe8b931175dcb7d2a6df",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/cramorant/",
+      "pairedEnglishRawSha256": "c6fbbf3320a4859ef93faa5017414187ee18e359534f3df23ed276ed878b8df3",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "ダイビング",
+      "canonicalIds": [
+        "gw0169_p056"
+      ],
+      "canonicalEnglish": "Dive",
+      "ja": "ダイビング",
+      "esLA": "Buceo",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-a730ae68d4e4",
+      "sourceIds": [
+        "pre9-web-0900cbea96b9"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/cramorant/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Buceo",
+      "rawSha256": "5108b45b7ba298a26d993b07d9f40499142205081e597aef97ed1944f924decd",
+      "extractionSha256": "ac3bc28a8c0dd041ad847fdb68372b65938e8e1eba1fbe8b931175dcb7d2a6df",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/cramorant/",
+      "pairedEnglishRawSha256": "c6fbbf3320a4859ef93faa5017414187ee18e359534f3df23ed276ed878b8df3",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "オーラぐるま",
+      "canonicalIds": [
+        "gw0169_p012"
+      ],
+      "canonicalEnglish": "Aura Wheel",
+      "ja": "オーラぐるま",
+      "esLA": "Rueda Aural",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-924b5c8f7565",
+      "sourceIds": [
+        "pre9-web-8653d760a028"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/morpeko/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Rueda Aural",
+      "rawSha256": "95ec4f4991b283fb537b08c9528c51d08daa1e611cb8d65f5de7e8a920333cac",
+      "extractionSha256": "dc410d10468ced14e32e06f14d2f929948e5ba8db9a946774158d91131896826",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/morpeko/",
+      "pairedEnglishRawSha256": "f84a61cbe2a9044da3f4bf159bbfa509283e8be77265ee21bf820175deab8058",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "moves",
+      "key": "スターアサルト",
+      "canonicalIds": [
+        "gw0170b_011"
+      ],
+      "canonicalEnglish": "Meteor Assault",
+      "ja": "スターアサルト",
+      "esLA": "Asalto Estelar",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-moves-9cc4d3483d1d",
+      "sourceIds": [
+        "pre9-web-cf8cfa2b3999"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/sirfetchd/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Asalto Estelar",
+      "rawSha256": "31e3e2f0652cb3e6b904787cfca689175dff79421f46f4bd933b2786213c0d90",
+      "extractionSha256": "4ab3eb91ffd85b29ad6c254fda77733a810d9f68dfd9c7602d4f2bb21f9b5f90",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/sirfetchd/",
+      "pairedEnglishRawSha256": "c702feea039087cd0ca17500ed2671fc177dc1f4ae1035e861511a2727a65c33",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "ミラーアーマー",
+      "canonicalIds": [
+        "unsupported:ミラーアーマー"
+      ],
+      "canonicalEnglish": "Mirror Armor",
+      "ja": "ミラーアーマー",
+      "esLA": "Coraza Reflejo",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-c40c485b9ac3",
+      "sourceIds": [
+        "pre9-web-567c80bb35da"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/gameplay/hidden-abilities/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Coraza Reflejo",
+      "rawSha256": "a9481fc47a503fd60840adc20d125a405277d42490b24a51bbe7a6c67ad2e952",
+      "extractionSha256": "3da1924fbf1c61566564079be3331d1fc93413465949913aa19585fd50111ff4",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/gameplay/hidden-abilities/",
+      "pairedEnglishRawSha256": "6c1f7082e2237391c218d7319172caf29ca00a7d5ff941ed6ea1ba6549a5c8c5",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "ふかしのこぶし",
+      "canonicalIds": [
+        "unsupported:ふかしのこぶし"
+      ],
+      "canonicalEnglish": "Unseen Fist",
+      "ja": "ふかしのこぶし",
+      "esLA": "Puño Invisible",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-4ee541955b93",
+      "sourceIds": [
+        "pre9-web-d5173e442b9b"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/urshifu/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Puño Invisible",
+      "rawSha256": "51e8d0809c4db40482ba66093c15ec59fc9e0657e0f5c7e1d16fb423bc6c8a80",
+      "extractionSha256": "6aedbcd91754f8540310b45cf3268344ca184815e155511dc3c62a3258480010",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/urshifu/",
+      "pairedEnglishRawSha256": "c30992fa054f9f99ed4c59981e253de13dfcad4aa9a339dd107cfd8cd4e2f69c",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "abilities",
+      "key": "トランジスタ",
+      "canonicalIds": [
+        "transistor"
+      ],
+      "canonicalEnglish": "Transistor",
+      "ja": "トランジスタ",
+      "esLA": "Transistor",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-abilities-988d4cfc7eb3",
+      "sourceIds": [
+        "pre9-web-4b9f1e09a906"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/regieleki/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Transistor",
+      "rawSha256": "1460b5c214d7f5f7f1fdb556e009edd7e7b3b2729126a1fc3ba75ebe7db447e7",
+      "extractionSha256": "6ed7448dc8d0f4d92f8fcd8508dcbe3d4f285bfa80056754d0f1859a4804aea0",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/regieleki/",
+      "pairedEnglishRawSha256": "8590d619a8244a754b551bcbe96ccd2f944f72f2d6ea76f76836414348102a68",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-swordshield-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "roster_v0106_030",
+      "canonicalIds": [
+        "roster_v0106_030"
+      ],
+      "canonicalEnglish": "Galarian Slowbro",
+      "ja": "ガラルヤドラン",
+      "esLA": "Slowbro de Galar",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-a271fd7e44b0",
+      "sourceIds": [
+        "pre9-web-9ba98b77f4a7"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowbro/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Slowbro de Galar",
+      "rawSha256": "c4b939b551fc50d18f52055fb3454b6cc55ccf2c882055a4697a3e48f0eb27cf",
+      "extractionSha256": "2ea40a290266f89b5a39425805867453330c4660377339b8721befe46b9f08db",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowbro/",
+      "pairedEnglishRawSha256": "535f09b44993261035d9d8fca5cac890e576aaf125f348eb813b588c276b1c1f",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-form-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "roster_v0106_029",
+      "canonicalIds": [
+        "roster_v0106_029"
+      ],
+      "canonicalEnglish": "Galarian Slowking",
+      "ja": "ガラルヤドキング",
+      "esLA": "Slowking de Galar",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-381fa61d726f",
+      "sourceIds": [
+        "pre9-web-720b277f6185"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-slowking/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Slowking de Galar",
+      "rawSha256": "ebce334fd72ba48fc571368320aa9f28b740a701b16daf43e25c9e67cf260f49",
+      "extractionSha256": "30fcb4c0ea40729a6deec497955f0f3beed3642349c05f95dba765b490b83391",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-slowking/",
+      "pairedEnglishRawSha256": "8a976b8f605c08f6dda4aeb1be5221cf15027e3d7b857cdb3236cca715d182f2",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-form-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "roster_v0106_033",
+      "canonicalIds": [
+        "roster_v0106_033"
+      ],
+      "canonicalEnglish": "Galarian Weezing",
+      "ja": "ガラルマタドガス",
+      "esLA": "Weezing de Galar",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-publication-pokemon-7efd4a13d054",
+      "sourceIds": [
+        "pre9-web-983a739dc570"
+      ],
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/weezing/",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "rawObservedText": "Weezing de Galar",
+      "rawSha256": "1e3958bfae2dcc62e965279ecf5d892d818e79cfff19d9db7a497d3b6f7f1ef3",
+      "extractionSha256": "fec2d50772bd8bbea252a917eea4d1f6e9f06ee5c41964caadcba7c36858a04f",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/weezing/",
+      "pairedEnglishRawSha256": "dd3b4a3148f510305c036103b71485b22ebb977b22e6fd9061e9b7316e2f46a8",
+      "identityNote": "Exact paired profile/article English name",
+      "inputManifest": "pre9-galar-form-candidates.json"
+    },
+    {
+      "category": "pokemon",
+      "key": "v097_003",
+      "canonicalIds": [
+        "v097_003"
+      ],
+      "canonicalEnglish": "Mega Pyroar",
+      "ja": "メガカエンジシ",
+      "esLA": "Mega-Pyroar",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32753-pokemon-c744c10ff16d",
+      "sourceIds": [
+        "owner-champions-capture-32753"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Mega-Pyroar",
+      "filename": "32753.jpg",
+      "rawSha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "position": "Bottom fixed species/form strip behind ability modal",
+      "identityContext": {
+        "nationalDexNumber": 668,
+        "visibleWeightKg": 93.3
+      },
+      "limits": "Modal overlay dims the strip but names remain legible; no enhancement or inferred suffix. Locale owner-attested, no settings/build/time screen.",
+      "systemVsNicknameEvidence": "Base species followed by Mega-form name, National Dex number, type and weight with left/right species navigation in one fixed profile strip; not editable party-slot label. All three exact whole Mega names independently re-read from original pixels."
+    },
+    {
+      "category": "pokemon",
+      "key": "v097_001",
+      "canonicalIds": [
+        "v097_001"
+      ],
+      "canonicalEnglish": "Mega Excadrill",
+      "ja": "メガドリュウズ",
+      "esLA": "Mega-Excadrill",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32761-pokemon-9e5b9338321f",
+      "sourceIds": [
+        "owner-champions-capture-32761"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Mega-Excadrill",
+      "filename": "32761.jpg",
+      "rawSha256": "942ff8605d6d8efdc9468e48bce8bee4e97d44fa3302442323b4925806d3ec71",
+      "position": "Bottom fixed species/form strip behind ability modal",
+      "identityContext": {
+        "nationalDexNumber": 530,
+        "visibleWeightKg": 60.0
+      },
+      "limits": "Modal overlay dims the strip but names remain legible; no enhancement or inferred suffix. Locale owner-attested, no settings/build/time screen.",
+      "systemVsNicknameEvidence": "Base species followed by Mega-form name, National Dex number, type and weight with left/right species navigation in one fixed profile strip; not editable party-slot label. All three exact whole Mega names independently re-read from original pixels."
+    },
+    {
+      "category": "pokemon",
+      "key": "v097_004",
+      "canonicalIds": [
+        "v097_004"
+      ],
+      "canonicalEnglish": "Mega Scovillain",
+      "ja": "メガスコヴィラン",
+      "esLA": "Mega-Scovillain",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32763-pokemon-4ed6d5900bd4",
+      "sourceIds": [
+        "owner-champions-capture-32763"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Mega-Scovillain",
+      "filename": "32763.jpg",
+      "rawSha256": "45d0a209dc3645c8b3796d179f23b3f5d9866c6ffae6fb93329dcb9db10bfcd0",
+      "position": "Bottom fixed species/form strip behind ability modal",
+      "identityContext": {
+        "nationalDexNumber": 952,
+        "visibleWeightKg": 22.0
+      },
+      "limits": "Modal overlay dims the strip but names remain legible; no enhancement or inferred suffix. Locale owner-attested, no settings/build/time screen.",
+      "systemVsNicknameEvidence": "Base species followed by Mega-form name, National Dex number, type and weight with left/right species navigation in one fixed profile strip; not editable party-slot label. All three exact whole Mega names independently re-read from original pixels."
+    },
+    {
+      "category": "moves",
+      "key": "ねっぷう",
+      "canonicalIds": [
+        "heatWave"
+      ],
+      "canonicalEnglish": "Heat Wave",
+      "ja": "ねっぷう",
+      "esLA": "Onda Ígnea",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32753-moves-3a54ac04bbff",
+      "sourceIds": [
+        "owner-champions-capture-32753"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Onda Ígnea",
+      "filename": "32753.jpg",
+      "rawSha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "position": "Right move list row 1",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    },
+    {
+      "category": "moves",
+      "key": "オーバーヒート",
+      "canonicalIds": [
+        "gw0169_s011"
+      ],
+      "canonicalEnglish": "Overheat",
+      "ja": "オーバーヒート",
+      "esLA": "Supercalor",
+      "statusBefore": "verified-secondary",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32753-moves-b3784c2be7cd",
+      "sourceIds": [
+        "owner-champions-capture-32753"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Supercalor",
+      "filename": "32753.jpg",
+      "rawSha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "position": "Right move list row 2",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    },
+    {
+      "category": "moves",
+      "key": "かえんほうしゃ",
+      "canonicalIds": [
+        "flamethrower"
+      ],
+      "canonicalEnglish": "Flamethrower",
+      "ja": "かえんほうしゃ",
+      "esLA": "Lanzallamas",
+      "statusBefore": "official",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32753-moves-9068fa196360",
+      "sourceIds": [
+        "owner-champions-capture-32753"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Lanzallamas",
+      "filename": "32753.jpg",
+      "rawSha256": "84d285d033769a3f48b0bc563fe71d25316ea1641e3248e8e6efec3e154ed0e0",
+      "position": "Right move list row 3",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    },
+    {
+      "category": "moves",
+      "key": "つのドリル",
+      "canonicalIds": [
+        "gw0170b_020"
+      ],
+      "canonicalEnglish": "Horn Drill",
+      "ja": "つのドリル",
+      "esLA": "Cuerno Taladro",
+      "statusBefore": "verified-secondary",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32761-moves-8fbc5c11b86a",
+      "sourceIds": [
+        "owner-champions-capture-32761"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Cuerno Taladro",
+      "filename": "32761.jpg",
+      "rawSha256": "942ff8605d6d8efdc9468e48bce8bee4e97d44fa3302442323b4925806d3ec71",
+      "position": "Right move list row 4",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    },
+    {
+      "category": "moves",
+      "key": "ソーラービーム",
+      "canonicalIds": [
+        "solarBeam"
+      ],
+      "canonicalEnglish": "Solar Beam",
+      "ja": "ソーラービーム",
+      "esLA": "Rayo Solar",
+      "statusBefore": "official",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32763-moves-f5a1a0cc12c5",
+      "sourceIds": [
+        "owner-champions-capture-32763"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Rayo Solar",
+      "filename": "32763.jpg",
+      "rawSha256": "45d0a209dc3645c8b3796d179f23b3f5d9866c6ffae6fb93329dcb9db10bfcd0",
+      "position": "Right move list row 2",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    },
+    {
+      "category": "moves",
+      "key": "しっとのほのお",
+      "canonicalIds": [
+        "gw0169_s021"
+      ],
+      "canonicalEnglish": "Burning Jealousy",
+      "ja": "しっとのほのお",
+      "esLA": "Envidia Ardiente",
+      "statusBefore": "unverified",
+      "officialChampionsBefore": false,
+      "recordId": "pre9-capture-32763-moves-7412cd076c71",
+      "sourceIds": [
+        "owner-champions-capture-32763"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "rawObservedText": "Envidia Ardiente",
+      "filename": "32763.jpg",
+      "rawSha256": "45d0a209dc3645c8b3796d179f23b3f5d9866c6ffae6fb93329dcb9db10bfcd0",
+      "position": "Right move list row 3",
+      "identityContext": null,
+      "limits": "Owner-attested ES-LA. Right-list names only: central effect description belongs to ability, not these moves. No mechanics changes authorized.",
+      "systemVsNicknameEvidence": null
+    }
+  ],
+  "expectedCounts": {
+    "total": 1029,
+    "officialBefore": 431,
+    "officialAfter": 470,
+    "unverifiedBefore": 435,
+    "unverifiedAfter": 398,
+    "officialChampionsBefore": 153,
+    "officialChampionsAfter": 162,
+    "provisional": 2,
+    "namesChanged": 0,
+    "aliasesChanged": 1
+  },
+  "exclusions": [
+    {
+      "category": "abilities",
+      "key": "もうか",
+      "canonicalIds": [
+        "blaze"
+      ],
+      "canonicalEnglish": "Blaze",
+      "observedEsLA": "Mar Llamas",
+      "currentName": "Mar de Llamas",
+      "currentStatus": "official",
+      "nameConflict": true,
+      "officialChampions": false,
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "sourceURL": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/scorbunny/",
+      "pairedEnglishURL": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/scorbunny/",
+      "rawSha256": "b7b7a6b014e00c7e8136702af329dfa2e8e24f331c1130304811a753298edb16",
+      "englishRawSha256": "f5844cd9d1f2bcac40f2de548da21f299baa4aaf9a2a576b8275ac3dfb2e5d0c",
+      "extractionSha256": "70316e849754dce6c680e3062cc715aab70a2eff05bc1c926a6c2d947aa87736",
+      "englishExtractionSha256": "966b8abd740a28acda1b2aa86ed08ff4b4290d0ed28708847ed80cf86bf7bf97",
+      "exactSpanishExcerpt": "Mar Llamas",
+      "exactEnglishExcerpt": "Blaze",
+      "extractionMethod": "Python HTMLParser text nodes, excluding script/style; direct HTML HTTP retrieval. Exact same-profile English counterpart.",
+      "query": "paired official profile pokemon-galar-region/scorbunny",
+      "decision": "conflict-review-no-display-change"
+    },
+    {
+      "name": "Extracto Picante",
+      "reason": "Not in current move inventory; no support addition"
+    },
+    {
+      "name": "Hipervoz",
+      "reason": "Not visible in32753; row2 is Supercalor, no guessed Hyper Voice attestation"
+    }
+  ],
+  "sourceAccess": "Public HTML originals and private source images retained for independent audit; private images are not published.",
+  "aliasChanges": [
+    {
+      "category": "abilities",
+      "key": "トランジスタ",
+      "canonicalIds": [
+        "transistor"
+      ],
+      "before": [],
+      "after": [
+        "Transistor"
+      ],
+      "reason": "Deterministic compilation adds the newly attested exact ES-LA spelling as an alias; no species association is introduced."
+    }
+  ]
+}
