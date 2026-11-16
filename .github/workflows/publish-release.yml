@@ -31,7 +31,7 @@ on:
       - scripts/feedback-production-check.cjs
       - .github/workflows/publish-release.yml
   push:
-    branches: [main, feature/v110-es-la-localization]
+    branches: [main, feature/v110-es-la-localization, fix/es-la-compact-selector-pre2]
     paths:
       - docs/v110-es-la-owner-screenshot-evidence.md
       - release.json
@@ -71,7 +71,7 @@ jobs:
       - name: Verify both public migration artifacts after final approval
         run: node scripts/v0187-live-migration-check.cjs
       - name: Verify every stable asset including exact browser cache URLs
-        run: node -e "if(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2'].includes(require('./release.json').tag))require('node:child_process').execFileSync(process.execPath,['scripts/v100-live-acceptance.cjs','--publication'],{stdio:'inherit'})"
+        run: node -e "if(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(require('./release.json').tag))require('node:child_process').execFileSync(process.execPath,['scripts/v100-live-acceptance.cjs','--publication'],{stdio:'inherit'})"
       - name: Require a connected private feedback service
         run: node scripts/feedback-production-check.cjs
       - name: Package the exact release commit
@@ -89,7 +89,7 @@ jobs:
             if (fs.existsSync('.github/workflows/v0186-accuracy-mechanics.yml')) required.push('v0.186 Accuracy & Mechanics Audit');
             if (fs.existsSync('.github/workflows/v0187-singularity-migration.yml')) required.push('v0.187 Singularity Migration');
             if (fs.existsSync('.github/workflows/v0188-quality-remediation.yml')) required.push('v0.188 Quality Remediation');
-            if (['v1.1.0-pre.1','v1.1.0-pre.2'].includes(manifest.tag)) required.push('v1.1.0 ES-LA Localization');
+            if (['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(manifest.tag)) required.push('v1.1.0 ES-LA Localization');
             if (manifest.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
             let verified;
             for (let attempt = 0; attempt < 80; attempt++) {
@@ -116,7 +116,7 @@ jobs:
             } catch (error) {
               if (error.status !== 404) throw error;
             }
-            if (['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2'].includes(manifest.tag)) {
+            if (['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(manifest.tag)) {
               const {verifyDeploymentRun} = require('./scripts/helpers/v100-deployment-proof.cjs');
               await verifyDeploymentRun({github, sourceCommit:manifest.migration.liveAcceptanceSourceCommit, runUrl:manifest.migration.liveAcceptanceDeploymentRun, expectedWorkflow:fs.readFileSync('deployment/singularity-pages.yml')});
               // CI polling can take minutes. Refresh current public bytes at the

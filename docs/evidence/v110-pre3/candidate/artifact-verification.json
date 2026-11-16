@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "6903bd2866090169808cc0c88fc6870f220a3f51",
+  "sourceTree": "3918f8f443b24bc732e402319811d1c9ec2fa56d",
+  "ciMergeCommit": "987e9610752a5289918726d1f6bc624587a40d3c",
+  "artifactId": 14195422172,
+  "artifactSha256": "15984d6253d07f3dcdc20e5702b2aad426156efa188ff8191eea367ff420062d",
+  "verifiedSourceBlobs": 565,
+  "verifiedPublicFiles": 79,
+  "candidateAcceptanceTests": 21,
+  "uncommittedPreview": false
+}

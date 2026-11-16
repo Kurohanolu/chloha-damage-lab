@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "canonicalMoveId": "earthquake",
+  "canonicalResultSources": true,
+  "historyAndTerrainSources": true,
+  "selectorLabel": "ES-LA",
+  "numericValuesUnchanged": true,
+  "browserClaim": false
+}

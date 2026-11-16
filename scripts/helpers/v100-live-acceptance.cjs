@@ -23,7 +23,7 @@ function acceptanceFiles(source){
  return files;
 }
 function verifyStableLiveAcceptance(release){
- assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2'].includes(release.tag),'Live acceptance policy is explicit');
+ assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3'].includes(release.tag),'Live acceptance policy is explicit');
  const m=release.migration;
  assert.equal(m.liveTargetVerified,true,'Stable publication needs actual live acceptance');
  assert.match(m.liveAcceptanceSourceCommit||'',/^[a-f0-9]{40}$/,'Stable live acceptance source SHA required');
@@ -45,7 +45,7 @@ function verifyStableLiveAcceptance(release){
  for(const key of acceptanceKeys)expected.migration[key]=m[key];
  assert.deepEqual(release,expected,'Acceptance promotion may only add its live flag and four explicit receipt bindings');
  const receipt=JSON.parse(fs.readFileSync(evidence,'utf8'));
- const rollbackSourceCommit=release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
+ const rollbackSourceCommit=release.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
  assert.deepEqual(receipt,{schemaVersion:1,releaseTag:release.tag,sourceCommit:source,sourceTree,deploymentRun:m.liveAcceptanceDeploymentRun,observedAtJST:m.liveAcceptanceObservedAtJST,result:'passed',currentUrl:release.publicUrl,legacyUrl:m.legacyUrl,files:acceptanceFiles(source),rollbackSourceCommit},'Stable acceptance receipt must exactly match the deployed source, both public inventories and rollback reference');
  return {sourceCommit:source,sourceTree,files:Object.keys(receipt.files).length};
 }

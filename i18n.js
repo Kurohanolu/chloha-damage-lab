@@ -1283,7 +1283,8 @@ function initialize(){
  select.id='chloha-locale';
  select.setAttribute('aria-label','Language / 言語');
  select.style.cssText='width:auto;min-height:36px;padding:5px 8px';
- for(const [value,title] of [['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['es-LA','Español (Latinoamérica)']]){
+ const localeChoices=globalThis.ChlohaLocales?.entries?.map(entry=>[entry.code,entry.label])||[['ja','日本語'],['en','English'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['ko','한국어'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['es-LA','ES-LA']];
+ for(const [value,title] of localeChoices){
   const option=document.createElement('option');option.value=value;option.textContent=title;select.append(option);
  }
  select.addEventListener('change',()=>setLocale(select.value));

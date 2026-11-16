@@ -1,11 +1,23 @@
 'use strict';
-const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
 const {verifyCutoverApproval}=require('./verify-publication-approval.cjs');
 const {dependencies}=require('./v0187-build-sites.cjs');
 const {hasFollowup,verifyFollowupDraft,publishedCommit}=require('./helpers/v0188-followup-review.cjs');
 const v110Followup=require('./helpers/v110-followup-review.cjs');
+const pre2Commit='aba2d0558948e2a4dd375074fb11fd428edf6222',pre2Tree='5043182ba5b292f13630b461897457a74812dcfd';
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(release.tag==='v1.1.0-pre.3'){
+  assert.ok(!hasFollowup(release),'Pre.3 must use its own release decision, not a historical follow-up marker');
+  if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration?.liveTargetVerified,false,'Pre.3 must explicitly declare its pre-acceptance state');
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   assert.equal(execFileSync('git',['rev-parse',pre2Commit+'^{tree}'],{cwd:path.resolve(__dirname,'..'),encoding:'utf8'}).trim(),pre2Tree,'Published pre.2 commit/tree must remain pinned');
+   if(event==='pull_request'||baseRef)assert.equal(baseRef,pre2Commit,'Pre.3 public base must be the immutable published pre.2');
+   return {ref:pre2Commit,mode:'published-v110-pre3-base'};
+  }
+ }
  if(release.tag==='v1.1.0-pre.2'){
   assert.ok(!hasFollowup(release),'Pre.2 must use its own release decision, not the historical follow-up marker');
   if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);

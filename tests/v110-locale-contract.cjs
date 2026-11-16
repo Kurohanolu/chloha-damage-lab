@@ -10,7 +10,7 @@ function load(read,files){const c=vm.createContext({console});vm.runInContext('w
 const files=['locale-registry.js','locale-catalog.js','locale-name-search.js','feedback-contract-v0185.js','feedback-locales-v0185.js'];
 const now=load(file=>fs.readFileSync(path.join(root,file),'utf8'),files),before=load(old,files);
 assert.deepEqual(json(now.ChlohaLocales.entries.map(x=>x.code)),locales,'ES-LA is the tenth distinct locale; preserve existing order/IDs');
-assert.equal(now.ChlohaLocales.entries.find(x=>x.code==='es-LA').label,'Español (Latinoamérica)');
+assert.equal(now.ChlohaLocales.entries.find(x=>x.code==='es-LA').label,'ES-LA');
 assert.equal(now.ChlohaLocales.normalize('es-LA'),'es-LA');assert.equal(now.ChlohaLocales.normalize('es'),'es');
 assert.equal(now.ChlohaLocales.browserLocale('es-LA'),'es-419','Internal custom ID must never leak into HTML/Intl');
 assert.equal(new Intl.Locale(now.ChlohaLocales.browserLocale('es-LA')).toString(),'es-419');

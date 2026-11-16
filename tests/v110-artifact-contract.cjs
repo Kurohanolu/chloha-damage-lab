@@ -15,11 +15,18 @@ const inline=source=>[...source.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*
 // Only these reviewed display/search additions may differ. A broad formatter or
 // numeric normalization could conceal real calculation/state changes.
 const reversals=[
+ // Exact pre.3 source-producer fixes: recover canonical display strings only.
+ ["const moveName=canonicalMoveLabel($('dbMove')?.value);", "const moveName=$('dbMove')?.selectedOptions?.[0]?.textContent||'';"],
+ [" const move=canonicalMoveLabel($('dbMove')?.value)||'手入力技';", " const move=$('dbMove')?.selectedOptions?.[0]?.textContent||'手入力技';"],
+ ["'+canonicalTerrainLabel($('terrain').value)+(mismatch?", "'+$('terrain').selectedOptions[0]?.textContent+(mismatch?"],
+ ["// Keep display sources independent of translated native-option text. The same\n// canonical label feeds the picker, reliability warning and committed history.\nfunction canonicalMoveLabel(id){\n const move=ChlohaMovesDB.moves.find(candidate=>candidate.id===id);\n if(!move)return '';\n const status=!moveCalculationReady(move)?'［計算未対応］':move.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'［基本ダメージのみ・実機未照合］':'［計算試算・実機未照合］';\n return `${move.name}（${move.type} / ${move.power||'可変'}）${status}`;\n}\nfunction canonicalTerrainLabel(value){\n return {none:'なし',electric:'エレキフィールド',grassy:'グラスフィールド',misty:'ミストフィールド',psychic:'サイコフィールド'}[value]||'なし';\n}\n", ""],
+ [" addSelectOptions('dbMove',choices.map(move=>[move.id,canonicalMoveLabel(move.id)]));\n", " addSelectOptions('dbMove',choices.map(m=>{\n  const status=!moveCalculationReady(m)?'［計算未対応］':m.verificationStatus==='gamewith_catalog_basic_fields_reviewed'?'［基本ダメージのみ・実機未照合］':'［計算試算・実機未照合］';\n  return [m.id,`${m.name}（${m.type} / ${m.power||'可変'}）${status}`];\n }));\n"],
+ ["  // A refresh can run while the main result is already translated. Rebuild the\n  // mini result from the calculation so that its cached source stays Japanese.\n  el('miniDamage').textContent=r?`${lo}〜${hi} ダメージ`:'入力を確認してください';\n  el('miniPercent').textContent=r?`最大HPの ${(lo/a.hp*100).toFixed(1)}〜${(hi/a.hp*100).toFixed(1)}%`:'';\n", "  el('miniDamage').textContent=r?el('damage').textContent:'入力を確認してください';el('miniPercent').textContent=r?el('percent').textContent:'';\n"],
  ["es:'No hay movimientos coincidentes','es-LA':'No hay movimientos coincidentes',","es:'No hay movimientos coincidentes',"],
  ["es:'No hay Pokémon coincidentes','es-LA':'No hay Pokémon coincidentes',","es:'No hay Pokémon coincidentes',"],
- ['>v1.1.0 Pre-Release 2</span>','>v1.0.0</span>'],
- ['画面の「v1.1.0 Pre-Release 2」は','画面の「v1.0.0」は'],
- ['./assets/singularity/header.webp?v=1.1.0-pre.2','./assets/singularity/header.webp?v=1.0.0'],
+ ['>v1.1.0 Pre-Release 3</span>','>v1.0.0</span>'],
+ ['画面の「v1.1.0 Pre-Release 3」は','画面の「v1.0.0」は'],
+ ['./assets/singularity/header.webp?v=1.1.0-pre.3','./assets/singularity/header.webp?v=1.0.0'],
  ["   if(locale==='es-LA')item.setAttribute('aria-label',moveName);\n",''],
  ["  if(locale==='es-LA')return window.ChlohaEsLa?.entity(category,key,localizedName(category,key,'es'))||localizedName(category,key,'es');\n",''],
  ["   window.ChlohaPokeAPILocalizedNames?.[category]?.[key],\n   {regional:window.ChlohaEsLa?.entity(category,key,null)}","   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]"],
@@ -36,7 +43,7 @@ for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"w
 
 assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
-assert.equal(release.tag,'v1.1.0-pre.2');assert.equal(release.channel,'prerelease');
+assert.equal(release.tag,'v1.1.0-pre.3');assert.equal(release.channel,'prerelease');
 const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){

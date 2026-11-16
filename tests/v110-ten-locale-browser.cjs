@@ -80,7 +80,7 @@ async function dynamicDomWitnesses(page,evidence){
   browser=await launchBrowser();context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockFeedback(context,lab.origin);const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(lab.origin+'/candidate/');await ready(page);
   assert.deepEqual(await page.locator('#chloha-locale option').evaluateAll(options=>options.map(x=>x.value)),locales);
-  assert.equal(await page.locator('#chloha-locale option[value="es-LA"]').innerText(),'Español (Latinoamérica)');
+  assert.equal(await page.locator('#chloha-locale option[value="es-LA"]').innerText(),'ES-LA');
   await set(page,'dbAttPokemon','garchomp');await set(page,'dbDefPokemon','tyranitar');await set(page,'dbMove','earthquake');
   for(const [id,value] of Object.entries({weather:'rain',terrain:'electric',screen:'reflect',attItem:'lifeOrb',defItem:'assaultVest',attAbility:'none',defAbility:'none'}))await set(page,id,value);
   const fixed=await snapshot(page);assert.equal(fixed.calculation.r.rolls.length,16);

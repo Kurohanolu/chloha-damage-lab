@@ -1,7 +1,7 @@
 name: UI & damage regression
 on:
   push:
-    branches: [main, feature/v110-es-la-localization]
+    branches: [main, feature/v110-es-la-localization, fix/es-la-compact-selector-pre2]
     paths:
       - docs/v110-es-la-owner-screenshot-evidence.md
       - release.json

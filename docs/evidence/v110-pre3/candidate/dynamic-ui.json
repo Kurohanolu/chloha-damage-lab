@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline": "0b270c1452505268364659edd402209b00b28673",
+  "dynamicAndStaticWitnesses": 456,
+  "regionalCases": 420,
+  "roundtrips": 1680,
+  "legacyComparisons": 19440,
+  "canonicalSelectedWarningCases": 5,
+  "cacheLimit": 512,
+  "numericTokensPreserved": true,
+  "canonicalNamesOnly": true
+}

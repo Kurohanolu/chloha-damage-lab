@@ -27,7 +27,7 @@ const DYNAMIC_CASES=[
  ['base-stat','種族値 123'],
  ['numeric-stat','Attack 187'],
  ['stat-budget','能力ポイント 32 / 66（残り 34）'],
- ['version-provenance','バージョンについて：画面の「v1.1.0 Pre-Release 2」は公開UI版。計算コアの内部API識別子は「v0.184」。v0.184の自動回帰監査'],
+ ['version-provenance','バージョンについて：画面の「v1.1.0 Pre-Release 3」は公開UI版。計算コアの内部API識別子は「v0.184」。v0.184の自動回帰監査'],
  ['selected-move-warning','選択技「じしん」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。'],
  ['selected-move-warning-full-earthquake','選択技「じしん（じめん / 100）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。'],
  ['selected-move-warning-full-dragon-darts','選択技「ドラゴンアロー（ドラゴン / 50）［計算試算・実機未照合］」の習得可否・技固有効果・威力変動・命中率は検証されていません。実機のダメージ値と照合するまでは暫定値として扱ってください。'],
@@ -167,7 +167,7 @@ function buildInventory({readFile=file=>fs.readFileSync(path.join(root,file),'ut
  const initialScopedCount=records.length;
  // Retain the original scoped records, then add omitted source sites. Sites are
  // intentionally not deduplicated across files/tables, and game terms overlap.
- load('feedback-release-v100.js');add('feedback-release-v100.js','release-copy',Object.fromEntries(Object.keys(c.ChlohaFeedbackRelease.copy['es-LA']).map(key=>[key,c.ChlohaFeedbackRelease.text('es-LA',key,'Singularity v1.1.0 Pre-Release 2')])),'authored-or-explicit-es-reuse');
+ load('feedback-release-v100.js');add('feedback-release-v100.js','release-copy',Object.fromEntries(Object.keys(c.ChlohaFeedbackRelease.copy['es-LA']).map(key=>[key,c.ChlohaFeedbackRelease.text('es-LA',key,'Singularity v1.1.0 Pre-Release 3')])),'authored-or-explicit-es-reuse');
  // These dictionaries contain source templates with named game-entity slots.
  // Inventory the actual renderer result and its real error/audit wrapper, not
  // only the unresolved Spanish template or a copy of it made by this script.

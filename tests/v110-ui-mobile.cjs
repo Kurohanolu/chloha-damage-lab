@@ -43,7 +43,7 @@ async function textContrast(page,selector,index=0){
     await page.goto(lab.origin+'/candidate/');await ready(page);await fits(page,locale+'/'+width+'/initial');
     if(locale==='es-LA'&&width<=700){
      const labelWidth=await page.locator('#chloha-locale').evaluate(async node=>{await document.fonts.ready;const style=getComputedStyle(node),canvas=document.createElement('canvas'),context=canvas.getContext('2d');context.font=style.font;const label=node.selectedOptions[0].label,textWidth=context.measureText(label).width,padding=parseFloat(style.paddingLeft)+parseFloat(style.paddingRight),arrowAllowance=24;return {label,textWidth,padding,arrowAllowance,requiredWidth:Math.ceil(textWidth+padding+arrowAllowance),clientWidth:node.clientWidth};});
-     assert.equal(labelWidth.label,'Español (Latinoamérica)');assert.ok(labelWidth.clientWidth>=labelWidth.requiredWidth,'Complete regional locale label remains readable at '+width+'px: '+JSON.stringify(labelWidth));evidence.localeLabelWidths.push({width,...labelWidth});
+     assert.equal(labelWidth.label,'ES-LA');assert.ok(labelWidth.clientWidth>=labelWidth.requiredWidth,'Compact regional locale label remains readable at '+width+'px: '+JSON.stringify(labelWidth));evidence.localeLabelWidths.push({width,...labelWidth});
     }
     if(locale==='es-LA'&&[320,390,1440].includes(width))await page.screenshot({path:'reports/v110/es-la-initial-'+width+'.png',fullPage:true});
     assert.equal(await page.locator('.lab-intro h1').innerText(),'Singularity');assert.equal(await page.locator('.lab-intro .eyebrow').count(),0);

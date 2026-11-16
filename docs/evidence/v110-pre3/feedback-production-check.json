@@ -1,0 +1,46 @@
+{
+  "ready": true,
+  "checks": [
+    {
+      "name": "Approved HTTPS feedback API origin is configured",
+      "passed": true
+    },
+    {
+      "name": "Public intake configuration is reachable without login",
+      "passed": true
+    },
+    {
+      "name": "Production intake is enabled without a known Turnstile test key",
+      "passed": true
+    },
+    {
+      "name": "Published retention policy matches the API",
+      "passed": true
+    },
+    {
+      "name": "Public API permits the exact frontend origin",
+      "passed": true
+    },
+    {
+      "name": "Public configuration is not cached",
+      "passed": true
+    },
+    {
+      "name": "Anonymous access is denied: /v1/admin/reports",
+      "passed": true
+    },
+    {
+      "name": "Anonymous access is denied: /admin/",
+      "passed": true
+    },
+    {
+      "name": "Anonymous access is denied: /admin/admin.js",
+      "passed": true
+    },
+    {
+      "name": "Reports have no public listing",
+      "passed": true
+    }
+  ],
+  "blockers": []
+}

@@ -2,7 +2,7 @@ name: v1.1.0 ES-LA Localization
 on:
   pull_request:
   push:
-    branches: [main, feature/v110-es-la-localization]
+    branches: [main, feature/v110-es-la-localization, fix/es-la-compact-selector-pre2]
   workflow_dispatch:
 permissions:
   contents: read

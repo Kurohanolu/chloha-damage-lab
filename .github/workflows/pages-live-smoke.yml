@@ -23,7 +23,7 @@ on:
       - tests/fixtures/v0186-baseline-corrections.json
       - .github/workflows/pages-live-smoke.yml
   push:
-    branches: [main, feature/v110-es-la-localization]
+    branches: [main, feature/v110-es-la-localization, fix/es-la-compact-selector-pre2]
     paths:
       - docs/v110-es-la-owner-screenshot-evidence.md
       - scripts/v0188-*.cjs
