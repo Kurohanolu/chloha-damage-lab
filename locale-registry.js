@@ -11,7 +11,7 @@ const ChlohaLocales=(()=>{
   Object.freeze({code:'ko',label:'한국어',fallback:'en'}),
   Object.freeze({code:'zh-Hans',label:'简体中文',fallback:'en'}),
   Object.freeze({code:'zh-Hant',label:'繁體中文',fallback:'en'}),
-  Object.freeze({code:'es-LA',label:'Español (Latinoamérica)',fallback:'es',browserLocale:'es-419'})
+  Object.freeze({code:'es-LA',label:'ES-LA',fallback:'es',browserLocale:'es-419'})
  ]);
  const byCode=new Map(entries.map(entry=>[entry.code,entry]));
  function normalize(code){return byCode.has(code)?code:'ja';}
