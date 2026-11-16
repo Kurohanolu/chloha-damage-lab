@@ -52,9 +52,10 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
      return route.continue();
     });
     const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(app.origin);await page.click('#feedbackButton');
-    assert.equal(await page.locator('#feedbackFields').isDisabled(),true);assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
+    assert.equal(await page.locator('#feedbackFields').evaluate(node=>node.disabled),true);assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
     await page.selectOption('#chloha-locale','en');assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
-    await page.selectOption('#chloha-locale','es-LA');assert.equal(await page.locator('#feedbackFields').isDisabled(),true);
+    await page.selectOption('#chloha-locale','es-LA');assert.equal(await page.locator('#feedbackFields').evaluate(node=>node.disabled),true);
+    assert.equal(await page.locator('#feedbackCategory').isDisabled(),true);
     assert.deepEqual(errors,[]);assert.equal(requests,0);
    }finally{await context.close();await app.close();}
   }
@@ -76,7 +77,7 @@ const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
     await page.waitForFunction(()=>document.getElementById('feedbackStatus').textContent===ChlohaFeedbackLocales.text('en','unavailable'));
     await page.click('#feedbackClose'); // Prevent a new connection attempt during this assertion.
     await page.selectOption('#chloha-locale','es-LA');
-    assert.equal(await page.locator('#feedbackFields').isDisabled(),true,'Failed widget clears stale locale capability');
+    assert.equal(await page.locator('#feedbackFields').evaluate(node=>node.disabled),true,'Failed widget clears stale locale capability');
     assert.equal(await page.locator('#feedbackSubmit').isDisabled(),true);
     assert.equal(app.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);
    }finally{releaseScript();await context.close();await app.close();}
