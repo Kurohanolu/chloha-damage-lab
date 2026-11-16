@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "baseline": "83af29133927a19fc7e0f9273c0e194c54384ae5",
+  "manifestSha256": "cdec8af7b855ef1eefc9ea6004e55426d30e7e63d9b36b2ccc5444f6078e9a52",
+  "sourceSha256": "44581f62a39cdeb543149a5a0ec18de591c6e95e38124e2af9b6edcae33b493b",
+  "privateCaptures": 10,
+  "observations": 58,
+  "registered": 56,
+  "offRuntime": 2,
+  "abbreviationOnly": 3,
+  "reusedRecords": 14,
+  "newRecords": 44,
+  "independentAnchors": 16,
+  "effectBindings": 8,
+  "protectedFiles": 27,
+  "before": {
+    "total": 1029,
+    "official": 121,
+    "verified-secondary": 169,
+    "unverified": 739,
+    "officialChampions": 112
+  },
+  "after": {
+    "total": 1029,
+    "official": 151,
+    "verified-secondary": 164,
+    "unverified": 714,
+    "officialChampions": 142
+  },
+  "nameDelta": [
+    {
+      "category": "natures",
+      "key": "いじっぱり",
+      "before": "firme",
+      "after": "Firme"
+    }
+  ],
+  "aliasDelta": [
+    {
+      "category": "pokemon",
+      "key": "roster_v0105_029",
+      "added": [
+        "Floette Flor Eterna"
+      ],
+      "removed": []
+    },
+    {
+      "category": "forms",
+      "key": "roster_v0105_029",
+      "added": [
+        "Floette Flor Eterna"
+      ],
+      "removed": []
+    },
+    {
+      "category": "stats",
+      "key": "とくこう",
+      "added": [
+        "At. Esp."
+      ],
+      "removed": []
+    },
+    {
+      "category": "stats",
+      "key": "とくぼう",
+      "added": [
+        "Def. Esp."
+      ],
+      "removed": []
+    }
+  ],
+  "privateImagesPublished": false,
+  "physicalMechanicsVerified": false
+}

@@ -2,11 +2,13 @@
 
 ## Current release preparation — v1.1.0 Pre-Release 2
 
+Candidate `95e61b419f7e348fe5ec59b4355692bf81f335a6` (tree `85cbdbd46d4d76086f7e739a67960cff9ba62816`) now has **13/13 successful workflows and 18/18 successful ES-LA tests**. See the [current test report](v110-es-la-test-report.md). Independent approval and actual deployment are tracked in the [publication status](v110-es-la-publication-status.md).
+
 The owner has explicitly requested publication as **v1.1.0 Pre-Release 2** (`v1.1.0-pre.2`). Prepare and validate that distinct release identity, then publish the verified candidate; another permission request is not pending. The issued `v1.1.0-pre.1` tag and its evidence remain immutable.
 
 This step packages the accepted 20-image translation work. It adds no screenshots, canonical mappings or terminology changes: the 142 official Champions names, 714 unverified names and 1,029-name denominator remain unchanged. The audit documentation checkpoint `3cc0a95` and tested source `41e5ad156f0e19f46b342c28353e36e37f46d7a7` below are historical inputs, not acceptance of the new release identity.
 
-**Pre-Release 2 CI, release-specific evidence binding and live acceptance are pending.** Record the new candidate commit/tree and current checks before publication, then record the actual public result. Existing restrictions on private screenshot publication and production Worker changes remain in force; the current ES-LA feedback restriction is retained. The earlier unpublished-follow-up status below describes the preceding audit checkpoint.
+**Pre-Release 2 CI is complete; source-bound approval and live acceptance are tracked below and in the publication status.** Record the new candidate commit/tree and current checks before publication, then record the actual public result. Existing restrictions on private screenshot publication and production Worker changes remain in force; the current ES-LA feedback restriction is retained. The earlier unpublished-follow-up status below describes the preceding audit checkpoint.
 
 ## Accepted second-batch checkpoint — 2026-11-16 JST
 

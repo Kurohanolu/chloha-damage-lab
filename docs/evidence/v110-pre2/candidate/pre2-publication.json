@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "releaseTag": "v1.1.0-pre.2",
+  "publicPredecessor": "83af29133927a19fc7e0f9273c0e194c54384ae5",
+  "publicPredecessorTree": "cc196155bdb69a5e45b6ddb76b1c49987d4a9f3b",
+  "pendingCannotPublish": true,
+  "oldReceiptsRejected": true,
+  "unapprovedLiveFlagRejected": true,
+  "publicMetadataPinned": true
+}

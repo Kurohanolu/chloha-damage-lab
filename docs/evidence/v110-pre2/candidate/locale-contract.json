@@ -1,0 +1,20 @@
+{
+  "baseline": "0b270c1452505268364659edd402209b00b28673",
+  "locales": [
+    "ja",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "it",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "es-LA"
+  ],
+  "previousCatalogsUnchanged": true,
+  "canonicalSearchRouting": true,
+  "privateSnapshotAllowlist": true,
+  "historicalAssertionsUnchanged": true,
+  "passed": true
+}

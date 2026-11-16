@@ -1,5 +1,13 @@
 # v1.1.0 publication execution — 2026-11-16 JST
 
+## Pre-Release 2 publication in progress
+
+The owner explicitly requested the next prerelease be published. The fresh candidate is `95e61b419f7e348fe5ec59b4355692bf81f335a6`, tree `85cbdbd46d4d76086f7e739a67960cff9ba62816`: **13/13 CI workflows and 18/18 ES-LA acceptance tests passed**. [Current CI receipt](evidence/v110-pre2/candidate-ci-receipt.json), [independent review](evidence/v110-pre2/sol-publication-review.md), and [owner decision](v110-pre2-owner-publication-decision.md) are specific to `v1.1.0-pre.2`.
+
+The target deployment workflow is updated to enforce the explicit pre.2 contracts. Fresh Sol conditional-pass and the owner decision are now bound to the exact candidate and report hash. Actual pre.2 cutover and live-file acceptance are pending at this checkpoint. The prior pre.1 deployment and approval below are historical records, not new-release authorization. ES-LA feedback remains paused; the production Worker and original screenshots are unchanged.
+
+## Historical Pre-Release 1 execution
+
 The owner authorized public publication and selected **ES-LAの送信だけ停止して公開** after Cloudflare login returned 403. The public prerelease is `v1.1.0-pre.1`: ten-language calculation, search and display; ES-LA feedback temporarily paused; the original nine report locales preserved. The production Worker and database are unchanged. Original game screenshots remain private.
 
 ## Completed public acceptance

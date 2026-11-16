@@ -1,6 +1,16 @@
 # Singularity v1.1.0 — ES-LA test report
 
-## Current second-batch verification — 2026-11-16 JST
+## Pre-Release 2 candidate verification — 2026-11-16 JST
+
+Exact source `95e61b419f7e348fe5ec59b4355692bf81f335a6`, tree `85cbdbd46d4d76086f7e739a67960cff9ba62816`: **13/13 workflows and 18/18 acceptance tests PASS**. This adds release identity, cache-key, feedback compatibility and explicit publication lifecycle checks to the accepted 20-image integration. No engine, canonical game inventory or additional terminology changes are included.
+
+- [Exact-source CI receipt](evidence/v110-pre2/candidate-ci-receipt.json), [test results](evidence/v110-pre2/candidate/test-run.json), and [independent Sol review](evidence/v110-pre2/sol-publication-review.md).
+- [Retained raw evidence](evidence/v110-pre2/candidate/retained-files.json) and [final artifact verification](evidence/v110-pre2/candidate/final-artifact-receipt.json): all 526 source blobs, 79 site files and 31 rollback files matched. Historical reports below remain evidence of their original commits.
+- Numerical comparisons: 4,520, zero differences. Browser checks: 110 rotating transitions, 15 reloads, 86 added-name queries and 60 mobile viewport cases. Legacy state/locale/mobile, controlled memory, performance and local Worker regressions all passed. Production Worker was not changed and no production feedback report was submitted.
+
+Publication and live acceptance are recorded separately in the [publication status](v110-es-la-publication-status.md).
+
+## Historical second-batch verification — 2026-11-16 JST
 
 Status: **technical acceptance PASS on exact source `41e5ad156f0e19f46b342c28353e36e37f46d7a7`**, tree `bc565c1918cf99e3df83e0322cb64551692dcd71`. All **13/13 workflows succeeded**, including all **17/17 v1.1.0 acceptance tests**. This is the additional ten screenshots and combined 20-image audit, not a reuse of historical test results. The following evidence-only documentation checkpoint does not change runtime, source data, workflows or tests.
 

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "scope": "Final successful v110 candidate workflow artifact verification and unmodified legacy JSON reports. Source archive and generated sites were verified but are not copied here. No screenshots retained; no public deployment claimed.",
+  "sourceCommit": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+  "sourceTree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+  "uncommittedPreview": false,
+  "artifact": {
+    "repository": "Kurohanolu/chloha-damage-lab",
+    "runId": 43789176467,
+    "runUrl": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176467",
+    "workflowConclusion": "success",
+    "artifactId": 14191464198,
+    "name": "v110-es-la-candidate-evidence",
+    "archiveSha256": "ee8c596bb6edead5730de7b5a5d2287b299655e6ed0a466bc26e96fc9f62e084",
+    "archiveBytes": 9388342,
+    "githubDigestVerified": true
+  },
+  "candidateReportsMatchRetainedEarlyBytes": 16,
+  "sourceArchiveVerification": {
+    "archiveEntry": "dist/v110/source-candidate.zip",
+    "sha256": "c09c5edf38d7be99808659496bb14a68adf11d3504714ff6108ab0c79e34607f",
+    "sha256FileMatches": true,
+    "gitArchiveComment": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+    "gitTree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+    "gitBlobComparisons": 526,
+    "exactFileSetMatchesGitTree": true
+  },
+  "builtSiteVerification": {
+    "manifestEntry": "dist/v110/migration-artifacts.json",
+    "manifestSha256": "b8872614369bd8a7793d0d2f2f2163c4e44e355212a0212157e59cb17e38f1ec",
+    "sourceCommit": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+    "publicCutoverPerformed": false,
+    "siteFilesVerified": 79,
+    "rollbackFilesVerified": 31
+  },
+  "verifiedAt": "2026-11-16T02:04:24.531562+00:00",
+  "files": [
+    {
+      "path": "docs/evidence/v110-pre2/candidate/legacy/continued-state-browser.json",
+      "artifactEntry": "reports/v0188/continued-state-browser.json",
+      "sha256": "27e879fbe047d8595df372923aa9bcd0e746c06885d2c16a4f724ee557e97c8f",
+      "bytes": 9580
+    },
+    {
+      "path": "docs/evidence/v110-pre2/candidate/legacy/continued-locale-browser.json",
+      "artifactEntry": "reports/v0188/continued-locale-browser.json",
+      "sha256": "67a38bf75b7a6f2c4c2eae8ce633943c4ec3f42623f12cf008be4dc40b1a605a",
+      "bytes": 4422
+    },
+    {
+      "path": "docs/evidence/v110-pre2/candidate/legacy/ui-mobile.json",
+      "artifactEntry": "reports/v0188/ui-mobile.json",
+      "sha256": "bbe80343684e5b3ffb9da1e0ca072c9dd9f9fed3c35ca453b22984bea390c2cc",
+      "bytes": 6666
+    }
+  ]
+}

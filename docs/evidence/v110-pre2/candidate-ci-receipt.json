@@ -1,0 +1,2274 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-16T02:06:07.939Z",
+  "repository": "Kurohanolu/chloha-damage-lab",
+  "releaseTag": "v1.1.0-pre.2",
+  "phase": "pending-candidate",
+  "sourceCommit": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+  "sourceTree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+  "sourceBranch": "feature/v110-es-la-localization",
+  "event": "push",
+  "apiSource": "https://api.github.com/repos/Kurohanolu/chloha-damage-lab/actions/runs?head_sha=95e61b419f7e348fe5ec59b4355692bf81f335a6&per_page=100",
+  "scope": "Observed exact-source candidate CI. This receipt does not itself approve publication or attest later approved/live metadata commits.",
+  "summary": {
+    "requiredWorkflows": 13,
+    "successfulWorkflows": 13,
+    "jobs": 18,
+    "successfulJobs": 16,
+    "skippedJobs": 2,
+    "failedJobs": 0
+  },
+  "writeGuards": {
+    "releasePublication": {
+      "runId": 43789176708,
+      "jobId": 133043543199,
+      "conclusion": "skipped"
+    },
+    "issue53Report": {
+      "runId": 43789176484,
+      "jobId": 133043830974,
+      "conclusion": "skipped"
+    },
+    "latestUiVerdict": {
+      "runId": 43789176506,
+      "stepName": "Publish CI verdict",
+      "conclusion": "skipped"
+    }
+  },
+  "runs": [
+    {
+      "id": 43789176484,
+      "name": "Damage Lab CI and status ledger",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/damage-lab-ci.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176484",
+      "updated_at": "2026-11-16T01:57:56Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043469977,
+          "name": "verify",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176484/job/133043469977",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T01:57:55Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install test dependencies",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Install Chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Showdown calculation comparison",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Nine-locale rotation and translated form search",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Exhaustive nine-language native select audit",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 133043830974,
+          "name": "report",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176484/job/133043830974",
+          "started_at": "2026-11-16T01:57:55Z",
+          "completed_at": "2026-11-16T01:57:55Z",
+          "steps": []
+        }
+      ]
+    },
+    {
+      "id": 43789176704,
+      "name": "GitHub Pages live smoke",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/pages-live-smoke.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176704",
+      "updated_at": "2026-11-16T01:57:04Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470404,
+          "name": "pages-live-smoke",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176704/job/133043470404",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T01:57:03Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-save playwright@1.58.2",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npx playwright install chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Select one exact expected source for this publication phase",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run node tests/pages-live-smoke.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176708,
+      "name": "Publish verified release",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/publish-release.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176708",
+      "updated_at": "2026-11-16T01:56:55Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470273,
+          "name": "validate",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176708/job/133043470273",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T01:56:54Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run node scripts/verify-release.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run node tests/v0184-engine-initialization.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run node tests/v0184-public-baseline.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run node tests/v0185-feedback-production.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 133043543199,
+          "name": "publish",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176708/job/133043543199",
+          "started_at": "2026-11-16T01:56:55Z",
+          "completed_at": "2026-11-16T01:56:54Z",
+          "steps": []
+        }
+      ]
+    },
+    {
+      "id": 43789176706,
+      "name": "Showdown differential tests",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/showdown-compare.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176706",
+      "updated_at": "2026-11-16T01:57:11Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470294,
+          "name": "compare",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176706/job/133043470294",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:57:10Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npx playwright install chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npm run test:showdown",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176500,
+      "name": "Showdown differential audit",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/showdown-differential.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176500",
+      "updated_at": "2026-11-16T01:57:08Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470259,
+          "name": "showdown-differential",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176500/job/133043470259",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T01:57:08Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install comparison dependencies",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Compare sixteen rolls with Showdown",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176506,
+      "name": "UI & damage regression",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/ui-smoke.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176506",
+      "updated_at": "2026-11-16T01:59:40Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470183,
+          "name": "ui-smoke",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176506/job/133043470183",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:59:39Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-save playwright@1.58.2 @smogon/calc",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npx playwright install chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run node tests/defensive-abilities.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run node tests/v0182-variable-power.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Run node tests/v0182-fickle-beam-electro-shot.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Run node tests/v0182-nonstandard-damage-policy.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Run node tests/v0182-activation-assumed.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Run node tests/v0182-grav-apple-gravity.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Run node tests/v0182-showdown-ability-flags.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Run node tests/v0182-attacker-ability-validation.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Run node tests/v0182-multi-hit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Run node tests/v0182-independent-multihit-rolls.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Run node tests/v0182-special-multihit-independent.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Run node tests/v0182-showdown-multihit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 18,
+              "name": "Run node tests/v0182-multihit-browser.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 19,
+              "name": "Run node tests/v0181-weight-power.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 20,
+              "name": "Run node tests/v0181-weight-data-audit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 21,
+              "name": "Run node tests/v0181-mega-weight-integrity.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 22,
+              "name": "Run node tests/v0181-ui-integration.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 23,
+              "name": "Run node tests/v0181-weight-browser.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 24,
+              "name": "Run node tests/v0181-sprite-coverage.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 25,
+              "name": "Run node tests/v0178-hiragana-suggestions.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 26,
+              "name": "Run node tests/v0182-bilingual-move-search.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 27,
+              "name": "Run node tests/v0182-move-status-locale-toggle.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 28,
+              "name": "Run node tests/v0182-type-badge-locale.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 29,
+              "name": "Run node tests/v0182-all-select-locale-roundtrip.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 30,
+              "name": "Run node tests/v0182-empty-search-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 31,
+              "name": "Run node tests/v0182-battle-status-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 32,
+              "name": "Run node tests/v0182-battle-confirm-locale.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 33,
+              "name": "Run node tests/v0182-source-labels-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 34,
+              "name": "Run node tests/v0182-conditional-warnings-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 35,
+              "name": "Run node tests/v0182-dynamic-notices-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 36,
+              "name": "Run node tests/v0182-form-options-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 37,
+              "name": "Run node tests/v0182-ability-status-i18n.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 38,
+              "name": "Run node tests/v0182-skin-numeric.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 39,
+              "name": "Run node tests/v0182-low-hp-abilities-numeric.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 40,
+              "name": "Run node tests/v0178-showdown-cross-compare.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 41,
+              "name": "Run node tests/v0177-ci-inventory.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 42,
+              "name": "Run node tests/v0177-move-policy-consistency.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 43,
+              "name": "Run node tests/v0177-conditional-power-clarity.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 44,
+              "name": "Run node tests/v0177-version-provenance.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 45,
+              "name": "Immutable v1.0.0 exact-nine contracts (historical evidence)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 46,
+              "name": "Candidate ten-locale registry, names and privacy contracts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 47,
+              "name": "Run node tests/v0183-locale-catalog.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 48,
+              "name": "Run node tests/v0183-bulk-name-adapter.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 49,
+              "name": "Run node tests/v0183-locale-name-audit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 50,
+              "name": "Run node tests/v0183-name-ui-roundtrip.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 51,
+              "name": "Run node tests/v0183-multilingual-autocomplete.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 52,
+              "name": "Run node tests/v0183-screenshot-locale-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 53,
+              "name": "Run node tests/v0183-battle-summary-name-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 54,
+              "name": "Run node tests/v0183-all-move-summary-locale-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 55,
+              "name": "Run node tests/v0183-dynamic-warning-locale-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 56,
+              "name": "Run node tests/v0183-ability-item-locale-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 57,
+              "name": "Run node tests/v0183-type-badge-reload-e2e.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 58,
+              "name": "Run node tests/v0183-localized-battlefield.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 59,
+              "name": "Run node tests/v0183-result-locale-phrases.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 60,
+              "name": "Run node tests/v0183-dynamic-damage-range.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 61,
+              "name": "Run node tests/v0183-ko-verdict-locale.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 62,
+              "name": "Run node tests/v0183-ability-notice-locales.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 63,
+              "name": "Run node tests/v0183-mixed-language-regression.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 64,
+              "name": "Nine-locale rotation regression (90 transitions)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 65,
+              "name": "Run node tests/move-catalog-audit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 66,
+              "name": "Run node tests/v0182-move-coverage-inventory.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 67,
+              "name": "Run node tests/v0182-move-triage-ledger.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 68,
+              "name": "Run node tests/v0182-multihit-weight-reconciliation.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 69,
+              "name": "Run node tests/v0182-spit-up-browser.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 70,
+              "name": "Run node tests/v0182-four-move-policy-engine.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 71,
+              "name": "Run node tests/v0182-remaining-37-ui-wiring.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 72,
+              "name": "Run node tests/v0182-conditional-power-rolls.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 73,
+              "name": "Run node tests/stat-reference-forced-critical-audit.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 74,
+              "name": "Run node tests/v0182-stat-reference-ui-wiring.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 75,
+              "name": "Run node tests/v0182-forced-critical-immunity.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 76,
+              "name": "Run node tests/v0182-defensive-modifier-composition.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 77,
+              "name": "Run node tests/v0182-defensive-rounding-oracle.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 78,
+              "name": "Run node tests/v0182-offense-defense-rounding-oracle.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 79,
+              "name": "Run node tests/v0182-field-type-rounding-oracle.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 80,
+              "name": "Run node tests/v0182-dualtype-defensive-ability-oracle.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 81,
+              "name": "Run node tests/v0182-moldbreaker-composition.mjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 82,
+              "name": "Run node tests/v0182-comprehensive-audit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 83,
+              "name": "Run node tests/v0177-engine-audit.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 84,
+              "name": "Run node tests/v0177-independent-vectors.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 85,
+              "name": "Run node tests/v0177-modifier-vectors.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 86,
+              "name": "Run node tests/v0177-conditional-power-vectors.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 87,
+              "name": "Run node tests/v0177-expanding-force-matrix.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 88,
+              "name": "Run node tests/v0177-expanding-force-grounding.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 89,
+              "name": "Run node tests/v0177-expanding-force-stacked.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 90,
+              "name": "Run node tests/v0179-localization-coverage.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 91,
+              "name": "Run node tests/v0179-localization.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 92,
+              "name": "Run node tests/ui-smoke.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 93,
+              "name": "Run node tests/conditional-power-ui.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 94,
+              "name": "Run node tests/damage-regression.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 95,
+              "name": "Run node tests/v0171-moves.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 96,
+              "name": "Run node tests/v0171-runtime.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 97,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 98,
+              "name": "Publish CI verdict",
+              "status": "completed",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 195,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 196,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 197,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176461,
+      "name": "v0.184 engine baseline",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v0184-engine-baseline.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176461",
+      "updated_at": "2026-11-16T01:57:34Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043469848,
+          "name": "engine-contract",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176461/job/133043469848",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:57:34Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Validate engine initialization and data loading",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Compare frozen public v0.183 outputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Install Playwright",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Check baseline test syntax",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Validate engine contract",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176805,
+      "name": "v0.185 anonymous feedback",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v0185-feedback.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176805",
+      "updated_at": "2026-11-16T01:58:11Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470624,
+          "name": "private-feedback",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176805/job/133043470624",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:58:10Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install locked Worker dependencies",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Immutable v1.0.0 exact-nine privacy contract (historical evidence)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Candidate ten-language catalogs and private snapshot allowlist",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Validate fail-closed production release checks",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Exercise private API, security and moderated Issue state machine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Validate the undeployed Worker bundle",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Preserve all 300 public calculation baseline cases",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Install browser test dependencies",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Exercise nine-language UI and authenticated admin workflows",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 25,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 26,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 27,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176464,
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v0186-accuracy-mechanics.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176464",
+      "updated_at": "2026-11-16T01:59:06Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470123,
+          "name": "mechanics",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176464/job/133043470123",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T01:56:53Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Install pinned audit-only reference",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Validate registered data, stats, type chart, items and rounding",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Recheck all 300 baseline contracts and independent errata",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Confirm existing-defect regressions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Check attack and defense ability witnesses",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Compare registered moves and stat-source interactions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Audit all move-flag memberships and damage effects",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Compare hit distributions, consumable effects and KO probabilities",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Compare weight boundaries and all existing form weights",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Compare fixed-seed combinations against Champions and Gen9",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Verify exhaustive inventory and reproducible coverage counts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Require the audit workflow before any release publication",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 31,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 32,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 33,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 133043470327,
+          "name": "locale-and-feedback",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176464/job/133043470327",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:59:05Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npx playwright install chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Nine-language numeric rotations from every starting locale",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Nine-language corrected mechanics, UI paths and reloads",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Existing private-feedback API and administrator security contracts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Nine-language feedback and administrator browser regressions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 21,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 22,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 23,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176483,
+      "name": "v0.187 Singularity Migration",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v0187-singularity-migration.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176483",
+      "updated_at": "2026-11-16T01:57:54Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470290,
+          "name": "migration",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176483/job/133043470290",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:57:54Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npx playwright install chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Install CJK fonts for readable nine-language visual evidence",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Validate brand manifest and unchanged calculation contracts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Prepare both static sites without deployment",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Nine-language proposed-path, legacy, mobile and private-feedback regression",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 21,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 22,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 23,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176488,
+      "name": "v0.188 Quality Remediation",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v0188-quality-remediation.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176488",
+      "updated_at": "2026-11-16T02:05:16Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470098,
+          "name": "quality-candidate",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176488/job/133043470098",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T02:05:15Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Install locked independent calculation reference",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Install fonts for nine-language evidence",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Preserve release metadata, engine bytes and fixed 300 contracts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Exercise every v0.188 state, accessibility, locale and mobile regression",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Preserve ninety-transition language regression",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Recheck private feedback state machine without production writes",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Build candidate assets without deployment",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 27,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 28,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 29,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 133043470323,
+          "name": "controlled-memory",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176488/job/133043470323",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T02:04:30Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Install fonts for matched memory scenarios",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Measure controlled-GC retention and repeated state recovery",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 17,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 133043470582,
+          "name": "performance",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176488/job/133043470582",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T02:01:15Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Install fonts for comparable nine-language rendering",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Measure baseline and candidate under identical emulation conditions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Observe the pinned baseline or approved current public release without mutations",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 19,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 20,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 21,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176496,
+      "name": "v1.0.0 Stable Promotion",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v100-stable-promotion.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176496",
+      "updated_at": "2026-11-16T01:58:28Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470083,
+          "name": "stable-candidate",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176496/job/133043470083",
+          "started_at": "2026-11-16T01:56:42Z",
+          "completed_at": "2026-11-16T01:58:27Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Identify candidate release line",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Install nine-language fonts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Verify stable metadata and preserved public baseline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Preserve immutable v1.0.0 stable acceptance on v1.1.0 development",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Run every stable promotion, transport, numerical and publication regression",
+              "status": "completed",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 13,
+              "name": "Package the clean unpublished candidate and rollback inventory",
+              "status": "completed",
+              "conclusion": "skipped"
+            },
+            {
+              "number": 14,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 27,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 28,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 29,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43789176467,
+      "name": "v1.1.0 ES-LA Localization",
+      "head_branch": "feature/v110-es-la-localization",
+      "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+      "path": ".github/workflows/v110-es-la-localization.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176467",
+      "updated_at": "2026-11-16T02:03:43Z",
+      "run_attempt": 1,
+      "tree": "85cbdbd46d4d76086f7e739a67960cff9ba62816",
+      "jobs": [
+        {
+          "id": 133043470067,
+          "name": "candidate-ten-locales",
+          "head_sha": "95e61b419f7e348fe5ec59b4355692bf81f335a6",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/43789176467/job/133043470067",
+          "started_at": "2026-11-16T01:56:41Z",
+          "completed_at": "2026-11-16T02:03:43Z",
+          "steps": [
+            {
+              "number": 1,
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 2,
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 3,
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 4,
+              "name": "Run npm install --no-package-lock --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Run npm ci --prefix services/feedback --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "Run npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 7,
+              "name": "Run npx playwright install --with-deps chromium",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 8,
+              "name": "Install CJK fonts for preserved language coverage",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 9,
+              "name": "Validate release identity and unchanged 300-case contract",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 10,
+              "name": "Run all new candidate acceptance (no test discovery exclusions)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 11,
+              "name": "Preserve immediate candidate diagnostics while legacy checks continue",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 12,
+              "name": "Preserve existing nine-language 90-transition candidate regression",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 13,
+              "name": "Preserve existing nine-language state and mobile candidate regressions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 14,
+              "name": "Validate local Worker without production calls",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 15,
+              "name": "Build unpublished candidate site pair and hashes",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 16,
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 31,
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 32,
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "number": 33,
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
