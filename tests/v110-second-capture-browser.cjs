@@ -54,7 +54,10 @@ assert.ok(!c.ChlohaNameSearch.search(index,'items','Baya Tamar').includes('タ�
 assert.ok(!c.ChlohaNameSearch.search(index,'items','Baya Yecana').includes('リンドのみ'),'Yecana must not be Rindo');
 assert.equal(c.ChlohaEsLa.entity('natures','いじっぱり'),'Firme');
 assert.deepEqual(JSON.parse(JSON.stringify(c.ChlohaEsLa.metadata('natures','いじっぱり').canonicalIds)),['adamant']);
-const state=page=>page.evaluate(()=>JSON.stringify({state:ChlohaPersistence.capture(),input:ChlohaLastCalculation.a,result:ChlohaLastCalculation.r}));
+const state=page=>page.evaluate(()=>{
+ const calculation=window.ChlohaLastCalculation;
+ return JSON.stringify({state:ChlohaPersistence.capture(),input:calculation?.a??null,result:calculation?.r??null,hasCalculation:!!calculation,errorHidden:document.getElementById('error').hidden,outputHidden:document.getElementById('output').hidden,copyDisabled:document.getElementById('copy').disabled,battleCommitDisabled:document.getElementById('battleCommit').disabled});
+});
 const expose=control=>control.evaluate(node=>{for(let p=node.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;});
 async function localeRoundtrip(page,control,expectedId,spainLabel){
  const before=await state(page);
@@ -100,8 +103,15 @@ async function localeRoundtrip(page,control,expectedId,spainLabel){
     const option=control.locator('option[value="'+w.id+'"]');assert.equal(await option.count(),1);assert.ok((await option.textContent()).includes(w.name));
     await control.selectOption('none');await control.focus();await page.keyboard.press('Home');await page.keyboard.type(w.name,{delay:20});await page.keyboard.press('Tab');
     assert.equal(await control.inputValue(),w.id,'Native ability typeahead keeps supported/unsupported identity');
-    await localeRoundtrip(page,w.side+'Ability',w.id);evidence.abilities.push({width,id:w.id,name:w.name,passed:true});
+    const blocked=w.id.startsWith('unsupported:'),availability=JSON.parse(await state(page));
+    assert.equal(availability.hasCalculation,!blocked,'Unsupported abilities stop calculation; supported abilities retain a result');
+    assert.equal(availability.errorHidden,!blocked);assert.equal(availability.outputHidden,blocked);
+    if(blocked){assert.equal(availability.input,null);assert.equal(availability.result,null);assert.equal(availability.copyDisabled,true);assert.equal(availability.battleCommitDisabled,true);}
+    await localeRoundtrip(page,w.side+'Ability',w.id);evidence.abilities.push({width,id:w.id,name:w.name,blockedOutputPreserved:blocked,passed:true});
    }
+   // Restore a calculable state after the deliberately unsupported Rough Skin
+   // witness so berry selections also exercise live numeric-state preservation.
+   await page.selectOption('#attAbility','none');await page.waitForFunction(()=>!!window.ChlohaLastCalculation);
    const item=page.locator('#defItem');await expose(item);
    for(const w of berries){
     const option=item.locator('option[value="'+w.id+'"]');assert.equal(await option.count(),1);assert.ok((await option.textContent()).includes(w.name));
