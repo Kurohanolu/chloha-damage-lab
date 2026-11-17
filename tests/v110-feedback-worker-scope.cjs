@@ -35,6 +35,17 @@ assert.equal(fs.readFileSync('tests/v110-regional-batch6-contract.cjs','utf8').s
 const protectedScope=f=>f.startsWith('data/')||f.startsWith('docs/data/')||(/^[^/]+\.js$/.test(f)&&!['feedback-ui-v0185.js','feedback-release-v100.js'].includes(f));
 const protectedBefore=git('ls-tree','-r','--name-only',ref).trim().split('\n').filter(protectedScope).sort();
 assert.deepEqual(git('ls-files').trim().split('\n').filter(protectedScope).sort(),protectedBefore,'Current data/runtime inventory is unchanged');
-for(const file of protectedBefore)assert.equal(fs.readFileSync(file,'utf8'),git('show',ref+':'+file),'Current calculation/data/nine-locale source frozen: '+file);
+const inventoryFile='docs/data/v110-es-la-ui-inventory.json';
+const inventoryBefore=JSON.parse(git('show',ref+':'+inventoryFile));
+const inventoryExpected=structuredClone(inventoryBefore);
+// Only the two versioned source hashes change; every inventory record stays frozen.
+for(const file of ['feedback-release-v100.js','index.html'])inventoryExpected.sourceSha256[file]=require('node:crypto').createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+function checkInventory(value){assert.deepEqual(value,inventoryExpected,'UI inventory permits only exact current versioned-source hashes');}
+checkInventory(JSON.parse(fs.readFileSync(inventoryFile,'utf8')));
+const badInventory=structuredClone(inventoryExpected);badInventory.sourceSha256['index.html']='0'.repeat(64);
+assert.throws(()=>checkInventory(badInventory),'Reject fabricated source hash');
+const extraInventory=structuredClone(inventoryExpected);extraInventory.unreviewed=true;
+assert.throws(()=>checkInventory(extraInventory),'Reject any unrelated inventory edit');
+for(const file of protectedBefore)if(file!==inventoryFile)assert.equal(fs.readFileSync(file,'utf8'),git('show',ref+':'+file),'Current calculation/data/nine-locale source frozen: '+file);
 const report={passed:true,scope:'preparation-only narrow Worker delta',referenceCommit:ref,referenceTree:tree,referenceIsPublishedBaseline:true,allowedChange:'public config supportedLocales copies validator C.locales',serverFilesPreserved:historical.length,sharedValidatorPreserved:true,productionPausePreserved:true,historicalBatch6ContractUnchanged:true};
 fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/feedback-worker-scope.json',JSON.stringify(report,null,2)+'\n');console.log('PASS narrow feedback Worker scope; no publication approval implied');
