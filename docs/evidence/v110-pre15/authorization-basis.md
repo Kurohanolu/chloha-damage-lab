@@ -1,0 +1,7 @@
+# Pre.15 standing owner authorization binding
+
+This record applies the owner’s existing autonomous translation-publication instructions, not a new owner message or approval inferred from the auditor. The owner explicitly authorized confirmed ES-LA names, dictionaries, aliases, minor translation-display fixes and evidence updates without additional approval, provided canonical IDs, evidence, existing-nine-language preservation, ten-language tests, numeric equivalence, mandatory CI, approval gates and actual production checks all pass.
+
+This candidate adds 14 historical official LATAM attestations and corrects the existing Power Spot dictionary/alias to Fuente Energía. Historical sources are not promoted to Champions confirmation. No supported ability/roster expansion, calculation engine change, performance data change, large existing-language change, hosting/authentication change or quality-gate relaxation is authorized or included. Pre.14 count controls, pre.12 feedback/security and the ES-LA intake pause remain preserved.
+
+The independent report’s remaining conditions are procedural requirements already mandated by that authorization: fresh metadata-head CI, exact-source deployment, dual-site live/asset checks, rollback evidence and formal publication gates. The owner receipt records application of that standing authority at the recorded time, not a newly received personal confirmation. Publication must stop if any condition fails.
