@@ -11,7 +11,7 @@ const {root,startLab,launchBrowser,ready}=require('../tests/helpers/v0188-browse
 // Retain each historical baseline; pre.2 compares against published pre.1,
 // while original pre.1 measurements retain the exact Stable predecessor.
 const COMMUNITY_REVISION=require('../release.json').tag==='v1.1.0-pre.6'&&require('../release.json').migration?.legacyPolicy==='community-pinned-v1';
-const BASELINE=require('../release.json').tag==='v1.1.0-pre.9' ? '0b1f8fffea3b1d063036d00fd712b0a0e9695111' : require('../release.json').tag==='v1.1.0-pre.8' ? '66a085ba325655bc9369656ea0645f7f6f997127' : require('../release.json').tag==='v1.1.0-pre.7' ? '2fb5655a89e076df5993a3294bddbe1bf31afa58' : COMMUNITY_REVISION ? require('./helpers/v110-community-public-base.cjs').commit : require('../release.json').tag==='v1.1.0-pre.6' ? '82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74' : require('../release.json').tag==='v1.1.0-pre.5' ? '61d87e82995bc60d4564aaf57a52dfc1fd859e4c' : require('../release.json').tag==='v1.1.0-pre.4'
+const BASELINE=require('../release.json').tag==='v1.1.0-pre.10' ? '46f930797e662be0d01e974f98ddde6de7b414c0' : require('../release.json').tag==='v1.1.0-pre.9' ? '0b1f8fffea3b1d063036d00fd712b0a0e9695111' : require('../release.json').tag==='v1.1.0-pre.8' ? '66a085ba325655bc9369656ea0645f7f6f997127' : require('../release.json').tag==='v1.1.0-pre.7' ? '2fb5655a89e076df5993a3294bddbe1bf31afa58' : COMMUNITY_REVISION ? require('./helpers/v110-community-public-base.cjs').commit : require('../release.json').tag==='v1.1.0-pre.6' ? '82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74' : require('../release.json').tag==='v1.1.0-pre.5' ? '61d87e82995bc60d4564aaf57a52dfc1fd859e4c' : require('../release.json').tag==='v1.1.0-pre.4'
  ?'082ab180bc8835304d959f583d4968e0565bdea3'
  :require('../release.json').tag==='v1.1.0-pre.3'
  ?'aba2d0558948e2a4dd375074fb11fd428edf6222'
@@ -30,6 +30,7 @@ const FEEDBACK_TEXT='LOCAL_MEMORY_AUDIT_NOT_FOR_SUBMISSION';
 const OUTPUT=path.join(root,'reports/v0188-final/memory.json');
 const started=Date.now();
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:1024*1024}).trim();
+if(require('../release.json').tag==='v1.1.0-pre.10')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'1ea3163c8a8f4de8d68951b28c061a855461468c','Pre.10 immutable pre.9 baseline');
 if(require('../release.json').tag==='v1.1.0-pre.9')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'701fbae7b142ba2ac5e5e23f1755a84f39d82b6c','Pre.9 exact Community-policy pre.8 baseline');
 if(require('../release.json').tag==='v1.1.0-pre.8')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'531c22a3fd647f674a287808a7a63b74010ccb58','Pre.8 exact Community-policy pre.7 baseline');
 if(require('../release.json').tag==='v1.1.0-pre.7')assert.equal(git('rev-parse',BASELINE+'^{tree}'),'002d2af5716f408f50d50b8390d66a73ba083be3','Pre.7 exact Community-policy pre.6 baseline');

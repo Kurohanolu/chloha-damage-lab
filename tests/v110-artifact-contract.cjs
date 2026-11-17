@@ -24,9 +24,9 @@ const reversals=[
  ["  // A refresh can run while the main result is already translated. Rebuild the\n  // mini result from the calculation so that its cached source stays Japanese.\n  el('miniDamage').textContent=r?`${lo}〜${hi} ダメージ`:'入力を確認してください';\n  el('miniPercent').textContent=r?`最大HPの ${(lo/a.hp*100).toFixed(1)}〜${(hi/a.hp*100).toFixed(1)}%`:'';\n", "  el('miniDamage').textContent=r?el('damage').textContent:'入力を確認してください';el('miniPercent').textContent=r?el('percent').textContent:'';\n"],
  ["es:'No hay movimientos coincidentes','es-LA':'No hay movimientos coincidentes',","es:'No hay movimientos coincidentes',"],
  ["es:'No hay Pokémon coincidentes','es-LA':'No hay Pokémon coincidentes',","es:'No hay Pokémon coincidentes',"],
- ['>v1.1.0 Pre-Release 9</span>','>v1.0.0</span>'],
- ['画面の「v1.1.0 Pre-Release 9」は','画面の「v1.0.0」は'],
- ['./assets/singularity/header.webp?v=1.1.0-pre.9','./assets/singularity/header.webp?v=1.0.0'],
+ ['>v1.1.0 Pre-Release 10</span>','>v1.0.0</span>'],
+ ['画面の「v1.1.0 Pre-Release 10」は','画面の「v1.0.0」は'],
+ ['./assets/singularity/header.webp?v=1.1.0-pre.10','./assets/singularity/header.webp?v=1.0.0'],
  ["   if(locale==='es-LA')item.setAttribute('aria-label',moveName);\n",''],
  ["  if(locale==='es-LA')return window.ChlohaEsLa?.entity(category,key,localizedName(category,key,'es'))||localizedName(category,key,'es');\n",''],
  ["   window.ChlohaPokeAPILocalizedNames?.[category]?.[key],\n   {regional:window.ChlohaEsLa?.entity(category,key,null)}","   window.ChlohaPokeAPILocalizedNames?.[category]?.[key]"],
@@ -41,9 +41,21 @@ const stableInline=inline(stableHTML).join('\n/* inline boundary */\n');
 assert.equal(normalizeCandidateInline(html),stableInline,'Every remaining inline numeric/state/event byte must match immutable stable');
 for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"window.numericTamper=true\""],["function render(){","function render(){window.numericTamper=true;"],["models=structuredClone(snapshot.models);","models=structuredClone(snapshot.models);models.att.points.attack=32;"],["window.SingularityPortraitAlt?.update(img,p);","window.SingularityPortraitAlt?.update(img,p);render();"]]){const corrupt=html.replace(before,after);assert.notEqual(corrupt,html);assert.throws(()=>assert.equal(normalizeCandidateInline(corrupt),stableInline),'Calculation/state/recalculation tampering must fail');}
 
-assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
+// Pre.10 permits exactly the reviewed capability field, never auth/storage/Issue changes.
+// The separate current-candidate scope guard freezes all remaining server bytes.
+require('./v110-feedback-worker-scope.cjs');
+const capabilityExpression='supportedLocales:[...C.locales],';
+function normalizeWorker(bytes){
+ const text=bytes.toString();
+ assert.equal(text.split(capabilityExpression).length,2,'Exactly one validator-derived public capability expression');
+ return text.replace(capabilityExpression,'');
+}
+const workerBytes=fs.readFileSync('services/feedback/src/worker.js');
+assert.equal(hash(normalizeWorker(workerBytes)),hash(old(stable,'services/feedback/src/worker.js')),'After exact capability reversal all historical authentication/storage/Issue bytes remain frozen');
+assert.throws(()=>normalizeWorker(workerBytes.toString().replace(capabilityExpression,'supportedLocales:["es-LA"],')),'Fabricated capabilities cannot normalize');
+assert.throws(()=>assert.equal(hash(normalizeWorker(workerBytes+'\n// unexpected change\n')),hash(old(stable,'services/feedback/src/worker.js'))),'Other server changes remain rejected');
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
-assert.equal(release.tag,'v1.1.0-pre.9');assert.equal(release.channel,'prerelease');
+assert.equal(release.tag,'v1.1.0-pre.10');assert.equal(release.channel,'prerelease');
 const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
 const cached=[];
 for(const reference of assetReferences(html)){
@@ -76,5 +88,5 @@ try{
  }
  assert.equal(manifest.rollback.legacyCommit,legacyCommit);assert.throws(()=>buildSites(temp),/empty output/);assert.throws(()=>buildSites(process.cwd()),/source tree/);
  fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,publicLegacyCommit:manifest.legacyCommit,communityActive,pendingFixturePublicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
- console.log('PASS v1.1.0 private candidate packaging: unchanged Worker/control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
+ console.log('PASS v1.1.0 private candidate packaging: exact capability-only Worker delta, unchanged control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
