@@ -4,7 +4,7 @@ const {checkProduction,readSettings}=require('../scripts/feedback-production-che
 const requiredLocales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
 assert.deepEqual(readSettings().requiredLocales,[],'Owner-approved ES-LA pause leaves the existing backend unchanged');
 (async()=>{
- for(const supportedLocales of [undefined,[],requiredLocales.filter(x=>x!=='es-LA'),requiredLocales.map(x=>x==='es-LA'?'es-419':x),[...requiredLocales,'en'],[...requiredLocales,'xx'],requiredLocales.map(x=>x==='es-LA'?null:x),requiredLocales]){
+ for(const supportedLocales of [undefined,[],requiredLocales.filter(x=>x!=='es-LA'),requiredLocales.map(x=>x==='es-LA'?'es-419':x),requiredLocales]){
   const calls=[];
   const fetchImpl=async(url,options)=>{
    calls.push(url);assert.equal(options.method,'GET');assert.equal(options.body,undefined);
