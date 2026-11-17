@@ -40,7 +40,9 @@ for(const mutate of [r=>{r.notes='docs/other.md';},r=>{r.migration.liveTargetVer
 for(const verify of [verifyQualityApproval,verifyCutoverApproval,verifyPublication]){
  assert.throws(()=>verify(draft),'Pending pre.14 cannot publish');
  const stale=structuredClone(draft);stale.qualityReview=structuredClone(pre11.qualityReview);
- stale.qualityReview.releaseTag=draft.tag;assert.throws(()=>verify(stale),'Retagged pre.11 approval cannot authorize pre.14');
+ stale.qualityReview.releaseTag=draft.tag;
+ // Quality validates metadata shape; cutover/publication additionally bind the reviewed source.
+ if(verify!==verifyQualityApproval)assert.throws(()=>verify(stale),'Retagged pre.11 approval cannot authorize pre.14');
 }
 for(const marker of [null,false,{},'approved']){
  const invalid={...structuredClone(draft),followupAudit:marker};

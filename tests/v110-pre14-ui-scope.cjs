@@ -14,7 +14,7 @@ assert.equal(normalize(read('index.html')),normalize(old('index.html')),'Inline 
 assert.equal(read('feedback-release-v100.js').replace('[1,2,3,4,5,6,7,8,9,11,14]','[1,2,3,4,5,6,7,8,9,11]'),old('feedback-release-v100.js'));
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 const inv=JSON.parse(read('docs/data/v110-es-la-ui-inventory.json')),oldInv=JSON.parse(old('docs/data/v110-es-la-ui-inventory.json')),normalized=structuredClone(inv);
-for(const p of ['index.html','feedback-release-v100.js']){assert.equal(inv.sourceSha256[p],hash(read(p)));normalized.sourceSha256[p]=oldInv.sourceSha256[p];}
+for(const p of ['index.html','feedback-release-v100.js','locale-quality-v0188.js']){assert.equal(inv.sourceSha256[p],hash(read(p)));normalized.sourceSha256[p]=oldInv.sourceSha256[p];}
 assert.deepEqual(normalized,oldInv,'No official translation evidence promoted');
 const coverage=JSON.parse(read('docs/data/v110-es-la-coverage.json')),oldCoverage=JSON.parse(old('docs/data/v110-es-la-coverage.json'));
 assert.deepEqual(coverage.uiInventory,{...inv,sha256:hash(read('docs/data/v110-es-la-ui-inventory.json'))});coverage.uiInventory=oldCoverage.uiInventory;assert.deepEqual(coverage,oldCoverage);
