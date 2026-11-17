@@ -16,7 +16,7 @@ assert.equal(execFileSync('git',['rev-parse',publishedCommit+'^{tree}'],{encodin
 assert.equal(pre1.tag,'v1.1.0-pre.1');assert.equal(pre1.migration.liveTargetVerified,true);
 const draft=structuredClone(current);draft.migration.status='awaiting-owner-approval';draft.migration.liveTargetVerified=false;
 for(const key of Object.keys(draft.migration))if(key.startsWith('liveAcceptance'))delete draft.migration[key];
-draft.qualityReview={releaseTag:draft.tag,auditor:'6.1 Sol',auditStatus:'pending',ownerApproval:'pending',evidence:'',auditOutcome:'pending',conditionsDisposition:'pending',reviewedSourceCommit:null,reviewedTree:null,auditReportSha256:null,ownerEvidence:'',ownerRecordedAtJST:null};
+draft.qualityReview={releaseTag:draft.tag,auditor:'6 Sol',auditStatus:'pending',ownerApproval:'pending',evidence:'',auditOutcome:'pending',conditionsDisposition:'pending',reviewedSourceCommit:null,reviewedTree:null,auditReportSha256:null,ownerEvidence:'',ownerRecordedAtJST:null};
 for(const event of ['push','workflow_dispatch','pull_request']){
  const expected={ref:publishedCommit,mode:'published-v110-pre11-base'};
  assert.deepEqual(selectBaseline(draft,event,publishedCommit),expected);

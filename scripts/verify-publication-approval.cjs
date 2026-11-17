@@ -29,7 +29,7 @@ function verifyQualityApproval(release){
  const review=release.qualityReview;
  assert.ok(review,'A new quality release requires independent review and owner approval');
  assert.equal(review.releaseTag,release.tag,'Quality approval must bind to this exact release tag');
- const reviewers={'v0.188-pre.1':'6.1 Terra','v0.188-pre.2':'6.1 Sol','v1.0.0':'6.1 Sol','v1.1.0-pre.1':'6.1 Sol','v1.1.0-pre.2':'6.1 Sol','v1.1.0-pre.3':'6.1 Sol','v1.1.0-pre.4':'6.1 Sol','v1.1.0-pre.5':'6.1 Sol','v1.1.0-pre.6':'6.1 Sol','v1.1.0-pre.7':'6.1 Sol','v1.1.0-pre.8':'6.1 Sol','v1.1.0-pre.9':'6.1 Sol','v1.1.0-pre.11':'6.1 Sol'};
+ const reviewers={'v0.188-pre.1':'6.1 Terra','v0.188-pre.2':'6.1 Sol','v1.0.0':'6.1 Sol','v1.1.0-pre.1':'6.1 Sol','v1.1.0-pre.2':'6.1 Sol','v1.1.0-pre.3':'6.1 Sol','v1.1.0-pre.4':'6.1 Sol','v1.1.0-pre.5':'6.1 Sol','v1.1.0-pre.6':'6.1 Sol','v1.1.0-pre.7':'6.1 Sol','v1.1.0-pre.8':'6.1 Sol','v1.1.0-pre.9':'6.1 Sol','v1.1.0-pre.11':'6 Sol'};
  const reviewer=reviewers[release.tag];
  assert.ok(reviewer,'A new release identity requires an explicit independent review policy');
 

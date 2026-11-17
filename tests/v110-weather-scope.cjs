@@ -19,4 +19,10 @@ assert.equal(read('feedback-release-v100.js').replace('[1,2,3,4,5,6,7,8,9,11]','
 const normalize=html=>html.replaceAll('Pre-Release 11','Pre-Release 9').replaceAll('1.1.0-pre.11','1.1.0-pre.9').replace(/([?&])h=[a-f0-9]{16}/g,'');
 assert.equal(normalize(read('index.html')),normalize(old('index.html')),'All inline UI, roster, move, state and event code remains byte-identical apart from release labels/cache URLs');
 assert.equal(require('../release.json').migration.legacyPolicy,'community-pinned-v1');
+const ledger=require('./fixtures/v110-weather-corrections.json'),correction=require('./helpers/v110-weather-correction.cjs');
+assert.equal(ledger.cases.length,1,'Exactly one weather baseline correction is authorized');assert.equal(ledger.cases[0].name,correction.correctedName);
+const hash=text=>require('node:crypto').createHash('sha256').update(text).digest('hex');
+const original=JSON.parse(old('tests/fixtures/v0184-public-baseline.json')).cases.find(c=>c.name===correction.correctedName);
+assert.equal(ledger.frozenBaselineSha256,hash(old('tests/fixtures/v0184-public-baseline.json')));assert.equal(ledger.cases[0].originalExpectedSha256,hash(JSON.stringify(original.expected)));correction.checkCorrectedResult(ledger.cases[0].expected);
+const {loadCurrent,observe}=require('./helpers/v0184-engine-harness.cjs');assert.deepEqual(ledger.cases[0].expected,observe(loadCurrent(),original.entry,correction.correctedInput(original),original.options),'Entire correction bound to unchanged working explicit-rain path');
 const report={passed:true,baseline,tree,protectedFiles:protectedFiles.length,exactWeatherIds:['drizzle','drought','sandStream','snowWarning'],inlineChanges:'identity and cache only',feedbackServiceChanged:false};fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/weather-scope.json',JSON.stringify(report,null,2)+'\n');console.log('PASS current weather candidate scope '+JSON.stringify(report));
