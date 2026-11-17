@@ -13,16 +13,16 @@ Verifiedは記載した自動検証の範囲内であり、Championsの全状況
 | Verified | 870 |
 | Unverified | 2 |
 | Incorrect | 0 |
-| Partial | 153 |
+| Partial | 157 |
 | Unsupported | 143 |
 | Not Applicable | 16 |
-| 合計 | 1184 |
+| 合計 | 1188 |
 
-- 評価対象（Not Applicableを除く）: **1168**。実装存在数（Partial/Unverified/Incorrectを含む）: **1025**。存在としての対応率: **87.76%**。
-- 完全にVerifiedとした項目 / 実装存在数: **870/1025 = 84.88%**。PartialをVerifiedに足さない。評価対象全体での検証率: **74.49%**。
+- 評価対象（Not Applicableを除く）: **1172**。実装存在数（Partial/Unverified/Incorrectを含む）: **1029**。存在としての対応率: **87.80%**。
+- 完全にVerifiedとした項目 / 実装存在数: **870/1029 = 84.55%**。PartialをVerifiedに足さない。評価対象全体での検証率: **74.23%**。
 - Pokémon/form **373**（メガ形態 **82**）: データ一致372、資料不一致1。335技のタイプ・分類・基礎威力は固定版のChampions/Gen9参照に一致。
 - 計算可能な既存技: **321/334 = 96.11%**。残り13は従来から標準計算対象外。別に変化技1。除外技の新規実装はしない。
-- 役割付き特性: 攻撃70 / 防御39、持ち物: 攻撃22 / 防御20（noneを除く）。名簿中の特性名: **222**。
+- 役割付き特性: 攻撃70 / 防御43、持ち物: 攻撃22 / 防御20（noneを除く）。名簿中の特性名: **222**。
 - 過去の能力画面確認フラグ: **102**。これを実機ダメージ一致件数に加算しない。今回新たに収集した実機ダメージ証拠: **0**。
 - Sheer Force: 明示的な既存5技ホワイトリストを維持。参照の対象候補124技に拡張せず **Partial** とする。
 
@@ -33,7 +33,7 @@ Verifiedは記載した自動検証の範囲内であり、Championsの全状況
 | Pokémon / forms | 373 | 372 | 1 | 0 | 0 | 0 | 0 |
 | Moves | 335 | 264 | 0 | 0 | 57 | 0 | 14 |
 | Attack abilities | 70 | 36 | 0 | 0 | 34 | 0 | 0 |
-| Defense abilities | 39 | 30 | 0 | 0 | 7 | 0 | 2 |
+| Defense abilities | 43 | 30 | 0 | 0 | 11 | 0 | 2 |
 | Roster ability names | 222 | 49 | 0 | 0 | 30 | 143 | 0 |
 | Attack items | 22 | 21 | 0 | 0 | 1 | 0 | 0 |
 | Defense items | 20 | 20 | 0 | 0 | 0 | 0 | 0 |
@@ -778,120 +778,124 @@ Verifiedは記載した自動検証の範囲内であり、Championsの全状況
 
 | ID | 名前 | 状態 | 自動検証の範囲・制限 | 実機証拠 |
 |---|---|---|---|---|
-| moldBreaker | Mold Breaker | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| teravolt | Teravolt | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| turboblaze | Turboblaze | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| skillLink | Skill Link | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| technician | Technician | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sheerForce | Sheer Force | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| megaLauncher | Mega Launcher | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sharpness | Sharpness | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| hugePower | Huge Power | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| purePower | Pure Power | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| hustle | Hustle | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| solarPower | Solar Power | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| flareBoost | Flare Boost | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| toxicBoost | Toxic Boost | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| fireMane | Fire Mane | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| flashFire | Flash Fire | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| defeatist | Defeatist | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| orichalcumPulse | Orichalcum Pulse | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| hadronEngine | Hadron Engine | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| waterBubble | Water Bubble | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| fairyAura | Fairy Aura | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| darkAura | Dark Aura | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| auraBreak | Aura Break | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| ironFist | Iron Fist | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| strongJaw | Strong Jaw | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| transistor | Transistor | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| dragonsMaw | Dragon's Maw | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| analytic | Analytic | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| reckless | Reckless | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| toughClaws | Tough Claws | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| steelworker | Steelworker | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| steelSpirit | Steely Spirit | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| plus | Plus | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| minus | Minus | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| infiltrator | Infiltrator | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| scrappy | Scrappy | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| thermalExchange | Thermal Exchange | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| angerPoint | Anger Point | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| rattled | Rattled | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| drizzle | Drizzle | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| drought | Drought | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sandStream | Sand Stream | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| snowWarning | Snow Warning | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| electricSurge | Electric Surge | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| grassySurge | Grassy Surge | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| mistySurge | Misty Surge | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| psychicSurge | Psychic Surge | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sniper | Sniper | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| neuroforce | Neuroforce | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| stakeout | Stakeout | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| supremeOverlord | Supreme Overlord | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| rockyPayload | Rocky Payload | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sandForce | Sand Force | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| punkRock | Punk Rock | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| pixilate | Pixilate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| aerilate | Aerilate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| refrigerate | Refrigerate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| galvanize | Galvanize | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| dragonize | Dragonize | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| normalize | Normalize | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| overgrow | Overgrow | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| blaze | Blaze | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| torrent | Torrent | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| swarm | Swarm | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| guts | Guts | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| adaptability | Adaptability | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| tintedLens | Tinted Lens | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| levitate | Levitate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| unaware | Unaware | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| clearBody | Clear Body | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| moldBreaker | Mold Breaker | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| teravolt | Teravolt | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| turboblaze | Turboblaze | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| skillLink | Skill Link | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| technician | Technician | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sheerForce | Sheer Force | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| megaLauncher | Mega Launcher | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sharpness | Sharpness | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| hugePower | Huge Power | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| purePower | Pure Power | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| hustle | Hustle | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| solarPower | Solar Power | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| flareBoost | Flare Boost | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| toxicBoost | Toxic Boost | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| fireMane | Fire Mane | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| flashFire | Flash Fire | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| defeatist | Defeatist | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| orichalcumPulse | Orichalcum Pulse | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| hadronEngine | Hadron Engine | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| waterBubble | Water Bubble | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| fairyAura | Fairy Aura | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| darkAura | Dark Aura | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| auraBreak | Aura Break | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| ironFist | Iron Fist | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| strongJaw | Strong Jaw | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| transistor | Transistor | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| dragonsMaw | Dragon's Maw | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| analytic | Analytic | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| reckless | Reckless | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| toughClaws | Tough Claws | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| steelworker | Steelworker | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| steelSpirit | Steely Spirit | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| plus | Plus | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| minus | Minus | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| infiltrator | Infiltrator | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| scrappy | Scrappy | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| thermalExchange | Thermal Exchange | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| angerPoint | Anger Point | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| rattled | Rattled | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| drizzle | Drizzle | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| drought | Drought | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sandStream | Sand Stream | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| snowWarning | Snow Warning | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| electricSurge | Electric Surge | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| grassySurge | Grassy Surge | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| mistySurge | Misty Surge | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| psychicSurge | Psychic Surge | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sniper | Sniper | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| neuroforce | Neuroforce | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| stakeout | Stakeout | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| supremeOverlord | Supreme Overlord | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| rockyPayload | Rocky Payload | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sandForce | Sand Force | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| punkRock | Punk Rock | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| pixilate | Pixilate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| aerilate | Aerilate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| refrigerate | Refrigerate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| galvanize | Galvanize | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| dragonize | Dragonize | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| normalize | Normalize | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| overgrow | Overgrow | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| blaze | Blaze | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| torrent | Torrent | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| swarm | Swarm | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| guts | Guts | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| adaptability | Adaptability | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| tintedLens | Tinted Lens | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| levitate | Levitate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| unaware | Unaware | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| clearBody | Clear Body | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
 
 ### Defense abilities
 
 | ID | 名前 | 状態 | 自動検証の範囲・制限 | 実機証拠 |
 |---|---|---|---|---|
-| thickFat | Thick Fat | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| multiscale | Multiscale | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| furCoat | Fur Coat | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| iceScales | Ice Scales | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| punkRock | Punk Rock | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| fluffy | Fluffy | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| auraGuard | Aura Guard | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| bulletproof | Bulletproof | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| soundproof | Soundproof | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| thickFat | Thick Fat | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| multiscale | Multiscale | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| furCoat | Fur Coat | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| iceScales | Ice Scales | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| punkRock | Punk Rock | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| fluffy | Fluffy | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| auraGuard | Aura Guard | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| bulletproof | Bulletproof | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| soundproof | Soundproof | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
 | overcoat | Overcoat | Not Applicable | この単発直接ダメージの対象外。 | なし |
-| unaware | Unaware | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| unaware | Unaware | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
 | clearBody | Clear Body | Not Applicable | この単発直接ダメージの対象外。 | なし |
-| intimidate | Intimidate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| purifyingSalt | Purifying Salt | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| shellArmor | Shell Armor | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| battleArmor | Battle Armor | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| grassPelt | Grass Pelt | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| marvelScale | Marvel Scale | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| wonderGuard | Wonder Guard | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| drySkin | Dry Skin | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| heatproof | Heatproof | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| waterBubble | Water Bubble | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| prismArmor | Prism Armor | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| shadowShield | Shadow Shield | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| levitate | Levitate | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| waterAbsorb | Water Absorb | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| voltAbsorb | Volt Absorb | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| lightningRod | Lightning Rod | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| motorDrive | Motor Drive | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| sapSipper | Sap Sipper | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| stormDrain | Storm Drain | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| earthEater | Earth Eater | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| wellBakedBody | Well-Baked Body | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| flashFire | Flash Fire | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| filter | Filter | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| solidRock | Solid Rock | Verified | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| fairyAura | Fairy Aura | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| darkAura | Dark Aura | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
-| auraBreak | Aura Break | Partial | 役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| intimidate | Intimidate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| purifyingSalt | Purifying Salt | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| shellArmor | Shell Armor | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| battleArmor | Battle Armor | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| grassPelt | Grass Pelt | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| marvelScale | Marvel Scale | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| wonderGuard | Wonder Guard | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| drySkin | Dry Skin | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| heatproof | Heatproof | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| waterBubble | Water Bubble | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| prismArmor | Prism Armor | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| shadowShield | Shadow Shield | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| levitate | Levitate | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| waterAbsorb | Water Absorb | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| voltAbsorb | Volt Absorb | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| lightningRod | Lightning Rod | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| motorDrive | Motor Drive | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sapSipper | Sap Sipper | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| stormDrain | Storm Drain | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| earthEater | Earth Eater | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| wellBakedBody | Well-Baked Body | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| flashFire | Flash Fire | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| filter | Filter | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| solidRock | Solid Rock | Verified | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| fairyAura | Fairy Aura | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| darkAura | Dark Aura | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| auraBreak | Aura Break | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| drizzle | Drizzle | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| drought | Drought | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| sandStream | Sand Stream | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
+| snowWarning | Snow Warning | Partial | 役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。 | なし |
 
 ### Roster ability names
 

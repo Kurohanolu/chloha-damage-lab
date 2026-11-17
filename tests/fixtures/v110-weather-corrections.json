@@ -1,0 +1,45 @@
+{
+  "frozenBaselineSha256": "ffc88f9684ef16f2d67b319ab427ae1f8fa89e54ebb30b5075de3fe1f8165ebd",
+  "cases": [
+    {
+      "name": "rejection {\"defAbility\":\"drizzle\"}",
+      "originalExpectedSha256": "788a733d4fd8451a0d56c4f9a78cfc8d13a03315c00281567781cb799a3d85d3",
+      "reason": "Defending Drizzle was incorrectly rejected despite an existing UI mapping and weather inference. Identical to immutable explicit rain without a setter; fixed sixteen-roll witness independently checked.",
+      "expected": {
+        "output": {
+          "rolls": [
+            58,
+            58,
+            60,
+            60,
+            60,
+            61,
+            61,
+            63,
+            63,
+            64,
+            64,
+            66,
+            66,
+            67,
+            67,
+            69
+          ],
+          "hitRolls": null,
+          "koProbability": null,
+          "trace": [
+            "postRandom/stab: 46 → 69",
+            "postRandom/type: 69 → 69",
+            "最終ダメージ（乱数100）: 69"
+          ],
+          "attack": 150,
+          "defense": 120,
+          "base": 46,
+          "effectivePower": 80,
+          "stab": 1.5,
+          "effectiveness": 1
+        }
+      }
+    }
+  ]
+}

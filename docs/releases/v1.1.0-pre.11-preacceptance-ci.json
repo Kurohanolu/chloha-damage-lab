@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "40093e176fc96c35ec6a1f109166328711650015",
+  "sourceTree": "a90aabe064d20c64a5323a914a1f302a30cded46",
+  "testedMergeCommit": "139985a52db200789581e9dd2e6af757c4e35e00",
+  "testedMergeTree": "a90aabe064d20c64a5323a914a1f302a30cded46",
+  "allRequiredPassed": true,
+  "candidateAcceptance": {
+    "tests": 47,
+    "passed": true
+  },
+  "requiredWorkflows": [
+    {
+      "name": "v0.188 Quality Remediation",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832549,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832549",
+      "attempt": 2,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v1.0.0 Stable Promotion",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832824,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832824",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Damage Lab CI and status ledger",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832691,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832691",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v0.185 anonymous feedback",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832647,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832647",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Publish verified release",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832513,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832513",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v0.184 engine baseline",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832525,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832525",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Showdown differential tests",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832601,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832601",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v0.187 Singularity Migration",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832661,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832661",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Showdown differential audit",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832618,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832618",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "GitHub Pages live smoke",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832541,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832541",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v0.186 Accuracy & Mechanics Audit",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832561,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832561",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "UI & damage regression",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832643,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832643",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "v1.1.0 ES-LA Localization",
+      "headSha": "40093e176fc96c35ec6a1f109166328711650015",
+      "runId": 44013832591,
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44013832591",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "publicDeployment": {
+    "runId": 44020886813,
+    "url": "https://github.com/Kurohanolu/singularity/actions/runs/44020886813",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "publicAcceptance": {
+    "runId": 44021108254,
+    "url": "https://github.com/Kurohanolu/singularity/actions/runs/44021108254",
+    "status": "completed",
+    "conclusion": "success",
+    "publicWeatherCases": 220,
+    "publicFiles": 90,
+    "observedAtJST": "2026-11-17T14:01:19+09:00"
+  }
+}

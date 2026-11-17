@@ -18,9 +18,11 @@ const corrections=new Map(errata.cases.map(c=>[c.name,c]));
 assert.equal(corrections.size,31,'review every added baseline correction explicitly');
 for(const fixture of baseline.cases){
  const actual=observe(context,fixture.entry,structuredClone(fixture.input),structuredClone(fixture.options));
+ const weatherCorrection=require('./helpers/v110-weather-correction.cjs'),equivalent=weatherCorrection.correctedInput(fixture);
+ if(equivalent){weatherCorrection.checkCorrectedResult(actual);assert.deepEqual(actual,observe(context,fixture.entry,equivalent,structuredClone(fixture.options)),'Explicit rain and a defending setter must have identical complete output');continue;}
  const correction=corrections.get(fixture.name);
  if(correction){assert.equal(digest(JSON.stringify(fixture.expected)),correction.originalExpectedSha256,fixture.name+': original evidence must stay immutable');assert.ok(correction.reason);assert.notDeepEqual(correction.expected,fixture.expected);}
  assert.deepEqual(actual,correction?.expected||fixture.expected,fixture.name+': full public contract or documented v0.186 correction');
 }
 assert.ok([...corrections.keys()].every(name=>baseline.cases.some(f=>f.name===name)),'no unused correction');
-console.log('PASS 300 baseline contracts: 269 unchanged, 26 independent numeric corrections, 5 trace/metadata corrections; original fixtures retained');
+console.log('PASS 300 baseline contracts: 268 unchanged, 26 v0.186 numeric corrections, 5 v0.186 trace corrections, 1 explicit defending-Drizzle correction; original fixtures retained');

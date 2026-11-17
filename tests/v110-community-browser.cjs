@@ -7,7 +7,16 @@ const {loadCommunityBaseline,verifyCommunityFiles}=require('../scripts/helpers/c
 const {launchBrowser}=require('./helpers/v0188-browser-lab.cjs');
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'],widths=[320,390,1440];
 const current='https://kurohanolu.github.io/singularity/';
-const contracts=require('./helpers/public-release-contract.cjs').loadPublicContracts().cases;
+// The fixed Community release retains its pre-weather numeric contract. Read
+// both fixtures and optional errata from the same immutable pre.9 source.
+const contractSource='46f930797e662be0d01e974f98ddde6de7b414c0';
+assert.equal(execFileSync('git',['rev-parse',contractSource+'^{tree}'],{encoding:'utf8'}).trim(),'1ea3163c8a8f4de8d68951b28c061a855461468c');
+const contracts=require('./helpers/public-release-contract.cjs').loadPublicContracts({
+ readFile:file=>execFileSync('git',['show',contractSource+':'+file],{maxBuffer:16*1024*1024}),
+ exists:file=>{try{execFileSync('git',['cat-file','-e',contractSource+':'+file],{stdio:'ignore'});return true;}catch{return false;}}
+}).cases;
+assert.equal(contracts.length,300);
+assert.equal(contracts.find(f=>f.name==='rejection {"defAbility":"drizzle"}').expected.error.name,'Error','Community retains its historical rejection; only Singularity receives the weather repair');
 async function vectors(page){const actual=await page.evaluate(cases=>cases.map(f=>{try{const out=f.entry==='core'?ChlohaDamageEngine.calculate(structuredClone(f.input)):ChlohaDamageCalculator.calculate(structuredClone(f.input),structuredClone(f.options));return {output:JSON.parse(JSON.stringify(out,(_,v)=>Object.prototype.toString.call(v)==='[object Map]'?{mapEntries:[...v]}:v))};}catch(e){return {error:{name:e.name,message:e.message}};}}),contracts);actual.forEach((v,i)=>assert.deepEqual(v,contracts[i].expected,'Community complete public contract '+contracts[i].name));return actual.length;}
 const ready=page=>page.waitForFunction(()=>!!window.ChlohaLastCalculation&&!!window.ChlohaLocale&&!!window.ChlohaPersistence&&!!document.querySelector('#community-information'));
 const snapshot=page=>page.evaluate(()=>JSON.parse(JSON.stringify({state:ChlohaPersistence.capture(),a:ChlohaLastCalculation.a,r:ChlohaLastCalculation.r})));

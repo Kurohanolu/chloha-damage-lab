@@ -11,7 +11,7 @@ const source=html+'\n'+engine+'\n'+mechanics+'\n'+abilities;
 const context={window:{}};
 vm.runInNewContext(abilities,context,{filename:'ability-data-v0184.js'});
 const {ATTACKER_ABILITY_IDS,DEFENDER_ABILITY_IDS}=context.window.ChlohaAbilityData;
-for(const [name,ids,count] of [['attacker',ATTACKER_ABILITY_IDS,71],['defender',DEFENDER_ABILITY_IDS,40]]){
+for(const [name,ids,count] of [['attacker',ATTACKER_ABILITY_IDS,71],['defender',DEFENDER_ABILITY_IDS,44]]){
  assert.ok(Array.isArray(ids)&&Object.isFrozen(ids),name+' validation IDs must be an immutable array');
  assert.equal(ids.length,count,name+' existing validation count, including none');
  assert.equal(new Set(ids).size,count,name+' validation IDs must be unique');
@@ -23,7 +23,9 @@ assert.match(engine,/!ATTACKER_ABILITY_IDS\.includes\(a\.attAbility\)/,'engine m
 assert.match(engine,/!DEFENDER_ABILITY_IDS\.includes\(a\.defAbility\)/,'engine must use defender validation IDs');
 for(const id of ['none','thickFat','multiscale','shadowShield','levitate','unaware','clearBody','intimidate'])
  assert.ok(defenderAllowed.has(id),'Defender ability must pass validation: '+id);
-for(const id of ['moldBreaker','drizzle','drought','sandStream','snowWarning','electricSurge','grassySurge','mistySurge','psychicSurge'])
+for(const id of ['drizzle','drought','sandStream','snowWarning'])
+ assert.ok(defenderAllowed.has(id),'Defending weather setters use shared validation: '+id);
+for(const id of ['moldBreaker','electricSurge','grassySurge','mistySurge','psychicSurge'])
  assert.ok(!defenderAllowed.has(id),'Preserve existing defender validation boundary: '+id);
 for(const id of ['battery','powerSpot','unknownAbility','unsupported:unknownAbility','','constructor']){
  assert.ok(!allowed.has(id),'Preserve existing attacker rejection: '+id);

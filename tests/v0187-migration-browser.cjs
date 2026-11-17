@@ -1,13 +1,14 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
-const {buildSites}=require('../scripts/v0187-build-sites.cjs');
+const {buildSites,legacyCommit}=require('../scripts/v0187-build-sites.cjs');
+const {execFileSync,spawnSync}=require('node:child_process');
 const {startPreview}=require('../scripts/v0187-preview-server.cjs');
 const {loadPublicContracts}=require('./helpers/public-release-contract.cjs');
 const release=JSON.parse(fs.readFileSync('release.json','utf8'));
 const {stable,displayVersion}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
 // Exact candidate transport contract; old Stable assertions remain intact.
-const esLaCandidate=['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9'].includes(release.tag);
+const esLaCandidate=['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag);
 const expectedWireVersion=stable?'v1.0':esLaCandidate?'v1.1 Pre-Release '+release.preRelease:displayVersion;
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];
@@ -24,13 +25,14 @@ const legacyLabels=[
 ];
 const widget=`(()=>{let n=0;const widgets=new Map();window.turnstile={render(node,options){const id='migration-'+(++n);widgets.set(id,options);queueMicrotask(()=>options.callback('valid-'+crypto.randomUUID()));return id;},reset(id){const options=widgets.get(id);if(options)queueMicrotask(()=>options.callback('valid-'+crypto.randomUUID()));},remove(id){widgets.delete(id);}};})();`;
 const contracts=loadPublicContracts().cases;
+const legacyContracts=loadPublicContracts({readFile:file=>execFileSync('git',['show',legacyCommit+':'+file],{maxBuffer:32*1024*1024}),exists:file=>spawnSync('git',['cat-file','-e',legacyCommit+':'+file]).status===0}).cases;
 const state=page=>page.evaluate(()=>JSON.stringify({input:window.ChlohaLastCalculation.a,result:window.ChlohaLastCalculation.r,ids:['dbAttPokemon','dbDefPokemon','dbMove','attAbility','defAbility','attItem','defItem','weather','terrain','attackStage','defenseStage'].map(id=>[id,document.getElementById(id).value])}));
-async function vectors(page){
+async function vectors(page,expectedContracts=contracts){
  const actual=await page.evaluate(cases=>cases.map(fixture=>{
   try{const output=fixture.entry==='core'?window.ChlohaDamageEngine.calculate(structuredClone(fixture.input)):window.ChlohaDamageCalculator.calculate(structuredClone(fixture.input),structuredClone(fixture.options));return {output:JSON.parse(JSON.stringify(output,(_,item)=>Object.prototype.toString.call(item)==='[object Map]'?{mapEntries:[...item]}:item))};}
   catch(error){return {error:{name:error.name,message:error.message}};}
- }),contracts);
- actual.forEach((result,i)=>assert.deepEqual(result,contracts[i].expected,'proposed URL public contract: '+contracts[i].name));
+ }),expectedContracts);
+ actual.forEach((result,i)=>assert.deepEqual(result,expectedContracts[i].expected,'source-bound URL public contract: '+expectedContracts[i].name));
  return actual.length;
 }
 async function contextFor(browser,preview,api,locale,width){
@@ -125,7 +127,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
   const api=await startLocalApp(),context=await contextFor(browser,preview,api,'en',320),legacy=await context.newPage();
   try{
    const legacyURL=preview.origin+'/chloha-damage-lab/?draft=synthetic-private-input#synthetic-private-state';
-   await legacy.goto(legacyURL);await ready(legacy);assert.equal(await legacy.title(),'Chloha Damage Lab v0.186 Pre-Release 32');evidence.numericChecks+=await vectors(legacy);
+   await legacy.goto(legacyURL);await ready(legacy);assert.equal(await legacy.title(),'Chloha Damage Lab v0.186 Pre-Release 32');evidence.numericChecks+=await vectors(legacy,legacyContracts);
    await openFeedback(legacy);await legacy.fill('#feedbackDescription','Unsent old-URL draft');await legacy.click('#feedbackClose');const previous=await state(legacy);
    for(let index=0;index<locales.length;index++){
     await legacy.selectOption('#chloha-locale',locales[index]);

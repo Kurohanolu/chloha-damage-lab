@@ -7,7 +7,7 @@ module.exports=function installHistoricalLegacyPreview(output){
  assert.equal(git(['rev-parse',commit+'^{tree}']).trim(),tree);
  const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-legacy-fixture-')),source=path.join(parent,'source'),artifact=path.join(parent,'artifact');
  try{git(['worktree','add','--detach',source,commit]);execFileSync(process.execPath,['scripts/v0187-build-sites.cjs','--output',artifact],{cwd:source,stdio:'pipe'});
-  const manifest=JSON.parse(fs.readFileSync(path.join(artifact,'migration-artifacts.json')));assert.equal(manifest.sourceCommit,commit);assert.equal(manifest.uncommittedPreview,false);
+  const manifest=JSON.parse(fs.readFileSync(path.join(artifact,'migration-artifacts.json')));assert.equal(manifest.sourceCommit,commit);assert.equal(manifest.uncommittedPreview,false);assert.equal(manifest.legacyCommit,require('../../scripts/v0187-build-sites.cjs').legacyCommit,'Historical preview must use the exact legacy source for its numeric contracts');
   const target=path.join(output,'chloha-damage-lab');assert.ok(path.resolve(output).startsWith(os.tmpdir()+path.sep),'Only temporary local preview can use historical fixture');fs.rmSync(target,{recursive:true,force:true});fs.cpSync(path.join(artifact,'chloha-damage-lab'),target,{recursive:true});
   const fixture={role:'historical v0.186 migration-notice fixture only; not current Community acceptance',sourceCommit:commit,sourceTree:tree};
   const manifestPath=path.join(output,'migration-artifacts.json'),preview=JSON.parse(fs.readFileSync(manifestPath));

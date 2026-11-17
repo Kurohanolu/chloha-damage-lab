@@ -13,8 +13,12 @@ function loadPublicContracts({readFile=file=>fs.readFileSync(file),exists=fs.exi
  if(!exists(errataPath))return baseline;
  const errata=JSON.parse(readFile(errataPath));
  assert.equal(digest(raw),errata.frozenBaselineSha256,'release errata must match the immutable baseline');
- const corrections=new Map(errata.cases.map(item=>[item.name,item]));
- assert.equal(corrections.size,errata.cases.length,'duplicate release erratum');
+ const weatherPath='tests/fixtures/v110-weather-corrections.json';
+ const weather=exists(weatherPath)?JSON.parse(readFile(weatherPath)):{frozenBaselineSha256:errata.frozenBaselineSha256,cases:[]};
+ assert.equal(digest(raw),weather.frozenBaselineSha256,'weather erratum must match the immutable baseline');
+ const all=[...errata.cases,...weather.cases];
+ const corrections=new Map(all.map(item=>[item.name,item]));
+ assert.equal(corrections.size,all.length,'duplicate release erratum');
  assert.ok([...corrections.keys()].every(name=>baseline.cases.some(item=>item.name===name)),'unknown release erratum');
  return {...baseline,cases:baseline.cases.map(fixture=>{
   const correction=corrections.get(fixture.name);
