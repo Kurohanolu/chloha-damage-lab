@@ -8,7 +8,7 @@ const {publishedCommit}=require('./helpers/v0188-followup-review.cjs');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.fetch}={}){
  const manifest=JSON.parse(fs.readFileSync(path.join(directory,'migration-artifacts.json'))),release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));
- assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag));assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
+ assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.13'].includes(release.tag));assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
  const bases={singularity:release.publicUrl,'chloha-damage-lab':release.migration.legacyUrl};
  assert.equal(bases.singularity,'https://kurohanolu.github.io/singularity/');assert.equal(bases['chloha-damage-lab'],'https://kurohanolu.github.io/chloha-damage-lab/');
  const exact=new Map();
@@ -29,7 +29,7 @@ async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.f
 module.exports={checkStableAssets};
 if(require.main===module)(async()=>{
  const args=process.argv.slice(2);assert.ok(args.length===1&&['--record-preacceptance','--publication'].includes(args[0]),'Explicit stable acceptance mode required');
- const release=JSON.parse(fs.readFileSync('release.json'));assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag));
+ const release=JSON.parse(fs.readFileSync('release.json'));assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.13'].includes(release.tag));
  if(args[0]==='--publication')verifyPublication(release);else{verifyCutoverApproval(release);assert.equal(release.migration.liveTargetVerified,false);}
  assert.equal(execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim(),'','Clean exact source required');
  const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceTree=execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim();
@@ -40,7 +40,7 @@ if(require.main===module)(async()=>{
   if(args[0]==='--record-preacceptance'){
    const deploymentRun=process.env.SINGULARITY_DEPLOYMENT_RUN;assert.match(deploymentRun||'',/^https:\/\/github\.com\/Kurohanolu\/singularity\/actions\/runs\/[1-9]\d*$/);
    const observedAtJST=new Date().toLocaleString('sv-SE',{timeZone:'Asia/Tokyo'}).replace(' ','T')+'+09:00';
-   const rollbackSourceCommit=release.tag==='v1.1.0-pre.11'?'46f930797e662be0d01e974f98ddde6de7b414c0':release.tag==='v1.1.0-pre.9'?'0b1f8fffea3b1d063036d00fd712b0a0e9695111':release.tag==='v1.1.0-pre.8'?'66a085ba325655bc9369656ea0645f7f6f997127':release.tag==='v1.1.0-pre.7'?'2fb5655a89e076df5993a3294bddbe1bf31afa58':release.tag==='v1.1.0-pre.6'?'82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74':release.tag==='v1.1.0-pre.5'?'61d87e82995bc60d4564aaf57a52dfc1fd859e4c':release.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':release.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
+   const rollbackSourceCommit=release.tag==='v1.1.0-pre.13'?'fbec6fd45b841c3465be903b25a14e909cc80ba5':release.tag==='v1.1.0-pre.11'?'46f930797e662be0d01e974f98ddde6de7b414c0':release.tag==='v1.1.0-pre.9'?'0b1f8fffea3b1d063036d00fd712b0a0e9695111':release.tag==='v1.1.0-pre.8'?'66a085ba325655bc9369656ea0645f7f6f997127':release.tag==='v1.1.0-pre.7'?'2fb5655a89e076df5993a3294bddbe1bf31afa58':release.tag==='v1.1.0-pre.6'?'82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74':release.tag==='v1.1.0-pre.5'?'61d87e82995bc60d4564aaf57a52dfc1fd859e4c':release.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':release.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
    const receipt={schemaVersion:1,releaseTag:release.tag,sourceCommit,sourceTree,deploymentRun,observedAtJST,result:'passed',currentUrl:release.publicUrl,legacyUrl:release.migration.legacyUrl,files:expected,rollbackSourceCommit};
    fs.writeFileSync('reports/v100/live-acceptance-receipt.json',JSON.stringify(receipt,null,2)+'\n');
   }

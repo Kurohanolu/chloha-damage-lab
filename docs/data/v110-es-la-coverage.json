@@ -49865,9 +49865,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3",
-      "feedback-release-v100.js": "0e03e97156958223e67016226c7534645188977d93b622fa514411c0a021780a",
-      "index.html": "523c87fb10c7546b1b1998fe4b7de2f74999a59e2e9794b831e708dae8341bae",
-      "docs/data/v110-es-la-source-records.json": "86e224857e27f49522e39aaf0adb7a059835e68d27f145495379517b4227b429"
+      "feedback-release-v100.js": "d29f3d02db4249e5376a9e3a0c559258d76d5556d3488fee4eacaf19c5936724",
+      "index.html": "3bf36e0d4c18bcf44e6bfc1540a77e1db2b34289e0923ce06f4822644eeb5242",
+      "docs/data/v110-es-la-source-records.json": "ce2e4b90b4546100b911888d844f3df6c406c4e2145a993e9658c195fcf389d7"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -52769,7 +52769,7 @@
         "checkedAt": "2026-11-15",
         "targetGame": null,
         "warningOrError": false,
-        "renderedText": "Power Spot de un aliado (daño ×1,3)"
+        "renderedText": "Fuente Energía de un aliado (daño ×1,3)"
       },
       {
         "id": "locale-ui-es-la-v110.js:exact-ui:Supreme Overlord: fainted allies (0–5)",
@@ -58163,7 +58163,7 @@
         "source": "locale-ui-es-la-v110.js",
         "group": "authored-errors",
         "canonicalKey": "パワースポット条件が不正",
-        "text": "La condición de Power Spot no es válida",
+        "text": "La condición de Fuente Energía no es válida",
         "status": "provisional",
         "origin": "executed-authored-dynamic-copy",
         "officialGameNameEvidence": false,
@@ -58175,7 +58175,7 @@
         "witnesses": [
           {
             "canonicalInput": "入力エラー: パワースポット条件が不正",
-            "text": "Error de entrada: La condición de Power Spot no es válida"
+            "text": "Error de entrada: La condición de Fuente Energía no es válida"
           }
         ],
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/locale-ui-es-la-v110.js",
@@ -62451,7 +62451,7 @@
         "source": "i18n.js",
         "group": "canonical-dictionary",
         "canonicalKey": "味方のパワースポット（技×1.3）",
-        "text": "Power Spot de un aliado (daño ×1,3)",
+        "text": "Fuente Energía de un aliado (daño ×1,3)",
         "status": "provisional",
         "origin": "executed-canonical-ui-key",
         "officialGameNameEvidence": false,
@@ -67891,6 +67891,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "18fa02307fae82beda9aae305db0e497f5ece4f83fd30531a7d87c20a4f2308c"
+    "sha256": "a009f2f9a649b7397880342ae6dd3de7cccbcc90eb76aaf705133da3b85416c3"
   }
 }
