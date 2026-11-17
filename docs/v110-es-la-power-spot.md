@@ -6,7 +6,7 @@ The official [LATAM Stonjourner profile](https://swordshield.pokemon.com/es-mx/p
 
 This changes only the existing `パワースポット` / `powerSpot` name from its English fallback to Fuente Energía. It adds Fuente Energía and Power Spot aliases to that same record. Historical official regional marketing is not Champions or in-game ES-LA evidence. No mechanics or ability availability changes.
 
-Existing canonical UI bindings render the ally checkbox and error message using the new name without any renderer change. **Power Spot is not a member of the shared name search catalog**: all accent/case/English queries correctly remain absent there, rather than inventing a picker or roster association. The alias data is retained for consumers of this existing canonical record; it must not be advertised as a new searchable picker entry.
+Existing canonical bindings translate the hidden legacy ally checkbox, error message and trace name without any renderer change. The ally checkbox is not mounted into reachable UI in either baseline or candidate. This is a dictionary and latent-binding correction, **not a reachable UI correction or a newly usable ability**. **Power Spot is not a member of the shared name search catalog**: all accent/case/English queries correctly remain absent there, rather than inventing a picker or roster association. The alias data is retained for consumers of this existing canonical record; it must not be advertised as a new searchable picker entry.
 
 Unique-name coverage: official 484 → 485 / 1,029 (47.04% → 47.13%); unverified 384 → 383. Champions official remains 162. Forms overlap and are excluded.
 
@@ -16,7 +16,7 @@ Unique-name coverage: official 484 → 485 / 1,029 (47.04% → 47.13%); unverifi
 - PASS all other coverage records byte-equivalent at parsed-object level, original nine-locale resources and protected engine/feedback/source files unchanged.
 - PASS 2,592 independent weather numeric cases.
 - Historical batch7–10 guards now require the exact single successor name/aliases/source for Power Spot rather than permitting arbitrary display changes. All other existing name/alias comparisons remain mandatory.
-- Added browser test for ten locales, two widths, repeated on/off, full numeric state comparison, save/reload. **Not passed**: bundled browser missing; system Chromium crashes at startup (crashpad database requirement). Browser assertions remain unexecuted and need a working CI/browser environment.
+- The first browser test incorrectly attempted to click the hidden legacy checkbox and failed in CI. Corrected test explicitly asserts hidden status and injects legacy input change events, retaining ten locales, two widths, repeated on/off, full numeric state comparison and save/reload. This validates persisted-state integration, not user click accessibility. The corrected test requires fresh execution and exact-head CI; the earlier failed run is not a pass.
 - Exact-head CI, independent review, approved release metadata, release gates and live verification remain pending. No push, merge or publication performed. Keep separate from feedback #82.
 
 ## Connector publication provenance
