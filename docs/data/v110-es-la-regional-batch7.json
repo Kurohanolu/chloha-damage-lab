@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "fbec6fd45b841c3465be903b25a14e909cc80ba5",
+  "checkedAt": "2026-11-17",
+  "scope": "Four exact existing names, historical official LATAM publication evidence only; no Champions promotion.",
+  "sources": [
+    {
+      "id": "batch7-swsh-gifts",
+      "url": "https://swordshield.pokemon.com/es-mx/prepare-for-adventure/",
+      "title": "Official Latin American Sword and Shield promotion",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "a151807de6418325e3bcf63ebeab6c40bb56e02c866d241619c3db038e7d6518",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/prepare-for-adventure/",
+      "englishRawSha256": "1a8298e3fc7fec8ebe62601bad5c59cd92e4a93dffb51c89ae89eca8c1fe8e29",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch7-swsh-home",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/mystery-gift/",
+      "title": "Official Latin American Sword and Shield promotion",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "577202e6abdc9ef9da1d4ff39ec7511a96a1df48f1d586fbdca48ae62ca66ba1",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/mystery-gift/",
+      "englishRawSha256": "0d25cd1dfb22d25d025ab8e86fbac8387955b9829abbda8cfba4c6175b8fabeb",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch7-swsh-pokemon-7aabf3262524",
+      "category": "pokemon",
+      "canonicalEnglish": "Galarian Corsola",
+      "sourceEs": "Corsola de Galar",
+      "esLA": "Corsola de Galar",
+      "rawObservedText": "Corsola de Galar",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0106_034",
+          "canonicalIds": [
+            "roster_v0106_034"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-fb0f2d42e30c",
+      "category": "abilities",
+      "canonicalEnglish": "Anticipation",
+      "sourceEs": "Anticipación",
+      "esLA": "Anticipación",
+      "rawObservedText": "Anticipación",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "きけんよち",
+          "canonicalIds": [
+            "unsupported:きけんよち"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-4527962e0976",
+      "category": "abilities",
+      "canonicalEnglish": "Cursed Body",
+      "sourceEs": "Cuerpo Maldito",
+      "esLA": "Cuerpo Maldito",
+      "rawObservedText": "Cuerpo Maldito",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "のろわれボディ",
+          "canonicalIds": [
+            "unsupported:のろわれボディ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-55c3d2106f13",
+      "category": "abilities",
+      "canonicalEnglish": "Libero",
+      "sourceEs": "Líbero",
+      "esLA": "Líbero",
+      "rawObservedText": "Líbero",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-home"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "リベロ",
+          "canonicalIds": [
+            "unsupported:リベロ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    }
+  ],
+  "exclusions": [
+    {
+      "name": "Herbogénesis / Fitoimpulso",
+      "sourceId": "batch7-swsh-home",
+      "reason": "Grookey heading and prose name Herbogénesis, but ability table says Fitoimpulso; internal contradiction, no record accepted."
+    },
+    {
+      "name": "Mega-Starmie / Mega-Clefable / Mega-Skarmory",
+      "reason": "Search result refers to TCG ex card names; not accepted as complete video-game form-name evidence."
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "86e224857e27f49522e39aaf0adb7a059835e68d27f145495379517b4227b429",
+  "sourceSha256": "ce2e4b90b4546100b911888d844f3df6c406c4e2145a993e9658c195fcf389d7",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -18,15 +18,15 @@
   "coverage": {
     "pokemon": {
       "total": 373,
-      "official": 318,
+      "official": 319,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 55,
+      "unverified": 54,
       "officialChampions": 36,
       "displayAvailable": 373,
-      "individuallyAttested": 318,
-      "individuallyAttestedPercent": 85.25,
-      "officialPercent": 85.25,
+      "individuallyAttested": 319,
+      "individuallyAttestedPercent": 85.52,
+      "officialPercent": 85.52,
       "officialChampionsPercent": 9.65
     },
     "moves": {
@@ -44,15 +44,15 @@
     },
     "abilities": {
       "total": 245,
-      "official": 45,
+      "official": 59,
       "verified-secondary": 38,
       "provisional": 0,
-      "unverified": 162,
+      "unverified": 148,
       "officialChampions": 27,
       "displayAvailable": 245,
-      "individuallyAttested": 83,
-      "individuallyAttestedPercent": 33.88,
-      "officialPercent": 18.37,
+      "individuallyAttested": 97,
+      "individuallyAttestedPercent": 39.59,
+      "officialPercent": 24.08,
       "officialChampionsPercent": 11.02
     },
     "items": {
@@ -83,15 +83,15 @@
     },
     "forms": {
       "total": 134,
-      "official": 74,
+      "official": 75,
       "verified-secondary": 0,
       "provisional": 0,
-      "unverified": 60,
+      "unverified": 59,
       "officialChampions": 22,
       "displayAvailable": 134,
-      "individuallyAttested": 74,
-      "individuallyAttestedPercent": 55.22,
-      "officialPercent": 55.22,
+      "individuallyAttested": 75,
+      "individuallyAttestedPercent": 55.97,
+      "officialPercent": 55.97,
       "officialChampionsPercent": 16.42
     },
     "natures": {
@@ -8150,18 +8150,27 @@
         "canonicalIds": [
           "roster_v0106_034"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch7-swsh-gifts"
+        ],
+        "recordIds": [
+          "batch7-swsh-pokemon-7aabf3262524"
+        ],
+        "relatedRecordIds": [
+          "batch7-swsh-pokemon-7aabf3262524"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Corsola de Galar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0106_035": {
         "name": "Cursola",
@@ -19591,17 +19600,26 @@
         "canonicalIds": [
           "strongJaw"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch8-swsh-drednaw"
+        ],
+        "recordIds": [
+          "batch8-swsh-strong-jaw"
+        ],
+        "relatedRecordIds": [
+          "batch8-swsh-strong-jaw"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Mandíbula Fuerte"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "トランジスタ": {
         "name": "Transistor",
@@ -20163,22 +20181,34 @@
         "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested."
       },
       "パワースポット": {
-        "name": "Power Spot",
+        "name": "Fuente Energía",
         "ja": "パワースポット",
         "en": "Power Spot",
         "es": "",
         "canonicalIds": [
           "powerSpot"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "power-spot-swsh-stonjourner"
+        ],
+        "recordIds": [
+          "power-spot-swsh-fuente-energia"
+        ],
+        "relatedRecordIds": [
+          "power-spot-swsh-fuente-energia"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
-        "aliases": [],
-        "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested."
+        "fallback": false,
+        "aliases": [
+          "Fuente Energía",
+          "Power Spot"
+        ],
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "プラス": {
         "name": "Más",
@@ -20188,17 +20218,26 @@
         "canonicalIds": [
           "plus"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch8-swsh-toxtricity-amped-form"
+        ],
+        "recordIds": [
+          "batch8-swsh-plus"
+        ],
+        "relatedRecordIds": [
+          "batch8-swsh-plus"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Más"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "マイナス": {
         "name": "Menos",
@@ -20208,17 +20247,26 @@
         "canonicalIds": [
           "minus"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch8-swsh-toxtricity-low-key-form"
+        ],
+        "recordIds": [
+          "batch8-swsh-minus"
+        ],
+        "relatedRecordIds": [
+          "batch8-swsh-minus"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Menos"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "いわはこび": {
         "name": "Rocky Payload",
@@ -20277,17 +20325,26 @@
         "canonicalIds": [
           "punkRock"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch8-swsh-toxtricity-amped-form"
+        ],
+        "recordIds": [
+          "batch8-swsh-punk-rock"
+        ],
+        "relatedRecordIds": [
+          "batch8-swsh-punk-rock"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Punk Rock"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "フェアリースキン": {
         "name": "Piel Feérica",
@@ -20609,17 +20666,26 @@
         "canonicalIds": [
           "levitate"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch9-swsh-weezing"
+        ],
+        "recordIds": [
+          "batch9-swsh-levitate"
+        ],
+        "relatedRecordIds": [
+          "batch9-swsh-levitate"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Levitación"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "マルチスケイル": {
         "name": "Multiescamas",
@@ -20922,17 +20988,26 @@
         "canonicalIds": [
           "shellArmor"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch8-swsh-drednaw"
+        ],
+        "recordIds": [
+          "batch8-swsh-shell-armor"
+        ],
+        "relatedRecordIds": [
+          "batch8-swsh-shell-armor"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Caparazón"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "カブトアーマー": {
         "name": "Armadura Batalla",
@@ -21555,17 +21630,26 @@
         "canonicalIds": [
           "unsupported:のろわれボディ"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch7-swsh-gifts"
+        ],
+        "recordIds": [
+          "batch7-swsh-abilities-4527962e0976"
+        ],
+        "relatedRecordIds": [
+          "batch7-swsh-abilities-4527962e0976"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Cuerpo Maldito"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "じきゅうりょく": {
         "name": "Firmeza",
@@ -22010,17 +22094,26 @@
         "canonicalIds": [
           "unsupported:さいせいりょく"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch10-swsh-gossifleur"
+        ],
+        "recordIds": [
+          "batch10-swsh-regenerator"
+        ],
+        "relatedRecordIds": [
+          "batch10-swsh-regenerator"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Regeneración"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "リベロ": {
         "name": "Líbero",
@@ -22030,17 +22123,26 @@
         "canonicalIds": [
           "unsupported:リベロ"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch7-swsh-home"
+        ],
+        "recordIds": [
+          "batch7-swsh-abilities-55c3d2106f13"
+        ],
+        "relatedRecordIds": [
+          "batch7-swsh-abilities-55c3d2106f13"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Líbero"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "へんげんじざい": {
         "name": "Mutatipo",
@@ -22499,17 +22601,26 @@
         "canonicalIds": [
           "unsupported:くいしんぼう"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch10-swsh-zigzagoon"
+        ],
+        "recordIds": [
+          "batch10-swsh-gluttony"
+        ],
+        "relatedRecordIds": [
+          "batch10-swsh-gluttony"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Gula"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "どんかん": {
         "name": "Despistado",
@@ -23086,17 +23197,26 @@
         "canonicalIds": [
           "unsupported:にげあし"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch9-swsh-ponyta"
+        ],
+        "recordIds": [
+          "batch9-swsh-run-away"
+        ],
+        "relatedRecordIds": [
+          "batch9-swsh-run-away"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Fuga"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "ふくつのこころ": {
         "name": "Impasible",
@@ -24050,17 +24170,26 @@
         "canonicalIds": [
           "unsupported:きけんよち"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch7-swsh-gifts"
+        ],
+        "recordIds": [
+          "batch7-swsh-abilities-fb0f2d42e30c"
+        ],
+        "relatedRecordIds": [
+          "batch7-swsh-abilities-fb0f2d42e30c"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Anticipación"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "かんろなミツ": {
         "name": "Néctar Dulce",
@@ -24476,17 +24605,26 @@
         "canonicalIds": [
           "unsupported:パステルベール"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch9-swsh-ponyta"
+        ],
+        "recordIds": [
+          "batch9-swsh-pastel-veil"
+        ],
+        "relatedRecordIds": [
+          "batch9-swsh-pastel-veil"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Velo Pastel"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "ゆうばく": {
         "name": "Secuela",
@@ -29538,18 +29676,27 @@
         "canonicalIds": [
           "roster_v0106_034"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch7-swsh-gifts"
+        ],
+        "recordIds": [
+          "batch7-swsh-pokemon-7aabf3262524"
+        ],
+        "relatedRecordIds": [
+          "batch7-swsh-pokemon-7aabf3262524"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Corsola de Galar"
         ],
         "form": true,
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "roster_v0106_038": {
         "name": "Braviary de Hisui",
@@ -32617,6 +32764,15 @@
       ]
     },
     {
+      "id": "batch7-swsh-pokemon-7aabf3262524",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0106_034"
+        }
+      ]
+    },
+    {
       "id": "pre8-pokedex-roster_v0106_035",
       "canonicalMatches": [
         {
@@ -34885,6 +35041,15 @@
       ]
     },
     {
+      "id": "batch8-swsh-strong-jaw",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "がんじょうあご"
+        }
+      ]
+    },
+    {
       "id": "pre9-publication-abilities-988d4cfc7eb3",
       "canonicalMatches": [
         {
@@ -34948,11 +35113,47 @@
       ]
     },
     {
+      "id": "power-spot-swsh-fuente-energia",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パワースポット"
+        }
+      ]
+    },
+    {
+      "id": "batch8-swsh-plus",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "プラス"
+        }
+      ]
+    },
+    {
+      "id": "batch8-swsh-minus",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "マイナス"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-abilities-159",
       "canonicalMatches": [
         {
           "category": "abilities",
           "key": "すなのちから"
+        }
+      ]
+    },
+    {
+      "id": "batch8-swsh-punk-rock",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パンクロック"
         }
       ]
     },
@@ -35011,6 +35212,15 @@
       ]
     },
     {
+      "id": "batch9-swsh-levitate",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ふゆう"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-abilities-218",
       "canonicalMatches": [
         {
@@ -35052,6 +35262,15 @@
         {
           "category": "abilities",
           "key": "いかく"
+        }
+      ]
+    },
+    {
+      "id": "batch8-swsh-shell-armor",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "シェルアーマー"
         }
       ]
     },
@@ -35155,6 +35374,15 @@
       ]
     },
     {
+      "id": "batch7-swsh-abilities-4527962e0976",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "のろわれボディ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-abilities-44",
       "canonicalMatches": [
         {
@@ -35227,6 +35455,24 @@
       ]
     },
     {
+      "id": "batch10-swsh-regenerator",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "さいせいりょく"
+        }
+      ]
+    },
+    {
+      "id": "batch7-swsh-abilities-55c3d2106f13",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "リベロ"
+        }
+      ]
+    },
+    {
       "id": "official-champions-abilities-contrary",
       "canonicalMatches": [
         {
@@ -35250,6 +35496,15 @@
         {
           "category": "abilities",
           "key": "いたずらごころ"
+        }
+      ]
+    },
+    {
+      "id": "batch10-swsh-gluttony",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "くいしんぼう"
         }
       ]
     },
@@ -35349,6 +35604,15 @@
         {
           "category": "abilities",
           "key": "ヘドロえき"
+        }
+      ]
+    },
+    {
+      "id": "batch9-swsh-run-away",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "にげあし"
         }
       ]
     },
@@ -35497,6 +35761,15 @@
       ]
     },
     {
+      "id": "batch7-swsh-abilities-fb0f2d42e30c",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "きけんよち"
+        }
+      ]
+    },
+    {
       "id": "pre9-publication-abilities-932da553da3e",
       "canonicalMatches": [
         {
@@ -35556,6 +35829,15 @@
         {
           "category": "abilities",
           "key": "でんきにかえる"
+        }
+      ]
+    },
+    {
+      "id": "batch9-swsh-pastel-veil",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パステルベール"
         }
       ]
     },
@@ -44766,18 +45048,6 @@
     },
     {
       "category": "pokemon",
-      "key": "roster_v0106_034",
-      "canonicalIds": [
-        "roster_v0106_034"
-      ],
-      "ja": "ガラルサニーゴ",
-      "es": "Corsola de Galar",
-      "candidate": "Corsola de Galar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "pokemon",
       "key": "roster_v0107_006",
       "canonicalIds": [
         "roster_v0107_006"
@@ -47190,18 +47460,6 @@
     },
     {
       "category": "abilities",
-      "key": "がんじょうあご",
-      "canonicalIds": [
-        "strongJaw"
-      ],
-      "ja": "がんじょうあご",
-      "es": "Mandíbula Fuerte",
-      "candidate": "Mandíbula Fuerte",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "りゅうのあぎと",
       "canonicalIds": [
         "dragonsMaw"
@@ -47418,42 +47676,6 @@
     },
     {
       "category": "abilities",
-      "key": "パワースポット",
-      "canonicalIds": [
-        "powerSpot"
-      ],
-      "ja": "パワースポット",
-      "es": "",
-      "candidate": "Power Spot",
-      "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "プラス",
-      "canonicalIds": [
-        "plus"
-      ],
-      "ja": "プラス",
-      "es": "Más",
-      "candidate": "Más",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "マイナス",
-      "canonicalIds": [
-        "minus"
-      ],
-      "ja": "マイナス",
-      "es": "Menos",
-      "candidate": "Menos",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "いわはこび",
       "canonicalIds": [
         "rockyPayload"
@@ -47462,18 +47684,6 @@
       "es": "",
       "candidate": "Rocky Payload",
       "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "パンクロック",
-      "canonicalIds": [
-        "punkRock"
-      ],
-      "ja": "パンクロック",
-      "es": "Punk Rock",
-      "candidate": "Punk Rock",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
     {
@@ -47574,18 +47784,6 @@
     },
     {
       "category": "abilities",
-      "key": "ふゆう",
-      "canonicalIds": [
-        "levitate"
-      ],
-      "ja": "ふゆう",
-      "es": "Levitación",
-      "candidate": "Levitación",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "マルチスケイル",
       "canonicalIds": [
         "multiscale"
@@ -47665,18 +47863,6 @@
       "ja": "きよめのしお",
       "es": "Sal Purificadora",
       "candidate": "Sal Purificadora",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "シェルアーマー",
-      "canonicalIds": [
-        "shellArmor"
-      ],
-      "ja": "シェルアーマー",
-      "es": "Caparazón",
-      "candidate": "Caparazón",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -47874,18 +48060,6 @@
     },
     {
       "category": "abilities",
-      "key": "のろわれボディ",
-      "canonicalIds": [
-        "unsupported:のろわれボディ"
-      ],
-      "ja": "のろわれボディ",
-      "es": "Cuerpo Maldito",
-      "candidate": "Cuerpo Maldito",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "じきゅうりょく",
       "canonicalIds": [
         "unsupported:じきゅうりょく"
@@ -48013,30 +48187,6 @@
       "ja": "じゅうなん",
       "es": "Flexibilidad",
       "candidate": "Flexibilidad",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "さいせいりょく",
-      "canonicalIds": [
-        "unsupported:さいせいりょく"
-      ],
-      "ja": "さいせいりょく",
-      "es": "Regeneración",
-      "candidate": "Regeneración",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "リベロ",
-      "canonicalIds": [
-        "unsupported:リベロ"
-      ],
-      "ja": "リベロ",
-      "es": "Líbero",
-      "candidate": "Líbero",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -48258,18 +48408,6 @@
     },
     {
       "category": "abilities",
-      "key": "くいしんぼう",
-      "canonicalIds": [
-        "unsupported:くいしんぼう"
-      ],
-      "ja": "くいしんぼう",
-      "es": "Gula",
-      "candidate": "Gula",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "マイペース",
       "canonicalIds": [
         "unsupported:マイペース"
@@ -48409,18 +48547,6 @@
       "ja": "ききかいひ",
       "es": "Retirada",
       "candidate": "Retirada",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "にげあし",
-      "canonicalIds": [
-        "unsupported:にげあし"
-      ],
-      "ja": "にげあし",
-      "es": "Fuga",
-      "candidate": "Fuga",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -48702,18 +48828,6 @@
     },
     {
       "category": "abilities",
-      "key": "きけんよち",
-      "canonicalIds": [
-        "unsupported:きけんよち"
-      ],
-      "ja": "きけんよち",
-      "es": "Anticipación",
-      "candidate": "Anticipación",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "かんろなミツ",
       "canonicalIds": [
         "unsupported:かんろなミツ"
@@ -48829,18 +48943,6 @@
       "ja": "じりょく",
       "es": "Imán",
       "candidate": "Imán",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "パステルベール",
-      "canonicalIds": [
-        "unsupported:パステルベール"
-      ],
-      "ja": "パステルベール",
-      "es": "Velo Pastel",
-      "candidate": "Velo Pastel",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -49482,18 +49584,6 @@
     },
     {
       "category": "forms",
-      "key": "roster_v0106_034",
-      "canonicalIds": [
-        "roster_v0106_034"
-      ],
-      "ja": "ガラルサニーゴ",
-      "es": "Corsola de Galar",
-      "candidate": "Corsola de Galar",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon summary / form selection."
-    },
-    {
-      "category": "forms",
       "key": "roster_v0107_006",
       "canonicalIds": [
         "roster_v0107_006"
@@ -49775,9 +49865,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "13be3329e6b90036f4b0bb93e6ea0ae3727fde9995b10fea3ef3ae5cfdcb315e",
-      "feedback-release-v100.js": "f821f6fed4d66226ce6c9088eaa5096387afa888a7e0840c4c9b6914eff79405",
-      "index.html": "83c26b513ca2f2d9a734c88a8fbe49607bdebb9f96e69273ccbb242687c92bd0",
-      "docs/data/v110-es-la-source-records.json": "86e224857e27f49522e39aaf0adb7a059835e68d27f145495379517b4227b429"
+      "feedback-release-v100.js": "6562efcd6d6ab85c88d1d7cf490a42f398d39a159d05f50cfdffd9dc1dc2248a",
+      "index.html": "202c7ef7f89805ccf52d221d6e3e810e14233ce7ffa54ec2f2340dc072cfe4c6",
+      "docs/data/v110-es-la-source-records.json": "ce2e4b90b4546100b911888d844f3df6c406c4e2145a993e9658c195fcf389d7"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -52679,7 +52769,7 @@
         "checkedAt": "2026-11-15",
         "targetGame": null,
         "warningOrError": false,
-        "renderedText": "Power Spot de un aliado (daño ×1,3)"
+        "renderedText": "Fuente Energía de un aliado (daño ×1,3)"
       },
       {
         "id": "locale-ui-es-la-v110.js:exact-ui:Supreme Overlord: fainted allies (0–5)",
@@ -58073,7 +58163,7 @@
         "source": "locale-ui-es-la-v110.js",
         "group": "authored-errors",
         "canonicalKey": "パワースポット条件が不正",
-        "text": "La condición de Power Spot no es válida",
+        "text": "La condición de Fuente Energía no es válida",
         "status": "provisional",
         "origin": "executed-authored-dynamic-copy",
         "officialGameNameEvidence": false,
@@ -58085,7 +58175,7 @@
         "witnesses": [
           {
             "canonicalInput": "入力エラー: パワースポット条件が不正",
-            "text": "Error de entrada: La condición de Power Spot no es válida"
+            "text": "Error de entrada: La condición de Fuente Energía no es válida"
           }
         ],
         "sourceUrl": "https://github.com/Kurohanolu/chloha-damage-lab/blob/feature/v110-es-la-localization/locale-ui-es-la-v110.js",
@@ -62361,7 +62451,7 @@
         "source": "i18n.js",
         "group": "canonical-dictionary",
         "canonicalKey": "味方のパワースポット（技×1.3）",
-        "text": "Power Spot de un aliado (daño ×1,3)",
+        "text": "Fuente Energía de un aliado (daño ×1,3)",
         "status": "provisional",
         "origin": "executed-canonical-ui-key",
         "officialGameNameEvidence": false,
@@ -67801,6 +67891,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "ef87782e89403e44dbc8a45d2fc3fc97fabdc00292d936fe6fab5364883ae303"
+    "sha256": "23c6921dc5f1c0887e99b825bce561c28aabd8b94a215790ab66a84824bfed37"
   }
 }

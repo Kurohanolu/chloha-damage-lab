@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "fbec6fd45b841c3465be903b25a14e909cc80ba5",
+  "checkedAt": "2026-11-17",
+  "scope": "Five existing ability names; historical official LATAM profiles, no Champions promotion.",
+  "sources": [
+    {
+      "id": "batch8-swsh-drednaw",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/drednaw/",
+      "title": "Official LATAM drednaw profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "170e256beaa8736aa627712452db6391bca97935c959bd33b41b5a5a4a9866ae",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/drednaw/",
+      "englishRawSha256": "cdb3943e34c8631d565858019dcc07559840669da4824ff95ad7f67e191822c2",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch8-swsh-toxtricity-amped-form",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/toxtricity-amped-form/",
+      "title": "Official LATAM toxtricity-amped-form profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "dce42d2ce77dcdab5cfee9ab17b1e92c12462a43d1d14653061fbd9f1b88b4c4",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/toxtricity-amped-form/",
+      "englishRawSha256": "37fae534932244fc969a1ef85136b15c64c5f5c28d2ca0294f10becdc55c8c1f",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch8-swsh-toxtricity-low-key-form",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/toxtricity-low-key-form/",
+      "title": "Official LATAM toxtricity-low-key-form profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "f8817e19a405aeaf572846a71a2bde1e0fe102581bcafcc220a40eb720d765a2",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/toxtricity-low-key-form/",
+      "englishRawSha256": "911f11a4b68076d1cde961f09e4a38d18c9eb59f046461e9066424b3c0d63aee",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch8-swsh-strong-jaw",
+      "category": "abilities",
+      "canonicalEnglish": "Strong Jaw",
+      "sourceEs": "Mandíbula Fuerte",
+      "esLA": "Mandíbula Fuerte",
+      "rawObservedText": "Mandíbula Fuerte",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-drednaw"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "がんじょうあご",
+          "canonicalIds": [
+            "strongJaw"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-shell-armor",
+      "category": "abilities",
+      "canonicalEnglish": "Shell Armor",
+      "sourceEs": "Caparazón",
+      "esLA": "Caparazón",
+      "rawObservedText": "Caparazón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-drednaw"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "シェルアーマー",
+          "canonicalIds": [
+            "shellArmor"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-punk-rock",
+      "category": "abilities",
+      "canonicalEnglish": "Punk Rock",
+      "sourceEs": "Punk Rock",
+      "esLA": "Punk Rock",
+      "rawObservedText": "Punk Rock",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-amped-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パンクロック",
+          "canonicalIds": [
+            "punkRock"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-plus",
+      "category": "abilities",
+      "canonicalEnglish": "Plus",
+      "sourceEs": "Más",
+      "esLA": "Más",
+      "rawObservedText": "Más",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-amped-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "プラス",
+          "canonicalIds": [
+            "plus"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-minus",
+      "category": "abilities",
+      "canonicalEnglish": "Minus",
+      "sourceEs": "Menos",
+      "esLA": "Menos",
+      "rawObservedText": "Menos",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-low-key-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "マイナス",
+          "canonicalIds": [
+            "minus"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    }
+  ]
+}

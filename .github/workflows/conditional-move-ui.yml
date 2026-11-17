@@ -21,7 +21,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: sudo apt-get install -y fonts-noto-cjk
       - run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
-      - run: node tests/v110-pre14-ui-scope.cjs
+      - run: node tests/v110-translation-weather-successor.cjs
       - run: node tests/v110-pre14-weather-scope.cjs
       - run: node tests/v110-pre14-publication.cjs
       - run: node tests/v110-count-moves-showdown.cjs

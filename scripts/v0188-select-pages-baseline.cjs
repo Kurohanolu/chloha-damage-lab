@@ -14,8 +14,33 @@ const pre8Commit='0b1f8fffea3b1d063036d00fd712b0a0e9695111',pre8Tree='701fbae7b1
 const pre9Commit='46f930797e662be0d01e974f98ddde6de7b414c0',pre9Tree='1ea3163c8a8f4de8d68951b28c061a855461468c';
 const pre12Commit='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',pre12Tree='1921d6331b877830a5065f16f849925486f7b8c7';
 const pre11Commit='fbec6fd45b841c3465be903b25a14e909cc80ba5',pre11Tree='a38f294cddaf10c15e8cea147e57a7b6d6148142';
+const pre14Commit='cace126d0244f2d748b3c162a3e7cb5f9441932d',pre14Tree='7f4a6078575346b36f74ab6bcea941dc629e81ec';
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(release.tag==='v1.1.0-pre.15'){
+  assert.ok(!hasFollowup(release),'Pre.15 must use its own release decision, not a historical follow-up marker');
+  if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration?.liveTargetVerified,false,'Pre.15 must explicitly declare its pre-acceptance state');
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   assert.equal(execFileSync('git',['rev-parse',pre14Commit+'^{tree}'],{cwd:path.resolve(__dirname,'..'),encoding:'utf8'}).trim(),pre14Tree,'Published pre.14 commit/tree must remain pinned');
+   if(event==='pull_request'&&baseRef===pre11Commit){
+    // PR #83 predates pre.14: GitHub retains its creation-time base SHA.
+    // Accept that one historical event value only on a real two-parent merge
+    // whose first parent is the exact published pre.14 and whose candidate
+    // already contains it. Never use the stale SHA as the public baseline.
+    const git=args=>execFileSync('git',args,{cwd:path.resolve(__dirname,'..'),encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+    const parents=git(['rev-list','--parents','-n','1','HEAD']).split(' ').slice(1);
+    assert.equal(parents.length,2,'Stale pre.15 PR metadata requires an actual two-parent checked-out merge');
+    assert.equal(parents[0],pre14Commit,'Checked-out PR merge must target exact published pre.14');
+    assert.notEqual(parents[1],pre14Commit,'Checked-out PR merge must contain a distinct candidate');
+    git(['merge-base','--is-ancestor',pre11Commit,pre14Commit]);
+    git(['merge-base','--is-ancestor',pre14Commit,parents[1]]);
+    assert.equal(git(['rev-parse','HEAD^{tree}']),git(['merge-tree','--write-tree',parents[0],parents[1]]),'Checked-out merge tree must exactly match its verified parents');
+   }else if(event==='pull_request'||baseRef)assert.equal(baseRef,pre14Commit,'Pre.15 public base must be the immutable published pre.14');
+   return {ref:pre14Commit,mode:'published-v110-pre15-base'};
+  }
+ }
  if(release.tag==='v1.1.0-pre.14'){
   assert.ok(!hasFollowup(release),'Pre.14 must use its own release decision, not a historical follow-up marker');
   if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
