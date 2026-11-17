@@ -1,3 +1,20 @@
+// Pre.14 executes the unmodified pre.12 publication test on its published tree.
+if(require('../release.json').tag==='v1.1.0-pre.14'){
+ const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',tree='1921d6331b877830a5065f16f849925486f7b8c7';
+ const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024});
+ assert.equal(git('rev-parse',ref+'^{tree}').trim(),tree);
+ const original=git('show',ref+':tests/v110-pre12-publication.cjs');
+ assert.ok(fs.readFileSync(__filename,'utf8').endsWith(original),'Complete pre.12 assertions must remain unchanged');
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pre12-publication-')),checkout=path.join(tmp,'source');let added=false;
+ try{
+  git('worktree','add','--detach',checkout,ref);added=true;
+  const run=spawnSync(process.execPath,['tests/v110-pre12-publication.cjs'],{cwd:checkout,stdio:'inherit',timeout:120000});
+  assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0,'Immutable pre.12 publication test failed');
+ }finally{try{if(added)git('worktree','remove','--force',checkout);}finally{fs.rmSync(tmp,{recursive:true,force:true});}}
+ console.log('PASS immutable pre.12 publication history '+tree);process.exit(0);
+}
 'use strict';
 // A new prerelease must earn its own approval. The published pre.11 is the
 // immutable observation/rollback baseline, never a reusable approval receipt.

@@ -1,3 +1,5 @@
+// Execute the original assertions against their immutable published release.
+if(require('../release.json').tag==='v1.1.0-pre.14'){require('node:child_process').execFileSync(process.execPath,['tests/v110-pre11-historical.cjs','tests/v110-pre11-publication.cjs'],{stdio:'inherit'});process.exit(0);}
 // Historical pre.11 checks execute only in the immutable published source tree.
 if(require('../release.json').tag!=='v1.1.0-pre.11'){
  const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');

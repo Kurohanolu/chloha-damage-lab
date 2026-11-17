@@ -1,3 +1,5 @@
+// Execute the original assertions against their immutable published release.
+if(require('../release.json').tag==='v1.1.0-pre.14'){require('node:child_process').execFileSync(process.execPath,['tests/v110-pre11-historical.cjs','tests/v110-weather-scope.cjs'],{stdio:'inherit'});process.exit(0);}
 'use strict';
 // Current-candidate preservation, distinct from historical localization tests.
 const assert=require('node:assert/strict'),fs=require('node:fs'),{execFileSync}=require('node:child_process');

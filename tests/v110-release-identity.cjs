@@ -34,10 +34,12 @@ const pre9Commit='46f930797e662be0d01e974f98ddde6de7b414c0',pre9=historical(pre9
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.11'}),pre9Commit);
 const pre11Commit='fbec6fd45b841c3465be903b25a14e909cc80ba5',pre11=historical(pre11Commit);
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.12'}),pre11Commit);
+const pre12Commit='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',pre12=historical(pre12Commit);
+assert.equal(baselineForRelease({tag:'v1.1.0-pre.14'}),pre12Commit);
 const current=pending(require('../release.json'));
-assert.equal(current.tag,'v1.1.0-pre.12');assert.equal(current.preRelease,12);
+assert.equal(current.tag,'v1.1.0-pre.14');assert.equal(current.preRelease,14);
 // Historical and current candidates retain separate, exact public baselines.
-for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[pending(require('../scripts/helpers/v110-community-public-base.cjs').manifest()),pre5,6],[pending(pre7),pre6,7],[pending(pre8),pre7,8],[pending(pre9),pre8,9],[pending(pre11),pre9,11],[current,pre11,12]]){
+for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[pending(require('../scripts/helpers/v110-community-public-base.cjs').manifest()),pre5,6],[pending(pre7),pre6,7],[pending(pre8),pre7,8],[pending(pre9),pre8,9],[pending(pre11),pre9,11],[pending(pre12),pre11,12],[current,pre12,14]]){
  const observed=verifyObservation(candidate,publicBase,publicBase.name);
  assert.deepEqual(verifyObservation(candidate,publicBase,publicBase.name,observed),observed,'Repeated observations cannot change release baseline');
  for(const altered of [{...publicBase,notes:'docs/tampered.md'},{...publicBase,tag:candidate.tag},candidate])assert.throws(()=>verifyObservation(candidate,altered,altered.name),'Changed or unpublished metadata is not a public baseline');
@@ -58,7 +60,7 @@ for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre
 }
 assert.deepEqual(releaseIdentity(stable),{stable:true,displayVersion:'v1.0.0',packageVersion:'1.0.0'});
 const context=vm.createContext({});vm.runInContext(fs.readFileSync('feedback-release-v100.js','utf8'),context);const R=context.ChlohaFeedbackRelease;
-for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name,4],[pre5.name,5],[pre6.name,6],[pre7.name,7],[pre8.name,8],[pre9.name,9],[pre11.name,11],[current.name,12]]){
+for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name,4],[pre5.name,5],[pre6.name,6],[pre7.name,7],[pre8.name,8],[pre9.name,9],[pre11.name,11],[pre12.name,12],[current.name,14]]){
  const id=R.identify(title);
  assert.equal(id.wireVersion,'v1.1 Pre-Release '+number);assert.equal(id.fullVersion,'v1.1.0 Pre-Release '+number);assert.equal(id.prefix,'[Singularity release: v1.1.0 Pre-Release '+number+']\n\n');
  assert.equal(R.description(title,'a'.repeat(id.descriptionLimit)).length,R.wireDescriptionLimit);

@@ -1,3 +1,24 @@
+// Historical pre.12 feedback/weather proof, then current pre.14 runtime proof.
+if(require('../release.json').tag==='v1.1.0-pre.14'){
+ const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',tree='1921d6331b877830a5065f16f849925486f7b8c7';
+ const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024});
+ assert.equal(git('rev-parse',ref+'^{tree}').trim(),tree);
+ const original=git('show',ref+':tests/v110-feedback-weather-successor.cjs');
+ assert.ok(fs.readFileSync(__filename,'utf8').endsWith(original),'Complete pre.12 feedback/weather assertions must remain unchanged');
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'pre12-feedback-weather-')),checkout=path.join(tmp,'source');let added=false;
+ try{
+  git('worktree','add','--detach',checkout,ref);added=true;
+  const run=spawnSync(process.execPath,['tests/v110-feedback-weather-successor.cjs'],{cwd:checkout,stdio:'inherit',timeout:120000});
+  assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0,'Immutable pre.12 feedback/weather test failed');
+ }finally{try{if(added)git('worktree','remove','--force',checkout);}finally{fs.rmSync(tmp,{recursive:true,force:true});}}
+ for(const test of ['tests/v110-pre14-ui-scope.cjs','tests/v110-pre14-weather-scope.cjs']){
+  const run=spawnSync(process.execPath,[test],{stdio:'inherit',timeout:120000});
+  assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0,'Current pre.14 scope failed: '+test);
+ }
+ console.log('PASS pre.12 historical feedback/weather plus current pre.14 UI/weather scope');process.exit(0);
+}
 'use strict';
 // Current successor guard against published pre.11, preserving historical scope.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
