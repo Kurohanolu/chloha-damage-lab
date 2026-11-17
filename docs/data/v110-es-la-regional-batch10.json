@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "fbec6fd45b841c3465be903b25a14e909cc80ba5",
+  "checkedAt": "2026-11-17",
+  "scope": "Two existing ability names; historical official LATAM profiles, no Champions promotion.",
+  "sources": [
+    {
+      "id": "batch10-swsh-gossifleur",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/gossifleur/",
+      "title": "Official LATAM gossifleur profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "ad9904598607dd6b42a05f2a60f51abf9f8caed0fbecb91a215dcb034fc19e84",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/gossifleur/",
+      "englishRawSha256": "76c468d9591af4e43e11bc2872d6272aab39f7ccd9aa4746175031c773b24b6a",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch10-swsh-zigzagoon",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/zigzagoon/",
+      "title": "Official LATAM zigzagoon profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "cf87757b012baa41ddfd2b565b0d72b254b7563e8ae251311b99b3687b193cd4",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/zigzagoon/",
+      "englishRawSha256": "fde7c106a74266cf8d24237c933cda5adfe8a53d671512a0f1e20e4e93f1e08c",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch10-swsh-regenerator",
+      "category": "abilities",
+      "canonicalEnglish": "Regenerator",
+      "sourceEs": "Regeneración",
+      "esLA": "Regeneración",
+      "rawObservedText": "Regeneración",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch10-swsh-gossifleur"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "さいせいりょく",
+          "canonicalIds": [
+            "unsupported:さいせいりょく"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch10-swsh-gluttony",
+      "category": "abilities",
+      "canonicalEnglish": "Gluttony",
+      "sourceEs": "Gula",
+      "esLA": "Gula",
+      "rawObservedText": "Gula",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch10-swsh-zigzagoon"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "くいしんぼう",
+          "canonicalIds": [
+            "unsupported:くいしんぼう"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    }
+  ]
+}

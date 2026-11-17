@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "fbec6fd45b841c3465be903b25a14e909cc80ba5",
+  "checkedAt": "2026-11-17",
+  "scope": "Three existing ability names; historical official LATAM profiles, no Champions promotion.",
+  "sources": [
+    {
+      "id": "batch9-swsh-ponyta",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/ponyta/",
+      "title": "Official LATAM ponyta profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "c335eab2af9152067af116b42b20de26b1060d3d39ef4ebc9cd2a09285d554a0",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/ponyta/",
+      "englishRawSha256": "dd35a3416a9cd5730f95db644cafbaf96e944c8a5c32625ab46a916644acfe40",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch9-swsh-weezing",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/weezing/",
+      "title": "Official LATAM weezing profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "2ec82465db3fce2030ef1debc605297830539ecbb7cd75579c2c3d411273cf1a",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/weezing/",
+      "englishRawSha256": "b5286547368666a0e2cd23d56fc8af3e7137ea6db8eb46ec1c6828719740b5a4",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch9-swsh-run-away",
+      "category": "abilities",
+      "canonicalEnglish": "Run Away",
+      "sourceEs": "Fuga",
+      "esLA": "Fuga",
+      "rawObservedText": "Fuga",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-ponyta"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "にげあし",
+          "canonicalIds": [
+            "unsupported:にげあし"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch9-swsh-pastel-veil",
+      "category": "abilities",
+      "canonicalEnglish": "Pastel Veil",
+      "sourceEs": "Velo Pastel",
+      "esLA": "Velo Pastel",
+      "rawObservedText": "Velo Pastel",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-ponyta"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パステルベール",
+          "canonicalIds": [
+            "unsupported:パステルベール"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch9-swsh-levitate",
+      "category": "abilities",
+      "canonicalEnglish": "Levitate",
+      "sourceEs": "Levitación",
+      "esLA": "Levitación",
+      "rawObservedText": "Levitación",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-weezing"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ふゆう",
+          "canonicalIds": [
+            "levitate"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    }
+  ]
+}

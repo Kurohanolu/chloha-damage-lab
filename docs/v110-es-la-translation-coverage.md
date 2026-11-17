@@ -8,12 +8,12 @@ Names are tied to existing canonical IDs. `official` means the exact spelling is
 
 | Category | Total | Official | Secondary | Provisional | Unverified | Individually attested | Official rate | Official Champions |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| pokemon | 373 | 318 | 0 | 0 | 55 | 85.25% | 85.25% | 36 (9.65%) |
+| pokemon | 373 | 319 | 0 | 0 | 54 | 85.52% | 85.52% | 36 (9.65%) |
 | moves | 335 | 58 | 101 | 0 | 176 | 47.46% | 17.31% | 51 (15.22%) |
-| abilities | 245 | 45 | 38 | 0 | 162 | 33.88% | 18.37% | 27 (11.02%) |
+| abilities | 245 | 58 | 38 | 0 | 149 | 39.18% | 23.67% | 27 (11.02%) |
 | items | 41 | 20 | 19 | 2 | 0 | 95.12% | 48.78% | 20 (48.78%) |
 | types | 18 | 18 | 0 | 0 | 0 | 100% | 100% | 17 (94.44%) |
-| forms | 134 | 74 | 0 | 0 | 60 | 55.22% | 55.22% | 22 (16.42%) |
+| forms | 134 | 75 | 0 | 0 | 59 | 55.97% | 55.97% | 22 (16.42%) |
 | natures | 11 | 5 | 1 | 0 | 5 | 54.55% | 45.45% | 5 (45.45%) |
 | stats | 6 | 6 | 0 | 0 | 0 | 100% | 100% | 6 (100%) |
 | ui | 1011 | 0 | 0 | 1011 | 0 | 0% | 0% | 0 (0%) |

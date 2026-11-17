@@ -1890,6 +1890,204 @@
         "Historical Latin American marketing terminology, not proof that the historical game itself supported ES-LA localization.",
         "Not Champions-specific names, availability or mechanics evidence; no engine or supported-content change."
       ]
+    },
+    {
+      "id": "batch7-swsh-gifts",
+      "url": "https://swordshield.pokemon.com/es-mx/prepare-for-adventure/",
+      "title": "Official Latin American Sword and Shield promotion",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "a151807de6418325e3bcf63ebeab6c40bb56e02c866d241619c3db038e7d6518",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/prepare-for-adventure/",
+      "englishRawSha256": "1a8298e3fc7fec8ebe62601bad5c59cd92e4a93dffb51c89ae89eca8c1fe8e29",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch7-swsh-home",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/mystery-gift/",
+      "title": "Official Latin American Sword and Shield promotion",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "577202e6abdc9ef9da1d4ff39ec7511a96a1df48f1d586fbdca48ae62ca66ba1",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/mystery-gift/",
+      "englishRawSha256": "0d25cd1dfb22d25d025ab8e86fbac8387955b9829abbda8cfba4c6175b8fabeb",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch8-swsh-drednaw",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/drednaw/",
+      "title": "Official LATAM drednaw profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "170e256beaa8736aa627712452db6391bca97935c959bd33b41b5a5a4a9866ae",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/drednaw/",
+      "englishRawSha256": "cdb3943e34c8631d565858019dcc07559840669da4824ff95ad7f67e191822c2",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch8-swsh-toxtricity-amped-form",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/toxtricity-amped-form/",
+      "title": "Official LATAM toxtricity-amped-form profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "dce42d2ce77dcdab5cfee9ab17b1e92c12462a43d1d14653061fbd9f1b88b4c4",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/toxtricity-amped-form/",
+      "englishRawSha256": "37fae534932244fc969a1ef85136b15c64c5f5c28d2ca0294f10becdc55c8c1f",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch8-swsh-toxtricity-low-key-form",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/toxtricity-low-key-form/",
+      "title": "Official LATAM toxtricity-low-key-form profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "f8817e19a405aeaf572846a71a2bde1e0fe102581bcafcc220a40eb720d765a2",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/toxtricity-low-key-form/",
+      "englishRawSha256": "911f11a4b68076d1cde961f09e4a38d18c9eb59f046461e9066424b3c0d63aee",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch9-swsh-ponyta",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/ponyta/",
+      "title": "Official LATAM ponyta profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "c335eab2af9152067af116b42b20de26b1060d3d39ef4ebc9cd2a09285d554a0",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/ponyta/",
+      "englishRawSha256": "dd35a3416a9cd5730f95db644cafbaf96e944c8a5c32625ab46a916644acfe40",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch9-swsh-weezing",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/weezing/",
+      "title": "Official LATAM weezing profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "2ec82465db3fce2030ef1debc605297830539ecbb7cd75579c2c3d411273cf1a",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/weezing/",
+      "englishRawSha256": "b5286547368666a0e2cd23d56fc8af3e7137ea6db8eb46ec1c6828719740b5a4",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch10-swsh-gossifleur",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/gossifleur/",
+      "title": "Official LATAM gossifleur profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "ad9904598607dd6b42a05f2a60f51abf9f8caed0fbecb91a215dcb034fc19e84",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/gossifleur/",
+      "englishRawSha256": "76c468d9591af4e43e11bc2872d6272aab39f7ccd9aa4746175031c773b24b6a",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
+    },
+    {
+      "id": "batch10-swsh-zigzagoon",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/zigzagoon/",
+      "title": "Official LATAM zigzagoon profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "cf87757b012baa41ddfd2b565b0d72b254b7563e8ae251311b99b3687b193cd4",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/zigzagoon/",
+      "englishRawSha256": "fde7c106a74266cf8d24237c933cda5adfe8a53d671512a0f1e20e4e93f1e08c",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
     }
   ],
   "records": [
@@ -36795,6 +36993,384 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Reinspection of existing original private batch3 pixels. Exact low-contrast whole system label behind translucent modal; no image alteration or missing-letter completion. Central effect belongs to ability, not background moves. Owner-attested region; no game build/timestamp/settings claim."
+    },
+    {
+      "id": "batch7-swsh-pokemon-7aabf3262524",
+      "category": "pokemon",
+      "canonicalEnglish": "Galarian Corsola",
+      "sourceEs": "Corsola de Galar",
+      "esLA": "Corsola de Galar",
+      "rawObservedText": "Corsola de Galar",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "roster_v0106_034",
+          "canonicalIds": [
+            "roster_v0106_034"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-fb0f2d42e30c",
+      "category": "abilities",
+      "canonicalEnglish": "Anticipation",
+      "sourceEs": "Anticipación",
+      "esLA": "Anticipación",
+      "rawObservedText": "Anticipación",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "きけんよち",
+          "canonicalIds": [
+            "unsupported:きけんよち"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-4527962e0976",
+      "category": "abilities",
+      "canonicalEnglish": "Cursed Body",
+      "sourceEs": "Cuerpo Maldito",
+      "esLA": "Cuerpo Maldito",
+      "rawObservedText": "Cuerpo Maldito",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-gifts"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "のろわれボディ",
+          "canonicalIds": [
+            "unsupported:のろわれボディ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch7-swsh-abilities-55c3d2106f13",
+      "category": "abilities",
+      "canonicalEnglish": "Libero",
+      "sourceEs": "Líbero",
+      "esLA": "Líbero",
+      "rawObservedText": "Líbero",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch7-swsh-home"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "リベロ",
+          "canonicalIds": [
+            "unsupported:リベロ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name; identity paired with same Pokémon and hidden-ability role on official English counterpart. No display, availability or mechanics change."
+    },
+    {
+      "id": "batch8-swsh-strong-jaw",
+      "category": "abilities",
+      "canonicalEnglish": "Strong Jaw",
+      "sourceEs": "Mandíbula Fuerte",
+      "esLA": "Mandíbula Fuerte",
+      "rawObservedText": "Mandíbula Fuerte",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-drednaw"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "がんじょうあご",
+          "canonicalIds": [
+            "strongJaw"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-shell-armor",
+      "category": "abilities",
+      "canonicalEnglish": "Shell Armor",
+      "sourceEs": "Caparazón",
+      "esLA": "Caparazón",
+      "rawObservedText": "Caparazón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-drednaw"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "シェルアーマー",
+          "canonicalIds": [
+            "shellArmor"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-punk-rock",
+      "category": "abilities",
+      "canonicalEnglish": "Punk Rock",
+      "sourceEs": "Punk Rock",
+      "esLA": "Punk Rock",
+      "rawObservedText": "Punk Rock",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-amped-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パンクロック",
+          "canonicalIds": [
+            "punkRock"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-plus",
+      "category": "abilities",
+      "canonicalEnglish": "Plus",
+      "sourceEs": "Más",
+      "esLA": "Más",
+      "rawObservedText": "Más",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-amped-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "プラス",
+          "canonicalIds": [
+            "plus"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch8-swsh-minus",
+      "category": "abilities",
+      "canonicalEnglish": "Minus",
+      "sourceEs": "Menos",
+      "esLA": "Menos",
+      "rawObservedText": "Menos",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch8-swsh-toxtricity-low-key-form"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "マイナス",
+          "canonicalIds": [
+            "minus"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch9-swsh-run-away",
+      "category": "abilities",
+      "canonicalEnglish": "Run Away",
+      "sourceEs": "Fuga",
+      "esLA": "Fuga",
+      "rawObservedText": "Fuga",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-ponyta"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "にげあし",
+          "canonicalIds": [
+            "unsupported:にげあし"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch9-swsh-pastel-veil",
+      "category": "abilities",
+      "canonicalEnglish": "Pastel Veil",
+      "sourceEs": "Velo Pastel",
+      "esLA": "Velo Pastel",
+      "rawObservedText": "Velo Pastel",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-ponyta"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パステルベール",
+          "canonicalIds": [
+            "unsupported:パステルベール"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch9-swsh-levitate",
+      "category": "abilities",
+      "canonicalEnglish": "Levitate",
+      "sourceEs": "Levitación",
+      "esLA": "Levitación",
+      "rawObservedText": "Levitación",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch9-swsh-weezing"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "ふゆう",
+          "canonicalIds": [
+            "levitate"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch10-swsh-regenerator",
+      "category": "abilities",
+      "canonicalEnglish": "Regenerator",
+      "sourceEs": "Regeneración",
+      "esLA": "Regeneración",
+      "rawObservedText": "Regeneración",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch10-swsh-gossifleur"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "さいせいりょく",
+          "canonicalIds": [
+            "unsupported:さいせいりょく"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch10-swsh-gluttony",
+      "category": "abilities",
+      "canonicalEnglish": "Gluttony",
+      "sourceEs": "Gula",
+      "esLA": "Gula",
+      "rawObservedText": "Gula",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch10-swsh-zigzagoon"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "くいしんぼう",
+          "canonicalIds": [
+            "unsupported:くいしんぼう"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
     }
   ],
   "observedConflicts": [
