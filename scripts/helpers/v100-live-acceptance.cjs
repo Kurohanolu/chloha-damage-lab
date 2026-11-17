@@ -28,7 +28,7 @@ function acceptanceFiles(source){
  return files;
 }
 function verifyStableLiveAcceptance(release){
- assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag),'Live acceptance policy is explicit');
+ assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.14'].includes(release.tag),'Live acceptance policy is explicit');
  const m=release.migration;
  assert.equal(m.liveTargetVerified,true,'Stable publication needs actual live acceptance');
  assert.match(m.liveAcceptanceSourceCommit||'',/^[a-f0-9]{40}$/,'Stable live acceptance source SHA required');
@@ -50,7 +50,7 @@ function verifyStableLiveAcceptance(release){
  for(const key of acceptanceKeys)expected.migration[key]=m[key];
  assert.deepEqual(release,expected,'Acceptance promotion may only add its live flag and four explicit receipt bindings');
  const receipt=JSON.parse(fs.readFileSync(evidence,'utf8'));
- const rollbackSourceCommit=release.tag==='v1.1.0-pre.11'?'46f930797e662be0d01e974f98ddde6de7b414c0':release.tag==='v1.1.0-pre.9'?'0b1f8fffea3b1d063036d00fd712b0a0e9695111':release.tag==='v1.1.0-pre.8'?'66a085ba325655bc9369656ea0645f7f6f997127':release.tag==='v1.1.0-pre.7'?'2fb5655a89e076df5993a3294bddbe1bf31afa58':release.tag==='v1.1.0-pre.6'?'82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74':release.tag==='v1.1.0-pre.5'?'61d87e82995bc60d4564aaf57a52dfc1fd859e4c':release.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':release.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
+ const rollbackSourceCommit=release.tag==='v1.1.0-pre.14'?'fbec6fd45b841c3465be903b25a14e909cc80ba5':release.tag==='v1.1.0-pre.11'?'46f930797e662be0d01e974f98ddde6de7b414c0':release.tag==='v1.1.0-pre.9'?'0b1f8fffea3b1d063036d00fd712b0a0e9695111':release.tag==='v1.1.0-pre.8'?'66a085ba325655bc9369656ea0645f7f6f997127':release.tag==='v1.1.0-pre.7'?'2fb5655a89e076df5993a3294bddbe1bf31afa58':release.tag==='v1.1.0-pre.6'?'82f7e2b4111824ac9a357b5d4cfba01dbc0c4f74':release.tag==='v1.1.0-pre.5'?'61d87e82995bc60d4564aaf57a52dfc1fd859e4c':release.tag==='v1.1.0-pre.4'?'082ab180bc8835304d959f583d4968e0565bdea3':release.tag==='v1.1.0-pre.3'?'aba2d0558948e2a4dd375074fb11fd428edf6222':release.tag==='v1.1.0-pre.2'?'83af29133927a19fc7e0f9273c0e194c54384ae5':release.tag==='v1.1.0-pre.1'?'0b270c1452505268364659edd402209b00b28673':publishedCommit;
  assert.deepEqual(receipt,{schemaVersion:1,releaseTag:release.tag,sourceCommit:source,sourceTree,deploymentRun:m.liveAcceptanceDeploymentRun,observedAtJST:m.liveAcceptanceObservedAtJST,result:'passed',currentUrl:release.publicUrl,legacyUrl:m.legacyUrl,files:acceptanceFiles(source),rollbackSourceCommit},'Stable acceptance receipt must exactly match the deployed source, both public inventories and rollback reference');
  return {sourceCommit:source,sourceTree,files:Object.keys(receipt.files).length};
 }

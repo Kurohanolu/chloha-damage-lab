@@ -8,7 +8,7 @@ const {publishedCommit}=require('./helpers/v0188-followup-review.cjs');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.fetch}={}){
  const manifest=JSON.parse(fs.readFileSync(path.join(directory,'migration-artifacts.json'))),release=JSON.parse(fs.readFileSync(path.join(directory,'singularity/release.json')));
- assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag));assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
+ assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.14'].includes(release.tag));assert.deepEqual(manifest.files,expectedFiles,'Complete exact-source artifact inventory required');
  const bases={singularity:release.publicUrl,'chloha-damage-lab':release.migration.legacyUrl};
  assert.equal(bases.singularity,'https://kurohanolu.github.io/singularity/');assert.equal(bases['chloha-damage-lab'],'https://kurohanolu.github.io/chloha-damage-lab/');
  const exact=new Map();
@@ -29,7 +29,7 @@ async function checkStableAssets(directory,expectedFiles,{fetchImpl=globalThis.f
 module.exports={checkStableAssets};
 if(require.main===module)(async()=>{
  const args=process.argv.slice(2);assert.ok(args.length===1&&['--record-preacceptance','--publication'].includes(args[0]),'Explicit stable acceptance mode required');
- const release=JSON.parse(fs.readFileSync('release.json'));assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag));
+ const release=JSON.parse(fs.readFileSync('release.json'));assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.14'].includes(release.tag));
  if(args[0]==='--publication')verifyPublication(release);else{verifyCutoverApproval(release);assert.equal(release.migration.liveTargetVerified,false);}
  assert.equal(execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim(),'','Clean exact source required');
  const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceTree=execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim();

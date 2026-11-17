@@ -41,6 +41,8 @@
  }
  function mountCounts(){
   const anchor=document.getElementById('spitUpPanel');if(!anchor)return;
+  const stockpileChoices=anchor.querySelector('#spitUpChoices');if(stockpileChoices)stockpileChoices.style.flexWrap='wrap';
+  for(const b of anchor.querySelectorAll('[data-stockpile]'))b.style.cssText+=';min-height:44px;min-width:44px;flex:1 0 44px;white-space:normal';
   for(const spec of [...countSpecs].reverse()){
    const panel=document.getElementById(spec.panel),input=document.getElementById(spec.input);
    if(!panel||!input||panel.querySelector('[data-move-count]'))continue;

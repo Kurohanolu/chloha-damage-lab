@@ -14,6 +14,18 @@ const pre8Commit='0b1f8fffea3b1d063036d00fd712b0a0e9695111',pre8Tree='701fbae7b1
 const pre9Commit='46f930797e662be0d01e974f98ddde6de7b414c0',pre9Tree='1ea3163c8a8f4de8d68951b28c061a855461468c';
 function selectBaseline(release,event,baseRef){
  assert.ok(['pull_request','push','workflow_dispatch'].includes(event),'Explicit supported Pages verification event required');
+ if(release.tag==='v1.1.0-pre.14'){
+  const pre11Commit='fbec6fd45b841c3465be903b25a14e909cc80ba5',pre11Tree='a38f294cddaf10c15e8cea147e57a7b6d6148142';
+  assert.ok(!hasFollowup(release),'Pre.14 must use its own release decision, not a historical follow-up marker');
+  if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
+  else{
+   assert.equal(release.migration?.liveTargetVerified,false,'Pre.14 must explicitly declare its pre-acceptance state');
+   if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
+   assert.equal(execFileSync('git',['rev-parse',pre11Commit+'^{tree}'],{cwd:path.resolve(__dirname,'..'),encoding:'utf8'}).trim(),pre11Tree,'Published pre.11 commit/tree must remain pinned');
+   if(event==='pull_request'||baseRef)assert.equal(baseRef,pre11Commit,'Pre.14 public base must be the immutable published pre.11');
+   return {ref:pre11Commit,mode:'published-v110-pre14-base'};
+  }
+ }
  if(release.tag==='v1.1.0-pre.11'){
   assert.ok(!hasFollowup(release),'Pre.11 must use its own release decision, not a historical follow-up marker');
   if(release.migration?.liveTargetVerified===true)verifyCutoverApproval(release);
