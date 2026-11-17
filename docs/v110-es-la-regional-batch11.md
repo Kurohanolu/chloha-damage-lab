@@ -1,4 +1,4 @@
-# ES-LA regional batch 11 (pre.16 candidate, unpublished)
+# ES-LA regional batch 11 (pre.16)
 
 Baseline: published pre.15 `66cae82e10d28ad6115acdacc964fd3e84f51b4a`.
 
@@ -27,4 +27,4 @@ Unique-name coverage, excluding overlapping forms and authored UI: **485 → 488
 - PASS bounded batch11 contract: exactly three additive records/sources, one exact dictionary/alias change, two evidence-only changes, all other entry data and Champions flags preserved.
 - PASS browser-test syntax. Added 60 browser cases: 20 catalog-only numerical/state/save cases plus 40 native unsupported/save cases across ten locales and two widths. Local execution was attempted but stopped at browser launch: the bundled Chromium executable is missing, and the available system Chromium is blocked by the environment socket restriction even on an approved escalated retry. No browser assertions ran. Fresh CI/browser execution remains required; test creation is not a pass.
 - Generated dictionary, UI inventory and coverage rebuilt; metadata changes require a final regeneration/check.
-- Independent final release audit, all required CI, formal publication gates and live verification remain pending. No publication is claimed.
+- The exact candidate and approval-metadata commits passed all fourteen workflows. Genuine independent 6.1 Sol review passed with procedural release conditions; the sixty batch11 browser cases actually passed in CI. Approved source 268338fc48e2fdcf80f37642fd71c31eacbede2a was deployed via run 44198240250, followed by successful public browser checks and fresh dual-site 90-file / 247-GET exact hash acceptance. Evidence is in docs/evidence/v110-pre16/. Final metadata CI and the formal publisher remain mandatory.
