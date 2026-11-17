@@ -25,10 +25,13 @@
   document.head.append(style);const footer=app.querySelector('.lab-footer');if(footer){footer.before(panel);footer.append(button);}else app.append(panel,button);
   const $=id=>document.getElementById('feedback'+id);
   let ready=false,preparing=false,busy=false,delivered=false,mode='',siteKey='',token='',widget=null,scriptPromise=null,base='',snapshot=null,stale=false,submission=null,statusKey='unavailable',errorKey='',receipt='';
-  const localeBlocked=()=>window.ChlohaFeedbackConfig?.disabledLocales?.includes(locale())===true;
+  let esLaCapable=false;
+  const explicitlyBlocked=()=>window.ChlohaFeedbackConfig?.disabledLocales?.includes(locale())===true;
+  const exactLocales=value=>Array.isArray(value)&&value.length===C.locales.length&&new Set(value).size===C.locales.length&&value.every(x=>typeof x==='string'&&C.locales.includes(x));
+  const localeBlocked=()=>explicitlyBlocked()||(locale()==='es-LA'&&!esLaCapable);
   const controls=()=>{$('Fields').disabled=busy||localeBlocked();$('Submit').disabled=busy||!ready||delivered||!reportRelease||localeBlocked();$('Submit').textContent=t(busy?'sending':'submit');};
   function messages(){
-   $('Status').textContent=localeBlocked()?(window.ChlohaFeedbackConfig.disabledLocaleNotice||t('unavailable')):(statusKey?t(statusKey):'')+(receipt?'\n'+t('reference')+': '+receipt:'');
+   $('Status').textContent=localeBlocked()?(window.ChlohaFeedbackConfig?.disabledLocaleNotice||t('unavailable')):(statusKey?t(statusKey):'')+(receipt?'\n'+t('reference')+': '+receipt:'');
    $('Errors').hidden=!errorKey;$('Errors').textContent=errorKey?t(errorKey):'';controls();
   }
   function renderLocale(){
@@ -63,7 +66,7 @@
    });return scriptPromise;
   }
   async function connect(){
-   if(localeBlocked()){messages();return;}
+   if(explicitlyBlocked()){messages();return;}
    if(ready||preparing)return;
    try{
     const configured=window.ChlohaFeedbackConfig?.apiBase;if(!configured)throw Error('unavailable');
@@ -71,8 +74,8 @@
     base=url.origin;preparing=true;statusKey='preparing';messages();
     const response=await fetch(base+'/v1/config',{credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',signal:AbortSignal.timeout(10000)});
     const config=await response.json();if(!response.ok||config.enabled!==true||typeof config.siteKey!=='string'||!config.siteKey||config.retentionDays!==C.limits.retentionDays||!['production','local-demo'].includes(config.mode))throw Error('unavailable');
-    siteKey=config.siteKey;mode=config.mode;await loadWidgetScript();ready=true;statusKey='';$('Mode').hidden=mode!=='local-demo';renderWidget();
-   }catch{ready=false;statusKey='unavailable';}finally{preparing=false;messages();}
+    esLaCapable=exactLocales(config.supportedLocales);siteKey=config.siteKey;mode=config.mode;await loadWidgetScript();ready=true;statusKey='';$('Mode').hidden=mode!=='local-demo';renderWidget();
+   }catch{ready=false;esLaCapable=false;statusKey='unavailable';}finally{preparing=false;messages();}
   }
   function open(){panel.hidden=false;button.setAttribute('aria-expanded','true');$('Category').focus();connect();}
   function close(){panel.hidden=true;button.setAttribute('aria-expanded','false');button.focus();}
@@ -117,7 +120,7 @@
    }catch(e){statusKey='';errorKey=L.keys.includes(e.message)?e.message:'failure';}
    finally{busy=false;token='';messages();if(ready)renderWidget();}
   });
-  document.addEventListener('chloha:localechange',()=>{renderLocale();if(!panel.hidden&&!localeBlocked())connect();});renderLocale();
+  document.addEventListener('chloha:localechange',()=>{renderLocale();if(!panel.hidden&&!explicitlyBlocked())connect();});renderLocale();
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
 })();
