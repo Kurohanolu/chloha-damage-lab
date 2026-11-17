@@ -12,6 +12,7 @@ const snap=page=>page.evaluate(()=>({a:ChlohaLastCalculation.a,r:JSON.parse(JSON
   await set(page,'dbAttPokemon','garchomp');await set(page,'dbMove',spout.id);await set(page,'attAbility','none');
   const snow=roster.filter(p=>p.abilities.includes('ゆきふらし'));assert.equal(snow.length,6);
   const cases=Object.keys(setters).map(ability=>({ability,p:roster.find(p=>p.abilities.includes(names[ability]))}));
+  for(const name of ['メガバンギラス','カバルドン']){const p=roster.find(p=>p.name===name);assert.ok(p&&p.abilities.includes('すなおこし'),'Reported sand reproduction species '+name);if(!cases.some(c=>c.p.id===p.id))cases.push({ability:'sandStream',p});}
   for(const p of snow)if(!cases.some(c=>c.p.id===p.id&&c.ability==='snowWarning'))cases.push({ability:'snowWarning',p});
   for(const {ability,p} of cases){assert.ok(p);await set(page,'dbDefPokemon',p.id);await set(page,'defAbility',ability);await set(page,'weather','none');const before=await snap(page);assert.ok(before.r);assert.equal(before.r.rolls.length,16);assert.equal(before.ability,ability);
    const expected=await page.evaluate(weather=>ChlohaDamageEngine.calculate({...ChlohaLastCalculation.a,defAbility:'none',weather}).rolls,setters[ability]);assert.deepEqual(before.r.rolls,expected,'Setter equals explicit weather '+p.name);
