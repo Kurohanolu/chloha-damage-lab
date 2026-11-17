@@ -26,3 +26,14 @@ test('ES-LA does not permit arbitrary locale aliases, privacy fields or mismatch
   const h=await createHarness();try{const body=reportBody({locale:'es-LA',appVersion:'v1.1 Pre-Release 1'});mutate(body);assert.equal((await h.request('/v1/reports',{method:'POST',body})).status,400);assert.equal(h.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);}finally{h.close();}
  }
 });
+
+test('Public capability exactly matches validator locales without leaking secrets',async()=>{
+ const h=await createHarness();try{
+  const response=await h.request('/v1/config');assert.equal(response.status,200);
+  const config=await response.json();
+  assert.deepEqual(config.supportedLocales,['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA']);
+  assert.deepEqual(Object.keys(config).sort(),['enabled','supportedLocales','siteKey','retentionDays','mode'].sort());
+  for(const locale of config.supportedLocales){const response=await h.request('/v1/reports',{method:'POST',body:reportBody({locale,turnstileToken:''})});assert.equal(response.status,400);}
+  assert.equal(h.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,0);
+ }finally{h.close();}
+});

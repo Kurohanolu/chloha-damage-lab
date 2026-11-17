@@ -38,6 +38,10 @@ async function textContrast(page,selector,index=0){
   for(const locale of locales)for(const width of widths){
    const context=await browser.newContext({viewport:{width,height:900},isMobile:width<768,hasTouch:width<=768,reducedMotion:'reduce'}),page=await context.newPage(),errors=[];
    page.on('pageerror',error=>errors.push(error.message));await mockFeedback(context,lab.origin);
+   // This ten-locale layout fixture advertises the exact supported set.
+   // The original nine-locale fixture stays unchanged; malformed/old capabilities
+   // remain fail-closed in the dedicated capability browser regression.
+   await context.route('**/v1/config',route=>route.fulfill({json:{enabled:true,siteKey:'local-fixture',retentionDays:90,mode:'local-demo',supportedLocales:locales}}));
    await context.addInitScript(value=>localStorage.setItem('chloha.damageLab.locale',value),locale);
    try{
     await page.goto(lab.origin+'/candidate/');await ready(page);await fits(page,locale+'/'+width+'/initial');
