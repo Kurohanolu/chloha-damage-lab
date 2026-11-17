@@ -3,6 +3,8 @@
 const fs=require('node:fs');
 const vm=require('node:vm');
 // Identify this application honestly; workers.dev can reject generic library agents.
+const CANONICAL_LOCALES=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA'];
+const exactLocales=value=>Array.isArray(value)&&value.length===CANONICAL_LOCALES.length&&new Set(value).size===CANONICAL_LOCALES.length&&value.every(x=>typeof x==='string'&&CANONICAL_LOCALES.includes(x));
 const USER_AGENT='ChlohaDamageLab-ReleaseCheck/0.185 (+https://github.com/Kurohanolu/chloha-damage-lab)';
 
 function readSettings(){
@@ -27,7 +29,7 @@ async function checkProduction({apiBase,publicOrigin,requiredLocales=[],fetchImp
   const config=await response.json();
   check('Production intake is enabled without a known Turnstile test key',config.enabled===true&&config.mode==='production'&&typeof config.siteKey==='string'&&config.siteKey.length>=10&&!/^[123]x0{10,}/.test(config.siteKey));
   check('Published retention policy matches the API',config.retentionDays===90);
-  if(requiredLocales.length)check('Production API declares every required report locale',Array.isArray(config.supportedLocales)&&requiredLocales.every(locale=>config.supportedLocales.includes(locale)));
+  if(requiredLocales.length)check('Production API declares every required report locale',exactLocales(config.supportedLocales)&&requiredLocales.every(locale=>config.supportedLocales.includes(locale)));
   check('Public API permits the exact frontend origin',response.headers.get('access-control-allow-origin')===publicOrigin);
   check('Public configuration is not cached',/\bno-store\b/i.test(response.headers.get('cache-control')||''));
  }catch{check('Public intake configuration can be verified',false);return {ready:false,checks,blockers};}

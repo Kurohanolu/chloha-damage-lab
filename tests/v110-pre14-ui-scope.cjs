@@ -1,17 +1,18 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
-const base='fbec6fd45b841c3465be903b25a14e909cc80ba5',tree='a38f294cddaf10c15e8cea147e57a7b6d6148142';
+const base='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',tree='1921d6331b877830a5065f16f849925486f7b8c7';
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024}),old=p=>git('show',base+':'+p),read=p=>fs.readFileSync(p,'utf8');
 assert.equal(git('rev-parse',base+'^{tree}').trim(),tree);
 const files=git('ls-tree','-r','--name-only',base).trim().split('\n').filter(p=>!p.includes('/')&&/\.(js|css)$/.test(p));
-for(const p of files)if(!['locale-quality-v0188.js','feedback-release-v100.js'].includes(p))assert.equal(read(p),old(p),'Unchanged runtime '+p);
+for(const p of files)if(!['locale-quality-v0188.js','feedback-release-v100.js'].includes(p))assert.equal(read(p),old(p),'Unchanged pre.12 runtime '+p);
+for(const p of ['feedback-ui-v0185.js','services/feedback/src/worker.js','scripts/feedback-production-check.cjs'])assert.equal(read(p),old(p),'Pre.12 feedback capability remains exact: '+p);
 let ui=read('locale-quality-v0188.js');const begin=ui.indexOf('\n // Product UI copy;'),end=ui.indexOf(' const errorKinds=',begin);
 assert.ok(begin>0&&end>begin);ui=ui.slice(0,begin)+ui.slice(end);
 ui=ui.replace(' function render(){\n  renderCounts();\n',' function render(){\n').replace('locales:Object.freeze(locales),stockpile,countCopy,countSpecs:Object.freeze(countSpecs),','locales:Object.freeze(locales),stockpile,').replace(" function init(){\n  mountCounts();document.addEventListener('input',schedule);document.addEventListener('change',schedule);\n"," function init(){\n");
 assert.equal(ui,old('locale-quality-v0188.js'),'Original locale rendering and Spit Up copy remain exact');
-const normalize=s=>s.replaceAll('Pre-Release 14','Pre-Release 11').replaceAll('1.1.0-pre.14','1.1.0-pre.11').replace(/([?&])h=[a-f0-9]{16}/g,'');
+const normalize=s=>s.replaceAll('Pre-Release 14','Pre-Release 12').replaceAll('1.1.0-pre.14','1.1.0-pre.12').replace(/([?&])h=[a-f0-9]{16}/g,'');
 assert.equal(normalize(read('index.html')),normalize(old('index.html')),'Inline engine bindings, roster, state and events unchanged');
-assert.equal(read('feedback-release-v100.js').replace('[1,2,3,4,5,6,7,8,9,11,14]','[1,2,3,4,5,6,7,8,9,11]'),old('feedback-release-v100.js'));
+assert.equal(read('feedback-release-v100.js').replace('[1,2,3,4,5,6,7,8,9,11,12,14]','[1,2,3,4,5,6,7,8,9,11,12]'),old('feedback-release-v100.js'));
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 const inv=JSON.parse(read('docs/data/v110-es-la-ui-inventory.json')),oldInv=JSON.parse(old('docs/data/v110-es-la-ui-inventory.json')),normalized=structuredClone(inv);
 for(const p of ['index.html','feedback-release-v100.js','locale-quality-v0188.js']){assert.equal(inv.sourceSha256[p],hash(read(p)));normalized.sourceSha256[p]=oldInv.sourceSha256[p];}

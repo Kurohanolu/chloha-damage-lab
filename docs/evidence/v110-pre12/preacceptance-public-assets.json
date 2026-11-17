@@ -1,0 +1,1493 @@
+{
+  "sourceCommit": "669c892a56a81cc89cf1e90b08305aa8062bd9c9",
+  "sourceTree": "ba1fb97b1d7df5741bfd0528a587f20e570bbc57",
+  "checkedAt": "2026-11-17T12:35:18.783Z",
+  "status": "passed",
+  "files": 90,
+  "requests": 247,
+  "observations": [
+    {
+      "file": "chloha-damage-lab/index.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/",
+      "status": 200,
+      "sha256": "230d7284bf461ed0403e0ff4980de2846765121f2feb4d636f8c649b6a42fa5f"
+    },
+    {
+      "file": "chloha-damage-lab/index.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/?stable-check=v1.1.0-pre.12-230d7284bf46",
+      "status": 200,
+      "sha256": "230d7284bf461ed0403e0ff4980de2846765121f2feb4d636f8c649b6a42fa5f"
+    },
+    {
+      "file": "chloha-damage-lab/.nojekyll",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/.nojekyll",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "chloha-damage-lab/.nojekyll",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/.nojekyll?stable-check=v1.1.0-pre.12-e3b0c44298fc",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "chloha-damage-lab/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/ability-data-v0184.js",
+      "status": 200,
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+    },
+    {
+      "file": "chloha-damage-lab/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/ability-data-v0184.js?stable-check=v1.1.0-pre.12-de597562dfcd",
+      "status": 200,
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+    },
+    {
+      "file": "chloha-damage-lab/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/ability-data-v0184.js?v=1.0.0",
+      "status": 200,
+      "sha256": "de597562dfcddf9b9eac6fc49cf268dac89faf2f814023aceece64e925925177"
+    },
+    {
+      "file": "chloha-damage-lab/application-manifest.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/application-manifest.json",
+      "status": 200,
+      "sha256": "3d7d0a64a04ea0e74c747fe7396243d811646af0d5f31100e3f3f7bf37f452c9"
+    },
+    {
+      "file": "chloha-damage-lab/application-manifest.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/application-manifest.json?stable-check=v1.1.0-pre.12-3d7d0a64a04e",
+      "status": 200,
+      "sha256": "3d7d0a64a04ea0e74c747fe7396243d811646af0d5f31100e3f3f7bf37f452c9"
+    },
+    {
+      "file": "chloha-damage-lab/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/battle-data-v0184.js",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "chloha-damage-lab/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/battle-data-v0184.js?stable-check=v1.1.0-pre.12-e6a1d94758ec",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "chloha-damage-lab/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/battle-data-v0184.js?v=1.0.0",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "chloha-damage-lab/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/brand-v0187.js",
+      "status": 200,
+      "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f"
+    },
+    {
+      "file": "chloha-damage-lab/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/brand-v0187.js?stable-check=v1.1.0-pre.12-7977c8eac590",
+      "status": 200,
+      "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f"
+    },
+    {
+      "file": "chloha-damage-lab/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/brand-v0187.js?v=1.0.0&h=7977c8eac5907045",
+      "status": 200,
+      "sha256": "7977c8eac5907045388d7e428d9dd8a6af2dac72eb372c04767799a25d5c173f"
+    },
+    {
+      "file": "chloha-damage-lab/community.css",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/community.css",
+      "status": 200,
+      "sha256": "440031972ca52cfcc031eb2da86a7a0ce58ca8e653dd59dfda2c8ba8c7a1ac17"
+    },
+    {
+      "file": "chloha-damage-lab/community.css",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/community.css?stable-check=v1.1.0-pre.12-440031972ca5",
+      "status": 200,
+      "sha256": "440031972ca52cfcc031eb2da86a7a0ce58ca8e653dd59dfda2c8ba8c7a1ac17"
+    },
+    {
+      "file": "chloha-damage-lab/community.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/community.js",
+      "status": 200,
+      "sha256": "bfb0503a9948a45992d8b1a424a9673190b28cb9ff37e921624e5ef9cd848573"
+    },
+    {
+      "file": "chloha-damage-lab/community.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/community.js?stable-check=v1.1.0-pre.12-bfb0503a9948",
+      "status": 200,
+      "sha256": "bfb0503a9948a45992d8b1a424a9673190b28cb9ff37e921624e5ef9cd848573"
+    },
+    {
+      "file": "chloha-damage-lab/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-calculator-v0184.js",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "chloha-damage-lab/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-calculator-v0184.js?stable-check=v1.1.0-pre.12-3bde4f39f135",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "chloha-damage-lab/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-calculator-v0184.js?v=1.0.0",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "chloha-damage-lab/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-engine-v0184.js",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "chloha-damage-lab/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-engine-v0184.js?stable-check=v1.1.0-pre.12-9b774ac4d55f",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "chloha-damage-lab/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-engine-v0184.js?v=1.0.0&h=9b774ac4d55f0c7c",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "chloha-damage-lab/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-ui-adapter-v0184.js",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "chloha-damage-lab/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-ui-adapter-v0184.js?stable-check=v1.1.0-pre.12-ca5f965814a6",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "chloha-damage-lab/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/damage-ui-adapter-v0184.js?v=1.0.0",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "chloha-damage-lab/data-projection.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/data-projection.json",
+      "status": 200,
+      "sha256": "225c4b2c7bc65677615dd63f8283c6db2c5bbcab395ceeb4bee73e3d40488568"
+    },
+    {
+      "file": "chloha-damage-lab/data-projection.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/data-projection.json?stable-check=v1.1.0-pre.12-225c4b2c7bc6",
+      "status": 200,
+      "sha256": "225c4b2c7bc65677615dd63f8283c6db2c5bbcab395ceeb4bee73e3d40488568"
+    },
+    {
+      "file": "chloha-damage-lab/i18n.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/i18n.js",
+      "status": 200,
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311"
+    },
+    {
+      "file": "chloha-damage-lab/i18n.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/i18n.js?stable-check=v1.1.0-pre.12-65672cc5e00a",
+      "status": 200,
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311"
+    },
+    {
+      "file": "chloha-damage-lab/i18n.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/i18n.js?v=1.0.0&h=65672cc5e00a98b2",
+      "status": 200,
+      "sha256": "65672cc5e00a98b2cd3a2ecb29d5a0021c0a498c67e83efb8a52419dba777311"
+    },
+    {
+      "file": "chloha-damage-lab/INDIVIDUAL-RIGHTS-REVIEW.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/INDIVIDUAL-RIGHTS-REVIEW.md",
+      "status": 200,
+      "sha256": "8b62bef6fd5c998f1580bfd288faa6e0782c4a9e0f9f91abf451ec14ebe8d996"
+    },
+    {
+      "file": "chloha-damage-lab/INDIVIDUAL-RIGHTS-REVIEW.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/INDIVIDUAL-RIGHTS-REVIEW.md?stable-check=v1.1.0-pre.12-8b62bef6fd5c",
+      "status": 200,
+      "sha256": "8b62bef6fd5c998f1580bfd288faa6e0782c4a9e0f9f91abf451ec14ebe8d996"
+    },
+    {
+      "file": "chloha-damage-lab/LICENSE",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/LICENSE",
+      "status": 200,
+      "sha256": "2cba2ed502cf57a0e4e078f99b66c92db840c93068b3da797a2bafed3ffd5396"
+    },
+    {
+      "file": "chloha-damage-lab/LICENSE",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/LICENSE?stable-check=v1.1.0-pre.12-2cba2ed502cf",
+      "status": 200,
+      "sha256": "2cba2ed502cf57a0e4e078f99b66c92db840c93068b3da797a2bafed3ffd5396"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/Chloha-Labs-Prior-MIT.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/Chloha-Labs-Prior-MIT.txt",
+      "status": 200,
+      "sha256": "0da3aa27991fbbf04fd93501dae497401ef94dd4ff2b73b4369818dbaefb544d"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/Chloha-Labs-Prior-MIT.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/Chloha-Labs-Prior-MIT.txt?stable-check=v1.1.0-pre.12-0da3aa27991f",
+      "status": 200,
+      "sha256": "0da3aa27991fbbf04fd93501dae497401ef94dd4ff2b73b4369818dbaefb544d"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/PokeAPI-BSD-3-Clause.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/PokeAPI-BSD-3-Clause.txt",
+      "status": 200,
+      "sha256": "1c04595dc662981c20956ae4251dfa7b62b475c345eddf98bc9b904cb2373f2c"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/PokeAPI-BSD-3-Clause.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/PokeAPI-BSD-3-Clause.txt?stable-check=v1.1.0-pre.12-1c04595dc662",
+      "status": 200,
+      "sha256": "1c04595dc662981c20956ae4251dfa7b62b475c345eddf98bc9b904cb2373f2c"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/Pokemon-Showdown-MIT.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/Pokemon-Showdown-MIT.txt",
+      "status": 200,
+      "sha256": "b2002a9fd52ba8db3783a05fbdebfb09c34fd09513b90f6b390a2c0dfbc93ed0"
+    },
+    {
+      "file": "chloha-damage-lab/licenses/Pokemon-Showdown-MIT.txt",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/licenses/Pokemon-Showdown-MIT.txt?stable-check=v1.1.0-pre.12-b2002a9fd52b",
+      "status": 200,
+      "sha256": "b2002a9fd52ba8db3783a05fbdebfb09c34fd09513b90f6b390a2c0dfbc93ed0"
+    },
+    {
+      "file": "chloha-damage-lab/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-catalog.js",
+      "status": 200,
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+    },
+    {
+      "file": "chloha-damage-lab/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-catalog.js?stable-check=v1.1.0-pre.12-01a9b74cb8a2",
+      "status": 200,
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+    },
+    {
+      "file": "chloha-damage-lab/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-catalog.js?v=1.0.0",
+      "status": 200,
+      "sha256": "01a9b74cb8a214ad96d5e91b4e3b978faa267f38057c602dd921a1344cb2d6ed"
+    },
+    {
+      "file": "chloha-damage-lab/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-form-species-v0183.js",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "chloha-damage-lab/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-form-species-v0183.js?stable-check=v1.1.0-pre.12-3199afeb6cde",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "chloha-damage-lab/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-form-species-v0183.js?v=1.0.0",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "chloha-damage-lab/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-name-search.js",
+      "status": 200,
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+    },
+    {
+      "file": "chloha-damage-lab/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-name-search.js?stable-check=v1.1.0-pre.12-6caa664cf68f",
+      "status": 200,
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+    },
+    {
+      "file": "chloha-damage-lab/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-name-search.js?v=1.0.0",
+      "status": 200,
+      "sha256": "6caa664cf68f7db64e29710a54afb878f2bfc3af9aa033be8e498b92a276c7b9"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-pokeapi-v0183.js",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-pokeapi-v0183.js?stable-check=v1.1.0-pre.12-f4f1347d2f77",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-pokeapi-v0183.js?v=1.0.0",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-v0183.js",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-v0183.js?stable-check=v1.1.0-pre.12-30a8ae6f133f",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "chloha-damage-lab/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-names-v0183.js?v=1.0.0",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "chloha-damage-lab/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-quality-v0188.js",
+      "status": 200,
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+    },
+    {
+      "file": "chloha-damage-lab/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-quality-v0188.js?stable-check=v1.1.0-pre.12-6cdd7967f0ab",
+      "status": 200,
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+    },
+    {
+      "file": "chloha-damage-lab/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-quality-v0188.js?v=1.0.0",
+      "status": 200,
+      "sha256": "6cdd7967f0ab4a0d216dca6ce67b3939c5901dd80534abed83e61642beb31d10"
+    },
+    {
+      "file": "chloha-damage-lab/locale-registry.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-registry.js",
+      "status": 200,
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+    },
+    {
+      "file": "chloha-damage-lab/locale-registry.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-registry.js?stable-check=v1.1.0-pre.12-755059ec8344",
+      "status": 200,
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+    },
+    {
+      "file": "chloha-damage-lab/locale-registry.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/locale-registry.js?v=1.0.0",
+      "status": 200,
+      "sha256": "755059ec83447309ddcc0f46a25af29873823bf58e1ed69e29692e4d89709954"
+    },
+    {
+      "file": "chloha-damage-lab/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/move-mechanics-data-v0184.js",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "chloha-damage-lab/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/move-mechanics-data-v0184.js?stable-check=v1.1.0-pre.12-fb13fb406001",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "chloha-damage-lab/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/move-mechanics-data-v0184.js?v=1.0.0",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "chloha-damage-lab/multi-hit.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/multi-hit.js",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "chloha-damage-lab/multi-hit.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/multi-hit.js?stable-check=v1.1.0-pre.12-254391e32dbd",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "chloha-damage-lab/multi-hit.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/multi-hit.js?v=1.0.0",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "chloha-damage-lab/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-catalog-v0179.js",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "chloha-damage-lab/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-catalog-v0179.js?stable-check=v1.1.0-pre.12-56a420a24a15",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "chloha-damage-lab/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-catalog-v0179.js?v=1.0.0",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "chloha-damage-lab/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-forms-v0179.js",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "chloha-damage-lab/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-forms-v0179.js?stable-check=v1.1.0-pre.12-cc96fa3796bb",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "chloha-damage-lab/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-forms-v0179.js?v=1.0.0",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "chloha-damage-lab/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ja-en.js",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "chloha-damage-lab/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ja-en.js?stable-check=v1.1.0-pre.12-a60f125d021b",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "chloha-damage-lab/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ja-en.js?v=1.0.0",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0179.js",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0179.js?stable-check=v1.1.0-pre.12-24f16430ba48",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0179.js?v=1.0.0",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0183.js",
+      "status": 200,
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0183.js?stable-check=v1.1.0-pre.12-ed582b51380d",
+      "status": 200,
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+    },
+    {
+      "file": "chloha-damage-lab/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-ui-v0183.js?v=1.0.0",
+      "status": 200,
+      "sha256": "ed582b51380d7b2d82ab246328b42993417b323520e39ad4676b608a2f191569"
+    },
+    {
+      "file": "chloha-damage-lab/names-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-v0179.js",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "chloha-damage-lab/names-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-v0179.js?stable-check=v1.1.0-pre.12-66b46a5cc959",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "chloha-damage-lab/names-v0179.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/names-v0179.js?v=1.0.0",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "chloha-damage-lab/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/persistence-v0188.js",
+      "status": 200,
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+    },
+    {
+      "file": "chloha-damage-lab/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/persistence-v0188.js?stable-check=v1.1.0-pre.12-024c37ee1247",
+      "status": 200,
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+    },
+    {
+      "file": "chloha-damage-lab/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/persistence-v0188.js?v=1.0.0&h=024c37ee12477993",
+      "status": 200,
+      "sha256": "024c37ee12477993e2ebea76d5061cd667a5aa7b89953863319c4d0b49112888"
+    },
+    {
+      "file": "chloha-damage-lab/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/pokemon-weights-v0181.js",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "chloha-damage-lab/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/pokemon-weights-v0181.js?stable-check=v1.1.0-pre.12-99577acb1852",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "chloha-damage-lab/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/pokemon-weights-v0181.js?v=1.0.0",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "chloha-damage-lab/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/portrait-alt-v0188.js",
+      "status": 200,
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+    },
+    {
+      "file": "chloha-damage-lab/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/portrait-alt-v0188.js?stable-check=v1.1.0-pre.12-021dc7381be3",
+      "status": 200,
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+    },
+    {
+      "file": "chloha-damage-lab/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/portrait-alt-v0188.js?v=1.0.0",
+      "status": 200,
+      "sha256": "021dc7381be30c394765b5a9b85feec3d04a992c2198b6c2520f903f9339c25d"
+    },
+    {
+      "file": "chloha-damage-lab/README.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/README.html",
+      "status": 200,
+      "sha256": "bd17c910311afc4611650ff1fd4471e735114d47dc53b3b055d9fd8df15f535e"
+    },
+    {
+      "file": "chloha-damage-lab/README.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/README.html?stable-check=v1.1.0-pre.12-bd17c910311a",
+      "status": 200,
+      "sha256": "bd17c910311afc4611650ff1fd4471e735114d47dc53b3b055d9fd8df15f535e"
+    },
+    {
+      "file": "chloha-damage-lab/README.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/README.md",
+      "status": 200,
+      "sha256": "ed8164fec9041292cbbff32b11a11bea00e8f9a6129875ac9bb83d1d84efbf47"
+    },
+    {
+      "file": "chloha-damage-lab/README.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/README.md?stable-check=v1.1.0-pre.12-ed8164fec904",
+      "status": 200,
+      "sha256": "ed8164fec9041292cbbff32b11a11bea00e8f9a6129875ac9bb83d1d84efbf47"
+    },
+    {
+      "file": "chloha-damage-lab/release.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/release.json",
+      "status": 200,
+      "sha256": "349a0d5144585a3ff30905ea3985293de2a420bae462f77c28fcd3b9a7db994a"
+    },
+    {
+      "file": "chloha-damage-lab/release.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/release.json?stable-check=v1.1.0-pre.12-349a0d514458",
+      "status": 200,
+      "sha256": "349a0d5144585a3ff30905ea3985293de2a420bae462f77c28fcd3b9a7db994a"
+    },
+    {
+      "file": "chloha-damage-lab/rights-inventory.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/rights-inventory.json",
+      "status": 200,
+      "sha256": "8b3b2394d53689295a833d79325e2f68e8583a5286c260438b39747bca82c934"
+    },
+    {
+      "file": "chloha-damage-lab/rights-inventory.json",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/rights-inventory.json?stable-check=v1.1.0-pre.12-8b3b2394d536",
+      "status": 200,
+      "sha256": "8b3b2394d53689295a833d79325e2f68e8583a5286c260438b39747bca82c934"
+    },
+    {
+      "file": "chloha-damage-lab/TERMS.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/TERMS.html",
+      "status": 200,
+      "sha256": "66a17556f595981dfd5c6fa32322f53df7ea3bff0b88e33dae119bc40a9d2ed7"
+    },
+    {
+      "file": "chloha-damage-lab/TERMS.html",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/TERMS.html?stable-check=v1.1.0-pre.12-66a17556f595",
+      "status": 200,
+      "sha256": "66a17556f595981dfd5c6fa32322f53df7ea3bff0b88e33dae119bc40a9d2ed7"
+    },
+    {
+      "file": "chloha-damage-lab/THIRD-PARTY-NOTICES.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/THIRD-PARTY-NOTICES.md",
+      "status": 200,
+      "sha256": "7d07bea26572bfdedfb2a6b703afccfd18e94088d09ca42cb4ddabbd7f11751a"
+    },
+    {
+      "file": "chloha-damage-lab/THIRD-PARTY-NOTICES.md",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/THIRD-PARTY-NOTICES.md?stable-check=v1.1.0-pre.12-7d07bea26572",
+      "status": 200,
+      "sha256": "7d07bea26572bfdedfb2a6b703afccfd18e94088d09ca42cb4ddabbd7f11751a"
+    },
+    {
+      "file": "chloha-damage-lab/variable-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/variable-power.js",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "chloha-damage-lab/variable-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/variable-power.js?stable-check=v1.1.0-pre.12-754675fe0475",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "chloha-damage-lab/variable-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/variable-power.js?v=1.0.0",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "chloha-damage-lab/weight-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/weight-power.js",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    },
+    {
+      "file": "chloha-damage-lab/weight-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/weight-power.js?stable-check=v1.1.0-pre.12-ccf11e17677b",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    },
+    {
+      "file": "chloha-damage-lab/weight-power.js",
+      "url": "https://kurohanolu.github.io/chloha-damage-lab/weight-power.js?v=1.0.0",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    },
+    {
+      "file": "singularity/index.html",
+      "url": "https://kurohanolu.github.io/singularity/",
+      "status": 200,
+      "sha256": "ceed3a656afd79cc8429d5c254f83ae6ff41a776b874345a92ef40245c307424"
+    },
+    {
+      "file": "singularity/index.html",
+      "url": "https://kurohanolu.github.io/singularity/?stable-check=v1.1.0-pre.12-ceed3a656afd",
+      "status": 200,
+      "sha256": "ceed3a656afd79cc8429d5c254f83ae6ff41a776b874345a92ef40245c307424"
+    },
+    {
+      "file": "singularity/.nojekyll",
+      "url": "https://kurohanolu.github.io/singularity/.nojekyll",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "singularity/.nojekyll",
+      "url": "https://kurohanolu.github.io/singularity/.nojekyll?stable-check=v1.1.0-pre.12-e3b0c44298fc",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "singularity/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/ability-data-v0184.js",
+      "status": 200,
+      "sha256": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193"
+    },
+    {
+      "file": "singularity/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/ability-data-v0184.js?stable-check=v1.1.0-pre.12-317eac683789",
+      "status": 200,
+      "sha256": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193"
+    },
+    {
+      "file": "singularity/ability-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/ability-data-v0184.js?v=1.1.0-pre.12&h=317eac683789a6eb",
+      "status": 200,
+      "sha256": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193"
+    },
+    {
+      "file": "singularity/assets/singularity/apple-touch-icon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/apple-touch-icon.png",
+      "status": 200,
+      "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+    },
+    {
+      "file": "singularity/assets/singularity/apple-touch-icon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/apple-touch-icon.png?stable-check=v1.1.0-pre.12-9c6d433d78ce",
+      "status": 200,
+      "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+    },
+    {
+      "file": "singularity/assets/singularity/apple-touch-icon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/apple-touch-icon.png?v=1.1.0-pre.12",
+      "status": 200,
+      "sha256": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e"
+    },
+    {
+      "file": "singularity/assets/singularity/favicon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/favicon.png",
+      "status": 200,
+      "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+    },
+    {
+      "file": "singularity/assets/singularity/favicon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/favicon.png?stable-check=v1.1.0-pre.12-bf4a02c4fbc2",
+      "status": 200,
+      "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+    },
+    {
+      "file": "singularity/assets/singularity/favicon.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/favicon.png?v=1.1.0-pre.12",
+      "status": 200,
+      "sha256": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f"
+    },
+    {
+      "file": "singularity/assets/singularity/header.webp",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/header.webp",
+      "status": 200,
+      "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+    },
+    {
+      "file": "singularity/assets/singularity/header.webp",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/header.webp?stable-check=v1.1.0-pre.12-b9025801a0d7",
+      "status": 200,
+      "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+    },
+    {
+      "file": "singularity/assets/singularity/header.webp",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/header.webp?v=1.1.0-pre.12",
+      "status": 200,
+      "sha256": "b9025801a0d7ad086977c498338c25f279a968818736437a1400f7c789cd26d4"
+    },
+    {
+      "file": "singularity/assets/singularity/orbital-s-icon.webp",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/orbital-s-icon.webp",
+      "status": 200,
+      "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599"
+    },
+    {
+      "file": "singularity/assets/singularity/orbital-s-icon.webp",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/orbital-s-icon.webp?stable-check=v1.1.0-pre.12-6795d125eb75",
+      "status": 200,
+      "sha256": "6795d125eb75c5b0bdd5d11c5224d7e3f962a6e39032f7e9d4b762fcfb89a599"
+    },
+    {
+      "file": "singularity/assets/singularity/orbital-s-reference.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/orbital-s-reference.png",
+      "status": 200,
+      "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c"
+    },
+    {
+      "file": "singularity/assets/singularity/orbital-s-reference.png",
+      "url": "https://kurohanolu.github.io/singularity/assets/singularity/orbital-s-reference.png?stable-check=v1.1.0-pre.12-21f3c4ae7b02",
+      "status": 200,
+      "sha256": "21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c"
+    },
+    {
+      "file": "singularity/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/battle-data-v0184.js",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "singularity/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/battle-data-v0184.js?stable-check=v1.1.0-pre.12-e6a1d94758ec",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "singularity/battle-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/battle-data-v0184.js?v=1.1.0-pre.12&h=e6a1d94758ec4db5",
+      "status": 200,
+      "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea"
+    },
+    {
+      "file": "singularity/brand-preview.html",
+      "url": "https://kurohanolu.github.io/singularity/brand-preview.html",
+      "status": 200,
+      "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47"
+    },
+    {
+      "file": "singularity/brand-preview.html",
+      "url": "https://kurohanolu.github.io/singularity/brand-preview.html?stable-check=v1.1.0-pre.12-ac1a705d7f4d",
+      "status": 200,
+      "sha256": "ac1a705d7f4d6e1f6b3e7cd7f5a34aed3984e0f8d24ecd568970f69d647f7c47"
+    },
+    {
+      "file": "singularity/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/singularity/brand-v0187.js",
+      "status": 200,
+      "sha256": "714be225dc19d10ecba1a924f2774f396fe031b05ff97472401d8ea44383e4eb"
+    },
+    {
+      "file": "singularity/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/singularity/brand-v0187.js?stable-check=v1.1.0-pre.12-714be225dc19",
+      "status": 200,
+      "sha256": "714be225dc19d10ecba1a924f2774f396fe031b05ff97472401d8ea44383e4eb"
+    },
+    {
+      "file": "singularity/brand-v0187.js",
+      "url": "https://kurohanolu.github.io/singularity/brand-v0187.js?v=1.1.0-pre.12&h=714be225dc19d10e",
+      "status": 200,
+      "sha256": "714be225dc19d10ecba1a924f2774f396fe031b05ff97472401d8ea44383e4eb"
+    },
+    {
+      "file": "singularity/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-calculator-v0184.js",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "singularity/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-calculator-v0184.js?stable-check=v1.1.0-pre.12-3bde4f39f135",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "singularity/damage-calculator-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-calculator-v0184.js?v=1.1.0-pre.12&h=3bde4f39f135aeea",
+      "status": 200,
+      "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b"
+    },
+    {
+      "file": "singularity/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-engine-v0184.js",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "singularity/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-engine-v0184.js?stable-check=v1.1.0-pre.12-9b774ac4d55f",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "singularity/damage-engine-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-engine-v0184.js?v=1.1.0-pre.12&h=9b774ac4d55f0c7c",
+      "status": 200,
+      "sha256": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9"
+    },
+    {
+      "file": "singularity/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-ui-adapter-v0184.js",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "singularity/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-ui-adapter-v0184.js?stable-check=v1.1.0-pre.12-ca5f965814a6",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "singularity/damage-ui-adapter-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/damage-ui-adapter-v0184.js?v=1.1.0-pre.12&h=ca5f965814a60ed3",
+      "status": 200,
+      "sha256": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e"
+    },
+    {
+      "file": "singularity/feedback-config-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-config-v0185.js",
+      "status": 200,
+      "sha256": "65e87f3c6ef7ecd69a26c066ccddae3c52b94cf07ea6ad45948f9fa4b4bb18b2"
+    },
+    {
+      "file": "singularity/feedback-config-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-config-v0185.js?stable-check=v1.1.0-pre.12-65e87f3c6ef7",
+      "status": 200,
+      "sha256": "65e87f3c6ef7ecd69a26c066ccddae3c52b94cf07ea6ad45948f9fa4b4bb18b2"
+    },
+    {
+      "file": "singularity/feedback-config-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-config-v0185.js?v=1.1.0-pre.12&h=65e87f3c6ef7ecd6",
+      "status": 200,
+      "sha256": "65e87f3c6ef7ecd69a26c066ccddae3c52b94cf07ea6ad45948f9fa4b4bb18b2"
+    },
+    {
+      "file": "singularity/feedback-contract-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-contract-v0185.js",
+      "status": 200,
+      "sha256": "2994fdb53468ca31293359125a7a82ff30a0f007d39d4151c22d86bacd74c4b9"
+    },
+    {
+      "file": "singularity/feedback-contract-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-contract-v0185.js?stable-check=v1.1.0-pre.12-2994fdb53468",
+      "status": 200,
+      "sha256": "2994fdb53468ca31293359125a7a82ff30a0f007d39d4151c22d86bacd74c4b9"
+    },
+    {
+      "file": "singularity/feedback-contract-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-contract-v0185.js?v=1.1.0-pre.12&h=2994fdb53468ca31",
+      "status": 200,
+      "sha256": "2994fdb53468ca31293359125a7a82ff30a0f007d39d4151c22d86bacd74c4b9"
+    },
+    {
+      "file": "singularity/feedback-locales-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-locales-v0185.js",
+      "status": 200,
+      "sha256": "86304ee7aff203d7937834e85b2b8d837ccdaa11a8069b770b532bbe9424d571"
+    },
+    {
+      "file": "singularity/feedback-locales-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-locales-v0185.js?stable-check=v1.1.0-pre.12-86304ee7aff2",
+      "status": 200,
+      "sha256": "86304ee7aff203d7937834e85b2b8d837ccdaa11a8069b770b532bbe9424d571"
+    },
+    {
+      "file": "singularity/feedback-locales-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-locales-v0185.js?v=1.1.0-pre.12&h=86304ee7aff203d7",
+      "status": 200,
+      "sha256": "86304ee7aff203d7937834e85b2b8d837ccdaa11a8069b770b532bbe9424d571"
+    },
+    {
+      "file": "singularity/feedback-release-v100.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-release-v100.js",
+      "status": 200,
+      "sha256": "dbc245560841ce127d29097bedfb53ada2fac1dfdd2ebac848a387fc5110d8b2"
+    },
+    {
+      "file": "singularity/feedback-release-v100.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-release-v100.js?stable-check=v1.1.0-pre.12-dbc245560841",
+      "status": 200,
+      "sha256": "dbc245560841ce127d29097bedfb53ada2fac1dfdd2ebac848a387fc5110d8b2"
+    },
+    {
+      "file": "singularity/feedback-release-v100.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-release-v100.js?v=1.1.0-pre.12&h=dbc245560841ce12",
+      "status": 200,
+      "sha256": "dbc245560841ce127d29097bedfb53ada2fac1dfdd2ebac848a387fc5110d8b2"
+    },
+    {
+      "file": "singularity/feedback-snapshot-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-snapshot-v0185.js",
+      "status": 200,
+      "sha256": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc"
+    },
+    {
+      "file": "singularity/feedback-snapshot-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-snapshot-v0185.js?stable-check=v1.1.0-pre.12-9b8f7379aa64",
+      "status": 200,
+      "sha256": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc"
+    },
+    {
+      "file": "singularity/feedback-snapshot-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-snapshot-v0185.js?v=1.1.0-pre.12&h=9b8f7379aa644361",
+      "status": 200,
+      "sha256": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc"
+    },
+    {
+      "file": "singularity/feedback-ui-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-ui-v0185.js",
+      "status": 200,
+      "sha256": "67b4ac17823747782fb353e1f38c5bd103fbf9820d29aec37a963f6b05429251"
+    },
+    {
+      "file": "singularity/feedback-ui-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-ui-v0185.js?stable-check=v1.1.0-pre.12-67b4ac178237",
+      "status": 200,
+      "sha256": "67b4ac17823747782fb353e1f38c5bd103fbf9820d29aec37a963f6b05429251"
+    },
+    {
+      "file": "singularity/feedback-ui-v0185.js",
+      "url": "https://kurohanolu.github.io/singularity/feedback-ui-v0185.js?v=1.1.0-pre.12&h=67b4ac1782374778",
+      "status": 200,
+      "sha256": "67b4ac17823747782fb353e1f38c5bd103fbf9820d29aec37a963f6b05429251"
+    },
+    {
+      "file": "singularity/i18n.js",
+      "url": "https://kurohanolu.github.io/singularity/i18n.js",
+      "status": 200,
+      "sha256": "d90b026ad4b636d05de2e08bd7100744308ada8ab0bf6ed8ce6689958fb684b6"
+    },
+    {
+      "file": "singularity/i18n.js",
+      "url": "https://kurohanolu.github.io/singularity/i18n.js?stable-check=v1.1.0-pre.12-d90b026ad4b6",
+      "status": 200,
+      "sha256": "d90b026ad4b636d05de2e08bd7100744308ada8ab0bf6ed8ce6689958fb684b6"
+    },
+    {
+      "file": "singularity/i18n.js",
+      "url": "https://kurohanolu.github.io/singularity/i18n.js?v=1.1.0-pre.12&h=d90b026ad4b636d0",
+      "status": 200,
+      "sha256": "d90b026ad4b636d05de2e08bd7100744308ada8ab0bf6ed8ce6689958fb684b6"
+    },
+    {
+      "file": "singularity/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-catalog.js",
+      "status": 200,
+      "sha256": "d5a82767d0d305db5d73a4670f40edd4cc6eb5ebf71c6880b1184dda7e35369f"
+    },
+    {
+      "file": "singularity/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-catalog.js?stable-check=v1.1.0-pre.12-d5a82767d0d3",
+      "status": 200,
+      "sha256": "d5a82767d0d305db5d73a4670f40edd4cc6eb5ebf71c6880b1184dda7e35369f"
+    },
+    {
+      "file": "singularity/locale-catalog.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-catalog.js?v=1.1.0-pre.12&h=d5a82767d0d305db",
+      "status": 200,
+      "sha256": "d5a82767d0d305db5d73a4670f40edd4cc6eb5ebf71c6880b1184dda7e35369f"
+    },
+    {
+      "file": "singularity/locale-es-la-data-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-data-v110.js",
+      "status": 200,
+      "sha256": "1e1c6d6c567294ce9e2c28de48dcdacacb95c01eec1b50655669267cb49425b2"
+    },
+    {
+      "file": "singularity/locale-es-la-data-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-data-v110.js?stable-check=v1.1.0-pre.12-1e1c6d6c5672",
+      "status": 200,
+      "sha256": "1e1c6d6c567294ce9e2c28de48dcdacacb95c01eec1b50655669267cb49425b2"
+    },
+    {
+      "file": "singularity/locale-es-la-data-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-data-v110.js?v=1.1.0-pre.12&h=1e1c6d6c567294ce",
+      "status": 200,
+      "sha256": "1e1c6d6c567294ce9e2c28de48dcdacacb95c01eec1b50655669267cb49425b2"
+    },
+    {
+      "file": "singularity/locale-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-v110.js",
+      "status": 200,
+      "sha256": "09272fc0751df3ce2a032b3cebc76c89d52b69037808e683e52e07403259295b"
+    },
+    {
+      "file": "singularity/locale-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-v110.js?stable-check=v1.1.0-pre.12-09272fc0751d",
+      "status": 200,
+      "sha256": "09272fc0751df3ce2a032b3cebc76c89d52b69037808e683e52e07403259295b"
+    },
+    {
+      "file": "singularity/locale-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-es-la-v110.js?v=1.1.0-pre.12&h=09272fc0751df3ce",
+      "status": 200,
+      "sha256": "09272fc0751df3ce2a032b3cebc76c89d52b69037808e683e52e07403259295b"
+    },
+    {
+      "file": "singularity/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-form-species-v0183.js",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "singularity/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-form-species-v0183.js?stable-check=v1.1.0-pre.12-3199afeb6cde",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "singularity/locale-form-species-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-form-species-v0183.js?v=1.1.0-pre.12&h=3199afeb6cdeb06a",
+      "status": 200,
+      "sha256": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41"
+    },
+    {
+      "file": "singularity/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-name-search.js",
+      "status": 200,
+      "sha256": "f6d3cd1c16499f954d40df9827f887bc7eb1f2f027966502da6237f766502933"
+    },
+    {
+      "file": "singularity/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-name-search.js?stable-check=v1.1.0-pre.12-f6d3cd1c1649",
+      "status": 200,
+      "sha256": "f6d3cd1c16499f954d40df9827f887bc7eb1f2f027966502da6237f766502933"
+    },
+    {
+      "file": "singularity/locale-name-search.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-name-search.js?v=1.1.0-pre.12&h=f6d3cd1c16499f95",
+      "status": 200,
+      "sha256": "f6d3cd1c16499f954d40df9827f887bc7eb1f2f027966502da6237f766502933"
+    },
+    {
+      "file": "singularity/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-pokeapi-v0183.js",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "singularity/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-pokeapi-v0183.js?stable-check=v1.1.0-pre.12-f4f1347d2f77",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "singularity/locale-names-pokeapi-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-pokeapi-v0183.js?v=1.1.0-pre.12&h=f4f1347d2f77d26e",
+      "status": 200,
+      "sha256": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59"
+    },
+    {
+      "file": "singularity/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-v0183.js",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "singularity/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-v0183.js?stable-check=v1.1.0-pre.12-30a8ae6f133f",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "singularity/locale-names-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-names-v0183.js?v=1.1.0-pre.12&h=30a8ae6f133f6e40",
+      "status": 200,
+      "sha256": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252"
+    },
+    {
+      "file": "singularity/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-quality-v0188.js",
+      "status": 200,
+      "sha256": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3"
+    },
+    {
+      "file": "singularity/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-quality-v0188.js?stable-check=v1.1.0-pre.12-8b4acff8174d",
+      "status": 200,
+      "sha256": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3"
+    },
+    {
+      "file": "singularity/locale-quality-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-quality-v0188.js?v=1.1.0-pre.12&h=8b4acff8174dfb87",
+      "status": 200,
+      "sha256": "8b4acff8174dfb87876aac81cf14eb2eae5b4e0690ea5d97d93dfd988222a1b3"
+    },
+    {
+      "file": "singularity/locale-registry.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-registry.js",
+      "status": 200,
+      "sha256": "6e1cf1762fc13f902b20f81684dd1ff54a6c2ff2956abee8bd0c168173fe9154"
+    },
+    {
+      "file": "singularity/locale-registry.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-registry.js?stable-check=v1.1.0-pre.12-6e1cf1762fc1",
+      "status": 200,
+      "sha256": "6e1cf1762fc13f902b20f81684dd1ff54a6c2ff2956abee8bd0c168173fe9154"
+    },
+    {
+      "file": "singularity/locale-registry.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-registry.js?v=1.1.0-pre.12&h=6e1cf1762fc13f90",
+      "status": 200,
+      "sha256": "6e1cf1762fc13f902b20f81684dd1ff54a6c2ff2956abee8bd0c168173fe9154"
+    },
+    {
+      "file": "singularity/locale-ui-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-ui-es-la-v110.js",
+      "status": 200,
+      "sha256": "0290f479ce486c08bc73a229105552d30a200089d930c6a27ae73a94743c7cde"
+    },
+    {
+      "file": "singularity/locale-ui-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-ui-es-la-v110.js?stable-check=v1.1.0-pre.12-0290f479ce48",
+      "status": 200,
+      "sha256": "0290f479ce486c08bc73a229105552d30a200089d930c6a27ae73a94743c7cde"
+    },
+    {
+      "file": "singularity/locale-ui-es-la-v110.js",
+      "url": "https://kurohanolu.github.io/singularity/locale-ui-es-la-v110.js?v=1.1.0-pre.12&h=0290f479ce486c08",
+      "status": 200,
+      "sha256": "0290f479ce486c08bc73a229105552d30a200089d930c6a27ae73a94743c7cde"
+    },
+    {
+      "file": "singularity/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/move-mechanics-data-v0184.js",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "singularity/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/move-mechanics-data-v0184.js?stable-check=v1.1.0-pre.12-fb13fb406001",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "singularity/move-mechanics-data-v0184.js",
+      "url": "https://kurohanolu.github.io/singularity/move-mechanics-data-v0184.js?v=1.1.0-pre.12&h=fb13fb406001d7b5",
+      "status": 200,
+      "sha256": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4"
+    },
+    {
+      "file": "singularity/multi-hit.js",
+      "url": "https://kurohanolu.github.io/singularity/multi-hit.js",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "singularity/multi-hit.js",
+      "url": "https://kurohanolu.github.io/singularity/multi-hit.js?stable-check=v1.1.0-pre.12-254391e32dbd",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "singularity/multi-hit.js",
+      "url": "https://kurohanolu.github.io/singularity/multi-hit.js?v=1.1.0-pre.12&h=254391e32dbd5040",
+      "status": 200,
+      "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312"
+    },
+    {
+      "file": "singularity/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-catalog-v0179.js",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "singularity/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-catalog-v0179.js?stable-check=v1.1.0-pre.12-56a420a24a15",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "singularity/names-catalog-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-catalog-v0179.js?v=1.1.0-pre.12&h=56a420a24a15690c",
+      "status": 200,
+      "sha256": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99"
+    },
+    {
+      "file": "singularity/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-forms-v0179.js",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "singularity/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-forms-v0179.js?stable-check=v1.1.0-pre.12-cc96fa3796bb",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "singularity/names-forms-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-forms-v0179.js?v=1.1.0-pre.12&h=cc96fa3796bb9532",
+      "status": 200,
+      "sha256": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c"
+    },
+    {
+      "file": "singularity/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ja-en.js",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "singularity/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ja-en.js?stable-check=v1.1.0-pre.12-a60f125d021b",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "singularity/names-ja-en.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ja-en.js?v=1.1.0-pre.12&h=a60f125d021b7982",
+      "status": 200,
+      "sha256": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344"
+    },
+    {
+      "file": "singularity/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0179.js",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "singularity/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0179.js?stable-check=v1.1.0-pre.12-24f16430ba48",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "singularity/names-ui-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0179.js?v=1.1.0-pre.12&h=24f16430ba48dba0",
+      "status": 200,
+      "sha256": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733"
+    },
+    {
+      "file": "singularity/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0183.js",
+      "status": 200,
+      "sha256": "ff0eeccdcf3f3872fc2d2310911f2a13808a89a458f58f7779b7e96d8a87d09c"
+    },
+    {
+      "file": "singularity/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0183.js?stable-check=v1.1.0-pre.12-ff0eeccdcf3f",
+      "status": 200,
+      "sha256": "ff0eeccdcf3f3872fc2d2310911f2a13808a89a458f58f7779b7e96d8a87d09c"
+    },
+    {
+      "file": "singularity/names-ui-v0183.js",
+      "url": "https://kurohanolu.github.io/singularity/names-ui-v0183.js?v=1.1.0-pre.12&h=ff0eeccdcf3f3872",
+      "status": 200,
+      "sha256": "ff0eeccdcf3f3872fc2d2310911f2a13808a89a458f58f7779b7e96d8a87d09c"
+    },
+    {
+      "file": "singularity/names-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-v0179.js",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "singularity/names-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-v0179.js?stable-check=v1.1.0-pre.12-66b46a5cc959",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "singularity/names-v0179.js",
+      "url": "https://kurohanolu.github.io/singularity/names-v0179.js?v=1.1.0-pre.12&h=66b46a5cc9593a6d",
+      "status": 200,
+      "sha256": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212"
+    },
+    {
+      "file": "singularity/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/persistence-v0188.js",
+      "status": 200,
+      "sha256": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc"
+    },
+    {
+      "file": "singularity/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/persistence-v0188.js?stable-check=v1.1.0-pre.12-50bc1bf1844e",
+      "status": 200,
+      "sha256": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc"
+    },
+    {
+      "file": "singularity/persistence-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/persistence-v0188.js?v=1.1.0-pre.12&h=50bc1bf1844e5c3a",
+      "status": 200,
+      "sha256": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc"
+    },
+    {
+      "file": "singularity/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/singularity/pokemon-weights-v0181.js",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "singularity/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/singularity/pokemon-weights-v0181.js?stable-check=v1.1.0-pre.12-99577acb1852",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "singularity/pokemon-weights-v0181.js",
+      "url": "https://kurohanolu.github.io/singularity/pokemon-weights-v0181.js?v=1.1.0-pre.12&h=99577acb18529f20",
+      "status": 200,
+      "sha256": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14"
+    },
+    {
+      "file": "singularity/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/portrait-alt-v0188.js",
+      "status": 200,
+      "sha256": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc"
+    },
+    {
+      "file": "singularity/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/portrait-alt-v0188.js?stable-check=v1.1.0-pre.12-59db733dd18f",
+      "status": 200,
+      "sha256": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc"
+    },
+    {
+      "file": "singularity/portrait-alt-v0188.js",
+      "url": "https://kurohanolu.github.io/singularity/portrait-alt-v0188.js?v=1.1.0-pre.12&h=59db733dd18fca80",
+      "status": 200,
+      "sha256": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc"
+    },
+    {
+      "file": "singularity/release.json",
+      "url": "https://kurohanolu.github.io/singularity/release.json",
+      "status": 200,
+      "sha256": "065d810ca56a0e8c619a4f5bfe4ddc13c13c9c4b5c5429b28515067a45007194"
+    },
+    {
+      "file": "singularity/release.json",
+      "url": "https://kurohanolu.github.io/singularity/release.json?stable-check=v1.1.0-pre.12-065d810ca56a",
+      "status": 200,
+      "sha256": "065d810ca56a0e8c619a4f5bfe4ddc13c13c9c4b5c5429b28515067a45007194"
+    },
+    {
+      "file": "singularity/singularity-v0187.css",
+      "url": "https://kurohanolu.github.io/singularity/singularity-v0187.css",
+      "status": 200,
+      "sha256": "9764687d93fecdbe110c3c5ada0e02b61a33ab3cd56933e65028f78ff1ab585b"
+    },
+    {
+      "file": "singularity/singularity-v0187.css",
+      "url": "https://kurohanolu.github.io/singularity/singularity-v0187.css?stable-check=v1.1.0-pre.12-9764687d93fe",
+      "status": 200,
+      "sha256": "9764687d93fecdbe110c3c5ada0e02b61a33ab3cd56933e65028f78ff1ab585b"
+    },
+    {
+      "file": "singularity/singularity-v0187.css",
+      "url": "https://kurohanolu.github.io/singularity/singularity-v0187.css?v=1.1.0-pre.12&h=9764687d93fecdbe",
+      "status": 200,
+      "sha256": "9764687d93fecdbe110c3c5ada0e02b61a33ab3cd56933e65028f78ff1ab585b"
+    },
+    {
+      "file": "singularity/variable-power.js",
+      "url": "https://kurohanolu.github.io/singularity/variable-power.js",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "singularity/variable-power.js",
+      "url": "https://kurohanolu.github.io/singularity/variable-power.js?stable-check=v1.1.0-pre.12-754675fe0475",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "singularity/variable-power.js",
+      "url": "https://kurohanolu.github.io/singularity/variable-power.js?v=1.1.0-pre.12&h=754675fe04758268",
+      "status": 200,
+      "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e"
+    },
+    {
+      "file": "singularity/weight-power.js",
+      "url": "https://kurohanolu.github.io/singularity/weight-power.js",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    },
+    {
+      "file": "singularity/weight-power.js",
+      "url": "https://kurohanolu.github.io/singularity/weight-power.js?stable-check=v1.1.0-pre.12-ccf11e17677b",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    },
+    {
+      "file": "singularity/weight-power.js",
+      "url": "https://kurohanolu.github.io/singularity/weight-power.js?v=1.1.0-pre.12&h=ccf11e17677b6855",
+      "status": 200,
+      "sha256": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916"
+    }
+  ],
+  "productionMutations": 0
+}

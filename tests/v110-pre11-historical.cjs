@@ -11,7 +11,13 @@ const tree='a38f294cddaf10c15e8cea147e57a7b6d6148142';
 const cwd=path.resolve(__dirname,'..');
 const git=(args,at=cwd)=>execFileSync('git',args,{cwd:at,encoding:'utf8',maxBuffer:32*1024*1024});
 assert.equal(git(['rev-parse',commit+'^{tree}']).trim(),tree,'pre.11 source tree changed');
-for(const file of ['tests/v110-pre11-publication.cjs','tests/v110-weather-scope.cjs'])assert.ok(fs.readFileSync(path.join(cwd,file),'utf8').endsWith(git(['show',commit+':'+file])),'Original historical assertions remain intact');
+const pre12='828e906a3c460a4c55e3f8e79bcd973ead0dc93b',pre12Tree='1921d6331b877830a5065f16f849925486f7b8c7';
+assert.equal(git(['rev-parse',pre12+'^{tree}']).trim(),pre12Tree);
+for(const file of ['tests/v110-pre11-publication.cjs','tests/v110-weather-scope.cjs']){
+ const historical=git(['show',commit+':'+file]),successor=git(['show',pre12+':'+file]);
+ assert.ok(successor.endsWith(historical),'Pre.12 must retain the original pre.11 assertions: '+file);
+ assert.ok(fs.readFileSync(path.join(cwd,file),'utf8').endsWith(successor),'Pre.14 must retain the complete pre.12 historical wrapper: '+file);
+}
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'pre11-history-'));
 const checkout=path.join(temporary,'source');
 let added=false;

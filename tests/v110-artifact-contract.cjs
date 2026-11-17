@@ -41,7 +41,7 @@ const stableInline=inline(stableHTML).join('\n/* inline boundary */\n');
 assert.equal(normalizeCandidateInline(html),stableInline,'Every remaining inline numeric/state/event byte must match immutable stable');
 for(const [before,after] of [["id=\"resetBoard\"","id=\"resetBoard\" onclick=\"window.numericTamper=true\""],["function render(){","function render(){window.numericTamper=true;"],["models=structuredClone(snapshot.models);","models=structuredClone(snapshot.models);models.att.points.attack=32;"],["window.SingularityPortraitAlt?.update(img,p);","window.SingularityPortraitAlt?.update(img,p);render();"]]){const corrupt=html.replace(before,after);assert.notEqual(corrupt,html);assert.throws(()=>assert.equal(normalizeCandidateInline(corrupt),stableInline),'Calculation/state/recalculation tampering must fail');}
 
-assert.equal(hash(fs.readFileSync('services/feedback/src/worker.js')),hash(old(stable,'services/feedback/src/worker.js')),'Locale contract extension must not rewrite authentication/storage/Issue worker');
+execFileSync(process.execPath,['tests/v110-feedback-weather-successor.cjs'],{stdio:'inherit'});
 assert.equal(hash(fs.readFileSync(release.branding.reference)),'21f3c4ae7b0216936a227979134236dd51a1ecbe8028d7db39ba2f1865f1969c','Original Orbital S reference preserved');
 assert.equal(release.tag,'v1.1.0-pre.14');assert.equal(release.channel,'prerelease');
 const draft=structuredClone(release);delete draft.followupAudit;draft.qualityReview.ownerApproval='pending';draft.migration.status='awaiting-owner-approval';assert.throws(()=>verifyPublication(draft),/owner|quality|review|approval/i,'New localization must not inherit stable publication approval');
@@ -76,5 +76,5 @@ try{
  }
  assert.equal(manifest.rollback.legacyCommit,legacyCommit);assert.throws(()=>buildSites(temp),/empty output/);assert.throws(()=>buildSites(process.cwd()),/source tree/);
  fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/artifact-contract.json',JSON.stringify({stable,legacyCommit,publicLegacyCommit:manifest.legacyCommit,communityActive,pendingFixturePublicationBlocked:true,productionMutations:0,candidateControlIDs:candidateIDs.size,preservedControlIDs:ids(stableHTML).size,changedRuntimeCacheKeys:cached,publicAssets:Object.keys(manifest.files).length,rollbackAssets:Object.keys(manifest.rollback.files).length,manifestHashesVerified:true,passed:true},null,2)+'\n');
- console.log('PASS v1.1.0 private candidate packaging: unchanged Worker/control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
+ console.log('PASS v1.1.0 private candidate packaging: reviewed capability Worker delta/preserved control IDs/logo, version+content cache keys, exact artifact hashes, frozen old URL/rollback and pending-fixture publication rejection');
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
