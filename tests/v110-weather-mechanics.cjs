@@ -9,21 +9,25 @@ const round=(n,m)=>(BigInt(n)*BigInt(m)+2047n)/4096n;
 function oracle(a){
  const weather=a.weather!=='none'?a.weather:(setters[a.attAbility]||setters[a.defAbility]||'none');
  const defenseHit=a.category==='physical'||a.moveMechanic==='psyshock';
- let defense=BigInt(a.defense);
- if((weather==='sand'&&!defenseHit&&a.defTypes.includes('いわ'))||(weather==='snow'&&defenseHit&&a.defTypes.includes('こおり')))defense=round(defense,6144);
+ const rank=a.defenseStage,staged=Math.max(1,Math.floor(a.defense*(rank>=0?(2+rank)/2:2/(2-rank))));
+ let defense=BigInt(staged);
+ const weatherApplied=(weather==='sand'&&!defenseHit&&a.defTypes.includes('いわ'))||(weather==='snow'&&defenseHit&&a.defTypes.includes('こおり'));
+ if(weatherApplied)defense=round(defense,6144);
+ if(a.defItem==='assaultVest'&&!defenseHit)defense=round(defense,6144);
  const power=a.moveMechanic==='hpScaledPower'?Math.max(1,Math.floor(150*a.attCurrentHp/a.attMaxHp)):a.power;
  let damage=22n*BigInt(power)*BigInt(a.attack)/defense/50n+2n;
  if(['sun','rain'].includes(weather)&&['ほのお','みず'].includes(a.moveType))damage=round(damage,((weather==='rain')===(a.moveType==='みず'))?6144:2048);
  const effectiveness=a.moveType==='みず'?a.defTypes.reduce((n,t)=>n*({いわ:2,じめん:2,ほのお:2,みず:.5,くさ:.5,ドラゴン:.5}[t]||1),1):1;
  const rolls=Array.from({length:16},(_,i)=>Math.max(1,Math.floor(Number(damage*BigInt(85+i)/100n)*effectiveness)));
- return {weather,defense:Number(defense),power,rolls};
+ return {weather,weatherApplied,defense:Number(defense),power,rolls};
 }
 let cases=0;
-function check(a,label){const input={...base,...a},snapshot=structuredClone(input),expected=oracle(input),actual=engine.calculate(input);assert.deepEqual(input,snapshot,'No input mutation '+label);assert.deepEqual(Array.from(actual.rolls),expected.rolls,label+' exact sixteen rolls');assert.equal(actual.defense,expected.defense,label+' effective defense');assert.equal(actual.effectivePower,expected.power,label+' HP power');assert.equal(actual.rolls.length,16);assert.equal(actual.trace.filter(x=>/^stat\/(sandRockSpD|snowIceDef):/.test(x)).length,expected.defense!==input.defense?1:0,label+' exactly one weather stat modifier');cases++;return actual;}
+function check(a,label){const input={...base,...a},snapshot=structuredClone(input),expected=oracle(input),actual=engine.calculate(input);assert.deepEqual(input,snapshot,'No input mutation '+label);assert.deepEqual(Array.from(actual.rolls),expected.rolls,label+' exact sixteen rolls');assert.equal(actual.defense,expected.defense,label+' effective defense');assert.equal(actual.effectivePower,expected.power,label+' HP power');assert.equal(actual.rolls.length,16);assert.equal(actual.trace.filter(x=>/^stat\/(sandRockSpD|snowIceDef):/.test(x)).length,expected.weatherApplied?1:0,label+' exactly one weather stat modifier');cases++;return actual;}
 // Four setters, either side, manual override, Water Spout HP boundaries, dual
 // types, ordinary attacks and Psyshock's actual defensive-stat reference.
 for(const side of ['attAbility','defAbility'])for(const ability of Object.keys(setters))for(const weather of ['none','sun','rain','sand','snow'])for(const defTypes of [['いわ','あく'],['じめん'],['はがね'],['いわ','こおり'],['こおり','ゴースト'],['くさ','こおり'],['こおり','フェアリー'],['ノーマル']])for(const category of ['physical','special'])for(const hp of [180,90,1])check({[side]:ability,weather,defTypes,category,moveMechanic:'hpScaledPower',power:150,attCurrentHp:hp},JSON.stringify({side,ability,weather,defTypes,category,hp}));
 for(const defTypes of [['いわ'],['こおり'],['いわ','こおり'],['じめん']])for(const weather of ['sand','snow'])for(const moveMechanic of ['none','psyshock'])check({defTypes,weather,moveMechanic},'defensive stat reference');
+for(const defense of [1,99,100,101,102,103,199])for(const defenseStage of [-6,-1,0,1,6])for(const weather of ['sand','snow'])for(const category of ['physical','special'])for(const moveMechanic of ['none','psyshock'])for(const defItem of ['none','assaultVest'])check({defense,defenseStage,weather,category,moveMechanic,defItem,defTypes:['いわ','こおり']},'stage/weather/item rounding and defensive stat separation');
 for(const attAbility of Object.keys(setters))for(const defAbility of Object.keys(setters))for(const weather of ['none','sun','rain','sand','snow'])check({attAbility,defAbility,weather,defTypes:['いわ','こおり']},'existing manual > attacker > defender precedence');
 // Explicit user reproduction witnesses and KO boundaries use every roll.
 const megaTyranitar=check({defAbility:'sandStream',defTypes:['いわ','あく'],moveMechanic:'hpScaledPower',power:150},'Mega Tyranitar Water Spout');

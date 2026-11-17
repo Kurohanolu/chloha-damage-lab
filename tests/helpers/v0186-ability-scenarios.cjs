@@ -25,6 +25,7 @@ const attack={
  overgrow:{moveType:'くさ',attCurrentHp:30},blaze:{moveType:'ほのお',attCurrentHp:30},torrent:{moveType:'みず',attCurrentHp:30},swarm:{moveType:'むし',attCurrentHp:30},guts:{burn:true},adaptability:{},tintedLens:{defTypes:['くさ']},levitate:{moveType:'くさ',terrain:'grassy'},unaware:{defenseStage:3},clearBody:{defAbility:'intimidate'}
 };
 const defense={
+ drizzle:{moveType:'みず'},drought:{moveType:'ほのお'},sandStream:{defTypes:['いわ'],category:'special'},snowWarning:{defTypes:['こおり']},
  thickFat:{moveType:'ほのお'},multiscale:{},furCoat:{},iceScales:{category:'special'},punkRock:move('Hyper Voice'),fluffy:move('Iron Head'),auraGuard:move('Iron Head'),bulletproof:move('Aura Sphere'),soundproof:move('Hyper Voice'),
  unaware:{attackStage:3},clearBody:{},intimidate:{},purifyingSalt:{moveType:'ゴースト',defTypes:['エスパー']},shellArmor:{critical:true},battleArmor:{critical:true},grassPelt:{terrain:'grassy'},marvelScale:{defStatus:'poison'},wonderGuard:{},drySkin:{moveType:'ほのお'},heatproof:{moveType:'ほのお'},waterBubble:{moveType:'ほのお'},prismArmor:{moveType:'かくとう'},shadowShield:{},
  levitate:{},waterAbsorb:{moveType:'みず'},voltAbsorb:{moveType:'でんき'},lightningRod:{moveType:'でんき'},motorDrive:{moveType:'でんき'},sapSipper:{moveType:'くさ'},stormDrain:{moveType:'みず'},earthEater:{},wellBakedBody:{moveType:'ほのお'},flashFire:{moveType:'ほのお'},filter:{moveType:'かくとう'},solidRock:{moveType:'かくとう'},fairyAura:{moveType:'フェアリー'},darkAura:{moveType:'あく'},auraBreak:{attAbility:'fairyAura',moveType:'フェアリー'}

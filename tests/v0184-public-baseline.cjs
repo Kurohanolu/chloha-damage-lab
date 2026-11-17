@@ -25,4 +25,4 @@ for(const fixture of baseline.cases){
  assert.deepEqual(actual,correction?.expected||fixture.expected,fixture.name+': full public contract or documented v0.186 correction');
 }
 assert.ok([...corrections.keys()].every(name=>baseline.cases.some(f=>f.name===name)),'no unused correction');
-console.log('PASS 300 baseline contracts: 269 unchanged, 26 independent numeric corrections, 5 trace/metadata corrections; original fixtures retained');
+console.log('PASS 300 baseline contracts: 268 unchanged, 26 v0.186 numeric corrections, 5 v0.186 trace corrections, 1 explicit defending-Drizzle correction; original fixtures retained');
