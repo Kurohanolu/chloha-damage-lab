@@ -5,7 +5,7 @@ const workflow=fs.readFileSync('deployment/singularity-pages.yml','utf8');
 const script=workflow.split('// SOURCE_CI_GATE_BEGIN\n')[1]?.split('// SOURCE_CI_GATE_END')[0];assert.ok(script);
 const required=['Showdown differential tests','Showdown differential audit','v0.184 engine baseline','Damage Lab CI and status ledger','UI & damage regression','v0.185 anonymous feedback','v0.186 Accuracy & Mechanics Audit','v0.187 Singularity Migration'];
 if(Number(require('../release.json').version.split('.')[0])>0||Number(require('../release.json').version.split('.')[1])>=188)required.push('v0.188 Quality Remediation');
-if(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(require('../release.json').tag))required.push('v1.1.0 ES-LA Localization');
+if(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12'].includes(require('../release.json').tag))required.push('v1.1.0 ES-LA Localization');
 if(require('../release.json').tag==='v1.0.0')required.push('v1.0.0 Stable Promotion');
 const sha='a'.repeat(40);
 async function probe(mode){

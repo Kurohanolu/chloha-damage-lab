@@ -28,7 +28,7 @@ function acceptanceFiles(source){
  return files;
 }
 function verifyStableLiveAcceptance(release){
- assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11'].includes(release.tag),'Live acceptance policy is explicit');
+ assert.ok(['v1.0.0','v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12'].includes(release.tag),'Live acceptance policy is explicit');
  const m=release.migration;
  assert.equal(m.liveTargetVerified,true,'Stable publication needs actual live acceptance');
  assert.match(m.liveAcceptanceSourceCommit||'',/^[a-f0-9]{40}$/,'Stable live acceptance source SHA required');
