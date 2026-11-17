@@ -41,7 +41,7 @@ async function assertCount(page,spec,count,{legacy=false}={}){
  const state=await snapshot(page);
  assert.equal(state.a[field],count,'existing canonical input remains exact');
  assert.equal(state.r.effectivePower,power,'independent power formula');
- assert.equal(state.r.rolls.length,16);
+ assert.equal(state.r.rolls.length,16);assert.ok(state.r.rolls[15]>0,'Nonimmune browser witness');
  const reference=await page.evaluate(power=>ChlohaDamageEngine.calculate({...ChlohaLastCalculation.a,moveMechanic:'none',power}),power);
  assert.deepEqual(state.r.rolls,reference.rolls,'all 16 rolls equal independent explicit power without the conditional mechanic');
  const copy=await page.evaluate(({mechanic,count})=>{
@@ -65,6 +65,7 @@ async function assertCount(page,spec,count,{legacy=false}={}){
    await mockFeedback(context,lab.origin);
    const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
    await page.goto(lab.origin+'/candidate/');await ready(page);
+   await set(page,'dbAttPokemon','garchomp');await set(page,'dbDefPokemon','garchomp');
    for(const locale of locales){
     await page.locator('#chloha-locale').selectOption(locale);
     for(const spec of moves){
@@ -73,6 +74,11 @@ async function assertCount(page,spec,count,{legacy=false}={}){
      for(let count=0;count<=spec.max;count++){
       await page.locator('#'+spec.panel+' [data-move-count="'+count+'"]').click();
       await assertCount(page,spec,count);report.countCases++;
+     }
+     if(locale==='en'&&width===390){
+      const first=page.locator('#'+spec.panel+' [data-move-count="0"]');await first.focus();await first.press('Enter');await assertCount(page,spec,0);
+      const last=page.locator('#'+spec.panel+' [data-move-count="'+spec.max+'"]');await last.focus();await last.press('Space');await assertCount(page,spec,spec.max);
+      await page.locator('#swapSides').click();await set(page,'dbMove',spec.id);await last.click();await assertCount(page,spec,spec.max);
      }
      assert.equal(await page.evaluate(()=>ChlohaPersistence.save()),true);
      const before=await snapshot(page);
