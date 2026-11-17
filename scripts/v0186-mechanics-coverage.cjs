@@ -33,7 +33,7 @@ const idsByJa={...context.ChlohaAbilityData.ABILITY_ID_BY_JA,...defenseNames};
 for(const [role,ids] of [['Attack abilities',context.ChlohaAbilityData.ATTACKER_ABILITY_IDS],['Defense abilities',context.ChlohaAbilityData.DEFENDER_ABILITY_IDS]])for(const id of ids){
  if(id==='none')continue;
  const na=role==='Defense abilities'&&['overcoat','clearBody'].includes(id);
- add(role,id,abilityName(id),na?'Not Applicable':partial.has(id)?'Partial':'Verified',na?'この単発直接ダメージの対象外。':'役割別321条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。');
+ add(role,id,abilityName(id),na?'Not Applicable':partial.has(id)?'Partial':'Verified',na?'この単発直接ダメージの対象外。':'役割別333条件。Skill Linkは126分布。Partialは宣言済みの一部動作／前提条件。');
 }
 const allAbilityNames=[...new Set(pokemon.flatMap(p=>p.abilities))].sort();
 for(const name of allAbilityNames){
@@ -73,7 +73,7 @@ const lines=['# v0.186 Mechanics Coverage','',
 '- 完全にVerifiedとした項目 / 実装存在数: **'+totals.Verified+'/'+implemented+' = '+percent(totals.Verified,implemented)+'**。PartialをVerifiedに足さない。評価対象全体での検証率: **'+percent(totals.Verified,eligible)+'**。',
 '- Pokémon/form **373**（メガ形態 **'+summary.megaForms+'**）: データ一致372、資料不一致1。335技のタイプ・分類・基礎威力は固定版のChampions/Gen9参照に一致。',
 '- 計算可能な既存技: **'+summary.readyMoves+'/'+summary.damagingMoves+' = '+percent(summary.readyMoves,summary.damagingMoves)+'**。残り13は従来から標準計算対象外。別に変化技1。除外技の新規実装はしない。',
-'- 役割付き特性: 攻撃70 / 防御39、持ち物: 攻撃22 / 防御20（noneを除く）。名簿中の特性名: **'+allAbilityNames.length+'**。',
+'- 役割付き特性: 攻撃70 / 防御43、持ち物: 攻撃22 / 防御20（noneを除く）。名簿中の特性名: **'+allAbilityNames.length+'**。',
 '- 過去の能力画面確認フラグ: **'+summary.historicalStatScreenFlags+'**。これを実機ダメージ一致件数に加算しない。今回新たに収集した実機ダメージ証拠: **0**。',
 '- Sheer Force: 明示的な既存5技ホワイトリストを維持。参照の対象候補'+flagEvidence.sheerForce.referenceEligible+'技に拡張せず **Partial** とする。',
 '',

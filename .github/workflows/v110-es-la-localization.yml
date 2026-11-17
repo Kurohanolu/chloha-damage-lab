@@ -10,6 +10,33 @@ env:
   WRANGLER_SEND_METRICS: 'false'
   PYTHONDONTWRITEBYTECODE: '1'
 jobs:
+  weather-acceptance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-package-lock --no-audit --no-fund
+      - run: npm ci --prefix tests/reference --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check weather source, independent arithmetic and locked Showdown
+        run: |
+          node tests/v110-weather-scope.cjs
+          node tests/v110-weather-mechanics.cjs
+          node tests/v110-weather-showdown.cjs
+      - name: Check ten locales, reload, forms and mobile weather inputs
+        if: ${{ !cancelled() }}
+        run: node tests/v110-weather-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: weather-acceptance-evidence
+          path: reports/v110/weather-*.json
+          if-no-files-found: error
   candidate-ten-locales:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
