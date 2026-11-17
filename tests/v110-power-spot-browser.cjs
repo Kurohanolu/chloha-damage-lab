@@ -17,17 +17,32 @@ const numeric=p=>p.evaluate(()=>JSON.stringify({a:ChlohaLastCalculation.a,r:Chlo
  for(const locale of ['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant','es-LA']){
   for(const p of [a,b]){await p.selectOption('#chloha-locale',locale);assert.equal(await p.locator('#allyPowerSpot').isVisible(),false);}
   const label=p=>p.locator('#allyPowerSpot').evaluate(n=>n.parentElement.textContent.trim());
-  if(locale==='es-LA')assert.equal(await label(a),'Fuente Energía de un aliado (daño ×1,3)');else assert.equal(await label(a),await label(b));
+  // Hidden original label lies outside #app and is intentionally not DOM-translated.
+  assert.equal(await label(a),await label(b));
+  if(locale==='es-LA')assert.equal(await a.evaluate(()=>ChlohaEsLaUi.text('Ally Power Spot (damage ×1.3)')),'Fuente Energía de un aliado (daño ×1,3)');
   const results=[];
   for(const active of [false,true,false]){
    for(const p of [a,b]){await setLegacyPowerSpot(p,active);}
+   if(locale==='es-LA'&&active){
+    // Trace is mounted under the app's user-accessible audit details.
+    await a.locator('#auditDetails > summary').click();
+    const traceDetails=a.locator('#trace').locator('xpath=ancestor::details[1]');
+    if(!await traceDetails.evaluate(n=>n.open))await traceDetails.locator(':scope > summary').click();
+    await a.waitForFunction(()=>document.getElementById('trace').textContent.includes('Fuente Energía'));
+    assert.equal(await a.locator('#trace').isVisible(),true);
+    await a.locator('#auditDetails > summary').click();
+   }
    results.push(await a.evaluate(()=>JSON.stringify(ChlohaLastCalculation.r)));
    assert.equal(await numeric(a),await numeric(b),'Full numerical state '+locale+'/'+active);
   }
   assert.notEqual(results[0],results[1],'Power Spot changes calculation result');assert.equal(results[0],results[2],'Turning off restores result');
   await setLegacyPowerSpot(a,true);await setLegacyPowerSpot(b,true);assert.equal(await a.evaluate(()=>ChlohaPersistence.save()),true);await a.reload();await ready(a);assert.equal(await a.locator('#chloha-locale').inputValue(),locale);assert.equal(await a.locator('#allyPowerSpot').isChecked(),true);assert.equal(await a.locator('#allyPowerSpot').isVisible(),false);
   assert.equal(await a.evaluate(()=>ChlohaLastCalculation.a.allyPowerSpot),true);assert.equal(await numeric(a),await numeric(b),'Reload numeric parity');
-  if(locale==='es-LA')assert.equal(await label(a),'Fuente Energía de un aliado (daño ×1,3)');
+  assert.equal(await label(a),await label(b));
+  if(locale==='es-LA'){
+   assert.equal(await a.evaluate(()=>ChlohaEsLaUi.text('Ally Power Spot (damage ×1.3)')),'Fuente Energía de un aliado (daño ×1,3)');
+   await a.waitForFunction(()=>document.getElementById('trace').textContent.includes('Fuente Energía'));
+  }
  }
  await context.close();}
  console.log('PASS Power Spot legacy-state browser integration: 10 locales, 2 widths, repeated state changes, hidden binding, full numerical equality and save/reload; no reachable toggle claim');
