@@ -36,7 +36,7 @@
     "reviewedTree": "ba39233ad935b4fc515b841729571e7cc2ff8b1e",
     "auditReportSha256": "2235624e2737ce5b990aec80bf2d1c33e73b2f1f9dcceea9f35c3e41fc395e26",
     "ownerEvidence": "docs/evidence/v110-pre14/owner-approval.json",
-    "ownerRecordedAtJST": "2026-11-17T22:48:50.7305592+09:00"
+    "ownerRecordedAtJST": "2026-11-17T22:48:50.730+09:00"
   },
   "channel": "prerelease"
 }
