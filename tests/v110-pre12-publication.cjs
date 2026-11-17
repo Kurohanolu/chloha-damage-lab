@@ -1,3 +1,16 @@
+// Pre15 keeps the complete original publication proof on immutable published pre14.
+if(require('../release.json').tag==='v1.1.0-pre.15'){
+ const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='cace126d0244f2d748b3c162a3e7cb5f9441932d',tree='7f4a6078575346b36f74ab6bcea941dc629e81ec',file='tests/v110-pre12-publication.cjs';
+ const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024});
+ assert.equal(git('rev-parse',ref+'^{tree}').trim(),tree);
+ assert.ok(fs.readFileSync(__filename,'utf8').endsWith(git('show',ref+':'+file)),'All original assertions preserved');
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'pre15-publication-history-')),worktree=path.join(parent,'source');let added=false;
+ try{git('worktree','add','--detach',worktree,ref);added=true;const run=spawnSync(process.execPath,[file],{cwd:worktree,stdio:'inherit',timeout:120000});assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0);}
+ finally{try{if(added)git('worktree','remove','--force',worktree);}finally{fs.rmSync(parent,{recursive:true,force:true});}}
+ console.log('PASS original publication history '+file+' at '+ref+'; not current release approval');process.exit(0);
+}
 // Pre.14 executes the unmodified pre.12 publication test on its published tree.
 if(require('../release.json').tag==='v1.1.0-pre.14'){
  const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');

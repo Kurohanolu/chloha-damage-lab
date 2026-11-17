@@ -26,7 +26,7 @@ jobs:
       - name: Check weather source, independent arithmetic and locked Showdown
         run: |
           # Runs unchanged historical weather scope plus exact current successor protections.
-          node tests/v110-feedback-weather-successor.cjs
+          node tests/v110-translation-weather-successor.cjs
           node tests/v110-weather-mechanics.cjs
           node tests/v110-weather-showdown.cjs
       - name: Preserve fixed Community numeric and browser behavior
