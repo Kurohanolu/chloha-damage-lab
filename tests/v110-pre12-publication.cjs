@@ -60,6 +60,19 @@ if(current.qualityReview.ownerApproval==='pending'){
  if(current.migration.liveTargetVerified){verifyPublication(current);assert.throws(()=>verifyObservation(current,pre11,pre11.name),'Accepted pre.12 never downgrades to pre.11');}
  else assert.deepEqual(selectBaseline(current,'push',''),{ref:publishedCommit,mode:'published-v110-pre12-base'});
 }
+// Both receipt writer and verifier must name the same immutable rollback source.
+for(const file of ['scripts/helpers/v100-live-acceptance.cjs','scripts/v100-live-acceptance.cjs']){
+ const code=fs.readFileSync(file,'utf8'),expression=code.match(/const rollbackSourceCommit=([^;]+);/)?.[1];
+ assert.ok(expression,'Receipt boundary declares its rollback source');
+ const actual=require('node:vm').runInNewContext(expression,{release:current,publishedCommit:'4f068544e670a85a6a4d34dd2c26e2be66bd9cb7'});
+ assert.equal(actual,publishedCommit,'Pre.12 writer/verifier binds published pre.11, not a historical fallback');
+ assert.equal(execFileSync('git',['rev-parse',actual+'^{tree}'],{encoding:'utf8'}).trim(),publishedTree);
+ const files=require('../scripts/helpers/v100-live-acceptance.cjs').acceptanceFiles(actual);
+ assert.ok(Object.keys(files).length>70,'Complete exact-source dual-site rollback inventory');
+ assert.deepEqual(files,require('../scripts/helpers/v100-live-acceptance.cjs').acceptanceFiles(publishedCommit));
+}
+console.log('PASS pre.12 writer/verifier rollback references bind exact pre.11 tree and full asset inventory');
+
 const report={passed:true,releaseTag:current.tag,publicPredecessor:publishedCommit,publicPredecessorTree:publishedTree,pendingCannotPublish:true,oldReceiptsRejected:true,unapprovedLiveFlagRejected:true,publicMetadataPinned:true};
 fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/pre12-publication.json',JSON.stringify(report,null,2)+'\n');
 console.log('PASS v1.1.0 pre.12 lifecycle: immutable public pre.11, cleared candidate state, old receipts and unapproved live flags rejected');
