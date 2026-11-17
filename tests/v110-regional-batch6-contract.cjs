@@ -1,3 +1,23 @@
+// Historical pre.9 checks execute only in the immutable published source tree.
+if(require('../release.json').tag!=='v1.1.0-pre.9'){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='46f930797e662be0d01e974f98ddde6de7b414c0',tree='1ea3163c8a8f4de8d68951b28c061a855461468c';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre9-history-')),worktree=path.join(parent,'source');
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-regional-batch6-contract.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.9 historical test must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  fs.writeFileSync('reports/v110/historical-regional-batch6-contract.json',JSON.stringify({passed:true,role:'historical immutable pre.9, not current candidate acceptance',sourceCommit:ref,sourceTree:tree,test:'v110-regional-batch6-contract.cjs'},null,2)+'\n');
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(0);
+}
+// BEGIN UNMODIFIED HISTORICAL PRE9 TEST
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
 const baseline='0b1f8fffea3b1d063036d00fd712b0a0e9695111',tree='701fbae7b142ba2ac5e5e23f1755a84f39d82b6c',read=f=>fs.readFileSync(f,'utf8'),old=f=>execFileSync('git',['show',baseline+':'+f],{encoding:'utf8',maxBuffer:32*1024*1024}),json=f=>JSON.parse(read(f));

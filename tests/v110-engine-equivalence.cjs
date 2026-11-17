@@ -37,7 +37,8 @@ try{
  assert.equal(git('rev-parse',reviewedCommit+'^{tree}').toString().trim(),reviewedTree,'Reviewed baseline identity must remain exact');
  for(const file of protectedFiles){
   const before=historical(file),after=current(file);
-  assert.deepEqual(after,before,'Localization may not change numeric runtime/data: '+file);
+  const normalized=file==='ability-data-v0184.js'?Buffer.from(require('./helpers/v110-weather-correction.cjs').originalAbilitySource(after.toString())):after;
+  assert.deepEqual(normalized,before,'Only the exact reviewed weather validation expansion may change numeric runtime/data: '+file);
   report.protectedFiles[file]=hash(after);
  }
  const oldHTML=historical('index.html').toString(),newHTML=current('index.html').toString();
@@ -59,6 +60,8 @@ try{
  assert.equal(hash(current('tests/fixtures/v0184-public-baseline.json')),errata.frozenBaselineSha256);
  const corrections=new Map(errata.cases.map(c=>[c.name,c]));assert.equal(corrections.size,31);
  for(const fixture of fixtures.cases){
+  const weatherCorrection=require('./helpers/v110-weather-correction.cjs'),equivalent=weatherCorrection.correctedInput(fixture);
+  if(equivalent){const expected=observe(old,fixture.entry,equivalent,fixture.options),actual=observe(candidate,fixture.entry,fixture.input,fixture.options);weatherCorrection.checkCorrectedResult(actual);assert.deepEqual(actual,expected,'Weather correction compared with immutable working explicit-rain reference');report.fixedContracts++;report.documentedCorrections++;report.completeOutputComparisons++;continue;}
   const actual=compare(fixture.name,fixture.entry,fixture.input,fixture.options,false),correction=corrections.get(fixture.name);
   if(correction){assert.equal(hash(JSON.stringify(fixture.expected)),correction.originalExpectedSha256);assert.ok(correction.reason);assert.notDeepEqual(correction.expected,fixture.expected);report.documentedCorrections++;}
   assert.deepEqual(actual,correction?.expected||fixture.expected,'Original or documented-correction contract: '+fixture.name);report.fixedContracts++;

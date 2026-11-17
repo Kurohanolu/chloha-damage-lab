@@ -1,3 +1,23 @@
+// Historical pre.9 checks execute only in the immutable published source tree.
+if(require('../release.json').tag!=='v1.1.0-pre.9'){
+ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='46f930797e662be0d01e974f98ddde6de7b414c0',tree='1ea3163c8a8f4de8d68951b28c061a855461468c';
+ assert.equal(execFileSync('git',['rev-parse',ref+'^{tree}'],{encoding:'utf8'}).trim(),tree);
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-pre9-history-')),worktree=path.join(parent,'source');
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,ref],{stdio:'pipe'});
+  const result=spawnSync(process.execPath,['tests/v110-pre9-publication.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.equal(result.error,undefined);assert.equal(result.signal,null);assert.equal(result.status,0,'Unmodified published pre.9 historical test must pass');
+  assert.equal(execFileSync('git',['status','--porcelain'],{cwd:worktree,encoding:'utf8'}).trim(),'');
+  fs.mkdirSync('reports/v110',{recursive:true});
+  fs.writeFileSync('reports/v110/historical-pre9-publication.json',JSON.stringify({passed:true,role:'historical immutable pre.9, not current candidate acceptance',sourceCommit:ref,sourceTree:tree,test:'v110-pre9-publication.cjs'},null,2)+'\n');
+ }finally{
+  try{execFileSync('git',['worktree','remove','--force',worktree],{stdio:'pipe'});}finally{fs.rmSync(parent,{recursive:true,force:true});}
+ }
+ process.exit(0);
+}
+// BEGIN UNMODIFIED HISTORICAL PRE9 TEST
 'use strict';
 // A new prerelease must earn its own approval. The published pre.8 is the
 // immutable observation/rollback baseline, never a reusable approval receipt.

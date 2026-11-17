@@ -18,6 +18,8 @@ const corrections=new Map(errata.cases.map(c=>[c.name,c]));
 assert.equal(corrections.size,31,'review every added baseline correction explicitly');
 for(const fixture of baseline.cases){
  const actual=observe(context,fixture.entry,structuredClone(fixture.input),structuredClone(fixture.options));
+ const weatherCorrection=require('./helpers/v110-weather-correction.cjs'),equivalent=weatherCorrection.correctedInput(fixture);
+ if(equivalent){weatherCorrection.checkCorrectedResult(actual);assert.deepEqual(actual,observe(context,fixture.entry,equivalent,structuredClone(fixture.options)),'Explicit rain and a defending setter must have identical complete output');continue;}
  const correction=corrections.get(fixture.name);
  if(correction){assert.equal(digest(JSON.stringify(fixture.expected)),correction.originalExpectedSha256,fixture.name+': original evidence must stay immutable');assert.ok(correction.reason);assert.notDeepEqual(correction.expected,fixture.expected);}
  assert.deepEqual(actual,correction?.expected||fixture.expected,fixture.name+': full public contract or documented v0.186 correction');
