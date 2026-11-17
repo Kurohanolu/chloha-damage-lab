@@ -46,6 +46,17 @@ const badInventory=structuredClone(inventoryExpected);badInventory.sourceSha256[
 assert.throws(()=>checkInventory(badInventory),'Reject fabricated source hash');
 const extraInventory=structuredClone(inventoryExpected);extraInventory.unreviewed=true;
 assert.throws(()=>checkInventory(extraInventory),'Reject any unrelated inventory edit');
-for(const file of protectedBefore)if(file!==inventoryFile)assert.equal(fs.readFileSync(file,'utf8'),git('show',ref+':'+file),'Current calculation/data/nine-locale source frozen: '+file);
+// Coverage embeds the reviewed inventory plus its exact serialized-file digest.
+// Every name, status, count and remaining coverage field stays baseline-identical.
+const coverageFile='docs/data/v110-es-la-coverage.json';
+const coverageExpected=JSON.parse(git('show',ref+':'+coverageFile));
+coverageExpected.uiInventory={...inventoryExpected,sha256:require('node:crypto').createHash('sha256').update(fs.readFileSync(inventoryFile)).digest('hex')};
+function checkCoverage(value){assert.deepEqual(value,coverageExpected,'Coverage permits only exact reviewed inventory metadata regeneration');}
+checkCoverage(JSON.parse(fs.readFileSync(coverageFile,'utf8')));
+const badCoverage=structuredClone(coverageExpected);badCoverage.uiInventory.sha256='0'.repeat(64);
+assert.throws(()=>checkCoverage(badCoverage),'Reject fabricated embedded inventory digest');
+const changedCounts=structuredClone(coverageExpected);changedCounts.coverage.pokemon.official++;
+assert.throws(()=>checkCoverage(changedCounts),'Reject unrelated translation coverage changes');
+for(const file of protectedBefore)if(![inventoryFile,coverageFile].includes(file))assert.equal(fs.readFileSync(file,'utf8'),git('show',ref+':'+file),'Current calculation/data/nine-locale source frozen: '+file);
 const report={passed:true,scope:'preparation-only narrow Worker delta',referenceCommit:ref,referenceTree:tree,referenceIsPublishedBaseline:true,allowedChange:'public config supportedLocales copies validator C.locales',serverFilesPreserved:historical.length,sharedValidatorPreserved:true,productionPausePreserved:true,historicalBatch6ContractUnchanged:true};
 fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/feedback-worker-scope.json',JSON.stringify(report,null,2)+'\n');console.log('PASS narrow feedback Worker scope; no publication approval implied');
