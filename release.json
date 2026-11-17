@@ -15,7 +15,7 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "awaiting-owner-approval",
+    "status": "approved",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
@@ -27,16 +27,16 @@
   "qualityReview": {
     "releaseTag": "v1.1.0-pre.12",
     "auditor": "6.1 Sol",
-    "auditStatus": "pending",
-    "ownerApproval": "pending",
-    "evidence": "",
-    "auditOutcome": "pending",
-    "conditionsDisposition": "pending",
-    "reviewedSourceCommit": null,
-    "reviewedTree": null,
-    "auditReportSha256": null,
-    "ownerEvidence": "",
-    "ownerRecordedAtJST": null
+    "auditStatus": "passed",
+    "ownerApproval": "approved",
+    "evidence": "docs/releases/v1.1.0-pre.12-audit-record.md",
+    "auditOutcome": "pass",
+    "conditionsDisposition": "accepted-by-owner",
+    "reviewedSourceCommit": "6f64da80fbf4e55c6e03266c11fb198a9bf8b418",
+    "reviewedTree": "c83fa39544b6dba8befe9fca7748d3aadbbccb8b",
+    "auditReportSha256": "dba9768b6c484a151b62db5a10bc2680ff65e9276caebbb3b124f4a94f8c5ef0",
+    "ownerEvidence": "docs/releases/v1.1.0-pre.12-owner-decision.json",
+    "ownerRecordedAtJST": "2026-11-17T21:01:13.840+09:00"
   },
   "channel": "prerelease"
 }
