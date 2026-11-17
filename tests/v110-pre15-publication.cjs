@@ -26,6 +26,37 @@ for(const event of ['push','workflow_dispatch','pull_request']){
  assert.throws(()=>selectBaseline(falseLive,event,publishedCommit),'An unaudited live flag cannot select current-source verification');
 }
 assert.throws(()=>selectBaseline(draft,'unknown',publishedCommit));
+// Reproduce GitHub's stale creation-time PR base on a real synthetic merge,
+// without mocking git or injecting a repository/HEAD into the selector.
+{
+ const path=require('node:path'),os=require('node:os');
+ const root=process.cwd(),temporary=fs.mkdtempSync(path.join(os.tmpdir(),'pre15-pr-base-')),worktree=path.join(temporary,'checkout');
+ const stale='fbec6fd45b841c3465be903b25a14e909cc80ba5';
+ const git=(args,cwd=root)=>execFileSync('git',args,{cwd,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+ const tree=git(['rev-parse','HEAD^{tree}']);
+ const commit=(parents,t=tree)=>git(['-c','user.name=Baseline test','-c','user.email=baseline@example.invalid','commit-tree',t,...parents.flatMap(p=>['-p',p]),'-m','Synthetic PR baseline regression']);
+ // Always build a one-parent candidate: CI HEAD may already be a valid PR merge.
+ const candidate=commit([publishedCommit]);
+ const run=(head,base=stale,event='pull_request')=>{
+  git(['update-ref','HEAD',head],worktree);
+  return execFileSync(process.execPath,['-e',`const {selectBaseline}=require('./scripts/v0188-select-pages-baseline.cjs');console.log(JSON.stringify(selectBaseline(${JSON.stringify(draft)},${JSON.stringify(event)},${JSON.stringify(base)})))`],{cwd:worktree,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+ };
+ try{
+  git(['worktree','add','--detach',worktree,candidate]);
+  fs.copyFileSync('scripts/v0188-select-pages-baseline.cjs',path.join(worktree,'scripts/v0188-select-pages-baseline.cjs'));
+  const merge=commit([publishedCommit,candidate]);
+  assert.deepEqual(JSON.parse(run(merge)),{ref:publishedCommit,mode:'published-v110-pre15-base'},'Stale PR metadata observes pinned pre.14, never pre.11');
+  assert.throws(()=>run(candidate),'A branch HEAD is not a verified synthetic merge');
+  assert.throws(()=>run(commit([stale,candidate])),'Wrong first parent cannot substitute public predecessor');
+  assert.throws(()=>run(commit([publishedCommit,stale])),'Candidate lacking pre.14 is rejected');
+  assert.throws(()=>run(commit([publishedCommit,candidate],publishedTree)),'Tampered synthetic merge tree is rejected');
+  for(const base of ['main','0'.repeat(40),'83af29133927a19fc7e0f9273c0e194c54384ae5'])assert.throws(()=>run(merge,base),'Arbitrary metadata remains rejected even with valid merge');
+  for(const event of ['push','workflow_dispatch'])assert.throws(()=>run(merge,stale,event),'Only stale PR metadata has the narrow exception');
+ }finally{
+  try{git(['worktree','remove','--force',worktree]);}finally{fs.rmSync(temporary,{recursive:true,force:true});}
+ }
+}
+
 const observation=verifyObservation(draft,pre14,pre14.name);
 assert.deepEqual(verifyObservation(draft,pre14,pre14.name,observation),observation);
 assert.throws(()=>verifyObservation(draft,pre14,draft.name));

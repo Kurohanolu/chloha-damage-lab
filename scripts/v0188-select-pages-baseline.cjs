@@ -24,7 +24,20 @@ function selectBaseline(release,event,baseRef){
    assert.equal(release.migration?.liveTargetVerified,false,'Pre.15 must explicitly declare its pre-acceptance state');
    if(release.qualityReview?.ownerApproval!=='pending')verifyCutoverApproval(release);
    assert.equal(execFileSync('git',['rev-parse',pre14Commit+'^{tree}'],{cwd:path.resolve(__dirname,'..'),encoding:'utf8'}).trim(),pre14Tree,'Published pre.14 commit/tree must remain pinned');
-   if(event==='pull_request'||baseRef)assert.equal(baseRef,pre14Commit,'Pre.15 public base must be the immutable published pre.14');
+   if(event==='pull_request'&&baseRef===pre11Commit){
+    // PR #83 predates pre.14: GitHub retains its creation-time base SHA.
+    // Accept that one historical event value only on a real two-parent merge
+    // whose first parent is the exact published pre.14 and whose candidate
+    // already contains it. Never use the stale SHA as the public baseline.
+    const git=args=>execFileSync('git',args,{cwd:path.resolve(__dirname,'..'),encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+    const parents=git(['rev-list','--parents','-n','1','HEAD']).split(' ').slice(1);
+    assert.equal(parents.length,2,'Stale pre.15 PR metadata requires an actual two-parent checked-out merge');
+    assert.equal(parents[0],pre14Commit,'Checked-out PR merge must target exact published pre.14');
+    assert.notEqual(parents[1],pre14Commit,'Checked-out PR merge must contain a distinct candidate');
+    git(['merge-base','--is-ancestor',pre11Commit,pre14Commit]);
+    git(['merge-base','--is-ancestor',pre14Commit,parents[1]]);
+    assert.equal(git(['rev-parse','HEAD^{tree}']),git(['merge-tree','--write-tree',parents[0],parents[1]]),'Checked-out merge tree must exactly match its verified parents');
+   }else if(event==='pull_request'||baseRef)assert.equal(baseRef,pre14Commit,'Pre.15 public base must be the immutable published pre.14');
    return {ref:pre14Commit,mode:'published-v110-pre15-base'};
   }
  }
