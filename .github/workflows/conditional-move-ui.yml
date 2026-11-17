@@ -1,16 +1,9 @@
 name: Conditional move UI acceptance
 on:
   pull_request:
-    paths:
-      - locale-quality-v0188.js
-      - index.html
-      - tests/v110-count-moves-*.cjs
-      - .github/workflows/conditional-move-ui.yml
   push:
     branches: [main]
-    paths:
-      - locale-quality-v0188.js
-      - tests/v110-count-moves-*.cjs
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
