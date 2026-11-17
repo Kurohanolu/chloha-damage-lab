@@ -2088,6 +2088,28 @@
         "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
         "Mechanics descriptions are not used as calculation evidence."
       ]
+    },
+    {
+      "id": "power-spot-swsh-stonjourner",
+      "url": "https://swordshield.pokemon.com/es-mx/pokemon-galar-region/stonjourner/",
+      "title": "Official LATAM Stonjourner profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Direct HTML visible text, excluding script/style; English counterpart binds identity only.",
+      "rawSha256": "12175f6fe801eba008c35ac0f107f4e7a1e3233084eb4a705252792a15cbea3c",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/pokemon-galar-region/stonjourner/",
+      "englishRawSha256": "d8b4123717cccf7963b8021619464a4ec7e905a68319402437297985af9c8929",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing; not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not used as calculation evidence."
+      ]
     }
   ],
   "records": [
@@ -37371,6 +37393,36 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "power-spot-swsh-fuente-energia",
+      "category": "abilities",
+      "canonicalEnglish": "Power Spot",
+      "sourceEs": "Fuente Energía",
+      "esLA": "Fuente Energía",
+      "rawObservedText": "Fuente Energía",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "power-spot-swsh-stonjourner"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パワースポット",
+          "canonicalIds": [
+            "powerSpot"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Official regional ability field paired with English Stonjourner profile. Replaces existing English display fallback only; retains canonical powerSpot and English search alias. No Champions wording or mechanics claim.",
+      "searchAliases": [
+        "Power Spot"
+      ]
     }
   ],
   "observedConflicts": [

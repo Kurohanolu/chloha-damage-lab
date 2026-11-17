@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "f6319879cd1641de8902da779fdaf395dc15a09605ab9aa898ae0b88e1db06b6",
+  "sourceSha256": "ce2e4b90b4546100b911888d844f3df6c406c4e2145a993e9658c195fcf389d7",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -44,15 +44,15 @@
     },
     "abilities": {
       "total": 245,
-      "official": 58,
+      "official": 59,
       "verified-secondary": 38,
       "provisional": 0,
-      "unverified": 149,
+      "unverified": 148,
       "officialChampions": 27,
       "displayAvailable": 245,
-      "individuallyAttested": 96,
-      "individuallyAttestedPercent": 39.18,
-      "officialPercent": 23.67,
+      "individuallyAttested": 97,
+      "individuallyAttestedPercent": 39.59,
+      "officialPercent": 24.08,
       "officialChampionsPercent": 11.02
     },
     "items": {
@@ -20181,22 +20181,34 @@
         "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested."
       },
       "パワースポット": {
-        "name": "Power Spot",
+        "name": "Fuente Energía",
         "ja": "パワースポット",
         "en": "Power Spot",
         "es": "",
         "canonicalIds": [
           "powerSpot"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "power-spot-swsh-stonjourner"
+        ],
+        "recordIds": [
+          "power-spot-swsh-fuente-energia"
+        ],
+        "relatedRecordIds": [
+          "power-spot-swsh-fuente-energia"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
-        "aliases": [],
-        "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested."
+        "fallback": false,
+        "aliases": [
+          "Fuente Energía",
+          "Power Spot"
+        ],
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "プラス": {
         "name": "Más",
@@ -35101,6 +35113,15 @@
       ]
     },
     {
+      "id": "power-spot-swsh-fuente-energia",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "パワースポット"
+        }
+      ]
+    },
+    {
       "id": "batch8-swsh-plus",
       "canonicalMatches": [
         {
@@ -47650,18 +47671,6 @@
       "ja": "バッテリー",
       "es": "",
       "candidate": "Battery",
-      "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "パワースポット",
-      "canonicalIds": [
-        "powerSpot"
-      ],
-      "ja": "パワースポット",
-      "es": "",
-      "candidate": "Power Spot",
       "reason": "Existing English/Japanese display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
