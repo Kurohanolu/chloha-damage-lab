@@ -17,6 +17,65 @@
  const language=locale=>locales.includes(locale)?locale:'ja';
  const moveName=(key,locale)=>{const fallback=globalThis.ChlohaLocalizedNames?.moves?.[key]?.[locale]||globalThis.ChlohaPokeAPILocalizedNames?.moves?.[key]?.[locale]||(locale==='es-LA'?(globalThis.ChlohaLocalizedNames?.moves?.[key]?.es||globalThis.ChlohaPokeAPILocalizedNames?.moves?.[key]?.es):null)||words[locale].missing;return locale==='es-LA'?(globalThis.ChlohaEsLa?.entity?.('moves',key,fallback)||fallback):fallback;};
  function stockpile(locale,count){locale=language(locale);const w=words[locale];return {title:w.title(moveName('はきだす',locale)),count:w.count(count),power:w.power(count*100)};}
+
+ // Product UI copy; move names remain in the existing canonical dictionaries.
+ const countWords={
+  ja:['味方のひんし数','攻撃を受けた回数',n=>n+'匹',n=>n+'回','6回以上'],
+  en:['Fainted allies','Hits taken',n=>n+(n===1?' ally':' allies'),n=>n+(n===1?' hit':' hits'),'6+ hits'],
+  fr:['Alliés K.O.','Coups reçus',n=>n+(n===1?' allié':' alliés'),n=>n+(n===1?' coup':' coups'),'6 coups ou plus'],
+  de:['Besiegte Verbündete','Erlittene Treffer',n=>n+' Verbündete',n=>n+' Treffer','6+ Treffer'],
+  es:['Aliados debilitados','Golpes recibidos',n=>n+(n===1?' aliado':' aliados'),n=>n+(n===1?' golpe':' golpes'),'6 golpes o más'],
+  'es-LA':['Aliados debilitados','Golpes recibidos',n=>n+(n===1?' aliado':' aliados'),n=>n+(n===1?' golpe':' golpes'),'6 golpes o más'],
+  it:['Alleati esausti','Colpi subiti',n=>n+(n===1?' alleato':' alleati'),n=>n+(n===1?' colpo':' colpi'),'6 o più colpi'],
+  ko:['기절한 아군 수','공격받은 횟수',n=>n+'마리',n=>n+'회','6회 이상'],
+  'zh-Hans':['陷入昏厥的同伴数量','受到攻击的次数',n=>n+'只',n=>n+'次','6次以上'],
+  'zh-Hant':['陷入瀕死的同伴數量','受到攻擊的次數',n=>n+'隻',n=>n+'次','6次以上']
+ };
+ const countSpecs=[
+  {panel:'lastRespectsPanel',input:'faintedAllies',move:'おはかまいり',max:5,kind:0},
+  {panel:'rageFistPanel',input:'rageFistHits',move:'ふんどのこぶし',max:6,kind:1}
+ ];
+ function countCopy(locale,spec,value){
+  locale=language(locale);const w=countWords[locale],n=Math.min(spec.max,Math.max(0,Number(value)||0));
+  return {title:(locale==='ja'?spec.move:moveName(spec.move,locale))+(locale==='ja'?'：':': ')+w[spec.kind],count:spec.kind===1&&n===6?w[4]:w[spec.kind+2](n),power:words[locale].power(50+50*n)};
+ }
+ function mountCounts(){
+  const anchor=document.getElementById('spitUpPanel');if(!anchor)return;
+  for(const spec of [...countSpecs].reverse()){
+   const panel=document.getElementById(spec.panel),input=document.getElementById(spec.input);
+   if(!panel||!input||panel.querySelector('[data-move-count]'))continue;
+   panel.setAttribute('data-no-translate','');panel.setAttribute('role','group');
+   input.closest('.fields').hidden=true;
+   const choices=document.createElement('div');choices.style.cssText='display:flex;flex-wrap:wrap;gap:8px;margin-top:8px';
+   for(let n=0;n<=spec.max;n++){
+    const b=document.createElement('button');b.type='button';b.dataset.moveCount=String(n);
+    b.style.cssText='min-height:44px;min-width:44px;flex:1 0 44px;white-space:normal';
+    b.addEventListener('click',()=>{input.value=String(n);input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));schedule();});
+    choices.append(b);
+   }
+   const note=document.createElement('small');note.id=spec.panel+'PowerNote';note.setAttribute('aria-live','polite');
+   panel.append(choices,note);anchor.after(panel);
+  }
+ }
+ function renderCounts(){
+  const locale=language(globalThis.ChlohaLocale?.get?.());
+  for(const spec of countSpecs){
+   const panel=document.getElementById(spec.panel),input=document.getElementById(spec.input);
+   if(!panel||!input||!panel.querySelector('[data-move-count]'))continue;
+   const value=Math.min(spec.max,Math.max(0,Number(input.value)||0)),copy=countCopy(locale,spec,value);
+   const set=(node,text)=>{if(node&&node.textContent!==text)node.textContent=text;};
+   if(panel.getAttribute('aria-label')!==copy.title)panel.setAttribute('aria-label',copy.title);
+   set(panel.querySelector('h2'),copy.title);
+   for(const b of panel.querySelectorAll('[data-move-count]')){
+    const n=Number(b.dataset.moveCount),pressed=String(n===value);
+    if(b.getAttribute('aria-pressed')!==pressed)b.setAttribute('aria-pressed',pressed);
+    b.style.fontWeight=n===value?'700':'400';b.style.outline=n===value?'2px solid currentColor':'none';
+    set(b,countCopy(locale,spec,n).count);
+   }
+   set(document.getElementById(spec.panel+'PowerNote'),copy.power);
+  }
+ }
+
  const errorKinds=['invalidStats','budgetAtt','budgetDef','budget'];
  function errorKind(value){
   const text=String(value||'');
@@ -45,7 +104,7 @@
   const open=locale==='ja'?'（':' (',close=locale==='ja'?'）':')';
   return names.attacker+' '+names.move+open+match[2]+close+' → '+names.defender+open+match[4]+' / HP '+match[5]+close+match[6];
  }
- const api=Object.freeze({locales:Object.freeze(locales),stockpile,errorKind,summary,errorText:(locale,kind)=>words[language(locale)][kind]});
+ const api=Object.freeze({locales:Object.freeze(locales),stockpile,countCopy,countSpecs:Object.freeze(countSpecs),errorKind,summary,errorText:(locale,kind)=>words[language(locale)][kind]});
  globalThis.ChlohaLocaleQuality=api;
  if(typeof module!=='undefined'&&module.exports)module.exports=api;
  if(!globalThis.document)return;
@@ -62,6 +121,7 @@
   if(typeof next==='string'&&next!==node.textContent)node.textContent=next;
  }
  function render(){
+  renderCounts();
   const locale=language(globalThis.ChlohaLocale?.get?.()),panel=document.getElementById('spitUpPanel');
   if(panel){
    const selected=Number(panel.querySelector('[data-stockpile][aria-pressed=true]')?.dataset.stockpile||1),copy=stockpile(locale,selected);
@@ -90,6 +150,7 @@
  let queued=false;
  const schedule=()=>{if(!queued){queued=true;queueMicrotask(()=>{queued=false;render();});}};
  function init(){
+  mountCounts();document.addEventListener('input',schedule);document.addEventListener('change',schedule);
   render();document.addEventListener('chloha:localechange',schedule);
   const observer=new MutationObserver(schedule);
   for(const id of ['spitUpPanel','error','dbStatus']){const node=document.getElementById(id);if(node)observer.observe(node,{childList:true,subtree:true,characterData:true,attributes:id==='spitUpPanel',attributeFilter:id==='spitUpPanel'?['aria-pressed']:undefined});}
