@@ -4,7 +4,7 @@
  const wireDescriptionLimit=5000;
  const stableTitle='Singularity v1.0.0',stableVersion='v1.0.0',wireVersion='v1.0';
  // Only explicitly supported releases may use the historical two-part wire format.
- const candidates=new Map([1,2,3,4,5,6,7,8,9,11,12,14,15].map(number=>{
+ const candidates=new Map([1,2,3,4,5,6,7,8,9,11,12,14,15,16].map(number=>{
   const fullVersion='v1.1.0 Pre-Release '+number,wireVersion='v1.1 Pre-Release '+number;
   return ['Singularity '+fullVersion,Object.freeze({fullVersion,wireVersion,prefix:'[Singularity release: '+fullVersion+']\n\n'})];
  }));
