@@ -1,0 +1,15 @@
+# Pre.17 standing owner authorization binding
+
+This records application of the owner’s existing autonomous translation-publication instruction, not a new personal approval message or authority inferred from the auditor. The owner explicitly authorized confirmed ES-LA names, dictionary and alias corrections, minor translation display fixes and evidence updates without additional approval, conditional on canonical IDs, evidence, nine-language preservation, ten-language tests, numerical equivalence, mandatory CI, independent review, release gates and actual production verification.
+
+The bounded candidate adds nine official name confirmations and fourteen Champions confirmations from private owner captures and official LAIC publication, with the only displayed-name correction `modesta` to `Modesta`. It does not add supported species, moves or abilities, alter calculation mechanics or performance data, change existing nine-language dictionaries, or change hosting/authentication. Private originals are not published. ES-LA feedback remains paused.
+
+All fourteen exact-source CI workflows passed. Genuine independent 6.1 Sol review passed conditionally after verifying the corrected expectations, retained historical tests and increased current coverage. The owner’s standing authorization covers this bounded update. The receipt records application of that standing authority at its recorded time, not fresh owner confirmation.
+
+The auditor’s remaining procedural conditions are mandatory: unchanged protected source, fresh metadata-head CI, exact-source deployment, actual dual-site browser and full asset/cache acceptance, pinned rollback evidence and formal publication gates. These conditions are already required by the owner’s instruction and are not waived. Stop if any fails. The prior blocked head and pre.16 receipts are not acceptance of pre.17.
+
+## Explicit aggregate-capacity permission and renewed source binding
+
+After the 55-minute aggregate timeout blocked completion, the owner was asked explicitly to permit only a 55-to-90-minute aggregate CI limit increase, with test content and individual limits unchanged, repeated independent review and all CI, and no publication until all pass. The owner replied: “承認するぞ 進めてくれ”. This specific permission supplements the standing bounded translation-publication instruction; it does not waive any test or the actual live acceptance requirement.
+
+The resulting new source is `97747972c672804c1a286b8a3ac216b519c5ab7d`, tree `b218ae964b8c930673b29d6385dd09373cc8b2d8`. Its fresh genuine 6.1 Sol report has SHA-256 `51c24cd6be4aa1ae67167cff995559e486eb326e456d3b724cf9c0ee5a604671`; all 73 candidate tests and all 14 workflows passed. The older source review/authorization was reset, not reused to approve changed workflow bytes. This updated receipt truthfully binds the new reviewed source under both actual owner instructions, with fresh metadata-head CI, exact-source deployment, real dual-site live acceptance and final publication gates still mandatory.
