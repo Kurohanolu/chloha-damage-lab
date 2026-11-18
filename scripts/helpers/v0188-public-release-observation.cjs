@@ -63,6 +63,14 @@ function pre8Manifest(){
  assert.equal(release.tag,'v1.1.0-pre.8');assert.equal(release.migration.liveTargetVerified,true);
  return release;
 }
+const pre18Commit='c52a65f4487fa8b4ceb2cd1ac5d85a2334697854',pre18Tree='beacee500cd7cd651bd312645d31417f1b47940f';
+function pre18Manifest(){
+ const git=args=>require('node:child_process').execFileSync('git',args,{cwd:require('node:path').resolve(__dirname,'../..'),encoding:'utf8'}).trim();
+ assert.equal(git(['rev-parse',pre18Commit+'^{tree}']),pre18Tree,'Published pre.18 commit/tree must remain pinned');
+ const release=JSON.parse(git(['show',pre18Commit+':release.json']));
+ assert.equal(release.tag,'v1.1.0-pre.18');assert.equal(release.migration.liveTargetVerified,true);
+ return release;
+}
 const pre17Commit='6360fa3a243c234993e032a415540b2c4691afeb',pre17Tree='bfb5619c528b396877f7c9e5a1f77aec664f106b';
 function pre17Manifest(){
  const git=args=>require('node:child_process').execFileSync('git',args,{cwd:require('node:path').resolve(__dirname,'../..'),encoding:'utf8'}).trim();
@@ -122,7 +130,23 @@ function pre9Manifest(){
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.18'){
+ if(localRelease.tag==='v1.1.0-pre.19'){
+  assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.19 must use its own release decision, not a historical follow-up marker');
+  const predecessor=pre18Manifest();
+  if(localRelease.qualityReview?.ownerApproval==='pending'){
+   assert.equal(localRelease.migration?.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,predecessor,'Pre.19 development must observe the complete pinned published pre.18 manifest');
+  }else{
+   verifyCutoverApproval(localRelease);
+   if(actual.tag===predecessor.tag){
+    assert.equal(localRelease.migration.liveTargetVerified,false,'After pre.19 acceptance the previous public release is no longer valid');
+    assert.deepEqual(publicRelease,predecessor,'Pre-cutover observation must match the complete immutable pre.18 manifest');
+   }else{
+    verifyCutoverApproval(publicRelease);
+    assert.deepEqual(actual,identity(localRelease),'Approved pre.19 may observe only its own identity or the pinned pre-cutover pre.18');
+   }
+  }
+ }else if(localRelease.tag==='v1.1.0-pre.18'){
   assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.17 must use its own release decision, not a historical follow-up marker');
   const predecessor=pre17Manifest();
   if(localRelease.qualityReview?.ownerApproval==='pending'){
