@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "66cae82e10d28ad6115acdacc964fd3e84f51b4a",
+  "checkedAt": "2026-11-17",
+  "scope": "Three existing ability identities: one English fallback dictionary correction and two evidence-only attestations; no Champions or runtime membership change.",
+  "sources": [
+    {
+      "id": "batch11-swsh-regidrago",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/regidrago/",
+      "title": "Official LATAM regidrago profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Independent direct HTML visible text, excluding script/style; paired English ability field binds identity only.",
+      "rawSha256": "ae69813cedb701b9d7a9f0b6d473c42c1f686febd93af7ba5406e3a4719b84ee",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/regidrago/",
+      "englishRawSha256": "f065fcf4f21caf00a965becb83f3365544d2cc78fd628b8665cab300a93cb5ad",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing, not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not calculation evidence."
+      ]
+    },
+    {
+      "id": "batch11-swsh-galarian-articuno",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-articuno/",
+      "title": "Official LATAM galarian-articuno profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Independent direct HTML visible text, excluding script/style; paired English ability field binds identity only.",
+      "rawSha256": "e2f15fa74c03189f8fb421beda348735eaf842c2e966488531f18b9281c2f9e2",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-articuno/",
+      "englishRawSha256": "b3bb5d65d048f3ff166475a3484bcd89d01cb56f5269431d54fc3201988556fd",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing, not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not calculation evidence."
+      ]
+    },
+    {
+      "id": "batch11-swsh-galarian-zapdos",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/pokemon/galarian-zapdos/",
+      "title": "Official LATAM galarian-zapdos profile",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-17",
+      "evidenceMethod": "Independent direct HTML visible text, excluding script/style; paired English ability field binds identity only.",
+      "rawSha256": "df83d2227b09c4328432d970943fadbf508e26b6eceb3f8e8ca5edd9002836f5",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/galarian-zapdos/",
+      "englishRawSha256": "096b9e91886155bd1bbc058c99cfedca37f373a4405de79c6f819734eba4d3b8",
+      "localeEvidence": {
+        "basis": "América Latina region selector and official es-mx route.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing, not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions are not calculation evidence."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch11-swsh-dragons-maw",
+      "category": "abilities",
+      "canonicalEnglish": "Dragon's Maw",
+      "sourceEs": "Mandíbula Dragón",
+      "esLA": "Mandíbula Dragón",
+      "rawObservedText": "Mandíbula Dragón",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch11-swsh-regidrago"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "りゅうのあぎと",
+          "canonicalIds": [
+            "dragonsMaw"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Paired same-Pokémon official LATAM and English ability fields. Historical regional name only; no Champions, mechanics, roster or picker expansion. Existing supported engine record, but no roster association/native option: dictionary and latent trace binding correction only.",
+      "searchAliases": [
+        "Dragon's Maw"
+      ]
+    },
+    {
+      "id": "batch11-swsh-competitive",
+      "category": "abilities",
+      "canonicalEnglish": "Competitive",
+      "sourceEs": "Tenacidad",
+      "esLA": "Tenacidad",
+      "rawObservedText": "Tenacidad",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch11-swsh-galarian-articuno"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "かちき",
+          "canonicalIds": [
+            "unsupported:かちき"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Paired same-Pokémon official LATAM and English ability fields. Historical regional name only; no Champions, mechanics, roster or picker expansion. Existing display name and unsupported mechanics status remain unchanged."
+    },
+    {
+      "id": "batch11-swsh-defiant",
+      "category": "abilities",
+      "canonicalEnglish": "Defiant",
+      "sourceEs": "Competitivo",
+      "esLA": "Competitivo",
+      "rawObservedText": "Competitivo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch11-swsh-galarian-zapdos"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "まけんき",
+          "canonicalIds": [
+            "unsupported:まけんき"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Paired same-Pokémon official LATAM and English ability fields. Historical regional name only; no Champions, mechanics, roster or picker expansion. Existing display name and unsupported mechanics status remain unchanged."
+    }
+  ]
+}
