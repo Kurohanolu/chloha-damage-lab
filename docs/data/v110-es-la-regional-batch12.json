@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "a68b987d25d392076f36413e7f626ea3b71391c2",
+  "checkedAt": "2026-11-18",
+  "status": "integrated-candidate-not-released",
+  "scope": "Five existing user-visible names from an official Champions LATAM distribution announcement. Two new official names, one generic-to-Champions promotion, two corroborations. No display spelling changes proposed.",
+  "sources": [
+    {
+      "id": "batch12-champions-laic2027-sylveon",
+      "url": "https://championships.pokemon.com/es-la/events/internationals/2027/sao-paulo",
+      "title": "Official LATAM LAIC 2027 Sylveon distribution",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-la",
+      "targetGame": "Pokémon Champions",
+      "checkedAt": "2026-11-18",
+      "evidenceMethod": "Direct HTTP HTML response; decode encodedData string and HTML entities as prescribed by site bootstrap, then inspect middleCopy_html. Corroborated by search-index article. No rendered screenshot or physical-game claim.",
+      "rawSha256": "84a57841f41cef6038a926972c9c9a71fe5412f194825075d6cff752c4b71075",
+      "englishIdentityUrl": "https://championships.pokemon.com/en-us/events/internationals/2027/sao-paulo",
+      "englishRawSha256": "3ed131fccfd06538d0bc36cb6311cb13246779543768e8a09fe1a66550d9625e",
+      "contentPointer": "/contentBlades_o/0/beforeEventBlades_o/12/middleCopy_html",
+      "englishContentPointer": "/contentBlades_o/0/beforeEventBlades_o/5/middleCopy_html",
+      "localeEvidence": {
+        "basis": "Official es-la route and site bootstrap window.data.locale = es-la; parallel en-us exact same distributed Sylveon."
+      },
+      "limitations": [
+        "Official Champions publication wording, not in-game screenshot verification.",
+        "Future distribution announcement does not validate mechanics or change runtime availability.",
+        "HTML payload evidence, not a claim of browser rendering."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "batch12-laic2027-pixilate",
+      "category": "abilities",
+      "canonicalEnglish": "Pixilate",
+      "sourceEs": "Piel Feérica",
+      "esLA": "Piel Feérica",
+      "rawObservedText": "Piel Feérica",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "フェアリースキン",
+          "canonicalIds": [
+            "pixilate"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Piel Feérica",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-quick-attack",
+      "category": "moves",
+      "canonicalEnglish": "Quick Attack",
+      "sourceEs": "Ataque Rápido",
+      "esLA": "Ataque Rápido",
+      "rawObservedText": "Ataque Rápido",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "でんこうせっか",
+          "canonicalIds": [
+            "gw0169_p070"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Ataque Rápido",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-sylveon",
+      "category": "pokemon",
+      "canonicalEnglish": "Sylveon",
+      "sourceEs": "Sylveon",
+      "esLA": "Sylveon",
+      "rawObservedText": "Sylveon",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_28",
+          "canonicalIds": [
+            "gw092_28"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Sylveon",
+        "status": "official",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-modest",
+      "category": "natures",
+      "canonicalEnglish": "Modest",
+      "sourceEs": "Modesta",
+      "esLA": "Modesta",
+      "rawObservedText": "Modesta",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "ひかえめ",
+          "canonicalIds": [
+            "modest"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "modesta",
+        "status": "official",
+        "officialChampions": true
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-hyper-voice",
+      "category": "moves",
+      "canonicalEnglish": "Hyper Voice",
+      "sourceEs": "Hipervoz",
+      "esLA": "Hipervoz",
+      "rawObservedText": "Hipervoz",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ハイパーボイス",
+          "canonicalIds": [
+            "hyperVoice"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Hipervoz",
+        "status": "official",
+        "officialChampions": true
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    }
+  ],
+  "expectedAfterIntegration": {
+    "uniqueNameDenominator": 1029,
+    "officialBefore": 488,
+    "officialAfter": 490,
+    "unverifiedBefore": 380,
+    "unverifiedAfter": 378,
+    "officialChampionsBefore": 162,
+    "officialChampionsAfter": 165
+  },
+  "excluded": [
+    {
+      "english": "Detect",
+      "esLA": "Detección",
+      "reason": "Not registered in current move inventory; do not add mechanics or inventory."
+    },
+    {
+      "english": "Yawn",
+      "esLA": "Bostezo",
+      "reason": "Not registered in current move inventory; do not add mechanics or inventory."
+    }
+  ]
+}

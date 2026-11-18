@@ -2176,6 +2176,170 @@
         "Historical regional marketing, not proof of in-game ES-LA support or Champions wording.",
         "Mechanics descriptions are not calculation evidence."
       ]
+    },
+    {
+      "id": "batch12-champions-laic2027-sylveon",
+      "url": "https://championships.pokemon.com/es-la/events/internationals/2027/sao-paulo",
+      "title": "Official LATAM LAIC 2027 Sylveon distribution",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-la",
+      "targetGame": "Pokémon Champions",
+      "checkedAt": "2026-11-18",
+      "evidenceMethod": "Direct HTTP HTML response; decode encodedData string and HTML entities as prescribed by site bootstrap, then inspect middleCopy_html. Corroborated by search-index article. No rendered screenshot or physical-game claim.",
+      "rawSha256": "84a57841f41cef6038a926972c9c9a71fe5412f194825075d6cff752c4b71075",
+      "englishIdentityUrl": "https://championships.pokemon.com/en-us/events/internationals/2027/sao-paulo",
+      "englishRawSha256": "3ed131fccfd06538d0bc36cb6311cb13246779543768e8a09fe1a66550d9625e",
+      "contentPointer": "/contentBlades_o/0/beforeEventBlades_o/12/middleCopy_html",
+      "englishContentPointer": "/contentBlades_o/0/beforeEventBlades_o/5/middleCopy_html",
+      "localeEvidence": {
+        "basis": "Official es-la route and site bootstrap window.data.locale = es-la; parallel en-us exact same distributed Sylveon."
+      },
+      "limitations": [
+        "Official Champions publication wording, not in-game screenshot verification.",
+        "Future distribution announcement does not validate mechanics or change runtime availability.",
+        "HTML payload evidence, not a claim of browser rendering."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-33031",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch4.md#capture-33031",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33031 — Gyarados Crunch detail",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33031.jpg",
+      "rawSha256": "e7c96311ec72b0c6b68800817ab4d0ebf7893e8b42d9a8b8312fc1f2d7d0473e",
+      "byteLength": 207503,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request, supported by visible regional interface vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Capture date, game build and platform not independently established.",
+        "Visible names only; no mechanics or physical calculator QA certification.",
+        "Popup backgrounds not used when fully exposed summary is available."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-33033",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch4.md#capture-33033",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33033 — Gengar Shadow Ball detail",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33033.jpg",
+      "rawSha256": "702a181bbc05329d96c98be0ad1b1514b40b7d97fa58518a29df603f6e186b02",
+      "byteLength": 208858,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request, supported by visible regional interface vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Capture date, game build and platform not independently established.",
+        "Visible names only; no mechanics or physical calculator QA certification.",
+        "Popup backgrounds not used when fully exposed summary is available."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-33035",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch4.md#capture-33035",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33035 — Gengar Sludge Bomb detail",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33035.jpg",
+      "rawSha256": "63b5d51ef1b415c664847e5f2e7ed64115f07c2f70abe38551a4bb4a942e826e",
+      "byteLength": 203640,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request, supported by visible regional interface vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Capture date, game build and platform not independently established.",
+        "Visible names only; no mechanics or physical calculator QA certification.",
+        "Popup backgrounds not used when fully exposed summary is available."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-33029",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch4.md#capture-33029",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33029 — Gyarados full summary",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33029.jpg",
+      "rawSha256": "5b08476311f76fec3fc79ddbd1605cc55d37530800bb1aa0dc4cd55ae5bd5dbb",
+      "byteLength": 307738,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request, supported by visible regional interface vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Capture date, game build and platform not independently established.",
+        "Visible names only; no mechanics or physical calculator QA certification.",
+        "Popup backgrounds not used when fully exposed summary is available."
+      ]
+    },
+    {
+      "id": "owner-champions-capture-33023",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch4.md#capture-33023",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33023 — Gengar full summary",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33023.jpg",
+      "rawSha256": "2f7df890550a5417974c497c103f91fabd103909ff2e9510f72cb12f7d101c85",
+      "byteLength": 308305,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request, supported by visible regional interface vocabulary.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Capture date, game build and platform not independently established.",
+        "Visible names only; no mechanics or physical calculator QA certification.",
+        "Popup backgrounds not used when fully exposed summary is available."
+      ]
     }
   ],
   "records": [
@@ -37573,6 +37737,798 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Paired same-Pokémon official LATAM and English ability fields. Historical regional name only; no Champions, mechanics, roster or picker expansion. Existing display name and unsupported mechanics status remain unchanged."
+    },
+    {
+      "id": "batch12-laic2027-pixilate",
+      "category": "abilities",
+      "canonicalEnglish": "Pixilate",
+      "sourceEs": "Piel Feérica",
+      "esLA": "Piel Feérica",
+      "rawObservedText": "Piel Feérica",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "フェアリースキン",
+          "canonicalIds": [
+            "pixilate"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Piel Feérica",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-quick-attack",
+      "category": "moves",
+      "canonicalEnglish": "Quick Attack",
+      "sourceEs": "Ataque Rápido",
+      "esLA": "Ataque Rápido",
+      "rawObservedText": "Ataque Rápido",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "でんこうせっか",
+          "canonicalIds": [
+            "gw0169_p070"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Ataque Rápido",
+        "status": "unverified",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-sylveon",
+      "category": "pokemon",
+      "canonicalEnglish": "Sylveon",
+      "sourceEs": "Sylveon",
+      "esLA": "Sylveon",
+      "rawObservedText": "Sylveon",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw092_28",
+          "canonicalIds": [
+            "gw092_28"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Sylveon",
+        "status": "official",
+        "officialChampions": false
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-modest",
+      "category": "natures",
+      "canonicalEnglish": "Modest",
+      "sourceEs": "Modesta",
+      "esLA": "Modesta",
+      "rawObservedText": "Modesta",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "ひかえめ",
+          "canonicalIds": [
+            "modest"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "modesta",
+        "status": "official",
+        "officialChampions": true
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "batch12-laic2027-hyper-voice",
+      "category": "moves",
+      "canonicalEnglish": "Hyper Voice",
+      "sourceEs": "Hipervoz",
+      "esLA": "Hipervoz",
+      "rawObservedText": "Hipervoz",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch12-champions-laic2027-sylveon"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ハイパーボイス",
+          "canonicalIds": [
+            "hyperVoice"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "baseline": {
+        "name": "Hipervoz",
+        "status": "official",
+        "officialChampions": true
+      },
+      "notes": "Paired same distributed Sylveon fields establish canonical identity. Preserve existing runtime identity and mechanics. Case-only Modesta observation does not override established earlier spelling."
+    },
+    {
+      "id": "owner-champions-batch4-moves-crunch",
+      "category": "moves",
+      "canonicalEnglish": "Crunch",
+      "sourceEs": "Triturar",
+      "esLA": "Triturar",
+      "rawObservedText": "Triturar",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33031",
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かみくだく",
+          "canonicalIds": [
+            "crunch"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-shadow-ball",
+      "category": "moves",
+      "canonicalEnglish": "Shadow Ball",
+      "sourceEs": "Bola Sombra",
+      "esLA": "Bola Sombra",
+      "rawObservedText": "Bola Sombra",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33033",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "シャドーボール",
+          "canonicalIds": [
+            "shadowBall"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-sludge-bomb",
+      "category": "moves",
+      "canonicalEnglish": "Sludge Bomb",
+      "sourceEs": "Bomba Lodo",
+      "esLA": "Bomba Lodo",
+      "rawObservedText": "Bomba Lodo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33035",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ヘドロばくだん",
+          "canonicalIds": [
+            "sludgeBomb"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-waterfall",
+      "category": "moves",
+      "canonicalEnglish": "Waterfall",
+      "sourceEs": "Cascada",
+      "esLA": "Cascada",
+      "rawObservedText": "Cascada",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "たきのぼり",
+          "canonicalIds": [
+            "waterfall"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-avalanche",
+      "category": "moves",
+      "canonicalEnglish": "Avalanche",
+      "sourceEs": "Alud",
+      "esLA": "Alud",
+      "rawObservedText": "Alud",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ゆきなだれ",
+          "canonicalIds": [
+            "gw0170_u054"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-power-whip",
+      "category": "moves",
+      "canonicalEnglish": "Power Whip",
+      "sourceEs": "Latigazo",
+      "esLA": "Latigazo",
+      "rawObservedText": "Latigazo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "パワーウィップ",
+          "canonicalIds": [
+            "v096_097"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-moves-protect",
+      "category": "moves",
+      "canonicalEnglish": "Protect",
+      "sourceEs": "Protección",
+      "esLA": "Protección",
+      "rawObservedText": "Protección",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "まもる",
+          "canonicalIds": [
+            "protect"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-pokemon-gyarados",
+      "category": "pokemon",
+      "canonicalEnglish": "Gyarados",
+      "sourceEs": "Gyarados",
+      "esLA": "Gyarados",
+      "rawObservedText": "Gyarados",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "candidate093_07",
+          "canonicalIds": [
+            "candidate093_07"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-pokemon-gengar",
+      "category": "pokemon",
+      "canonicalEnglish": "Gengar",
+      "sourceEs": "Gengar",
+      "esLA": "Gengar",
+      "rawObservedText": "Gengar",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "pokemon",
+          "key": "gw091_02",
+          "canonicalIds": [
+            "gw091_02"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-abilities-intimidate",
+      "category": "abilities",
+      "canonicalEnglish": "Intimidate",
+      "sourceEs": "Intimidación",
+      "esLA": "Intimidación",
+      "rawObservedText": "Intimidación",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "いかく",
+          "canonicalIds": [
+            "intimidate"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-abilities-cursed-body",
+      "category": "abilities",
+      "canonicalEnglish": "Cursed Body",
+      "sourceEs": "Cuerpo Maldito",
+      "esLA": "Cuerpo Maldito",
+      "rawObservedText": "Cuerpo Maldito",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "のろわれボディ",
+          "canonicalIds": [
+            "unsupported:のろわれボディ"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-natures-impish",
+      "category": "natures",
+      "canonicalEnglish": "Impish",
+      "sourceEs": "Agitada",
+      "esLA": "Agitada",
+      "rawObservedText": "Agitada",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "わんぱく",
+          "canonicalIds": [
+            "impish"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-natures-modest",
+      "category": "natures",
+      "canonicalEnglish": "Modest",
+      "sourceEs": "Modesta",
+      "esLA": "Modesta",
+      "rawObservedText": "Modesta",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "natures",
+          "key": "ひかえめ",
+          "canonicalIds": [
+            "modest"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-types-water",
+      "category": "types",
+      "canonicalEnglish": "Water",
+      "sourceEs": "Agua",
+      "esLA": "Agua",
+      "rawObservedText": "AGUA",
+      "displayNormalization": "Type label uppercase normalized to existing title-case display.",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "みず",
+          "canonicalIds": [
+            "みず"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-types-flying",
+      "category": "types",
+      "canonicalEnglish": "Flying",
+      "sourceEs": "Volador",
+      "esLA": "Volador",
+      "rawObservedText": "VOLADOR",
+      "displayNormalization": "Type label uppercase normalized to existing title-case display.",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "ひこう",
+          "canonicalIds": [
+            "ひこう"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-types-ghost",
+      "category": "types",
+      "canonicalEnglish": "Ghost",
+      "sourceEs": "Fantasma",
+      "esLA": "Fantasma",
+      "rawObservedText": "FANTASMA",
+      "displayNormalization": "Type label uppercase normalized to existing title-case display.",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "ゴースト",
+          "canonicalIds": [
+            "ゴースト"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-types-poison",
+      "category": "types",
+      "canonicalEnglish": "Poison",
+      "sourceEs": "Veneno",
+      "esLA": "Veneno",
+      "rawObservedText": "VENENO",
+      "displayNormalization": "Type label uppercase normalized to existing title-case display.",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "types",
+          "key": "どく",
+          "canonicalIds": [
+            "どく"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-stats-hp",
+      "category": "stats",
+      "canonicalEnglish": "HP",
+      "sourceEs": "PS",
+      "esLA": "PS",
+      "rawObservedText": "PS",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "HP",
+          "canonicalIds": [
+            "HP"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-stats-attack",
+      "category": "stats",
+      "canonicalEnglish": "Attack",
+      "sourceEs": "Ataque",
+      "esLA": "Ataque",
+      "rawObservedText": "Ataque",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "こうげき",
+          "canonicalIds": [
+            "Attack"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-stats-defense",
+      "category": "stats",
+      "canonicalEnglish": "Defense",
+      "sourceEs": "Defensa",
+      "esLA": "Defensa",
+      "rawObservedText": "Defensa",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "ぼうぎょ",
+          "canonicalIds": [
+            "Defense"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-stats-speed",
+      "category": "stats",
+      "canonicalEnglish": "Speed",
+      "sourceEs": "Velocidad",
+      "esLA": "Velocidad",
+      "rawObservedText": "Velocidad",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "すばやさ",
+          "canonicalIds": [
+            "Speed"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Visible system name only. Preserve IDs, inventory and mechanics; Gengar identified from species row not nickname."
+    },
+    {
+      "id": "owner-champions-batch4-stats-special-attack",
+      "category": "stats",
+      "canonicalEnglish": "Special Attack",
+      "sourceEs": "Ataque Especial",
+      "esLA": "At. Esp.",
+      "rawObservedText": "At. Esp.",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "nameForm": "abbreviation",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "とくこう",
+          "canonicalIds": [
+            "Special Attack"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Short form only, not full wording attestation."
+    },
+    {
+      "id": "owner-champions-batch4-stats-special-defense",
+      "category": "stats",
+      "canonicalEnglish": "Special Defense",
+      "sourceEs": "Defensa Especial",
+      "esLA": "Def. Esp.",
+      "rawObservedText": "Def. Esp.",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33029",
+        "owner-champions-capture-33023"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "nameForm": "abbreviation",
+      "canonicalMatches": [
+        {
+          "category": "stats",
+          "key": "とくぼう",
+          "canonicalIds": [
+            "Special Defense"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Short form only, not full wording attestation."
     }
   ],
   "observedConflicts": [
