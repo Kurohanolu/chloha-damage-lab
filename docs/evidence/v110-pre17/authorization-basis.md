@@ -1,0 +1,9 @@
+# Pre.17 standing owner authorization binding
+
+This records application of the owner’s existing autonomous translation-publication instruction, not a new personal approval message or authority inferred from the auditor. The owner explicitly authorized confirmed ES-LA names, dictionary and alias corrections, minor translation display fixes and evidence updates without additional approval, conditional on canonical IDs, evidence, nine-language preservation, ten-language tests, numerical equivalence, mandatory CI, independent review, release gates and actual production verification.
+
+The bounded candidate adds nine official name confirmations and fourteen Champions confirmations from private owner captures and official LAIC publication, with the only displayed-name correction `modesta` to `Modesta`. It does not add supported species, moves or abilities, alter calculation mechanics or performance data, change existing nine-language dictionaries, or change hosting/authentication. Private originals are not published. ES-LA feedback remains paused.
+
+All fourteen exact-source CI workflows passed. Genuine independent 6.1 Sol review passed conditionally after verifying the corrected expectations, retained historical tests and increased current coverage. The owner’s standing authorization covers this bounded update. The receipt records application of that standing authority at its recorded time, not fresh owner confirmation.
+
+The auditor’s remaining procedural conditions are mandatory: unchanged protected source, fresh metadata-head CI, exact-source deployment, actual dual-site browser and full asset/cache acceptance, pinned rollback evidence and formal publication gates. These conditions are already required by the owner’s instruction and are not waived. Stop if any fails. The prior blocked head and pre.16 receipts are not acceptance of pre.17.
