@@ -2340,6 +2340,325 @@
         "Visible names only; no mechanics or physical calculator QA certification.",
         "Popup backgrounds not used when fully exposed summary is available."
       ]
+    },
+    {
+      "id": "owner-champions-capture-33045",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33045",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33045",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33045.jpg",
+      "rawSha256": "761c6e5205385cd713020decf80aba8283bfd11799c42d4a7850de766ccdb4f6",
+      "byteLength": 298811,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Trueno"
+    },
+    {
+      "id": "owner-champions-capture-33043",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33043",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33043",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33043.jpg",
+      "rawSha256": "b2ba00bb73317fd89d317fb14faf1a2086499978a068585ffa27b75a4afc9760",
+      "byteLength": 286805,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Gigadrenado"
+    },
+    {
+      "id": "owner-champions-capture-33047",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33047",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33047",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33047.jpg",
+      "rawSha256": "0127e90dd041e0e90b350770450e415d21fd56fc7db7d73aac383682d10b3c2f",
+      "byteLength": 270122,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": null
+    },
+    {
+      "id": "owner-champions-capture-33039",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33039",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33039",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33039.jpg",
+      "rawSha256": "8cfa7abc154057040d27fc499b867e9d655c22298337fc28fc7a6bf35415cdac",
+      "byteLength": 321769,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": null
+    },
+    {
+      "id": "owner-champions-capture-33041",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33041",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33041",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33041.jpg",
+      "rawSha256": "17c3f53ea5eb2776ca898ab255b98e4678d4bfd436c3a045cf827c4fb2cd9d78",
+      "byteLength": 190748,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Hidrobomba"
+    },
+    {
+      "id": "owner-champions-capture-33051",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33051",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33051",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33051.jpg",
+      "rawSha256": "e5d0ea526488e3c9577e18cd9f8d2fbb4b323ff3b3e060b6f8fc627d6baabbac",
+      "byteLength": 267834,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": null
+    },
+    {
+      "id": "owner-champions-capture-33055",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33055",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33055",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33055.jpg",
+      "rawSha256": "9d8a9aef699c2ca856bfd6c7351f3c7f1e279734b8aa704ed982e796ff58fc4d",
+      "byteLength": 270384,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": null
+    },
+    {
+      "id": "owner-champions-capture-33053",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33053",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33053",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33053.jpg",
+      "rawSha256": "92dec233d6829930c18ce65b8ec4df597597d1fe469da0a377888bd1e5cd1747",
+      "byteLength": 288551,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Puño Hielo"
+    },
+    {
+      "id": "owner-champions-capture-33049",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33049",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33049",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33049.jpg",
+      "rawSha256": "e138515bbbcb21c0e8e28d736461653d7d8974fcb1875beec533819e7e47e9d1",
+      "byteLength": 290656,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Colmillo Hielo"
+    },
+    {
+      "id": "owner-champions-capture-33057",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33057",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33057",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33057.jpg",
+      "rawSha256": "b8a1ff0a2ee0b77ae005ab3537ff11bffba4cd8509e56d5ed4a5e766e2a80010",
+      "byteLength": 282775,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": "Infortunio"
+    },
+    {
+      "id": "owner-champions-capture-33059",
+      "url": "https://github.com/Kurohanolu/chloha-damage-lab/blob/main/docs/v110-es-la-owner-captures-batch5.md#capture-33059",
+      "urlRole": "public-attestation-document-not-image",
+      "title": "Pokémon Champions ES-LA owner capture 33059",
+      "authority": "official",
+      "targetGame": "Pokémon Champions",
+      "locale": "es-LA",
+      "providedAt": "2026-11-18",
+      "checkedAt": "2026-11-18",
+      "dateTimezone": "Asia/Tokyo",
+      "capturedAt": null,
+      "filename": "33059.jpg",
+      "rawSha256": "02eac29cab81053ad3ea1c3245eeeac511705ecf1c3b0d2eaf67e3ccba0de329",
+      "byteLength": 276712,
+      "evidenceMethod": "owner-provided-game-screenshot-visually-reviewed",
+      "evidenceAccess": "private-owner-provided",
+      "imagePublished": false,
+      "localeEvidence": {
+        "basis": "Owner supplied in response to ES-LA capture request; language settings are not visible.",
+        "languageSettingsScreenSupplied": false
+      },
+      "limitations": [
+        "Name-only evidence. No mechanics, availability or calculator accuracy certification.",
+        "Capture date, build and platform not independently established.",
+        "Selected detail panel does not attest the mechanics of neighboring list rows."
+      ],
+      "selectedDetailName": null
     }
   ],
   "records": [
@@ -38529,6 +38848,530 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Short form only, not full wording attestation."
+    },
+    {
+      "id": "owner-champions-batch5-moves-thunder",
+      "category": "moves",
+      "canonicalEnglish": "Thunder",
+      "sourceEs": "Trueno",
+      "esLA": "Trueno",
+      "rawObservedText": "Trueno",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33045",
+        "owner-champions-capture-33047"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かみなり",
+          "canonicalIds": [
+            "thunder"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-thunder-punch",
+      "category": "moves",
+      "canonicalEnglish": "Thunder Punch",
+      "sourceEs": "Puño Trueno",
+      "esLA": "Puño Trueno",
+      "rawObservedText": "Puño Trueno",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33045"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かみなりパンチ",
+          "canonicalIds": [
+            "gw0169_p019"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-thunderbolt",
+      "category": "moves",
+      "canonicalEnglish": "Thunderbolt",
+      "sourceEs": "",
+      "esLA": "Atactrueno",
+      "rawObservedText": "Atactrueno",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33045"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "10まんボルト",
+          "canonicalIds": [
+            "thunderbolt"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-skitter-smack",
+      "category": "moves",
+      "canonicalEnglish": "Skitter Smack",
+      "sourceEs": "Golpe Rastrero",
+      "esLA": "Golpe Rastrero",
+      "rawObservedText": "Golpe Rastrero",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33045"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "はいよるいちげき",
+          "canonicalIds": [
+            "gw0170_s009"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-gunk-shot",
+      "category": "moves",
+      "canonicalEnglish": "Gunk Shot",
+      "sourceEs": "Lanzamugre",
+      "esLA": "Lanzamugre",
+      "rawObservedText": "Lanzamugre",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33045"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ダストシュート",
+          "canonicalIds": [
+            "gw0169_p058"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-giga-drain",
+      "category": "moves",
+      "canonicalEnglish": "Giga Drain",
+      "sourceEs": "Gigadrenado",
+      "esLA": "Gigadrenado",
+      "rawObservedText": "Gigadrenado",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33043",
+        "owner-champions-capture-33047"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ギガドレイン",
+          "canonicalIds": [
+            "gw0169_s014"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-energy-ball",
+      "category": "moves",
+      "canonicalEnglish": "Energy Ball",
+      "sourceEs": "Energibola",
+      "esLA": "Bola de Energía",
+      "rawObservedText": "Bola de Energía",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33043"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "エナジーボール",
+          "canonicalIds": [
+            "energyBall"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-fire-punch",
+      "category": "moves",
+      "canonicalEnglish": "Fire Punch",
+      "sourceEs": "Puño Fuego",
+      "esLA": "Puño Fuego",
+      "rawObservedText": "Puño Fuego",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33043"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ほのおのパンチ",
+          "canonicalIds": [
+            "gw0170_s038"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-icy-wind",
+      "category": "moves",
+      "canonicalEnglish": "Icy Wind",
+      "sourceEs": "Viento Hielo",
+      "esLA": "Viento Helado",
+      "rawObservedText": "Viento Helado",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33043",
+        "owner-champions-capture-33055",
+        "owner-champions-capture-33053",
+        "owner-champions-capture-33059"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "こごえるかぜ",
+          "canonicalIds": [
+            "icyWind"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-hydro-pump",
+      "category": "moves",
+      "canonicalEnglish": "Hydro Pump",
+      "sourceEs": "Hidrobomba",
+      "esLA": "Hidrobomba",
+      "rawObservedText": "Hidrobomba",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33039",
+        "owner-champions-capture-33041",
+        "owner-champions-capture-33051"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ハイドロポンプ",
+          "canonicalIds": [
+            "hydroPump"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-ice-fang",
+      "category": "moves",
+      "canonicalEnglish": "Ice Fang",
+      "sourceEs": "Colmillo Hielo",
+      "esLA": "Colmillo Hielo",
+      "rawObservedText": "Colmillo Hielo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33051",
+        "owner-champions-capture-33049"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "こおりのキバ",
+          "canonicalIds": [
+            "gw0170b_002"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-ice-punch",
+      "category": "moves",
+      "canonicalEnglish": "Ice Punch",
+      "sourceEs": "Puño Hielo",
+      "esLA": "Puño Hielo",
+      "rawObservedText": "Puño Hielo",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33055",
+        "owner-champions-capture-33053",
+        "owner-champions-capture-33059"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "れいとうパンチ",
+          "canonicalIds": [
+            "gw0170_s057"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-focus-punch",
+      "category": "moves",
+      "canonicalEnglish": "Focus Punch",
+      "sourceEs": "Puño Certero",
+      "esLA": "Puño Centrado",
+      "rawObservedText": "Puño Centrado",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33053"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "きあいパンチ",
+          "canonicalIds": [
+            "gw0169_p026"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-bulldoze",
+      "category": "moves",
+      "canonicalEnglish": "Bulldoze",
+      "sourceEs": "Terratemblor",
+      "esLA": "Terratemblor",
+      "rawObservedText": "Terratemblor",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33049"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "じならし",
+          "canonicalIds": [
+            "gw0170b_010"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-phantom-force",
+      "category": "moves",
+      "canonicalEnglish": "Phantom Force",
+      "sourceEs": "Golpe Fantasma",
+      "esLA": "Golpe Fantasma",
+      "rawObservedText": "Golpe Fantasma",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33057"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ゴーストダイブ",
+          "canonicalIds": [
+            "gw0169_p043"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-shadow-claw",
+      "category": "moves",
+      "canonicalEnglish": "Shadow Claw",
+      "sourceEs": "Garra Umbría",
+      "esLA": "Garra de Sombra",
+      "rawObservedText": "Garra de Sombra",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33057"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "シャドークロー",
+          "canonicalIds": [
+            "v096_088"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-shadow-punch",
+      "category": "moves",
+      "canonicalEnglish": "Shadow Punch",
+      "sourceEs": "Puño Sombra",
+      "esLA": "Puño Sombra",
+      "rawObservedText": "Puño Sombra",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33057"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "シャドーパンチ",
+          "canonicalIds": [
+            "gw0169_p049"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-hex",
+      "category": "moves",
+      "canonicalEnglish": "Hex",
+      "sourceEs": "Infortunio",
+      "esLA": "Infortunio",
+      "rawObservedText": "Infortunio",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33057",
+        "owner-champions-capture-33059"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "たたりめ",
+          "canonicalIds": [
+            "gw0169_s028"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
+    },
+    {
+      "id": "owner-champions-batch5-moves-night-shade",
+      "category": "moves",
+      "canonicalEnglish": "Night Shade",
+      "sourceEs": "Tinieblas",
+      "esLA": "Tinieblas",
+      "rawObservedText": "Tinieblas",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "owner-champions-capture-33057"
+      ],
+      "targetGame": "Pokémon Champions",
+      "officialChampions": true,
+      "verificationScope": "owner-provided-game-capture-name-only",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ナイトヘッド",
+          "canonicalIds": [
+            "gw0169_s034"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Full system label visually reviewed; exact existing English/Japanese canonical identity retained. Neighboring list names attest spelling only; no mechanics or inventory changes."
     }
   ],
   "observedConflicts": [
