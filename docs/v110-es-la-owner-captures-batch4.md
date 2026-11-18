@@ -16,7 +16,7 @@ Gengar move detail: **Bomba Lodo**, canonical `sludgeBomb` / ヘドロばくだ�
 
 ## Capture 33029
 
-Unobscured Gyarados summary additionally confirms **Cascada**, **Alud**, **Latigazo**, **Agitada**, species **Gyarados**, **Intimidación**, **AGUA** and **VOLADOR**. Defense-up/Special-Attack-down arrows support the Impish nature mapping. Waterfall, Avalanche and Power Whip keep their existing IDs. Avalanche’s unsupported calculation status remains unchanged.
+Unobscured Gyarados summary additionally confirms **Cascada**, **Alud**, **Latigazo**, **Agitada**, species **Gyarados**, **Intimidación**, **AGUA** and **VOLADOR**. Defense-up/Special-Attack-down arrows support the Impish nature mapping. Waterfall, Avalanche and Power Whip keep their existing IDs. Avalanche’s existing manual conditional-power policy remains unchanged; these images do not establish its mechanics.
 
 ## Capture 33023
 

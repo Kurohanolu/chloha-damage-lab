@@ -6,7 +6,7 @@ const cases=[['crunch','かみくだく','Triturar','candidate093_07'],['shadowB
 const ready=p=>p.waitForFunction(()=>!!window.ChlohaLocale&&!!window.ChlohaPersistence&&(!!window.ChlohaLastCalculation||(!document.getElementById('error').hidden&&document.getElementById('output').hidden)));
 const state=p=>p.evaluate(()=>JSON.stringify({state:ChlohaPersistence.capture(),a:window.ChlohaLastCalculation?.a??null,r:window.ChlohaLastCalculation?.r??null,errorHidden:document.getElementById('error').hidden,outputHidden:document.getElementById('output').hidden},(_,v)=>v instanceof Map?{mapEntries:[...v]}:v));
 const expose=c=>c.evaluate(n=>{for(let p=n.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;});
-(async()=>{let lab,browser,context;const evidence={sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),baseline,realDevice:false,productionMutations:0,locales,widths:[390,1440],rows:[]};try{
+(async()=>{let lab,browser,context;const evidence={sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),baseline,realDevice:false,productionMutations:0,locales,widths:[390,1440],rows:[],conditionalRows:[]};try{
  lab=await startLab({compare:true,comparisonRef:baseline});browser=await launchBrowser();
  for(const width of evidence.widths){
   context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});const a=await context.newPage(),b=await context.newPage(),errors=[];
@@ -14,20 +14,29 @@ const expose=c=>c.evaluate(n=>{for(let p=n.parentElement;p;p=p.parentElement)if(
   for(const locale of locales){
    for(const p of [a,b]){await p.selectOption('#chloha-locale',locale);await p.locator('#resetCalculation').click();await ready(p);}
    for(const [id,key,name,species] of cases){
-    for(const p of [a,b]){await expose(p.locator('#dbAttPokemon'));await p.selectOption('#dbAttPokemon',species);await expose(p.locator('#attAbility'));await p.selectOption('#attAbility','none');await expose(p.locator('#dbMove'));await p.selectOption('#dbMove',id);await ready(p);}
+    for(const p of [a,b]){await expose(p.locator('#dbAttPokemon'));await p.selectOption('#dbAttPokemon',species);await expose(p.locator('#attAbility'));await p.selectOption('#attAbility','none');await expose(p.locator('#dbMove'));await p.selectOption('#dbMove',id);if(id==='gw0170_u054'){await expose(p.locator('#conditionalPower'));await p.locator('#conditionalPower').uncheck();}await ready(p);}
     const old=await b.evaluate(k=>ChlohaEsLa.metadata('moves',k),key),now=await a.evaluate(k=>ChlohaEsLa.metadata('moves',k),key);assert.equal(old.status,'unverified');assert.equal(now.status,'official');assert.equal(now.officialChampions,true);assert.equal(now.name,name);assert.deepEqual(now.canonicalIds,[id]);
     if(locale==='es-LA'){
      await a.locator('#moveSearch').fill(name);const exact=a.locator('#moveSuggestions [role=option]').filter({has:a.locator('span').filter({hasText:new RegExp('^'+name+'$')})});assert.equal(await exact.count(),1);assert.equal(await exact.getAttribute('aria-label'),name);await exact.click();assert.equal(await a.locator('#dbMove').inputValue(),id);
     }
-    const canonical=await state(b);if(id==='gw0170_u054'){assert.equal(JSON.parse(canonical).r,null,'Unsupported Avalanche remains fail-closed');assert.equal(JSON.parse(canonical).outputHidden,true);}else{assert.notEqual(JSON.parse(canonical).r,null,'Real numerical result required');assert.equal(JSON.parse(canonical).r.rolls.length,16);}assert.equal(await state(a),canonical,'Exact numeric/state parity '+id+'/'+locale);
+    const canonical=await state(b);assert.notEqual(JSON.parse(canonical).r,null,'Real numerical result required');assert.equal(JSON.parse(canonical).r.rolls.length,16);if(id==='gw0170_u054')assert.equal(JSON.parse(canonical).r.effectivePower,60,'Published manual-condition baseline');assert.equal(await state(a),canonical,'Exact numeric/state parity '+id+'/'+locale);
     assert.equal(await a.locator('#moveSelected').textContent(),await b.locator('#moveSelected').textContent(),'Displayed move name unchanged in all locales');
     for(const p of [a,b]){assert.equal(await p.evaluate(()=>ChlohaPersistence.save()),true);await p.reload();await ready(p);assert.equal(await p.locator('#chloha-locale').inputValue(),locale);assert.equal(await p.locator('#dbMove').inputValue(),id);assert.equal(await state(p),canonical,'Persisted IDs and numbers unchanged');}
     evidence.rows.push({width,locale,id,numericParity:true,saveReload:true,visibleRegionalSearch:locale==='es-LA'});
+    if(id==='gw0170_u054'){
+     const support=p=>p.evaluate(()=>({policy:ChlohaMovePolicy.gw0170_u054,mechanic:window.ChlohaMoveMechanic,status:document.getElementById('dbStatus').textContent,reliability:document.getElementById('reliabilityDetails').textContent}));
+     const prior=await support(b);assert.equal(prior.policy.standardDamageSupported,true);assert.equal(prior.policy.reasonCode,'manual_conditional_double');assert.equal(prior.policy.mechanic,'avalanche');assert.equal(prior.mechanic,'avalanche');assert.deepEqual(await support(a),prior,'Exact published manual-mechanic policy and localized disclosures');
+     for(const p of [a,b]){await expose(p.locator('#conditionalPower'));await p.locator('#conditionalPower').check();await ready(p);}
+     const doubled=await state(b);assert.equal(JSON.parse(doubled).r.effectivePower,120);assert.equal(JSON.parse(doubled).r.rolls.length,16);assert.equal(await state(a),doubled,'Existing manual doubled-power exact parity');assert.deepEqual(await support(a),await support(b));
+     for(const p of [a,b]){assert.equal(await p.evaluate(()=>ChlohaPersistence.save()),true);await p.reload();await ready(p);assert.equal(await p.locator('#conditionalPower').isChecked(),true);assert.equal(await state(p),doubled,'Manual condition persists with exact output');}
+     evidence.conditionalRows.push({width,locale,id,powerOff:60,powerOn:120,numericParity:true,saveReload:true,policyAndDisclosureParity:true});
+     for(const p of [a,b]){await expose(p.locator('#conditionalPower'));await p.locator('#conditionalPower').uncheck();}
+    }
    }
    const nature=await a.evaluate(()=>ChlohaEsLa.metadata('natures','ひかえめ'));assert.equal(nature.name,'Modesta');assert.equal(nature.officialChampions,true);const oldNature=await b.evaluate(()=>ChlohaEsLa.metadata('natures','ひかえめ'));assert.equal(oldNature.name,'modesta');
   }
   assert.deepEqual(errors,[]);await context.close();context=null;
  }
- assert.equal(evidence.rows.length,120);evidence.passed=true;console.log('PASS batch4:100 numerical and20 fail-closed native move/save/reload cases across10locales and2widths,12 visible regional searches; no mechanics expansion');
+ assert.equal(evidence.rows.length,120);assert.equal(evidence.conditionalRows.length,20);evidence.passed=true;console.log('PASS batch4:120 native numerical/save/reload cases plus20manual-condition cases across10locales and2widths,12 visible regional searches; no mechanics expansion');
  }catch(e){evidence.passed=false;evidence.error=e.message;throw e;}finally{fs.mkdirSync('reports/v110',{recursive:true});fs.writeFileSync('reports/v110/owner-batch4-browser.json',JSON.stringify(evidence,null,2)+'\n');await context?.close();await browser?.close();await lab?.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

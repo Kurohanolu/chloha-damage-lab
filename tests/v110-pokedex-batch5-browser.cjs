@@ -1,3 +1,23 @@
+// Preserve the immutable pre16 browser proof; current batch5 metadata promotions have separate full candidate QA.
+if(require('../release.json').tag==='v1.1.0-pre.17'){
+ const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='a68b987d25d392076f36413e7f626ea3b71391c2',tree='c8292fafb8b927985d88ae7865ea8d755efdca76',file='tests/v110-pokedex-batch5-browser.cjs';
+ const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024});
+ assert.equal(git('rev-parse',ref+'^{tree}').trim(),tree);
+ assert.ok(fs.readFileSync(__filename,'utf8').endsWith(git('show',ref+':'+file)),'Every original browser assertion preserved');
+ const root=path.resolve(__dirname,'..'),parent=fs.mkdtempSync(path.join(os.tmpdir(),'pre17-browser-history-')),worktree=path.join(parent,'source');let added=false;
+ try{
+  git('worktree','add','--detach',worktree,ref);added=true;
+  const source=path.join(root,'node_modules'),target=path.join(worktree,'node_modules');
+  if(fs.existsSync(source)){fs.mkdirSync(target,{recursive:true});for(const entry of fs.readdirSync(source))fs.symlinkSync(path.join(source,entry),path.join(target,entry));}
+  const run=spawnSync(process.execPath,[file],{cwd:worktree,stdio:'inherit',timeout:1180000});
+  const evidence=path.join(worktree,'reports/v110/pokedex-batch5-browser.json');
+  if(fs.existsSync(evidence)){const report=JSON.parse(fs.readFileSync(evidence));report.role='Historical pre16 browser evidence only; not current pre17 acceptance';fs.mkdirSync('reports/v110/historical',{recursive:true});fs.writeFileSync('reports/v110/historical/pre16-pokedex-batch5-browser.json',JSON.stringify(report,null,2)+'\n');}
+  assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0);
+ }finally{try{if(added)git('worktree','remove','--force',worktree);}finally{fs.rmSync(parent,{recursive:true,force:true});}}
+ console.log('PASS immutable pre16 Pokédex batch5 browser proof; current candidate is checked separately');process.exit(0);
+}
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),{execFileSync}=require('node:child_process');
 const {startLab,launchBrowser,blockExternal}=require('./helpers/v0188-browser-lab.cjs');
