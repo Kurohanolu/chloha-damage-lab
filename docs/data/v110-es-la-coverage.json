@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "a9e84c1b962ce57e0d228844229081d974de14909001ba6de42aafaebd0f5268",
+  "sourceSha256": "980c880cfa9db4072feea04dab34878c8accb1ab73e89b21f413cfaeb9b91ba0",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -31,16 +31,16 @@
     },
     "moves": {
       "total": 335,
-      "official": 65,
-      "verified-secondary": 101,
+      "official": 84,
+      "verified-secondary": 96,
       "provisional": 0,
-      "unverified": 169,
-      "officialChampions": 58,
+      "unverified": 155,
+      "officialChampions": 77,
       "displayAvailable": 335,
-      "individuallyAttested": 166,
-      "individuallyAttestedPercent": 49.55,
-      "officialPercent": 19.4,
-      "officialChampionsPercent": 17.31
+      "individuallyAttested": 180,
+      "individuallyAttestedPercent": 53.73,
+      "officialPercent": 25.07,
+      "officialChampionsPercent": 22.99
     },
     "abilities": {
       "total": 245,
@@ -10949,17 +10949,28 @@
         "canonicalIds": [
           "hydroPump"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33039",
+          "owner-champions-capture-33041",
+          "owner-champions-capture-33051"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-hydro-pump"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-hydro-pump"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Hidrobomba"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "れいとうビーム": {
         "name": "Rayo de Hielo",
@@ -11000,26 +11011,26 @@
         "canonicalIds": [
           "thunderbolt"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15",
-          "pokexperto-champions-moves-85-detail"
+          "owner-champions-capture-33045"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-85"
+          "owner-champions-batch5-moves-thunderbolt"
         ],
         "relatedRecordIds": [
-          "pokexperto-champions-moves-85"
+          "pokexperto-champions-moves-85",
+          "owner-champions-batch5-moves-thunderbolt"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Atactrueno"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "まもる": {
@@ -11130,27 +11141,31 @@
         "canonicalIds": [
           "icyWind"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-33043",
+          "owner-champions-capture-33055",
+          "owner-champions-capture-33053",
+          "owner-champions-capture-33059"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-196"
+          "owner-champions-batch5-moves-icy-wind"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-196",
-          "pokexperto-champions-moves-196"
+          "pokexperto-champions-moves-196",
+          "owner-champions-batch5-moves-icy-wind"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Viento Hielo",
           "Viento Helado"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ゴールドラッシュ": {
@@ -11706,27 +11721,28 @@
         "canonicalIds": [
           "energyBall"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-33043"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-412"
+          "owner-champions-batch5-moves-energy-ball"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-412",
-          "pokexperto-champions-moves-412"
+          "pokexperto-champions-moves-412",
+          "owner-champions-batch5-moves-energy-ball"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Energibola",
           "Bola de Energía"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "りゅうせいぐん": {
@@ -12113,17 +12129,27 @@
         "canonicalIds": [
           "thunder"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33045",
+          "owner-champions-capture-33047"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-thunder"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-thunder"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Trueno"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ふぶき": {
         "name": "Ventisca",
@@ -13049,27 +13075,28 @@
         "canonicalIds": [
           "v096_088"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-33057"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-421"
+          "owner-champions-batch5-moves-shadow-claw"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-421",
-          "pokexperto-champions-moves-421"
+          "pokexperto-champions-moves-421",
+          "owner-champions-batch5-moves-shadow-claw"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Garra Umbría",
           "Garra de Sombra"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "しんそく": {
@@ -13779,17 +13806,26 @@
         "canonicalIds": [
           "gw0169_p019"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33045"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-thunder-punch"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-thunder-punch"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Puño Trueno"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "がむしゃら": {
         "name": "Esfuerzo",
@@ -13943,27 +13979,28 @@
         "canonicalIds": [
           "gw0169_p026"
         ],
-        "status": "verified-secondary",
+        "status": "official",
         "sourceIds": [
-          "pokexperto-champions-movimientos-2026-11-15"
+          "owner-champions-capture-33053"
         ],
         "recordIds": [
-          "pokexperto-champions-moves-264"
+          "owner-champions-batch5-moves-focus-punch"
         ],
         "relatedRecordIds": [
           "pokexperto-za-pokemon-game-move-id-264",
-          "pokexperto-champions-moves-264"
+          "pokexperto-champions-moves-264",
+          "owner-champions-batch5-moves-focus-punch"
         ],
         "targetGame": "Pokémon Champions",
-        "officialChampions": false,
+        "officialChampions": true,
         "fallback": false,
         "aliases": [
           "Puño Certero",
           "Puño Centrado"
         ],
-        "verificationScope": "explicit-regional-name-on-Champions-source",
+        "verificationScope": "owner-provided-game-capture-name-only",
         "verificationScopes": [
-          "explicit-regional-name-on-Champions-source"
+          "owner-provided-game-capture-name-only"
         ]
       },
       "ギガインパクト": {
@@ -14346,17 +14383,26 @@
         "canonicalIds": [
           "gw0169_p043"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33057"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-phantom-force"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-phantom-force"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Golpe Fantasma"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "サイコカッター": {
         "name": "Psicocorte",
@@ -14477,17 +14523,26 @@
         "canonicalIds": [
           "gw0169_p049"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33057"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-shadow-punch"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-shadow-punch"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Puño Sombra"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "じわれ": {
         "name": "Fisura",
@@ -14699,17 +14754,26 @@
         "canonicalIds": [
           "gw0169_p058"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33045"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-gunk-shot"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-gunk-shot"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Lanzamugre"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "タネマシンガン": {
         "name": "Bala Semilla",
@@ -15520,17 +15584,27 @@
         "canonicalIds": [
           "gw0169_s014"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33043",
+          "owner-champions-capture-33047"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-giga-drain"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-giga-drain"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Gigadrenado"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "きまぐレーザー": {
         "name": "Láser Caprichoso",
@@ -15882,17 +15956,27 @@
         "canonicalIds": [
           "gw0169_s028"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33057",
+          "owner-champions-capture-33059"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-hex"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-hex"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Infortunio"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ツインビーム": {
         "name": "Láser Doble",
@@ -16022,17 +16106,26 @@
         "canonicalIds": [
           "gw0169_s034"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33057"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-night-shade"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-night-shade"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Tinieblas"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ドレインキッス": {
         "name": "Beso Drenador",
@@ -17074,17 +17167,26 @@
         "canonicalIds": [
           "gw0170_s009"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33045"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-skitter-smack"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-skitter-smack"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Golpe Rastrero"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ばかぢから": {
         "name": "Fuerza Bruta",
@@ -17782,17 +17884,26 @@
         "canonicalIds": [
           "gw0170_s038"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33043"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-fire-punch"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-fire-punch"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Puño Fuego"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ほのおのムチ": {
         "name": "Látigo Ígneo",
@@ -18271,17 +18382,28 @@
         "canonicalIds": [
           "gw0170_s057"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33055",
+          "owner-champions-capture-33053",
+          "owner-champions-capture-33059"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-ice-punch"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-ice-punch"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Puño Hielo"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "ロックブラスト": {
         "name": "Pedrada",
@@ -18382,17 +18504,27 @@
         "canonicalIds": [
           "gw0170b_002"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33051",
+          "owner-champions-capture-33049"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-ice-fang"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-ice-fang"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Colmillo Hielo"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "こおりのつぶて": {
         "name": "Esquirla Helada",
@@ -18597,17 +18729,26 @@
         "canonicalIds": [
           "gw0170b_010"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
-        "officialChampions": false,
-        "fallback": true,
+        "status": "official",
+        "sourceIds": [
+          "owner-champions-capture-33049"
+        ],
+        "recordIds": [
+          "owner-champions-batch5-moves-bulldoze"
+        ],
+        "relatedRecordIds": [
+          "owner-champions-batch5-moves-bulldoze"
+        ],
+        "targetGame": "Pokémon Champions",
+        "officialChampions": true,
+        "fallback": false,
         "aliases": [
           "Terratemblor"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "owner-provided-game-capture-name-only",
+        "verificationScopes": [
+          "owner-provided-game-capture-name-only"
+        ]
       },
       "スターアサルト": {
         "name": "Asalto Estelar",
@@ -33767,6 +33908,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-hydro-pump",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ハイドロポンプ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-58",
       "canonicalMatches": [
         {
@@ -33776,7 +33926,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-85",
+      "id": "owner-champions-batch5-moves-thunderbolt",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -33830,7 +33980,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-196",
+      "id": "owner-champions-batch5-moves-icy-wind",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -34019,7 +34169,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-412",
+      "id": "owner-champions-batch5-moves-energy-ball",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -34123,6 +34273,15 @@
         {
           "category": "moves",
           "key": "しおふき"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-thunder",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かみなり"
         }
       ]
     },
@@ -34289,7 +34448,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-421",
+      "id": "owner-champions-batch5-moves-shadow-claw",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -34424,6 +34583,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-thunder-punch",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "かみなりパンチ"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-batch2-moves-brick-break",
       "canonicalMatches": [
         {
@@ -34442,7 +34610,7 @@
       ]
     },
     {
-      "id": "pokexperto-champions-moves-264",
+      "id": "owner-champions-batch5-moves-focus-punch",
       "canonicalMatches": [
         {
           "category": "moves",
@@ -34496,11 +34664,29 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-phantom-force",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ゴーストダイブ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-916",
       "canonicalMatches": [
         {
           "category": "moves",
           "key": "サンダーダイブ"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-shadow-punch",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "シャドーパンチ"
         }
       ]
     },
@@ -34537,6 +34723,15 @@
         {
           "category": "moves",
           "key": "ダイビング"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-gunk-shot",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ダストシュート"
         }
       ]
     },
@@ -34658,6 +34853,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-giga-drain",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ギガドレイン"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-907",
       "canonicalMatches": [
         {
@@ -34730,6 +34934,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-hex",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "たたりめ"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-2026-11-16-moves-zap-cannon",
       "canonicalMatches": [
         {
@@ -34744,6 +34957,15 @@
         {
           "category": "moves",
           "key": "ナイトバースト"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-night-shade",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ナイトヘッド"
         }
       ]
     },
@@ -34892,6 +35114,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-skitter-smack",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "はいよるいちげき"
+        }
+      ]
+    },
+    {
       "id": "owner-champions-batch2-moves-superpower",
       "canonicalMatches": [
         {
@@ -35000,6 +35231,15 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-fire-punch",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "ほのおのパンチ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-344",
       "canonicalMatches": [
         {
@@ -35081,11 +35321,29 @@
       ]
     },
     {
+      "id": "owner-champions-batch5-moves-ice-punch",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "れいとうパンチ"
+        }
+      ]
+    },
+    {
       "id": "pokexperto-champions-moves-490",
       "canonicalMatches": [
         {
           "category": "moves",
           "key": "ローキック"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-ice-fang",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "こおりのキバ"
         }
       ]
     },
@@ -35140,6 +35398,15 @@
         {
           "category": "moves",
           "key": "しっぺがえし"
+        }
+      ]
+    },
+    {
+      "id": "owner-champions-batch5-moves-bulldoze",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "じならし"
         }
       ]
     },
@@ -43821,6 +44088,19 @@
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
     },
     {
+      "id": "pokexperto-champions-moves-85",
+      "category": "moves",
+      "esLA": "Atactrueno",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "10まんボルト"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-moves-94",
       "category": "moves",
       "esLA": "Fuerza Psíquica",
@@ -43896,6 +44176,19 @@
       "canonicalMatches": [],
       "selectionReason": "no-runtime-canonical-match",
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "pokexperto-champions-moves-196",
+      "category": "moves",
+      "esLA": "Viento Helado",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "こごえるかぜ"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
       "id": "pokexperto-champions-moves-208",
@@ -43978,6 +44271,19 @@
       "canonicalMatches": [],
       "selectionReason": "no-runtime-canonical-match",
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "pokexperto-champions-moves-264",
+      "category": "moves",
+      "esLA": "Puño Centrado",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "きあいパンチ"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
       "id": "pokexperto-champions-moves-269",
@@ -44180,12 +44486,38 @@
       "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
+      "id": "pokexperto-champions-moves-412",
+      "category": "moves",
+      "esLA": "Bola de Energía",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "エナジーボール"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
+    },
+    {
       "id": "pokexperto-champions-moves-415",
       "category": "moves",
       "esLA": "Trueque",
       "canonicalMatches": [],
       "selectionReason": "no-runtime-canonical-match",
       "reason": "Not present in declared runtime inventory or no exact canonical spelling match."
+    },
+    {
+      "id": "pokexperto-champions-moves-421",
+      "category": "moves",
+      "esLA": "Garra de Sombra",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "シャドークロー"
+        }
+      ],
+      "selectionReason": "superseded-by-higher-priority-evidence",
+      "reason": "Canonical identity matched; higher-priority evidence selected. This attestation remains in relatedRecordIds and aliases."
     },
     {
       "id": "pokexperto-champions-moves-432",
@@ -45647,18 +45979,6 @@
     },
     {
       "category": "moves",
-      "key": "ハイドロポンプ",
-      "canonicalIds": [
-        "hydroPump"
-      ],
-      "ja": "ハイドロポンプ",
-      "es": "Hidrobomba",
-      "candidate": "Hidrobomba",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ゴールドラッシュ",
       "canonicalIds": [
         "makeItRain"
@@ -45702,18 +46022,6 @@
       "ja": "ふんか",
       "es": "Estallido",
       "candidate": "Estallido",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "かみなり",
-      "canonicalIds": [
-        "thunder"
-      ],
-      "ja": "かみなり",
-      "es": "Trueno",
-      "candidate": "Trueno",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -46115,18 +46423,6 @@
     },
     {
       "category": "moves",
-      "key": "かみなりパンチ",
-      "canonicalIds": [
-        "gw0169_p019"
-      ],
-      "ja": "かみなりパンチ",
-      "es": "Puño Trueno",
-      "candidate": "Puño Trueno",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "がむしゃら",
       "canonicalIds": [
         "gw0169_p020"
@@ -46307,18 +46603,6 @@
     },
     {
       "category": "moves",
-      "key": "ゴーストダイブ",
-      "canonicalIds": [
-        "gw0169_p043"
-      ],
-      "ja": "ゴーストダイブ",
-      "es": "Golpe Fantasma",
-      "candidate": "Golpe Fantasma",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "サイコカッター",
       "canonicalIds": [
         "gw0169_p044"
@@ -46367,18 +46651,6 @@
     },
     {
       "category": "moves",
-      "key": "シャドーパンチ",
-      "canonicalIds": [
-        "gw0169_p049"
-      ],
-      "ja": "シャドーパンチ",
-      "es": "Puño Sombra",
-      "candidate": "Puño Sombra",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "じわれ",
       "canonicalIds": [
         "gw0169_p050"
@@ -46422,18 +46694,6 @@
       "ja": "だいふんげき",
       "es": "Erupción de Ira",
       "candidate": "Erupción de Ira",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "ダストシュート",
-      "canonicalIds": [
-        "gw0169_p058"
-      ],
-      "ja": "ダストシュート",
-      "es": "Lanzamugre",
-      "candidate": "Lanzamugre",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -46679,18 +46939,6 @@
     },
     {
       "category": "moves",
-      "key": "ギガドレイン",
-      "canonicalIds": [
-        "gw0169_s014"
-      ],
-      "ja": "ギガドレイン",
-      "es": "Gigadrenado",
-      "candidate": "Gigadrenado",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ゲップ",
       "canonicalIds": [
         "gw0169_s017"
@@ -46751,18 +46999,6 @@
     },
     {
       "category": "moves",
-      "key": "たたりめ",
-      "canonicalIds": [
-        "gw0169_s028"
-      ],
-      "ja": "たたりめ",
-      "es": "Infortunio",
-      "candidate": "Infortunio",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ツインビーム",
       "canonicalIds": [
         "gw0169_s029"
@@ -46794,18 +47030,6 @@
       "ja": "トライアタック",
       "es": "Triataque",
       "candidate": "Triataque",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "ナイトヘッド",
-      "canonicalIds": [
-        "gw0169_s034"
-      ],
-      "ja": "ナイトヘッド",
-      "es": "Tinieblas",
-      "candidate": "Tinieblas",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -47135,18 +47359,6 @@
     },
     {
       "category": "moves",
-      "key": "はいよるいちげき",
-      "canonicalIds": [
-        "gw0170_s009"
-      ],
-      "ja": "はいよるいちげき",
-      "es": "Golpe Rastrero",
-      "candidate": "Golpe Rastrero",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "はがねのつばさ",
       "canonicalIds": [
         "gw0170_s011"
@@ -47339,18 +47551,6 @@
     },
     {
       "category": "moves",
-      "key": "ほのおのパンチ",
-      "canonicalIds": [
-        "gw0170_s038"
-      ],
-      "ja": "ほのおのパンチ",
-      "es": "Puño Fuego",
-      "candidate": "Puño Fuego",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ほのおのムチ",
       "canonicalIds": [
         "gw0170_s039"
@@ -47459,18 +47659,6 @@
     },
     {
       "category": "moves",
-      "key": "れいとうパンチ",
-      "canonicalIds": [
-        "gw0170_s057"
-      ],
-      "ja": "れいとうパンチ",
-      "es": "Puño Hielo",
-      "candidate": "Puño Hielo",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ロックブラスト",
       "canonicalIds": [
         "gw0170_u058"
@@ -47507,18 +47695,6 @@
     },
     {
       "category": "moves",
-      "key": "こおりのキバ",
-      "canonicalIds": [
-        "gw0170b_002"
-      ],
-      "ja": "こおりのキバ",
-      "es": "Colmillo Hielo",
-      "candidate": "Colmillo Hielo",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
       "key": "ジェットパンチ",
       "canonicalIds": [
         "gw0170b_004"
@@ -47538,18 +47714,6 @@
       "ja": "じたばた",
       "es": "Azote",
       "candidate": "Azote",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
-    },
-    {
-      "category": "moves",
-      "key": "じならし",
-      "canonicalIds": [
-        "gw0170b_010"
-      ],
-      "ja": "じならし",
-      "es": "Terratemblor",
-      "candidate": "Terratemblor",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: move selection / move summary."
     },
@@ -50212,9 +50376,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "13be3329e6b90036f4b0bb93e6ea0ae3727fde9995b10fea3ef3ae5cfdcb315e",
-      "feedback-release-v100.js": "e689040d598cf5d2ef92f7028feafde1fa2733d2c88060ea07ad757dd0ce3f12",
-      "index.html": "ac41fb48e7b0fb1d556a8a0d96d33e835a04ad016307507c04c0847c06778ed6",
-      "docs/data/v110-es-la-source-records.json": "a9e84c1b962ce57e0d228844229081d974de14909001ba6de42aafaebd0f5268"
+      "feedback-release-v100.js": "3403d2c41f130c2883d4071315f0b63dc4b7f2a6c9e2ebeea86892e362e5d7ba",
+      "index.html": "bd7fee19e7388bc385c48b5db482b4b0fb17ad742b9765e300ea5c529a24b834",
+      "docs/data/v110-es-la-source-records.json": "980c880cfa9db4072feea04dab34878c8accb1ab73e89b21f413cfaeb9b91ba0"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -68238,6 +68402,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "ad7f7f0cd18621ad40428c7a9177943f31b2d78ebbbfc5b2d38dea46c734c064"
+    "sha256": "03610a41e438c8364ed829ce4306e398efd66bee93457d2d3b63699a466645a8"
   }
 }

@@ -42,10 +42,12 @@ const pre15Commit='66cae82e10d28ad6115acdacc964fd3e84f51b4a',pre15=historical(pr
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.16'}),pre15Commit);
 const pre16Commit='a68b987d25d392076f36413e7f626ea3b71391c2',pre16=historical(pre16Commit);
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.17'}),pre16Commit);
+const pre17Commit='6360fa3a243c234993e032a415540b2c4691afeb',pre17=historical(pre17Commit);
+assert.equal(baselineForRelease({tag:'v1.1.0-pre.18'}),pre17Commit);
 const current=pending(require('../release.json'));
-assert.equal(current.tag,'v1.1.0-pre.17');assert.equal(current.preRelease,17);
+assert.equal(current.tag,'v1.1.0-pre.18');assert.equal(current.preRelease,18);
 // Historical and current candidates retain separate, exact public baselines.
-for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[pending(require('../scripts/helpers/v110-community-public-base.cjs').manifest()),pre5,6],[pending(pre7),pre6,7],[pending(pre8),pre7,8],[pending(pre9),pre8,9],[pending(pre11),pre9,11],[pending(pre12),pre11,12],[pending(pre14),pre12,14],[pending(pre15),pre14,15],[pending(pre16),pre15,16],[current,pre16,17]]){
+for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre2),pre1,2],[pending(pre3),pre2,3],[pending(pre4),pre3,4],[pending(pre5),pre4,5],[pending(require('../scripts/helpers/v110-community-public-base.cjs').manifest()),pre5,6],[pending(pre7),pre6,7],[pending(pre8),pre7,8],[pending(pre9),pre8,9],[pending(pre11),pre9,11],[pending(pre12),pre11,12],[pending(pre14),pre12,14],[pending(pre15),pre14,15],[pending(pre16),pre15,16],[pending(pre17),pre16,17],[current,pre17,18]]){
  const observed=verifyObservation(candidate,publicBase,publicBase.name);
  assert.deepEqual(verifyObservation(candidate,publicBase,publicBase.name,observed),observed,'Repeated observations cannot change release baseline');
  for(const altered of [{...publicBase,notes:'docs/tampered.md'},{...publicBase,tag:candidate.tag},candidate])assert.throws(()=>verifyObservation(candidate,altered,altered.name),'Changed or unpublished metadata is not a public baseline');
@@ -66,7 +68,7 @@ for(const [candidate,publicBase,number]of [[pending(pre1),stable,1],[pending(pre
 }
 assert.deepEqual(releaseIdentity(stable),{stable:true,displayVersion:'v1.0.0',packageVersion:'1.0.0'});
 const context=vm.createContext({});vm.runInContext(fs.readFileSync('feedback-release-v100.js','utf8'),context);const R=context.ChlohaFeedbackRelease;
-for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name,4],[pre5.name,5],[pre6.name,6],[pre7.name,7],[pre8.name,8],[pre9.name,9],[pre11.name,11],[pre12.name,12],[pre14.name,14],[pre15.name,15],[pre16.name,16],[current.name,17]]){
+for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name,4],[pre5.name,5],[pre6.name,6],[pre7.name,7],[pre8.name,8],[pre9.name,9],[pre11.name,11],[pre12.name,12],[pre14.name,14],[pre15.name,15],[pre16.name,16],[pre17.name,17],[current.name,18]]){
  const id=R.identify(title);
  assert.equal(id.wireVersion,'v1.1 Pre-Release '+number);assert.equal(id.fullVersion,'v1.1.0 Pre-Release '+number);assert.equal(id.prefix,'[Singularity release: v1.1.0 Pre-Release '+number+']\n\n');
  assert.equal(R.description(title,'a'.repeat(id.descriptionLimit)).length,R.wireDescriptionLimit);
@@ -77,4 +79,4 @@ for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name
 }
 for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 13','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
 assert.equal(R.identify(stable.name).fullVersion,'v1.0.0');assert.equal(R.identify('Singularity v0.188 Pre-Release 1').compatibility,false);
-console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4/pre.5/pre.6/pre.7/pre.8/pre.9/pre.11/pre.12/pre.14/pre.15/pre.16/pre.17 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');
+console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4/pre.5/pre.6/pre.7/pre.8/pre.9/pre.11/pre.12/pre.14/pre.15/pre.16/pre.17/pre.18 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');

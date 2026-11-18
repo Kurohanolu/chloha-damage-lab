@@ -1,5 +1,5 @@
 // Pre17 executes this unchanged historical proof against immutable published pre16.
-if(require('../release.json').tag==='v1.1.0-pre.17'){
+if(['v1.1.0-pre.17','v1.1.0-pre.18'].includes(require('../release.json').tag)){
  const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
  const {execFileSync,spawnSync}=require('node:child_process');
  const ref='a68b987d25d392076f36413e7f626ea3b71391c2',tree='c8292fafb8b927985d88ae7865ea8d755efdca76',file='tests/v110-power-spot-contract.cjs';
