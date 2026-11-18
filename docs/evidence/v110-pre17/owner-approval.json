@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "releaseTag": "v1.1.0-pre.17",
-  "reviewedSourceCommit": "f85d9584dd311fdfbd4d9553b6e22371c45510af",
-  "reviewedTree": "7c4f059ffa141b6598fb72da77f2e76d33404cd6",
-  "auditReportSha256": "91fddb2196007e0eb3639116d3700ce642fe1b2bb387bbda51f84f8b67bc93da",
+  "reviewedSourceCommit": "97747972c672804c1a286b8a3ac216b519c5ab7d",
+  "reviewedTree": "b218ae964b8c930673b29d6385dd09373cc8b2d8",
+  "auditReportSha256": "51c24cd6be4aa1ae67167cff995559e486eb326e456d3b724cf9c0ee5a604671",
   "auditor": "6.1 Sol",
   "auditOutcome": "conditional-pass",
   "conditionsDisposition": "accepted-by-owner",
@@ -15,5 +15,5 @@
     "public-cutover"
   ],
   "feedbackPolicy": "pause-es-LA-preserve-nine",
-  "recordedAtJST": "2026-11-18T11:34:44+09:00"
+  "recordedAtJST": "2026-11-18T15:47:54+09:00"
 }
