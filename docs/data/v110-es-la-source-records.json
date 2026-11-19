@@ -2705,6 +2705,30 @@
         "Mechanics descriptions are not used as calculation evidence."
       ],
       "retrievedAt": "2026-11-18T15:03:09.693956+00:00"
+    },
+    {
+      "id": "batch14-swsh-features",
+      "url": "https://swordshield.pokemon.com/es-mx/expansionpass/features/",
+      "title": "Official LATAM Isle of Armor new tutor moves",
+      "authority": "official",
+      "locale": "es-LA",
+      "websiteLocale": "es-MX",
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "checkedAt": "2026-11-19",
+      "evidenceMethod": "Direct HTML h3 heading and associated paragraph; same English counterpart subsection binds identity only.",
+      "rawSha256": "96e57f6e51026c340531619efc4dd32672d2e84ac271adc353a5e7ee1aed16d9",
+      "englishIdentityUrl": "https://swordshield.pokemon.com/en-us/expansionpass/features/",
+      "englishRawSha256": "8de4036ab172ca8423e431e29711dd07d3095629b7d38505dfc38cc97e828d88",
+      "japaneseIdentityUrl": "https://www.pokemon.co.jp/ex/sword_shield_expansion/features/",
+      "localeEvidence": {
+        "basis": "Observed América Latina current footer and region selector linking /es-mx/.",
+        "regionControlObserved": true
+      },
+      "limitations": [
+        "Historical regional marketing, not proof of in-game ES-LA support or Champions wording.",
+        "Mechanics descriptions disambiguate identity only; not used as calculation evidence."
+      ],
+      "retrievedAt": "2026-11-19T08:06:37.876354+00:00"
     }
   ],
   "records": [
@@ -39472,6 +39496,33 @@
       ],
       "sourceCatalogMatches": [],
       "notes": "Exact existing name paired with same Pokémon and ability field on official English counterpart. Historical regional publication only; no Champions, mechanics or availability claim."
+    },
+    {
+      "id": "batch14-swsh-grassy-glide",
+      "category": "moves",
+      "canonicalEnglish": "Grassy Glide",
+      "sourceEs": "Fitoimpulso",
+      "esLA": "Fitoimpulso",
+      "rawObservedText": "Fitoimpulso",
+      "displayNormalization": "none",
+      "status": "official",
+      "sourceIds": [
+        "batch14-swsh-features"
+      ],
+      "targetGame": "Pokémon Sword and Pokémon Shield",
+      "officialChampions": false,
+      "verificationScope": "official-publication-not-physical-game-test",
+      "canonicalMatches": [
+        {
+          "category": "moves",
+          "key": "グラススライダー",
+          "canonicalIds": [
+            "gw0169_p036"
+          ]
+        }
+      ],
+      "sourceCatalogMatches": [],
+      "notes": "Exact existing name paired with Grassy Glide heading on official en-us page: same Grass-type Isle of Armor tutor move with priority on Grassy Terrain. Japanese official counterpart identifies グラススライダー. Historical publication only; no Champions, mechanics or availability claim."
     }
   ],
   "observedConflicts": [
