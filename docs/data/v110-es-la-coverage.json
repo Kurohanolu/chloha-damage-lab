@@ -3,7 +3,7 @@
   "baselineCommit": "0b270c1452505268364659edd402209b00b28673",
   "locale": "es-LA",
   "checkedAt": "2026-11-16",
-  "sourceSha256": "980c880cfa9db4072feea04dab34878c8accb1ab73e89b21f413cfaeb9b91ba0",
+  "sourceSha256": "6723944812dbd3262ea2e42dc823f9328cb46bdd838dae59156c21708a276e8b",
   "scope": {
     "pokemon": "All registered candidate roster records, including unconfirmed game availability.",
     "moves": "All registered move records, including unsupported mechanics.",
@@ -44,15 +44,15 @@
     },
     "abilities": {
       "total": 245,
-      "official": 63,
+      "official": 65,
       "verified-secondary": 38,
       "provisional": 0,
-      "unverified": 144,
+      "unverified": 142,
       "officialChampions": 29,
       "displayAvailable": 245,
-      "individuallyAttested": 101,
-      "individuallyAttestedPercent": 41.22,
-      "officialPercent": 25.71,
+      "individuallyAttested": 103,
+      "individuallyAttestedPercent": 42.04,
+      "officialPercent": 26.53,
       "officialChampionsPercent": 11.84
     },
     "items": {
@@ -21992,17 +21992,26 @@
         "canonicalIds": [
           "unsupported:リーフガード"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch13-swsh-zarude"
+        ],
+        "recordIds": [
+          "batch13-swsh-leaf-guard"
+        ],
+        "relatedRecordIds": [
+          "batch13-swsh-leaf-guard"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Defensa Hoja"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "メガソーラー": {
         "name": "Megasolar",
@@ -22912,17 +22921,26 @@
         "canonicalIds": [
           "unsupported:マイペース"
         ],
-        "status": "unverified",
-        "sourceIds": [],
-        "recordIds": [],
-        "relatedRecordIds": [],
-        "targetGame": null,
+        "status": "official",
+        "sourceIds": [
+          "batch13-swsh-slowpoke"
+        ],
+        "recordIds": [
+          "batch13-swsh-own-tempo"
+        ],
+        "relatedRecordIds": [
+          "batch13-swsh-own-tempo"
+        ],
+        "targetGame": "Pokémon Sword and Pokémon Shield",
         "officialChampions": false,
-        "fallback": true,
+        "fallback": false,
         "aliases": [
           "Ritmo Propio"
         ],
-        "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested."
+        "verificationScope": "official-publication-not-physical-game-test",
+        "verificationScopes": [
+          "official-publication-not-physical-game-test"
+        ]
       },
       "てんのめぐみ": {
         "name": "Dicha",
@@ -35951,6 +35969,15 @@
       ]
     },
     {
+      "id": "batch13-swsh-leaf-guard",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "リーフガード"
+        }
+      ]
+    },
+    {
       "id": "official-champions-abilities-mega-sol",
       "canonicalMatches": [
         {
@@ -36082,6 +36109,15 @@
         {
           "category": "abilities",
           "key": "どんかん"
+        }
+      ]
+    },
+    {
+      "id": "batch13-swsh-own-tempo",
+      "canonicalMatches": [
+        {
+          "category": "abilities",
+          "key": "マイペース"
         }
       ]
     },
@@ -48643,18 +48679,6 @@
     },
     {
       "category": "abilities",
-      "key": "リーフガード",
-      "canonicalIds": [
-        "unsupported:リーフガード"
-      ],
-      "ja": "リーフガード",
-      "es": "Defensa Hoja",
-      "candidate": "Defensa Hoja",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
       "key": "かげふみ",
       "canonicalIds": [
         "unsupported:かげふみ"
@@ -48938,18 +48962,6 @@
       "ja": "めんえき",
       "es": "Inmunidad",
       "candidate": "Inmunidad",
-      "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
-      "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
-    },
-    {
-      "category": "abilities",
-      "key": "マイペース",
-      "canonicalIds": [
-        "unsupported:マイペース"
-      ],
-      "ja": "マイペース",
-      "es": "Ritmo Propio",
-      "candidate": "Ritmo Propio",
       "reason": "Existing ES-ES display fallback; ES-LA spelling not individually attested.",
       "whereToVerify": "Pokémon Champions ES-LA: Pokémon ability summary."
     },
@@ -50376,9 +50388,9 @@
       "persistence-v0188.js": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
       "portrait-alt-v0188.js": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
       "locale-quality-v0188.js": "13be3329e6b90036f4b0bb93e6ea0ae3727fde9995b10fea3ef3ae5cfdcb315e",
-      "feedback-release-v100.js": "3403d2c41f130c2883d4071315f0b63dc4b7f2a6c9e2ebeea86892e362e5d7ba",
-      "index.html": "bd7fee19e7388bc385c48b5db482b4b0fb17ad742b9765e300ea5c529a24b834",
-      "docs/data/v110-es-la-source-records.json": "980c880cfa9db4072feea04dab34878c8accb1ab73e89b21f413cfaeb9b91ba0"
+      "feedback-release-v100.js": "32690d16e2d66fab8425466858b595aeee3bca81722afc2e2bbdbfe43f09852d",
+      "index.html": "931cfdeaeeb715f1fc8ff87abfee0f4faa7995e9a1b705e8c074ceed8110a275",
+      "docs/data/v110-es-la-source-records.json": "6723944812dbd3262ea2e42dc823f9328cb46bdd838dae59156c21708a276e8b"
     },
     "policyReasonInventory": {
       "registeredReasons": 51,
@@ -68402,6 +68414,6 @@
         "warningOrError": false
       }
     ],
-    "sha256": "03610a41e438c8364ed829ce4306e398efd66bee93457d2d3b63699a466645a8"
+    "sha256": "b4da8286e6c1f274e119cfcc31eba92d70b934ff3ba960cbc5f6484ca5de22a2"
   }
 }
