@@ -9,7 +9,7 @@ Names are tied to existing canonical IDs. `official` means the exact spelling is
 | Category | Total | Official | Secondary | Provisional | Unverified | Individually attested | Official rate | Official Champions |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | pokemon | 373 | 319 | 0 | 0 | 54 | 85.52% | 85.52% | 39 (10.46%) |
-| moves | 335 | 84 | 96 | 0 | 155 | 53.73% | 25.07% | 77 (22.99%) |
+| moves | 335 | 85 | 96 | 0 | 154 | 54.03% | 25.37% | 77 (22.99%) |
 | abilities | 245 | 65 | 38 | 0 | 142 | 42.04% | 26.53% | 29 (11.84%) |
 | items | 41 | 20 | 19 | 2 | 0 | 95.12% | 48.78% | 20 (48.78%) |
 | types | 18 | 18 | 0 | 0 | 0 | 100% | 100% | 18 (100%) |

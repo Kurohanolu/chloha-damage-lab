@@ -1,3 +1,16 @@
+// Pre20 preserves the entire historical proof on immutable published pre19.
+if(require('../release.json').tag==='v1.1.0-pre.20'){
+ const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {execFileSync,spawnSync}=require('node:child_process');
+ const ref='016c5801bd63ed891c4c359d02748b3a66c26d0f',tree='cb30edc6da5ba49b15532ecc7998621996ed7572',file='tests/v110-regional-batch12-evidence.cjs';
+ const git=(...args)=>execFileSync('git',args,{encoding:'utf8',maxBuffer:32*1024*1024});
+ assert.equal(git('rev-parse',ref+'^{tree}').trim(),tree);
+ assert.ok(fs.readFileSync(__filename,'utf8').endsWith(git('show',ref+':'+file)),'All original historical assertions preserved');
+ const parent=fs.mkdtempSync(path.join(os.tmpdir(),'pre20-contract-history-')),worktree=path.join(parent,'source');let added=false;
+ try{git('worktree','add','--detach',worktree,ref);added=true;const run=spawnSync(process.execPath,[file],{cwd:worktree,stdio:'inherit',timeout:180000});assert.equal(run.error,undefined);assert.equal(run.signal,null);assert.equal(run.status,0);}
+ finally{try{if(added)git('worktree','remove','--force',worktree);}finally{fs.rmSync(parent,{recursive:true,force:true});}}
+ console.log('PASS immutable pre19 historical proof '+file+'; pre20 delta checked separately');process.exit(0);
+}
 // Pre19 preserves the entire historical proof on immutable published pre18.
 if(require('../release.json').tag==='v1.1.0-pre.19'){
  const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');

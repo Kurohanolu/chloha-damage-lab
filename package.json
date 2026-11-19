@@ -1,7 +1,7 @@
 {
   "name": "chloha-damage-lab-verification",
   "private": true,
-  "version": "1.1.0-pre.19",
+  "version": "1.1.0-pre.20",
   "type": "module",
   "scripts": {
     "test:showdown": "node tests/showdown-compare.mjs"
