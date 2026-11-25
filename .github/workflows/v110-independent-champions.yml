@@ -1,0 +1,37 @@
+name: Independent Champions damage audit
+on:
+  pull_request:
+  push:
+    branches: [main, qa/v110-independent-final-audit]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: smogon/damage-calc
+          ref: abdce0c64597284c8c463b7f71a38dc4dc55cd10
+          path: reference-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefix tests/reference --ignore-scripts
+      - run: npm install --prefix reference-source/calc --ignore-scripts && npm run compile --prefix reference-source/calc
+      - run: node tests/v0186-seeded-differential.cjs
+      - run: node tests/v110-independent-boundaries.cjs
+        env:
+          CHAMPIONS_REFERENCE: reference-source
+      - run: node tests/v110-independent-champions.cjs
+        env:
+          CHAMPIONS_REFERENCE: reference-source
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: independent-champions-rolls
+          path: reports/v110-independent/
+          if-no-files-found: error

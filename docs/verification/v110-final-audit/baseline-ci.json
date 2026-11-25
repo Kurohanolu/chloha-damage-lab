@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Periodic Beat Up regression",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44983237779",
+    "conclusion": "success"
+  },
+  {
+    "name": "Publish CI result for ChatGPT",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44552442996",
+    "conclusion": "success"
+  },
+  {
+    "name": "Publish CI result for ChatGPT",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551965898",
+    "conclusion": "success"
+  },
+  {
+    "name": "v0.186 Accuracy & Mechanics Audit",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869668",
+    "conclusion": "success"
+  },
+  {
+    "name": "v0.184 engine baseline",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869463",
+    "conclusion": "success"
+  },
+  {
+    "name": "UI & damage regression",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869460",
+    "conclusion": "success"
+  },
+  {
+    "name": "v1.0.0 Stable Promotion",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869731",
+    "conclusion": "success"
+  },
+  {
+    "name": "Damage Lab CI and status ledger",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869422",
+    "conclusion": "success"
+  },
+  {
+    "name": "v1.1.0 ES-LA Localization",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869560",
+    "conclusion": "success"
+  },
+  {
+    "name": "Publish verified release",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869984",
+    "conclusion": "success"
+  },
+  {
+    "name": "Conditional move UI acceptance",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869874",
+    "conclusion": "success"
+  },
+  {
+    "name": "v0.188 Quality Remediation",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869580",
+    "conclusion": "success"
+  },
+  {
+    "name": "Showdown differential audit",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869726",
+    "conclusion": "success"
+  },
+  {
+    "name": "GitHub Pages live smoke",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869516",
+    "conclusion": "success"
+  },
+  {
+    "name": "Showdown differential tests",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869409",
+    "conclusion": "success"
+  },
+  {
+    "name": "v0.187 Singularity Migration",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869469",
+    "conclusion": "success"
+  },
+  {
+    "name": "v0.185 anonymous feedback",
+    "sha": "a7389a01d3b309a71e3a0c6413243700d445e263",
+    "url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/44551869676",
+    "conclusion": "success"
+  }
+]

@@ -37,8 +37,14 @@ try{
  assert.equal(git('rev-parse',reviewedCommit+'^{tree}').toString().trim(),reviewedTree,'Reviewed baseline identity must remain exact');
  for(const file of protectedFiles){
   const before=historical(file),after=current(file);
-  const normalized=file==='ability-data-v0184.js'?Buffer.from(require('./helpers/v110-weather-correction.cjs').originalAbilitySource(after.toString())):after;
-  assert.deepEqual(normalized,before,'Only the exact reviewed weather validation expansion may change numeric runtime/data: '+file);
+  let normalized=file==='ability-data-v0184.js'?Buffer.from(require('./helpers/v110-weather-correction.cjs').originalAbilitySource(after.toString())):after;
+  if(file==='damage-engine-v0184.js'){
+   // Keep the immutable baseline and permit exactly the audited Bulldoze predicate.
+   const corrected="['earthquake','gw0170b_010'].includes(c.a.moveId)&&isGrounded(c.a,'def')";
+   assert.equal(after.toString().split(corrected).length,2);
+   normalized=Buffer.from(after.toString().replace(corrected,"c.a.moveId==='earthquake'&&isGrounded(c.a,'def')"));
+  }
+  assert.deepEqual(normalized,before,'Only individually verified corrections may change the baseline: '+file);
   report.protectedFiles[file]=hash(after);
  }
  const oldHTML=historical('index.html').toString(),newHTML=current('index.html').toString();

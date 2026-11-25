@@ -86,7 +86,7 @@ registerFixedModifier('power','sheerForce',15,c=>c.a.attAbility==='sheerForce'&&
 registerFixedModifier('power','technician',12,c=>c.a.attAbility==='technician'&&c.effectivePower<=60,6144);
 registerFixedModifier('power','terrainBoost',11,c=>isGrounded(c.a,'att')&&({electric:'でんき',grassy:'くさ',psychic:'エスパー'})[c.a.terrain]===c.a.moveType,5325);
 registerFixedModifier('power','mistyDragon',11,c=>c.a.terrain==='misty'&&c.a.moveType==='ドラゴン'&&isGrounded(c.a,'def'),2048);
-registerFixedModifier('power','grassyEarthquake',11,c=>c.a.terrain==='grassy'&&c.a.moveId==='earthquake'&&isGrounded(c.a,'def'),2048);
+registerFixedModifier('power','grassyEarthquake',11,c=>c.a.terrain==='grassy'&&['earthquake','gw0170b_010'].includes(c.a.moveId)&&isGrounded(c.a,'def'),2048);
 registerFixedModifier('power','helpingHand',10,c=>c.a.helpingHand,6144);
 registerModifier('preRandom','spread',10,c=>c.a.battleFormat==='doubles'&&c.a.spread==='spread',(_,v)=>pokeRound(v,3072));
 registerModifier('preRandom','weather',20,c=>((c.a.weather==='sun'||c.a.weather==='rain')&&['ほのお','みず'].includes(c.a.moveType)),(c,v)=>{const boost=(c.a.moveType==='ほのお'&&c.a.weather==='sun')||(c.a.moveType==='みず'&&c.a.weather==='rain');return pokeRound(v,boost?6144:2048)});
