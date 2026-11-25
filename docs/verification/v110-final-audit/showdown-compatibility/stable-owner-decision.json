@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "releaseTag": "v1.1.0",
+  "reviewedSourceCommit": "226df627cbee4fb56287ca0191774af3233f8a93",
+  "reviewedTree": "059cc40ccc9e9c881762535cff363f442fae1970",
+  "auditReportSha256": "2a1e17f8d79807909f3dee76d4b0e13d38426781687b6948aa62a33323644c44",
+  "auditor": "ChatGPT Work",
+  "auditOutcome": "pass",
+  "conditionsDisposition": "accepted-by-owner",
+  "decision": "approved",
+  "approvedActions": [
+    "main-merge",
+    "new-tag",
+    "github-release",
+    "public-cutover"
+  ],
+  "feedbackPolicy": "pause-es-LA-preserve-nine",
+  "recordedAtJST": "2026-11-25T12:31:14+09:00"
+}

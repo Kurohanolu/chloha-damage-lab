@@ -1,6 +1,6 @@
 # v1.1.0 Stable 候補の監査
 
-2026-11-25 の追加指示に従い、固定参照 abdce0c64597284c8c463b7f71a38dc4dc55cd10 の Champions 実装を採用した。以下は計算エンジン 726ab93ffb00d4834590825888bf16e42b1ad738 の実行結果。Stable 表記の候補は最終 CI 待ち。
+2026-11-25 の追加指示に従い、固定参照 abdce0c64597284c8c463b7f71a38dc4dc55cd10 の Champions 実装を採用した。以下は計算エンジン 726ab93ffb00d4834590825888bf16e42b1ad738 の実行結果。Stable 表記の対象ソースと全成功 CI は showdown-compatibility/STABLE_SOURCE_REVIEW.md に記録した。
 
 | 検査 | 結果 |
 |---|---|

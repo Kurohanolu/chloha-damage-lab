@@ -1,0 +1,162 @@
+[
+  {
+    "id": 45532211887,
+    "name": "v0.187 Singularity Migration",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:21:20Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211887"
+  },
+  {
+    "id": 45532211482,
+    "name": "v0.185 anonymous feedback",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:21:51Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211482"
+  },
+  {
+    "id": 45532211578,
+    "name": "v0.184 engine baseline",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:21:12Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211578"
+  },
+  {
+    "id": 45532211483,
+    "name": "Damage Lab CI and status ledger",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:21:43Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211483"
+  },
+  {
+    "id": 45532211876,
+    "name": "GitHub Pages live smoke",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:20:55Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211876"
+  },
+  {
+    "id": 45532211660,
+    "name": "v1.0.0 Stable Promotion",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:22:01Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211660"
+  },
+  {
+    "id": 45532211493,
+    "name": "v0.186 Accuracy & Mechanics Audit",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:22:26Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211493"
+  },
+  {
+    "id": 45532211585,
+    "name": "Conditional move UI acceptance",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:24:11Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211585"
+  },
+  {
+    "id": 45532212819,
+    "name": "Publish verified release",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:20:39Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532212819"
+  },
+  {
+    "id": 45532211974,
+    "name": "Showdown differential audit",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:20:42Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211974"
+  },
+  {
+    "id": 45532212006,
+    "name": "Independent Champions damage audit",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:20:41Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532212006"
+  },
+  {
+    "id": 45532211952,
+    "name": "Showdown differential tests",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:20:46Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211952"
+  },
+  {
+    "id": 45532211803,
+    "name": "UI & damage regression",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:23:12Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211803"
+  },
+  {
+    "id": 45532211879,
+    "name": "v0.188 Quality Remediation",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T02:29:11Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211879"
+  },
+  {
+    "id": 45532211983,
+    "name": "v1.1.0 ES-LA Localization",
+    "event": "pull_request",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:15Z",
+    "updated_at": "2026-11-25T03:30:33Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532211983"
+  },
+  {
+    "id": 45532200982,
+    "name": "Independent Champions damage audit",
+    "event": "push",
+    "head_sha": "226df627cbee4fb56287ca0191774af3233f8a93",
+    "created_at": "2026-11-25T02:20:11Z",
+    "updated_at": "2026-11-25T02:20:43Z",
+    "conclusion": "success",
+    "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45532200982"
+  }
+]
