@@ -61,3 +61,30 @@ for(const [raw,rank,par,wind] of [[8191,6,false,false],[8192,6,false,false],[819
   assert.deepEqual(Array.from(result.rolls),reference.damage,[name,raw,rank,par,wind].join('/'));
  }
 }
+
+// Exercise the signed shift and layer-specific clamps on either side of each
+// bit boundary. Synthetic modifiers never enter the production registry.
+vm.runInContext(engineSource.replace(marker,`
+ window.testChain=(layer,mods)=>{
+  pipeline[layer]=mods.map((modifier,i)=>({id:String(i),applies:()=>true,modifier}));
+  return applyLayer(layer,{trace:[]},4096);
+ };`),context);
+for(const [layer,low,high] of [['power',41,2097152],['stat',410,131072]]){
+ for(const edge of [2**31,2**32]){
+  for(const offset of [-1,0,1]){
+   const mods=[1,edge-2048+offset];
+   assert.equal(context.testChain(layer,mods),util.chainMods(mods,low,high));
+  }
+ }
+ for(const m of [low-1,low,low+1,high-1,high,high+1]){
+  assert.equal(context.testChain(layer,[m]),util.chainMods([m],low,high));
+ }
+}
+
+// A wrapped final zero is legal for an otherwise effective move.
+const zeroInput={...require('./helpers/v0186-reference.cjs').baseInput,power:19,attack:7839,defense:1,stabMode:'none',attTypes:['みず'],defTypes:['ノーマル'],moveType:'ノーマル'};
+const zeroRolls=Array.from(context.ChlohaDamageEngine.calculate(zeroInput).rolls);
+const zeroBase=util.getBaseDamage(50,19,7839,1);
+assert.equal(zeroBase,65536);
+assert.deepEqual(zeroRolls,Array.from({length:16},(_,i)=>util.getFinalDamage(zeroBase,i,1,false,4096,4096)));
+assert.equal(zeroRolls[15],0);

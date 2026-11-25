@@ -9,7 +9,7 @@ const release=JSON.parse(fs.readFileSync('release.json','utf8'));
 const {stable,displayVersion}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
 // Exact candidate transport contract; old Stable assertions remain intact.
 const esLaCandidate=['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(release.tag);
-const expectedWireVersion=stable?'v1.0':esLaCandidate?'v1.1 Pre-Release '+release.preRelease:displayVersion;
+const expectedWireVersion=stable?'v'+release.version.split('.').slice(0,2).join('.'):esLaCandidate?'v1.1 Pre-Release '+release.preRelease:displayVersion;
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];
 const legacyLabels=[
@@ -106,8 +106,7 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     await page.click('#feedbackSubmit');assert.equal(await page.locator('#feedbackCategory').getAttribute('aria-invalid'),'true');
     await page.selectOption('#feedbackCategory','calculation');await page.fill('#feedbackDescription','Synthetic migration feedback '+locale);await page.check('#feedbackAttach');
     if(locale==='ja')await page.screenshot({path:'reports/v0187/feedback-ja.png'});
-    if(stable){assert.ok((await page.locator('#feedbackRelease').innerText()).includes(displayVersion));assert.equal(await page.locator('#feedbackReleaseHeader').innerText(),'[Singularity release: v1.0.0]');assert.ok((await page.locator('#feedbackVersionCompatibility').innerText()).includes(displayVersion));}
-    if(esLaCandidate){assert.ok((await page.locator('#feedbackRelease').innerText()).includes(displayVersion));assert.equal(await page.locator('#feedbackReleaseHeader').innerText(),'[Singularity release: '+displayVersion+']');const copy=await page.locator('#feedbackVersionCompatibility').innerText();assert.ok(copy.includes(expectedWireVersion)&&copy.includes(displayVersion));}
+    if(stable||esLaCandidate){assert.ok((await page.locator('#feedbackRelease').innerText()).includes(displayVersion));assert.equal(await page.locator('#feedbackReleaseHeader').innerText(),'[Singularity release: '+displayVersion+']');const copy=await page.locator('#feedbackVersionCompatibility').innerText();assert.ok(copy.includes(expectedWireVersion)&&copy.includes(displayVersion));}
     const attachment=JSON.parse(await page.locator('#feedbackPreview').textContent());assert.equal(attachment.appVersion,expectedWireVersion);assert.equal(attachment.engineVersion,'0.184');assert.equal(attachment.locale,locale);await page.check('#feedbackConfirm');
     await page.selectOption('#chloha-locale',other);assert.equal(await page.inputValue('#feedbackDescription'),'Synthetic migration feedback '+locale);assert.equal(await page.isChecked('#feedbackConfirm'),true);await page.selectOption('#chloha-locale',locale);
     let requests=0,releasePost;const waiting=new Promise(resolve=>{releasePost=resolve;});
@@ -115,8 +114,8 @@ async function openFeedback(page){await page.click('#feedbackButton');await page
     await page.click('#feedbackSubmit');await page.waitForFunction(()=>document.getElementById('feedbackSubmit').disabled);
     await page.evaluate(()=>{document.getElementById('feedbackForm').requestSubmit();document.getElementById('feedbackForm').requestSubmit();});
     releasePost();await page.waitForFunction(()=>document.getElementById('feedbackStatus').textContent.includes(window.ChlohaFeedbackLocales.text(window.ChlohaLocale.get(),'localSuccess')));
-    assert.equal(requests,1,'single submission while pending');assert.equal(api.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,1);if(stable){const stored=api.db.sqlite.prepare('SELECT app_version,description,snapshot_json FROM reports').get();assert.equal(stored.app_version,'v1.0');assert.ok(stored.description.startsWith('[Singularity release: v1.0.0]\n\n'));assert.equal(JSON.parse(stored.snapshot_json).appVersion,'v1.0');}evidence.successfulLocalReports++;
-    if(esLaCandidate){const stored=api.db.sqlite.prepare('SELECT app_version,description,snapshot_json FROM reports').get();assert.equal(stored.app_version,expectedWireVersion);assert.ok(stored.description.startsWith('[Singularity release: '+displayVersion+']\n\n'));assert.equal(JSON.parse(stored.snapshot_json).appVersion,expectedWireVersion);}
+    assert.equal(requests,1,'single submission while pending');assert.equal(api.db.sqlite.prepare('SELECT count(*) n FROM reports').get().n,1);evidence.successfulLocalReports++;
+    if(stable||esLaCandidate){const stored=api.db.sqlite.prepare('SELECT app_version,description,snapshot_json FROM reports').get();assert.equal(stored.app_version,expectedWireVersion);assert.ok(stored.description.startsWith('[Singularity release: '+displayVersion+']\n\n'));assert.equal(JSON.parse(stored.snapshot_json).appVersion,expectedWireVersion);}
     assert.ok([401,403].includes((await page.request.get(api.origin+'/v1/admin/reports')).status()),'anonymous admin access remains denied');
     assert.deepEqual(errors,[]);assert.deepEqual(failedAssets,[]);
    }catch(error){await page.screenshot({path:'reports/v0187/failure-'+locale+'.png',fullPage:true}).catch(()=>{});throw error;}
