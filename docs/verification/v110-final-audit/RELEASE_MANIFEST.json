@@ -1,0 +1,16 @@
+{
+  "auditBase": "a7389a01d3b309a71e3a0c6413243700d445e263",
+  "reference": "abdce0c64597284c8c463b7f71a38dc4dc55cd10",
+  "published": "v1.1.0-pre.20",
+  "deployRepositoryHead": "ee778eef9478e434ebb1cbdaa87d331a640023fa",
+  "deployedSourceRequested": "8343afafc1915fd82a765d0655742819f14fe5f8",
+  "decision": "HOLD",
+  "releaseSha": null,
+  "releaseUrl": null,
+  "publicUrl": "https://kurohanolu.github.io/singularity/",
+  "rollback": {
+    "previousStableTag": "v1.0.0",
+    "sourceCommit": "0b270c1452505268364659edd402209b00b28673",
+    "actionTaken": false
+  }
+}

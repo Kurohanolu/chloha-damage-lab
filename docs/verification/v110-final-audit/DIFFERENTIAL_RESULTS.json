@@ -9,5 +9,23 @@
   "differingRolls": 0,
   "differingCases": 0,
   "duplicates": 0,
-  "excluded": 0
+  "excluded": 0,
+  "ordinaryMatchRate": 1,
+  "overflow": {
+    "cases": 62,
+    "differentCases": 33,
+    "differentRolls": 506,
+    "comparedRolls": 992,
+    "status": "UNRESOLVED"
+  },
+  "triOracle": {
+    "gen0": 240,
+    "gen9": 240,
+    "differentCases": 0
+  },
+  "legacySeed": {
+    "gen0": 494,
+    "gen9": 3506,
+    "differentCases": 0
+  }
 }

@@ -1,1 +1,2573 @@
-[{"id":20,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":41,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":44,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":86,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":142,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":227,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":247,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":263,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":312,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":396,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":398,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":415,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":519,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":589,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":734,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":742,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":803,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":860,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":879,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":977,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":990,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1043,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1056,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1076,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1117,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1152,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1190,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1210,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1301,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1324,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1465,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1488,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1532,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1558,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1631,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1665,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1702,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1716,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1780,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1824,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1834,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1845,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1878,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1895,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":1909,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2030,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2064,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2100,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2128,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2146,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2163,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2171,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2189,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2206,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2234,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2240,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2336,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2356,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2398,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2415,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2418,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2459,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2462,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2469,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2488,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2551,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2569,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2699,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2703,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2733,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2742,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2814,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2860,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2927,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2981,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2982,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":2990,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3126,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3279,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3403,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3435,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3461,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3462,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3491,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3505,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3558,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3572,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3590,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3603,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3806,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3809,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3843,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3855,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3891,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3914,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":3933,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4065,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4083,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4093,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4115,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4137,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4162,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4246,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4282,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4332,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4356,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4398,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4452,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4462,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4577,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4620,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4651,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4735,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4834,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4852,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4937,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":4993,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5128,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5130,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5137,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5162,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5205,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5219,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5253,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5316,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5333,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5384,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5393,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5420,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5466,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5488,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5490,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5499,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5507,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5541,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5596,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5601,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5634,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5654,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5660,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5746,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5764,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5781,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5818,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5821,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5822,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5880,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5902,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5915,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5931,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":5957,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6049,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6066,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6080,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6115,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6134,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6181,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6221,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6309,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6331,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6380,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6384,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6395,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6451,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6486,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6504,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6522,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6525,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6562,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6603,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6604,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6809,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6862,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6901,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6937,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6944,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":6983,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7028,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7034,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7160,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7259,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7293,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7303,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7319,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7321,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7363,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7400,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7406,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7420,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7438,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7450,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7458,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7497,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7535,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7554,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7633,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7683,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7734,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7776,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7777,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7780,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7795,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7863,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7878,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7885,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7908,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7928,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":7984,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8001,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8005,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8008,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8020,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8025,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8093,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8127,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8133,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8144,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8150,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8167,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8179,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8206,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8208,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8243,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8261,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8280,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8334,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8359,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8501,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8534,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8592,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8597,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8612,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8647,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8888,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8969,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8970,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8973,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":8985,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9011,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9021,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9026,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9085,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9089,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9132,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9135,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9138,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9150,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9172,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9199,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9232,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9249,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9257,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9261,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9308,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9348,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9372,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9432,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9441,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9467,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9468,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9479,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9487,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9589,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9595,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9641,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9643,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9792,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9861,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9884,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9946,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9951,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":9987,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10009,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10075,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10084,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10103,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10231,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10238,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10256,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10272,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10315,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10338,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10346,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10362,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10398,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10463,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10477,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10544,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10551,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10591,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10628,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10698,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10797,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10847,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10866,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10867,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10893,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":10974,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11003,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11106,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11145,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11165,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11168,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11171,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11206,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11229,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11243,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11245,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11251,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11254,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11289,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11344,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11359,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11483,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11515,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11558,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11578,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11629,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11690,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11733,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11764,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11823,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11833,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11853,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11856,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11906,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11908,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11928,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"},{"id":11991,"differences":16,"status":"ENGINE_BUG","stage":"base power / Grassy Terrain on grounded Bulldoze target","resolution":"fixed; same case now matches all 16 points"}]
+{
+  "resolvedGroundedBulldoze": [
+    {
+      "id": 20,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 41,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 44,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 86,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 142,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 227,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 247,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 263,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 312,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 396,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 398,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 415,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 519,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 589,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 734,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 742,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 803,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 860,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 879,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 977,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 990,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1043,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1056,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1076,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1117,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1152,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1190,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1210,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1301,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1324,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1465,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1488,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1532,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1558,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1631,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1665,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1702,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1716,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1780,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1824,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1834,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1845,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1878,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1895,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 1909,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2030,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2064,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2100,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2128,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2146,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2163,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2171,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2189,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2206,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2234,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2240,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2336,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2356,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2398,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2415,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2418,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2459,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2462,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2469,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2488,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2551,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2569,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2699,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2703,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2733,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2742,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2814,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2860,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2927,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2981,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2982,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 2990,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3126,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3279,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3403,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3435,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3461,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3462,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3491,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3505,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3558,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3572,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3590,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3603,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3806,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3809,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3843,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3855,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3891,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3914,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 3933,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4065,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4083,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4093,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4115,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4137,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4162,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4246,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4282,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4332,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4356,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4398,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4452,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4462,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4577,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4620,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4651,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4735,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4834,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4852,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4937,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 4993,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5128,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5130,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5137,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5162,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5205,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5219,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5253,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5316,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5333,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5384,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5393,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5420,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5466,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5488,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5490,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5499,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5507,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5541,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5596,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5601,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5634,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5654,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5660,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5746,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5764,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5781,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5818,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5821,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5822,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5880,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5902,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5915,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5931,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 5957,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6049,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6066,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6080,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6115,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6134,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6181,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6221,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6309,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6331,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6380,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6384,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6395,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6451,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6486,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6504,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6522,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6525,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6562,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6603,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6604,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6809,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6862,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6901,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6937,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6944,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 6983,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7028,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7034,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7160,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7259,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7293,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7303,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7319,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7321,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7363,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7400,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7406,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7420,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7438,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7450,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7458,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7497,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7535,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7554,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7633,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7683,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7734,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7776,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7777,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7780,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7795,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7863,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7878,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7885,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7908,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7928,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 7984,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8001,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8005,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8008,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8020,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8025,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8093,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8127,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8133,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8144,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8150,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8167,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8179,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8206,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8208,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8243,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8261,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8280,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8334,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8359,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8501,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8534,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8592,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8597,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8612,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8647,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8888,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8969,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8970,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8973,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 8985,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9011,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9021,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9026,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9085,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9089,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9132,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9135,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9138,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9150,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9172,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9199,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9232,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9249,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9257,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9261,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9308,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9348,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9372,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9432,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9441,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9467,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9468,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9479,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9487,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9589,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9595,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9641,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9643,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9792,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9861,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9884,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9946,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9951,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 9987,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10009,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10075,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10084,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10103,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10231,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10238,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10256,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10272,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10315,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10338,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10346,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10362,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10398,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10463,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10477,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10544,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10551,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10591,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10628,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10698,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10797,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10847,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10866,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10867,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10893,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 10974,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11003,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11106,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11145,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11165,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11168,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11171,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11206,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11229,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11243,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11245,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11251,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11254,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11289,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11344,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11359,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11483,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11515,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11558,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11578,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11629,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11690,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11733,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11764,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11823,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11833,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11853,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11856,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11906,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11908,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11928,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    },
+    {
+      "id": 11991,
+      "differences": 16,
+      "status": "ENGINE_BUG",
+      "stage": "base power / Grassy Terrain on grounded Bulldoze target",
+      "resolution": "fixed; same case now matches all 16 points"
+    }
+  ],
+  "unresolvedOverflow": [
+    {
+      "caseIndex": 13,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 13,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 14,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 9,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 15,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 19,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 7,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 20,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 13,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 21,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 22,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 23,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 27,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 28,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 29,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 30,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 31,
+      "scope": "native species and stage model; battle history unverified",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "final unsigned 16-bit reduction",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 33,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 38,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 39,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 40,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 41,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 44,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 45,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 46,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 47,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 49,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 50,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 51,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 52,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 53,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 55,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 56,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 57,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 58,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 59,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    },
+    {
+      "caseIndex": 61,
+      "scope": "artificial",
+      "status": "UNRESOLVED",
+      "differentRolls": 16,
+      "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
+      "evidence": "overflow.json"
+    }
+  ]
+}
