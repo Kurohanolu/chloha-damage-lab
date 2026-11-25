@@ -1,0 +1,18 @@
+{
+  "head_sha": "726ab93ffb00d4834590825888bf16e42b1ad738",
+  "workflow": "Showdown differential audit",
+  "run_id": 45530400757,
+  "run_number": 1237,
+  "conclusion": "success",
+  "status": "completed",
+  "completed_at": "2026-11-25T02:05:30Z",
+  "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45530400757",
+  "jobs": [
+    {
+      "name": "showdown-differential",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kurohanolu/chloha-damage-lab/actions/runs/45530400757/job/138923978821",
+      "failed_steps": []
+    }
+  ]
+}
