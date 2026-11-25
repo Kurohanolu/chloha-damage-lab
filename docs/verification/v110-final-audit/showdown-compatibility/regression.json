@@ -1,0 +1,65 @@
+{
+  "productCommit": "b5dff009077f8884bb7bbdd0fa75c01c3e0bbe3f",
+  "reference": "abdce0c64597284c8c463b7f71a38dc4dc55cd10",
+  "singleHit": {
+    "pinned": "abdce0c64597284c8c463b7f71a38dc4dc55cd10",
+    "generation": 0,
+    "seed": 17834022,
+    "defaultInputs": "tests/fixtures/v0184-public-baseline.json#/cases/0/input",
+    "scope": "Native Champions species/moves and level-50 stat points. Field states are scenario inputs; tournament roster and turn-history legality not independently certified.",
+    "cases": 12000,
+    "rolls": 192000,
+    "differingRolls": 0,
+    "differingCases": 0,
+    "duplicates": 0,
+    "excluded": 0
+  },
+  "legacyDifferential": {
+    "seed": 100012,
+    "cases": 4000,
+    "generations": {
+      "0": 494,
+      "9": 3506
+    },
+    "mismatches": 0,
+    "failures": []
+  },
+  "independentArithmetic": {
+    "cases": 480,
+    "points": 7680,
+    "failures": 0
+  },
+  "overflow": {
+    "before": {
+      "failedCases": 33,
+      "failedPoints": 506
+    },
+    "after": {
+      "totalCases": 62,
+      "totalPoints": 992,
+      "failedCases": 0,
+      "failedPoints": 0
+    }
+  },
+  "additionalKo": {
+    "cases": 1,
+    "points": 16,
+    "ko": 15,
+    "hp": 155
+  },
+  "multihit": {
+    "gen0": 56,
+    "gen9": 126,
+    "gen0ScenariosAlsoInGen9": 56
+  },
+  "browser": {
+    "languageTransitions": 110,
+    "localeViewportPairs": 60,
+    "physicalDevice": false
+  },
+  "corpusHashesUncompressed": {
+    "cases.jsonl.gz": "a58f17764e18c326450d14fc3fd80718c5c51f97583b652ecb5d183c3f6363a3",
+    "boundary-cases.jsonl.gz": "24c64502cf00fcec159f97f2f5b9c0535b6885228bf728acbb9898fbbb211250"
+  },
+  "releasePublished": false
+}

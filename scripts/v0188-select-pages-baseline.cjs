@@ -272,7 +272,15 @@ function verifyBoundRuntime(release,sourceRef=''){
 module.exports={selectBaseline,verifyBoundRuntime};
 if(require.main===module){
  const release=JSON.parse(fs.readFileSync('release.json','utf8'));
- const selected=selectBaseline(release,process.env.PAGES_EVENT_NAME,process.env.PAGES_PR_BASE_REF);
+ let selected;
+ if(process.env.PAGES_DEPLOYMENT_REQUEST){
+  const deployed=JSON.parse(fs.readFileSync(process.env.PAGES_DEPLOYMENT_REQUEST,'utf8')).source_sha;
+  assert.match(deployed,/^[a-f0-9]{40}$/);
+  const metadata=JSON.parse(execFileSync('git',['show',deployed+':release.json'],{encoding:'utf8'}));
+  assert.equal(metadata.publicUrl,'https://kurohanolu.github.io/singularity/');
+  verifyBoundRuntime(metadata,deployed);
+  selected={ref:deployed,mode:'public-deployment-request'};
+ }else selected=selectBaseline(release,process.env.PAGES_EVENT_NAME,process.env.PAGES_PR_BASE_REF);
  if(selected.mode==='approved-live-candidate')console.log('Verified '+verifyBoundRuntime(release)+' public files bound to the reviewed source');
  if(!process.env.GITHUB_OUTPUT)throw Error('GitHub step output path is required');
  fs.appendFileSync(process.env.GITHUB_OUTPUT,'baseline_ref='+selected.ref+'\n');
