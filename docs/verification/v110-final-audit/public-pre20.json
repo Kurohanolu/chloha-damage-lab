@@ -1,0 +1,248 @@
+[
+  {
+    "url": "./ability-data-v0184.js?v=1.1.0-pre.20&h=317eac683789a6eb",
+    "source": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193",
+    "live": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193",
+    "matches": true
+  },
+  {
+    "url": "./assets/singularity/apple-touch-icon.png?v=1.1.0-pre.20",
+    "source": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e",
+    "live": "9c6d433d78cea252a0d762736729860975a327fd09b6c71be8986397c23db40e",
+    "matches": true
+  },
+  {
+    "url": "./assets/singularity/favicon.png?v=1.1.0-pre.20",
+    "source": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f",
+    "live": "bf4a02c4fbc241f8d6476f9f0ae666bcd1d95e1d40e772671c1a957a6008a78f",
+    "matches": true
+  },
+  {
+    "url": "./battle-data-v0184.js?v=1.1.0-pre.20&h=e6a1d94758ec4db5",
+    "source": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+    "live": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+    "matches": true
+  },
+  {
+    "url": "./brand-v0187.js?v=1.1.0-pre.20&h=714be225dc19d10e",
+    "source": "714be225dc19d10ecba1a924f2774f396fe031b05ff97472401d8ea44383e4eb",
+    "live": "714be225dc19d10ecba1a924f2774f396fe031b05ff97472401d8ea44383e4eb",
+    "matches": true
+  },
+  {
+    "url": "./damage-calculator-v0184.js?v=1.1.0-pre.20&h=3bde4f39f135aeea",
+    "source": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+    "live": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+    "matches": true
+  },
+  {
+    "url": "./damage-engine-v0184.js?v=1.1.0-pre.20&h=9b774ac4d55f0c7c",
+    "source": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9",
+    "live": "9b774ac4d55f0c7c82bdd2ce9089fda6b431d29c9c7d482017e9f9b61ac491c9",
+    "matches": true
+  },
+  {
+    "url": "./damage-ui-adapter-v0184.js?v=1.1.0-pre.20&h=ca5f965814a60ed3",
+    "source": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+    "live": "ca5f965814a60ed3cedfcc25db96c9164bf49c6db6d8f06bb7c67cfd4fc8cb8e",
+    "matches": true
+  },
+  {
+    "url": "./feedback-config-v0185.js?v=1.1.0-pre.20&h=65e87f3c6ef7ecd6",
+    "source": "65e87f3c6ef7ecd69a26c066ccddae3c52b94cf07ea6ad45948f9fa4b4bb18b2",
+    "live": "65e87f3c6ef7ecd69a26c066ccddae3c52b94cf07ea6ad45948f9fa4b4bb18b2",
+    "matches": true
+  },
+  {
+    "url": "./feedback-contract-v0185.js?v=1.1.0-pre.20&h=2994fdb53468ca31",
+    "source": "2994fdb53468ca31293359125a7a82ff30a0f007d39d4151c22d86bacd74c4b9",
+    "live": "2994fdb53468ca31293359125a7a82ff30a0f007d39d4151c22d86bacd74c4b9",
+    "matches": true
+  },
+  {
+    "url": "./feedback-locales-v0185.js?v=1.1.0-pre.20&h=86304ee7aff203d7",
+    "source": "86304ee7aff203d7937834e85b2b8d837ccdaa11a8069b770b532bbe9424d571",
+    "live": "86304ee7aff203d7937834e85b2b8d837ccdaa11a8069b770b532bbe9424d571",
+    "matches": true
+  },
+  {
+    "url": "./feedback-release-v100.js?v=1.1.0-pre.20&h=fc833fcfe10372b3",
+    "source": "fc833fcfe10372b3dce8ded1d1095cf894e0ff552276e0ff0115dde5a7a8ced2",
+    "live": "fc833fcfe10372b3dce8ded1d1095cf894e0ff552276e0ff0115dde5a7a8ced2",
+    "matches": true
+  },
+  {
+    "url": "./feedback-snapshot-v0185.js?v=1.1.0-pre.20&h=9b8f7379aa644361",
+    "source": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc",
+    "live": "9b8f7379aa644361b2d3d30b04824b9dbf143ef82fd97463a28d4b3973b017fc",
+    "matches": true
+  },
+  {
+    "url": "./feedback-ui-v0185.js?v=1.1.0-pre.20&h=67b4ac1782374778",
+    "source": "67b4ac17823747782fb353e1f38c5bd103fbf9820d29aec37a963f6b05429251",
+    "live": "67b4ac17823747782fb353e1f38c5bd103fbf9820d29aec37a963f6b05429251",
+    "matches": true
+  },
+  {
+    "url": "./i18n.js?v=1.1.0-pre.20&h=d90b026ad4b636d0",
+    "source": "d90b026ad4b636d05de2e08bd7100744308ada8ab0bf6ed8ce6689958fb684b6",
+    "live": "d90b026ad4b636d05de2e08bd7100744308ada8ab0bf6ed8ce6689958fb684b6",
+    "matches": true
+  },
+  {
+    "url": "./index.html",
+    "source": "2ca4d17e8fa50814abe689ce280696545945c6974506afa3b7e7f2a1805df0d9",
+    "live": "2ca4d17e8fa50814abe689ce280696545945c6974506afa3b7e7f2a1805df0d9",
+    "matches": true
+  },
+  {
+    "url": "./locale-catalog.js?v=1.1.0-pre.20&h=d5a82767d0d305db",
+    "source": "d5a82767d0d305db5d73a4670f40edd4cc6eb5ebf71c6880b1184dda7e35369f",
+    "live": "d5a82767d0d305db5d73a4670f40edd4cc6eb5ebf71c6880b1184dda7e35369f",
+    "matches": true
+  },
+  {
+    "url": "./locale-es-la-data-v110.js?v=1.1.0-pre.20&h=b65dc7912aa4f269",
+    "source": "b65dc7912aa4f26954099bec8c90bab385b4703ec700b5943fc299843a98fd15",
+    "live": "b65dc7912aa4f26954099bec8c90bab385b4703ec700b5943fc299843a98fd15",
+    "matches": true
+  },
+  {
+    "url": "./locale-es-la-v110.js?v=1.1.0-pre.20&h=09272fc0751df3ce",
+    "source": "09272fc0751df3ce2a032b3cebc76c89d52b69037808e683e52e07403259295b",
+    "live": "09272fc0751df3ce2a032b3cebc76c89d52b69037808e683e52e07403259295b",
+    "matches": true
+  },
+  {
+    "url": "./locale-form-species-v0183.js?v=1.1.0-pre.20&h=3199afeb6cdeb06a",
+    "source": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+    "live": "3199afeb6cdeb06a671c2b3af99f9ce8785eeee26614230c990e1a9be031ad41",
+    "matches": true
+  },
+  {
+    "url": "./locale-name-search.js?v=1.1.0-pre.20&h=f6d3cd1c16499f95",
+    "source": "f6d3cd1c16499f954d40df9827f887bc7eb1f2f027966502da6237f766502933",
+    "live": "f6d3cd1c16499f954d40df9827f887bc7eb1f2f027966502da6237f766502933",
+    "matches": true
+  },
+  {
+    "url": "./locale-names-pokeapi-v0183.js?v=1.1.0-pre.20&h=f4f1347d2f77d26e",
+    "source": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+    "live": "f4f1347d2f77d26e4008cdfb6d066c7eece583ebb4bdc2538d881a1a81f24d59",
+    "matches": true
+  },
+  {
+    "url": "./locale-names-v0183.js?v=1.1.0-pre.20&h=30a8ae6f133f6e40",
+    "source": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+    "live": "30a8ae6f133f6e40359535c4122a6561e60a5f4ed600e04f3dbb567e11b7a252",
+    "matches": true
+  },
+  {
+    "url": "./locale-quality-v0188.js?v=1.1.0-pre.20&h=13be3329e6b90036",
+    "source": "13be3329e6b90036f4b0bb93e6ea0ae3727fde9995b10fea3ef3ae5cfdcb315e",
+    "live": "13be3329e6b90036f4b0bb93e6ea0ae3727fde9995b10fea3ef3ae5cfdcb315e",
+    "matches": true
+  },
+  {
+    "url": "./locale-registry.js?v=1.1.0-pre.20&h=6e1cf1762fc13f90",
+    "source": "6e1cf1762fc13f902b20f81684dd1ff54a6c2ff2956abee8bd0c168173fe9154",
+    "live": "6e1cf1762fc13f902b20f81684dd1ff54a6c2ff2956abee8bd0c168173fe9154",
+    "matches": true
+  },
+  {
+    "url": "./locale-ui-es-la-v110.js?v=1.1.0-pre.20&h=0290f479ce486c08",
+    "source": "0290f479ce486c08bc73a229105552d30a200089d930c6a27ae73a94743c7cde",
+    "live": "0290f479ce486c08bc73a229105552d30a200089d930c6a27ae73a94743c7cde",
+    "matches": true
+  },
+  {
+    "url": "./move-mechanics-data-v0184.js?v=1.1.0-pre.20&h=fb13fb406001d7b5",
+    "source": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+    "live": "fb13fb406001d7b5fd34a8a4a43b4667a1bd237c7c8edaceac6718cf66c5deb4",
+    "matches": true
+  },
+  {
+    "url": "./multi-hit.js?v=1.1.0-pre.20&h=254391e32dbd5040",
+    "source": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+    "live": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+    "matches": true
+  },
+  {
+    "url": "./names-catalog-v0179.js?v=1.1.0-pre.20&h=56a420a24a15690c",
+    "source": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+    "live": "56a420a24a15690cdaf96cd6e9c31b4ac25bbc6fe2a4a1f1549bf5c71ac4ed99",
+    "matches": true
+  },
+  {
+    "url": "./names-forms-v0179.js?v=1.1.0-pre.20&h=cc96fa3796bb9532",
+    "source": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+    "live": "cc96fa3796bb953268c327040d94875d780897932a8da56930b901a3fdc8319c",
+    "matches": true
+  },
+  {
+    "url": "./names-ja-en.js?v=1.1.0-pre.20&h=a60f125d021b7982",
+    "source": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+    "live": "a60f125d021b7982767782174b9210e1f8e2458cd5bc84e15ee41375fcc51344",
+    "matches": true
+  },
+  {
+    "url": "./names-ui-v0179.js?v=1.1.0-pre.20&h=24f16430ba48dba0",
+    "source": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+    "live": "24f16430ba48dba06d9e264b6aedf5f986805e909a78fa1382dae6a629150733",
+    "matches": true
+  },
+  {
+    "url": "./names-ui-v0183.js?v=1.1.0-pre.20&h=ff0eeccdcf3f3872",
+    "source": "ff0eeccdcf3f3872fc2d2310911f2a13808a89a458f58f7779b7e96d8a87d09c",
+    "live": "ff0eeccdcf3f3872fc2d2310911f2a13808a89a458f58f7779b7e96d8a87d09c",
+    "matches": true
+  },
+  {
+    "url": "./names-v0179.js?v=1.1.0-pre.20&h=66b46a5cc9593a6d",
+    "source": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+    "live": "66b46a5cc9593a6df9e4be178ea2494abc39130a8835aa60efabdc8c2a1d8212",
+    "matches": true
+  },
+  {
+    "url": "./persistence-v0188.js?v=1.1.0-pre.20&h=50bc1bf1844e5c3a",
+    "source": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
+    "live": "50bc1bf1844e5c3aa65fe415aacd92c2b6cadba3db15918bbd38fbc3800a49bc",
+    "matches": true
+  },
+  {
+    "url": "./pokemon-weights-v0181.js?v=1.1.0-pre.20&h=99577acb18529f20",
+    "source": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+    "live": "99577acb18529f20086f5edcebd31a83e83a5d8a8d9abdba2f22137209dacd14",
+    "matches": true
+  },
+  {
+    "url": "./portrait-alt-v0188.js?v=1.1.0-pre.20&h=59db733dd18fca80",
+    "source": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
+    "live": "59db733dd18fca80c1802661ce7fc464c96feaec5ec0105e3086b5c9853e9acc",
+    "matches": true
+  },
+  {
+    "url": "./release.json",
+    "source": "3ef64f9d244dc66a4a8e0e110ef4a6cfe97004618e9a47e6a1ed8c3c5fdf86db",
+    "live": "3ef64f9d244dc66a4a8e0e110ef4a6cfe97004618e9a47e6a1ed8c3c5fdf86db",
+    "matches": true
+  },
+  {
+    "url": "./singularity-v0187.css?v=1.1.0-pre.20&h=9764687d93fecdbe",
+    "source": "9764687d93fecdbe110c3c5ada0e02b61a33ab3cd56933e65028f78ff1ab585b",
+    "live": "9764687d93fecdbe110c3c5ada0e02b61a33ab3cd56933e65028f78ff1ab585b",
+    "matches": true
+  },
+  {
+    "url": "./variable-power.js?v=1.1.0-pre.20&h=754675fe04758268",
+    "source": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+    "live": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+    "matches": true
+  },
+  {
+    "url": "./weight-power.js?v=1.1.0-pre.20&h=ccf11e17677b6855",
+    "source": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+    "live": "ccf11e17677b68556bf80072f85dc1f12452137bd606fd75218408d171f48916",
+    "matches": true
+  }
+]
