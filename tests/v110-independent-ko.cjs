@@ -43,3 +43,21 @@ for(const edge of [65535,65536,2**31,2**32]){
   assert.equal(context.testWidths.roundProduct32(n,1),util.pokeRound(util.OF32(n)/4096));
  }
 }
+// Speed-based move power at the U16 rank boundary, under the reference speed
+// cap, and where simultaneous Tailwind and paralysis preserve an odd speed.
+for(const [raw,rank,par,wind] of [[8191,6,false,false],[8192,6,false,false],[8193,6,false,false],[9999,6,false,true],[101,0,true,true],[1,-6,true,false]]){
+ const mon=new ref.Pokemon(gen,'Clefable',{level:50,nature:'Serious',boosts:{spe:rank},status:par?'par':'',overrides:{baseStats:{spe:raw-20}}});
+ assert.equal(mon.rawStats.spe,raw);
+ const field=new ref.Field({attackerSide:{isTailwind:wind}});
+ const speed=util.getFinalSpeed(gen,mon,field,field.attackerSide);
+ assert.equal(context.ChlohaDamageEngine.effectiveSpeed(raw,rank,par,wind),speed);
+ for(const [mechanic,name] of [['gyroBall','Gyro Ball'],['electroBall','Electro Ball']]){
+  const target=new ref.Pokemon(gen,'Clefable',{level:50,nature:'Serious'});
+  const move=new ref.Move(gen,name);
+  const reference=ref.calculate(gen,mon,target,move,field);
+  const result=context.ChlohaDamageEngine.calculate({...a,power:1,attack:move.category==='Physical'?mon.rawStats.atk:mon.rawStats.spa,defense:move.category==='Physical'?target.rawStats.def:target.rawStats.spd,
+   attackStage:0,defenseStage:0,moveMechanic:mechanic,moveId:ref.toID(name),category:move.category.toLowerCase(),attTypes:['フェアリー'],defTypes:['フェアリー'],
+   moveType:mechanic==='gyroBall'?'はがね':'でんき',attItem:'none',helpingHand:false,terrain:'none',attSpeed:raw,attSpeedStage:rank,attParalyzed:par,attTailwind:wind,defSpeed:target.rawStats.spe});
+  assert.deepEqual(Array.from(result.rolls),reference.damage,[name,raw,rank,par,wind].join('/'));
+ }
+}

@@ -18,7 +18,7 @@ const protectedFiles=[
  'tests/fixtures/v110-weather-corrections.json',
  'tests/helpers/v110-weather-correction.cjs','tests/helpers/v0184-engine-harness.cjs'
 ];
-for(const file of protectedFiles)assert.equal(hash(read(file)),(file==='damage-engine-v0184.js'?'8c630500f73e136799a2fc3dd8c84f4313c6106abd91297085e7f0a79002594a':hash(old(file))),'Weather source/fixture changed: '+file);
+for(const file of protectedFiles)assert.equal(hash(read(file)),(file==='damage-engine-v0184.js'?'0e377f60330a1baf2821950c730aa6d9a21a5e8574a7bb0f35e45b2595a50f8b':hash(old(file))),'Weather source/fixture changed: '+file);
 // This inline adapter maps roster ability names to engine IDs. It is as important
 // as the engine module, but index.html contains the intentional new count UI.
 function abilityAdapter(html){

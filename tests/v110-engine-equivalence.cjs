@@ -39,7 +39,7 @@ try{
   const before=historical(file),after=current(file);
   let normalized=file==='ability-data-v0184.js'?Buffer.from(require('./helpers/v110-weather-correction.cjs').originalAbilitySource(after.toString())):after;
   if(file==='damage-engine-v0184.js'){
-   assert.equal(hash(after),'8c630500f73e136799a2fc3dd8c84f4313c6106abd91297085e7f0a79002594a','Audited Champions integer pipeline');
+   assert.equal(hash(after),'0e377f60330a1baf2821950c730aa6d9a21a5e8574a7bb0f35e45b2595a50f8b','Audited Champions integer pipeline');
    report.protectedFiles[file]=hash(after);
    continue;
   }
@@ -53,7 +53,26 @@ try{
  report.numericScriptOrder=newOrder; // Display/search inline handlers may add a locale; numerical files remain byte-identical.
  const old=load(historical,oldOrder),candidate=load(current,newOrder);
  function compare(label,entry,input,options={},expectSuccess=true){
-  const expected=observe(old,entry,structuredClone(input),structuredClone(options));
+  let expected=observe(old,entry,structuredClone(input),structuredClone(options));
+  if(expected.output && ['gyroBall','electroBall'].includes(input.moveMechanic)){
+   // Preserve the v1.0 damage pipeline. Independently calculate only the new
+   // speed stage, then supply positive equivalent speeds to the historical API.
+   const speed=side=>{
+    const raw=BigInt(input[side+'Speed']),rank=input[side+'SpeedStage'];
+    const ranked=BigInt.asUintN(16,raw*BigInt(2+Math.max(0,rank)))/BigInt(2+Math.max(0,-rank));
+    const result=ranked*(input[side+'Tailwind']?2n:1n)/(input[side+'Paralyzed']?2n:1n);
+    return Math.min(999,Number(result));
+   };
+   const att=speed('att'),def=speed('def');
+   const previous=side=>old.ChlohaDamageEngine.effectiveSpeed(input[side+'Speed'],input[side+'SpeedStage'],input[side+'Paralyzed'],input[side+'Tailwind']);
+   if(att!==previous('att')||def!==previous('def')){
+    let equivalent=[att,def];
+    if(!att||!def)equivalent=input.moveMechanic==='electroBall'?[1,2]:[26,1];
+    const params={...input,attSpeed:equivalent[0],defSpeed:equivalent[1],attSpeedStage:0,defSpeedStage:0,attTailwind:false,defTailwind:false,attParalyzed:false,defParalyzed:false};
+    expected=observe(old,entry,params,options);
+    if(input.moveMechanic==='electroBall')expected.output.trace=expected.output.trace.map(line=>line.replace(/^エレキボール: 素早さ [0-9]+ \/ [0-9]+/, 'エレキボール: 素早さ '+att+' / '+def));
+   }
+  }
   const actual=observe(candidate,entry,structuredClone(input),structuredClone(options));
   // Adjust only the independently derived transitions in this fixed historical corpus.
   const out=expected.output;

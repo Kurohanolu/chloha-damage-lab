@@ -16,6 +16,9 @@ function expectedDistribution(perHit,counts,accuracy=1,sequential=false){
  else {total.set(0,1-accuracy);for(const [count,prob] of Object.entries(counts))add(perHit.slice(0,+count),accuracy*prob);}
  return total;
 }
+const generation=process.env.MULTIHIT_CHAMPIONS_SOURCE?0:9;
+const gen=reference.Generations.get(generation);
+const exclusions=[];
 const failures=[];let comparisons=0;
 for(const m of moves){
  const multi=context.ChlohaMultiHit.hitDistribution(m.name),special=context.ChlohaMultiHit.specialMoveSpec(m.name);
@@ -24,10 +27,22 @@ for(const m of moves){
   const input={...baseInput,moveId:m.id,power:m.power,moveType:m.type,category:m.category,moveMechanic:policies[m.id]?.mechanic||'none',attTypes:[m.type],defTypes:['みず'],attack:153,defense:117,attAbility:mode==='skillLink'?'skillLink':'none',attItem:mode==='loadedDice'?'loadedDice':'none',defItem:defense==='berry'?'autoResistBerry':'none',defAbility:defense==='shadowShield'?'shadowShield':'none'};
   // A super-effective target makes the optional resistance Berry active.
   if(defense==='berry'&&m.type!=='ノーマル'){
-   const t=context.ChlohaBattleData.TYPES.find(t=>reference.Generations.get(9).types.get(reference.toID(require('./helpers/v0186-reference.cjs').typeName[m.type])).effectiveness[require('./helpers/v0186-reference.cjs').typeName[t]]===2);
+   const t=context.ChlohaBattleData.TYPES.find(t=>gen.types.get(reference.toID(require('./helpers/v0186-reference.cjs').typeName[m.type])).effectiveness[require('./helpers/v0186-reference.cjs').typeName[t]]===2);
    input.defTypes=[t];
   }
-  const b=build(input,{generation:9,nativeMove:true});b.move.hits=special?.hits||5;
+  if(generation===0){
+   const reasons=[];
+   if(!gen.moves.get(flags[m.id].showdownId))reasons.push('move absent');
+   if(mode==='skillLink'&&!gen.abilities.get('skilllink'))reasons.push('Skill Link absent');
+   if(mode==='loadedDice'&&!gen.items.get('loadeddice'))reasons.push('Loaded Dice absent');
+   if(defense==='shadowShield'&&!gen.abilities.get('shadowshield'))reasons.push('Shadow Shield absent');
+   if(defense==='berry'){
+    const id=Object.keys(context.ChlohaBattleData.RESIST_BERRIES).find(id=>context.ChlohaBattleData.RESIST_BERRIES[id]===m.type);
+    if(!gen.items.get(reference.toID(id)))reasons.push('berry absent');
+   }
+   if(reasons.length){exclusions.push({move:m.id,mode,defense,reasons});continue;}
+  }
+  const b=build(input,{generation,nativeMove:true});b.move.hits=special?.hits||5;
   const rr=reference.calculate(b.gen,b.attacker,b.defender,b.move,b.field).damage;
   const referenceHits=Array.isArray(rr[0])?rr:[rr];
   const fixed=Object.keys(multi||{}).length===1&&+Object.keys(multi)[0]===2;
@@ -48,6 +63,8 @@ for(const m of moves){
   comparisons++;
  }
 }
-fs.mkdirSync(root+'/reports/v0186',{recursive:true});fs.writeFileSync(root+'/reports/v0186/multihit-differential.json',JSON.stringify({comparisons,mismatches:failures.length,failures},null,2)+'\n');
+fs.mkdirSync(root+'/reports/v0186',{recursive:true});fs.writeFileSync(root+'/reports/v0186/'+(generation===0?'multihit-champions.json':'multihit-differential.json'),JSON.stringify({generation,comparisons,exclusions,mismatches:failures.length,failures},null,2)+'\n');
 console.log('Multi-hit differential:',comparisons,'probability distributions,',failures.length,'mismatches',failures.map(f=>f.name+'/'+f.mode+'/'+f.defense).join(', '));
 assert.equal(failures.length,0,'Per-hit effects and complete distributions must agree with the independent reference');
+
+assert.deepEqual([comparisons,exclusions.length],generation===0?[56,70]:[126,0]);
