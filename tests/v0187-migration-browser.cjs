@@ -8,7 +8,7 @@ const {loadPublicContracts}=require('./helpers/public-release-contract.cjs');
 const release=JSON.parse(fs.readFileSync('release.json','utf8'));
 const {stable,displayVersion}=require('../scripts/helpers/release-identity.cjs').releaseIdentity(release);
 // Exact candidate transport contract; old Stable assertions remain intact.
-const esLaCandidate=['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20'].includes(release.tag);
+const esLaCandidate=['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(release.tag);
 const expectedWireVersion=stable?'v1.0':esLaCandidate?'v1.1 Pre-Release '+release.preRelease:displayVersion;
 const locales=['ja','en','fr','de','es','it','ko','zh-Hans','zh-Hant'];
 const descriptions=['ポケモン ダメージ計算機','Pokémon Damage Calculator','Calculateur de dégâts Pokémon','Pokémon-Schadensrechner','Calculadora de daño Pokémon','Calcolatore di danni Pokémon','포켓몬 데미지 계산기','宝可梦伤害计算器','寶可夢傷害計算器'];

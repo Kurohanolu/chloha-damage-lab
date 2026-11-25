@@ -2304,7 +2304,7 @@
       "resolution": "fixed; same case now matches all 16 points"
     }
   ],
-  "unresolvedOverflow": [
+  "overflowBeforeCompatibilityFix": [
     {
       "caseIndex": 13,
       "scope": "native species and stage model; battle history unverified",
@@ -2569,5 +2569,13 @@
       "stage": "integer width (rank, intermediate product or final damage); see operand inputs and vectors",
       "evidence": "overflow.json"
     }
-  ]
+  ],
+  "showdownCompatibility": {
+    "reference": "abdce0c64597284c8c463b7f71a38dc4dc55cd10",
+    "resolvedHistoricalOverflowCases": 33,
+    "mismatchingOverflowPointsAfter": 0,
+    "source": "showdown-compatibility/overflow.json.gz",
+    "hardware": "future research",
+    "speed": "addressed in 726ab93ffb00d4834590825888bf16e42b1ad738"
+  }
 }

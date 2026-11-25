@@ -46,7 +46,9 @@ const pre17Commit='6360fa3a243c234993e032a415540b2c4691afeb',pre17=historical(pr
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.18'}),pre17Commit);
 const pre18=historical('c52a65f4487fa8b4ceb2cd1ac5d85a2334697854');
 const pre19=historical('016c5801bd63ed891c4c359d02748b3a66c26d0f');
-const current=pending(require('../release.json'));
+const current=pending(historical('8343afafc1915fd82a765d0655742819f14fe5f8'));
+const promoted=require('../release.json');
+assert.deepEqual(releaseIdentity(promoted),{stable:true,displayVersion:'v1.1.0',packageVersion:'1.1.0'});
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.19'}),'c52a65f4487fa8b4ceb2cd1ac5d85a2334697854');
 assert.equal(baselineForRelease({tag:'v1.1.0-pre.20'}),'016c5801bd63ed891c4c359d02748b3a66c26d0f');
 assert.equal(current.tag,'v1.1.0-pre.20');assert.equal(current.preRelease,20);
@@ -81,6 +83,8 @@ for(const [title,number]of [[pre1.name,1],[pre2.name,2],[pre3.name,3],[pre4.name
   const text=R.text(locale,'compatibility',title);assert.ok(text.includes(id.wireVersion)&&text.includes(id.fullVersion));assert.ok(!text.includes('v1.0.0'));
  }
 }
-for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 13','Singularity v1.1.0','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
+for(const unknown of ['Singularity v1.1.1 Pre-Release 1','Singularity v1.1.0 Pre-Release 13','Singularity v1.1.2','Singularity v1.0.1',current.name+' extra'])assert.throws(()=>R.identify(unknown),/unsupported_report_version/);
+assert.equal(R.identify(promoted.name).wireVersion,'v1.1');
+assert.equal(R.identify(promoted.name).fullVersion,'v1.1.0');
 assert.equal(R.identify(stable.name).fullVersion,'v1.0.0');assert.equal(R.identify('Singularity v0.188 Pre-Release 1').compatibility,false);
 console.log('PASS v1.1.0 pre.1/pre.2/pre.3/pre.4/pre.5/pre.6/pre.7/pre.8/pre.9/pre.11/pre.12/pre.14/pre.15/pre.16/pre.17/pre.18/pre.19/pre.20 exact identities, immutable public baselines, stale-approval rejection and bounded feedback compatibility');

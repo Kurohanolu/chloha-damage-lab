@@ -1,9 +1,9 @@
 {
   "version": "1.1.0",
-  "preRelease": 20,
-  "tag": "v1.1.0-pre.20",
-  "name": "Singularity v1.1.0 Pre-Release 20",
-  "notes": "docs/releases/v1.1.0-pre.20.md",
+  "preRelease": null,
+  "tag": "v1.1.0",
+  "name": "Singularity v1.1.0",
+  "notes": "docs/releases/v1.1.0.md",
   "publicUrl": "https://kurohanolu.github.io/singularity/",
   "product": "Singularity",
   "developer": "Chloha Labs",
@@ -15,32 +15,20 @@
     "appleTouch": "assets/singularity/apple-touch-icon.png"
   },
   "migration": {
-    "status": "approved",
+    "status": "awaiting-owner-approval",
     "strategy": "new-project-preserve-history",
     "sourceRepository": "Kurohanolu/chloha-damage-lab",
     "targetRepository": "Kurohanolu/singularity",
     "legacyUrl": "https://kurohanolu.github.io/chloha-damage-lab/",
     "designApproval": "approved",
-    "liveTargetVerified": true,
-    "legacyPolicy": "community-pinned-v1",
-    "liveAcceptanceSourceCommit": "d3f207d2b8bf225a17e1420ab2857d31b652e827",
-    "liveAcceptanceDeploymentRun": "https://github.com/Kurohanolu/singularity/actions/runs/44517576796",
-    "liveAcceptanceEvidence": "docs/evidence/v110-pre20/live-acceptance-receipt.json",
-    "liveAcceptanceObservedAtJST": "2026-11-19T21:11:05+09:00"
+    "liveTargetVerified": false,
+    "legacyPolicy": "community-pinned-v1"
   },
   "qualityReview": {
-    "releaseTag": "v1.1.0-pre.20",
-    "auditor": "6.1 Sol",
-    "auditStatus": "passed",
-    "ownerApproval": "approved",
-    "evidence": "docs/evidence/v110-pre20/independent-review.md",
-    "auditOutcome": "conditional-pass",
-    "conditionsDisposition": "accepted-by-owner",
-    "reviewedSourceCommit": "be152b920cdf537794ab8802677d9a3393d359df",
-    "reviewedTree": "5626c6e4814fe6a1e9ff8636163751cf8fd76bde",
-    "auditReportSha256": "4f614ab52d7372bec188fe067e4df1d8a56adceec94947581d66dcc16199a637",
-    "ownerEvidence": "docs/evidence/v110-pre20/owner-approval.json",
-    "ownerRecordedAtJST": "2026-11-19T19:02:24+09:00"
+    "releaseTag": "v1.1.0",
+    "auditor": "ChatGPT Work",
+    "auditStatus": "pending",
+    "ownerApproval": "pending"
   },
-  "channel": "prerelease"
+  "channel": "stable"
 }

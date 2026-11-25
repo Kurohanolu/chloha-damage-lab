@@ -9,6 +9,7 @@ const scope=p=>/^[^/]+\.(?:js|html|css)$/.test(p)||p.startsWith('data/')||p.star
 const additions=['docs/data/v110-es-la-regional-batch14.json'];
 // Fixed after bounded source integration; independent review must verify them. Never learned at runtime.
 const pins={
+ 'feedback-release-v100.js':'30494e2fbc34639f3a18072b02fc97f7bf068b4528a531a21596c571699b6931',
  'damage-engine-v0184.js':'0e377f60330a1baf2821950c730aa6d9a21a5e8574a7bb0f35e45b2595a50f8b',
  'locale-es-la-data-v110.js':'b65dc7912aa4f26954099bec8c90bab385b4703ec700b5943fc299843a98fd15',
  'docs/data/v110-es-la-source-records.json':'e0a3cf58f59cf70c938dcacec0b2d79564b69fab6fcf0a07eaad39835c8c9d4d',

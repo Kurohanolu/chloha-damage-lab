@@ -1,3 +1,25 @@
+# v1.1.0 Stable 候補の監査
+
+2026-11-25 の追加指示に従い、固定参照 abdce0c64597284c8c463b7f71a38dc4dc55cd10 の Champions 実装を採用した。以下は計算エンジン 726ab93ffb00d4834590825888bf16e42b1ad738 の実行結果。Stable 表記の候補は最終 CI 待ち。
+
+| 検査 | 結果 |
+|---|---|
+| Champions 単発 | 12,000/12,000、順序付き192,000/192,000、除外0 |
+| 既存単発 | 4,000/4,000（Champions 494、第9世代 3,506） |
+| 独立算術 | 480/480、7,680点 |
+| 連続技 | Champions 56分布、第9世代126分布が一致。56件は同じシナリオを別世代で実行 |
+| オーバーフロー | 修正前33件506点不一致、修正後62/62件992/992点 |
+| 追加KO判定 | サーナイトのアシストパワー、最小57・最大64,839、15/16。ブラウザ表示93.75% |
+| 反復攻撃 | 同じ非単調分布2回の256組を独立合算、HP155に対して255/256 |
+| 素早さ | 指定参照の上限999、ランク途中のU16、追い風とまひの順序を実行比較 |
+| ブラウザ | 10言語110遷移、再読込15回、6画面幅×10言語 |
+
+62件と追加のKO例は別集計。ビット幅単体検査はケース総数に加算しない。元監査20件の生データは取得できず、独立境界値で論点を検証した。実機バージョンとHP回復現象の詳細は HARDWARE_OVERFLOW_RESEARCH_BACKLOG.md に記録した。
+
+旧安定版 v1.0.0 のソースは 0b270c1452505268364659edd402209b00b28673。直前の公開版 Pre.20 のデプロイ元は 8343afafc1915fd82a765d0655742819f14fe5f8。公開ロールバックは対象の監査済み SHA を公開リポジトリの deployment-request.json に指定し、Pagesのデプロイと実ファイル照合を行う。
+
+## 方針変更前の監査記録
+
 # Independent audit checkpoint, 2026-11-25
 Source main a7389a01d3b309a71e3a0c6413243700d445e263. Production release.json returned v1.1.0-pre.20. Deployment repository main ee778eef9478e434ebb1cbdaa87d331a640023fa requests 8343afafc1915fd82a765d0655742819f14fe5f8, which has the same tree as source main. Baseline PRs open: 80, 46, 38. Prior 17 Actions results recorded separately. No deployment authorized until the new release gates pass.
 
