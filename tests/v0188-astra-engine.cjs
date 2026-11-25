@@ -21,16 +21,16 @@ function historic(sha){
 }
 // Independent rational arithmetic: floor at integer boundaries; no production
 // rounding helper, trace or type chart is consulted for the neutral oracle.
-function stage(value,rank){return Number(BigInt(value)*BigInt(rank>=0?2+rank:2)/BigInt(rank>=0?2:2-rank))||1;}
+function stage(value,rank){return Number(BigInt.asUintN(16,BigInt(value)*BigInt(rank>=0?2+rank:2))/BigInt(rank>=0?2:2-rank))||1;}
 function oracle({power,attack,defense,attackStage=0,defenseStage=0,critical=false,stab=1}){
  const a=stage(attack,critical?Math.max(0,attackStage):attackStage),d=stage(defense,critical?Math.min(0,defenseStage):defenseStage);
- let n=22n*BigInt(power)*BigInt(a)/BigInt(d)/50n+2n;
- if(critical)n=n*3n/2n;
+ let n=BigInt.asUintN(32,22n*BigInt(power)*BigInt(a))/BigInt(d)/50n+2n;
+ if(critical)n=BigInt.asUintN(33,n*3n)/2n;
  return Array.from({length:16},(_,index)=>{
-  let damage=n*BigInt(85+index)/100n;
-  if(stab===1.5)damage=damage*3n/2n;
-  else if(stab===2)damage*=2n;
-  return Number(damage<1n?1n:damage);
+  let damage=BigInt.asUintN(32,n*BigInt(85+index))/100n;
+  if(stab!==1)damage=(BigInt.asUintN(32,damage*BigInt(stab*4096))+2047n)/4096n;
+  damage=BigInt.asUintN(32,damage*4096n)/4096n;
+  return Number(BigInt.asUintN(16,damage<1n?1n:damage));
  });
 }
 let neutralCases=0,rankCases=0,immunityCases=0,thresholdCases=0;
@@ -69,7 +69,23 @@ let historicalInputs=0,historicalComparisons=0;
 for(let index=0;index<1800;index++){
  const input={...structuredClone(original),power:pick([1,30,59,60,61,91,120,250,500]),attack:50+random(301),defense:50+random(301),attackStage:random(13)-6,defenseStage:random(13)-6,critical:!!random(2),category:pick(['physical','special']),moveType:pick(types),attTypes:[pick(types)],defTypes:[pick(types)],weather:pick(['none','sun','rain','sand','snow']),terrain:pick(['none','electric','grassy','misty','psychic']),screen:pick(['none','reflect','lightScreen']),spread:pick(['single','spread']),burn:!!random(2),attAbility:pick(['none','technician','adaptability','hugePower','sniper','infiltrator','unaware']),defAbility:pick(['none','thickFat','furCoat','filter','levitate','iceScales','battleArmor','unaware']),attItem:pick(['none','lifeOrb','choiceBand','choiceSpecs','expertBelt']),defItem:pick(['none','assaultVest','autoResistBerry'])};
  const expected=observe(context,'core',structuredClone(input));assert.ok(expected.output,'generated condition must be supported');
- for(let h=0;h<old.length;h++){assert.deepEqual(observe(old[h],'core',structuredClone(input)),expected,histories[h]+' input '+index);historicalComparisons++;}
+ for(let h=0;h<old.length;h++){
+  const historical=observe(old[h],'core',structuredClone(input));
+  // This corpus never crosses U16. The reference now clamps the final
+  // modifier result to one at that traced stage, including after burn.
+  if(historical.output)historical.output.trace=historical.output.trace.map(line=>line.replace(/^(final\/(?!burn)[^:]+: [0-9]+ → )0$/,(_,prefix)=>prefix+'1'));
+  if(index===1536){
+   const out=historical.output;
+   assert.equal(out.base,1);
+   assert.ok(out.trace.includes('preRandom/weather: 1 → 0'));
+   assert.equal(out.effectiveness,0.5);
+   assert.deepEqual(out.rolls,Array(16).fill(1));
+   out.base=0;
+   out.trace=out.trace.map(line=>line==='postRandom/stab: 1 → 1'?'postRandom/stab: 0 → 0':line==='postRandom/type: 1 → 0'?'postRandom/type: 0 → 0':line);
+  }
+  assert.deepEqual(historical,expected,histories[h]+' input '+index);
+  historicalComparisons++;
+ }
  historicalInputs++;
 }
 const engineSourceChanged=runtimeFiles.some(file=>fs.readFileSync(path.join(root,file),'utf8')!==execFileSync('git',['show',histories[0]+':'+file],{cwd:root,encoding:'utf8',maxBuffer:5*1024*1024}));

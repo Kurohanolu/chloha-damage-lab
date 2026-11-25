@@ -1,0 +1,50 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const cp = require('node:child_process');
+const {context,baseInput} = require('./helpers/v0186-reference.cjs');
+const checkout = fs.realpathSync(process.env.CHAMPIONS_REFERENCE);
+assert.equal(cp.execFileSync('git',['-C',checkout,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),'abdce0c64597284c8c463b7f71a38dc4dc55cd10');
+const ref = require(path.join(checkout,'calc/dist'));
+
+const floor = (x,y) => Number(BigInt(x)/BigInt(y));
+const apply = (x,m) => floor(BigInt(x)*BigInt(m)+2047n,4096);
+const compose = mods => mods.reduce((p,m)=>floor(BigInt(p)*BigInt(m)+2048n,4096),4096);
+function rank(x,r) {return r>=0?floor(x*(2+r),2):floor(x*2,2-r);}
+const modifiers = [5325,5120,4915];
+assert.equal(apply(70,compose(modifiers)),136);
+assert.equal(apply(70,compose([5325,4915,5120])),137);
+const results = [];
+const neutral = {types:['Normal'],baseStats:{hp:105,atk:100,spa:100,def:100,spd:100,spe:80}};
+const cases = ['hustle','sand','snow','psyshockSnow','psyshockSand','analytic'];
+for (const generation of [0,9]) for (const kind of cases) for (const stat of [99,100,101,102]) for (const boost of [-6,-1,0,1,6]) for (const crit of [false,true]) {
+  const gen = ref.Generations.get(generation);
+  const hustle=kind==='hustle', analytic=kind==='analytic', sand=kind.endsWith('Sand')||kind==='sand', snow=kind.endsWith('Snow')||kind==='snow';
+  const psy=kind.startsWith('psyshock'), physical=hustle||kind==='snow', useDef=physical||psy;
+  const aStat=physical?'atk':'spa', dStat=useDef?'def':'spd';
+  const ability=hustle?'Hustle':analytic?'Analytic':'No Ability', targetAbility=hustle?'Thick Fat':snow?'Fur Coat':analytic?'Dry Skin':'No Ability';
+  const moveType=hustle?'Ice':analytic?'Fire':psy?'Psychic':'Normal', defType=snow?'Ice':sand?'Rock':'Normal';
+  const attacker = new ref.Pokemon(gen,'Clefable',{level:50,ability,abilityOn:analytic,item:hustle&&generation===9?'Choice Band':analytic?'Charcoal':'',nature:'Serious',boosts:{[aStat]:boost},overrides:{...neutral,types:['Water'],baseStats:{...neutral.baseStats,[aStat]:stat-20}}});
+  const defender = new ref.Pokemon(gen,'Clefable',{level:50,ability:targetAbility,item:kind==='sand'&&generation===9?'Assault Vest':'',nature:'Serious',boosts:{[dStat]:boost},overrides:{...neutral,types:[defType],baseStats:{...neutral.baseStats,[dStat]:stat-20}}});
+  const move = new ref.Move(gen,psy?'Psyshock':'Arithmetic Probe',{isCrit:crit,overrides:{flags:{},basePower:70,type:moveType,category:physical?'Physical':'Special'}});
+  const field = new ref.Field({weather:sand?'Sand':snow?'Snow':undefined});
+  const expected = ref.calculate(gen,attacker,defender,move,field).damage;
+  const a={...baseInput,category:physical?'physical':'special',attack:stat,defense:stat,attackStage:boost,defenseStage:boost,power:70,critical:crit,attTypes:['みず'],defTypes:[snow?'こおり':sand?'いわ':'ノーマル'],moveType:hustle?'こおり':analytic?'ほのお':psy?'エスパー':'ノーマル',attAbility:hustle?'hustle':analytic?'analytic':'none',defAbility:hustle?'thickFat':snow?'furCoat':analytic?'drySkin':'none',attItem:hustle&&generation===9?'choiceBand':analytic?'flamePlate':'none',defItem:kind==='sand'&&generation===9?'assaultVest':'none',weather:sand?'sand':snow?'snow':'none',moveMechanic:psy?'psyshock':'none'};
+  const actual = Array.from(context.ChlohaDamageEngine.calculate(a).rolls);
+  let atk=rank(stat,crit?Math.max(boost,0):boost), def=rank(stat,crit?Math.min(boost,0):boost);
+  if(hustle) atk=apply(apply(atk,6144),generation===9?3072:2048);
+  if((sand&&!useDef)||(snow&&useDef)) def=apply(def,6144);
+  if(snow) def*=2;
+  if(kind==='sand'&&generation===9) def=apply(def,6144);
+  let base=floor(floor(22*(analytic?apply(70,compose(modifiers)):70)*atk,def),50)+2;
+  if(crit) base=floor(base*3,2);
+  const oracle=Array.from({length:16},(_,i)=>Math.max(1,floor(floor(base*(85+i),100),sand&&!psy?2:1)));
+  results.push({generation,kind,stat,boost,crit,input:a,actual,expected,oracle,scope:'synthetic stat/ability combinations; Charcoal is the equal-factor reference for Flame Plate'});
+}
+const dir = process.env.AUDIT_OUTPUT || 'reports/v110-independent';
+fs.mkdirSync(dir,{recursive:true});
+fs.writeFileSync(path.join(dir,'boundary-cases.jsonl.gz'),require('node:zlib').gzipSync(results.map(x=>JSON.stringify(x)).join('\n')+'\n'));
+const failures=results.filter(r=>JSON.stringify(r.actual)!==JSON.stringify(r.expected)||JSON.stringify(r.actual)!==JSON.stringify(r.oracle));
+console.log(JSON.stringify({cases:results.length,failures:failures.length,first:failures[0]},null,2));
+assert.equal(failures.length,0);

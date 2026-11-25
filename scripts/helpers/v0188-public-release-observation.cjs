@@ -138,7 +138,15 @@ function pre9Manifest(){
 function identity(release){return Object.fromEntries(fields.map(key=>[key,release?.[key]]));}
 function verifyObservation(localRelease,publicRelease,title,previous=null){
  const actual=identity(publicRelease);
- if(localRelease.tag==='v1.1.0-pre.20'){
+ if(localRelease.tag==='v1.1.0'){
+  if(actual.tag==='v1.1.0-pre.20'){
+   assert.equal(localRelease.migration.liveTargetVerified,false);
+   assert.deepEqual(publicRelease,JSON.parse(require('node:child_process').execFileSync('git',['show','8343afafc1915fd82a765d0655742819f14fe5f8:release.json'])));
+  }else{
+   verifyCutoverApproval(localRelease);
+   assert.deepEqual(publicRelease,localRelease,'Live stable manifest must match the approved candidate');
+  }
+ }else if(localRelease.tag==='v1.1.0-pre.20'){
   assert.ok(!Object.prototype.hasOwnProperty.call(localRelease,'followupAudit'),'Pre.20 must use its own release decision, not a historical follow-up marker');
   const predecessor=pre19Manifest();
   if(localRelease.qualityReview?.ownerApproval==='pending'){

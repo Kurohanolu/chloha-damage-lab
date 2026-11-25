@@ -64,8 +64,12 @@ jobs:
       - run: npx playwright install chromium
       - name: Select one exact expected source for this publication phase
         id: expected-source
-        run: node scripts/v0188-select-pages-baseline.cjs
+        run: |
+          gh api repos/Kurohanolu/singularity/contents/deployment-request.json --jq .content | base64 --decode > "$RUNNER_TEMP/pages-deployment.json"
+          node scripts/v0188-select-pages-baseline.cjs
         env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_DEPLOYMENT_REQUEST: ${{ runner.temp }}/pages-deployment.json
           PAGES_EVENT_NAME: ${{ github.event_name }}
           PAGES_PR_BASE_REF: ${{ github.event.pull_request.base.sha || '' }}
       - run: node tests/pages-live-smoke.cjs

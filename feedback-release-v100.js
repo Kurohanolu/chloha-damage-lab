@@ -8,6 +8,7 @@
   const fullVersion='v1.1.0 Pre-Release '+number,wireVersion='v1.1 Pre-Release '+number;
   return ['Singularity '+fullVersion,Object.freeze({fullVersion,wireVersion,prefix:'[Singularity release: '+fullVersion+']\n\n'})];
  }));
+ candidates.set('Singularity v1.1.0',Object.freeze({fullVersion:'v1.1.0',wireVersion:'v1.1',prefix:'[Singularity release: v1.1.0]\n\n'}));
  const stablePrefix='[Singularity release: v1.0.0]\n\n';
  const copy=Object.freeze({
   ja:Object.freeze({label:'報告する製品版',header:'以下の版情報は、添付の有無にかかわらず本文に自動で付加されます。',compatibility:'添付内のappVersion「v1.0」は互換送信用の識別子です。完全な製品版はv1.0.0です。',unsupported:'この製品版の報告形式には未対応です。内容は送信されていません。'}),

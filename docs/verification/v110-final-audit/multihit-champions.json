@@ -1,0 +1,581 @@
+{
+  "comparisons": 56,
+  "exclusions": [
+    {
+      "move": "v096_093",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "v096_093",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "v096_093",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "v096_093",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "v096_093",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p051",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p051",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p051",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p051",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p051",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p052",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p052",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p052",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p052",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p052",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p059",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p059",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p059",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p059",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p059",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p060",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p060",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p060",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p060",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p060",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p063",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p063",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p063",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p063",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p063",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p077",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p077",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_p077",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p077",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_p077",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s029",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s029",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s029",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_s029",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_s029",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s057",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s057",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0169_s057",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_s057",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0169_s057",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u008",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u008",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u008",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u008",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u008",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u042",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u042",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u042",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u042",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u042",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u045",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u045",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u045",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u045",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u045",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u058",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u058",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170_u058",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u058",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170_u058",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170b_025",
+      "mode": "ordinary",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170b_025",
+      "mode": "skillLink",
+      "defense": "shadowShield",
+      "reasons": [
+        "Shadow Shield absent"
+      ]
+    },
+    {
+      "move": "gw0170b_025",
+      "mode": "loadedDice",
+      "defense": "none",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170b_025",
+      "mode": "loadedDice",
+      "defense": "berry",
+      "reasons": [
+        "Loaded Dice absent"
+      ]
+    },
+    {
+      "move": "gw0170b_025",
+      "mode": "loadedDice",
+      "defense": "shadowShield",
+      "reasons": [
+        "Loaded Dice absent",
+        "Shadow Shield absent"
+      ]
+    }
+  ],
+  "mismatches": 0,
+  "failures": []
+}

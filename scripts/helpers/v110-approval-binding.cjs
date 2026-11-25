@@ -10,8 +10,8 @@ function evidence(file){
  return fs.readFileSync(file);
 }
 function verifyV110Binding(release){
- assert.ok(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20'].includes(release.tag),'Explicit ES-LA release policy required');
- const r=release.qualityReview,reviewer=['v1.1.0-pre.11','v1.1.0-pre.14'].includes(release.tag)?'6 Sol':'6.1 Sol';
+ assert.ok(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(release.tag),'Explicit ES-LA release policy required');
+ const r=release.qualityReview,reviewer=release.tag==='v1.1.0'?'ChatGPT Work':['v1.1.0-pre.11','v1.1.0-pre.14'].includes(release.tag)?'6 Sol':'6.1 Sol';
  assert.match(r.reviewedSourceCommit||'',/^[a-f0-9]{40}$/);
  assert.equal(git(['rev-parse',r.reviewedSourceCommit+'^{tree}']).toString().trim(),r.reviewedTree);
  const reviewed=file=>git(['show',r.reviewedSourceCommit+':'+file]);
@@ -22,6 +22,7 @@ function verifyV110Binding(release){
   assert.equal(before.preRelease,release.tag==='v1.1.0-pre.20'?20:release.tag==='v1.1.0-pre.19'?19:release.tag==='v1.1.0-pre.18'?18:release.tag==='v1.1.0-pre.17'?17:release.tag==='v1.1.0-pre.16'?16:release.tag==='v1.1.0-pre.15'?15:release.tag==='v1.1.0-pre.14'?14:release.tag==='v1.1.0-pre.12'?12:release.tag==='v1.1.0-pre.11'?11:release.tag==='v1.1.0-pre.9'?9:release.tag==='v1.1.0-pre.8'?8:release.tag==='v1.1.0-pre.7'?7:release.tag==='v1.1.0-pre.6'?6:release.tag==='v1.1.0-pre.5'?5:release.tag==='v1.1.0-pre.4'?4:release.tag==='v1.1.0-pre.3'?3:2);assert.equal(before.qualityReview.releaseTag,release.tag);
   assert.equal(before.qualityReview.auditStatus,'pending');
  }
+ if(release.tag==='v1.1.0'){assert.equal(before.channel,'stable');assert.equal(before.preRelease,null);assert.equal(before.qualityReview.auditStatus,'pending');}
  assert.equal(before.migration.liveTargetVerified,false);
  const expected=structuredClone(before);expected.qualityReview=r;expected.migration.status='approved';
  expected.migration.liveTargetVerified=release.migration.liveTargetVerified;

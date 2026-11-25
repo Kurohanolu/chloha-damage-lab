@@ -1,5 +1,5 @@
 // Pre20 preserves the entire historical proof on immutable published pre19.
-if(require('../release.json').tag==='v1.1.0-pre.20'){
+if(['v1.1.0-pre.20','v1.1.0'].includes(require('../release.json').tag)){
  const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
  const {execFileSync,spawnSync}=require('node:child_process');
  const ref='016c5801bd63ed891c4c359d02748b3a66c26d0f',tree='cb30edc6da5ba49b15532ecc7998621996ed7572',file='tests/v110-pre19-publication.cjs';

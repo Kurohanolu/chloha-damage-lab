@@ -58,6 +58,15 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk
+      - name: Build the pinned Champions reference for candidate test discovery
+        run: |
+          reference="$RUNNER_TEMP/champions-reference"
+          git init -q "$reference"
+          git -C "$reference" fetch --depth=1 https://github.com/smogon/damage-calc.git abdce0c64597284c8c463b7f71a38dc4dc55cd10
+          git -C "$reference" checkout -q --detach FETCH_HEAD
+          npm ci --prefix "$reference/calc" --ignore-scripts
+          npm run compile --prefix "$reference/calc"
+          echo "CHAMPIONS_REFERENCE=$reference" >> "$GITHUB_ENV"
       - name: Validate release identity and unchanged 300-case contract
         run: |
           node scripts/verify-release.cjs

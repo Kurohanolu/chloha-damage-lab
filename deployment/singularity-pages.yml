@@ -65,7 +65,7 @@ jobs:
           node -e "const r=require('./release.json');require('node:assert/strict').equal(r.product,'Singularity');require('./scripts/verify-publication-approval.cjs').verifyCutoverApproval(r)"
           node scripts/verify-release.cjs
           node tests/v0184-public-baseline.cjs
-          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20'].includes(require('./release.json').tag)?0:1)"; then
+          if node -e "process.exit(['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(require('./release.json').tag)?0:1)"; then
             node scripts/v110-historical-contracts.cjs --suite migration
             node tests/v110-artifact-contract.cjs
           else
@@ -82,9 +82,10 @@ jobs:
             const required = ['Showdown differential tests', 'Showdown differential audit', 'v0.184 engine baseline', 'Damage Lab CI and status ledger', 'UI & damage regression', 'v0.185 anonymous feedback', 'v0.186 Accuracy & Mechanics Audit', 'v0.187 Singularity Migration'];
             const release = require('./release.json');
             if (Number(release.version.split('.')[0]) > 0 || Number(release.version.split('.')[1]) >= 188) required.push('v0.188 Quality Remediation');
-            if (['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20'].includes(release.tag)) required.push('v1.1.0 ES-LA Localization');
-            if (['v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20'].includes(release.tag)) required.push('Conditional move UI acceptance');
-            if (release.tag === 'v1.0.0') required.push('v1.0.0 Stable Promotion');
+            if (['v1.1.0-pre.1','v1.1.0-pre.2','v1.1.0-pre.3','v1.1.0-pre.4','v1.1.0-pre.5','v1.1.0-pre.6','v1.1.0-pre.7','v1.1.0-pre.8','v1.1.0-pre.9','v1.1.0-pre.11','v1.1.0-pre.12','v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(release.tag)) required.push('v1.1.0 ES-LA Localization');
+            if (['v1.1.0-pre.14','v1.1.0-pre.15','v1.1.0-pre.16','v1.1.0-pre.17','v1.1.0-pre.18','v1.1.0-pre.19','v1.1.0-pre.20','v1.1.0'].includes(release.tag)) required.push('Conditional move UI acceptance');
+            if (['v1.0.0','v1.1.0'].includes(release.tag)) required.push('v1.0.0 Stable Promotion');
+            if (release.tag === 'v1.1.0') required.push('Independent Champions damage audit');
             const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner:'Kurohanolu',repo:'chloha-damage-lab',head_sha:sha,per_page:100});
             const latest = new Map();
             for (const run of data.workflow_runs) {

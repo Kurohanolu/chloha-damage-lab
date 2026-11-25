@@ -8,7 +8,7 @@ const {verifyObservation}=require('../scripts/helpers/v0188-public-release-obser
 const {selectBaseline}=require('../scripts/v0188-select-pages-baseline.cjs');
 const publishedCommit='016c5801bd63ed891c4c359d02748b3a66c26d0f',publishedTree='cb30edc6da5ba49b15532ecc7998621996ed7572';
 const historical=ref=>JSON.parse(execFileSync('git',['show',ref+':release.json'],{encoding:'utf8'}));
-const current=structuredClone(require('../release.json')),pre19=historical(publishedCommit),pre1=historical('83af29133927a19fc7e0f9273c0e194c54384ae5');
+const current=historical('8343afafc1915fd82a765d0655742819f14fe5f8'),pre19=historical(publishedCommit),pre1=historical('83af29133927a19fc7e0f9273c0e194c54384ae5');
 assert.equal(current.migration.legacyPolicy,'community-pinned-v1');assert.equal(current.tag,'v1.1.0-pre.20');assert.equal(current.preRelease,20);assert.equal(current.name,'Singularity v1.1.0 Pre-Release 20');
 assert.equal(current.notes,'docs/releases/v1.1.0-pre.20.md');assert.equal(Object.hasOwn(current,'followupAudit'),false);
 assert.equal(pre19.tag,'v1.1.0-pre.19');assert.equal(pre19.migration.liveTargetVerified,true);
@@ -56,9 +56,20 @@ for(const marker of [null,false,{},'approved']){
 if(current.qualityReview.ownerApproval==='pending'){
  assert.deepEqual(current,draft,'New candidate has a completely cleared pending audit/live state');
 }else{
- verifyCutoverApproval(current);
- if(current.migration.liveTargetVerified){verifyPublication(current);assert.throws(()=>verifyObservation(current,pre19,pre19.name),'Accepted pre.20 never downgrades to pre.19');}
- else assert.deepEqual(selectBaseline(current,'push',''),{ref:publishedCommit,mode:'published-v110-pre20-base'});
+ // Pre.20's approval belongs to its deployed source. Exercise the full original
+ // lifecycle there and reject using that approval for this changed candidate.
+ const deployed='8343afafc1915fd82a765d0655742819f14fe5f8';
+ const path=require('node:path'),os=require('node:os');
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'singularity-published-pre20-'));
+ const worktree=path.join(temp,'source');
+ try{
+  execFileSync('git',['worktree','add','--detach',worktree,deployed]);
+  execFileSync(process.execPath,['tests/v110-pre20-publication.cjs'],{cwd:worktree,stdio:'inherit'});
+  assert.throws(()=>verifyCutoverApproval(current),/protected inventory|reviewed/i);
+ }finally{
+  if(fs.existsSync(path.join(worktree,'.git')))execFileSync('git',['worktree','remove',worktree]);
+  fs.rmSync(temp,{recursive:true,force:true});
+ }
 }
 // Both receipt writer and verifier must name the same immutable rollback source.
 for(const file of ['scripts/helpers/v100-live-acceptance.cjs','scripts/v100-live-acceptance.cjs']){

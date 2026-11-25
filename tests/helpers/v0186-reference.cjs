@@ -3,7 +3,13 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {root,loadCurrent}=require('./v0184-engine-harness.cjs');
-const reference=require('../reference/node_modules/@smogon/calc');
+function loadReference(){
+ if(!process.env.MULTIHIT_CHAMPIONS_SOURCE)return require('../reference/node_modules/@smogon/calc');
+ const checkout=fs.realpathSync(process.env.MULTIHIT_CHAMPIONS_SOURCE);
+ require('node:assert/strict').equal(require('node:child_process').execFileSync('git',['-C',checkout,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),'abdce0c64597284c8c463b7f71a38dc4dc55cd10');
+ return require(path.join(checkout,'calc/dist'));
+}
+const reference=loadReference();
 const context=loadCurrent();
 const TYPES_EN=['Normal','Fire','Water','Electric','Grass','Ice','Fighting','Poison','Ground','Flying','Psychic','Bug','Rock','Ghost','Dragon','Dark','Steel','Fairy'];
 const typeName=Object.fromEntries(context.ChlohaBattleData.TYPES.map((name,i)=>[name,TYPES_EN[i]]));

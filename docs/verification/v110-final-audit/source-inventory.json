@@ -1,0 +1,242 @@
+{
+  "damage-engine-v0184.js": {
+    "sha256": "639437ad2b4b063856399103e404d7d0e43384f4afce59edd0d9a8f740cbf87e",
+    "bytes": 31631,
+    "lines": 173
+  },
+  "damage-calculator-v0184.js": {
+    "sha256": "3bde4f39f135aeeac173c0a16f5981303904c570c989fa156eb04e931e48b26b",
+    "bytes": 4445,
+    "lines": 53
+  },
+  "battle-data-v0184.js": {
+    "sha256": "e6a1d94758ec4db5a49397eb8ff7c8a74bb01e830e09e150e88bd1500e5438ea",
+    "bytes": 3439,
+    "lines": 12
+  },
+  "index.html": {
+    "sha256": "e8ce6f524228af74c36fbf6d4fd8cd4d4706f47a5cd97e3aae8c79de1f941dc5",
+    "bytes": 870153,
+    "lines": 1076
+  },
+  "multi-hit.js": {
+    "sha256": "254391e32dbd50402971f8577d5b74a0c4abddff92feb766e06582080a89f312",
+    "bytes": 7358,
+    "lines": 116
+  },
+  "ability-data-v0184.js": {
+    "sha256": "317eac683789a6eb2c1d41aaef881112e73025488749f21716652a5cc4c4b193",
+    "bytes": 7996,
+    "lines": 90
+  },
+  "variable-power.js": {
+    "sha256": "754675fe0475826849d328a6094d33250205fc9cc6003fb0fa78a03f3360830e",
+    "bytes": 1916,
+    "lines": 37
+  },
+  "tests/helpers/v0186-reference.cjs": {
+    "sha256": "ab200a33cf368ccc7682d05abb03e861732530e2173d5f679c46832c8ae65860",
+    "bytes": 7427,
+    "lines": 64
+  },
+  "tests/v0186-seeded-differential.cjs": {
+    "sha256": "6d6b7ebbb5ff87b336c5abefcc9fecd2ee8d56fa4a5e23552324a057591a33f7",
+    "bytes": 3850,
+    "lines": 42
+  },
+  "tests/showdown-differential.mjs": {
+    "sha256": "57875fd2ccae096b72a117772b6ccbe8cf565fa5d8caef98a19b8eae82673d68",
+    "bytes": 4647,
+    "lines": 53
+  },
+  "tests/showdown-compare.mjs": {
+    "sha256": "a7230812b3dc4ea8dfc3a23dea7f39f3716fc1a1ddfd21bcea97bdc07c2d6365",
+    "bytes": 5811,
+    "lines": 66
+  },
+  "tests/reference/package.json": {
+    "sha256": "31dc2c639066b7570c71f3e658505bc35aacdfbcf94a829d35fe18f0994d3214",
+    "bytes": 248,
+    "lines": 7
+  },
+  "tests/reference/package-lock.json": {
+    "sha256": "083d550f4be9937f02974dd80900b153f7cb213553183f1f5488f99cf8eac348",
+    "bytes": 1314,
+    "lines": 39
+  },
+  "../ref/calc/src/state.ts": {
+    "sha256": "ce968fb0685fa9b4a2530fdea98553b4fe48bc0861f37c566449d42d564cd7ca",
+    "bytes": 2090,
+    "lines": 84
+  },
+  "../ref/calc/src/adaptable.ts": {
+    "sha256": "e85e89a1b5482e2dee99478b01a100c8fad44791701b2bb9552ce13d0df56d45",
+    "bytes": 614,
+    "lines": 12
+  },
+  "../ref/calc/src/calc.ts": {
+    "sha256": "74aed384c145f4d7bf5e27711e59aee24702ae7d9211b37edaf4aff6cb8d3faf",
+    "bytes": 976,
+    "lines": 41
+  },
+  "../ref/calc/src/items.ts": {
+    "sha256": "34927c11c31d2da712f588bdb3eed0fac37bbd556bd7e828e3a5e1da9e3737cc",
+    "bytes": 7959,
+    "lines": 424
+  },
+  "../ref/calc/src/field.ts": {
+    "sha256": "9644fcba004c1daa8e4dbeb08932c5c326e282d2de03a8cf9164fcdae140cade",
+    "bytes": 4002,
+    "lines": 132
+  },
+  "../ref/calc/src/result.ts": {
+    "sha256": "66e718015166a8494d530cff9cd251eb5178b7e06a8258221f8545e06f71656c",
+    "bytes": 2860,
+    "lines": 118
+  },
+  "../ref/calc/src/util.ts": {
+    "sha256": "7fc1dc794107cf2417f1913bd3223d986109232ac2810cbf136324746c0251cd",
+    "bytes": 4244,
+    "lines": 157
+  },
+  "../ref/calc/src/move.ts": {
+    "sha256": "89157956096225ee1ba7832b2a2d174b731c843b0c5dae84cad5726791b487f7",
+    "bytes": 10415,
+    "lines": 295
+  },
+  "../ref/calc/src/desc.ts": {
+    "sha256": "f14d1228b806fbd25235fd44fec6d5f704cb7a2f4ae60b675d6e807abfa1e7f8",
+    "bytes": 39578,
+    "lines": 1144
+  },
+  "../ref/calc/src/stats.ts": {
+    "sha256": "d15b1215df440a6817a955f007bbebc2fd85794d5901cb373f2cbe84ac98080d",
+    "bytes": 7264,
+    "lines": 252
+  },
+  "../ref/calc/src/pokemon.ts": {
+    "sha256": "f79ba3a028af12bccd48f5b41653bc5bc84049bd0ccc30cddabf989951931c55",
+    "bytes": 7013,
+    "lines": 238
+  },
+  "../ref/calc/src/index.ts": {
+    "sha256": "02b1a4a636b10284521f1b1beae22aa86284449dd99a454ed2ed5819f430d8bd",
+    "bytes": 4249,
+    "lines": 156
+  },
+  "../ref/calc/src/mechanics/gen789.ts": {
+    "sha256": "bd41f06cf59d9345fd5f6ab1b650982727bd5c7a556260c59800350fbdf97fc2",
+    "bytes": 63574,
+    "lines": 1834
+  },
+  "../ref/calc/src/mechanics/gen12.ts": {
+    "sha256": "b460fe0c60fa912a0c588fbb7b604d762296d5fc9e665f0f4a53843912b30801",
+    "bytes": 9707,
+    "lines": 305
+  },
+  "../ref/calc/src/mechanics/gen3.ts": {
+    "sha256": "88b1d7060a2e664167909b52f0fdbab14394a0fb9ab87ddc29d2499d2a0d036e",
+    "bytes": 13966,
+    "lines": 456
+  },
+  "../ref/calc/src/mechanics/util.ts": {
+    "sha256": "013c0bc3613c2e7a7e9d5b8ea71a905d247f68f16ca2c072ea9169a2e8b6d760",
+    "bytes": 23606,
+    "lines": 717
+  },
+  "../ref/calc/src/mechanics/champions.ts": {
+    "sha256": "f5de2e2ea6698eb034221905b0f45cb23286d533b89e9f0b5735a3f2d565a8c3",
+    "bytes": 37777,
+    "lines": 1194
+  },
+  "../ref/calc/src/mechanics/gen4.ts": {
+    "sha256": "03035967746bea79c55287c6aef63a976a1ca5ad832934f440dc3a4790b27ecd",
+    "bytes": 24643,
+    "lines": 742
+  },
+  "../ref/calc/src/mechanics/gen56.ts": {
+    "sha256": "7f6c94ad396b6e24157a4b9881436b067f49c6c294337e45729f4bf912dc32b8",
+    "bytes": 37632,
+    "lines": 1157
+  },
+  "../ref/calc/src/data/abilities.ts": {
+    "sha256": "80ecc4cf5a8ee72d1877dc773b084b871f12c8eca64bd7205b24b557222b6458",
+    "bytes": 9880,
+    "lines": 609
+  },
+  "../ref/calc/src/data/species.ts": {
+    "sha256": "2feaf8861088fb8388396966a8d8efd0fb20bba4bbbe7cd1d1693e68525d2190",
+    "bytes": 287951,
+    "lines": 10922
+  },
+  "../ref/calc/src/data/moves.ts": {
+    "sha256": "d83194d4e3c2535571fe3c699e4db56f9950eb5c04bb3bfc9f4666e120271049",
+    "bytes": 144151,
+    "lines": 5608
+  },
+  "../ref/calc/src/data/items.ts": {
+    "sha256": "f8449a1bf0ae98b758e596ccf1e22a5123152309e2ace99d06c6511b1eb3c7c5",
+    "bytes": 19443,
+    "lines": 857
+  },
+  "../ref/calc/src/data/interface.ts": {
+    "sha256": "0834cb5d647e836a62f5392d99f116e096aff99ad5d3d596c69dac6e0a6d4e40",
+    "bytes": 5369,
+    "lines": 177
+  },
+  "../ref/calc/src/data/natures.ts": {
+    "sha256": "4316911aa0386533dbc7dfdf3fb820bcadcd44702b087c59be5b931cd9eeae04",
+    "bytes": 1551,
+    "lines": 65
+  },
+  "../ref/calc/src/data/types.ts": {
+    "sha256": "3e2ca819fe967dc0343e420fe3bbae4c9b23a422e50f01c9a5fb040376d6d642",
+    "bytes": 7996,
+    "lines": 480
+  },
+  "../ref/calc/src/data/index.ts": {
+    "sha256": "281be0cb5718bc7ce5b6cb54aa7a40b9338d36f9a8f4a0b738658e895211c8d7",
+    "bytes": 828,
+    "lines": 36
+  },
+  "../ref/calc/src/test/calc.test.ts": {
+    "sha256": "741d57ef5cc7e5811ffd63cc8deb89fd95cf67767025d661f29f3f402a164fef",
+    "bytes": 84346,
+    "lines": 1970
+  },
+  "../ref/calc/src/test/utils.test.ts": {
+    "sha256": "64a2df810f825077725a5a9fb5ae94187e39b2f7cb6d6dc03ffcfc1fdf782ab0",
+    "bytes": 589,
+    "lines": 22
+  },
+  "../ref/calc/src/test/pokemon.test.ts": {
+    "sha256": "fec59e4f1b9059861d969117b165d55acd052b45de16a31486ce0c7517a99a91",
+    "bytes": 4426,
+    "lines": 115
+  },
+  "../ref/calc/src/test/gen.ts": {
+    "sha256": "bfec02f63c51944f9648930352287e4cd271e7b628398d93e80657dce69e1185",
+    "bytes": 14919,
+    "lines": 500
+  },
+  "../ref/calc/src/test/helper.ts": {
+    "sha256": "9d99065faeb1e59558ec67b28f23ab15112d36a3394d3425d41b06924d4390b9",
+    "bytes": 5278,
+    "lines": 201
+  },
+  "../ref/calc/src/test/data.test.ts": {
+    "sha256": "8fa08865c65dd89c7855aab5617bc6dd429d1087f9d60d38c525d7a2384af37b",
+    "bytes": 4159,
+    "lines": 129
+  },
+  "../ref/calc/src/test/stats.test.ts": {
+    "sha256": "bf0a4c7f5208481d5b3822b64ee5d0f4b28834dfcfc03f7f08e5641b080abf58",
+    "bytes": 2343,
+    "lines": 84
+  },
+  "../ref/calc/src/test/move.test.ts": {
+    "sha256": "837bcc8454539e2b202293e50dd091db01a3ce04070cc2cc3b59ced98e650450",
+    "bytes": 326,
+    "lines": 13
+  }
+}

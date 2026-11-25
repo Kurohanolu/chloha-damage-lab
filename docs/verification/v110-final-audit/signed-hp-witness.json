@@ -1,0 +1,87 @@
+{
+  "primary": "https://www.youtube.com/watch?v=MEc9So7IwEY",
+  "arithmetic": "https://tetspond.hatenablog.com/entry/2026/10/11/193146",
+  "observation": "target healed in historical gameplay",
+  "experiment": [
+    {
+      "roll": 85,
+      "signedPrediction": -523600,
+      "reference": 688
+    },
+    {
+      "roll": 86,
+      "signedPrediction": -517424,
+      "reference": 6864
+    },
+    {
+      "roll": 87,
+      "signedPrediction": -511240,
+      "reference": 13048
+    },
+    {
+      "roll": 88,
+      "signedPrediction": -505072,
+      "reference": 19216
+    },
+    {
+      "roll": 89,
+      "signedPrediction": -498896,
+      "reference": 25392
+    },
+    {
+      "roll": 90,
+      "signedPrediction": -492712,
+      "reference": 31576
+    },
+    {
+      "roll": 91,
+      "signedPrediction": -486544,
+      "reference": 37744
+    },
+    {
+      "roll": 92,
+      "signedPrediction": -480368,
+      "reference": 43920
+    },
+    {
+      "roll": 93,
+      "signedPrediction": -474184,
+      "reference": 50104
+    },
+    {
+      "roll": 94,
+      "signedPrediction": -468016,
+      "reference": 56272
+    },
+    {
+      "roll": 95,
+      "signedPrediction": -461840,
+      "reference": 62448
+    },
+    {
+      "roll": 96,
+      "signedPrediction": -455656,
+      "reference": 3096
+    },
+    {
+      "roll": 97,
+      "signedPrediction": -449488,
+      "reference": 9264
+    },
+    {
+      "roll": 98,
+      "signedPrediction": -443312,
+      "reference": 15440
+    },
+    {
+      "roll": 99,
+      "signedPrediction": -437128,
+      "reference": 21624
+    },
+    {
+      "roll": 100,
+      "signedPrediction": -430952,
+      "reference": 27800
+    }
+  ]
+}
